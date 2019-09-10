@@ -1,6 +1,5 @@
 ---
 title: 【论文阅读笔记】基于深度度量学习的语义实例分割
-mathjax: true
 tags: [CV, Semantic Instance Segmentation, Deep Metric Learning]
 categories: [CV, Semantic Instance Segmentation]
 ---
@@ -81,12 +80,3 @@ Sampling`）,最后通过分组，得到最终的实体分割的结果（`Output
 到这里基本实现了模型的正向传播，训练方法与预处理在这里先不详细总结了，对应上面四个步骤进行训练，第一步中，使用COCO预训练（DeepLab V2模型修改最后一层），第二步第三步中，使用类似交叉熵损失函数来训练，在选择种子点时，使用均方误差作为损失函数来训练，选择最合适的种子点。
 
 以上是部分论文的直译，以及一些个人的理解，可能有些不准确的地方，之后有机会使用到论文中的方法时，再深入吧，这里算是了解一种新方法。
-
-
-
-
-
-
-
-
-
