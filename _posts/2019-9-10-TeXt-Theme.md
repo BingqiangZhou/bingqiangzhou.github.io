@@ -1,6 +1,6 @@
 ---
 title: 使用Jekyll的TeXt主题简单搭建github.io博客
-tags: [github.io, jekyell, Text]
+tags: [github.io, jekyell, TeXt]
 ---
 
 这段时间突然发现需要使用到数学公式渲染的插件，而使用Hexo的NexT主题配置MathJax，弄了两天，每次弄了两三个小时，水平有限，没弄好，放弃了，直接使用Jekyll的TeXt主题简单的重新搭建github.io博客，不涉及开发，这里记录一下大概的步骤。
@@ -40,3 +40,10 @@ mathjax_autoNumber: true # false (default), true
 ## 第三步、 迁移之前的文章 ##
 
 只需要将之前的`_post`文件夹中的Markdown文件复制粘贴到TeXt目录下的`_post`文件夹中即可。
+
+## 记录一下一个好的网站 ##
+在TeXt主题的[图标设置](https://tianqi.name/jekyll-TeXt-theme/docs/en/logo-and-favicon)中发现用到了一个好用的工具，上传图片生成图标，还可以检查网站图标是否有适应不同的设备浏览器等等。
+
+网站如下，不仅可用TeXt主题的图标，也是可以用于其他网站图标的，感觉特别的好：
+
+[生成图标网站realfavicongenerator](https://realfavicongenerator.net/)
