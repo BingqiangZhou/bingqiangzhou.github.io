@@ -5,7 +5,7 @@ tags: [github.io, jekyell, Text]
 
 这段时间突然发现需要使用到数学公式渲染的插件，而使用Hexo的NexT主题配置MathJax，弄了两天，每次弄了两三个小时，水平有限，没弄好，放弃了，直接使用Jekyll的TeXt主题简单的重新搭建github.io博客，不涉及开发，这里记录一下大概的步骤。
 
-<!-- more -->
+<!--more-->
 
 ## 第一步、克隆仓库并去掉部分无关的文件 ##
 
@@ -17,6 +17,8 @@ git clone https://github.com/kitian616/jekyll-TeXt-theme.git
 **省略创建github.io仓库**
 
 2. 去掉部分无关的文件
+这一步可要可不要，我个人有点强迫症，所以去了那些无关的文件。
+
 根据主题文档中提供的[文件结构](https://tianqi.name/jekyll-TeXt-theme/docs/en/structure)，删除一些无关的文件，包括`.github`、`.vscode`、`CHANGELOG.md`、`README.md`等等
 
 3. 这里我们可以直接`fork`[jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme)仓库，再修改仓库名为**USERNAME.github.io**，如下图所示。

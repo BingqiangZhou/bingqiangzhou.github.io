@@ -13,7 +13,7 @@ date: 2019-08-23 21:04:23
 
 记录一下部署`DotNet Core`项目到Ubuntu的过程，包括开发并发布项目、配置`DotNet Core`环境、安装`Nginx`配置反向代理服务器、使用`supervisor`管理进程，让`DotNet Core`应用程序一直运行。
 
-<!-- more -->
+<!--more-->
 
 在这里使用`MobaXterm`工具连接Linux与上传下载文件（`SFTP`），[MobaXterm Pro激活方法](https://github.com/DoubleLabyrinth/MobaXterm-keygen)
 

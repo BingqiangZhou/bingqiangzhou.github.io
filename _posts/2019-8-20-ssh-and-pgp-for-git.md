@@ -7,7 +7,7 @@ tags:
 
 今天总结一下git配置ssh和gpg。
 
-<!-- more -->
+<!--more-->
 
 ## 下载安装git ##
 在[https://github.com/git-for-windows/git/releases](https://github.com/git-for-windows/git/releases)找到最新的release版本的`PortableGit`，自行根据系统选择64位、32位下载。

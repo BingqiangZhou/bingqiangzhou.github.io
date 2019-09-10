@@ -7,7 +7,8 @@ categories: [web, github.io, update]
 
 今天NexT更新了[7.4.0](https://theme-next.org/next-7-4-0-released/)，准备从NexT 7.3.0更新到7.4.0，附上[NexT发布文档](https://github.com/theme-next/hexo-theme-next/releases)
 
-<!-- more -->
+<!--more-->
+
 ## Pull NexT库 ##
 首先第一步当然是将NexT给下载下来，当然我们竟然别覆盖之前的文件，而是建立一个新文件夹，然后在配置，这样实在不行，还能用之前的配置的主题，例如如下保存到`next-7-4`文件夹中。
 ```shell

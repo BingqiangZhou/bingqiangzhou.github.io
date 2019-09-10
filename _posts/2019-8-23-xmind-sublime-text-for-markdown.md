@@ -10,7 +10,8 @@ date: 2019-08-23 03:06:01
 ---
 
 记录一下XMind与Sublime Text 3破解激活的步骤以及一些Sublime Text好用的插件！
-<!-- more -->
+
+<!--more-->
 
 ## [XMind pro 8 破解激活步骤](https://github.com/winturn/xmind-pro-8-crack-patch)
 ### 准备工作 
