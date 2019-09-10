@@ -37,7 +37,7 @@ author:
   type      : # "person" (default), "organization"
   name      : Bingqiang Zhou
   url       :
-  avatar    : logo.jpg # path or url of avatar image (square)
+  avatar    : https://www.easyicon.net/download/ico/1167012/128/ # path or url of avatar image (square)
   bio       : # I am an amazing person.
   email     : bingqiang_zhou@qq.com
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
