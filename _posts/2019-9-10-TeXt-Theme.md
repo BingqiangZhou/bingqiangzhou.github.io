@@ -41,9 +41,13 @@ mathjax_autoNumber: true # false (default), true
 
 只需要将之前的`_post`文件夹中的Markdown文件复制粘贴到TeXt目录下的`_post`文件夹中即可。
 
-## 记录一下一个好的网站 ##
+## 记录一下一些好的网站 ##
 在TeXt主题的[图标设置](https://tianqi.name/jekyll-TeXt-theme/docs/en/logo-and-favicon)中发现用到了一个好用的工具，上传图片生成图标，还可以检查网站图标是否有适应不同的设备浏览器等等。
 
 网站如下，不仅可用TeXt主题的图标，也是可以用于其他网站图标的，感觉特别的好：
 
 [生成图标网站realfavicongenerator](https://realfavicongenerator.net/)
+
+[MathJax语法](https://www.cnblogs.com/Bone-ACE/p/4558870.html)
+
+[在线MathJax公式书写](http://cxcgzx.cn:88/test/mathtest.php)
