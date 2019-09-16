@@ -29,7 +29,7 @@ $$L_{var} = \frac{1}{C}\sum_{c=1}^C\frac{1}{N_c}\sum_{i=1}^{N_c}[||{\mu_i-x_i}||
 
 ### 距离项 ###
 
-$$L_{dist}=\frac{1}{C(C-1)}{\sum_{c_A=1}^{C}\sum_{c_B=1}^{C}}_{{c_A}\neq{c_B}}[2\delta_d-||{\mu_{cA}-\mu_{cB}}||]_+^2$$
+$$L_{dist}=\frac{1}{C(C-1)}{\sum_{c_A=1}^{C}\sum_{c_B=1}^{C}}_{c_A}\neq{c_B}[2\delta_d-||{\mu_{cA}-\mu_{cB}}||]_+^2$$
 
 ### 正则项 ###
 
