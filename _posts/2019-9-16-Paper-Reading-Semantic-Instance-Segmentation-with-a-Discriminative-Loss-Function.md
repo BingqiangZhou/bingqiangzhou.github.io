@@ -11,7 +11,7 @@ mathjax_autoNumber: true
 
 <!--more-->
 
-![图片：损失函数原理图](../assets/images/20190916/figure2.png)
+![图片：损失函数原理图](/assets/images/20190916/figure2.png)
 
 论文主要关注于损失函数，主要关注于训练出好的特征空间（如`Embedding Space`）。
 
@@ -20,8 +20,6 @@ mathjax_autoNumber: true
 ### 定义 ###
 
 $C$是真实值中的簇的总数，$N_c$簇$c$中的元素数量，$x_i$是一个元素对应的嵌入向量，$\mu_c$是&c&簇中嵌入向量的平均值（簇的中心），$\vert\vert\cdot\vert\vert$是L1距离或者L2距离，$[x]_+$是max(0,x)定义的铰链函数，$\delta_v$和$\delta_d$代表方差和距离损失的间隙。
-
-在实验时，作者设置$\alpha=\beta=1$，$\gamma=0.001$。
 
 ### 方差项 ###
 
@@ -38,6 +36,8 @@ $$L_{reg}=\frac{1}{C}\sum_{c=1}^{C}||\mu_c||$$
 ### 完整损失函数 ###
 $$L=\alpha\cdot{L_{var}}+\beta\cdot{L_{dist}}+\gamma\cdot{L_{reg}}$$
 
+在实验时，作者设置$\alpha=\beta=1$，$\gamma=0.001$。   
+
 ## 其他内容 ##
 
 论文还说到了后处理（post-processing），包括增强鲁棒性（increasing robustness）等等， 还有其他实验的设置和数据集，还有优缺点等等，这里最后说一下这个方法的优缺点（pros and cons）。
@@ -47,5 +47,6 @@ $$L=\alpha\cdot{L_{var}}+\beta\cdot{L_{dist}}+\gamma\cdot{L_{reg}}$$
 
 ### MathJax数学公式 ###
 [MathJax语法](https://www.cnblogs.com/Bone-ACE/p/4558870.html)
+
 [在线MathJax公式书写](http://cxcgzx.cn:88/test/mathtest.php)
 
