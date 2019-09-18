@@ -14,7 +14,7 @@ $$\sigma(p,q)=\frac{2}{1+exp(||e_p-e_q||)}$$
 
 其中，$\sigma(p,q)$ 表示点p与点q的相似度，当两者在嵌入空间（$e_p$ 与 $e_q$）比较近时，$\sigma(p,q)=frac{2}{1+e^0}=1$，两者比较远时，$\sigma(p,q)=\frac{2}{1+e^\infty}=0$。
 ### 损失函数
-$$L_e=-\frac{1}{|S|}\sum_{{p,q}\in S}w_{pq}[1_{\{y_p=y_q\}}log(\sigma(p,q))+1_{\{y_p\neq y_q\}}log(1-\sigma(p,q))]$$
+$$L_e=-\frac{1}{|S|}\sum_{ {p,q}\in S}w_{pq}[1_{\{y_p=y_q\}}log(\sigma(p,q))+1_{\{y_p\neq y_q\}}log(1-\sigma(p,q))]$$
 
 其中$S$ 是"种子点"集合，这里的$|S|$ 表示集合中种子点的个数，$w_{pq}$ 是点p与点q相似度损失的权重，$w_{pq}$ 与点p和点q所属的实例大小成反比，添加这个权重，从而使得损失函数不会偏向于更大的样本。
 $1_{\{y_p=y_q\}}$ 表示当$y_p=y_q$ 成立的时候式子取1，不成立则取0，$1_{\{y_p\neq y_q\}}$ 同理。
