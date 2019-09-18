@@ -48,5 +48,7 @@ $$L=\alpha\cdot{L_{var}}+\beta\cdot{L_{dist}}+\gamma\cdot{L_{reg}}$$
 ### MathJax数学公式 ###
 [MathJax语法](https://www.cnblogs.com/Bone-ACE/p/4558870.html)
 
+[MathJax语法](https://blog.csdn.net/luyaxige/article/details/80193409)
+
 [在线MathJax公式书写](http://cxcgzx.cn:88/test/mathtest.php)
 

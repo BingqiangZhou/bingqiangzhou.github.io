@@ -1,5 +1,5 @@
 ---
-title: 【薅羊毛】使用免费的算力
+title: 【薅羊毛】ai studio、colab、kaggle免费的算力
 tags: [ai studio, colab, kaggle, training]
 ---
 
@@ -22,7 +22,9 @@ pip3 install --upgrade pip
 
 将数据以及代码上传到AI Studio工作空间，执行代码训练模型。
 
-## 其他相关链接
+## 相关链接
+
+[python如何从txt文件中批量pip安装包](https://blog.csdn.net/The_Time_Runner/article/details/96993733)
 
 [Ubuntu下安装Python 3.7](https://blog.csdn.net/dlh_sycamore/article/details/82378544)
 
@@ -49,7 +51,7 @@ kaggle上传文件这块受到限制了，自己写代码还是可以的，每�
 
 [W加速器](https://d.wjsq.xyz/)
 
-## linux命令
+## 命令
 
 查看linux系统版本
 ```shell
