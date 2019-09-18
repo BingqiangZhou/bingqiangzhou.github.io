@@ -7,6 +7,8 @@ mathjax_autoNumber: true
 
 接过上一次的话题，这一次，结合自己的理解，记录一下论文中提出的方法，包括嵌入模型（embedding model）、创建遮罩（creating masks）、分类和种子度模型（classification and seediness model）。
 
+<!--more-->
+
 ## 嵌入模型（embedding model）
 学习一个嵌入模型（维度为[h, w, d]的张量），使用logistics损失来训练它。
 ### 相似度
@@ -16,14 +18,14 @@ $$\sigma(p,q)=\frac{2}{1+exp(||e_p-e_q||)}$$
 其中，$\sigma(p,q)$ 表示点p与点q的相似度，当两者在嵌入空间（$e_p$ 与 $e_q$）比较近时，$\sigma(p,q)=\frac{2}{1+e^0}=1$，两者比较远时，$\sigma(p,q)=\frac{2}{1+e^\infty}=0$。
 ### 损失函数
 
-$$L_e=-\frac{1}{|S|}\sum_{ {p,q}\in S}w_{pq}[1_{\{y_p=y_q\}}log(\sigma(p,q))+1_{\{y_p\neq y_q\}}log(1-\sigma(p,q))]$$
+$$L_e=-\frac{1}{|S|}\sum_{ {p,q}\in S}w_{pq}[1_{\{y_p=y_q\}}log(\sigma(p,q))\\+1_{\{y_p\neq y_q\}}log(1-\sigma(p,q))]$$
 
-其中$S$ 是"种子点"集合，这里的$|S|$ 表示集合中种子点的个数，$w_{pq}$ 是点p与点q相似度损失的权重，$w_{pq}$ 与点p和点q所属的实例大小成反比，添加这个权重，从而使得损失函数不会偏向于更大的样本。
-$1_{\{y_p=y_q\}}$ 表示当$y_p=y_q$ 成立的时候式子取1，不成立则取0，$1_{\{y_p\neq y_q\}}$ 同理。
+其中$S$ 是"种子点"集合，这里的$|S|$表示集合中种子点的个数，$w_{pq}$是点p与点q相似度损失的权重，$w_{pq}$ 与点p和点q所属的实例大小成反比，添加这个权重，从而使得损失函数不会偏向于更大的样本。
+$1_{\{y_p=y_q\}}$表示当$y_p=y_q$成立的时候式子取1，不成立则取0，$1_{\{y_p\neq y_q\}}$同理。
 
 论文中还提到了正则化权重，$\sum_{p,q}w_pq=1$ 。
 
-在训练开始时，在每一个实例中随机取样，选取K个点来作为种子点，假设有N个实例，则种子点集合元素个数$\vert S \vert=N \cdot K$，在这里只计算在$\vert S \vert$中的点与点之间的相似度损失，选取种子点机制在[分类和选种子点模型](#分类和选种子点模型)说明，以上说的点都是用嵌入空间对于点的嵌入向量来计算的。
+在训练开始时，在每一个实例中随机取样，选取K个点来作为种子点，假设有N个实例，则种子点集合元素个数$\vert S \vert=N \cdot K$，在这里只计算在$\vert S \vert$中的点与点之间的相似度损失，选取种子点机制在[分类和选种子点模型](#分类和种子度模型classification-and-seediness-model)说明，以上说的点都是用嵌入空间对于点的嵌入向量来计算的。
 
 ## 创建遮罩（creating masks）
 
@@ -45,7 +47,7 @@ $$m(p,\tau)=\{ q:\sigma(p,q) \geq \tau \}$$
 
 选择第t个种子点
 
-$$p_t=arg\ max_{p \notin p_{1:t-1}}[log(S_p)+\alpha log(D(p,p_{1:t-1}))]$$
+$$p_t=arg\ max_{p \notin p_{1:t-1}}[log(S_p)\\+\alpha log(D(p,p_{1:t-1}))]$$
 
 其中，
 
