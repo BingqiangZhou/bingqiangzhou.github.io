@@ -1,6 +1,6 @@
 ---
 title: 【论文阅读笔记】视频对象分割快速端对端嵌入学习方法
-tags: [CV, Video Object Segmentation, FEELVOS]
+tags: [CV, Video Object Segmentation, FEELVOS, paper notebook]
 mathjax: true
 mathjax_autoNumber: true
 ---
@@ -14,7 +14,7 @@ mathjax_autoNumber: true
 
 ## 概述
 
-![模型图](../assets/images/20190920/figure3.png)
+![模型图](/assets/images/20190920/figure3.png)
 
 根据上图，大概描述一下整个模型，首先给定视频的一帧，通过在DeepLabV3+架构，去掉最后一层，得到骨干特征（backbone features）并再头部（top of that）加上一个嵌入层（embedding layer）的网络，得到每一个像素点的嵌入向量（对应的得到整个嵌入向量空间），随后对应于每一个对象，通过当前嵌入空间和前一帧图片的嵌入空间计算得到全局匹配距离图（global matching distance map），通过当前嵌入空间和前一帧图片的嵌入空间计算得到本地匹配距离图（local matching distance map），随后将骨干特征（backbone features）（共享，复制N份，N为对象的个数）和对应于一个对象的全局匹配距离图、本地匹配距离图、前一帧的预测结果组合到一起，形成一个维度为[w/4, h/4, 259(256+3)]的张量，再将这个张量作为分割头网络（segmentation head）的输入，得到每一个点对于每个对象的logits值（校正值），将其堆叠在一起，通过softmax函数得到一个张量[w/4, h/4, N]，即为处理的结果，对应于每个点属于每个对象的概率。
 

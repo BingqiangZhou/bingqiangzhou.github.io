@@ -1,6 +1,6 @@
 ---
 title: 【论文阅读笔记】带有歧视的损失函数的语义实体分割
-tags: [CV, Semantic Instance Segmentation, Discriminative Loss Function]
+tags: [CV, Semantic Instance Segmentation, Discriminative Loss Function, paper notebook]
 mathjax: true
 mathjax_autoNumber: true
 ---

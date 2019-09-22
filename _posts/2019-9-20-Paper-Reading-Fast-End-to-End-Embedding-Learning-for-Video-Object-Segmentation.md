@@ -1,6 +1,6 @@
 ---
 title: 【论文阅读笔记】视频对象分割快速端对端嵌入学习方法
-tags: [CV, Video Object Segmentation, FEELVOS]
+tags: [CV, Video Object Segmentation, FEELVOS, paper notebook]
 mathjax: true
 mathjax_autoNumber: true
 ---
