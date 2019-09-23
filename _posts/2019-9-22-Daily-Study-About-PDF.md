@@ -51,6 +51,8 @@ PDFBox是Java实现的PDF文档协作类库，提供PDF文档的创建、处理�
 
 [devexpress 使用安装、破解注册和汉化包进行汉化的步骤](https://blog.csdn.net/qq_36628003/article/details/82684679)
 
+[DevExpress安装文件、源码、注册破解下载](https://www.dxper.net/thread-40506-1-1.html)
+
 ### 没有尝试的收费的PDF控件
 
 [ComponentOne-PDF for WinForm](https://www.grapecity.com.cn/developer/componentone-winform/controls/pdf)
