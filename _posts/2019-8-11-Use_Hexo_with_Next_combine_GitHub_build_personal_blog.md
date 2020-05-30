@@ -1,5 +1,4 @@
 ---
-layout: _posts
 title: 使用Hexo+NexT结合GitHub搭建个人博客
 date: 2019-08-11 23:55:59
 tags: [hexo, next, github.io]

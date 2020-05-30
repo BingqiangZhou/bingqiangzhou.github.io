@@ -1,5 +1,4 @@
 ---
-layout: _posts
 title: 搭建github.io博客的总结（一）
 date: 2019-08-12 12:03:15
 tags: [hexo, next, github.io]
