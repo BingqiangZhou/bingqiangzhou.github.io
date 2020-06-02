@@ -60,7 +60,12 @@ html,
 
 .page__aside {
   .toc-aside {
-    padding: map-get($spacers, 5) map-get($spacers, 5) map-get($spacers, 3) 0;
+    padding-left: 0;
+    padding-right: map-get($spacers, 3);
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 3);
+    // padding: map-get($spacers, 5) 0 map-get($spacers, 3) 0;
+    // padding: map-get($spacers, 5) 0 map-get($spacers, 3) map-get($spacers, 5);
   }
 }
 
