@@ -1,8 +1,6 @@
 ---
-title: 搭建github.io博客的总结（一）
-date: 2019-08-12 12:03:15
-tags: [hexo, next, github.io]
-categories: [web, github.io, summary]
+title: 【日常小结】搭建github.io博客的总结（一）
+tags: [日常总结系列]
 ---
 
 昨晚搭建完bingqiangzhou.github.io个人博客，今天早上起来，有同学与我交流搭建个人博客，然后我仔细看了一下昨天放的链接，个人觉得表述的顺序有点乱，我比较喜欢先把铺垫做好，即把写博客文章与搭建博客分开，先搭建好博客，再来研究写博客发布文章。

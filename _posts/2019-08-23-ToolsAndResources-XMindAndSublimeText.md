@@ -1,12 +1,6 @@
 ---
-title: XMind与Sublime Text等等其他工具
-tags:
-  - tools
-  - xmind
-  - sublime text
-categories:
-  - tools
-date: 2019-08-23 03:06:01
+title: 【工具资源】XMind与Sublime Text等等其他工具
+tags: [工具资源系列]
 ---
 
 记录一下XMind与Sublime Text 3破解激活的步骤以及一些Sublime Text好用的插件！

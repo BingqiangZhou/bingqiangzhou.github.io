@@ -1,6 +1,6 @@
 ---
 title: 【论文阅读笔记】基于深度度量学习的语义实例分割（二）
-tags: [CV, Semantic Instance Segmentation, Deep Metric Learning, paper notebook]
+tags: [论文阅读笔记系列]
 mathjax: true
 mathjax_autoNumber: true
 ---

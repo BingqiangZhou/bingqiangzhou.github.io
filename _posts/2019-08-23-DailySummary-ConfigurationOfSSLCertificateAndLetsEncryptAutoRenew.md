@@ -1,13 +1,6 @@
 ---
-title: SSL证书的配置与Let's Encrypt证书的自动颁发
-tags:
-  - ssl
-  - letsencrypt
-categories:
-  - web
-  - iis
-  - ssl
-date: 2019-08-23 12:13:51
+title: 【日常小结】SSL证书的配置与Let's Encrypt证书的自动颁发
+tags: [日常小结系列]
 ---
 
 记录一下SSL证书的配置与Let's Encrypt证书的自动颁发，这里Let's Encrypt证书（有效期90天）的自动颁发，还没有尝试，本质是使用自动部署程序部署，并设置定时任务定时更新它。

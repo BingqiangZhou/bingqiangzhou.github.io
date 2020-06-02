@@ -1,6 +1,6 @@
 ---
-title: 反编译APK
-tags: [decomplie, apk]
+title: 【日常杂耍】反编译APK
+tags: [日常杂耍系列]
 ---
 
 简单记录一次突发奇想的实践经历，以及反编译APK的步骤。

@@ -1,9 +1,7 @@
 ---
-title: windows下git配置ssh和gpg
-date: 2019-08-20 01:27:32
-tags:
+title: 【日常小结】windows下git配置ssh和gpg
+tags: [日常小结系列]
 ---
-
 
 今天总结一下git配置ssh和gpg。
 

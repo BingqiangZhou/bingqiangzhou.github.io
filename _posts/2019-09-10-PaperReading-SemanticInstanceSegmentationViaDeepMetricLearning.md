@@ -1,7 +1,6 @@
 ---
 title: 【论文阅读笔记】基于深度度量学习的语义实例分割
-tags: [CV, Semantic Instance Segmentation, Deep Metric Learning, paper notebook]
-categories: [CV, Semantic Instance Segmentation]
+tags: [论文阅读笔记系列]
 ---
 [基于深度度量学习的语义实例分割（Semantic Instance Segmentation via Deep Metric Learning）](https://arxiv.org/abs/1703.10277)
 
@@ -10,15 +9,13 @@ categories: [CV, Semantic Instance Segmentation]
 <!--more-->
 
 ## 论文前言（Introduction） ##
-论文一开始介绍了语义实例分割
-
-- [与物体检测（`Object Detection`）的区别](#语义实例分割与物体检测的区别)
-- [与语义分割（`Semantic Segmentation`）的区别](#语义实例分割与语义分割的区别)
-- [在领域中的实际应用（`Practical Applications in Domains`）](#语义实例分割在领域中的实际应用)
-- [一种常用的处理方法（`A Common Approach`）](#语义实例分割常用的处理方法)
-- [一个近期的新的处理方法（`“Box-Free” Methods`）](#语义实例分割近期的新的处理方法)
-- [论文中提出的新方法](#论文中提出的语义实例分割新方法)
-- [模型图](#模型图)
+论文一介绍了语义实例分割
+[与物体检测的区别](#语义实例分割与物体检测的区别)、
+[与语义分割的区别](#语义实例分割与语义分割的区别)、
+[在领域中的实际应用](#语义实例分割在领域中的实际应用)、
+[常用的处理方法](#语义实例分割常用的处理方法)、
+[近期的新的处理方法](#语义实例分割近期的新的处理方法)、
+[论文中提出的语义实例分割新方法](#论文中提出的语义实例分割新方法)。
 
 ### 语义实例分割与物体检测的区别 ###
 相对于物体检测，结果不是一个边界框，而是实例对象的形状，
@@ -69,7 +66,7 @@ Sampling`）,最后通过分组，得到最终的实体分割的结果（`Output
 
 ## 论文中提出的方法 ##
 
-### 概述 ###
+### 简单概述 ###
 
 这里用自己的话总结一下，论文中提出的方法，首先
 1. 图片（维度[h,w,3]）通过一个特征提取器（基于DeepLab V2模型，修改掉最后分类的层（layer），让输出的维度为[h/8,w/8,2048]），

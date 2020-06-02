@@ -1,8 +1,6 @@
 ---
-title: 使用Hexo+NexT结合GitHub搭建个人博客
-date: 2019-08-11 23:55:59
-tags: [hexo, next, github.io]
-categories: [web, github.io, summary]
+title: 【日常杂耍】使用Hexo+NexT结合GitHub搭建个人博客
+tags: [日常杂耍系列]
 ---
 
 今天使用Hexo+NexT结合GitHub搭建了个人博客[bingqiangzhou.github.io](https://bingqiangzhou.github.io)，在这里总结一下建站过程。

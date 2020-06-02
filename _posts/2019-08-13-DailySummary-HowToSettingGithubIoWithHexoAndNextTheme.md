@@ -1,8 +1,6 @@
 ---
-title: 搭建github.io博客的总结（二）
-date: 2019-08-13 11:23:08
-tags: [github.io, hexo, next]
-categories: [web, github.io, summary]
+title: 【日常小结】搭建github.io博客的总结（二）
+tags: [日常小结系列]
 ---
 
 > 只有当你认真的去做一件事情的时候，才会发现自己的灵魂，和灵魂的深处。

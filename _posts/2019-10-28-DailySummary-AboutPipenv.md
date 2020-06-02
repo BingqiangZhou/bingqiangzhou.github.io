@@ -1,6 +1,6 @@
 ---
-title: 【日常总结】pipenv虚拟环境
-tags: [tools and resources, jupyter lab, extension]
+title: 【日常小结】pipenv虚拟环境
+tags: [日常小结系列]
 ---
 
 [pipenv github](https://github.com/pypa/pipenv)

@@ -1,8 +1,6 @@
 ---
-title: 更新NexT主题
-date: 2019-09-01 12:04:37
-tags: [next, github.io]
-categories: [web, github.io, update]
+title: 【日常杂耍】更新NexT主题
+tags: [日常杂耍系列]
 ---
 
 今天NexT更新了[7.4.0](https://theme-next.org/next-7-4-0-released/)，准备从NexT 7.3.0更新到7.4.0，附上[NexT发布文档](https://github.com/theme-next/hexo-theme-next/releases)

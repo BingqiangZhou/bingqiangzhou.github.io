@@ -1,8 +1,6 @@
 ---
-title: 搭建github.io博客的总结（三）
-date: 2019-08-18 22:23:49
-tags: [github.io, hexo, next]
-categories: [web, github.io, summary]
+title: 【日常小结】搭建github.io博客的总结（三）
+tags: [日常小结系列]
 ---
 
 > 不读则愚，不思则浅，不练则生，不用则钝！
