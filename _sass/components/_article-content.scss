@@ -56,9 +56,7 @@
   }
   img:not(.emoji) {
     max-width: 100%;
-    vertical-align: middle;
-  }
-  img {
+    // vertical-align: middle;
     clear: both; 
     display: block; 
     margin:auto; 
