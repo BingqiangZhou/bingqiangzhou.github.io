@@ -36,7 +36,7 @@
       $('.col-aside.d-print-none.js-col-aside').hide();
     }
     else{
-      $('.col-aside.d-print-none.js-col-aside').css('font-size', '100%')
+      $('.col-aside.d-print-none.js-col-aside').css('font-size', '16px')
     }
 
 
