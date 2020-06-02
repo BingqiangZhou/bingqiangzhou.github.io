@@ -1,8 +1,6 @@
 ---
 title: 【论文阅读笔记】带有歧视的损失函数的语义实体分割
 tags: [论文阅读笔记系列]
-mathjax: true
-mathjax_autoNumber: true
 ---
 
 [带有歧视的损失函数的语义实体分割（Semantic Instance Segmentation with a Discriminative Loss Function）](论文地址)
@@ -11,7 +9,7 @@ mathjax_autoNumber: true
 
 <!--more-->
 
-<div align='center'>
+<div text-align='center'>
 ![图片：损失函数原理图](/assets/images/20190916/figure2.png)
 </div>
 

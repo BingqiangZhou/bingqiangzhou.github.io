@@ -56,7 +56,9 @@ structures`）来说，这是很困难的，它们可能跨越图片中的很多
 benchmark`）下不是最先进的，但是依然有竞争力。
 
 ### 模型图 ###
+<div text-align='center'>
 ![图片一，基于深度度量学习的语义实例分割](/assets/images/20190910/image1-Semantic-Instance-Segmentation-via-Deep-Metric-Learning.png)
+</div>
 
 图片中展示了上面所说的过程：给定一张图片，先通过卷积层，通过卷积层之后，通过一个网络预测得到嵌入向量（`embedding vector`），同时通过另一个网络预测得到遮罩分类和种子度分数（`Mask classification and seediness scores`），随后通过这个两个结果又可以等到像素种子样本（`Pixel Seed
 Sampling`）,最后通过分组，得到最终的实体分割的结果（`Output instance segments`）,包括了遮罩、分类的分数。

@@ -1,8 +1,6 @@
 ---
 title: 【论文阅读笔记】基于深度度量学习的语义实例分割（二）
 tags: [论文阅读笔记系列]
-mathjax: true
-mathjax_autoNumber: true
 ---
 
 接过上一次的话题，这一次，结合自己的理解，记录一下论文中提出的方法，包括嵌入模型（embedding model）、创建遮罩（creating masks）、分类和种子度模型（classification and seediness model）。
