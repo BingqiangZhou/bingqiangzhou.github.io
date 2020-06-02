@@ -9,9 +9,7 @@ tags: [论文阅读笔记系列]
 
 <!--more-->
 
-<div align=center>
 ![图片：损失函数原理图](/assets/images/20190916/figure2.png)
-</div>
 
 论文主要关注于损失函数，主要关注于训练出好的特征空间（如`Embedding Space`）。
 
