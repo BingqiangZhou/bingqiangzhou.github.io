@@ -1,5 +1,5 @@
 ---
-title: 【日常杂耍】Update Bios
+title: 【日常杂耍】Update BIOS
 tags: [hp, bios]
 ---
 
