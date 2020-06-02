@@ -58,6 +58,11 @@
     max-width: 100%;
     vertical-align: middle;
   }
+  img {
+    clear: both; 
+    display: block; 
+    margin:auto; 
+  }
   .emoji {
     display: inline-block;
     width: map-get($base, line-height-lg) * .7rem;

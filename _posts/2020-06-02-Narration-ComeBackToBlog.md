@@ -19,6 +19,6 @@ tags: [小学生记叙文系列]
 
 [^Footnote]: 这就是脚注，[文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2016/05/04/footnote.html)
 
-[^Definition]: [文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2016/05/05/definition.html)
+[^Definition]: [定义的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2016/05/05/definition.html)，定义是什么呢？也就是一种markdown的展示形式而已。
 
 [^ChartAndMermaid]: [图表Chart的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/05/05/chart.html) 、[流程图、时序图等等Mermaid图的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/06/06/mermaid.html)，这里的[Mermaid](https://mermaid-js.github.io/mermaid/)图，其实是一个JavaScript库的名字，用来画图的库，翻译过来为美人鱼。
