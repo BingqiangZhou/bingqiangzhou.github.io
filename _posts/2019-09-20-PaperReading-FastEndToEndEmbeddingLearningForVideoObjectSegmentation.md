@@ -1,5 +1,5 @@
 ---
-title: 【论文阅读笔记】FEELVOS\: Fast End-to-End Embedding Learning for Video Object Segmentation
+title: 【论文阅读笔记】FEELVOS&#58; Fast End-to-End Embedding Learning for Video Object Segmentation
 tags: [论文阅读笔记系列]
 ---
 
