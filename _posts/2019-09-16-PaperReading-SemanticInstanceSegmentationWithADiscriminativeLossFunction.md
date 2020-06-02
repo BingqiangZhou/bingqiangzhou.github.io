@@ -9,7 +9,7 @@ tags: [论文阅读笔记系列]
 
 <!--more-->
 
-<div text-align='center'>
+<div align=center>
 ![图片：损失函数原理图](/assets/images/20190916/figure2.png)
 </div>
 

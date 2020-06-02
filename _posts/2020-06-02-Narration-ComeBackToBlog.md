@@ -21,6 +21,4 @@ tags: [小学生记叙文系列]
 
 [^Definition]: [文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2016/05/05/definition.html)
 
-[^ChartAndMermaid]: [图表Chart的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/05/05/chart.html) 、
-[流程图、时序图等等Mermaid图的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/06/06/mermaid.html) 
-这里的[Mermaid](https://mermaid-js.github.io/mermaid/)图，其实是一个JavaScript库的名字，可以画图。
+[^ChartAndMermaid]: [图表Chart的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/05/05/chart.html) 、[流程图、时序图等等Mermaid图的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/06/06/mermaid.html)，这里的[Mermaid](https://mermaid-js.github.io/mermaid/)图，其实是一个JavaScript库的名字，用来画图的库，翻译过来为美人鱼。

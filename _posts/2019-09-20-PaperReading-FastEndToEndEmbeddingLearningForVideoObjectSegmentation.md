@@ -12,7 +12,7 @@ tags: [论文阅读笔记系列]
 
 ## 概述
 
-<div text-align='center'>
+<div align=center>
 ![模型图](/assets/images/20190920/figure3.png)
 </div>
 
@@ -46,7 +46,7 @@ $$ \hat G_{t, o}(p) = \begin{cases} min_{q \in P_{t-1, o}} d_(p, q), &{ if\ P_{t
 
 显而易见的是，这里可以优化，在我们计算第一帧与当前帧的距离的时候，两帧可能变化比较大，不得不计算所有的点的距离，但是在计算当前帧的时候，其实两帧之间的变化是比较小的，我们可以只计算部分点，论文中提出了一种方法优化，减少计算量。
 
-<div text-align='center'>
+<div align=center>
 ![窗口大小示意图](/assets/images/20190920/myfigure.png)
 </div>
 

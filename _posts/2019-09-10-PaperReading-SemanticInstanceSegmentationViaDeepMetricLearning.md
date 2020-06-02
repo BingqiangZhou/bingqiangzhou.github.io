@@ -56,7 +56,7 @@ structures`）来说，这是很困难的，它们可能跨越图片中的很多
 benchmark`）下不是最先进的，但是依然有竞争力。
 
 ### 模型图 ###
-<div text-align='center'>
+<div align=center>
 ![图片一，基于深度度量学习的语义实例分割](/assets/images/20190910/image1-Semantic-Instance-Segmentation-via-Deep-Metric-Learning.png)
 </div>
 
