@@ -1,5 +1,5 @@
 ---
-title: 【论文阅读笔记】基于深度度量学习的语义实例分割（二）
+title: 【论文阅读笔记】Semantic Instance Segmentation via Deep Metric Learning（二）
 tags: [论文阅读笔记系列]
 ---
 

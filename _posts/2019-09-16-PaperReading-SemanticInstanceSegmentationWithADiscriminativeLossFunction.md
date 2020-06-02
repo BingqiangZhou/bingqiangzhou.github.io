@@ -1,5 +1,5 @@
 ---
-title: 【论文阅读笔记】带有歧视的损失函数的语义实体分割
+title: 【论文阅读笔记】Semantic Instance Segmentation with a Discriminative Loss Function
 tags: [论文阅读笔记系列]
 ---
 

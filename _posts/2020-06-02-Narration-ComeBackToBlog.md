@@ -11,7 +11,7 @@ tags: [小学生记叙文系列]
 1. 把TOC(目录)从右边移到了，加大了一下字体。
 2. 在查看效果的时候，惊奇的发现，TOC没有内容的时候，依旧有会占据这块地方，然后又改了一下代码，在没有内容的时候隐藏一下TOC。
 3. 看[jekyll-TeXt-theme文档](https://tianqi.name/jekyll-TeXt-theme/archive.html)的时候，又发现了一些好玩的东西，jekyll 脚注(Footnote)[^Footnote]、还有定义(Definition)[^Definition]，画图[^ChartAndMermaid]等等。
-4. 设置了一下图片居中，将如下css代码加入到`_article-content.scss`的`img:not(.emoji)`中，同时注释掉`vertical-align`，[参考链接](https://www.smslit.top/2015/10/15/PostImgCenter-Jekyll/)。
+4. 设置了一下图片居中，将如下css代码加入到`_article-content.scss`文件的`img:not(.emoji)`标签中，同时注释掉`vertical-align`项，[参考链接](https://www.smslit.top/2015/10/15/PostImgCenter-Jekyll/)。
    ```
     clear: both; 
     display: block; 
@@ -20,7 +20,8 @@ tags: [小学生记叙文系列]
    ```
 5. 最后还把博客的标题命名，文件命名统一了一下。
 
-好了，点下题，我又回来了。
+
+好了，最后点下题，我又回来了。
 
 明天算法与数据结构课、文献检索与论文写作结课结课，要考试、要汇报，溜了溜了。
 
