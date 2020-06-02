@@ -10,6 +10,9 @@
     var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
     var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
 
+    console.log(TOC_SELECTOR)
+    console.log(hasToc)
+
     function disabled() {
       return $col2.css('display') === 'none' || !hasToc;
     }
