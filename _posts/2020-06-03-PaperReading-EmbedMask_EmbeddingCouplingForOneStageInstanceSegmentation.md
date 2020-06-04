@@ -58,6 +58,7 @@ $$\phi(x_i, S_k) = \phi(p_i, Q_k, \Sigma_k) = exp(-\frac{||p_i-Q_k||^2}{2\Sigma_
 就这样，将Margin融入到了训练参数中，而在训练的时候$Q_k$与$\Sigma_k$与推理的时候的$Q_k$与$\Sigma_k$是有所区别的。训练的时候$Q_k$与$\Sigma_k$的计算公式如下：
 
 $$Q_k = \frac{1}{N_k} \Sigma_{j\in M_k} q_j$$
+
 $$\Sigma_k = \frac{1}{N_k} \Sigma_{j\in M_k} \sigma_j$$
 
 其中$N_k$是在实例$S_k$中正采样的像素点的个数，$M_k$是实例$k$的对应的Mask。
@@ -97,7 +98,7 @@ $$L=L_{cls}+L_{center}+L_{box}+\lambda_1L_{mask}+\lambda_2L_{smooth}$$
 
 其中原始分类的损失$L_{cls}$、中心损失（center-ness loss）$L_{center}$、边框回归损失（box regression loss）$L_{box}$还是沿用FCOS那篇论文中的，而加了上面提到的两个损失$L_{mask}$、$L_{smooth}$。
 
-### 模型整个过程
+### 模型整个处理过程
 EmbedMask整个过程大概是：给定一张图片，通过修改后的物体检测网络FCOS，经过NMS（non-maximum suppression，非极大值抑制），得到最终建议的实例集$S$，对应这个实例集中的实例$S_k$有它的边框值、类别分数、推荐边框的嵌入向量$q_j$、推荐边框的间隙（Margin）$\sigma_j$，计算代表实例k的嵌入向量$Q_k$和可学习的阈值$\Sigma_k$，再通过计算$\phi(x_i, S_k)$（$\phi(p_i, Q_k, \Sigma_k)$）得到$x_i$属于$S_k$的概率，设置阈值为0.5，生成最终Mask。
 
 ## 总结与感受
