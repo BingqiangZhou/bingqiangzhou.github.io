@@ -51,7 +51,7 @@ $$Mask_k(x_i) =
 
 论文中还提到这个margin是可以学习得到的（由Box Regression经过1x1的卷积后得到，可见**模型图**），而上面那种常用的方法到这里还并不能学习，而论文中提到参考了一篇论文中的方法，使用高斯函数，将这个margin融入到生成属于分类对象$k$的Mark的概率图中。公式如下：
 
-$$\phi(x_i, S_k) = \phi(p_i, Q_k, \Sigma_k) = exp(-\frac{||p_i-Q_k||^2}{2\Sigma_k^2})$$
+$$\phi(x_i, S_k) = \phi(p_i, Q_k, \Sigma_k) = exp(-\frac{||p_i-Q_k||^2}{2{\Sigma_k}^2})$$
 
 其中$\phi(x_i, S_k)$是指像素点$x_i$属于实例$S_k$的概率，而$\Sigma_k$是实例$k$对应的Margin。（由Box Regression经过1x1的卷积后得到。）
 
@@ -77,6 +77,7 @@ $$\Sigma_k = \frac{1}{N_k} \Sigma_{j\in M_k} \sigma_j$$
 使用二分类损失函数，公式如下，但在实践中，作者发现使用lovasz-hinge loss[^lovasz_hinge_loss]损失更好，这个损失暂时还么了解。
 
 $$L_{mask}=\frac{1}{K}\Sigma_{k=1}^K\frac{1}{N_k}\Sigma_{p_i\in B_k}L(\phi(x_i,S_k), G(x_i,S_k))$$
+
 其中$L(·)$是二分类（交叉熵）损失、$B_k$
 是实例$k$的对应的推荐框内的像素点集，$\phi(x_i, S_k)$是指像素点$x_i$属于实例$S_k$的概率，$G(x_i,S_k)$是像素点$x_i$属于实例$S_k$的真实值，属于为1，不属于为0。
 
@@ -94,6 +95,7 @@ L_smooth & = \frac{1}{K}\Sigma_{k=1}^K\frac{1}{N_k}\Sigma_{j\in M_k}||q_j - Q_k|
 
 #### 3. 整体的损失
 整体的损失公式如下：
+
 $$L=L_{cls}+L_{center}+L_{box}+\lambda_1L_{mask}+\lambda_2L_{smooth}$$
 
 其中原始分类的损失$L_{cls}$、中心损失（center-ness loss）$L_{center}$、边框回归损失（box regression loss）$L_{box}$还是沿用FCOS那篇论文中的，而加了上面提到的两个损失$L_{mask}$、$L_{smooth}$。
