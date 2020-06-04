@@ -86,12 +86,10 @@ $$L_{mask}=\frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{p_i\in B_k}L(\phi(x_i,S_k),
 
 由于在训练的时候的$Q_k$与$\Sigma_k$与推理的时候的$Q_k$与$\Sigma_k$是有所区别的，所以使用Smooth损失来约束它，让$q_j$与$Q_k$以及$\sigma$与$\Sigma_k$尽量接近。公式如下：
 
-$$\begin{equation}
-    \begin{align}
-    L_{smooth} & = \frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{j\in M_k}||q_j - Q_k||^2 \\
-    & + \frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{j\in M_k}||\sigma_j - \Sigma_k||^2    
-    \end{align}
-\end{equation}$$
+$$\begin{aligned}
+L_{smooth} & = \frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{j\in M_k}||q_j - Q_k||^2 \\
+& + \frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{j\in M_k}||\sigma_j - \Sigma_k||^2    
+\end{aligned}$$
 
 其中$M_k$是实例$k$的对应的Mask。
 
