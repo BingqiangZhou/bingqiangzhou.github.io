@@ -13,7 +13,7 @@ tags: [论文阅读笔记系列]
 
 ## 效果图
 先看效果图吧（图一），图c的embedding效果图确实挺好的。
-![图一](../assets/images/20200603/result.png)
+![图一](/assets/images/20200603/result.png)
 
 下面来看论文主体内容吧。
 
@@ -35,7 +35,7 @@ proposals，来表示框以及分类），在簇与簇之间使用灵活的间�
 
 ## EmbedMask
 ### 模型
-![模型图](../assets/images/20200603/model.png)
+![模型图](/assets/images/20200603/model.png)
 图中模型主体是FCOS模型[^fcos]（一个物体检测模型），蓝色的部分是论文中新加入的内容，加入了像素级别和建议框上的嵌入以及建议间隙（用来灵活的建议框中像素嵌入向量之间的间隙）。
 
 ### 生成Mask
