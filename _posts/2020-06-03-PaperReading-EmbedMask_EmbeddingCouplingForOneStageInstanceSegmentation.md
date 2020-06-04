@@ -57,9 +57,9 @@ $$\phi(x_i, S_k) = \phi(p_i, Q_k, \Sigma_k) = exp(-\frac{||p_i-Q_k||^2}{2{\Sigma
 
 就这样，将Margin融入到了训练参数中，而在训练的时候$Q_k$与$\Sigma_k$与推理的时候的$Q_k$与$\Sigma_k$是有所区别的。训练的时候$Q_k$与$\Sigma_k$的计算公式如下：
 
-$$Q_k = \frac{1}{N_k} \Sigma_{j\in M_k} q_j$$
+$$Q_k = \frac{1}{N_k} \sum_{j\in M_k} q_j$$
 
-$$\Sigma_k = \frac{1}{N_k} \Sigma_{j\in M_k} \sigma_j$$
+$$\Sigma_k = \frac{1}{N_k} \sum_{j\in M_k} \sigma_j$$
 
 其中$N_k$是在实例$S_k$中正采样的像素点的个数，$M_k$是实例$k$的对应的Mask。
 
@@ -76,7 +76,7 @@ $$\Sigma_k = \frac{1}{N_k} \Sigma_{j\in M_k} \sigma_j$$
    
 使用二分类损失函数，公式如下，但在实践中，作者发现使用lovasz-hinge loss[^lovasz_hinge_loss]损失更好，这个损失暂时还么了解。
 
-$$L_{mask}=\frac{1}{K}\Sigma_{k=1}^K\frac{1}{N_k}\Sigma_{p_i\in B_k}L(\phi(x_i,S_k), G(x_i,S_k))$$
+$$L_{mask}=\frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{p_i\in B_k}L(\phi(x_i,S_k), G(x_i,S_k))$$
 
 其中$L(·)$是二分类（交叉熵）损失、$B_k$
 是实例$k$的对应的推荐框内的像素点集，$\phi(x_i, S_k)$是指像素点$x_i$属于实例$S_k$的概率，$G(x_i,S_k)$是像素点$x_i$属于实例$S_k$的真实值，属于为1，不属于为0。
@@ -86,10 +86,12 @@ $$L_{mask}=\frac{1}{K}\Sigma_{k=1}^K\frac{1}{N_k}\Sigma_{p_i\in B_k}L(\phi(x_i,S
 
 由于在训练的时候的$Q_k$与$\Sigma_k$与推理的时候的$Q_k$与$\Sigma_k$是有所区别的，所以使用Smooth损失来约束它，让$q_j$与$Q_k$以及$\sigma$与$\Sigma_k$尽量接近。公式如下：
 
-$$\begin{align}
-L_{smooth} & = \frac{1}{K}\Sigma_{k=1}^K\frac{1}{N_k}\Sigma_{j\in M_k}||q_j - Q_k||^2 \\
-& + \frac{1}{K}\Sigma_{k=1}^K\frac{1}{N_k}\Sigma_{j\in M_k}||\sigma_j - \Sigma_k||^2    
-\end{align}$$
+$$\begin{equation}
+    \begin{align}
+    L_{smooth} & = \frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{j\in M_k}||q_j - Q_k||^2 \\
+    & + \frac{1}{K}\sum_{k=1}^K\frac{1}{N_k}\sum_{j\in M_k}||\sigma_j - \Sigma_k||^2    
+    \end{align}
+\end{equation}$$
 
 其中$M_k$是实例$k$的对应的Mask。
 
