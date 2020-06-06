@@ -15,7 +15,7 @@ tags: [论文阅读笔记系列]
 实时语义分割：希望同时做到分割速度快、分割质量高。有许多方法已经在一些benchmarks（例如：pascal voc、cityscapes、coco等等数据集）上取得好的效果。（[拓展知识: 浅谈 baseline & benchmark & backbone中的理解](https://zhuanlan.zhihu.com/p/129872257)）
 ### 提出问题
 - 有些方法使用U-shape结构（U型结构，例如下图结构），这种结构在处理高分辨率特征图时候，会消耗大量时间。
-![U型结构](/assets/images/2020/20200605/u-shape.png)
+![U型结构](/assets/images/2020/20200605/u-shape-architecture.png)
 
   - 有些工作通过限制固定的图像大小
   - 有些工作会去掉特征图的一些“冗余”信息（比如使用Spatial Dropout，在DeepLabV3+论文中提到说不是所有的的特征都对解码模块有重要的作用）。
