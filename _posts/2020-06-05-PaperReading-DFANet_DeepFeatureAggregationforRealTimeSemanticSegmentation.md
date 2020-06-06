@@ -71,7 +71,7 @@ path）来减少计算量。
 
 ### 训练细节
 - 损失是用的交叉熵损失
-- backbone是用的作者自己修改候的Xception模型，并在ImageNet—1k数据集[^ImageNet—1k]上进行训练，然后用于DFANet模型的预训练。
+- backbone是用的作者自己修改候的Xception模型，并在ImageNet—1k数据集[^ImageNet_1k]上进行训练，然后用于DFANet模型的预训练。
 - fc attention模块中的全连接层参数也是来自backbone中的全连接层参数。
 
 ## 总结与感受
@@ -81,4 +81,4 @@ DFANet: Deep Feature Aggregation for Real-Time Semantic Segmentation 这篇论�
 
 暂且总结到这里，做ppt，准备下周的汇报了。
 
-[^ImageNet—1k]: ImageNet数据集有14M（1400多万）张图片，有22k种类别，而ImageNet—1k数据集是只有1k种类别，对应图片一百多万张。
+[^ImageNet_1k]: ImageNet数据集有14M（1400多万）张图片，有22k种类别，而ImageNet—1k数据集是只有1k种类别，对应图片一百多万张。
