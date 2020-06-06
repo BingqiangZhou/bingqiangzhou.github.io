@@ -14,7 +14,7 @@ tags: [论文阅读笔记系列]
 ## 提出并解决问题
 实时语义分割：希望同时做到分割速度快、分割质量高。有许多方法已经在一些benchmarks（例如：pascal voc、cityscapes、coco等等数据集）上取得好的效果。（[拓展知识: 浅谈 baseline & benchmark & backbone中的理解](https://zhuanlan.zhihu.com/p/129872257)）
 ### 提出问题
-- 有些方法使用U-shape结构（U型结构，例如下图结构），这种结构在处理高分辨率特征图时候，会消耗大量时间。
+- 有些方法使用U-shape结构[^u_shape]（U型结构，例如下图结构），这种结构在处理高分辨率特征图时候，会消耗大量时间。
 ![U型结构](/assets/images/2020/20200605/u-shape-architecture.png)
 
   - 有些工作通过限制固定的图像大小
@@ -72,7 +72,7 @@ path）来减少计算量。
 
 ### 训练细节
 - 损失是用的交叉熵损失
-- backbone是用的作者自己修改候的Xception模型，并在ImageNet-1k数据集[^ImageNet_1k]上进行训练，然后用于DFANet模型的预训练。
+- backbone是用的作者自己修改后的Xception模型，并在ImageNet-1k数据集[^ImageNet_1k]上进行训练，然后用于DFANet模型的预训练。
 - fc attention模块中的全连接层参数也是来自backbone中的全连接层参数。
 
 ## 总结与感受
@@ -81,5 +81,7 @@ DFANet: Deep Feature Aggregation for Real-Time Semantic Segmentation 这篇论�
 这次总结大多已翻译为主了，大多是翻译了一些我认为可以拿出来讲一下的东西总结在了这里，也算是了解了一种新的特征聚合模块吧，不过还是对当前工作是有启发的，我们当前的特征是用的backbone最后的输出，没有结合低层次的特征，之前一直想使用结合多个层次的特征，而这篇论文正提供了一种方法。
 
 暂且总结到这里，做ppt，准备下周的汇报了。
+
+[^u_shape]: 如何理解U型结构呢，我个人的理解是，图像大小在编码的时候不断的变小，随后再解码的过程图像大小又不断的变大，有这种比较对称的变小变大的过程的网络，我把他理解为U型结构。
 
 [^ImageNet_1k]: ImageNet数据集有14M（1400多万）张图片，有22k种类别，而ImageNet—1k数据集是只有1k种类别，对应图片一百多万张。
