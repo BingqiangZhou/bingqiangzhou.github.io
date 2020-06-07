@@ -14,13 +14,13 @@ tags: [论文阅读笔记系列]
 ## 提出并解决问题
 实时语义分割：希望同时做到分割速度快、分割质量高。有许多方法已经在一些benchmarks（例如：pascal voc、cityscapes、coco等等数据集）上取得好的效果。（[拓展知识: 浅谈 baseline & benchmark & backbone中的理解](https://zhuanlan.zhihu.com/p/129872257)）
 ### 提出问题
-- 有些方法使用U-shape结构[^u_shape]（U型结构，例如下图结构），这种结构在处理高分辨率特征图时候，会消耗大量时间。
+- 有些方法使用U-shape结构[^u_shape]（U型结构，例如下图结构），这种结构在处理高分辨率特征图时候，会消耗大量时间。（论文中这么说，我个人觉得还是跟网络深度有关系，这里没有明白为什么作者要特意的挑出U型结构。）
 ![U型结构](/assets/images/2020/20200605/u-shape-architecture.png)
 
-  - 有些工作通过限制固定的图像大小
+  - 有些工作通过限制固定的图像大小。
   - 有些工作会去掉特征图的一些“冗余”信息（比如使用Spatial Dropout，在DeepLabV3+论文中提到说不是所有的的特征都对解码模块有重要的作用）。
 
-    一些方法通过以上两个方法来加快计算速度，但是相应的也存在一些问题。**会丢失掉一些边界和小对象的空间细节**
+  一些方法通过以上两个方法来加快计算速度，但是相应的也存在一些问题。**会丢失掉一些边界和小对象的空间细节**
 
 - 浅层网络（shallow network）的特征区分能力会比较弱，然而使用深层的网络（deep network）则会影响速度。
 
@@ -64,16 +64,16 @@ path）来减少计算量。
 论文提出的模型主要分三部分轻量级权重的backbone（the lightweight backbones）, 子网络级的聚合（sub-network aggregation ）模块和子阶段级的聚合（sub-stage aggregation ）模块，而其中子网络级的聚合模块和子阶段级的聚合模块是相融在一起的，如下图。
 ![模型图](/assets/images/2020/20200605/model.png)
 
-模型图中，“C”表示串联到一起（concatenation），“xN”代表上采样N倍。“+”表示对应元素相加，‘x’表示对应元素相乘，fc attention模块是Xception中的全连接层，加上一个1x1卷积在于之前的特征逐元素相乘（[B, 1000, 1, 1] 通过1x1卷积得到[B, 192, 1, 1]），其他各个模块的细节如下图，
-，conv1是普通的卷积操作，enc2、enc3、enc4中的卷积都是深度分离卷积操作，Xception A与Xception B是两种不同的Bakcbone。
+模型图中，“C”表示串联到一起（concatenation），“xN”代表上采样N倍。“+”表示对应元素相加，‘x’表示对应元素相乘，fc attention模块是Xception中的全连接层，加上一个1x1卷积[^1x1_conv]在于之前的特征逐元素相乘（[B, 1000, 1, 1] 通过1x1卷积得到[B, 192, 1, 1]），其他各个模块的细节如下图，
+，conv1是普通的卷积操作，enc2、enc3、enc4中的卷积都是深度分离卷积操作，Xception A与Xception B是两种不同的Bakcbone。[^Xception]
 ![模块细节](/assets/images/2020/20200605/module-details.png)
 
-在模型图中decoder那部分紫色的cnov都没有体现卷积的通道，我看了代码它是64个通道，并且大小维持原大小。在解码阶段的卷积只是做了减少通道数量的操作。
+在模型图中decoder那部分紫色的conv都没有体现卷积的通道，我看了代码它是输出64个通道的1x1卷积，所以输出大小维持原大小。在解码阶段的卷积只是做了减少通道数量的操作。
 
 ### 训练细节
 - 损失是用的交叉熵损失
 - backbone是用的作者自己修改后的Xception模型，并在ImageNet-1k数据集[^ImageNet_1k]上进行训练，然后用于DFANet模型的预训练。
-- fc attention模块中的全连接层参数也是来自backbone中的全连接层参数。
+- fc attention[^attention]模块中的全连接层参数也是来自backbone中的全连接层参数。
 
 ## 总结与感受
 DFANet: Deep Feature Aggregation for Real-Time Semantic Segmentation 这篇论文主要提出了一种特征聚合网络结构，结合了网络级的特征重用模块、阶段级的特征重用模块，达到了比较好的分割性能的情况下，同时有比较好的实时性。
@@ -84,4 +84,10 @@ DFANet: Deep Feature Aggregation for Real-Time Semantic Segmentation 这篇论�
 
 [^u_shape]: 如何理解U型结构呢，我个人的理解是，图像大小在编码的时候不断的变小，随后再解码的过程图像大小又不断的变大，有这种比较对称的变小变大的过程的网络，我把他理解为U型结构。
 
+[^1x1_conv]: 这里论文中说是1x1卷积，实现的时候是使用的全连接，仔细一想，对于维度为（b，1000，1，1）的向量的全链接与1x1的卷积是一样的。
+
+[^Xception]: 看代码，我才发现enc2、enc3、enc4中的卷积输出的通道数都是最后一层是前面的两倍，而且Xception中的enc2、enc3、enc4的实现是，第一个深度分离卷积有stride=2，第二、三层没有，最后又一个对输入过一次1x1卷积，stride=2，再于第三层的结构对于元素相加。结构如下图。![Xception](/assets/images/2020/20200605/xception.png)
+
 [^ImageNet_1k]: ImageNet数据集有14M（1400多万）张图片，有22k种类别，而ImageNet—1k数据集是只有1k种类别，对应图片一百多万张。
+
+[^attention]: Attention，简而言之，深度学习中的注意力可以被广义地理解为表示重要性的权重向量。为了预测或推断一个元素，例如图像中的像素或句子中的单词，我们使用注意力权重来估计其它元素与其相关的强度，并将由注意力权重加权的值的总和作为计算最终目标的特征。Step1：计算其它元素与待预测元素的相关性权重。Step2：根据相关性权重对其它元素进行加权求和。
