@@ -52,6 +52,7 @@ tags: [论文阅读笔记系列]
 - ICNet使用多尺度的图像作为输入，并且使用一个级联网络来提升效率。
 - BiSeNet使用空间路径（spatial path）和语义路径（semantic
 path）来减少计算量。
+
 ### 相关概念
 - 深度分离卷积（Depthwise Separable Convolution）：深度卷积操作由逐深度卷积（depthwise convolution）加逐点卷积（pointwise convolution）构成，可以在保持很小的性能（效果）损失的情况下，减少参数和计算量。Xception模块中的卷积就是深度分离卷积，因而兼顾了语义分割速度和准确度。相关概念可以查看这个帖子[Depthwise卷积与Pointwise卷积](https://zhuanlan.zhihu.com/p/80041030)。
 - 高层次特征（High-level Features）：高层次的特征刻画了输入图片的语义信息，分割任务关键在于感受野与分类能力，PSPNet、与DeepLab系列网络使用额外的操作将山下问信息和多尺度特征表示信息合并到一起。空间金字塔池化已经广泛的应用，作为对整体场景理解（overall scene interpretation）一个好的描述。
@@ -90,4 +91,4 @@ DFANet: Deep Feature Aggregation for Real-Time Semantic Segmentation 这篇论�
 
 [^ImageNet_1k]: ImageNet数据集有14M（1400多万）张图片，有22k种类别，而ImageNet—1k数据集是只有1k种类别，对应图片一百多万张。
 
-[^attention]: Attention，简而言之，深度学习中的注意力可以被广义地理解为表示重要性的权重向量（一般会做一个归一化，比如通过一个sigmoid函数）。为了预测或推断一个元素，例如图像中的像素或句子中的单词，我们使用注意力权重来估计其它元素与其相关的强度，并将由注意力权重加权的值的总和作为计算最终目标的特征。Step1：计算其它元素与待预测元素的相关性权重。Step2：根据相关性权重对其它元素进行加权求和。
+[^attention]: Attention，简而言之，深度学习中的注意力可以被广义地理解为表示重要性的权重向量（一般会做一个归一化，比如通过一个sigmoid函数）。为了预测或推断一个元素，例如图像中的像素或句子中的单词，我们使用注意力权重来估计其它元素与其相关的强度，并将由注意力权重加权的值的总和作为计算最终目标的特征。Step1：计算其它元素与待预测元素的相关性权重。Step2：根据相关性权重对其它元素进行加权求和。我个人简单的理解是：第一，它是表示重要性的权重，第二，它会随输入不同而不同，所以它应该是算出来的，不是我们自己给的，也不是学习到的。
