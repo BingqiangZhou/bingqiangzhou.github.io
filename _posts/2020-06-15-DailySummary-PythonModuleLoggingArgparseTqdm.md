@@ -1,5 +1,5 @@
 ---
-title:【日常小结】python模块--logging、argparse、tqdm
+title: 【日常小结】python模块--logging、argparse、tqdm
 tags: [日常小结系列]
 ---
 
