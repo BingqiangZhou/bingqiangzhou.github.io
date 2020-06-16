@@ -1,12 +1,12 @@
 ---
-title: 【日常小结】python模块--logging、argparse、tqdm
+title: 【日常小结】python模块--logging
 tags: [日常小结系列]
 ---
 
 上星期挺忙的，参加了一下学校的数学建模比赛，预测湖南湖北的疫情走势以及疫情对长沙经济的影响。
 看了别人数学系的论文之后，发现我们太业余了，哈哈，我们基本就是在网上找了几片论文看了一下，然后选择了一个模型，对疫情数据做了一下拟合。他们我就不说了。。
 
-今天总结一下python模块，logging、argparse、tqdm，好早就想小结一下，一直没有做.
+今天总结一下python模块，logging、argparse、tqdm，好早就想小结一下，一直没有做.（写的有点多，argparse、tqdm独立出来，下两篇）
 还有[《神经网络与深度学习》](https://nndl.github.io)中的第七章的网络优化与正则化、第八章的注意力机制，看了好久了，也想总结一下，这几天都总结一下吧。
 
 <!--more-->
@@ -40,7 +40,7 @@ Logger类不能被直接实例化，需要用`logging.getLogger(name)`来获取�
 | `DEBUG` | 10 |
 | `NOTSET` | 0 |
 
-### 处理日志的处理器对象-`logging.Handler`
+### Handler对象-`logging.Handler`
 
 [Handler对象](https://docs.python.org/3/library/logging.html#handler-objects)是可以直接实例化的，而且它还有很多子类，如下:
 
