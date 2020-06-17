@@ -210,17 +210,17 @@ pbar.close()
 
 **后面的一系列方法不再说明，大多数是重新设置初始化方法中的参数。**
 
-### `tqdm.trange(*args, **kwargs)`
+### `tqdm.trange()`
 
 与`tqdm.tqdm()`类似，`tqdm.trange()`代替了`tqdm(range(*args), **kwargs)`
 
-## `tqdm.notebook.tqdm()`与`tqdm.notebook.trange()`
+### `tqdm.notebook.tqdm()`与`tqdm.notebook.trange()`
 
 ![notebook](/assets/images/2020/20200617/notebook.png)
 
 在`IPython`和`Jupyter Notebook`中显示好看一些的进度条，使用方法和`tqdm.tqdm()`、`tqdm.trange()`类似。
 
-## `tqdm.gui.tqdm()`与`tqdm.gui.trange()`
+### `tqdm.gui.tqdm()`与`tqdm.gui.trange()`
 
 用于GUI的进度条，使用方法和`tqdm.tqdm()`、`tqdm.trange()`类似。
 
