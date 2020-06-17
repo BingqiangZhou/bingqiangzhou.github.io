@@ -3,14 +3,14 @@ title: 【日常小结】python模块--argparse
 tags: [日常小结系列]
 ---
 
-今天总结一下argparse和tqdm这两个python模块。
+今天总结一下python的argparse模块，这是python自带的命令行解析模块。
 [官方文档](https://docs.python.org/3/library/argparse.html)
 
 <!--more-->
 
 ## argparse模块
 
-argparse模块与logging一样都是python自带的模块，这个模块让构建一个命令行工具(如下图)变得简单。
+argparse模块与logging一样都是python自带的模块，这个模块让命令行解析(如下图)变得简单，也可以说是很简单的将程序构建成为一个命令行工具。
 
 ![命令行工具](/assets/images/2020/20200616/command-line.png)
 
