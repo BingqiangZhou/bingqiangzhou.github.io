@@ -17,7 +17,6 @@ tqdm模块，是一个python进度条模块，简单已用。
 
 ## tqdm模块
 
-
 ### tqdm.tqdm类
 
 ```python
@@ -57,7 +56,7 @@ tqdm.__init__(iterable=None,
 
 `desc`是进度条的前缀，字符串。如下图红框所示。
 
-![进度条的前缀](../assets/images/2020/20200617/desc.png)
+![进度条的前缀](/assets/images/2020/20200617/desc.png)
 
 #### `total`参数
 
@@ -82,25 +81,25 @@ pbar.close()
 
 布尔类型，默认为`True`，`leave`参数表示在迭代结束之后，是否保留进度条状态，如果设置为`False`或者`None`，则在迭代之后，不会保留最后的状态，而变成0，如下图所示。
 
-![`leave`参数](../assets/images/2020/20200617/leave.png)
+![`leave`参数](/assets/images/2020/20200617/leave.png)
 
 #### `file`参数
 
 `io.TextIOWrapper`或者`io.StringIO`，默认为`sys.stderr`，表示将进度条信息输出到那里。如下图所示。
 
-![`file`参数](../assets/images/2020/20200617/file.png)
+![`file`参数](/assets/images/2020/20200617/file.png)
 
 #### `ncols`参数
 
 输出信息所占的宽度，不指定，则为进度条的整个宽度，指定则为指定的宽度，如下图。
 
-![`ncols`参数](../assets/images/2020/20200617/ncols.png)
+![`ncols`参数](/assets/images/2020/20200617/ncols.png)
 
 #### `mininterval`参数
 
 进度条更新的最小时间间隔，默认为0.1秒。如下图。
 
-![`mininterval`参数](../assets/images/2020/20200617/mininterval.png)
+![`mininterval`参数](/assets/images/2020/20200617/mininterval.png)
 
 更新进度条，其实就是说重新出来一个进度条。
 
@@ -126,12 +125,12 @@ pbar.close()
 
 `str`，表示迭代次数的单位，默认是`it`，如下红色框框所示。
 
-![`unit`参数](../assets/images/2020/20200617/unit.png)
+![`unit`参数](/assets/images/2020/20200617/unit.png)
 
 #### `unit_scale`参数
 
 如果设定为`1`或者`True`，则会自适应数字单位，如下面的三万多变成了37.5k。
-![`unit_scale`参数](../assets/images/2020/20200617/unit_scale.png)
+![`unit_scale`参数](/assets/images/2020/20200617/unit_scale.png)
 
 #### `dynamic_ncols`参数
 
@@ -150,7 +149,7 @@ pbar.close()
 
 默认值为`0`，表示初始的迭代次数，常用于新开始一个进度条。如下图，从3开始，最后变成50003次迭代。
 
-![`initial`参数](../assets/images/2020/20200617/initial.png)
+![`initial`参数](/assets/images/2020/20200617/initial.png)
 
 #### `position`参数
 
@@ -160,7 +159,7 @@ pbar.close()
 
 与`desc`参数相似，`desc`是前缀，`postfix`是后缀
 
-![`postfix`参数](../assets/images/2020/20200617/postfix.png)
+![`postfix`参数](/assets/images/2020/20200617/postfix.png)
 
 #### `unit_divisor`参数
 
@@ -217,7 +216,7 @@ pbar.close()
 
 ## `tqdm.notebook.tqdm()`与`tqdm.notebook.trange()`
 
-![notebook](../assets/images/2020/20200617/notebook.png)
+![notebook](/assets/images/2020/20200617/notebook.png)
 
 在`IPython`和`Jupyter Notebook`中显示好看一些的进度条，使用方法和`tqdm.tqdm()`、`tqdm.trange()`类似。
 
@@ -225,23 +224,23 @@ pbar.close()
 
 用于GUI的进度条，使用方法和`tqdm.tqdm()`、`tqdm.trange()`类似。
 
-## 实验性模块
+### 实验性模块
 
 好像暂时还不能用。
 
-### `tqdm.contrib.tenumerate()`
+#### `tqdm.contrib.tenumerate()`
 
 类似于python内建的`enumerate`方法
 
-### `tqdm.contrib.tzip()`
+#### `tqdm.contrib.tzip()`
 
 类似于python内建的`zip`方法
 
-### `tqdm.contrib.tmap()`
+#### `tqdm.contrib.tmap()`
 
 类似于python内建的`tmap`方法
 
-## 自适应打印
+### 自适应打印
 
 ```python
 from tqdm.auto import tqdm, trange
@@ -249,9 +248,9 @@ from tqdm.auto import tqdm, trange
 
 会根据环境的不同，输出不同样式的进度条。如下图所示。
 
-![notebook](../assets/images/2020/20200617/auto-notebook.png)
+![notebook](/assets/images/2020/20200617/auto-notebook.png)
 
-![ipython](../assets/images/2020/20200617/auto-ipython.png)
+![ipython](/assets/images/2020/20200617/auto-ipython.png)
 
 ## 小结
 
