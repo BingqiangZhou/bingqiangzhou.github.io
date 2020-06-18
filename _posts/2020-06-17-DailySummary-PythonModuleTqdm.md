@@ -1,11 +1,11 @@
 ---
-title: 【日常小结】日常小结】python模块--tqdm
+title: 【日常小结】python模块--tqdm
 tags: [日常小结系列]
 ---
 
-
 今天总结一下tqdm模块~~以及pytorch框架选择GPU运行程序遇到的一个小问题。~~
 tqdm模块，是一个python进度条模块，简单已用。
+[tqdm文档](https://tqdm.github.io) [github](https://github.com/tqdm/tqdm) 推荐看github中的README了解如何使用，这个文档好像有点老旧。
 
 <!--more-->
 
