@@ -10,6 +10,7 @@ tags: [日常小结系列]
 ## SSL证书的配置
 这里不多说给出[腾讯云证书安装指引](https://cloud.tencent.com/document/product/400/35223)，对应有Apache、Nginx、IIS、Tomcat四种服务器的证书安装教程。
 **其中IIS服务器中的设置URL重写规则，可以直接用修改web.config的方式去代替。**添加**web.config**配置如下：
+
 ```xml #web.config
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
