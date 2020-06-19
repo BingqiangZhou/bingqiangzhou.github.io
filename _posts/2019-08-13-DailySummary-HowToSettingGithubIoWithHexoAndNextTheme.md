@@ -77,7 +77,7 @@ $ git clone https://github.com/theme-next/hexo-theme-next themes/next	#克隆Nex
 下载[NexT主题GitHub仓库](https://github.com/theme-next/hexo-theme-next)的`zip`包将其解压到`themes`文件夹下，改仓库名文件夹名字为`next`。**这种方法适合没有下载Git只下载了GitHub Desktop的用户**。[GitHub Desktop下载地址](https://desktop.github.com/) [Git下载链接](https://git-scm.com/downloads)
 #### [激活NexT](https://theme-next.org/docs/getting-started/#Enabling-NexT) ####    
 修改Hexo工程目录下`_config.yml`文件的`theme`
-```yaml #hexo/_config.yml
+```yaml
 theme: next
 ```
 
@@ -87,7 +87,7 @@ theme: next
 #### [设置一种页面显示方案](https://theme-next.org/docs/getting-started/#Choosing-Scheme) ####
 NexT显示有四种方案，分别为**Muse**（[预览](https://muse.theme-next.org/)）、**Mist**（[预览](https://mist.theme-next.org/)）、**Pisces**（[预览](https://pisces.theme-next.org/)）、**Gemini**（[预览](https://gemini.theme-next.org/)）可以自行选择一种，其中**Pisces**与**Gemini**看起来时一样的，不同在于**Gemini**的块是有阴影的，而**Pisces**没有。
 **设置方法**，找到NexT的配置文件`_config.yml`中的`Schemes`,去掉喜欢的显示方案前面的`#`，**注意**：默认显示方案为**Muse**，如果喜欢其他方案的话要将**Muse**前面的`#`加上。
-```yaml #next/_config.yml
+```yaml
 # Schemes
 #scheme: Muse
 #scheme: Mist
@@ -98,7 +98,7 @@ scheme: Pisces  # 在这里我选择了Pisces。
 #### [设置语言](https://theme-next.org/docs/getting-started/#Choosing-Language) ####
 NexT支持十几种语言，请看下表，如果设置后，重启运行没有效果，请查看`next/languages`文件夹是否有对应文件名的`yml`文件，如：简体中文对应在`next/languages`文件夹下会有`zh-CN.yml`的文件。
 **注意：这里是要在`Hexo工程下的_config.yml文件`中修改。**
-```yaml #hexo/config.yml
+```yaml
 language: en
 ```
 **可以对应下面这个表格来设置。**
@@ -127,7 +127,7 @@ language: en
 
 #### [设置菜单显示内容](https://theme-next.org/docs/getting-started/#Configuring-Menu-Items) ####
 设置菜单中显示标签页、分类页、关于页等等页面。设置形式是`Key: /link/ || icon`，这里的`Key`是显示在菜单的名称，这里原有的是英文的，但是显示时变成对应的语言，比如说简体中文，`home`就会显示为`首页`，而在自定义页面设置是使用自己语言就好了，比如下面的`朋友`，（[自定义页面请查看](https://bingqiangzhou.github.io/2019/08/13/2019-8-13-how-to-set-github-io-use-hexo-with-next-md/#NexT%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%EF%BC%89)），随后是`link`（链接）可以放URL链接不限`http`、`https`，如下面的`网页: https://bingqiangzhou.cn || heartbeat`，还有就是可以设置在`hexo/source/`目录下的文件夹，最后一个参数`icon`，是图标的名称，这个名称可以在[Font Awesome图标字体库和CSS框架的网站](http://fontawesome.dashgame.com/)去找，有特别多的图标，都可以任意设置。
-```yaml #next/_config.yml
+```yaml
 menu:
   home: / || home
   #about: /about/ || user
@@ -141,7 +141,7 @@ menu:
   网页: https://bingqiangzhou.cn || heartbeat
 ```
 **这里还有两个菜单相关的设置。**
-```yaml #next/_config.yml
+```yaml
 menu_settings:
   icons: true		# 菜单是否显示图标，默认是显示。
   badges: false		# 菜单是否显示菜单对应页面有多少内容，这里默认是不显示。
@@ -150,7 +150,7 @@ menu_settings:
 #### [设置网页图标Favicon](https://theme-next.org/docs/getting-started/#Configuring-Favicon) ####
 这里的图标是网页标题前的图标，`android_manifest`与`ms_browserconfig`这两项设置没去了解，在这里就先过了。
 **注意，这里的`images`文件夹是在`next/source`下的，放在`hexo/source/`可能会被`next/source`下的文件重写，不重名不会有问题**
-```yaml #next/_config.yml
+```yaml
 favicon:
   small: /images/logo.jpg				# 小图标图片路径
   medium: /images/logo.jpg				# 中等大小图标路径
@@ -161,7 +161,7 @@ favicon:
 ```
 #### [设置站点概况的头像Avatar](https://theme-next.org/docs/getting-started/#Configuring-Avatar) ####
 可以设置头像图片、圆角还是方角等等。
-```yaml #next/_config.yml
+```yaml 
 avatar: 
   url: /images/logo.jpg		# 图片的路径，可以是项目内路径，也可以是网络路径（http/https等等）
   rounded: false		# 设置头像是否圆形显示，就像QQ显示的头像是圆形的，而微信显示的方形的，
@@ -169,7 +169,7 @@ avatar:
 ```
 #### [设置站点概况作者与描述](https://theme-next.org/docs/getting-started/#Configuring-Author) ####
 **注意：这里是要在`Hexo工程下的_config.yml文件`中修改。**
-```yaml #hexo/_config.yml
+```yaml
 title: 惟愿此心无怨尤.				# 网页标题
 subtitle: TO BE, TO UP.				# 子标题
 description: 我的微信公众号：小周的小粥		# 站点描述
@@ -186,23 +186,23 @@ timezone: Asia/Shanghai				# 时区
 **这一部分主要是NexT相对基础的设置。**
 #### [控制台提醒](https://theme-next.org/docs/theme-settings/#Console-Reminder) ####
 每次运行都自动检查是否有新的版本发布了，不建议开启，拖慢速度。
-```yaml #next/_config.yml
+```yaml
 reminder: false
 ```
 #### [缓存支持](https://theme-next.org/docs/theme-settings/#Cache-Support) ####
 缓存生成的内容，具体不太清楚，默认是开启的，就让他开启吧。
-```yaml #next/_config.yml
+```yaml
 cache:
   enable: true
 	```
 #### [最小化支持](https://theme-next.org/docs/theme-settings/#Minify-Support) ####
 在生成（`hexo generate`）之后，生成的一些不重要的文件将被删除，建议打开。
-```yaml #next/_config.yml
+```yaml 
 minify: true
 ```
 #### [自定义风格支持](https://theme-next.org/docs/theme-settings/#Custom-Style-Support) ####
 使用自己写的页面、风格来显示内容，包括头部内容，以及页面头部，侧边栏等等整个页面的页面布局，只需要把自己写的源代码文件路径设置在这里就行，官方建议将自己写的源代码文件放在`hexo/source/_data`文件夹内。
-```yaml #next/_config.yml
+```yaml
 # For example, you want to put your custom styles file
 # outside theme directory in root `source/_data`, set
 # `styles: source/_data/styles.styl`
@@ -231,7 +231,7 @@ custom_file_path:
 $ npm install hexo-generator-feed --save
 ```
 随后添加配置到`hexo/_config.yml`就搞定了,可以直接复制下面一段到`hexo/_config.yml`就可以。
-```yaml #hexo/_config.yml
+```yaml 
 feed:
   type: atom				# feed的类型，可以选择atom/rss2
   path: atom.xml			# feed的路径，默认是atom.xml/rss2.xml
@@ -245,7 +245,7 @@ feed:
 ```
 **另一种方法配置方法**
 如何我们不用上面的方式生成feed，用了其他方法，我们只需要将feed链接填写到`next/_config.yml`中的`rss`即可。
-```yaml #next/_config.yml
+```yaml
 rss: https://bingqiangzhou.github.io/atom.xml
 ```
 **注意，这里是是在`next/_config.yml`，如果是用第一种方式配置这里不需要管。**
@@ -259,7 +259,7 @@ rss: https://bingqiangzhou.github.io/atom.xml
 - 署名-非商业用途-相同方式共享（by-nc-sa license）
 - 署名-相同方式共享（by-sa license）
 
-```yaml #next/_config.yml
+```yaml
 creative_commons:
   license: by-nc-sa		# 这里对应的填上面的六种创作共用许可证的种类之一。
   sidebar: true			# 是否在侧边栏显示创作共用许可证
@@ -268,7 +268,7 @@ creative_commons:
 ```
 #### [文本对齐设置](https://theme-next.org/docs/theme-settings/#Text-Align) ####
 设置博客文章的文本对齐方式，可以设置桌面显示下和移动设备显示下的文本对齐方式，这里建议维持默认的`justify`。
-```yaml #next/_config.yml
+```yaml
 text_align:
   desktop: justify
   mobile: justify
@@ -288,31 +288,31 @@ match-parent	|	类似于继承，但值的开始和结束是根据父级的方�
 
 #### [移动设备适配](https://theme-next.org/docs/theme-settings/#Mobile-Devices-Adaptation) ####
 这里可以将`mobile_layout_economy`设置打开，从而减小缩进的填充与编辑的大小。
-```yaml #next/_config.yml
+```yaml 
 mobile_layout_economy: true	
 ```
 设置头部面板在安卓系统的Chrome浏览器下的颜色，默认是深黑色（`#222`）。
-```yaml #next/_config.yml
+```yaml 
 android_chrome_color: "#222"
 ```
 #### [Rainbow Safari支持](https://theme-next.org/docs/theme-settings/#Rainbow-Safari) ####
 这个功能是在Safair浏览器中呈现一个地址栏自动渐变颜色的效果，具体效果是当我们浏览文章时，最上面的地址栏会自动随时间渐变颜色，五颜六色的就像彩虹一样。附上[Rainbow Safari的GitHub仓库链接](https://github.com/koole/rainbowsafari)，已经好几年没更新了。
-```yaml #next/_config.yml
+```yaml
 safari_rainbow: true
 ```
 #### [自定义滑动条](https://theme-next.org/docs/theme-settings/#Custom-Scrollbar-Support) ####
 只支持webkit-based的浏览器，其他方面官方没有更多说明，个人建议保持默认设置，不要更改。
-```yaml next/_config.yml
+```yaml
 custom_scrollbar: true
 ```
 #### [自定义Logo](https://theme-next.org/docs/theme-settings/#Custom-Logo-Support) ####
 自定义Logo在**Mist**风格中不支持，个人建议是直接替代`next/source/images`的logo文件就好了，这里也不用设置了。
-```yaml #next/_config.yml
+```yaml
 custom_logo: /uploads/custom-logo.jpg	# logo的路径
 ```
 #### [代码块风格设置](https://theme-next.org/docs/theme-settings/#Codeblock-Style) ####
 代码块有五种风格，还可以加复制按钮，设置复制按钮风格。
-```yaml next/_config.yml
+```yaml
 codeblock:
   highlight_theme: night eighties		# 高亮代码块的主题风格，有五种选择，请看下面表格
   copy_button:		
@@ -335,7 +335,7 @@ normal | night | night eighties | night blue | night bright
 
 #### [关注GitHub横幅](https://theme-next.org/docs/theme-settings/#GitHub-Banner) ####
 设置让读者关注我们的GitHub的横幅在页面右上角，点击会跳到我们的GitHub的首页。
-```yaml #next/_config.yml
+```yaml
 github_banner:
   enable: true					# 是否启用关注GitHub横幅
   permalink: https://github.com/yourname	# GitHub链接，如：https://github.com/BingqiangZhou
@@ -360,7 +360,7 @@ github_banner:
 `family`	| 字体集的名字，不包括引号，如`Times New Roman`
 `size`		| 字体大小，以`em`为单位，默认为`1`（16px）
 
-```yaml #next/_config.yml
+```yaml
 font:
   enable: true		# 是否开启自定义字体功能
   host:		# 字体主机的Uri，只需要填域名或者IP，这里默认不填为fonts.googleapis.com
@@ -394,7 +394,7 @@ font:
 这里需要更深的研究一下，如何处理？我找到了设置字体的这部分代码，在`themes/next/scripts/helpers/font.js`（见下面的代码），可以自行阅读代码，修改链接为本地代码，甚至可以直接就`return`（返回）自己所要的字体的URL，甚至是设置本地的地址，该段代码在`themes/next/layout/_partials/head/head.swig`中执行，我们可以查找`next_font`，找到用来执行下面的`next_font`方法的这一行代码。
 我们也可以直接在这里放字体的`link`，这种方法相对简单吧，改`JavaScript`代码的话，虽然灵活度高，但是难度也大。
 
-```js #themes/next/scripts/helpers/font.js
+```js
 /* global hexo */
 
 'use strict';
@@ -431,7 +431,7 @@ hexo.extend.helper.register('next_font', () => {
 #### [动画效果](https://theme-next.org/docs/theme-settings/#Animation-Effect) ####
 动态效果有很多，支持设置动态效果有博客文章打开的动画以及打开时侧边栏的动画。
 NexT实现这些动态效果用的是**Velocity.js**。 [Velocity.js官方文档](http://velocityjs.org/) [Velocity.js的GitHub仓库](https://github.com/julianshapiro/velocity) 
-```yaml #next/_config.yml
+```yaml
 motion:
   enable: true				# 是否开启动画效果
   async: false				# 是否异步加载动画
@@ -464,7 +464,7 @@ perspectiveLeftIn |perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
 **这一部分主要是站点的页脚相关的设置。**
 #### [站点开始的年份](https://theme-next.org/docs/theme-settings/footer#Site-Start-Time)`since` #### 
 
-```yaml #next/_config.yml
+```yaml
 footer:
   since: 2015		#站点开始年份，如果设置一个过去的年份就会显示，过去年份-今年，如2015-2018
 			#如果不设置或者设置成今年年份则显示今年年份
@@ -472,7 +472,7 @@ footer:
 
 #### [站点开始年份与版权信息之间的图标](https://theme-next.org/docs/theme-settings/footer#Site-Footer-Icon)`icon` ####
 
-```yaml #next/_config.yml
+```yaml
 footer:
   icon:			#在站点开始年份与版权信息之间的图标，默认为Font Awesome库的user图标
     name: user		#Font Awesome库的图标名称，默认为user
@@ -482,14 +482,14 @@ footer:
 
 #### [版权信息](https://theme-next.org/docs/theme-settings/footer#Site-Copyright-Name)`copyright` ####
 
-```yaml #next/_config.yml
+```yaml 
 footer:
   copyright:		#版权信息，如果不设置，则显示在`hexo/_config.yml`中设置的作者`author`信息
 ```
 
 #### [Hexo授权信息`powered`，NexT主题授权信息`theme`](https://theme-next.org/docs/theme-settings/footer#Site-Platform-Information) ####
 
-```yaml #next/_config.yml
+```yaml 
 footer:
   powered:			
     enable: true	#是否显示带有链接的`Powered by Hexo`,中文会显示为`由 Hexo 强力驱动`
@@ -502,7 +502,7 @@ footer:
 
 #### 备案信息`beian` ####
 
-```yaml #next/_config.yml
+```yaml 
 footer:
   beian:		#专为中国用户提供的ICP备案信息显示功能 
     enable: false	#是否显示ICP备案信息显示
@@ -521,7 +521,7 @@ NexT提供了一些基础的搜索引擎优化的设置，包括：
 第一个基础设置是：对于百度搜索引擎，缓存并重写我们的网站，提供一个**网页快照**给手机用户。
 官方大概是这么说，不塌熟悉是怎么一回事，默认是`false`，即打开这一项功能。
 
-```yaml #next/_config.yml
+```yaml 
 disable_baidu_transformation: false
 ```
 
@@ -530,21 +530,21 @@ disable_baidu_transformation: false
 > 如果您的某一个网页可通过多个网址访问，或者您的不同网页包含类似内容（例如，某个网页既有移动版，又有桌面版），那么 Google 会将这些网页视为同一个网页的重复版本。Google 会选择一个网址作为规范版本并抓取该网址，而将所有其他网址视为重复网址并降低对这些网址的抓取频率。
 > 如果您未明确告知 Google 哪个网址是规范网址，Google 就会替您做出选择，或会将这两个版本视为同等重要，这可能会导致出现一些不当的行为。
 
-```yaml #next/_config.yml
+```yaml 
 canonical: true
 ```
 
 第三个基础设置是**SEO**。
 默认是`true`，官方的描述这项功能是它会改变站点的子标题（将作为主要的站点描述）和所有博客文章/页面的标题的层次结构，从而更好的优化SEO，这里依旧不是那么懂，跳过了。
 
-```yaml #next/_config.yml
+```yaml 
 seo: true
 ```
 
 第四个基础设置是**首页显示子标题**。
 默认为false，如果开启这项功能，他会在首页的标题上加上子标题的显示，如`惟愿此心无怨尤 - TO BE, TO UP.`，不开启，则显示标题，如`惟愿此心无怨尤`，这个还是很好理解的，对了，需要注意的是要在`hexo/_config.yml`设置了子标题才行，如`subtitle: TO BE, TO UP.`。
 
-```yaml #next/_config.yml
+```yaml
 index_with_subtitle: false
 ```
 
@@ -571,7 +571,7 @@ title="https://theme-next.org/docs/theme-settings/seo#ExtURL">
 官方的说法是搜索引擎对`<a>`标签有很高的优先级，虽然我们可以设置[HTML`<a>`标签的`rel`属性](https://www.w3school.com.cn/html5/att_a_rel.asp)为`external` / `nofollow` / `noopener` / `noreferrer`等其他值来规定当前文档与被链接文档之间的关系，但是外部链接在我们的站点还是会被建立索引，也就是说还是会被爬虫爬取，但是爬虫爬取不了JavaScript，所以我们用JavaScript打开新的链接，像这种[反向链接（backlinks）](https://wiki.mbalib.com/wiki/%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5)就不会被监控到。
 总而言之，就是不然搜索引擎搜索监控到这些外部链接，这里很有意思，官方给出了一个提示，说**放钓鱼链接是不被允许的**。
 
-```yaml #next/_config.yml
+```yaml
 exturl: false
 ```
 
@@ -599,7 +599,7 @@ Google Tag Manager		| 使用您的 Google 跟踪代码管理器帐号
 > 为了保持已完成验证的状态，请不要移除该元标记（即使是在成功通过验证后）。
 
 以上是谷歌官方的提示，而我们只需要在将上面`content`后面的内容加到`next/_config.yml`的`google_site_verification`就好了。
-```yaml #next/_config.yml
+```yaml
 google_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的`meta`标签的`content`属性的内容
 ```
 
@@ -610,13 +610,13 @@ google_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的`met
 这里就不细说了，与上面的谷歌站长工具配置类似。
 [必应站长工具的帮助文档](https://www.bing.com/webmaster/help/webmaster-guidelines-30fba23a)
 
-```yaml #next/_config.yml
+```yaml
 bing_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的`meta`标签的`content`属性的内容
 ```
 
 ##### [Yandex站长工具](https://webmaster.yandex.ru) #####
 这个俄罗斯站长工具基本是不会用到了，网站都是俄语的，这里就象征性的过一下吧。
-```yaml #next/_config.yml
+```yaml
 yandex_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的`meta`标签的`content`属性的内容
 ```
 
@@ -631,12 +631,12 @@ yandex_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的`met
 政府 	| 适合政府机构、事业单位、参公管理的社团组织等申请 | 组织机构代码证、运营者手持身份证照片、运营者身份证、公函（加盖公章）
 其他组织 | 适合公共场馆、公益机构、学校、社团、民间组织等机构团体申请 |组织机构代码证、运营者手持身份证照片、运营者身份证
 
-```yaml #next/_config.yml
+```yaml
 baidu_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的`meta`标签的`content`属性的内容
 ```
 ##### 百度推送 #####
 NexT还支持一个**将博客文章URL自动推送给百度**的功能，具体是怎样的就不太清楚了，应该是有利于的搜索引擎优化的。默认配置是`false`，有需要的可以打开，配置方法如下。
-```yaml #next/_config.yml
+```yaml
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: false
 ```
@@ -670,7 +670,7 @@ date: 2013/7/13 20:46:25
 ---
 ```
 最后一步修改菜单信息，请查看之前的内容 [NexT基础配置-设置菜单显示内容](#%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E6%98%BE%E7%A4%BA%E5%86%85%E5%AE%B9) 进行配置。
-```yaml #next/_config.yml
+```yaml
 menu:
   home: / || home
   archives: /archives/ || archive
@@ -688,7 +688,7 @@ $ hexo new page tags		#创建标签页面
 
 执行完以上命令之后，同样他会在`hexo/source`目录下生成一个自定义名称`tags`的文件夹，在文件夹中存有一个`index.md`文件，文件内容如下：
 
-```yaml #hexo/source/tags/index.md
+```yaml
 ---
 title: Tags
 date: 2014-12-22 12:39:04
@@ -697,7 +697,7 @@ type: "tags"		#设置`type`为`tags`，注意有英文引号
 ```
 
 最后一步就是修改菜单信息，可以查看之前的内容 [NexT基础配置-设置菜单显示内容](#%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E6%98%BE%E7%A4%BA%E5%86%85%E5%AE%B9) 进行配置。
-```yaml #next/_config.yml
+```yaml
 menu:
   home: / || home
   archives: /archives/ || archive
@@ -728,7 +728,7 @@ tags:
 
 #### [添加标签云](https://theme-next.org/docs/theme-settings/custom-pages#Tagcloud) ####
 这里的标签云的设置是设置标签页中标签列表标签显示的格式（风格），具体配置项如下。
-```yaml #next/_config.yml
+```yaml
 tagcloud:
   enable: true		#启用标签云
 
@@ -772,7 +772,7 @@ $ npm install hexo-tag-cloud --save
 ```
 随后再`themes/next/layout/page.swig`文件中查找`tag-cloud`，在CSS class为`tag-cloud`的`div`中插入如下代码。
 
-```js #next/layout/page.swig
+```js
 {%- if theme.hexo_tag_cloud.enable %}
   {# 对应自建文件的目录 #}
   {% include '_myself/hexo-tag-cloud.swig' %} 
@@ -781,7 +781,7 @@ $ npm install hexo-tag-cloud --save
 
 
 最后在`next/_config.yml`添加配置代码，如下。
-```yaml next/_config.yml
+```yaml
 hexo_tag_cloud:
   enable: true		#是否启用hexo-tag-cloud
   width: 375		#标签云区域的宽度
@@ -830,7 +830,7 @@ $ hexo new page schedule			#创建日历页面
 
 执行命令，生成在`hexo/source/schedule/index.md`文件，文件内容如下：
 
-```yaml #hexo/source/schedule/index.md
+```yaml
 ---
 title: schedule
 date: 2014-12-22 12:39:04
@@ -838,7 +838,7 @@ date: 2014-12-22 12:39:04
 ```
 
 随后修改菜单信息，可以查看之前的内容 [NexT基础配置-设置菜单显示内容](#%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E6%98%BE%E7%A4%BA%E5%86%85%E5%AE%B9) 进行配置。
-```yaml #next/_config.yml
+```yaml
 menu:
   home: / || home
   archives: /archives/ || archive
@@ -847,7 +847,7 @@ menu:
 
 接下来就是[谷歌开发者](https://console.developers.google.com/flows/enableapi?apiid=calendar)申请谷歌日历API，获得日历`ID`和`API KEY`，最后配置next/_config.yml，具体配置如下。
 
-```yaml #next/_config.yml
+```yaml 
 calendar:
   calendar_id: <required>		#日历ID
   api_key: <required>			#日历API KEY
@@ -864,7 +864,7 @@ calendar:
 这个标题有点怪怪的吧，一时不知道如何翻译这里，与存档页面干杯（**Cheers Archive Page**），暂且就这样说着吧，那么这个功能是做什么用的呢？
 就是在开启这个功能之后，会在归档页面，显示总共有多少篇文章，还会叫我们继续加油，嘿嘿！比如：**嗯..! 目前共计 5 篇日志。 继续努力。**具体效果可以看 [这里](/archives/) ，**这项功能默认是开启的**。
 
-```yaml #next/_config.yml
+```yaml
 cheers: false
 ```
 
@@ -872,7 +872,7 @@ cheers: false
 `hexo`可以配合`github pages`设置`404`页面，输入错误页面将跳转到`404`，在本地服务器上没有效果，但是部署到github上后就有效果了，好了开始吧。
 步骤还是之前一样，先创建页面，但这次有所不同，这次在`hexo/source`文件夹下新建文件404.md,然后我们编辑404页面`source/404.md`内容，官方建议使用腾讯的公益404页面，寻找丢失儿童。
 
-```js #source/404.md
+```js
 ---
 title: 404
 date: 1970-01-01 00:00:00
@@ -891,11 +891,11 @@ date: 1970-01-01 00:00:00
 **这一部分主要是博客文章相关的设置。**
 #### [页面滚动](https://theme-next.org/docs/theme-settings/posts#Page-Scroll) ####
 设置`scroll_to_more`，点击**查看全文**直接跳转到`<!--more-->`的位置（这个位置就是显示`查看全文`后面的内容的位置）。
-```yaml #next/_config.yml
+```yaml
 scroll_to_more: true
 ```
 设置`save_scroll`，让浏览器记住浏览到的问题，下次浏览就直接跳到这个位置。
-```yaml #next/_config.yml
+```yaml
 save_scroll: true
 ```
 #### [前言文本Preamble Text](https://theme-next.org/docs/theme-settings/posts#Preamble-Text) ####
@@ -909,7 +909,7 @@ save_scroll: true
 
 这里呢，基本不用设置，默认设置就好了，只要在Markdown文件中使用`<!--more-->`就好了，这也是官方推荐的方式。
 
-```yaml #next/_config.yml
+```yaml
 excerpt_description: true	#摘录说明
 
 auto_excerpt:			#自动摘录（不推荐）
@@ -929,7 +929,7 @@ read_more_btn: true		#是否显示阅读全文的按钮
 更新的时间`updated_at`
 
 分类信息`categories`等等。
-```yaml #next/_config.yml
+```yaml
 post_meta:
   item_text: true		#是否显示文字，即显示`发表于`、`更新于`、 `分类于`，不显示，则只显示图标
   created_at: true		#是否显示发表时间，`发表于`
@@ -955,7 +955,7 @@ npm install hexo-symbols-count-time --save
 显示读完所有的文章的预计时间在页面底部`total_time`
 
 统计数字除去代码块的字数`exclude_codeblock`。
-```yaml #hexo/_config.yml
+```yaml
 symbols_count_time:
   symbols: true			#是否在文章的Post Meta显示文章字数
   time: true			#是否在文章的Post Meta显示阅读完文章预计的时间
@@ -975,7 +975,7 @@ symbols_count_time:
 平均字的长度，以char来计算的，默认为4，我们中文可以设置为2，`awl`（average Word Length）
 
 平均每分钟读多少字，默认为275，人一般每分钟300字左右，可以不改默认值，`wpm`（average words per minute）。
-```yaml #hexo/_config.yml
+```yaml
 symbols_count_time:
   separated_meta: true		#是否与Post Meta Display分开成两行，true则分开为两行，false则再一行
   item_text_post: true		#文章的字数统计是否显示文字，不显示则只有图标
@@ -986,14 +986,14 @@ symbols_count_time:
 
 #### [标签图标设置](https://theme-next.org/docs/theme-settings/posts#Tag-Icon) ####
 将标签前面默认的`#`改为图标，设置方法：修改`next/_config.yml`的`tag_icon`标签为`true`。
-```yaml #next/_config.yml
+```yaml
 tag_icon: true
 ```
 
 #### [微信订阅](https://theme-next.org/docs/theme-settings/posts#WeChat-Subscribing) ####
 这里配置微信订阅二维码，在每一篇博客文章后面都会有这个二维码。
 我们在Hexo工程目录的`source`文件夹新建`uploads`文件夹，并把微信订阅二维码放进这个文件夹，然后在`next/_config.yml`修改配置。
-```yaml #next/_config.yml
+```yaml
 wechat_subscriber:
   enable: true
   qcode: /uploads/wechat-qcode.jpg			#二维码图片的存放地址
@@ -1001,7 +1001,7 @@ wechat_subscriber:
 ```
 #### [奖赏（打赏）Reward (Donate)](https://theme-next.org/docs/theme-settings/posts#Reward-Donate) ####
 将微信、支付宝、比特币、银行等其他收钱二维码放到NexT主题目录下的`source/images`文件夹，并进行配置，这些二维码也会显示在每篇文章最后。
-```yaml #next/_config.yml
+```yaml
 reward_settings:
   enable: true				#开启打赏功能
   animation: false			#是否开启动画，开启后，鼠标放在二维码上面，二维码下面的字会动
@@ -1033,7 +1033,7 @@ npm install hexo-related-popular-posts --save
 
 在相关文章板块是否显示摘要`isExcerpt`
 
-```yaml #next/_config.yml
+```yaml
 related_posts:
   enable: true			#是否开启相关文章推荐，推荐的文章的将会显示在文章底部		
   title: 			#标题，默认会显示`相关文章`，可以自己设置
@@ -1051,7 +1051,7 @@ related_posts:
 #### [博客文章编辑](https://theme-next.org/docs/theme-settings/posts#Post-Edit) ####
 这里官方文档说，开启这项设置之后，用户可以在GitHub快速的浏览和编辑源代码，还提供了两种URL链接形式选择，即通过链接就可以快速对源代码进行浏览和编辑操作，这里我试了一下，还是GitHub SSH秘钥的问题（见前一篇博客），不多说了，小伙伴们有兴趣，看下官方文档配置一下。
 提醒一下，这里是配置`hexo/_config.yml`，然后这项配置依赖于[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)包。
-```yaml #hexo/_config.yml
+```yaml 
 post_edit:
   enable: false
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name  # Link for view source
@@ -1085,7 +1085,7 @@ post_edit:
 `onmobile`设置在移动设备上是否显示侧边栏（只支持`Muse`与`Mist`风格）。
 
 `dimmer`设置单击页面的任何空白部分以关闭侧栏（只支持NexT 7.0版本以上的`Muse`与`Mist`风格）。
-```yaml #next/_config.yml
+```yaml
 sidebar:
   #在NexT 7.2以下的版本中只支持`Pisces`与`Gemini`风格
   position: left		#设置侧边栏是显示在左边还是右边
@@ -1107,13 +1107,13 @@ sidebar:
 
 #### [侧边栏站点状态](https://theme-next.org/docs/theme-settings/sidebar#Sidebar-Site-State) ####
 设置在侧边栏站点概况的头像下是否显示帖子、分类、标签及其计数，默认为显示。
-```yaml #next/_config.yml
+```yaml
 site_state: true
 ```
 #### [侧边栏社交链接](https://theme-next.org/docs/theme-settings/sidebar#Sidebar-Social-Links) ####
 这是设置社交链接的形式和[设置菜单显示内容](#%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E6%98%BE%E7%A4%BA%E5%86%85%E5%AE%B9)的形式是一样的，`Key: /link/ || icon`，在这里不再多说，社交链接的图标设置的描述，请看下方代码。
 
-```yaml #next/_config.yml
+```yaml
 social:
   GitHub: https://github.com/BingqiangZhou || github
   E-Mail: mailto:bingqiangzhou7@gmail.com || envelope
@@ -1154,7 +1154,7 @@ social_icons:
 
 `links_layout`设置链接列表显示的布局，有两种布局`block`，每个链接占一行，`inline`，从左到右流式布局
 
-```yaml #next/_config.yml
+```yaml
 links_icon: link			#设置链接列表的图标
 links_title: Links			#设置链接列表的名称（标题）
 links_layout: block 			#设置链接列表显示的布局，有两种布局`block`、`inline`
@@ -1172,7 +1172,7 @@ links:					#设置自己喜欢的连接
 
 `max_depth`设置生成文章目录的最大深度，可以理解为标题级别，默认为6，也可以在文章中用**Front-matter**属性`toc_max_depth`设置
 
-```yaml #next/_config.yml
+```yaml
 toc:
   enable: true		
   number: true			#是否显示文章目录的标号
@@ -1188,7 +1188,7 @@ toc:
 
 `scrollpercent`是否显示下滑到的位置占全文的高度的百分比
 
-```yaml #next/_config.yml
+```yaml
 back2top:
   enable: true
   sidebar: false		#是否在侧边栏开始回到顶部按钮
@@ -1271,7 +1271,7 @@ back2top:
 $ npm install hexo-generator-searchdb --save
 ```
 第二步，添加配置到`hexo/_config.yml`
-```yaml #hexo/_config.yml
+```yaml
 search:
   path: search.xml		#文件路径，也可以设置拓展名为`.json`
   field: post			#搜索的范围，有以下三种选择
@@ -1290,7 +1290,7 @@ search:
 
 第三步，配置`next/_config.yml`
 
-```yaml #next/_config.yml
+```yaml
 local_search:
   enable: true
   trigger: auto		#设置为`auto`，在输入时便实时搜索，设置为`manual`，则点击搜索图标或者按下回车建再搜索
@@ -1330,7 +1330,7 @@ local_search:
 - 在文章头部添加`description`，遵循[Front-matter](https://hexo.io/docs/front-matter)格式。
 - 通过配置`next/_config.yml`中的`auto_excerpt`变量，自动生成总结。
 
-```yaml #next/_config.yml
+```yaml 
 auto_excerpt:
   enable: true
   length: 150
@@ -1365,7 +1365,7 @@ $content-desktop-largest = 900px
 #### [页面如何去掉评论系统？](https://theme-next.org/docs/faqs#How-to-Disable-Comments-on-Page) ####
 在页面对应的`Markdown`文件中，设置`comments: false`，如：
 
-```yaml #your-post.md
+```yaml
 ---
 title: All tags
 type: "tags"
@@ -1374,7 +1374,7 @@ comments: false
 ```
 
 [如何设置每一页显示多少篇文章？](https://theme-next.org/docs/faqs#How-to-Set-Number-of-Articles-in-Each-Page)
-```yaml #hexo/_config.yml
+```yaml 
 index_generator:
   per_page: 5
 
@@ -1429,7 +1429,7 @@ print("hello,world")
 #### [设置了网站图标但是无效](https://theme-next.org/docs/troubleshooting#Favicon-Set-but-Doesn-39-t-Work-Need-to-redocs) ####
 将网站图标放置到`hexo/source`文件夹下，设置`next/_config.yml`，如下：
 
-```yaml #next/_config.yml
+```yaml
 favicon: 
   small: favicon.ico
   medium: favicon.ico
@@ -1496,7 +1496,7 @@ npm install hexo-deployer-git --save
 ```
 配置`hexo/_config.yml`
 
-```yaml #hexo/_config.yml
+```yaml 
 deploy:
   type: git
   repo: <repository url> 	#比如：https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io

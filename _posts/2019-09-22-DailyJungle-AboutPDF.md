@@ -78,17 +78,3 @@ PdfiumBuild库的下载，对应在NuGet下载PdfiumViewer.Native.x86_64.v8-xfa�
 ## 写在最后
 
 PDF相关的库就大概接触了一下上面这些了，不多说了，PDF相关的东西，以后有用得到再翻一翻看一看吧。
-
-
-
-
-
-
-
-
-
-
-
-
-
-

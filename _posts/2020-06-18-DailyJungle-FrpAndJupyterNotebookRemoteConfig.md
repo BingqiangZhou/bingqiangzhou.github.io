@@ -23,7 +23,7 @@ tags: [日常杂耍系列]
 
 ### frp内网穿透过程
 
-![架构图](../assets/images/2020/20200618/architecture.png)
+![架构图](/assets/images/2020/20200618/architecture.png)
 
 看上面的架构图，大概是在外网环境下运行frp服务端，而在内网环境下运行frp客户端，服务端与客服端形成通道，可以进行连接，外网下用户访问服务端，服务端在与客服端通信得到请求访问的结果，总结为一个词就是反向代理。
 
@@ -51,7 +51,7 @@ tags: [日常杂耍系列]
 
     在外网环境下的服务器（我这里是腾讯云的学生服务器），配置`frps.ini`文件中的`bind_port`，给服务器设置开通一个访问的端口。
 
-    ```ini #frps.ini
+    ```ini
     [common]
     bind_port = 7000
     ```
@@ -66,7 +66,7 @@ tags: [日常杂耍系列]
 
     在内网环境下的服务器（我这里是学校的服务器），配置`frpc.ini`如下，其中`server_addr`对应外网下服务器的地址（域名），`server_port`对应上面frps配置的端口。
 
-    ```ini #frpc.ini
+    ```ini
     [common]
     server_addr = x.x.x.x
     server_port = 7000
@@ -98,7 +98,7 @@ tags: [日常杂耍系列]
 
     在外网环境下的服务器，配置`frps.ini`文件中的`vhost_http_port`，给服务器设置开通一个web服务访问的端口。
 
-    ```ini #frps.ini
+    ```ini
     [common]
     bind_port = 7000
     vhost_http_port = 8080
@@ -114,7 +114,7 @@ tags: [日常杂耍系列]
 
     在内网环境下的服务器，配置`frpc.ini`如下，其中`server_addr`对应外网下服务器的地址（域名），`server_port`对应之前的frps配置的端口，配置本地的端口，`custom_domains`是外网下服务器的域名，一般使用二级域名。
 
-    ```ini #frpc.ini
+    ```ini
     [common]
     server_addr = x.x.x.x
     server_port = 7000
@@ -127,7 +127,7 @@ tags: [日常杂耍系列]
 
     **也可以配置多个web服务**，这里我就配置了两个web服务，一个为jupyter notebook准备的，一个为tensorboard可视化准备的。设置多个web服务，只需要在后面加数字就行。
 
-    ```ini #frpc.ini
+    ```ini
     [common]
     server_addr = x.x.x.x
     server_port = 7000
@@ -172,6 +172,8 @@ tags: [日常杂耍系列]
 - 4.2、测试仪表盘访问
     
     访问`http://x.x.x.x:7500`。
+
+    ![仪表盘](/assets/images/2020/20200618/dashboard.png)
 
 
 #### 5、其他内容
@@ -241,40 +243,57 @@ ssh、http、仪表盘的配置合并到一起的文件如下：
 
 ```ini
 [common]
-bind_port = 7000        ;ssh开通的端口，可以改
-vhost_http_port = 8080  ;http开通的端口，可以改
-dashboard_port = 7500   ;仪表盘开通的端口，可以改
-dashboard_user = admin  ;仪表盘账户名（可选），可以改
-dashboard_pwd = admin   ;仪表盘密码（可选），可以改
+;ssh开通的端口，可以改
+bind_port = 7000
+;http开通的端口，可以改
+vhost_http_port = 8080  
+;仪表盘开通的端口，可以改
+dashboard_port = 7500
+;仪表盘账户名（可选），可以改
+dashboard_user = admin
+;仪表盘密码（可选），可以改  
+dashboard_pwd = admin
 ```
 
 内网服务器`frpc.ini`:
 
 ```ini
 [common]
-server_addr = x.x.x.x   ;外网服务器地址，需要改
-server_port = 7000      ;外网服务器端口，可以改
+;外网服务器地址，需要改
+server_addr = x.x.x.x
+;外网服务器端口，可以改
+server_port = 7000
 
 [ssh]
-type = tcp              ;协议类型，不用改
-local_ip = 127.0.0.1    ;本地地址，不用改
-local_port = 22         ;本地ssh的端口，不用改
-remote_port = 6000      ;远程ssh的端口，可以改
+;协议类型，不用改
+type = tcp
+;本地地址，不用改
+local_ip = 127.0.0.1
+;本地ssh的端口，不用改
+local_port = 22
+;远程ssh的端口，可以改
+remote_port = 6000
 
 ;ssh访问方式：ssh 用户名@外网服务器地址 -p 远程ssh端口remote_port
 
 [web1]
-type = http                         ;协议类型，不用改
-local_port = 80                     ;本地地址，可以改，需要对应web服务的端口，如jupyter以及tensorboard远程访问端口需要设置为这里的端口
-custom_domains = site1.example.com  ;对应外网服务器二级域名的，需要改，而且二级域名需要添加到域名记录列表
+;协议类型，不用改
+type = http
+;本地地址，可以改，需要对应web服务的端口，如jupyter以及tensorboard远程访问端口需要设置为这里的端口
+local_port = 80
+;对应外网服务器二级域名的，需要改，而且二级域名需要添加到域名记录列表
+custom_domains = site1.example.com
 
 ;web访问方式：外网服务器二级域名:外网服务器端口号，如http://site1.example.com:7000
 
 
 [web2]
-type = http                         ;协议类型，不用改
-local_port = 81                     ;本地地址，可以改，需要对应web服务的端口，如jupyter以及tensorboard远程访问端口需要设置为这里的端口
-custom_domains = site2.example.com  ;对应外网服务器二级域名的，需要改，而且二级域名需要添加到域名记录列表
+;协议类型，不用改
+type = http
+;本地地址，可以改，需要对应web服务的端口，如jupyter以及tensorboard远程访问端口需要设置为这里的端口
+local_port = 81
+;对应外网服务器二级域名的，需要改，而且二级域名需要添加到域名记录列表
+custom_domains = site2.example.com
 
 ;web访问方式：外网服务器二级域名:外网服务器端口号，如http://site2.example.com:7000
 ```

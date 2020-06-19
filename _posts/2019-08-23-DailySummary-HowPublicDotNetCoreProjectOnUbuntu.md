@@ -14,7 +14,7 @@ tags: [日常小结系列]
 由于项目默认的启动端口是5001和5002，我们可以添加一个json文件如（`host.json`）用其配置路径与端口。
 修改`Program.cs`中的`CreateWebHostBuilder`方法代码（以`.Net Core MVC`项目为例）
 **修改前**
-```csharp #Program.cs
+```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args)
             => WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
 ```
@@ -93,6 +93,7 @@ $ sudo service nginx start
 打开浏览器访问服务器，会显示Nginx欢迎页面则已正确安装。
 ### 配置反向代理到应用程序
 在`/etc/nginx/sites-enabled/`文件夹下创建如下内容的`自定义名字.conf`文件
+
 ```nginx
 server{
         listen 80;
@@ -110,6 +111,7 @@ server{
 ### 配置SSL
 将已获取到的`1_www.domain.com_bundle.crt`证书文件和`2_www.domain.com.key`私钥文件从本地目录上传到服务器的`/etc/nginx/`文件夹下（其他文件夹下同样可以），在下面的配置中取绝对路径即可。
 修改`/etc/nginx/sites-enabled/`文件夹下修改`自定义名字.conf`文件内容为以下内容。
+
 ```nginx
 server {
     listen 80;
@@ -137,16 +139,20 @@ server {
      }
  }
 ```
+
 ### 完成配置
+
 更改完成以后保存文件，使用如下命令来验证配置文件，出错则就修改配置文件，知道验证配置成功。
+
 ```shell
 $ sudo nginx -t
 ```
+
 配置成功，则使用如下命令重新加载Nginx配置。
+
 ```shell
 $ sudo nginx -s reload
 ```
-
 
 ### 参考链接
 [Nginx 服务器证书安装](https://cloud.tencent.com/document/product/400/35244)

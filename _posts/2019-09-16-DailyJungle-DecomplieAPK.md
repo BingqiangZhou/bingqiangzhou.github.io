@@ -59,5 +59,3 @@ d2j-dex2jar.bat E:\classes.dex
 ### 第四步、使用jd-gui查看jar源代码 ###
 
 下载[jd-gui](https://github.com/java-decompiler/jd-gui/releases)，使用`jd-gui`打开`jar`包查看源码。
-
-
