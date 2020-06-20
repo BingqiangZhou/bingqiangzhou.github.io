@@ -94,7 +94,7 @@ tags: [日常杂耍系列]
 
 #### 3、配置web服务访问
 
-- 2.1、配置服务端
+- 3.1、配置服务端
 
     在外网环境下的服务器，配置`frps.ini`文件中的`vhost_http_port`，给服务器设置开通一个web服务访问的端口。
 
@@ -104,13 +104,13 @@ tags: [日常杂耍系列]
     vhost_http_port = 8080
     ```
 
-- 2.2、启动服务端
+- 3.2、启动服务端
   
     ```shell
     ./frps -c ./frps.ini
     ```
 
-- 2.3、配置客户端
+- 3.3、配置客户端
 
     在内网环境下的服务器，配置`frpc.ini`如下，其中`server_addr`对应外网下服务器的地址（域名），`server_port`对应之前的frps配置的端口，配置本地的端口，`custom_domains`是外网下服务器的域名，一般使用二级域名。
 
@@ -143,13 +143,13 @@ tags: [日常杂耍系列]
     custom_domains = site2.example.com
     ```
 
-- 2.4、启动客服端
+- 3.4、启动客服端
   
     ```shell
     ./frpc -c ./frpc.ini
     ```
 
-- 2.5、测试web访问
+- 3.5、测试web访问
 
     ```shell
     http://site1.example.com:7000
