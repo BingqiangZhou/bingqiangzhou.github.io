@@ -58,7 +58,7 @@ nohup ./natapp -config=config.ini -log=stdout  >>log.out 2>&1  &
 ### 5、测试SSH连接
 
 由于免费的没有固定的域名和端口，它会在启动的时候给定，我们可以在log.out中找到对于的url，这里的图，我是用的web隧道的，因为我们使用了付费的SSH通道，又固定的域名与端口。
-![免费的url](../assets/images/2020/20200620/url.png)
+![免费的url](/assets/images/2020/20200620/url.png)
 
 使用对应的的域名与端口，执行ssh命令，测试是否可以连接。
 
@@ -66,7 +66,7 @@ nohup ./natapp -config=config.ini -log=stdout  >>log.out 2>&1  &
 
 对于每个一个注册用户，natapp提供两个免费的不同协议的隧道，下面创建免费的web通道。
 
-![natapp免费web通道](../assets/images/2020/20200620/tunnel.png)
+![natapp免费web通道](/assets/images/2020/20200620/tunnel.png)
 
 ### 1、创建Web隧道
 
