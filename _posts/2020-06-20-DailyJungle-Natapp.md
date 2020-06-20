@@ -1,5 +1,5 @@
 ---
-title: 【日常杂耍】内网传统工具natapp
+title: 【日常杂耍】内网穿透工具natapp
 tags: [日常杂耍系列]
 ---
 
