@@ -391,11 +391,11 @@ Selenium处理的过程：设置无头加载，加载驱动，加载网页，等
 
 - 1、打开控制面板选择打开或关闭`windows features`，按照提示在features中找到`SMTP`，选择安装；在`Windows Server`中也可以在服务器管理`Server Manage`中的`Manage`中添加。
 
-    ![添加SMTP](../assets/images/2020/20200622/smtp-setting-1.png)
+    ![添加SMTP](/assets/images/2020/20200622/smtp-setting-1.png)
 
 - 2、打开IIS6.0，这里需要注意的是IIS6.0，点击windows窗口图标，在search中输入“iis”，选择打开iis 6.0 Manager；在`Windows Server`中也可以在服务器管理`Server Manage`中`Tools`中打开。
 
-    ![打开IIS 6](../assets/images/2020/20200622/smtp-setting-2.png)
+    ![打开IIS 6](/assets/images/2020/20200622/smtp-setting-2.png)
     
 - 3、在打开窗口，`SMTP Vritual Server`右键选择`domain`，并新建一个新的`domain`，按照提示输入名称和类型即可.
 
