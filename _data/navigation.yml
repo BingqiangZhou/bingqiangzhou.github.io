@@ -34,18 +34,18 @@ header:
     url: /about.html
 
   - titles:
-      en      : &EN       To-Do
+      en      : &EN       ToDo
       en-GB   : *EN
       en-US   : *EN
       en-CA   : *EN
       en-AU   : *EN
-      zh-Hans : &ZH_HANS  To-Do
+      zh-Hans : &ZH_HANS  ToDo
       zh      : *ZH_HANS
       zh-CN   : *ZH_HANS
       zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  To-Do
+      zh-Hant : &ZH_HANT  ToDo
       zh-TW   : *ZH_HANT
       zh-HK   : *ZH_HANT
-      ko      : &KO       To-Do
+      ko      : &KO       ToDo
       ko-KR   : *KO
     url: /todo.html
