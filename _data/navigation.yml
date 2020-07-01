@@ -32,3 +32,20 @@ header:
       ko      : &KO       소개
       ko-KR   : *KO
     url: /about.html
+
+   - titles:
+      en      : &EN       To-Do
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+      zh-Hans : &ZH_HANS  To-Do
+      zh      : *ZH_HANS
+      zh-CN   : *ZH_HANS
+      zh-SG   : *ZH_HANS
+      zh-Hant : &ZH_HANT  To-Do
+      zh-TW   : *ZH_HANT
+      zh-HK   : *ZH_HANT
+      ko      : &KO       To-Do
+      ko-KR   : *KO
+    url: /todo.html
