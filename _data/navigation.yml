@@ -33,7 +33,7 @@ header:
       ko-KR   : *KO
     url: /about.html
 
-   - titles:
+  - titles:
       en      : &EN       To-Do
       en-GB   : *EN
       en-US   : *EN
