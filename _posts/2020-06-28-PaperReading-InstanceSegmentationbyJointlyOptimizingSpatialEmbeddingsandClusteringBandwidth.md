@@ -29,7 +29,7 @@ $$
 L_{seed} = \frac{1}{N}\sum_{i}^{N}\mathbf{1}_{\{s_i \in S_k\}}||s_i-\phi_k(e_i)||^2+\mathbf{1}_{\{s_i \in bg \}}||s_i-0||^2
 $$
 
-这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点， $\mathbf{1}_{\{s_i \in S_k\}}$与$\mathbf{1}_{\{s_i \in bg \}}$分别表示属于语义对象、背景为1，否则为0。$\phi_k(e_i)$为如下公式，计算属于$i$点属于对象$k$的分数。
+这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点， $\mathbf{1}_{\{s_i \in S_k\}}$与$\mathbf{1}_{\{s_i \in bg \}}$分别表示属于语义对象、背景为1，否则为0， $\phi_k(e_i)$为如下公式，计算属于$i$点属于对象$k$的分数。
 
 $$
 \phi_k(e_i)=exp\left(-\frac{||e_i-C_k||^2}{2\sigma_k^2} \right)
