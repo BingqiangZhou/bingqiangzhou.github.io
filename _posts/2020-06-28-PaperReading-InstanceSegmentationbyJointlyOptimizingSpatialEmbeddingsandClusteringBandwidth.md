@@ -29,7 +29,7 @@ $$
 L_{seed} = \frac{1}{N}\sum_{i}^{N}\mathbf{1}_{\{s_i \in S_k\}}||s_i-\phi_k(e_i)||^2+\mathbf{1}_{\{s_i \in bg \}}||s_i-0||^2
 $$
 
-这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点，$\mathbf{1}_{\{s_i \in S_k\}}$与$\mathbf{1}_{\{s_i \in bg \}}$分别表示属于语义对象、背景为1，否则为0。
+这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点，${1}_{\{s_i\in S_k\}}$与${1}_{\{s_i \in bg\}}$分别表示属于语义对象、背景为1，否则为0。
 $\phi_k(e_i)$为如下公式，计算属于$i$点属于对象$k$的分数。
 
 $$
@@ -58,7 +58,7 @@ $$
 
 ### `xmap`与`ymap`
 
-`xmap`与`ymap`由如下代码构造而成。其中2048与1024分别图像（`Cityscas数据集`）的宽与高。
+`xmap`与`ymap`由如下代码构造而成。其中2048与1024分别为图像（`Cityscas数据集`）的宽与高。
 
 ```python
 xm = torch.linspace(0, 2, 2048).view(1, 1, -1).expand(1, 1024, 2048)
