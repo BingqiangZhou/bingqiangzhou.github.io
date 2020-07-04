@@ -29,7 +29,7 @@ $$
 L_{seed} = \frac{1}{N}\sum_{i}^{N}\mathbf{1}_{\{s_i \in S_k\}}||s_i-\phi_k(e_i)||^2+\mathbf{1}_{\{s_i \in bg \}}||s_i-0||^2
 $$
 
-这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点， $\mathbf{1}_{\{s_i \in S_k\}}$与$\mathbf{1}_{\{s_i \in bg \}}$分别表示属于语义对象、背景为1，否则为0， $\phi_k(e_i)$为如下公式，计算属于$i$点属于对象$k$的分数。
+这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点，$\mathbf{1}_{\{s_i \in S_k\}} $与$\mathbf{1}_{\{s_i \in bg \}} $分别表示属于语义对象、背景为1，否则为0。$\phi_k(e_i)$为如下公式，计算属于$i$点属于对象$k$的分数。
 
 $$
 \phi_k(e_i)=exp\left(-\frac{||e_i-C_k||^2}{2\sigma_k^2} \right)
@@ -39,7 +39,7 @@ $$
 
 ### 间隙$\sigma$
 
-间隙$\sigma$在实际计算中，是使用的实例在`seed map`最大分数位置对应到$\sigma$ map的$\sigma$值，这里和推理中的$\sigma$是不一致，所以用损失函数（如下）来约束它。
+间隙$\sigma$在实际计算中，是使用的实例在`seed map`最大分数位置对应到$\sigma \ map$中的$\sigma$值，这里和推理中的$\sigma$是不一致，所以用损失函数（如下）来约束它。
 
 $$
 L_{smooth}=\frac{1}{|S_k|}\sum_{\sigma_i \in S_k}||\sigma_i - \sigma_k||^2
