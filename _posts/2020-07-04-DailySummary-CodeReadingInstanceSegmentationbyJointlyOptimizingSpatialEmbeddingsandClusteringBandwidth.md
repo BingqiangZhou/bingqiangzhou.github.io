@@ -1,5 +1,5 @@
 ---
-title: 【日常小结】Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth
+title: 【日常小结】记录几个之前不知道或者不熟练的点
 tags: [日常小结系列]
 ---
 
