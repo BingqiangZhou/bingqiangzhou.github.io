@@ -1,5 +1,5 @@
 ---
-title: 【日常小结】记录一下`torch.backends.cudnn.benchmark = True`以及模块`copy`、`multiprocessing`与`threading`
+title: 【日常小结】记录一下torch.backends.cudnn.benchmark=True以及copy、multiprocessing与threading模块
 tags: [日常小结系列]
 ---
 
