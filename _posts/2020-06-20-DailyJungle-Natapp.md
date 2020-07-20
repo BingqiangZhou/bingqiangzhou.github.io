@@ -50,7 +50,7 @@ http_proxy=                     #代理设置 如 http://10.123.10.10:3128 非�
 执行如下命令，也可以参考[natapp给出的教程](https://natapp.cn/article/nohup)
 
 ```shell
-nohup ./natapp -config=config.ini -log=stdout  >>log.out 2>&1  &
+nohup ./natapp -config=config.ini -log=stdout -loglevel=INFO  >log.out 2>&1  &
 ```
 
 这里指定了配置文件，是因为我后续还增加了一个免费的web通道。
@@ -82,13 +82,13 @@ nohup ./natapp -config=config.ini -log=stdout  >>log.out 2>&1  &
 - 与之前SSH[启动natapp](#4启动natapp)类似，指定一下配置文件就好了，如下，
 
     ```shell
-    nohup ./natapp -config=webconfig.ini -log=stdout  >>weblog.out 2>&1  &
+    nohup ./natapp -config=webconfig.ini -log=stdout -loglevel=INFO >weblog.out 2>&1  &
     ```
 
 - 启动一个web服务，比如jupyter notebook，指定端口为之前创建隧道时设置的端口，命令如下。
 
     ```shell
-    nohup jupyter notebook --port 8888 >>jupyter.out 2>&1  &
+    nohup jupyter notebook --port 8888 >jupyter.out 2>&1  &
     ```
 
     需要注意的是，一定要指定端口为之前创建隧道时设置的端口，`jupyter notebook`远程设置可以参考我上一篇博客。

@@ -1,5 +1,5 @@
 ---
-title: 【论文阅读笔记系列】Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth
+title: 【论文阅读笔记】Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth
 tags: [论文阅读笔记系列]
 ---
 

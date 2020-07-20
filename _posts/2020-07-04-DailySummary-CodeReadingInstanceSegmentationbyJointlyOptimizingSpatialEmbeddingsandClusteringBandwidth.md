@@ -1,5 +1,5 @@
 ---
-title: 【日常小结】记录几个之前不知道或者不熟练的点
+title: 【日常小结】记录一下`torch.backends.cudnn.benchmark = True`以及模块`copy`、`multiprocessing`与`threading`
 tags: [日常小结系列]
 ---
 
