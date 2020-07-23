@@ -21,7 +21,7 @@ tags: [读书笔记系列]
 
 在高维空间中，非凸优化的难点并不在于如何逃离局部最优点，而是如何逃离鞍点（鞍点示意图如下），鞍点的梯度是0，但是在一些维度上是最高点，在另一些维度上是最低点。相比鞍点，局部最小值要求在每一维度上都是最低点。
 
-![鞍点](../assets/images/2020/20200720/saddle-point.png)
+![鞍点](/assets/images/2020/20200720/saddle-point.png)
 
 *局部最小解的等价性*
 
@@ -47,21 +47,27 @@ tags: [读书笔记系列]
 *梯度下降公式*
 
 令$f(x;\theta)$表示一个深度神经网络，$\theta$为网络参数，在使用小批量梯度下降进行优化时，每次选取$K$个训练样本$S_t={(x(k), y(k))}^K_{k=1}$。第$t$次迭代（Iteration）时损失函数关于参数$\theta$的偏导数为
+
 $$
 G_t(\theta) = \frac{1}{K} \sum_{(x,y) \in S_t}\frac{\partial L(y, f(x;\theta))}{\partial \theta}
 $$
+
 其中$L(\cdot)$为可微分的损失函数，$K$为批量大小（Batch Size）。
 
 第$t$次更新的梯度${\rm g_t}$定义为
+
 $$
 {\rm g}_t \triangleq G_t(\theta_{t-1})
 $$
 
 更新参数，$\alpha(\alpha > 0)$为学习率。
+
 $$
 \theta_t \leftarrow \theta_{t-1}- \alpha {\rm g}_t
 $$
+
 每次迭代时参数更新的差值$\Delta \theta_t$定义为
+
 $$
 \Delta \theta_t \triangleq \theta_t-\theta_{t-1}
 $$
@@ -75,7 +81,7 @@ $\theta_t = \theta_{t-1} + \Delta \theta_t$。在标准的小批量梯度下降�
 2. 学习率$\alpha$
 3. 梯度估计
 
-#### *批量大小$K$*选择
+#### *批量大小$K$*的选择
 
 一般而言，批量大小不影响随机梯度的期望，但是会影响随机梯度的方差。批量大小越大，随机梯度的方差越小，引入的噪声也越小，训练也越稳定，因此可以设置较大的学习率；而批量大小较小时，需要设置较小的学习率，否则模型会不收敛。学习率通常要随着批量大小的增大而相应地增大。（可以使用线性缩放规则（Linear Scaling Rule），当批量大小增加$m$倍时，学习率也增加$m$倍。）**根据GPU资源来设置批量$K$**。
 
@@ -93,7 +99,7 @@ $\theta_t = \theta_{t-1} + \Delta \theta_t$。在标准的小批量梯度下降�
   4. 自然指数衰减（Natural Exponential Decay）
   5. 余弦衰减（Cosine Decay）
 
-![学习率衰减](../assets/images/2020/20200720/learning-rate-decay.png)
+![学习率衰减](/assets/images/2020/20200720/learning-rate-decay.png)
 
 - 学习率预热
     在小批量梯度下降法中，当批量大小的设置比较大时，通常需要比较大的学习率．但在刚开始训练时，由于参数是随机初始化的，梯度往往也比较大，再加上比较大的初始学习率，会使得训练不稳定。为了提高训练稳定性，我们可以在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率，这种方法称为学习率预热（Learning Rate Warmup）。
@@ -101,14 +107,14 @@ $\theta_t = \theta_{t-1} + \Delta \theta_t$。在标准的小批量梯度下降�
     常用的学习率预热方法是逐渐预热（Gradual Warmup），设定预热的迭代次数（作为分母，当前迭代次数作为分子），逐渐让学习率接近初始学习率，直到等于初始学习率。
 
 - 周期性学习率调整
- 
+
     两种常用的周期性调整学习率的方法：
 
     *循环学习率*，学习率在一个区间内周期性地增大和缩小。
 
     *带热重启的随机梯度下降*，学习率每间隔一定周期后重新初始化为某个预先设定值，然后逐渐衰减．每次重启后模型参数不是从头开始优化，而是从重启前的参数基础上继续优化。
 
-![周期性学习率调整](../assets/images/2020/20200720/periodic-learning-rate-adjustment.png)
+![周期性学习率调整](/assets/images/2020/20200720/periodic-learning-rate-adjustment.png)
 
 - AdaGrad 算法
   
@@ -142,7 +148,7 @@ $\theta_t = \theta_{t-1} + \Delta \theta_t$。在标准的小批量梯度下降�
 
   Nesterov 加速梯度与动量法 思想是类似的，但是认为使用前一次迭代参数的梯度作为加速度是不太合理的，应该使用动量（惯性）移动到了的地方的加速度（偏导）来计算下一次迭代的参数（速度）。
 
-![动量法和Nesterov 加速梯度的比较](../assets/images/2020/20200720/momentum-and-nesterov.png)
+![动量法和Nesterov 加速梯度的比较](/assets/images/2020/20200720/momentum-and-nesterov.png)
 
 - Adam 算法和Nadam 算法
 
@@ -164,11 +170,11 @@ $\theta_t = \theta_{t-1} + \Delta \theta_t$。在标准的小批量梯度下降�
 
 #### 神经网络常用优化方法的汇总
 
-![神经网络常用优化方法的汇总](../assets/images/2020/20200720/networks-optimization-methods.png)
+![神经网络常用优化方法的汇总](/assets/images/2020/20200720/networks-optimization-methods.png)
 
 不同优化方法的比较
 
-![不同优化方法的比较](../assets/images/2020/20200720/networks-optimization-methods-compare.png)
+![不同优化方法的比较](/assets/images/2020/20200720/networks-optimization-methods-compare.png)
 
 ### 参数初始化
 
@@ -176,7 +182,7 @@ $\theta_t = \theta_{t-1} + \Delta \theta_t$。在标准的小批量梯度下降�
 
 1. 预训练初始化：使用一个已经在大规模数据上训练过的模型提供参数初始值。
 2. 随机初始化
-3. 固定值初始化：：对于一些特殊的参数，我们可以根据经验用一个特殊的固定值来进行初始化。
+3. 固定值初始化：对于一些特殊的参数，我们可以根据经验用一个特殊的固定值来进行初始化。
 
 预训练初始化通常具有更好的收敛性和泛化性，但是灵活性不够，不能在目标任务上任意地调整网络结构，所以有时还是只能使用随机初始化方法来初始化参数。
 
@@ -198,7 +204,7 @@ $\theta_t = \theta_{t-1} + \Delta \theta_t$。在标准的小批量梯度下降�
 
 Xavier 初始化和He 初始化的具体设置情况，$M_{l-1}$和$M_l$分别为输入输出的神经元个数。
 
-![Xavier 初始化和He 初始化的具体设置情况](../assets/images/2020/20200720/Xavier-and-He.png)
+![Xavier 初始化和He 初始化的具体设置情况](/assets/images/2020/20200720/Xavier-and-He.png)
 
 *正交初始化*
 
@@ -211,7 +217,7 @@ Xavier 初始化和He 初始化的具体设置情况，$M_{l-1}$和$M_l$分别�
 
 如果一个机器学习算法在缩放全部或部分特征后不影响它的学习和预测，我们就称该算法具有尺度不变性（Scale Invariance）。尺度就是取值范围。
 
-#### 归一化（Normalization）
+#### 归一化
 
 归一化（Normalization）方法泛指把数据特征转换为相同尺度的方法，比如
 
@@ -219,13 +225,13 @@ Xavier 初始化和He 初始化的具体设置情况，$M_{l-1}$和$M_l$分别�
 
 2. 标准化（Standardization）也叫Z 值归一化（Z-Score Normalization）把数据特征映射为服从均值为0、方差为1的标准正态分布。
 
-#### 白化（Whitening）
+#### 白化
 
 白化（Whitening）是一种重要的预处理方法，用来降低输入数据特征之间的冗余性．输入数据经过白化处理后，特征之间相关性较低，并且所有特征具有相同的方差．白化的一个主要实现方式是使用**主成分分析（Principal Component Analysis，PCA）**方法去除掉各个成分之间的相关性。
 
 标准归一化和PCA 白化的比较
 
-![标准归一化和PCA 白化的比较](../assets/images/2020/20200720/standardization-and-whitening.png)
+![标准归一化和PCA 白化的比较](/assets/images/2020/20200720/standardization-and-whitening.png)
 
 ### 逐层归一化
 
@@ -239,39 +245,39 @@ Xavier 初始化和He 初始化的具体设置情况，$M_{l-1}$和$M_l$分别�
 比较常用的逐层归一化方法：批量归一化、层归一化、权重归
 一化和局部响应归一化。
 
-#### 批量归一化（Batch Normalization）
+#### 批量归一化
 
-对输出的张量（N, C, H, W），基于N x H x W个数值求均值和方差进行归一化。
+批量归一化（Batch Normalization），对输出的张量（N, C, H, W），基于N x H x W个数值求均值和方差进行归一化。
 
-#### 层归一化（Layer Normalization）
+#### 层归一化
 
-对输出的张量（N, C, H, W），基于C x H x W个数值求均值和方差进行归一化。
+层归一化（Layer Normalization），对输出的张量（N, C, H, W），基于C x H x W个数值求均值和方差进行归一化。
 
-#### 实例归一化（Instance Normalization）
+#### 实例归一化
 
-对输出的张量（N, C, H, W），基于H x W个数值求均值和方差进行归一化。
+实例归一化（Instance Normalization），对输出的张量（N, C, H, W），基于H x W个数值求均值和方差进行归一化。
 
-#### 分组归一化（Group Normalization）
+#### 分组归一化
 
-对输出的张量（N, C, H, W），基于G x H x W个数值求均值和方差进行归一化。
+分组归一化（Group Normalization），对输出的张量（N, C, H, W），基于G x H x W个数值求均值和方差进行归一化。
 
 G是分组数，需要满足C可以整除G。
 
-![归一化方法](../assets/images/2020/20200720/normalization-methods.png)
+![归一化方法](/assets/images/2020/20200720/normalization-methods.png)
 
 [参考博客：An Overview of Normalization Methods in Deep Learning](https://mlexplained.com/2018/11/30/an-overview-of-normalization-methods-in-deep-learning/)
 
-#### 权重归一化（Weight Normalization）
+#### 权重归一化
 
-对权重或者说参数进行归一化。
+权重归一化（Weight Normalization），是对权重或者说参数进行归一化。
 
-#### 局部响应归一化（Local Response Normalization，LRN）
+#### 局部响应归一化
 
-局部响应归一化和层归一化都是对同层的神经元进行归一化．不同的是，**局部响应归一化应用在激活函数之后**，只是对邻近的神经元进行局部归一化，并且不减去均值。邻近的神经元指对应同样位置的邻近特征映射。
+局部响应归一化（Local Response Normalization，LRN）和层归一化都是对同层的神经元进行归一化．不同的是，**局部响应归一化应用在激活函数之后**，只是对邻近的神经元进行局部归一化，并且不减去均值。邻近的神经元指对应同样位置的邻近特征映射。
 
 局部响应归一化和生物神经元中的**侧抑制（lateral inhibition）现象**比较类似，即活跃神经元对相邻神经元具有抑制作用。当使用ReLU 作为激活函数时，神经元的活性值是没有限制的，局部响应归一化可以起到平衡和约束作用。如果一个神经元的活性值非常大，那么和它邻近的神经元就近似地归一化为0，从而起到抑制作用，增强模型的泛化能力。**最大汇聚**也具有侧抑制作用．但最大汇聚是对同一个特征映射中的邻近位置中的神经元进行抑制，而局部响应归一化是对同一个位置的邻近特征映射中的神经元进行抑制．
 
-### 超参数优化（Hyperparameter Optimization）
+### 超参数优化
 
 常见的超参数有以下三类：
 
@@ -279,22 +285,22 @@ G是分组数，需要满足C可以整除G。
 2. 优化参数，包括优化方法、学习率、小批量的样本数量等。
 3. 正则化系数。
 
-超参数优化主要存在两方面的困难：
+超参数优化（Hyperparameter Optimization）主要存在两方面的困难：
 
 1. 超参数优化是一个组合优化问题，无法像一般参数那样通过梯度下降方法来优化，也没有一种通用有效的优化方法；
 2. 评估一组超参数配置（Configuration）的时间代价非常高，从而导致一些优化方法（比如演化算法（Evolution Algorithm））在超参数优化中难以应用。
 
 对于超参数的配置，比较简单的方法有网格搜索、随机搜索、贝叶斯优化、动态资源分配和神经架构搜索。（都是搜索超参数的值的策略）
 
-#### 网格搜索（Grid Search）
+#### 网格搜索
 
-网格搜索是一种通过尝试所有超参数的组合来寻址合适一组超参数配置的方法。假设有K个超参数，第K个超参数有可能合适的值$m_k$个。那么总共的配置组合数量为$m_1 *  m_2 * \cdot x * m_K$，每次尝试一组，最后选择最好的训练结果下对应的超参数值。
+网格搜索（Grid Search）是一种通过尝试所有超参数的组合来寻址合适一组超参数配置的方法。假设有K个超参数，第K个超参数有可能合适的值$m_k$个。那么总共的配置组合数量为$m_1*m_2* \dotsc  * m_K$，每次尝试一组，最后选择最好的训练结果下对应的超参数值。
 
-#### 随机搜索（Random Search）
+#### 随机搜索
 
 采用网格搜索会在不重要的超参数上进行不必要的尝试。一种在实践中比较有效的改进方法是对超参数进行随机组合，然后选取一个性能最好的配置，这就是随机搜索（Random Search）。
 
-#### 贝叶斯优化（Bayesian optimization）
+#### 贝叶斯优化
 
 贝叶斯优化（Bayesian optimization）是一种自适应的超参数优化方法。根据当前已经试验的超参数组合，来预测下一个可能带来最大收益的组合。
 
@@ -325,6 +331,7 @@ $l1$和$l2$正则化是机器学习中最常用的正则化方法，通过约束
 ### 权重衰减
 
 权重衰减（Weight Decay），在每次参数更新时，引入一个衰减系数
+
 $$
 \theta_t \leftarrow (1 - \beta)\theta_{t-1} - \alpha {\rm g}_t
 $$
@@ -347,6 +354,7 @@ $$
 2. 对参数矩阵的每个元素进行随机丢弃，并在所有时刻都使用相同的丢弃掩码（丢弃掩码定义如下）。
 
 掩蔽函数$mask(\cdot)$，
+
 $$
 mask(\cdot) =
 \begin{cases}
