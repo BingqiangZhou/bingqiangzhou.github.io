@@ -1,5 +1,5 @@
 ---
-title: "【日常杂耍】使用Hexo+NexT结合GitHub搭建个人博客"
+title: "【折腾记录】使用Hexo+NexT结合GitHub搭建个人博客"
 published: 2019-08-11
 description: "今天使用Hexo+NexT结合GitHub搭建了个人博客bingqiangzhou.github.io，在这里总结一下建站过程。"
 lang: zh

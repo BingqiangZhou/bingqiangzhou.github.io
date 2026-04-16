@@ -1,5 +1,5 @@
 ---
-title: "【日常小结】python模块--argparse"
+title: "【学习笔记】python模块--argparse"
 published: 2020-06-16
 description: "今天总结一下python的argparse模块，这是python自带的命令行解析模块。"
 lang: zh

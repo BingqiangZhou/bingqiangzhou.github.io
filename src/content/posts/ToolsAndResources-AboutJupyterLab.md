@@ -1,5 +1,5 @@
 ---
-title: "【工具资源】jupyter lab"
+title: "【工具分享】jupyter lab"
 published: 2019-09-23
 description: "jupyter lab用了一段时间了，感觉特别棒，Markdown渲染可以直接渲染Mathjax公式，还可以下载各种插件等等，总之，我觉得很好用，这里mark一下。"
 lang: zh

@@ -1,5 +1,5 @@
 ---
-title: "【日常小结】记录一下torch.backends.cudnn.benchmark=True以及copy、multiprocessing与threading模块"
+title: "【学习笔记】记录一下torch.backends.cudnn.benchmark=True以及copy、multiprocessing与threading模块"
 published: 2020-07-04
 description: "今天晚上跑了一下《Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth》论文中的验证的代码，这里记录一下一些之前不知道或者不熟练的点。"
 lang: zh

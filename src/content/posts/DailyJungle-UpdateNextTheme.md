@@ -1,5 +1,5 @@
 ---
-title: "【日常杂耍】更新NexT主题"
+title: "【折腾记录】更新NexT主题"
 published: 2019-09-01
 description: "今天NexT更新了7.4.0，准备从NexT 7.3.0更新到7.4.0，附上NexT发布文档"
 lang: zh

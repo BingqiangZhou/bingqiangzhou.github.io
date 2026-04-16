@@ -1,5 +1,5 @@
 ---
-title: "【日常小结】python模块--logging"
+title: "【学习笔记】python模块--logging"
 published: 2020-06-15
 description: "上星期挺忙的，参加了一下学校的数学建模比赛，预测湖南湖北的疫情走势以及疫情对长沙经济的影响。"
 lang: zh

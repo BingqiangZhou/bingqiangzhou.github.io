@@ -1,5 +1,5 @@
 ---
-title: "【日常杂耍】反编译APK"
+title: "【折腾记录】反编译APK"
 published: 2019-09-16
 description: "简单记录一次突发奇想的实践经历，以及反编译APK的步骤。"
 lang: zh

@@ -1,5 +1,5 @@
 ---
-title: "【日常小结】在Ubuntu18.04 LTS部署DotNet Core相关项目"
+title: "【学习笔记】在Ubuntu18.04 LTS部署DotNet Core相关项目"
 published: 2019-08-23
 description: "记录一下部署DotNet Core项目到Ubuntu的过程，包括开发并发布项目、配置DotNet Core环境、安装Nginx配置反向代理服务器、使用supervisor管理进程，让DotNet Core应用程序一直运行。"
 lang: zh
