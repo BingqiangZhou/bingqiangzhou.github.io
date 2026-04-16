@@ -51,9 +51,9 @@ const isHome = isHomePage(Astro.url.pathname)
           )}
         </h3>
 
-        {/* mobile post time */}
+        {/* post time */}
         <div
-          class="py-0.8 text-3.5 font-time lg:hidden"
+          class="py-0.8 text-3.5 font-time"
           transition:name={`time-${slug}${lang ? `-${lang}` : ''}`}
           data-disable-theme-toggle-transition
         >
@@ -63,18 +63,10 @@ const isHome = isHomePage(Astro.url.pathname)
           />
         </div>
 
-        {/* desktop post time */}
-        <div class="hidden text-3.65 font-time lg:(ml-2.5 inline)">
-          <PostDate
-            date={post.data.published}
-            minutes={post.remarkPluginFrontmatter.minutes}
-          />
-        </div>
-
         {/* desktop post description */}
         {isHome && (
           <div
-            class="heti hidden"
+            class="heti hidden c-secondary"
             lg="mt-2.25 block"
           >
             <p>{getPostDescription(post, 'list')}</p>
