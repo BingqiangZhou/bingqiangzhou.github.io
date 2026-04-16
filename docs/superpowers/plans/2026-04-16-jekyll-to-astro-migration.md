@@ -498,7 +498,7 @@ export const themeConfig: ThemeConfig = {
       },
       {
         name: 'Email',
-        url: 'bingqiang_zhou@qq.com',
+        url: 'bingqiangzhou@qq.com',
       },
     ],
     startYear: 2019,
