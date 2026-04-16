@@ -3,7 +3,7 @@ title: "【日常小结】windows下git配置ssh和gpg"
 published: 2019-08-20
 description: "今天总结一下git配置ssh和gpg。"
 lang: zh
-tags: ["日常小结系列"]
+tags: ["学习笔记"]
 ---
 
 今天总结一下git配置ssh和gpg。

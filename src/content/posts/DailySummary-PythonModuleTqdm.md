@@ -3,7 +3,7 @@ title: "【日常小结】python模块--tqdm"
 published: 2020-06-17
 description: "今天总结一下tqdm模块~~以及pytorch框架选择GPU运行程序遇到的一个小问题。~~"
 lang: zh
-tags: ["日常小结系列"]
+tags: ["学习笔记"]
 ---
 
 今天总结一下tqdm模块~~以及pytorch框架选择GPU运行程序遇到的一个小问题。~~

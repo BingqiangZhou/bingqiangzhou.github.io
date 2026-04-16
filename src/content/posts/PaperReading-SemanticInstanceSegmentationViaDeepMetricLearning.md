@@ -3,7 +3,7 @@ title: "【论文阅读笔记】Semantic Instance Segmentation via Deep Metric L
 published: 2019-09-10
 description: "论文提出一种语义实例分割的新方法，简单概括为先计算两个像素点属于同一个对象的可能性，然后将相似的像素分组到一起。相似度的度量方式取决于深度完全卷积的嵌入模型，而分组的方法是取决于用深度完全卷积的评分模型选取与一组“种子点”（seed point）足够相似的所有点。论文下载地址"
 lang: zh
-tags: ["论文阅读笔记系列"]
+tags: ["论文阅读笔记"]
 ---
 [基于深度度量学习的语义实例分割（Semantic Instance Segmentation via Deep Metric Learning）](https://arxiv.org/abs/1703.10277)
 

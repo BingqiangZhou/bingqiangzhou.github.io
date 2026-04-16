@@ -3,7 +3,7 @@ title: "【日常杂耍】解析SSR订阅信息，将SSR信息保存到二维码
 published: 2020-07-19
 description: "今天放弃了收费的shadowsocks小火箭，转向了免费的potatso lite，这个过程是挺有意思的。"
 lang: zh
-tags: ["日常杂耍系列"]
+tags: ["折腾记录"]
 ---
 
 今天放弃了收费的`shadowsocks`小火箭，转向了免费的`potatso lite`，这个过程是挺有意思的。

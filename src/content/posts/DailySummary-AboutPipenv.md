@@ -3,7 +3,7 @@ title: "【日常小结】pipenv虚拟环境"
 published: 2019-10-28
 description: "粗略的总结一下使用pipenv创建虚拟环境，主要可以看上面那博客。"
 lang: zh
-tags: ["日常小结系列"]
+tags: ["学习笔记"]
 ---
 
 [pipenv github](https://github.com/pypa/pipenv)

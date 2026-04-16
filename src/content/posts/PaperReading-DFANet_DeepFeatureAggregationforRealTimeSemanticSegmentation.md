@@ -3,7 +3,7 @@ title: "【论文阅读笔记】DFANet: Deep Feature Aggregation for Real-Time S
 published: 2020-06-05
 description: "数字图像处理课要结课了，结课任务是讲解一篇，然后我们拿到的论文是这一篇：DFANet: Deep Feature Aggregation for Real-Time Semantic Segmentation，今天看了一下，论文主要提出一种特征聚合（Feature Aggregation）的结构，这里总结一下。"
 lang: zh
-tags: ["论文阅读笔记系列"]
+tags: ["论文阅读笔记"]
 ---
 
 数字图像处理课要结课了，结课任务是讲解一篇，然后我们拿到的论文是这一篇：DFANet: Deep Feature Aggregation for Real-Time Semantic Segmentation，今天看了一下，论文主要提出一种特征聚合（Feature Aggregation）的结构，这里总结一下。

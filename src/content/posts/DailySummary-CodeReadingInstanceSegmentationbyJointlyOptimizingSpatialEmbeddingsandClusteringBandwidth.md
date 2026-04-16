@@ -3,7 +3,7 @@ title: "【日常小结】记录一下torch.backends.cudnn.benchmark=True以及c
 published: 2020-07-04
 description: "今天晚上跑了一下《Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth》论文中的验证的代码，这里记录一下一些之前不知道或者不熟练的点。"
 lang: zh
-tags: ["日常小结系列"]
+tags: ["学习笔记"]
 ---
 
 今天晚上跑了一下[《Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth》](/posts/paperreading-instancesegmentationbyjointlyoptimizingspatialembeddingsandclusteringbandwidth/)论文中的验证的代码，这里记录一下一些之前不知道或者不熟练的点。

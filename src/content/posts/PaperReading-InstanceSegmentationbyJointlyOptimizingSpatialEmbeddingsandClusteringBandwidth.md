@@ -3,7 +3,7 @@ title: "【论文阅读笔记】Instance Segmentation by Jointly Optimizing Spat
 published: 2020-06-28
 description: "几天没写博客了，这几天在看一些课外书，不过今天看了一篇论文，Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth，它是之前EmbedMask那篇论文中的可学习间隙的来源，这篇论文说主要提出了一..."
 lang: zh
-tags: ["论文阅读笔记系列"]
+tags: ["论文阅读笔记"]
 ---
 
 几天没写博客了，这几天在看一些课外书，不过今天看了一篇论文，`Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth`，它是之前`EmbedMask`那篇论文中的可学习间隙的来源，这篇论文说主要提出了一种新的损失，而我觉得论文的主要贡献是提出了可学习的间隙`margin`以及在提高实时性的同时，保持了高的准确度。

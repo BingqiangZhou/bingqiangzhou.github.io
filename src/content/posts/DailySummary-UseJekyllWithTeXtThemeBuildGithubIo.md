@@ -3,7 +3,7 @@ title: "【日常小结】使用Jekyll的TeXt主题简单搭建github.io博客"
 published: 2019-09-10
 description: "这段时间突然发现需要使用到数学公式渲染的插件，而使用Hexo的NexT主题配置MathJax，弄了两天，每次弄了两三个小时，水平有限，没弄好，放弃了，直接使用Jekyll的TeXt主题简单的重新搭建github.io博客，不涉及开发，这里记录一下大概的步骤。"
 lang: zh
-tags: ["日常小结系列"]
+tags: ["学习笔记"]
 ---
 
 这段时间突然发现需要使用到数学公式渲染的插件，而使用Hexo的NexT主题配置MathJax，弄了两天，每次弄了两三个小时，水平有限，没弄好，放弃了，直接使用Jekyll的TeXt主题简单的重新搭建github.io博客，不涉及开发，这里记录一下大概的步骤。

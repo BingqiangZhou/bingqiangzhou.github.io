@@ -3,7 +3,7 @@ title: "【工具资源】ai studio、colab、kaggle免费的算力"
 published: 2019-09-17
 description: "薅羊毛，在Baidu AI Studio训练模型，框架不限于PaddlePaddle，TensorFlow，Pytorch都可以。"
 lang: zh
-tags: ["工具资源系列"]
+tags: ["工具分享"]
 ---
 
 薅羊毛，在Baidu AI Studio训练模型，框架不限于PaddlePaddle，TensorFlow，Pytorch都可以。
