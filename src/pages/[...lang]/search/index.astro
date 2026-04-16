@@ -1,0 +1,97 @@
+---
+import Search from 'astro-pagefind/components/Search'
+import { allLocales } from '@/config'
+import { getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  return allLocales.map(lang => ({
+    params: { lang: getLangRouteParam(lang) },
+  }))
+}
+---
+
+<Layout>
+  <!-- Decorative Line -->
+  <div class="uno-decorative-line" />
+  <!-- Search Section -->
+  <div class="mb-12">
+    <Search id="pagefind-search" className="uno-round-border p-4" />
+  </div>
+</Layout>
+
+<style is:global>
+/* ===== Pagefind Theme Variables ===== */
+[data-pagefind-ui] {
+  --pagefind-ui-scale: 1 !important;
+  --pagefind-ui-primary: oklch(var(--un-preset-theme-colors-primary)) !important;
+  --pagefind-ui-text: oklch(var(--un-preset-theme-colors-secondary)) !important;
+  --pagefind-ui-background: oklch(var(--un-preset-theme-colors-background)) !important;
+  --pagefind-ui-border: oklch(var(--un-preset-theme-colors-secondary) / 0.15) !important;
+  --pagefind-ui-tag: oklch(var(--un-preset-theme-colors-secondary) / 0.1) !important;
+  --pagefind-ui-border-width: 1px !important;
+  --pagefind-ui-border-radius: 6px !important;
+  --pagefind-ui-font: inherit !important;
+}
+
+/* ===== Search Input ===== */
+[data-pagefind-ui] .pagefind-ui__search-input {
+  height: auto !important;
+  padding: 0.6em 1em 0.6em 2.4em !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+[data-pagefind-ui] .pagefind-ui__search-input::placeholder {
+  color: oklch(var(--un-preset-theme-colors-secondary) / 0.5) !important;
+  opacity: 1 !important;
+}
+
+/* ===== Search Icon ===== */
+[data-pagefind-ui] .pagefind-ui__form::before {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 16px !important;
+  height: 16px !important;
+  left: 14px !important;
+}
+
+/* ===== Clear Button ===== */
+[data-pagefind-ui] .pagefind-ui__search-clear {
+  display: none !important;
+}
+
+/* ===== Results ===== */
+[data-pagefind-ui] .pagefind-ui__result-excerpt {
+  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
+}
+[data-pagefind-ui] .pagefind-ui__result-excerpt mark {
+  background: oklch(var(--un-preset-theme-colors-primary) / 0.12) !important;
+  color: inherit !important;
+  padding: 0.1em 0.2em !important;
+  border-radius: 2px !important;
+}
+[data-pagefind-ui] .pagefind-ui__message {
+  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
+}
+[data-pagefind-ui] .pagefind-ui__loading {
+  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
+  background-color: oklch(var(--un-preset-theme-colors-secondary)) !important;
+}
+
+/* ===== Buttons ===== */
+[data-pagefind-ui] .pagefind-ui__button {
+  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
+}
+[data-pagefind-ui] .pagefind-ui__button:hover {
+  border-color: oklch(var(--un-preset-theme-colors-primary)) !important;
+  color: oklch(var(--un-preset-theme-colors-primary)) !important;
+}
+
+/* ===== Filters ===== */
+[data-pagefind-ui] .pagefind-ui__filter-name {
+  color: oklch(var(--un-preset-theme-colors-primary)) !important;
+}
+[data-pagefind-ui] .pagefind-ui__filter-label {
+  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
+}
+</style>

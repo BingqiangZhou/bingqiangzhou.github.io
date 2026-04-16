@@ -132,10 +132,10 @@ html[data-theme-changing] [data-disable-theme-toggle-transition] {
 }
 
 /* Back Button Animation >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-@keyframes fadeInLeft {
+@keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(0.5rem);
+    transform: translateX(-0.5rem);
   }
   to {
     opacity: 1;
@@ -143,10 +143,10 @@ html[data-theme-changing] [data-disable-theme-toggle-transition] {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1536px) {
   #back-button {
     opacity: 0;
-    animation: fadeInLeft 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: fadeInRight 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     animation-delay: 0.2s;
   }
 }

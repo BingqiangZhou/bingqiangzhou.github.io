@@ -2,6 +2,7 @@ import mdx from '@astrojs/mdx'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import Compress from 'astro-compress'
+import pagefind from 'astro-pagefind'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import rehypeMermaid from 'rehype-mermaid'
@@ -52,6 +53,7 @@ export default defineConfig({
       },
     }),
     sitemap(),
+    pagefind(),
     Compress({
       CSS: true,
       HTML: true,

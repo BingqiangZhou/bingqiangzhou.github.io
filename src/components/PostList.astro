@@ -23,13 +23,14 @@ const isHome = isHomePage(Astro.url.pathname)
 
     return (
       <li
+        id={`post-${slug}`}
         class:list={[
           'mb-5.5',
           isHome ? 'lg:mb-10' : '',
         ]}
       >
         {/* post title */}
-        <h3 class="inline transition-colors hover:c-primary">
+        <h3 class:list={['inline transition-colors', isHome ? 'c-primary' : 'hover:c-primary']}>
           <a
             class:list={[
               'cjk:tracking-wide',
@@ -66,7 +67,7 @@ const isHome = isHomePage(Astro.url.pathname)
         {/* desktop post description */}
         {isHome && (
           <div
-            class="heti hidden c-secondary"
+            class="heti hidden c-secondary/60"
             lg="mt-2.25 block"
           >
             <p>{getPostDescription(post, 'list')}</p>

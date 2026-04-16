@@ -5,7 +5,6 @@ import { getCollection, render } from 'astro:content'
 import Comment from '@/components/Comment/Index.astro'
 import PostDate from '@/components/PostDate.astro'
 import TagList from '@/components/TagList.astro'
-import BackButton from '@/components/Widgets/BackButton.astro'
 import TOC from '@/components/Widgets/TOC.astro'
 import { allLocales } from '@/config'
 import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
@@ -88,10 +87,8 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
 >
   <article class="heti">
     <div class="relative">
-      <!-- Go Back Button On Desktop -->
-      <BackButton />
       <!-- Title -->
-      <h1 class="post-title">
+      <h1 id="post-title-top" class="post-title">
         <span
           transition:name={`post-${slug}${currentLang ? `-${currentLang}` : ''}`}
           data-disable-theme-toggle-transition
@@ -115,7 +112,7 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
       />
     </div>
     <!-- TOC -->
-    {post.data.toc && <TOC headings={headings} />}
+    {post.data.toc && <TOC headings={headings} postTitle={post.data.title} slug={slug} />}
     <!-- Content -->
     <div id="post-content">
       <Content />

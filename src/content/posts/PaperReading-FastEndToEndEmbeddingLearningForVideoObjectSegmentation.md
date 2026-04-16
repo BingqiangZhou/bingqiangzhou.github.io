@@ -1,5 +1,5 @@
 ---
-title: "【论文阅读笔记】FEELVOS&#58; Fast End-to-End Embedding Learning for Video Object Segmentation"
+title: "【论文阅读笔记】FEELVOS: Fast End-to-End Embedding Learning for Video Object Segmentation"
 published: 2019-09-20
 description: "视频对象分割快速端对端嵌入学习方法（FEELVOS: Fast End-to-End Embedding Learning for Video Object Segmentation）"
 lang: zh
@@ -34,7 +34,7 @@ $$d(p,q)=1-\frac {2}{1+exp({\vert \vert e_p -e_q \vert \vert }^2)}$$
 
 定义全局匹配公式为
 
-$$ G_{t, o}(p) = min_{q \in P_{1, o}} d_(p, q)$$
+$$ G_{t, o}(p) = min_{q \in P_{1, o}} d(p, q)$$
 
 这里的t代表第几帧，o为全体对象的一个，$G_{t, o}(p)$为第t帧中像素点p与第一帧对象o的最小距离，而$P_{1, o}$对应于第一帧所属对象o的像素点集合。
 
@@ -42,7 +42,7 @@ $$ G_{t, o}(p) = min_{q \in P_{1, o}} d_(p, q)$$
 
 ## 本地前一帧匹配（local previous frame matching）
 
-$$ \hat G_{t, o}(p) = \begin{cases} min_{q \in P_{t-1, o}} d_(p, q), &{ if\ P_{t-1, o}\neq \emptyset}\\\\ 1,&{otherwise}\end{cases} $$
+$$ \hat G_{t, o}(p) = \begin{cases} min_{q \in P_{t-1, o}} d(p, q), &{ if\ P_{t-1, o}\neq \emptyset}\\ 1,&{otherwise}\end{cases} $$
 
 这里与全局匹配类似，计算上一帧与当前帧的距离，但是，当这一帧不存在对象o的时候设置距离为1。
 
@@ -52,7 +52,7 @@ $$ \hat G_{t, o}(p) = \begin{cases} min_{q \in P_{t-1, o}} d_(p, q), &{ if\ P_{t
 
 给定一个窗口大小k（作者设置k=15），以p点为中心，向上下左右延伸k个像素点，记这个像素点集合为$N(p)$，集合中存在有$(2\cdot k +1)^2$个元素，让集合$N(p)$与$P_{1, o}$去交集，再计算距离，没有交集的情况，距离直接设置1，这里的原理是只有p点周围的像素点中存在属于对象的像素点的时候，才进行计算，周围没有属于对象的像素点的时候，看作没有变化不进行计算。
 
-$$ L_{t, o}(p) = \begin{cases} min_{q \in P_{t-1, o}^p} d_(p, q), &{ if\ P_{t-1, o}^p\neq \emptyset}\\\\ 1,&{otherwise}\end{cases} $$
+$$ L_{t, o}(p) = \begin{cases} min_{q \in P_{t-1, o}^p} d(p, q), &{ if\ P_{t-1, o}^p\neq \emptyset}\\ 1,&{otherwise}\end{cases} $$
 
 其中$P_{t-1, o}^p = P_{t-1, o} \cap N(p)$
 

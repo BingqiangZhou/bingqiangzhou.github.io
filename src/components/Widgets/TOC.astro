@@ -1,17 +1,20 @@
 ---
 import type { MarkdownHeading } from 'astro'
 import TocIcon from '@/assets/icons/toc-icon.svg'
+import BackButton from '@/components/Widgets/BackButton.astro'
 import { ui } from '@/i18n/ui'
 import { getPageInfo } from '@/utils/page'
 
 interface Props {
   headings: MarkdownHeading[]
+  postTitle?: string
+  slug?: string
 }
 
 const { currentLang } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 
-const { headings = [] } = Astro.props
+const { headings = [], postTitle = '', slug = '' } = Astro.props
 const filteredHeadings = headings.filter(heading => heading.depth >= 2 && heading.depth <= 4)
 ---
 
@@ -19,8 +22,13 @@ const filteredHeadings = headings.filter(heading => heading.depth >= 2 && headin
   // TOC Container
   <div
     id="toc-container"
-    class="mb-6 uno-round-border bg-secondary/5 2xl:(fixed left-0 top-44.5 max-w-[min(calc(50vw-38rem),13rem)] border-none bg-secondary/0)"
+    class="mb-6 uno-round-border bg-secondary/5 2xl:(fixed right-[5rem] top-44.5 max-w-[min(calc(50vw-38rem),13rem)] border-none bg-secondary/0)"
   >
+    {/* Back Button - visible on desktop alongside TOC */}
+    <div class="hidden 2xl:block">
+      <BackButton slug={slug} />
+    </div>
+
     {/* Hidden Checkbox */}
     <input
       type="checkbox"
@@ -56,6 +64,16 @@ const filteredHeadings = headings.filter(heading => heading.depth >= 2 && headin
       >
         {/* TOC List */}
         <ul id="toc-links-list">
+          {postTitle && (
+            <li class="ml-0">
+              <a
+                href="#post-title-top"
+                class="no-heti toc-links-h2"
+              >
+                {postTitle}
+              </a>
+            </li>
+          )}
           {filteredHeadings.map(heading => (
             <li
               class:list={{

@@ -8,6 +8,7 @@ interface Translation {
   tags: string
   about: string
   toc: string
+  search: string
 }
 
 export const ui: Record<Language, Translation> = {
@@ -19,6 +20,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Schlagwörter',
     about: 'Über',
     toc: 'Inhaltsverzeichnis',
+    search: 'Suchen',
   },
   'en': {
     title: 'Retypeset',
@@ -28,6 +30,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Tags',
     about: 'About',
     toc: 'Table of Contents',
+    search: 'Search',
   },
   'es': {
     title: 'Retipografía',
@@ -37,6 +40,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Etiquetas',
     about: 'Sobre',
     toc: 'Índice',
+    search: 'Buscar',
   },
   'fr': {
     title: 'Retypographie',
@@ -46,6 +50,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Étiquettes',
     about: 'À propos',
     toc: 'Table des matières',
+    search: 'Rechercher',
   },
   'ja': {
     title: '再組版',
@@ -55,6 +60,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'タグ',
     about: '概要',
     toc: '目次',
+    search: '検索',
   },
   'ko': {
     title: '재조판',
@@ -64,6 +70,7 @@ export const ui: Record<Language, Translation> = {
     tags: '태그',
     about: '소개',
     toc: '목차',
+    search: '검색',
   },
   'pl': {
     title: 'Przeskład',
@@ -73,6 +80,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Tagi',
     about: 'O stronie',
     toc: 'Spis treści',
+    search: 'Szukaj',
   },
   'pt': {
     title: 'Retipografia',
@@ -82,6 +90,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Tags',
     about: 'Sobre',
     toc: 'Sumário',
+    search: 'Buscar',
   },
   'ru': {
     title: 'Переверстка',
@@ -91,6 +100,7 @@ export const ui: Record<Language, Translation> = {
     tags: 'Теги',
     about: 'О себе',
     toc: 'Оглавление',
+    search: 'Поиск',
   },
   'zh': {
     title: '惟愿此心无怨尤',
@@ -100,6 +110,7 @@ export const ui: Record<Language, Translation> = {
     tags: '标签',
     about: '关于',
     toc: '目录',
+    search: '搜索',
   },
   'zh-tw': {
     title: '重新編排',
@@ -109,5 +120,6 @@ export const ui: Record<Language, Translation> = {
     tags: '標籤',
     about: '關於',
     toc: '目錄',
+    search: '搜尋',
   },
 }
