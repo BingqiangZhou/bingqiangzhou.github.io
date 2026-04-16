@@ -6,7 +6,7 @@ lang: zh
 tags: ["日常小结系列"]
 ---
 
-今天晚上跑了一下[《Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth》](https://bingqiangzhou.github.io/2020/06/28/PaperReading-InstanceSegmentationbyJointlyOptimizingSpatialEmbeddingsandClusteringBandwidth.html)论文中的验证的代码，这里记录一下一些之前不知道或者不熟练的点。
+今天晚上跑了一下[《Instance Segmentation by Jointly Optimizing Spatial Embeddings and Clustering Bandwidth》](/posts/paperreading-instancesegmentationbyjointlyoptimizingspatialembeddingsandclusteringbandwidth/)论文中的验证的代码，这里记录一下一些之前不知道或者不熟练的点。
 
 
 

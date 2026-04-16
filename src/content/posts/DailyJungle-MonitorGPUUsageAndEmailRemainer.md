@@ -18,7 +18,7 @@ tags: ["日常杂耍系列"]
 
 ## 主要代码
 
-下面主要给出执行命令行，以及解析返回结果代码，发送邮件仅给出之前的的一篇博客作为参考，[参考:【日常杂耍】定时获取成绩，新出一门成绩使用邮件提醒](https://bingqiangzhou.github.io/2020/06/22/DailyJungle-SMTP-SeleniumWithHeadlessBroswer.html#2发送邮件)。
+下面主要给出执行命令行，以及解析返回结果代码，发送邮件仅给出之前的的一篇博客作为参考，[参考:【日常杂耍】定时获取成绩，新出一门成绩使用邮件提醒](/posts/dailyjungle-smtp-seleniumwithheadlessbroswer/#2发送邮件)。
 
 NVIDIA-SMI相关命令，参考[NVIDIA-SMI系列命令总结](https://www.cnblogs.com/omgasw/p/10218180.html)。
 

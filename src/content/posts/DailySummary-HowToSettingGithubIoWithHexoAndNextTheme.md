@@ -129,7 +129,7 @@ language: en
 越南语			|		vi
 
 #### [设置菜单显示内容](https://theme-next.org/docs/getting-started/#Configuring-Menu-Items) ####
-设置菜单中显示标签页、分类页、关于页等等页面。设置形式是`Key: /link/ || icon`，这里的`Key`是显示在菜单的名称，这里原有的是英文的，但是显示时变成对应的语言，比如说简体中文，`home`就会显示为`首页`，而在自定义页面设置是使用自己语言就好了，比如下面的`朋友`，（[自定义页面请查看](https://bingqiangzhou.github.io/2019/08/13/2019-8-13-how-to-set-github-io-use-hexo-with-next-md/#NexT%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%EF%BC%89)），随后是`link`（链接）可以放URL链接不限`http`、`https`，如下面的`网页: https://bingqiangzhou.cn || heartbeat`，还有就是可以设置在`hexo/source/`目录下的文件夹，最后一个参数`icon`，是图标的名称，这个名称可以在[Font Awesome图标字体库和CSS框架的网站](http://fontawesome.dashgame.com/)去找，有特别多的图标，都可以任意设置。
+设置菜单中显示标签页、分类页、关于页等等页面。设置形式是`Key: /link/ || icon`，这里的`Key`是显示在菜单的名称，这里原有的是英文的，但是显示时变成对应的语言，比如说简体中文，`home`就会显示为`首页`，而在自定义页面设置是使用自己语言就好了，比如下面的`朋友`，（[自定义页面请查看](/posts/dailysummary-howtosettinggithubiowithhexoandnexttheme/#NexT%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%EF%BC%89)），随后是`link`（链接）可以放URL链接不限`http`、`https`，如下面的`网页: https://bingqiangzhou.cn || heartbeat`，还有就是可以设置在`hexo/source/`目录下的文件夹，最后一个参数`icon`，是图标的名称，这个名称可以在[Font Awesome图标字体库和CSS框架的网站](http://fontawesome.dashgame.com/)去找，有特别多的图标，都可以任意设置。
 ```yaml
 menu:
   home: / || home
