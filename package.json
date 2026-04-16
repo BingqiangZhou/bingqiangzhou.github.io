@@ -1,53 +1,85 @@
 {
-  "name": "jekyll-text-theme",
-  "version": "2.2.4",
-  "description": "A super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc.",
+  "name": "astro-theme-retypeset",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.33.0",
+  "repository": "https://github.com/radishzzz/astro-theme-retypeset",
   "scripts": {
-    "build": "cross-env JEKYLL_ENV=production bundle exec jekyll build",
-    "serve": "bundle exec jekyll serve -H 0.0.0.0",
-    "Gemfile.lock": "docker run --rm -v \"$PWD\":/usr/src/app -w /usr/src/app ruby:2.6 bundle install",
-    "docker-dev:build-image": "docker-compose -f ./docker/docker-compose.build-image.yml build",
-    "docker-dev:default": "docker-compose -f ./docker/docker-compose.default.yml up",
-    "docker-dev:dev": "docker-compose -f ./docker/docker-compose.dev.yml up",
-    "docker-dev:demo-dev": "docker-compose -f ./docker/docker-compose.demo.yml up",
-    "docker-dev:demo-beta": "cross-env JEKYLL_ENV=beta docker-compose -f ./docker/docker-compose.demo.yml up",
-    "docker-dev:demo-prod": "cross-env JEKYLL_ENV=production docker-compose -f ./docker/docker-compose.demo.yml up",
-    "docker-prod:build": "cross-env JEKYLL_ENV=production docker-compose -f ./docker/docker-compose.prod.yml build",
-    "docker-prod:serve": "cross-env JEKYLL_ENV=production docker-compose -f ./docker/docker-compose.prod.yml up",
-    "default": "bundle exec jekyll serve -H 0.0.0.0 -t",
-    "dev": "bundle exec jekyll serve -H 0.0.0.0 -t --config ./docs/_config.dev.yml",
-    "demo-dev": "bundle exec jekyll serve -H 0.0.0.0 -t --config ./docs/_config.yml",
-    "demo-beta": "cross-env JEKYLL_ENV=beta bundle exec jekyll serve -H 0.0.0.0 -t --config ./docs/_config.yml",
-    "demo-prod": "cross-env JEKYLL_ENV=production bundle exec jekyll serve -H 0.0.0.0 -t --config ./docs/_config.yml",
-    "eslint": "eslint \"_includes/**/*.js\"",
-    "eslint-fix": "eslint \"_includes/**/*.js\" --fix",
-    "stylelint": "stylelint --syntax scss \"_sass/**/*.scss\"",
-    "stylelint-fix": "stylelint --syntax scss \"_sass/**/*.scss\" --fix",
-    "gem-build": "rm -fv jekyll-text-theme-*.gem && gem build jekyll-text-theme.gemspec",
-    "gem-push": "gem push jekyll-text-theme-*.gem"
+    "dev": "astro check && astro dev",
+    "build": "astro check && astro build && pnpm apply-lqip",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "new-post": "tsx scripts/new-post.ts",
+    "apply-lqip": "tsx scripts/apply-lqip.ts",
+    "format-posts": "tsx scripts/format-posts.ts",
+    "update-theme": "tsx scripts/update-theme.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kitian616/jekyll-TeXt-theme.git"
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/partytown": "^2.1.6",
+    "@astrojs/sitemap": "^3.7.2",
+    "@waline/client": "^3.13.0",
+    "astro": "^6.1.5",
+    "astro-compress": "^2.4.1",
+    "astro-og-canvas": "^0.11.0",
+    "canvaskit-wasm": "^0.41.1",
+    "feed": "^5.2.0",
+    "katex": "^0.16.45",
+    "lite-youtube-embed": "^0.3.4",
+    "markdown-it": "^14.1.1",
+    "mdast-util-to-string": "^4.0.0",
+    "mermaid": "^11.14.0",
+    "node-html-parser": "^7.1.0",
+    "reading-time": "^1.5.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-mermaid": "^3.0.0",
+    "rehype-slug": "^6.0.0",
+    "remark-directive": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "sanitize-html": "^2.17.2",
+    "sharp": "^0.34.5",
+    "twikoo": "^1.7.7",
+    "unist-util-visit": "^5.1.0"
   },
-  "keywords": [
-    "jekyll",
-    "jekyll-theme",
-    "jekyll-template"
-  ],
-  "author": "Tian Qi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kitian616/jekyll-TeXt-theme/issues"
-  },
-  "homepage": "https://github.com/kitian616/jekyll-TeXt-theme",
   "devDependencies": {
-    "cross-env": "^5.2.0",
-    "eslint": "^5.4.0",
-    "stylelint": "^9.5.0",
-    "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-order": "^1.0.0",
-    "stylelint-scss": "^3.3.0"
+    "@antfu/eslint-config": "^8.1.1",
+    "@astrojs/check": "^0.9.8",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^25.6.0",
+    "@types/sanitize-html": "^2.16.1",
+    "@unocss/astro": "66.6.8",
+    "@unocss/eslint-plugin": "66.6.8",
+    "@unocss/preset-attributify": "66.6.8",
+    "@unocss/reset": "66.6.8",
+    "astro-eslint-parser": "^1.4.0",
+    "autocorrect-node": "^2.14.0",
+    "eslint": "^10.2.0",
+    "eslint-plugin-astro": "^1.7.0",
+    "fast-glob": "^3.3.3",
+    "lint-staged": "^16.4.0",
+    "playwright": "^1.59.1",
+    "simple-git-hooks": "^2.13.1",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.2",
+    "unocss": "66.6.8",
+    "unocss-preset-theme": "^0.14.1"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@qwik.dev/partytown@0.11.2": "patches/@qwik.dev__partytown@0.11.2.patch"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "simple-git-hooks"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,mjs,ts,astro}": "eslint --fix"
   }
 }
