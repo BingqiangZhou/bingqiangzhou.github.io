@@ -33,6 +33,21 @@ export function getPostPath(slug: string, lang: Language): string {
 }
 
 /**
+ * Get path to a specific news page with language support
+ *
+ * @param slug News slug
+ * @param lang Current language code
+ * @returns Path to news page
+ */
+export function getNewsPath(slug: string, lang: Language): string {
+  const newsPath = lang === defaultLocale
+    ? `/news/${slug}/`
+    : `/${lang}/news/${slug}/`
+
+  return base ? `${base}${newsPath}` : newsPath
+}
+
+/**
  * Generate localized path based on current language
  *
  * @param path Path to localize

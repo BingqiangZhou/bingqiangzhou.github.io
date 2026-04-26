@@ -59,11 +59,11 @@ Posts live in `src/content/posts/` as `.md` or `.mdx` files.
 **Frontmatter** (required fields):
 
 ```yaml
-title: "【标签】标题"
+title: 【标签】标题
 published: 2026-04-24
-description: "一句话摘要"
+description: 一句话摘要
 lang: zh
-tags: ["标签名"]
+tags: [标签名]
 ```
 
 Optional fields: `updated` (date), `draft` (boolean), `pin` (0-99), `toc` (boolean), `abbrlink` (URL slug, lowercase alphanumeric + hyphens). Dates use `YYYY-MM-DD` format.

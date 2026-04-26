@@ -1,0 +1,31 @@
+---
+import NewsList from '@/components/NewsList.astro'
+import { allLocales } from '@/config'
+import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+import { getNewsByDate } from '@/utils/content'
+
+export async function getStaticPaths() {
+  return allLocales.map(lang => ({
+    params: { lang: getLangRouteParam(lang) },
+  }))
+}
+
+const currentLang = getLangFromLocale(Astro.currentLocale)
+const newsByDate = await getNewsByDate(currentLang)
+---
+
+<Layout>
+  {newsByDate.map(({ year, months }) => (
+    <section class="mb-7.5">
+      <div class="uno-decorative-line" />
+      <h2 class="mb-4 text-4.5 c-primary font-bold">{year}</h2>
+      {Array.from(months.entries()).map(([month, entries]) => (
+        <div class="mb-5">
+          <h3 class="mb-3 text-3.8 c-secondary font-bold">{month + 1}月</h3>
+          <NewsList news={entries} lang={currentLang} />
+        </div>
+      ))}
+    </section>
+  ))}
+</Layout>

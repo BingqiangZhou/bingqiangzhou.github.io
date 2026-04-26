@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import type { Language } from '@/i18n/config'
+import { getNewsPath } from '@/i18n/path'
+
+interface Props {
+  news: CollectionEntry<'news'>[]
+  lang: Language
+}
+
+const { news, lang } = Astro.props
+---
+
+<ul>
+  {news.map((entry) => {
+    const slug = entry.id
+
+    return (
+      <li class="mb-4">
+        <h3 class="inline transition-colors hover:c-primary">
+          <a
+            class="cjk:tracking-wide"
+            href={getNewsPath(slug, lang)}
+            transition:name={`news-${slug}${lang ? `-${lang}` : ''}`}
+            data-disable-theme-toggle-transition
+          >
+            {entry.data.title}
+          </a>
+        </h3>
+        <div
+          class="py-0.8 text-3.5 c-primary font-time"
+          transition:name={`news-time-${slug}${lang ? `-${lang}` : ''}`}
+          data-disable-theme-toggle-transition
+        >
+          <time datetime={entry.data.published.toISOString().split('T')[0]}>
+            {entry.data.published.toISOString().split('T')[0]}
+          </time>
+        </div>
+      </li>
+    )
+  })}
+</ul>

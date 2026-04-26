@@ -5,6 +5,7 @@ interface Translation {
   subtitle: string
   description: string
   posts: string
+  news: string
   tags: string
   about: string
   toc: string
@@ -17,6 +18,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'Die Schönheit der Typografie wiederbeleben',
     description: 'Retypeset ist ein statisches Blog-Theme basierend auf dem Astro-Framework, auf Deutsch bekannt als "Neusatz". Dieses Theme, inspiriert von traditioneller Typografie, etabliert einen neuen visuellen Standard und gestaltet alle Seiten neu, um ein Leseerlebnis ähnlich dem gedruckter Bücher zu schaffen und die Schönheit des Satzes wiederzubeleben. Jedes Element ist bis ins kleinste Detail durchdacht, Eleganz zeigt sich auch im kleinsten Raum.',
     posts: 'Beiträge',
+    news: 'Nachrichten',
     tags: 'Schlagwörter',
     about: 'Über',
     toc: 'Inhaltsverzeichnis',
@@ -27,6 +29,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'Revive the beauty of typography',
     description: 'Retypeset is a static blog theme based on the Astro framework. Inspired by Typography, Retypeset establishes a new visual standard and reimagines the layout of all pages, creating a reading experience reminiscent of paper books, reviving the beauty of typography. Details in every sight, elegance in every space.',
     posts: 'Posts',
+    news: 'News',
     tags: 'Tags',
     about: 'About',
     toc: 'Table of Contents',
@@ -37,6 +40,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'Reviviendo la belleza tipográfica',
     description: 'Retypeset es un tema de blog estático basado en el framework Astro. Inspirado por Typography, Retypeset establece un nuevo estándar visual y reimagina el diseño de todas las páginas, creando una experiencia de lectura similar a la de los libros impresos, reviviendo la belleza de la tipografía. Detalles en cada mirada, elegancia en cada espacio.',
     posts: 'Artículos',
+    news: 'Noticias',
     tags: 'Etiquetas',
     about: 'Sobre',
     toc: 'Índice',
@@ -47,6 +51,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'Raviver la beauté de la typographie',
     description: 'Retypeset est un thème de blog statique basé sur le framework Astro, connu en français sous le nom de "Retypographie". Ce thème, inspiré par la typographie traditionnelle, établit une nouvelle norme visuelle et réorganise toutes les pages pour créer une expérience de lecture semblable à celle des livres imprimés, ravivant ainsi la beauté de la mise en page. Chaque élément est soigné dans les moindres détails, l\'élégance se manifeste dans les plus petits espaces.',
     posts: 'Articles',
+    news: 'Actualités',
     tags: 'Étiquettes',
     about: 'À propos',
     toc: 'Table des matières',
@@ -57,6 +62,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: '印刷の美を甦らせる',
     description: 'Retypesetは、日本語では「再組版」と呼ばれる、Astroフレームワークをベースにした静的ブログテーマです。活版印字からデザインのインスピレーションを得て、新しい視覚的な規範を確立し、すべてのページのレイアウトを再構成することで、紙の書籍のような読書体験を提供し、版面の美しさを蘇らせます。見るものすべてが細部にこだわり、限られたスペースの中に優雅さを表現しています。',
     posts: '記事',
+    news: 'ニュース',
     tags: 'タグ',
     about: '概要',
     toc: '目次',
@@ -67,6 +73,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: '판형의 아름다움을 재현하다',
     description: 'Retypeset은 Astro 프레임워크를 기반으로 한 정적 블로그 테마로, 한국어로는 "재조판"이라고 합니다. 이 테마는 활판 인쇄에서 디자인 영감을 얻어, 새로운 시각적 기준을 확립하고 모든 페이지를 재구성하여 종이책과 같은 독서 경험을 제공하며 판형의 아름다움을 되살립니다. 모든 것이 세부적인 디테일이며, 작은 공간에서도 우아함이 느껴집니다.',
     posts: '게시물',
+    news: '뉴스',
     tags: '태그',
     about: '소개',
     toc: '목차',
@@ -77,6 +84,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'Ożywiając piękno typografii',
     description: 'Retypeset to statyczny motyw bloga oparty na frameworku Astro, w języku polskim znany jako "Przeskład". Ten motyw, inspirowany typografią drukarską, ustanawia nowy standard wizualny i reorganizuje wszystkie strony, tworząc doświadczenie czytelnicze przypominające papierowe książki, przywracając piękno układu tekstu. Każdy element jest dopracowany w szczegółach, elegancja zawarta w najmniejszej przestrzeni.',
     posts: 'Artykuły',
+    news: 'Wiadomości',
     tags: 'Tagi',
     about: 'O stronie',
     toc: 'Spis treści',
@@ -87,6 +95,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'Reviva a beleza da tipografia',
     description: 'Retypeset é um tema de blog estático baseado no framework Astro. Inspirado pela tipografia, o Retypeset estabelece um novo padrão visual e reimagina o layout de todas as páginas, criando uma experiência de leitura reminiscente de livros físicos, revivendo a beleza da tipografia. Cada detalhe é visível, elegância em cada espaço.',
     posts: 'Artigos',
+    news: 'Notícias',
     tags: 'Tags',
     about: 'Sobre',
     toc: 'Sumário',
@@ -97,6 +106,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'Возрождая красоту типографики',
     description: 'Retypeset — это статическая тема блога, основанная на фреймворке Astro. Вдохновленная Typography, Retypeset устанавливает новый визуальный стандарт и переосмысливает компоновку всех страниц, создавая опыт чтения, напоминающий печатные книги, возрождая красоту типографики. Детали в каждом взгляде, элегантность в каждом пространстве.',
     posts: 'Посты',
+    news: 'Новости',
     tags: 'Теги',
     about: 'О себе',
     toc: 'Оглавление',
@@ -107,6 +117,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: 'TO BE, TO UP.',
     description: 'TO BE, TO UP.',
     posts: '文章',
+    news: '资讯',
     tags: '标签',
     about: '关于',
     toc: '目录',
@@ -117,6 +128,7 @@ export const ui: Record<Language, Translation> = {
     subtitle: '再現版式之美',
     description: 'Retypeset是一款基於Astro框架的靜態部落格主題，中文名為重新編排。本主題以活版印字為設計靈感，通過建立全新的視覺規範，對所有頁面進行重新編排，打造紙質書頁般的閱讀體驗，再現版式之美。所見皆為細節，方寸盡顯優雅。',
     posts: '文章',
+    news: '資訊',
     tags: '標籤',
     about: '關於',
     toc: '目錄',

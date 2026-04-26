@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection, render } from 'astro:content'
+import PostDate from '@/components/PostDate.astro'
+import { allLocales } from '@/config'
+import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection('news')
+
+  return allLocales.flatMap(lang => newsEntries
+    .filter(entry => import.meta.env.DEV || !entry.data.draft)
+    .filter(entry => entry.data.lang === lang || entry.data.lang === '')
+    .map(entry => ({
+      params: { lang: getLangRouteParam(lang), slug: entry.id },
+      props: { entry },
+    })),
+  )
+}
+
+interface Props {
+  entry: CollectionEntry<'news'>
+}
+
+const { entry } = Astro.props
+const currentLang = getLangFromLocale(Astro.currentLocale)
+const { Content, remarkPluginFrontmatter } = await render(entry)
+---
+
+<Layout
+  postTitle={entry.data.title}
+  postSlug={entry.id}
+>
+  <article class="heti">
+    <div class="relative">
+      <h1 id="post-title-top" class="post-title">
+        <span
+          transition:name={`news-${entry.id}${currentLang ? `-${currentLang}` : ''}`}
+          data-disable-theme-toggle-transition
+        >
+          {entry.data.title}
+        </span>
+      </h1>
+    </div>
+
+    <div
+      id="post-date"
+      class="mb-17.2 block c-primary font-time"
+      transition:name={`news-time-${entry.id}${currentLang ? `-${currentLang}` : ''}`}
+      data-disable-theme-toggle-transition
+    >
+      <PostDate
+        date={entry.data.published}
+        minutes={remarkPluginFrontmatter.minutes}
+      />
+    </div>
+
+    <div id="post-content">
+      <Content />
+    </div>
+  </article>
+</Layout>

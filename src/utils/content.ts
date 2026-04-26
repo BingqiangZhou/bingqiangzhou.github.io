@@ -236,3 +236,82 @@ async function _getTagSupportedLangs(tag: string): Promise<Language[]> {
 }
 
 export const getTagSupportedLangs = memoize(_getTagSupportedLangs)
+
+/**
+ * Get all news entries (excluding drafts in production), sorted by date descending
+ *
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns News entries filtered by language, sorted by date
+ */
+async function _getNewsList(lang?: Language) {
+  const currentLang = lang || defaultLocale
+
+  const newsEntries = await getCollection(
+    'news',
+    ({ data }: CollectionEntry<'news'>) => {
+      const shouldInclude = import.meta.env.DEV || !data.draft
+      return shouldInclude && (data.lang === currentLang || data.lang === '')
+    },
+  )
+
+  return newsEntries.sort((a, b) =>
+    b.data.published.valueOf() - a.data.published.valueOf(),
+  )
+}
+
+export const getNewsList = memoize(_getNewsList)
+
+export interface NewsByYear {
+  year: number
+  months: Map<number, CollectionEntry<'news'>[]>
+}
+
+/**
+ * Group news by year and month
+ *
+ * @param lang The language code to filter by, defaults to site's default language
+ * @returns Array of year groups, each containing a map of months to news entries
+ */
+async function _getNewsByDate(lang?: Language): Promise<NewsByYear[]> {
+  const newsEntries = await getNewsList(lang)
+  const yearMap = new Map<number, Map<number, CollectionEntry<'news'>[]>>()
+
+  newsEntries.forEach((entry) => {
+    const date = entry.data.published
+    const year = date.getFullYear()
+    const month = date.getMonth()
+
+    let monthMap = yearMap.get(year)
+    if (!monthMap) {
+      monthMap = new Map()
+      yearMap.set(year, monthMap)
+    }
+
+    let monthEntries = monthMap.get(month)
+    if (!monthEntries) {
+      monthEntries = []
+      monthMap.set(month, monthEntries)
+    }
+    monthEntries.push(entry)
+  })
+
+  // Sort each month's entries by date descending
+  yearMap.forEach((monthMap) => {
+    monthMap.forEach((entries) => {
+      entries.sort((a, b) =>
+        b.data.published.getDate() - a.data.published.getDate(),
+      )
+    })
+  })
+
+  return Array.from(yearMap.entries())
+    .sort((a, b) => b[0] - a[0])
+    .map(([year, months]) => ({
+      year,
+      months: new Map(
+        Array.from(months.entries()).sort((a, b) => b[0] - a[0]),
+      ),
+    }))
+}
+
+export const getNewsByDate = memoize(_getNewsByDate)
