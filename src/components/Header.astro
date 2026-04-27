@@ -3,14 +3,14 @@ import { themeConfig } from '@/config'
 import { ui } from '@/i18n/ui'
 import { getPageInfo } from '@/utils/page'
 
-const { currentLang, getLocalizedPath, isPost, isNews } = getPageInfo(Astro.url.pathname)
+const { currentLang, getLocalizedPath, isPost, isNews, isPodcast } = getPageInfo(Astro.url.pathname)
 const { title, subtitle, i18nTitle } = themeConfig.site
 
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 const headerTitle = i18nTitle ? currentUI.title : title
 const headerSubtitle = i18nTitle ? currentUI.subtitle : subtitle
 
-const isDetailPage = isPost || isNews
+const isDetailPage = isPost || isNews || isPodcast
 const TitleTag = isDetailPage ? 'h2' : 'h1'
 const SubtitleTag = isDetailPage ? 'div' : 'h2'
 ---

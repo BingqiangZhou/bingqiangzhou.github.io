@@ -315,3 +315,69 @@ async function _getNewsByDate(lang?: Language): Promise<NewsByYear[]> {
 }
 
 export const getNewsByDate = memoize(_getNewsByDate)
+
+async function _getPodcastList(lang?: Language) {
+  const currentLang = lang || defaultLocale
+
+  const podcastEntries = await getCollection(
+    'podcasts',
+    ({ data }: CollectionEntry<'podcasts'>) => {
+      const shouldInclude = import.meta.env.DEV || !data.draft
+      return shouldInclude && (data.lang === currentLang || data.lang === '')
+    },
+  )
+
+  return podcastEntries.sort((a, b) =>
+    b.data.published.valueOf() - a.data.published.valueOf(),
+  )
+}
+
+export const getPodcastList = memoize(_getPodcastList)
+
+export interface PodcastByYear {
+  year: number
+  months: Map<number, CollectionEntry<'podcasts'>[]>
+}
+
+async function _getPodcastByDate(lang?: Language): Promise<PodcastByYear[]> {
+  const podcastEntries = await getPodcastList(lang)
+  const yearMap = new Map<number, Map<number, CollectionEntry<'podcasts'>[]>>()
+
+  podcastEntries.forEach((entry) => {
+    const date = entry.data.published
+    const year = date.getFullYear()
+    const month = date.getMonth()
+
+    let monthMap = yearMap.get(year)
+    if (!monthMap) {
+      monthMap = new Map()
+      yearMap.set(year, monthMap)
+    }
+
+    let monthEntries = monthMap.get(month)
+    if (!monthEntries) {
+      monthEntries = []
+      monthMap.set(month, monthEntries)
+    }
+    monthEntries.push(entry)
+  })
+
+  yearMap.forEach((monthMap) => {
+    monthMap.forEach((entries) => {
+      entries.sort((a, b) =>
+        b.data.published.getDate() - a.data.published.getDate(),
+      )
+    })
+  })
+
+  return Array.from(yearMap.entries())
+    .sort((a, b) => b[0] - a[0])
+    .map(([year, months]) => ({
+      year,
+      months: new Map(
+        Array.from(months.entries()).sort((a, b) => b[0] - a[0]),
+      ),
+    }))
+}
+
+export const getPodcastByDate = memoize(_getPodcastByDate)

@@ -47,6 +47,14 @@ export function getNewsPath(slug: string, lang: Language): string {
   return base ? `${base}${newsPath}` : newsPath
 }
 
+export function getPodcastPath(slug: string, lang: Language): string {
+  const podcastPath = lang === defaultLocale
+    ? `/podcasts/${slug}/`
+    : `/${lang}/podcasts/${slug}/`
+
+  return base ? `${base}${podcastPath}` : podcastPath
+}
+
 /**
  * Generate localized path based on current language
  *

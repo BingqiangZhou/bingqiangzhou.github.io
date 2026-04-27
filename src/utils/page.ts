@@ -50,6 +50,10 @@ export function isNewsPage(path: string) {
   return matchPageType(path, 'news')
 }
 
+export function isPodcastPage(path: string) {
+  return matchPageType(path, 'podcasts')
+}
+
 // Returns page context with language, page types and localization helper
 export function getPageInfo(path: string) {
   const currentLang = getLangFromPath(path)
@@ -59,6 +63,7 @@ export function getPageInfo(path: string) {
   const isAbout = isAboutPage(path)
   const isSearch = isSearchPage(path)
   const isNews = isNewsPage(path)
+  const isPodcast = isPodcastPage(path)
 
   return {
     currentLang,
@@ -68,6 +73,7 @@ export function getPageInfo(path: string) {
     isAbout,
     isSearch,
     isNews,
+    isPodcast,
     getLocalizedPath: (targetPath: string) =>
       getLocalizedPath(targetPath, currentLang),
   }

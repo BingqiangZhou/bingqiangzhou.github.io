@@ -45,4 +45,14 @@ const news = defineCollection({
   }),
 })
 
-export const collections = { posts, about, news }
+const podcasts = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/podcasts' }),
+  schema: z.object({
+    title: z.string(),
+    published: z.date(),
+    draft: z.boolean().optional().default(false),
+    lang: z.enum(['', ...allLocales]).optional().default(''),
+  }),
+})
+
+export const collections = { posts, about, news, podcasts }

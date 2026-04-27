@@ -28,8 +28,8 @@ interface Props {
 }
 
 const { postTitle, postDescription, postSlug, supportedLangs = [] } = Astro.props
-const { isPost, isNews } = getPageInfo(Astro.url.pathname)
-const isDetailPage = isPost || isNews
+const { isPost, isNews, isPodcast } = getPageInfo(Astro.url.pathname)
+const isDetailPage = isPost || isNews || isPodcast
 const fontStyle = themeConfig.global.fontStyle === 'serif' ? 'font-serif' : 'font-sans'
 const MarginBottom = isDetailPage && themeConfig.comment.enabled
   ? 'mb-10' // Post page with comment
