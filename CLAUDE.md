@@ -40,11 +40,11 @@ remark plugins: math (`remark-math`), custom container/leaf directives, reading 
 
 ### Source Layout
 
-- `src/pages/[...lang]/` — All pages (home, post list, tags, about, search, feeds)
-- `src/components/` — Astro components (Comment integrations: Giscus/Twikoo/Waline, Widgets: TOC, CodeCopy, ImageZoom)
+- `src/pages/[...lang]/` — All pages (home, post list, news, podcasts, tags, about, search, feeds)
+- `src/components/` — Astro components (Comment integrations: Giscus/Twikoo/Waline, Widgets: TOC, CodeCopy, ImageZoom, NewsList, PodcastList)
 - `src/plugins/` — Custom remark/rehype plugins
 - `src/layouts/` — Head.astro (SEO/meta/OG), Layout.astro (main wrapper)
-- `src/utils/content.ts` — Post querying (getPosts, getPinnedPosts, getPostsByYear, getPostsGroupByTags)
+- `src/utils/content.ts` — Content querying (posts, news, podcasts with date grouping utilities)
 
 ## Content Conventions
 
@@ -79,6 +79,24 @@ Post images in `public/assets/images/` organized by year and date (e.g., `public
 ### Slug Resolution
 
 Post URLs use `abbrlink` if set, otherwise fall back to the file's `id` (filename without extension).
+
+### News & Podcasts
+
+News and Podcasts are separate content collections (simpler schema than posts) with list pages grouped by year/month.
+
+**Content directories**: `src/content/news/` and `src/content/podcasts/`
+
+**Frontmatter** (minimal):
+
+```yaml
+title: 标题
+published: 2026-04-27
+lang: zh
+```
+
+Optional: `draft` (boolean). URL slug is the file's `id` (filename without extension).
+
+**Key files per section**: content collection in `src/content.config.ts`, list component (`NewsList.astro`/`PodcastList.astro`), pages at `src/pages/[...lang]/news/` and `src/pages/[...lang]/podcasts/`, query functions in `src/utils/content.ts`, path helpers in `src/i18n/path.ts`.
 
 ## Deployment
 
