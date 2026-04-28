@@ -1,0 +1,41 @@
+name: Sync Daily Digest
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout blog
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Clone DailyDigest
+        run: git clone --depth 1 https://github.com/BingqiangZhou/DailyDigest.git /tmp/daily-digest
+
+      - name: Run sync script
+        run: node .github/scripts/sync-digest.mjs /tmp/daily-digest/daily-digests
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content/news/ src/content/podcasts/
+          git diff --cached --quiet || git commit -m "sync: daily digest $(date +%Y-%m-%d)"
+          git push
+
+      - name: Trigger deploy
+        if: always()
+        run: gh workflow run deploy.yml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
