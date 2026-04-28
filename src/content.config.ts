@@ -40,6 +40,7 @@ const news = defineCollection({
   schema: z.object({
     title: z.string(),
     published: z.date(),
+    tags: z.array(z.string()).optional(),
     draft: z.boolean().optional().default(false),
     lang: z.enum(['', ...allLocales]).optional().default(''),
   }),
@@ -50,6 +51,7 @@ const podcasts = defineCollection({
   schema: z.object({
     title: z.string(),
     published: z.date(),
+    tags: z.array(z.string()).optional(),
     draft: z.boolean().optional().default(false),
     lang: z.enum(['', ...allLocales]).optional().default(''),
   }),
