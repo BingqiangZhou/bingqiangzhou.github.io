@@ -361,8 +361,8 @@ $$
 $$
 mask(\cdot) =
 \begin{cases}
-m \odot x & 当训练阶段时 \\
-p x & 当测试阶段时
+m \odot x & \text{当训练阶段时} \\
+p x & \text{当测试阶段时}
 \end{cases}
 $$
 
