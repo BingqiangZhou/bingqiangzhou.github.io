@@ -50,6 +50,7 @@ for (const { source, target, tag } of mappings) {
     ].join('\n')
 
     const body = readFileSync(join(source, file), 'utf-8')
+      .replace(/^(#.*)$/m, '<!-- $1 -->')
     writeFileSync(targetPath, frontmatter + body)
     synced++
     console.log(`Synced: ${file} -> ${targetPath}`)
