@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import process from 'node:process'
 
@@ -51,6 +51,7 @@ for (const { source, target, tag } of mappings) {
 
     const body = readFileSync(join(source, file), 'utf-8')
       .replace(/^(#.*)$/m, '<!-- $1 -->')
+    mkdirSync(target, { recursive: true })
     writeFileSync(targetPath, frontmatter + body)
     synced++
     console.log(`Synced: ${file} -> ${targetPath}`)
