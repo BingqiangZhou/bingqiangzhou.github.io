@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import { getCollection, render } from 'astro:content'
 import PostDate from '@/components/PostDate.astro'
+import TOC from '@/components/Widgets/TOC.astro'
 import { allLocales } from '@/config'
 import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
 import Layout from '@/layouts/Layout.astro'
@@ -25,7 +26,7 @@ interface Props {
 
 const { entry } = Astro.props
 const currentLang = getLangFromLocale(Astro.currentLocale)
-const { Content, remarkPluginFrontmatter } = await render(entry)
+const { Content, headings, remarkPluginFrontmatter } = await render(entry)
 ---
 
 <Layout
@@ -55,7 +56,7 @@ const { Content, remarkPluginFrontmatter } = await render(entry)
         minutes={remarkPluginFrontmatter.minutes}
       />
     </div>
-
+    {entry.data.toc && <TOC headings={headings} postTitle={entry.data.title} slug={entry.id} />}
     <div id="post-content">
       <Content />
     </div>

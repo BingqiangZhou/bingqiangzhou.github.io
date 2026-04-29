@@ -42,6 +42,7 @@ const news = defineCollection({
     published: z.date(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().optional().default(false),
+    toc: z.boolean().optional().default(themeConfig.global.toc),
     lang: z.enum(['', ...allLocales]).optional().default(''),
   }),
 })
@@ -53,6 +54,7 @@ const podcasts = defineCollection({
     published: z.date(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().optional().default(false),
+    toc: z.boolean().optional().default(themeConfig.global.toc),
     lang: z.enum(['', ...allLocales]).optional().default(''),
   }),
 })
