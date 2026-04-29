@@ -9,6 +9,16 @@ interface Props {
 }
 
 const { news, lang } = Astro.props
+
+function extractHighlights(body: string | undefined): string[] {
+  if (!body)
+return []
+  const sectionMatch = body.match(/^## 📌 (?:今日要点|TL;DR)\n([\s\S]*?)(?=\n---|\n## )/m)
+  if (!sectionMatch)
+return []
+  const items = [...sectionMatch[1].matchAll(/^(?:> )?- (.+)$/gm)]
+  return items.map(m => m[1].trim()).filter(Boolean)
+}
 ---
 
 <ul>
@@ -36,6 +46,13 @@ const { news, lang } = Astro.props
             {entry.data.published.toISOString().split('T')[0]}
           </time>
         </div>
+        {extractHighlights(entry.body).length > 0 && (
+          <ul class="list-disc pl-4 text-3 c-secondary leading-relaxed">
+            {extractHighlights(entry.body).map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
       </li>
     )
   })}
