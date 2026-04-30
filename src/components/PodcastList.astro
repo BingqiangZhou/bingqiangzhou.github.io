@@ -13,7 +13,8 @@ const { podcasts, lang } = Astro.props
 function extractHighlights(body: string | undefined): string[] {
   if (!body)
 return []
-  const sectionMatch = body.match(/^## 📌 (?:今日要点|TL;DR)\n([\s\S]*?)(?=\n---|\n## )/m)
+  const normalized = body.replace(/\r\n/g, '\n')
+  const sectionMatch = normalized.match(/^## (?:📌 )?(?:今日要点|TL;DR)\n([\s\S]*?)(?=\n---|\n## )/m)
   if (!sectionMatch)
 return []
   const items = [...sectionMatch[1].matchAll(/^(?:> )?- (.+)$/gm)]
