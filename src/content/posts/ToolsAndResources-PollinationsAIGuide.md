@@ -6,35 +6,65 @@ lang: zh
 tags: [工具分享]
 ---
 
-Pollinations.AI 是一个总部位于柏林的开源生成式 AI 平台，提供完全免费的文本、图像、音频、视频生成 API。它的最大特点是**无需注册、无需 API Key 即可使用**，且整个代码库在 GitHub 上以 MIT 协议开源。截至 2026 年 4 月，已有超过 500 个社区项目基于 Pollinations 构建，日均处理 150 万次请求，累计生成了超过 2 亿张图片。
+Pollinations.AI 是一个总部位于柏林的开源生成式 AI 平台，提供免费的文本、图像、音频、视频生成 API。它的最大特点是**基础功能无需注册、无需 API Key 即可使用**，且整个代码库在 GitHub 上以 MIT 协议开源。截至 2026 年 4 月，已有超过 500 个社区项目基于 Pollinations 构建，日均处理 150 万次请求，累计生成了超过 2 亿张图片。
+
+需要特别说明的是，Pollinations **并非所有功能都免费**。它采用分层策略：基础模型（Flux、GPT Image 1 Mini 等）完全免费，而高端模型（GPT Image 2、Claude Opus、Gemini Pro 等）需要消耗 Pollen 积分。本文会明确标注每一项功能的免费/付费情况。
 
 如果你之前了解的 Pollinations 还停留在"免费生图 API"的印象，那值得重新认识一下——它现在已经发展为一个覆盖**文本对话、图像生成、视频合成、语音播报**的全栈 AI 平台。
 
+## 免费 vs 付费：先看这一张表
+
+| | 免费可用（无需付费） | 需要 Pollen 积分 |
+|--|----------------------|-------------------|
+| **图像** | Flux、Z-Image、GPT Image 1 Mini、Kontext、Seedream、Wan Image、通义万相、Klein | GPT Image 1.5、GPT Image 2、NanoBanana Pro、Grok Imagine |
+| **文本** | GPT（基础）、Claude（基础）、Gemini（基础）、DeepSeek、Qwen、Mistral | Claude Opus 4.7、GPT Large、Gemini Large 等高级变体 |
+| **视频** | Seedance（基础） | Seedance Pro、Veo |
+| **音频** | OpenAI TTS（6 种声音） | ElevenLabs 高级声音、音乐生成 |
+
+- **匿名用户**：1 次请求 / 15 秒，可使用免费模型，图片可能带水印
+- **注册用户**（免费）：1 次请求 / 5 秒 + 每周 1.5 Pollen 免费积分，可去水印
+- **付费用户**：更高频率 + 高级模型 + 更多 Pollen
+
+> 注册即送每周 1.5 Pollen，Pollen 换算 $1 ≈ 1 Pollen。对于个人项目和日常使用，免费额度基本够用。
+
 ## 核心能力一览
 
-| 能力 | 支持模型 | 端点 |
-|------|----------|------|
-| 图像生成 | Flux、Z-Image、GPT Image、Seedream、Kontext、Wan Image 等 | `GET /image/{prompt}` |
-| 文本生成 | GPT-5、Claude、Gemini、DeepSeek、Qwen、Mistral 等 | `POST /v1/chat/completions` |
-| 视频生成 | Seedance、Veo（alpha） | `GET /video/{prompt}` |
-| 语音合成 | OpenAI TTS、ElevenLabs 等 30+ 声音 | `GET /audio/{text}` |
-| 语音转写 | Whisper 系列 | `POST /v1/audio/transcriptions` |
-| 视觉理解 | 多模态模型 | `POST /v1/chat/completions`（带图片输入） |
+| 能力 | 免费模型 | 付费模型 | 端点 |
+|------|----------|----------|------|
+| 图像生成 | Flux、Z-Image、GPT Image 1 Mini、Kontext 等 | GPT Image 2、NanoBanana Pro 等 | `GET /image/{prompt}` |
+| 文本生成 | GPT、Claude、Gemini、DeepSeek、Qwen 等 | Claude Opus、GPT Large 等 | `POST /v1/chat/completions` |
+| 视频生成 | Seedance（有限） | Seedance Pro、Veo | `GET /video/{prompt}` |
+| 语音合成 | OpenAI TTS（6 声音） | ElevenLabs（30+ 声音） | `GET /audio/{text}` |
+| 语音转写 | Whisper（基础） | — | `POST /v1/audio/transcriptions` |
+| 视觉理解 | 多模态模型 | — | `POST /v1/chat/completions`（带图片输入） |
 
 统一 API 地址为 `https://gen.pollinations.ai`，所有功能共用一个端点，路径区分生成类型。同时完全兼容 OpenAI SDK 格式，只需将 `base_url` 换成 Pollinations 即可。
 
 ## 免费额度与访问层级
 
-Pollinations 的免费策略在同类平台中非常大方：
+Pollinations 采用**分层免费 + 积分付费**的混合模式：
 
-| 层级 | 频率限制 | 可用模型 | 注册要求 |
-|------|----------|----------|----------|
-| 匿名 | 1 次请求 / 15 秒 | 基础模型 | 不需要 |
-| Seed（免费注册） | 1 次请求 / 5 秒 | 标准模型 | 注册即可 |
-| Flower（付费） | 1 次请求 / 3 秒 | 高级模型 | 付费订阅 |
-| Nectar（企业） | 无限制 | 全部模型 | 联系官方 |
+| 层级 | 费用 | 频率限制 | 免费模型 | 付费模型 | 水印 |
+|------|------|----------|----------|----------|------|
+| 匿名 | 免费 | 1 次 / 15 秒 | 可用 | 不可用 | 有 |
+| Seed | 免费注册 | 1 次 / 5 秒 | 可用 | 可用（消耗 Pollen） | 可去除 |
+| Flower | 付费订阅 | 1 次 / 3 秒 | 可用 | 可用（消耗 Pollen） | 无 |
+| Nectar | 企业级 | 无限制 | 可用 | 可用（消耗 Pollen） | 无 |
 
-注册用户还可以每周获得 1.5 Pollen（平台积分）的免费额度，用于调用付费模型（如 GPT Image 2、NanoBanana Pro 等）。Pollen 的换算比例约为 $1 ≈ 1 Pollen。
+**免费可以获得什么**：
+- 所有基础图像模型的无限次生成（Flux、Z-Image、Kontext 等）
+- 所有基础文本模型的无限次对话（GPT、Claude 基础版、Gemini 等）
+- 注册后每周 1.5 Pollen 免费积分，可用于体验付费模型
+- Seed 层级贡献者可获得每日 3 Pollen 额度
+
+**什么需要花钱**：
+- 高端图像模型（GPT Image 2、NanoBanana Pro 等）按次消耗 Pollen
+- 高端文本模型（Claude Opus 4.7、GPT Large 等）按 token 消耗 Pollen
+- 视频生成（Veo 等）消耗 Pollen
+- ElevenLabs 高级声音和音乐生成消耗 Pollen
+- 超出免费频率限制的请求
+
+Pollen 换算比例约为 $1 ≈ 1 Pollen，注册用户每周免费获得 1.5 Pollen，活跃贡献者（Seed 层级）每日额外获得 3 Pollen。
 
 ## 图像生成
 
@@ -87,21 +117,37 @@ response = client.images.generate(model="flux", prompt="a cat in space", size="1
 
 ### 可用图像模型
 
-| 模型 | 说明 | 免费 |
-|------|------|------|
-| `flux` | Flux Schnell，快速高质量 | 是 |
-| `zimage` | Z-Image Turbo，6B Flux + 2x 超分（默认模型） | 是 |
-| `gptimage` | GPT Image 1 Mini | 是 |
-| `gptimage-large` | GPT Image 1.5 | 需积分 |
-| `gpt-image-2` | GPT Image 2（最新一代） | 需积分 |
-| `kontext` | FLUX.1 Kontext，支持图生图 | 是 |
-| `seedream` / `seedream5` | 阿里 Seedream 系列 | 是 |
-| `wan-image` | 阿里 Wan 2.7 Image，支持图编辑 | 是 |
-| `qwen-image` | 通义万相 | 是 |
-| `nanobanana` | Gemini 2.5 Flash Image | 需积分 |
-| `klein` | FLUX.2 Klein 4B，快速生成+编辑 | 是 |
+**免费模型**（匿名即可使用）：
 
-> 完整模型列表可通过 `GET https://gen.pollinations.ai/image/models` 获取。
+| 模型 | 说明 | 特点 |
+|------|------|------|
+| `flux` | Flux Schnell，快速高质量 | 2-3 秒出图，适合日常使用 |
+| `zimage` | Z-Image Turbo，6B Flux + 2x 超分 | 默认模型，画质更好 |
+| `gptimage` | GPT Image 1 Mini | OpenAI 出品，文字渲染好 |
+| `kontext` | FLUX.1 Kontext | 支持**图生图**，基于参考图编辑 |
+| `seedream` / `seedream5` | 阿里 Seedream 系列 | 中文提示词友好 |
+| `wan-image` | 阿里 Wan 2.7 Image | 支持图片编辑，最高 2K |
+| `qwen-image` | 通义万相 | 阿里出品，支持图编辑 |
+| `klein` | FLUX.2 Klein 4B | 快速生成 + 编辑 |
+| `turbo` | Turbo 加速模型 | 速度最快，质量略低 |
+
+**付费模型**（需消耗 Pollen 积分）：
+
+| 模型 | 说明 | 备注 |
+|------|------|------|
+| `gptimage-large` | GPT Image 1.5 | 画质提升，文字渲染更强 |
+| `gpt-image-2` | GPT Image 2 最新一代 | 当前最强 OpenAI 图像模型 |
+| `nanobanana` | Gemini 2.5 Flash Image | 支持图片输入 |
+| `nanobanana-2` | Gemini 3.1 Flash Image | 更新版本 |
+| `nanobanana-pro` | Gemini 3 Pro Image（4K） | 最高画质，带 Thinking |
+| `grok-imagine` | xAI Grok Imagine | xAI 官方生图 |
+| `grok-imagine-pro` | Grok Imagine Pro（Aurora） | 高端版本 |
+| `p-image` / `p-image-edit` | Pruna 系列 | 快速生成 + 图片编辑 |
+| `nova-canvas` | AWS Nova Canvas | Bedrock 图片生成与编辑 |
+| `wan-image-pro` | Wan 2.7 Image Pro | 4K 画质，Thinking 模式 |
+| `seedream-pro` | Seedream Pro | 高端版本 |
+
+> 完整模型列表可通过 `GET https://gen.pollinations.ai/image/models` 实时获取（无需认证）。
 
 ## 文本生成
 
@@ -129,29 +175,56 @@ curl https://gen.pollinations.ai/v1/chat/completions \
   }'
 ```
 
-### 可用文本模型（部分）
+### 可用文本模型
+
+**免费模型**（匿名或注册即可使用）：
 
 | 模型 | 说明 |
 |------|------|
-| `openai` / `openai-fast` / `openai-large` | GPT 系列 |
-| `claude` / `claude-fast` / `claude-large` / `claude-opus-4.7` | Anthropic Claude 系列 |
-| `gemini` / `gemini-fast` / `gemini-large` | Google Gemini 系列 |
-| `deepseek` / `deepseek-pro` | DeepSeek 系列 |
-| `qwen-coder` / `qwen-large` | 通义千问系列 |
-| `grok` / `grok-large` | xAI Grok 系列 |
-| `mistral` / `mistral-large` | Mistral 系列 |
-| `perplexity-fast` / `perplexity-reasoning` | Perplexity 搜索增强 |
+| `openai` / `openai-fast` | GPT 基础版，日常对话首选 |
+| `claude` / `claude-fast` | Claude 基础版 |
+| `gemini` / `gemini-fast` | Gemini 基础版 |
+| `deepseek` | DeepSeek V3.2 |
+| `qwen-coder` | 通义千问编码模型 |
+| `mistral` | Mistral 基础版 |
+| `grok` | xAI Grok 基础版 |
+| `gemini-flash-lite-3.1` | Gemini Flash 轻量版 |
+| `kimi` / `kimi-k2.6` | Moonshot Kimi 系列 |
+| `llama` | Meta Llama |
+| `glm` | 智谱 GLM |
+| `nova-fast` / `nova` | Amazon Nova 系列 |
+
+**付费模型**（需消耗 Pollen 积分）：
+
+| 模型 | 说明 |
+|------|------|
+| `openai-large` | GPT 高级版 |
+| `claude-large` / `claude-opus-4.7` | Claude 高级版 / 旗舰版 |
+| `gemini-large` | Gemini 高级版 |
+| `deepseek-pro` | DeepSeek Pro |
+| `qwen-large` / `qwen-vision` | 通义千问高级版 / 视觉版 |
+| `grok-large` | xAI Grok 高级版 |
+| `mistral-large` | Mistral 高级版 |
+| `qwen-coder-large` | 通义千问编码高级版 |
+
+**特殊功能模型**（免费）：
+
+| 模型 | 说明 |
+|------|------|
 | `gemini-search` | Gemini 联网搜索 |
+| `perplexity-fast` / `perplexity-reasoning` | Perplexity 搜索增强推理 |
+| `openai-audio` / `openai-audio-large` | 语音输入/输出 |
+| `polly` | Pollinations 自研模型 |
 
 > 完整列表通过 `GET https://gen.pollinations.ai/v1/models` 获取，无需认证。
 
 ## 视频生成
 
-Pollinations 近期新增了视频生成能力，目前处于 alpha 阶段，支持以下模型：
+Pollinations 近期新增了视频生成能力，目前处于 alpha 阶段。**视频生成需要消耗 Pollen 积分，不支持免费使用**：
 
-- **Seedance**：字节跳动 Seedance 文生视频
-- **Seedance Pro**：支持图生视频
-- **Veo**：Google Veo 文生视频（支持带音频）
+- **Seedance**：字节跳动 Seedance 文生视频 — 付费
+- **Seedance Pro**：支持图生视频 — 付费
+- **Veo**：Google Veo 文生视频（支持带音频）— 付费
 
 ```bash
 curl "https://gen.pollinations.ai/video/ocean%20waves%20crashing%20on%20a%20beach?model=seedance&duration=5" \
@@ -159,19 +232,21 @@ curl "https://gen.pollinations.ai/video/ocean%20waves%20crashing%20on%20a%20beac
   -o video.mp4
 ```
 
-视频生成目前消耗 Pollen 积分，但基础模型的消耗非常低。
+视频生成是 Pollinations 中为数不多完全需要付费的功能，注册用户可以用每周免费获得的 1.5 Pollen 来体验。
 
 ## 音频：语音合成与转写
 
 ### 文字转语音（TTS）
 
-支持 OpenAI TTS 的全部声音（alloy、echo、fable、onyx、nova、shimmer）以及 30+ ElevenLabs 声音：
+**免费**：支持 OpenAI TTS 的 6 种基础声音（alloy、echo、fable、onyx、nova、shimmer）。
+
+**付费**：30+ ElevenLabs 高级声音和音乐生成，需消耗 Pollen 积分。
 
 ```bash
-# 简单 GET
+# 免费 — OpenAI TTS 声音
 curl "https://gen.pollinations.ai/audio/Hello%20from%20Pollinations?voice=nova" -o speech.mp3
 
-# OpenAI 兼容
+# 免费 — OpenAI 兼容格式
 curl https://gen.pollinations.ai/v1/audio/speech \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_KEY" \
@@ -179,9 +254,9 @@ curl https://gen.pollinations.ai/v1/audio/speech \
   -o speech.mp3
 ```
 
-### 音乐生成
+### 音乐生成（付费）
 
-使用 ElevenLabs 的音乐生成模型：
+使用 ElevenLabs 的音乐生成模型，需消耗 Pollen 积分：
 
 ```typescript
 import { generateAudio } from '@pollinations_ai/sdk'
@@ -193,9 +268,9 @@ const music = await generateAudio('upbeat jazz piano', {
 await music.saveToFile('jazz.mp3')
 ```
 
-### 语音转文字
+### 语音转文字（免费）
 
-兼容 OpenAI Whisper 格式，支持音频文件转写为文本。
+兼容 OpenAI Whisper 格式，支持音频文件转写为文本。基础语音转写在免费模型范围内。
 
 ## 视觉理解与多模态
 
@@ -290,13 +365,15 @@ Pollinations 的服务在国内可以正常访问，这也是它在国内开发�
 
 ## 实际使用建议
 
-**快速验证**：直接在浏览器地址栏输入 `https://image.pollinations.ai/prompt/你的描述` 即可测试图像生成。
+**零成本快速体验**：直接在浏览器地址栏输入 `https://image.pollinations.ai/prompt/你的描述` 即可测试免费图像生成，无需任何注册。
 
-**项目集成**：注册获取 API Key 后，使用 OpenAI 兼容格式接入，几乎所有现成的 OpenAI SDK 代码只需改一行 `base_url` 就能切换到 Pollinations。
+**个人项目推荐方案**：注册免费账号，获得 Seed 层级权限（5 秒/次频率 + 去水印 + 每周 1.5 Pollen）。免费模型（Flux、Z-Image、GPT Image 1 Mini）对个人项目完全够用。
 
-**大规模调用**：建议注册并使用 Secret Key（`sk_` 前缀），无频率限制，适合服务端批量调用。可通过模型范围限制（scoping）功能将 Key 绑定到特定模型，降低泄露风险。
+**何时需要付费**：只有在以下场景才需要考虑购买 Pollen——需要 GPT Image 2 等高端图像模型、需要视频生成、需要 Claude Opus 等旗舰文本模型、或者需要高频批量调用（每秒多次）。
 
-**免费额度规划**：匿名用户 + 注册免费积分 + Seed 层级的每日额度，对于个人项目和学习完全足够。只有在高频生产环境才需要考虑购买 Pollen。
+**项目集成**：注册获取 API Key 后，使用 OpenAI 兼容格式接入，几乎所有现成的 OpenAI SDK 代码只需改一行 `base_url` 就能切换到 Pollinations。注意区分 Publishable Key（`pk_` 前缀，客户端用，有频率限制）和 Secret Key（`sk_` 前缀，服务端用，无频率限制）。
+
+**API Key 安全**：可通过模型范围限制（scoping）功能将 Key 绑定到特定免费模型，即使 Key 泄露也不会消耗 Pollen 积分。
 
 ## 参考
 
