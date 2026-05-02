@@ -16,29 +16,30 @@ Pollinations 目前存在**两套 API**，使用方式和免费策略完全不�
 
 | | 旧版 API（Legacy） | 新版统一 API（Unified） |
 |--|---------------------|--------------------------|
-| **图像端点** | `image.pollinations.ai/prompt/{prompt}` | `gen.pollinations.ai/image/{prompt}` |
-| **文本端点** | `text.pollinations.ai/{prompt}` | `gen.pollinations.ai/v1/chat/completions` |
-| **是否需要 API Key** | **不需要** | **必须** |
-| **可用模型** | 极少（图像：flux/gptimage/zimage 等；文本：仅 openai-fast） | 全部模型（Flux、GPT Image、Claude、Gemini 等 30+） |
+| **基础地址** | `image.pollinations.ai` / `text.pollinations.ai` | `gen.pollinations.ai` |
+| **是否需要 API Key** | **不需要** | **必须**（所有生成端点均返回 401） |
 | **状态** | 仍可用，但文本 API 已标记 deprecated | 推荐使用，功能完整 |
 
-**实测结果**（2026 年 5 月 2 日）：
+### 逐端点实测对比（2026 年 5 月 2 日，无 API Key）
 
-```bash
-# 旧版 — 无需 API Key，可以直接用
-curl "https://image.pollinations.ai/prompt/a%20cat" -o cat.jpg          # ✅ 200
-curl "https://text.pollinations.ai/What%20is%20AI?"                     # ✅ 200（仅 openai-fast 模型）
+| 端点 | 旧版地址 | 旧版状态 | 新版地址 | 新版状态 |
+|------|----------|----------|----------|----------|
+| 图像生成 | `GET image.pollinations.ai/prompt/{prompt}` | ✅ 200 | `GET gen.pollinations.ai/image/{prompt}` | ❌ 401 |
+| 文本生成（简单） | `GET text.pollinations.ai/{prompt}` | ✅ 200 | `GET gen.pollinations.ai/text/{prompt}` | ❌ 401 |
+| 文本生成（Chat） | `POST text.pollinations.ai/openai` | ✅ 200 | `POST gen.pollinations.ai/v1/chat/completions` | ❌ 401 |
+| 视频生成 | — | — | `GET gen.pollinations.ai/video/{prompt}` | ❌ 401 |
+| 语音合成（GET） | — | — | `GET gen.pollinations.ai/audio/{text}` | ❌ 401 |
+| 语音合成（POST） | — | — | `POST gen.pollinations.ai/v1/audio/speech` | ❌ 401 |
+| 语音转写 | — | — | `POST gen.pollinations.ai/v1/audio/transcriptions` | ❌ 401 |
+| 模型列表 | ✅ 可用 | — | ✅ 可用 | — |
 
-# 新版 — 无 API Key 直接 401
-curl "https://gen.pollinations.ai/image/a%20cat" -o cat.jpg             # ❌ 401
-curl "https://gen.pollinations.ai/text/Hello%20world"                   # ❌ 401
+### 旧版 API 无 Key 可用模型
 
-# 新版 — 带 API Key
-curl "https://gen.pollinations.ai/image/a%20cat?key=YOUR_KEY"          # ✅ 200
-curl "https://gen.pollinations.ai/text/Hello%20world?key=YOUR_KEY"      # ✅ 200
-```
+**图像**（`image.pollinations.ai`）：flux ✅、zimage ✅、gptimage ✅、gptimage-large ✅、gpt-image-2 ✅、turbo ✅、seedream5 ✅、wan-image ✅、qwen-image ✅、klein ✅、kontext ❌（500 错误）
 
-旧版图像 API 仍然支持 flux、gptimage、zimage 等多个模型且**无需注册**，这是 Pollinations "免费无需 Key" 口碑的来源。但旧版文本 API 仅剩一个 `openai-fast` 模型可用，其他模型（claude、gemini、deepseek 等）全部返回 404。要使用完整的模型阵容，**必须注册获取 API Key 使用新版 API**。
+**文本**（`text.pollinations.ai`）：仅 `openai` / `openai-fast` ✅。claude ❌ 404、gemini ❌ 404、deepseek ❌ 404、mistral ❌ 404、grok ❌ 404（均已标记 deprecated）
+
+**结论**：旧版图像 API 仍然好用，支持 10+ 模型且**无需注册**，这是 Pollinations "免费无需 Key" 口碑的来源。但旧版文本 API 仅剩一个模型，且没有视频/音频功能。要使用完整功能，**必须注册获取 API Key 使用新版 API**。
 
 > 注册地址：<https://enter.pollinations.ai>，注册免费，每周送 1.5 Pollen 积分。
 
