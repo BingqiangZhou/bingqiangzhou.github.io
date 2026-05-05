@@ -1,9 +1,9 @@
 ---
-title: "【折腾记录】更新NexT主题"
+title: "【实践记录】更新NexT主题"
 published: 2019-09-01
 description: "今天NexT更新了7.4.0，准备从NexT 7.3.0更新到7.4.0，附上NexT发布文档"
 lang: zh
-tags: ["折腾记录"]
+tags: ["实践记录"]
 ---
 
 今天NexT更新了[7.4.0](https://theme-next.org/next-7-4-0-released/)，准备从NexT 7.3.0更新到7.4.0，附上[NexT发布文档](https://github.com/theme-next/hexo-theme-next/releases)

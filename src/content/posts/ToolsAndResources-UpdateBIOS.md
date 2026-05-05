@@ -1,9 +1,9 @@
 ---
-title: "【折腾记录】Update BIOS"
+title: "【实践记录】Update BIOS"
 published: 2019-10-25
 description: "今天更新了bios系统，最底层的bios管理的功能太少了，甚至都没有官网上说的固件管理，最后各种尝试了很久，这里记录一下。"
 lang: zh
-tags: ["折腾记录"]
+tags: ["实践记录"]
 ---
 
 今天更新了bios系统，最底层的bios管理的功能太少了，甚至都没有官网上说的固件管理，最后各种尝试了很久，这里记录一下。

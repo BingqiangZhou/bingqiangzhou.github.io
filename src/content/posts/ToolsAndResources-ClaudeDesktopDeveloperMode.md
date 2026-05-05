@@ -3,7 +3,7 @@ title: "【工具分享】Claude Desktop 开发者模式 — 使用第三方模�
 published: 2026-04-27
 description: "Claude Desktop 开发者模式配置第三方模型 API 的完整教程，涵盖启用方式、连接模式选择及常见配置示例。"
 lang: zh
-tags: ["工具分享", "折腾记录"]
+tags: ["工具分享", "实践记录"]
 ---
 
 > Claude Desktop 最新版已内置**开发者模式（Developer Mode）**，无需 Claude 官方账号即可配置第三方模型 API，使用 Cowork / Code / Projects 等功能。

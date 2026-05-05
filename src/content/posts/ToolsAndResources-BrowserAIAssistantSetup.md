@@ -3,7 +3,7 @@ title: 【工具分享】中国大陆开启 Chrome Gemini 和 Edge Copilot 的�
 published: 2026-05-05
 description: 在中国大陆环境下，开启 Google Chrome 中的 Gemini AI 助手和 Microsoft Edge 中的 Copilot 模式的完整教程，包括地区伪装、网络配置和常见问题解决。
 lang: zh
-tags: [工具分享]
+tags: [实践记录]
 ---
 
 > **说明**：Gemini in Chrome 和 Copilot in Edge 目前均未对中国大陆地区正式开放。本文整理的方法来自社区用户实践分享，可能随软件更新而失效，请参考最新教程。

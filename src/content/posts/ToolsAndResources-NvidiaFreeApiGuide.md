@@ -3,7 +3,7 @@ title: "【工具分享】Nvidia 免费 API 注册与使用指南"
 published: 2026-04-27
 description: "NVIDIA build.nvidia.com 免费 API 完整注册与使用指南，涵盖 80+ 前沿大模型的免费调用方法及代码示例。"
 lang: zh
-tags: ["工具分享", "折腾记录"]
+tags: ["工具分享", "实践记录"]
 ---
 
 > 最后更新：2026-04-27
