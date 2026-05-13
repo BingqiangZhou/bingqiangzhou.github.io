@@ -1,5 +1,5 @@
 ---
-title: 【读书笔记】Sequoia AI Ascent 2026：Mati Staniszewski — 语音如何成为 AI 的交互界面
+title: 【读书笔记】Sequoia AI Ascent 2026（十）：Mati Staniszewski — 语音如何成为 AI 的交互界面
 published: 2026-05-13
 description: ElevenLabs 联合创始人 Mati Staniszewski 在 Sequoia AI Ascent 2026 上分享语音 AI 的演进，从情感智能到音频通用人工智能，以及语音代理的应用前景。
 lang: zh

@@ -1,5 +1,5 @@
 ---
-title: "【学习笔记】Sequoia AI Ascent 2026 Keynote 笔记 — 这是 AGI 时代"
+title: "【读书笔记】Sequoia AI Ascent 2026（一）：Keynote — 这是 AGI 时代"
 published: 2026-05-13
 description: 红杉资本 AI Ascent 2026 大会主题演讲深度笔记，涵盖技术浪潮演进、Agent 爆发、认知革命与未来展望
 lang: zh

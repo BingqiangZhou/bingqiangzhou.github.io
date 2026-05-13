@@ -1,5 +1,5 @@
 ---
-title: 【读书笔记】Sequoia AI Ascent 2026：Naveen Rao — 为什么大脑的计算效率比 GPU 高出一百万倍
+title: 【读书笔记】Sequoia AI Ascent 2026（十三）：Naveen Rao — 为什么大脑的计算效率比 GPU 高出一百万倍
 published: 2026-05-13
 description: Unconventional AI CEO Naveen Rao 在 Sequoia AI Ascent 2026 上探讨 AI 计算的能源瓶颈，提出利用非线性动力学和非冯·诺依曼架构突破效率极限的方案。
 lang: zh

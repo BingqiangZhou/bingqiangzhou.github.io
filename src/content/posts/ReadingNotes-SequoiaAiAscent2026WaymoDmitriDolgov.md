@@ -1,5 +1,5 @@
 ---
-title: 【读书笔记】Waymo 的 2000 万次行程与全自动驾驶之路
+title: 【读书笔记】Sequoia AI Ascent 2026（五）：Dmitri Dolgov (Waymo) — 2000 万次行程与全自动驾驶之路
 published: 2026-05-13
 description: 红杉资本 AI Ascent 活动中 Waymo 联合 CEO Dmitri Dolgov 的访谈笔记，涵盖自动驾驶发展历程、Waymo 基础模型架构、端到端与结构化表征、安全文化及全球商业化展望。
 lang: zh

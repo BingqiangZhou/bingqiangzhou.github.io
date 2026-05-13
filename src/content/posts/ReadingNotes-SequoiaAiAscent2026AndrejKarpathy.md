@@ -1,5 +1,5 @@
 ---
-title: 【读书笔记】Andrej Karpathy：从氛围编程到智能体工程
+title: 【读书笔记】Sequoia AI Ascent 2026（六）：Andrej Karpathy — 从氛围编程到智能体工程
 published: 2026-05-13
 description: 红杉资本 AI Ascent 活动中 Andrej Karpathy 的访谈笔记，探讨软件 3.0 范式、参差不齐的智能、氛围编程与智能体工程的区别，以及人类在 AI 时代的不可替代性。
 lang: zh

@@ -1,5 +1,5 @@
 ---
-title: 【学习笔记】Jim Fan 演讲《机器人技术的终局之战》笔记
+title: 【读书笔记】Sequoia AI Ascent 2026（三）：Jim Fan — 机器人技术的终局之战
 published: 2026-05-13
 description: NVIDIA具身AI负责人Jim Fan阐述机器人技术如何复刻LLM成功路径，提出世界动作模型(WAM)、Ego-Scale数据飞轮和Dream Dojo神经模拟器三大策略，预测2040年前解锁科技树全部成就。
 lang: zh
