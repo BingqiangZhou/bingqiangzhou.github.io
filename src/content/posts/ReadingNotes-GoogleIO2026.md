@@ -49,18 +49,36 @@ Gemini 3.5 Flash **今日全量上线**，同时成为 Gemini App 与 Google Sea
 | **MCP Atlas（工具使用）** | 83.6% |
 | **CharXiv Reasoning（多模态）** | 84.2% |
 
+#### 定价详情
+
+| 项目 | 价格 |
+|------|------|
+| 输入 | $1.50 / 百万 tokens |
+| 输出 | $9.00 / 百万 tokens |
+| 缓存输入 | $0.15 / 百万 tokens |
+| 非全球区域 | $1.65 / $9.90 |
+
 谷歌表示，大客户若将80%的工作切换到 3.5 Flash，一年能省下超过10亿美元的API成本。**Gemini 3.5 Pro 将于下个月发布**。
 
 ### 2. Gemini Omni —— 视频生成与编辑的跨越
 
 Gemini Omni 是一个全新的原生多模态模型家族，首发成员为 Gemini Omni Flash，已于今日上线并接入 Gemini App、Google Flow 和 YouTube Shorts（YouTube Shorts 用户可直接免费使用）。
 
-其核心突破在于：
+#### 核心突破
+
 - **视频编辑能力**：不仅能从零生成视频，更能用对话式语言编辑已有视频。用户可以上传一段自拍视频，通过文字指令替换背景、添加特效、插入新角色，而原视频中人物的表情、肢体语言和说话节奏纹丝不动。
 - **物理一致性**：具备跨越式的物理概念理解能力，突破了此前AI在模拟动能和重力等物理属性上的局限，能够生成具有准确物理特性的视频。
 - **原生音视频同步生成**：画面、配乐、音效在同一次推理中完成，不再需要三个模型接力。
 
-**Omni Pro** 将在不久后发布。
+#### 重要限制
+
+| 限制项 | 说明 |
+|--------|------|
+| **视频长度** | 目前限制为 **10秒**，这是部署决策（为扩大首日访问范围）而非技术限制 |
+| **语音编辑** | 语音和语音编辑功能**尚未上线**，谷歌表示仍在单独测试该能力 |
+| **资源消耗** | 早期测试者反馈，生成两个10秒视频即耗尽 Google AI Pro 订阅用户日额度的86% |
+
+**Omni Pro** 将在不久后发布，将支持更长视频、更高生成质量和物理模拟精度。
 
 ---
 
@@ -70,7 +88,7 @@ Gemini Omni 是一个全新的原生多模态模型家族，首发成员为 Gemi
 
 **TPU 8t**：针对大规模预训练优化，原始算力几乎是上一代的三倍。通过 JAX 和 Pathways，训练可跨越多个数据中心，在全球超过100万个TPU上扩展运行。
 
-**TPU 8i**：专为推理设计，大幅提升每步速度。现场演示中在 Flash 模型上实现了接近1500 tokens/秒的输出速度。
+**TPU 8i**：专为推理设计，大幅提升每步速度。在生成 Chrome Dino 游戏的现场演示中，Flash 模型实现了**接近1500 tokens/秒的演示峰值速度**（注：这是特定演示场景下的峰值，非持续输出速度）。
 
 两款芯片均具有更高能效，每瓦性能提升高达两倍。谷歌今年年度资本支出预计达到1800–1900亿美元，是2022年的近六倍。
 
@@ -110,15 +128,21 @@ Gemini Spark 是运行在 Google Cloud 专用虚拟机上的个人智能体，�
 | **Android Halo** | 手机上专门为 Agent 准备的"基地" |
 | **邮件+IM** | 接下来还将铺到邮件和即时通讯 |
 
-**上线节奏**：
+#### 上线节奏
+
 - 本周：对受信测试者灰度
 - 下周：向美国 Google AI Ultra 订阅用户开放 Beta
 
-**AI Ultra 订阅调整**：
-- 新增 **$100/月** 入门档（开通 Spark Beta 的最低门槛）
-- 最高档从 $250 降至 **$200/月**（包含 Project Genie 访问权限）
+#### AI Ultra 订阅调整
 
-**安全提示**：Spark 是实验性产品，可能在未询问的情况下分享信息或代你完成购买，请勿依赖它做医疗、法律、财务等专业决策。
+| 档位 | 价格 | 说明 |
+|------|------|------|
+| 入门档 | **$100/月** | 新增，开通 Spark Beta 的最低门槛 |
+| 标准档 | $200/月 | 原 $250 档降价，**包含 Project Genie 访问权限** |
+
+#### 安全提示
+
+Spark 是实验性产品，可能在未询问的情况下分享信息或代你完成购买，请勿依赖它做医疗、法律、财务等专业决策。
 
 ### 2. Search Agents —— 搜索进入智能体时代
 
@@ -267,3 +291,36 @@ AI Ultra $200/月 订阅档包含 Project Genie 访问权限。这是一个世�
 ### 待解的问题
 
 当一个 24×7 的 Agent 拥有用户的邮箱、相册、日历、位置和支付权限时，**安全边界谁来守、谁来负责**，仍是所有大厂绕不开的课题。
+
+---
+
+## 附录：数据核实说明
+
+本文档中的关键数据已通过多个来源交叉验证：
+
+- **289 tokens/秒**：第三方 Artificial Analysis 测试数据（2026年5月13日）
+- **1500 tokens/秒**：TPU 8i 演示峰值速度（Chrome Dino 游戏生成演示），非持续输出速度
+- **Omni Flash 10秒限制**：部署决策，Pro 版本将支持更长视频
+- **Omni Flash 语音编辑**：尚未上线，仍在测试中
+
+---
+
+## 参考链接
+
+- [I/O 2026: Welcome to the agentic Gemini era - Google Blog](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)
+- [The 13 biggest announcements at Google I/O 2026 - The Verge](https://www.theverge.com/tech/933415/google-io-2026-biggest-announcements-ai-gemini)
+- [三个关键词，2026谷歌 I/O大会全说透了 - 腾讯技术工程](https://c.m.163.com/news/a/KTCP2EF60518R7MO.html)
+- [谷歌2026 I/O大会完整回顾：模型依然重要，但智能体正在接管一切 - 凤凰网](https://tech.ifeng.com/c/8tESuwrFZg2)
+- [The 13 biggest announcements at Google I/O 2026 - Associated Press](https://associattedpress.com/the-13-biggest-announcements-at-google-i-o-2026/)
+- [Google I/O 2026: Every Major Announcement From Gemini 3.5 to Smartglasses - InsiderXP](https://insiderxp.com/google-io-2026-major-announcements/)
+- [一文看懂2026年谷歌I/O大会 - 每日经济新闻](http://m.toutiao.com/group/7641742034121818665/)
+- [Gemini 3.5 Flash Is Here, Google's Strongest Agentic & Coding Model Yet - Times of AI](https://www.timesofai.com/news/google-officially-launches-gemini-3-5-flash-at-io-2026/)
+- [Gemini 3.5 Flash launches: Flash beats Gemini 3.1 Pro - APIYi Docs](https://docs.apiyi.com/en/live/2026-05/gemini-3-5-flash)
+- [Gemini 3.5 Flash: Benchmarks, Pricing, and Complete Specs - LLM Stats](https://llm-stats.com/blog/research/gemini-3-5-flash-launch)
+- [Google I/O 2026: Google introduces Gemini Omni AI video model - Moneycontrol](http://www.moneycontrol.com/technology/google-i-o-2026-google-introduces-gemini-omni-ai-video-model-with-conversational-editing-tools-article-13924374.html/amp)
+- [Google announces slew of AI advances, including a personal AI assistant - AP News](https://apnews.com/article/google-io-gemini-developers-conference-a984e6756032dc4af260f8fa27e8f4a9)
+- [Google's Gemini Omni Flash turns any input into video — with a 10-second leash - GaGadget](https://gagadget.com/en/711206-googles-gemini-omni-turns-anything-into-video-and-its-free-on-youtube-shorts/)
+- [谷歌推Gemini Omni Flash：对话式AI视频编辑来了 - 什么值得买](https://post.m.smzdm.com/p/aomrn486/)
+- [Google I/O 2026 Recap: Google shows how AI is becoming the core layer - Meristation](https://en.as.com/meristation/news/google-io-2026-recap-google-shows-how-ai-is-becoming-the-core-layer-of-its-products-and-infrastructure-f202605-n/)
+- [Gemini app rolling out 'Neural Expressive' redesign, 3.5 Flash, 24/7 Spark agent - 9to5Google](https://9to5google.com/2026/05/19/gemini-app-google-io-2026/)
+- [Google I/O 2026: Google Enters Its 'Agentic Gemini Era' - Economic Times](https://m.economictimes.com/magazines/panache/google-i/o-2026-google-enters-its-agentic-gemini-era/amp_articleshow/131208621.cms)
