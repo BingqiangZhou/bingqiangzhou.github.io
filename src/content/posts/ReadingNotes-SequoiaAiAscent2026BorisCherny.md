@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（十一）：Boris Cherny — �
 published: 2026-05-13
 description: Anthropic 的 Boris Cherny（Claude Code 创造者）在 Sequoia AI Ascent 2026 上分享 AI 编程的现状与未来，从 100% AI 代码接收到多智能体工作流的演进。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 ## 引言与Claude Code的背景

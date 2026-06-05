@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（七）：StarCloud — 为什�
 published: 2026-05-13
 description: 红杉资本 AI Ascent 活动中 StarCloud CEO Philip Johnston 的演讲笔记，论证太空数据中心的经济可行性，涵盖 88000 颗卫星星座规划、热耗散与辐射挑战、以及从推理到训练的太空计算路线图。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 ## 演讲者介绍与StarCloud 1的初步部署

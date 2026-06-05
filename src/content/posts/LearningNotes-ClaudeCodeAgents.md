@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code Agents 详解
+title: 【学习笔记】Claude Code 插件系统（三）：Agents 详解
 published: 2026-06-04
 description: 讲解自定义 subagent 的定义方式、frontmatter 字段、内置 subagent 类型、安全限制和最佳实践。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第三篇

@@ -3,7 +3,7 @@ title: 【学习笔记】Claude Code 还有什么好玩的？—— 功能特性
 published: 2026-06-04
 description: 从内置功能和可编程扩展两个维度，全面梳理 Claude Code 除了 StatusLine 之外的有趣特性，涵盖移动编程、自动化调度、插件系统、MCP 集成等。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 写这篇笔记的起因是我在学习 [Claude Code 插件系统](https://github.com/BingqiangZhou/CCStatusline) 时，做了一个 [GLM StatusLine 插件](https://github.com/BingqiangZhou/CCStatusline) 来在终端状态栏实时显示用量配额。做完之后我很好奇：Claude Code 还有什么好玩的东西？

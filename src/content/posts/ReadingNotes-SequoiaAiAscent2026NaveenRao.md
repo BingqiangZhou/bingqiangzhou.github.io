@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（十三）：Naveen Rao — 为
 published: 2026-05-13
 description: Unconventional AI CEO Naveen Rao 在 Sequoia AI Ascent 2026 上探讨 AI 计算的能源瓶颈，提出利用非线性动力学和非冯·诺依曼架构突破效率极限的方案。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 ## 演讲者背景介绍

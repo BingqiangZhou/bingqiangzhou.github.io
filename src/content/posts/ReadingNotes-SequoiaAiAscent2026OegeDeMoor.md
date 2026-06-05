@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（九）：Oege de Moor — 自�
 published: 2026-05-13
 description: Oege de Moor 在 Sequoia AI Ascent 2026 上关于自主AI黑客崛起的演讲笔记，介绍 XBOW 如何在 HackerOne 登顶全球第一，以及网络安全面临的紧迫挑战。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 [`00:04`](http://www.youtube.com/watch?v=eHsr1Fl2jNA&t=4)

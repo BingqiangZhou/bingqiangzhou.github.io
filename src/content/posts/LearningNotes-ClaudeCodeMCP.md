@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code MCP 详解
+title: 【学习笔记】Claude Code 插件系统（五）：MCP 详解
 published: 2026-06-04
 description: 讲解 MCP（Model Context Protocol）集成的四种传输类型、.mcp.json 配置方式、插件中 MCP 的使用及环境变量展开。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第五篇

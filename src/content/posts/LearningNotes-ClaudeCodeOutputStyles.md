@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code Output Styles 详解
+title: 【学习笔记】Claude Code 插件系统（七）：Output Styles 详解
 published: 2026-06-04
 description: 讲解回答风格的定义方式、frontmatter 字段、内置风格、优先级机制及自定义风格的创建。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第七篇

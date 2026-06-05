@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（十二）：Ben & Asher Specto
 published: 2026-05-13
 description: Flapping Airplanes 创始人 Ben 和 Asher Spector 在 Sequoia AI Ascent 2026 上探讨数据效率为何是 AI 渗透实体经济的关键，以及通过系统与算法协同设计突破瓶颈的方法。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 ## 视频介绍与演讲者背景

@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（八）：Ricursive — AI 自�
 published: 2026-05-13
 description: 红杉资本 AI Ascent 活动中 AlphaChip 联合创始人 Anna Goldie 和 Azalia Mirhoseini 的演讲笔记，介绍新公司 Ricursive Intelligence 如何用 AI 颠覆芯片设计流程，从 Fabless 走向 Designless 时代。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 ## 介绍与核心理念

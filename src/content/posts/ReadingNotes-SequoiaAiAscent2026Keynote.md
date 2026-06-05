@@ -3,7 +3,7 @@ title: "【读书笔记】Sequoia AI Ascent 2026（一）：Keynote — 这是 A
 published: 2026-05-13
 description: 红杉资本 AI Ascent 2026 大会主题演讲深度笔记，涵盖技术浪潮演进、Agent 爆发、认知革命与未来展望
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, AI前沿]
 ---
 
 ## 技术浪潮的历史演进 (Pat Grady)

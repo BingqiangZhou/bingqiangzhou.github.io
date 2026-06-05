@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code Bin 详解
+title: 【学习笔记】Claude Code 插件系统（十）：Bin 详解
 published: 2026-06-04
 description: 讲解插件 bin 目录的 PATH 注入机制、脚本要求、常见设计模式及与 Skill 配合的方式。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第十篇

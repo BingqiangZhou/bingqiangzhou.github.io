@@ -3,7 +3,7 @@ title: 【实践记录】Claude Code 接入第三方模型的自动压缩配置�
 published: 2026-06-03
 description: "介绍如何为 Claude Code 配置自动压缩阈值，在使用 GLM/Z.AI 等 200K 上下文第三方模型时避免上下文超限问题。"
 lang: zh
-tags: [实践记录]
+tags: [实践记录, Claude Code]
 ---
 
 ## 1. 背景问题

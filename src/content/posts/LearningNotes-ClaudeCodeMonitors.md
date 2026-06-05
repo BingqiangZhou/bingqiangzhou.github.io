@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code Monitors 详解
+title: 【学习笔记】Claude Code 插件系统（九）：Monitors 详解
 published: 2026-06-04
 description: 讲解后台监听进程的配置方式、输出传递机制、触发条件、安全考虑及实战示例。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第九篇

@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（二）：Greg Brockman — 为
 published: 2026-05-13
 description: OpenAI 总裁 Greg Brockman 与红杉资本对话的观读笔记，涵盖算力扩展、Scaling Laws、AGI 进展、Agent 工作流、人类注意力瓶颈及科学前沿等核心议题。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, AI前沿]
 ---
 
 ## 算力：AI 业务的底层基石

@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code Hooks 详解
+title: 【学习笔记】Claude Code 插件系统（四）：Hooks 详解
 published: 2026-06-04
 description: 全面讲解生命周期事件体系、hooks.json 配置、五种 Hook 类型、Matcher 过滤、输入输出格式及实战模式。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第四篇

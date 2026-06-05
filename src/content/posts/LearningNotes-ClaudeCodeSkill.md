@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code Skill 详解
+title: 【学习笔记】Claude Code 插件系统（二）：Skill 详解
 published: 2026-06-04
 description: 深入讲解 SKILL.md 的写法、frontmatter 配置字段、参数系统、动态命令注入以及 Skill 的类型选型和最佳实践。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第二篇

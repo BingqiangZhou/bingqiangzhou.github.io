@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code 插件系统概览
+title: 【学习笔记】Claude Code 插件系统（一）：概览
 published: 2026-06-04
 description: 介绍 Claude Code 插件系统的整体架构，包括插件定义、目录结构、plugin.json 配置、marketplace 分发机制以及插件生命周期管理。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第一篇

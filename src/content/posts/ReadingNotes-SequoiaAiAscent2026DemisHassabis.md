@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（四）：Demis Hassabis — �
 published: 2026-05-13
 description: 红杉资本 AI Ascent 2025 活动中 DeepMind 创始人 Demis Hassabis 的访谈笔记，涵盖其跨界历程、DeepMind 创立、AlphaFold 突破、AI for Science、意识哲学以及 AGI 时间表预测。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 ## 介绍与早期职业生涯

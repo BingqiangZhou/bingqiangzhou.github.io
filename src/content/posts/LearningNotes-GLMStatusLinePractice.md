@@ -1,9 +1,9 @@
 ---
-title: 【实践记录】GLM StatusLine 插件开发实战
+title: 【实践记录】Claude Code 插件系统（十一）：GLM StatusLine 插件开发实战
 published: 2026-06-04
 description: 以 GLM StatusLine 插件为完整案例，展示从需求分析、能力选型、插件结构设计到核心脚本实现的完整开发过程。
 lang: zh
-tags: [实践记录]
+tags: [实践记录, Claude Code]
 ---
 
 > 学习笔记系列 · 第十一篇（完结篇）

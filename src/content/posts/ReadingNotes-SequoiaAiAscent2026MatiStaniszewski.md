@@ -3,7 +3,7 @@ title: 【读书笔记】Sequoia AI Ascent 2026（十）：Mati Staniszewski —
 published: 2026-05-13
 description: ElevenLabs 联合创始人 Mati Staniszewski 在 Sequoia AI Ascent 2026 上分享语音 AI 的演进，从情感智能到音频通用人工智能，以及语音代理的应用前景。
 lang: zh
-tags: [读书笔记]
+tags: [读书笔记, AI前沿]
 ---
 
 ## 早期创业故事与灵感起源

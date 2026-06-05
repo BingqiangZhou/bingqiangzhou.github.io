@@ -1,9 +1,9 @@
 ---
-title: 【学习笔记】Claude Code Themes 详解
+title: 【学习笔记】Claude Code 插件系统（八）：Themes 详解
 published: 2026-06-04
 description: 讲解终端视觉主题的定义方式、颜色 Token 体系、内置主题、热加载机制及自定义主题的创建。
 lang: zh
-tags: [学习笔记]
+tags: [学习笔记, Claude Code]
 ---
 
 > 学习笔记系列 · 第八篇
