@@ -51,7 +51,7 @@ MCP server 返回内容
   "env": {
     "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1",
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "200000",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "70"
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80"
   }
 }
 ```
@@ -67,7 +67,7 @@ MCP server 返回内容
 
     "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1",
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "200000",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "70"
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80"
   }
 }
 ```
@@ -84,7 +84,7 @@ claude
 ```text
 禁用 1M context  →  不按官方模型的上限来管理上下文
 按 200K 上下文计算  →  匹配第三方模型实际窗口
-70% 触发压缩  →  约 140K tokens 时执行 compact，留足 60K 缓冲
+80% 触发压缩  →  约 160K tokens 时执行 compact，留足 40K 缓冲
 ```
 
 ---
@@ -117,15 +117,15 @@ Claude Code 的自动压缩（auto compact）机制：当上下文使用量达�
 | --- | --- | --- | --- |
 | `CLAUDE_CODE_DISABLE_1M_CONTEXT` | 布尔（`"1"` / `"0"`） | 禁用 1M context 支持 | 设为 `"1"` 后，Claude Code 不会按 1M 窗口管理上下文 |
 | `CLAUDE_CODE_AUTO_COMPACT_WINDOW` | 整数（字符串） | 自动压缩的计算窗口大小（tokens） | 应设为模型实际上下文窗口大小，如 `"200000"` |
-| `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | 整数（字符串，0-100） | 自动压缩触发百分比 | 如 `"70"` 表示上下文使用 70% 时触发压缩 |
+| `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | 整数（字符串，0-100） | 自动压缩触发百分比 | 如 `"80"` 表示上下文使用 80% 时触发压缩 |
 
 以推荐配置为例：
 
 ```text
-200000 × 70% = 140000 tokens
+200000 × 80% = 160000 tokens
 ```
 
-上下文用到约 **140K tokens** 时，Claude Code 就会自动执行 compact。
+上下文用到约 **160K tokens** 时，Claude Code 就会自动执行 compact。
 
 ---
 
@@ -136,10 +136,10 @@ Claude Code 的自动压缩（auto compact）机制：当上下文使用量达�
 - **阈值过低**（如 50%）：压缩过于频繁，每次压缩都要消耗 tokens 生成摘要，导致有效上下文利用率低，长对话中信息丢失更严重。
 - **阈值过高**（如 90%+）：触发太晚，留给压缩操作本身的 token 余量不足，容易导致压缩失败或上下文超限。
 
-选择 70% 的理由：
+选择 80% 的理由：
 
 ```text
-140K tokens 的触发点，留出约 60K 的缓冲区
+160K tokens 的触发点，留出约 40K 的缓冲区
 足够容纳压缩操作本身的 token 消耗
 不会因为频繁压缩打断工作流
 相比默认的 95%（190K），安全性大幅提升
@@ -151,8 +151,8 @@ Claude Code 的自动压缩（auto compact）机制：当上下文使用量达�
 | --- | ---: | ---: | --- |
 | 50% | 100K | 100K | 极度保守，适合超大型项目或大量工具调用的场景 |
 | 60% | 120K | 80K | 较为安全，但压缩频率偏高 |
-| **70%** | **140K** | **60K** | **推荐值，平衡安全性和体验流畅度** |
-| 80% | 160K | 40K | 偏激进，适合简单任务、上下文压力不大的场景 |
+| 70% | 140K | 60K | 较为稳妥，适合涉及大量文件读写的场景 |
+| **80%** | **160K** | **40K** | **推荐值，平衡安全性和体验流畅度** |
 | 默认 ~95% | 190K | ~10K | 对 200K 模型不推荐，缓冲区过小 |
 
-> **提示**：如果你的工作流涉及大量文件读写（如全项目重构），建议降到 60%；如果是简单的对话问答，80% 也能接受。
+> **提示**：如果你的工作流涉及大量文件读写（如全项目重构），建议降到 70%；如果是简单的对话问答，90% 也能接受。
