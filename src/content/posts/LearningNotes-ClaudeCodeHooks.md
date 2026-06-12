@@ -558,7 +558,7 @@ hooks:
 }
 ```
 
-protect-files.sh：
+protect-files.sh:
 
 ```bash
 #!/bin/bash

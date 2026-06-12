@@ -99,7 +99,7 @@ GordenPPTSkill/
 |-----|------|
 | `template.pptx` | 视觉设计模板（只读） |
 | `detail.json` | 结构描述文件（文本框属性） |
-| `edits.json` | 编辑指令文件（AI生成） |
+| `edits.json` | 编辑指令文件（AI 生成） |
 
 ### 2.3 容量精算系统
 
@@ -390,7 +390,7 @@ python tools/compute_capacity.py \
       "slide_number": 1,
       "slot_id": "subtitle",
       "action": "replace",
-      "content": "2024年第四季度业绩回顾"
+      "content": "2024 年第四季度业绩回顾"
     }
   ]
 }
@@ -533,10 +533,10 @@ Claude: [自动生成 edits.json 并调用 build_pptx.py]
 
 | 工具 | 优势 | 劣势 |
 |-----|------|------|
-| Gamma | 在线协作、AI生成 | 排版不可控、需联网 |
+| Gamma | 在线协作、AI 生成 | 排版不可控、需联网 |
 | Beautiful.ai | 智能排版 | 无法私有化、订阅制 |
-| 博思AIPPT | 中文支持好 | 在线服务、排版有限 |
-| **GordenPPTSkill** | **排版可控、离线、免费** | **需技术能力、无AI生成** |
+| 博思 AIPPT | 中文支持好 | 在线服务、排版有限 |
+| **GordenPPTSkill** | **排版可控、离线、免费** | **需技术能力、无 AI 生成** |
 
 ### 9.3 独特价值
 

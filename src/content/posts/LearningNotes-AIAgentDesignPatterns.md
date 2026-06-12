@@ -66,7 +66,7 @@ tags: [学习笔记]
 - 如何让多个 Agent 高效协作？
 - 如何确保 Agent 的行为安全可控？
 
-### 1.3 《Agentic Design Patterns》简介
+### 1.3《Agentic Design Patterns》简介
 
 《Agentic Design Patterns》是由 **Google** 发布的系统性书籍，全面介绍了构建 AI Agent 的 **21 个核心设计模式**，涵盖从基础到高级的完整知识体系：
 
@@ -166,12 +166,12 @@ from langchain_core.output_parsers import StrOutputParser
 # 初始化模型
 llm = ChatOpenAI(temperature=0)
 
-# 步骤1：提取信息
+# 步骤 1：提取信息
 prompt_extract = ChatPromptTemplate.from_template(
     "从以下文本中提取技术规格：\n\n{text_input}"
 )
 
-# 步骤2：转换为 JSON
+# 步骤 2：转换为 JSON
 prompt_transform = ChatPromptTemplate.from_template(
     "将以下规格转换为 JSON 对象，使用 'cpu'、'memory' 和 'storage' 作为键：\n\n{specifications}"
 )
@@ -207,7 +207,7 @@ print(result)
 
 **路由（Routing）** 模式就像一个**智能分拣系统**——根据输入的特征，将请求分发到不同的处理路径。它的核心思想是"**对症下药**"：不同的输入由不同的专家来处理。
 
-> **生活类比**：就像拨打客服电话时的语音导航——"按1查询订单，按2了解产品，按3技术支持，按0转人工"。系统根据你的选择，把你转接到对应的部门。
+> **生活类比**：就像拨打客服电话时的语音导航——"按 1 查询订单，按 2 了解产品，按 3 技术支持，按 0 转人工"。系统根据你的选择，把你转接到对应的部门。
 
 ### 3.2 路由的实现方式
 
@@ -785,7 +785,7 @@ Agent 规划：
 - 治疗方案 Agent
 ```
 
-#### 形式六：批评者-审查者
+#### 形式六：批评者 - 审查者
 一个 Agent 生成，另一个 Agent 审查：
 
 ```
@@ -991,7 +991,7 @@ RAG 流程：
 
 **MCP（Model Context Protocol，模型上下文协议）** 是一种**标准化协议**，定义了 Agent 与外部工具、数据源之间的通信方式。它让不同的 Agent 框架和工具能够**无缝协作**。
 
-> **生活类比**：就像 USB 接口——无论是什么品牌的电脑、手机、U盘，只要支持 USB 协议，就能互相连接。
+> **生活类比**：就像 USB 接口——无论是什么品牌的电脑、手机、U 盘，只要支持 USB 协议，就能互相连接。
 
 ### 11.2 为什么需要 MCP？
 
@@ -1035,7 +1035,7 @@ MCP 定义了：
 
 **A2A（Agent-to-Agent，Agent 间通信）** 是一种让不同 Agent 能够**互相通信和协作**的标准。如果说 MCP 是 Agent 与工具的协议，那么 A2A 就是 Agent 与 Agent 的协议。
 
-> **生活类比**：就像电子邮件协议（SMTP）——无论使用什么邮件客户端（Gmail、Outlook、QQ邮箱），都能互相发送邮件。
+> **生活类比**：就像电子邮件协议（SMTP）——无论使用什么邮件客户端（Gmail、Outlook、QQ 邮箱），都能互相发送邮件。
 
 ### 12.2 A2A 解决的问题
 

@@ -67,7 +67,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="https://integrate.api.nvidia.com/v1",
-    api_key="nvapi-你的API密钥"
+    api_key="nvapi-你的 API 密钥"
 )
 
 response = client.chat.completions.create(
@@ -105,7 +105,7 @@ import OpenAI from "openai";
 
 const client = new OpenAI({
   baseURL: "https://integrate.api.nvidia.com/v1",
-  apiKey: "nvapi-你的API密钥",
+  apiKey: "nvapi-你的 API 密钥",
 });
 
 const response = await client.chat.completions.create({

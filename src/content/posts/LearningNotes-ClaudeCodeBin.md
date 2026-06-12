@@ -30,7 +30,7 @@ tags: [学习笔记, Claude Code]
   Claude 执行 Bash → 只能找到系统 PATH 中的命令
 
 插件启用后：
-  Claude 执行 Bash → 系统PATH + 插件 bin/ 目录
+  Claude 执行 Bash → 系统 PATH + 插件 bin/ 目录
                         ↑
                         glm-statusline-install.js 现在可以直接调用
 ```

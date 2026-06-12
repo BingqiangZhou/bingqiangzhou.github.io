@@ -54,7 +54,7 @@ $ unzip chromedriver_linux64.zip -d /usr/local/bin
 $ chromedriver --version
 ```
 
-`Seleium`官方文档中给出了[各个浏览器`WebDriver`的下载地址和加载方式](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
+`Seleium`官方文档中给出了[各个浏览器 `WebDriver` 的下载地址和加载方式](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
 
 #### 安装`selenium`模块
         
@@ -110,12 +110,12 @@ driver.get("https://selenium.dev")
     设置最长等待时间，在没有达到最长时间时加载完成，则进行下一步，到最长等待时间，还没有加载完成，则也惊喜下一步。
 
     ```python
-    driver.implicitly_wait(30)  # 最长等30秒
+    driver.implicitly_wait(30)  # 最长等 30 秒
     ```
 
 - 显性等待
 
-    程序每隔xx秒验证一下条件，如果条件成立了，则执行下一步，否则继续等待，如果超过设置的最长时间，则抛出异常`TimeoutException`。
+    程序每隔 xx 秒验证一下条件，如果条件成立了，则执行下一步，否则继续等待，如果超过设置的最长时间，则抛出异常`TimeoutException`。
 
     ```python
     WebDriverWait(driver, timeout=3).until(some_condition)
@@ -190,11 +190,11 @@ get_attribute(name) #获取属性值
 location #获取元素坐标，先找到要获取的元素，再调用该方法
 page_source #返回页面源码
 driver.title #返回页面标题
-current_url #获取当前页面的URL
+current_url #获取当前页面的 URL
 is_displayed() #设置该元素是否可见
 is_enabled() #判断元素是否被使用
 is_selected() #判断元素是否被选中
-tag_name #返回元素的tagName
+tag_name #返回元素的 tagName
 ```
 
 #### 定位元素
@@ -367,15 +367,15 @@ submit()    #提交表单
 
     ```python
     click()
-    context_click(elem) #右击鼠标点击元素elem，另存为等行为
-    double_click(elem) #双击鼠标点击元素elem，地图web可实现放大功能
+    context_click(elem) #右击鼠标点击元素 elem，另存为等行为
+    double_click(elem) #双击鼠标点击元素 elem，地图 web 可实现放大功能
     drag_and_drop(source,target) #拖动鼠标，源元素按下左键移动至目标元素释放
     move_to_element(elem) #鼠标移动到一个元素上
     click_and_hold(elem) #按下鼠标左键在一个元素上
-    perform() #在通过调用该函数执行ActionChains中存储行为
+    perform() #在通过调用该函数执行 ActionChains 中存储行为
     ```
 
-#### Selenium小结
+#### Selenium 小结
 
 在实现需求的过程中，遇到了一直提醒浏览器版本过低的问题，然后使用如下语句，点击提醒框的确定按钮，进入下一步。
 
@@ -384,45 +384,45 @@ alert = browser.switch_to.alert
 alert.accept()
 ```
 
-Selenium处理的过程：设置无头加载，加载驱动，加载网页，等待加载完成，爬取数据。
+Selenium 处理的过程：设置无头加载，加载驱动，加载网页，等待加载完成，爬取数据。
 
 ## 邮件发送
 
-### 1、在IIS上搭建SMTP服务器
+### 1、在 IIS 上搭建 SMTP 服务器
 
-这里主要参考CSDN中的一篇博客[Windows Server 2012 r2搭建SMTP](https://blog.csdn.net/leelyliu/article/details/80840443)，这里放上博客中给出的图，以后好找到。
+这里主要参考 CSDN 中的一篇博客[Windows Server 2012 r2 搭建 SMTP](https://blog.csdn.net/leelyliu/article/details/80840443)，这里放上博客中给出的图，以后好找到。
 
-- 1、打开控制面板选择打开或关闭`windows features`，按照提示在features中找到`SMTP`，选择安装；在`Windows Server`中也可以在服务器管理`Server Manage`中的`Manage`中添加。
+- 1、打开控制面板选择打开或关闭`windows features`，按照提示在 features 中找到`SMTP`，选择安装；在`Windows Server`中也可以在服务器管理`Server Manage`中的`Manage`中添加。
 
-    ![添加SMTP](/assets/images/2020/20200622/smtp-setting-1.png)
+    ![添加 SMTP](/assets/images/2020/20200622/smtp-setting-1.png)
 
-- 2、打开IIS6.0，这里需要注意的是IIS6.0，点击windows窗口图标，在search中输入“iis”，选择打开iis 6.0 Manager；在`Windows Server`中也可以在服务器管理`Server Manage`中`Tools`中打开。
+- 2、打开 IIS6.0，这里需要注意的是 IIS6.0，点击 windows 窗口图标，在 search 中输入“iis”，选择打开 iis 6.0 Manager；在`Windows Server`中也可以在服务器管理`Server Manage`中`Tools`中打开。
 
-    ![打开IIS 6](/assets/images/2020/20200622/smtp-setting-2.png)
+    ![打开 IIS 6](/assets/images/2020/20200622/smtp-setting-2.png)
     
-- 3、在打开窗口，`SMTP Vritual Server`右键选择`domain`，并新建一个新的`domain`，按照提示输入名称和类型即可.
+- 3、在打开窗口，`SMTP Vritual Server`右键选择`domain`，并新建一个新的`domain`，按照提示输入名称和类型即可。
 
-    ![创建doamin](/assets/images/2020/20200622/smtp-setting-3.png)
+    ![创建 doamin](/assets/images/2020/20200622/smtp-setting-3.png)
 
-    ![选择domain类型](/assets/images/2020/20200622/smtp-setting-4.png)
+    ![选择 domain 类型](/assets/images/2020/20200622/smtp-setting-4.png)
 
-    ![输入domain名称](/assets/images/2020/20200622/smtp-setting-5.png)
+    ![输入 domain 名称](/assets/images/2020/20200622/smtp-setting-5.png)
 
-- 4、设置ip（可以不改默认的`All Unassgined`）以及端口（也可以不改默认的`25`）。
+- 4、设置 ip（可以不改默认的`All Unassgined`）以及端口（也可以不改默认的`25`）。
 
     ![打开属性](/assets/images/2020/20200622/smtp-setting-6.png)
 
-    ![设置ip](/assets/images/2020/20200622/smtp-setting-7.png)
+    ![设置 ip](/assets/images/2020/20200622/smtp-setting-7.png)
 
     ![修改端口](/assets/images/2020/20200622/smtp-setting-8.png)
 
 - 5、访问控制，选择基本的明文验证。
 
-    ![设置ip](/assets/images/2020/20200622/smtp-setting-9.png)
+    ![设置 ip](/assets/images/2020/20200622/smtp-setting-9.png)
 
     ![修改端口](/assets/images/2020/20200622/smtp-setting-10.png)
 
-- 6、在windows中添加一个用户，用来做明文认证，从“Security”的配置中，将用户分配给SMTP。
+- 6、在 windows 中添加一个用户，用来做明文认证，从“Security”的配置中，将用户分配给 SMTP。
 
     创建用户过程：在【控制面板`Contorl Panel`】中选择【用户账号`User Accounts`】，接着再次选择【用户账号`User Accounts`】，选择【管理另一个账号`Manage another account`】，选择添加一个【添加一个用户账号`add a user account`】，输入账户名密码创建用户。
 
@@ -443,7 +443,7 @@ smtp_server.connect(host, 25)
 # smtp_server.set_debuglevel(1)
 from_addr = 'XXX'
 to_addr = 'XXX'
-smtp_server.login('XXX', 'XXXX') # 添加到SMTP服务器的用户账号密码
+smtp_server.login('XXX', 'XXXX') # 添加到 SMTP 服务器的用户账号密码
 
 message = MIMEText(content, 'html', 'utf-8')
 message['From'] = from_addr
@@ -456,4 +456,4 @@ smtp_server.quit()
 
 ## 总结
 
-`selenium`大概入了下门，`SMTP`基本是复制粘贴的[runoob.com的代码](https://www.runoob.com/python3/python3-smtp.html)，以后有遇到要使用SMTP再具体深入了解了。
+`selenium`大概入了下门，`SMTP`基本是复制粘贴的[runoob.com 的代码](https://www.runoob.com/python3/python3-smtp.html)，以后有遇到要使用 SMTP 再具体深入了解了。

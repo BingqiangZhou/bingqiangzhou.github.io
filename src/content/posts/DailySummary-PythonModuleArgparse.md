@@ -6,14 +6,14 @@ lang: zh
 tags: ["学习笔记"]
 ---
 
-今天总结一下python的argparse模块，这是python自带的命令行解析模块。
+今天总结一下 python 的 argparse 模块，这是 python 自带的命令行解析模块。
 [官方文档](https://docs.python.org/3/library/argparse.html)
 
 
 
-## argparse模块
+## argparse 模块
 
-argparse模块与logging一样都是python自带的模块，这个模块让命令行解析(如下图)变得简单，也可以说是很简单的将程序构建成为一个命令行工具。
+argparse 模块与 logging 一样都是 python 自带的模块，这个模块让命令行解析 (如下图) 变得简单，也可以说是很简单的将程序构建成为一个命令行工具。
 
 ![命令行工具](/assets/images/2020/20200616/command-line.png)
 
@@ -46,7 +46,7 @@ parser.add_argument('bar') # 表示必须的参数
 
 #### `action`参数
 
-`action`参数是当解析参数时，当前参数有使用到的时候，调用action类来处理它。python提供了许多`action`，同时我们也可以自己实现。
+`action`参数是当解析参数时，当前参数有使用到的时候，调用 action 类来处理它。python 提供了许多`action`，同时我们也可以自己实现。
 
 - `store`，`action`参数的默认值，只存储参数值。
 - `store_const`存储固定值，常用于可选参数。
@@ -70,7 +70,7 @@ parser.add_argument('bar') # 表示必须的参数
     Namespace(types=[<class 'str'>, <class 'int'>])
     ```
 
-- `count`存储参数出现的次数，未出现则为0。
+- `count`存储参数出现的次数，未出现则为 0。
 
     ```python
     >>> parser = argparse.ArgumentParser()
@@ -125,7 +125,7 @@ parser.add_argument('bar') # 表示必须的参数
 
 `nargs`参数关联不同数目的命令行参数到单一动作，也就是说`nargs`参数来规定命令行某个参数的个数。支持的值有`N`，`?`，`*`，`+`，`argparse.REMAINDER`，当`nargs`参数没有指定值，则参数的个数又`action`来决定。其中：
 
-- `N`表示参数后的N个值组成为一个列表。
+- `N`表示参数后的 N 个值组成为一个列表。
 - `?`表示的是多种情况，当参数没有出现的时候，参数的值是`defalut`参数的值，当参数后面没有跟着值的时候，参数的值是`const`参数的值，当参数出现并且后面有值的时候才参数的值才会是这个值。常用于输入输出文件，如下实例代码，没有输入输出文档，则从控制台读取以及写入。
     
     ```python
@@ -148,7 +148,7 @@ parser.add_argument('bar') # 表示必须的参数
 
 #### `const`参数
 
-`const`参数是指定参数的常量值，当使用了`store_const`和 `append_const`动作的时候，必须指定const参数。
+`const`参数是指定参数的常量值，当使用了`store_const`和 `append_const`动作的时候，必须指定 const 参数。
 
 #### `default`参数
 
@@ -160,7 +160,7 @@ parser.add_argument('bar') # 表示必须的参数
 
 #### `choices`参数
 
-`choices`参数传入一个容器，参数值只能从容器中选取一个，任何容器都可作为`choices`值传入，比如list 对象，set 对象以及自定义容器等。
+`choices`参数传入一个容器，参数值只能从容器中选取一个，任何容器都可作为`choices`值传入，比如 list 对象，set 对象以及自定义容器等。
 
 #### `required`参数
 
@@ -176,7 +176,7 @@ parser.add_argument('bar', nargs='?', type=int,default=42, help='the bar to %(pr
 
 #### `metavar`参数
 
-使用`metavar`来指定一个参数的替代名称，需要注意的是，它只是替代了显示的名字，而正在调用的参数名称是由`dest`参数决定的。不使用`metavar`参数的默认情况下，对于位置参数动作，`dest`值将被直接使用，而对于可选参数动作，`dest` 值将被转为大写形式。 因此，一个位置参数`dest='bar'`的引用形式将为`bar`，一个带有单独命令行参数的可选参数`--foo`的引用形式将为`FOO`。
+使用`metavar`来指定一个参数的替代名称，需要注意的是，它只是替代了显示的名字，而正在调用的参数名称是由`dest`参数决定的。不使用`metavar`参数的默认情况下，对于位置参数动作，`dest`值将被直接使用，而对于可选参数动作，`dest` 值将被转为大写形式。因此，一个位置参数`dest='bar'`的引用形式将为`bar`，一个带有单独命令行参数的可选参数`--foo`的引用形式将为`FOO`。
 
 #### `dest`参数
 
@@ -210,4 +210,4 @@ args = parser.parse_args()
 
 ### 小结
 
-感觉这次还是有点在翻译官方文档的感觉，不过也算是将官方文档大概的看了一下，明天继续总结一下tqdm模块，加油，奥利给！
+感觉这次还是有点在翻译官方文档的感觉，不过也算是将官方文档大概的看了一下，明天继续总结一下 tqdm 模块，加油，奥利给！

@@ -8,29 +8,29 @@ tags: [学习笔记]
 
 **全部值得关注的发布内容**
 
-**时间**：2026年5月20日
+**时间**：2026 年 5 月 20 日
 **地点**：美国加州山景城 Shoreline 圆形剧场
 
 ---
 
 ## 一、大会概览
 
-北京时间2026年5月20日凌晨1点，谷歌在加州山景城Shoreline圆形剧场举办了I/O 2026开发者大会。CEO Sundar Pichai在开幕词中明确定调了今年的三大核心主题：**模型（Models）、编程（Coding）和智能体（Agents）**。
+北京时间 2026 年 5 月 20 日凌晨 1 点，谷歌在加州山景城 Shoreline 圆形剧场举办了 I/O 2026 开发者大会。CEO Sundar Pichai 在开幕词中明确定调了今年的三大核心主题：**模型（Models）、编程（Coding）和智能体（Agents）**。
 
-整场发布会的核心叙事可以用一句话概括：**"AI第一次大规模地从'对话框'走进了'日常事'。"** 谷歌正在把AI智能体全面"塞进"所有核心入口——从搜索框到Chrome浏览器，从Android手机到智能眼镜。
+整场发布会的核心叙事可以用一句话概括：**"AI 第一次大规模地从'对话框'走进了'日常事'。"** 谷歌正在把 AI 智能体全面"塞进"所有核心入口——从搜索框到 Chrome 浏览器，从 Android 手机到智能眼镜。
 
 ### 关键数据
 
 | 指标 | 数据 |
 |------|------|
-| **每月处理Token数** | 3.2千万亿（同比增长7倍） |
-| **每分钟处理Token数** | 约190亿 |
-| **全球开发者数量** | 850万 |
-| **AI Overviews月活跃用户** | 25亿 |
-| **Gemini应用月活跃用户** | 9亿（一年内翻倍） |
-| **Gemini每日请求量增长** | 七倍以上 |
-| **AI Mode查询数增长** | 自上线以来每季度翻倍 |
-| **2026年年度资本支出** | 约1800–1900亿美元（2022年的约6倍） |
+| **每月处理 Token 数** | 3.2 千万亿（同比增长 7 倍） |
+| **每分钟处理 Token 数** | 约 190 亿 |
+| **全球开发者数量** | 850 万 |
+| **AI Overviews 月活跃用户** | 25 亿 |
+| **Gemini 应用月活跃用户** | 9 亿（一年内翻倍） |
+| **Gemini 每日请求量增长** | 七倍以上 |
+| **AI Mode 查询数增长** | 自上线以来每季度翻倍 |
+| **2026 年年度资本支出** | 约 1800–1900 亿美元（2022 年的约 6 倍） |
 
 ---
 
@@ -38,14 +38,14 @@ tags: [学习笔记]
 
 ### 1. Gemini 3.5 Flash —— 性价比王炸
 
-Gemini 3.5 Flash **今日全量上线**，同时成为 Gemini App 与 Google Search AI Mode 的默认模型。这是今年最重要的模型发布，因为它以一个"Flash级"小模型的身份，在几乎所有基准测试上打败了谷歌自家三个月前的旗舰 Gemini 3.1 Pro。
+Gemini 3.5 Flash **今日全量上线**，同时成为 Gemini App 与 Google Search AI Mode 的默认模型。这是今年最重要的模型发布，因为它以一个"Flash 级"小模型的身份，在几乎所有基准测试上打败了谷歌自家三个月前的旗舰 Gemini 3.1 Pro。
 
 | 关键指标 | 表现 |
 |----------|------|
 | **输出速度** | 289 tokens/秒，比 GPT-5.5、Claude Opus 4.7 快 4 倍以上 |
 | **价格** | 比同级前沿模型便宜超过一半 |
 | **Terminal-Bench 2.1（编码）** | 76.2% |
-| **GDPval-AA（Agent任务）** | 1656 Elo |
+| **GDPval-AA（Agent 任务）** | 1656 Elo |
 | **MCP Atlas（工具使用）** | 83.6% |
 | **CharXiv Reasoning（多模态）** | 84.2% |
 
@@ -58,7 +58,7 @@ Gemini 3.5 Flash **今日全量上线**，同时成为 Gemini App 与 Google Sea
 | 缓存输入 | $0.15 / 百万 tokens |
 | 非全球区域 | $1.65 / $9.90 |
 
-谷歌表示，大客户若将80%的工作切换到 3.5 Flash，一年能省下超过10亿美元的API成本。**Gemini 3.5 Pro 将于下个月发布**。
+谷歌表示，大客户若将 80% 的工作切换到 3.5 Flash，一年能省下超过 10 亿美元的 API 成本。**Gemini 3.5 Pro 将于下个月发布**。
 
 ### 2. Gemini Omni —— 视频生成与编辑的跨越
 
@@ -67,16 +67,16 @@ Gemini Omni 是一个全新的原生多模态模型家族，首发成员为 Gemi
 #### 核心突破
 
 - **视频编辑能力**：不仅能从零生成视频，更能用对话式语言编辑已有视频。用户可以上传一段自拍视频，通过文字指令替换背景、添加特效、插入新角色，而原视频中人物的表情、肢体语言和说话节奏纹丝不动。
-- **物理一致性**：具备跨越式的物理概念理解能力，突破了此前AI在模拟动能和重力等物理属性上的局限，能够生成具有准确物理特性的视频。
+- **物理一致性**：具备跨越式的物理概念理解能力，突破了此前 AI 在模拟动能和重力等物理属性上的局限，能够生成具有准确物理特性的视频。
 - **原生音视频同步生成**：画面、配乐、音效在同一次推理中完成，不再需要三个模型接力。
 
 #### 重要限制
 
 | 限制项 | 说明 |
 |--------|------|
-| **视频长度** | 目前限制为 **10秒**，这是部署决策（为扩大首日访问范围）而非技术限制 |
+| **视频长度** | 目前限制为 **10 秒**，这是部署决策（为扩大首日访问范围）而非技术限制 |
 | **语音编辑** | 语音和语音编辑功能**尚未上线**，谷歌表示仍在单独测试该能力 |
-| **资源消耗** | 早期测试者反馈，生成两个10秒视频即耗尽 Google AI Pro 订阅用户日额度的86% |
+| **资源消耗** | 早期测试者反馈，生成两个 10 秒视频即耗尽 Google AI Pro 订阅用户日额度的 86% |
 
 **Omni Pro** 将在不久后发布，将支持更长视频、更高生成质量和物理模拟精度。
 
@@ -86,17 +86,17 @@ Gemini Omni 是一个全新的原生多模态模型家族，首发成员为 Gemi
 
 谷歌发布了第八代定制芯片，首次采用**双芯片策略**，针对训练和推理分别设计：
 
-**TPU 8t**：针对大规模预训练优化，原始算力几乎是上一代的三倍。通过 JAX 和 Pathways，训练可跨越多个数据中心，在全球超过100万个TPU上扩展运行。
+**TPU 8t**：针对大规模预训练优化，原始算力几乎是上一代的三倍。通过 JAX 和 Pathways，训练可跨越多个数据中心，在全球超过 100 万个 TPU 上扩展运行。
 
-**TPU 8i**：专为推理设计，大幅提升每步速度。在生成 Chrome Dino 游戏的现场演示中，Flash 模型实现了**接近1500 tokens/秒的演示峰值速度**（注：这是特定演示场景下的峰值，非持续输出速度）。
+**TPU 8i**：专为推理设计，大幅提升每步速度。在生成 Chrome Dino 游戏的现场演示中，Flash 模型实现了**接近 1500 tokens/秒的演示峰值速度**（注：这是特定演示场景下的峰值，非持续输出速度）。
 
-两款芯片均具有更高能效，每瓦性能提升高达两倍。谷歌今年年度资本支出预计达到1800–1900亿美元，是2022年的近六倍。
+两款芯片均具有更高能效，每瓦性能提升高达两倍。谷歌今年年度资本支出预计达到 1800–1900 亿美元，是 2022 年的近六倍。
 
 ---
 
 ## 四、编程层：Antigravity 2.0
 
-Antigravity 2.0 是谷歌的全自动代码生成平台，由前 Codeium/Windsurf 创始人 Varun Mohan 主导。其定位是**"毫不掩饰地，Agent优先"**。
+Antigravity 2.0 是谷歌的全自动代码生成平台，由前 Codeium/Windsurf 创始人 Varun Mohan 主导。其定位是**"毫不掩饰地，Agent 优先"**。
 
 ### 核心能力
 
@@ -105,9 +105,9 @@ Antigravity 2.0 是谷歌的全自动代码生成平台，由前 Codeium/Windsur
 - Android、Firebase、AI Studio 全栈原生集成
 - 底层引擎：**Gemini 3.5 Flash × Antigravity Agent Harness**，自带 sub-agents、hooks、async 三大原语
 
-### 王炸演示：93个子Agent造操作系统
+### 王炸演示：93 个子 Agent 造操作系统
 
-现场演示中，93个子智能体并行工作12小时，处理了26亿个Token，从零开始编写并测试了一个包含调度程序、内存管理和文件系统的完整操作系统，并成功跑通了 Doom 游戏。API总成本不到1000美元。
+现场演示中，93 个子智能体并行工作 12 小时，处理了 26 亿个 Token，从零开始编写并测试了一个包含调度程序、内存管理和文件系统的完整操作系统，并成功跑通了 Doom 游戏。API 总成本不到 1000 美元。
 
 正如 Varun 所说："以前要拉几天的工程任务，正在被压缩成几小时，甚至几分钟。"**Antigravity 2.0 今日起全球开放**。
 
@@ -115,16 +115,16 @@ Antigravity 2.0 是谷歌的全自动代码生成平台，由前 Codeium/Windsur
 
 ## 五、智能体层：Spark 与 Search Agents
 
-### 1. Gemini Spark —— 24×7个人数字管家
+### 1. Gemini Spark —— 24×7 个人数字管家
 
-Gemini Spark 是运行在 Google Cloud 专用虚拟机上的个人智能体，保持24/7全天候在线，即使终端设备关闭也能在后台自主工作。它可以跨越 Docs、Gmail、Calendar、Sheets、Slides 等多款应用执行复杂任务。
+Gemini Spark 是运行在 Google Cloud 专用虚拟机上的个人智能体，保持 24/7 全天候在线，即使终端设备关闭也能在后台自主工作。它可以跨越 Docs、Gmail、Calendar、Sheets、Slides 等多款应用执行复杂任务。
 
 | 功能 | 说明 |
 |------|------|
 | **定时任务** | 支持"每周一 8 点整理上周会议纪要"等周期性任务 |
 | **跨应用协作** | 自动拉取 Gmail、Docs、Sheets 等内容生成工作汇报 |
 | **第三方接入** | 未来几周通过 MCP 协议打通第三方工具 |
-| **Chrome集成** | 下半年进入 Chrome，成为"智能浏览器" |
+| **Chrome 集成** | 下半年进入 Chrome，成为"智能浏览器" |
 | **Android Halo** | 手机上专门为 Agent 准备的"基地" |
 | **邮件+IM** | 接下来还将铺到邮件和即时通讯 |
 
@@ -148,7 +148,7 @@ Spark 是实验性产品，可能在未询问的情况下分享信息或代你�
 
 谷歌搜索负责人 Liz Reid 宣布"我们正在进入搜索智能体的时代"。主要更新包括：
 
-**全新AI搜索框**：25年来最大的搜索框升级，原生支持文本/图像/文件/视频混合输入。
+**全新 AI 搜索框**：25 年来最大的搜索框升级，原生支持文本/图像/文件/视频混合输入。
 
 **Information Agents（信息智能体）**：可在后台持续监控网络信息，如：
 - 监控生物科技板块"市盈率<15、正现金流、低负债"的股票，命中即推送
@@ -157,7 +157,7 @@ Spark 是实验性产品，可能在未询问的情况下分享信息或代你�
 
 **今年夏天上线**，首发 AI Pro 和 Ultra 订阅用户。
 
-**Generative UI**：搜索结果页引入动态交互式UI，可实时生成可操作的数据可视化图表和"临时小应用"，如周末家庭计划器。结合 Gmail/Photos/Calendar 里的家庭画像，实时排出周末行程。**今年夏天免费向所有人开放**。
+**Generative UI**：搜索结果页引入动态交互式 UI，可实时生成可操作的数据可视化图表和"临时小应用"，如周末家庭计划器。结合 Gmail/Photos/Calendar 里的家庭画像，实时排出周末行程。**今年夏天免费向所有人开放**。
 
 ---
 
@@ -165,13 +165,13 @@ Spark 是实验性产品，可能在未询问的情况下分享信息或代你�
 
 谷歌联合亚马逊、微软、Meta 等巨头推出了两大协议：
 
-**UCP（通用商业协议）**：为AI智能体提供通用的数据交互方式，涵盖产品搜索、结账到物流查询的全流程。Amazon、Meta、Microsoft、Salesforce、Stripe 等已加入支持。
+**UCP（通用商业协议）**：为 AI 智能体提供通用的数据交互方式，涵盖产品搜索、结账到物流查询的全流程。Amazon、Meta、Microsoft、Salesforce、Stripe 等已加入支持。
 
 > "UCP 之于 agentic 商业，正如 HTTP 之于 Web——它让所有 Agent 和系统说同一种语言。"
 
-**AP2（智能体支付协议）**：用于设定AI购物的资金边界并确保权责明晰，在用户、商家和支付机构之间建立基于隐私保护技术的验证链接。
+**AP2（智能体支付协议）**：用于设定 AI 购物的资金边界并确保权责明晰，在用户、商家和支付机构之间建立基于隐私保护技术的验证链接。
 
-**Universal Cart（通用智能购物车）**：实现跨商家、跨服务的统一购物车，可在后台自动比价、监控库存。支持 Nike、Target、Walmart、Ulta Beauty、Sephora、Wayfair、Shopify 等。谷歌 Shopping Graph 已收录 **600亿条商品**。
+**Universal Cart（通用智能购物车）**：实现跨商家、跨服务的统一购物车，可在后台自动比价、监控库存。支持 Nike、Target、Walmart、Ulta Beauty、Sephora、Wayfair、Shopify 等。谷歌 Shopping Graph 已收录 **600 亿条商品**。
 
 **上线时间**：今夏在 Search 和 Gemini 上线，YouTube 和 Gmail 后续跟进。
 
@@ -197,7 +197,7 @@ Spark 是实验性产品，可能在未询问的情况下分享信息或代你�
 ## 八、工作空间与协作工具革新
 
 ### Ask Maps
-地图十年来最大升级，支持复杂问题的对话式查询。例如："我的孩子刚掉进了鸭子池塘，而婚礼30分钟后就要开始了。我可以在附近步行能到的地方买到一件新裙子吗？"
+地图十年来最大升级，支持复杂问题的对话式查询。例如："我的孩子刚掉进了鸭子池塘，而婚礼 30 分钟后就要开始了。我可以在附近步行能到的地方买到一件新裙子吗？"
 
 ### Ask YouTube
 完全重塑视频搜索体验：
@@ -214,7 +214,7 @@ Spark 是实验性产品，可能在未询问的情况下分享信息或代你�
 
 ### Pics（新应用）
 Workspace 新成员，由 Nano Banana 2 和 Gemini 驱动：
-- 支持通过点击图像并添加评论的方式进行迭代AI编辑
+- 支持通过点击图像并添加评论的方式进行迭代 AI 编辑
 - 无需编写包含所有更新的完整提示词
 - 未来计划将能力整合到其他 Workspace 应用中
 
@@ -222,13 +222,13 @@ Workspace 新成员，由 Nano Banana 2 和 Gemini 驱动：
 
 ## 九、行业信任：SynthID 跨平台扩展
 
-面对生成式AI内容失控的担忧，谷歌宣布将 SynthID 数字水印技术全面扩展至搜索和 Chrome 浏览器中。
+面对生成式 AI 内容失控的担忧，谷歌宣布将 SynthID 数字水印技术全面扩展至搜索和 Chrome 浏览器中。
 
-- 已累计为超过**1000亿张图片和视频**、长达**6万年时长**的音频添加水印
-- 新增跨产品 **Content Credentials（内容凭证）** 验证功能，展示内容来源（AI或相机）及是否使用生成式AI编辑
+- 已累计为超过**1000 亿张图片和视频**、长达**6 万年时长**的音频添加水印
+- 新增跨产品 **Content Credentials（内容凭证）** 验证功能，展示内容来源（AI 或相机）及是否使用生成式 AI 编辑
 - OpenAI、NVIDIA、Kakao、ElevenLabs 等已正式采用该标准
 
-研究显示，人类只能正确识别约25%的高质量深伪视频，水印技术的普及对于AI内容透明度至关重要。
+研究显示，人类只能正确识别约 25% 的高质量深伪视频，水印技术的普及对于 AI 内容透明度至关重要。
 
 ---
 
@@ -247,19 +247,19 @@ Workspace 新成员，由 Nano Banana 2 和 Gemini 驱动：
 采用全新的"神经表现"设计语言：
 - 新动画、色彩、字体
 - 触觉反馈
-- **5月19日起**在网页端和 Android/iOS 应用推出
+- **5 月 19 日起**在网页端和 Android/iOS 应用推出
 
 ### Gemini App 计费模式调整
 计费模式改为**按算力计费**（代号 Neural Expressive）。
 
 ### Personal Intelligence
-Gemini 应用中的 Personal Intelligence 功能让AI响应更加定制化、更有帮助。目前已有超过**500亿张图像**由 Nano Banana 模型生成。
+Gemini 应用中的 Personal Intelligence 功能让 AI 响应更加定制化、更有帮助。目前已有超过**500 亿张图像**由 Nano Banana 模型生成。
 
 ### Project Genie
 AI Ultra $200/月 订阅档包含 Project Genie 访问权限。这是一个世界模型项目，相关详情将在后续公布。
 
 ### Google Beam 更新
-实验性的生动AI智能体（如 **Sophie**）：
+实验性的生动 AI 智能体（如 **Sophie**）：
 - 可在视频通话中回答问题
 - 可读取摄像头前的文档
 - 可查找餐厅推荐等
@@ -269,15 +269,15 @@ AI Ultra $200/月 订阅档包含 Project Genie 访问权限。这是一个世�
 
 ## 十一、总结与展望
 
-谷歌 I/O 2026 传递的核心信息非常明确：**AI 正在从"工具"变为"生产力"，智能体正在接管一切**。谷歌凭借全栈AI技术优势，在搜索、办公、购物和硬件全线筑起了"Agent优先"的超级生态壁垒。
+谷歌 I/O 2026 传递的核心信息非常明确：**AI 正在从"工具"变为"生产力"，智能体正在接管一切**。谷歌凭借全栈 AI 技术优势，在搜索、办公、购物和硬件全线筑起了"Agent 优先"的超级生态壁垒。
 
 ### 三大栈块的核心进展
 
 | 层级 | 核心进展 |
 |------|----------|
 | **模型层** | Gemini 3.5 Flash 以极低成本实现旗舰级性能；Omni 让 AI 第一次能"改"视频 |
-| **编程层** | Antigravity 用不到1000美元造出了能跑 Doom 的操作系统 |
-| **Agent层** | Spark 24×7替你跑后台，Search 边搜索边替你下单 |
+| **编程层** | Antigravity 用不到 1000 美元造出了能跑 Doom 的操作系统 |
+| **Agent 层** | Spark 24×7 替你跑后台，Search 边搜索边替你下单 |
 
 ### 谷歌的护城河
 
@@ -298,9 +298,9 @@ AI Ultra $200/月 订阅档包含 Project Genie 访问权限。这是一个世�
 
 本文档中的关键数据已通过多个来源交叉验证：
 
-- **289 tokens/秒**：第三方 Artificial Analysis 测试数据（2026年5月13日）
+- **289 tokens/秒**：第三方 Artificial Analysis 测试数据（2026 年 5 月 13 日）
 - **1500 tokens/秒**：TPU 8i 演示峰值速度（Chrome Dino 游戏生成演示），非持续输出速度
-- **Omni Flash 10秒限制**：部署决策，Pro 版本将支持更长视频
+- **Omni Flash 10 秒限制**：部署决策，Pro 版本将支持更长视频
 - **Omni Flash 语音编辑**：尚未上线，仍在测试中
 
 ---
@@ -309,18 +309,18 @@ AI Ultra $200/月 订阅档包含 Project Genie 访问权限。这是一个世�
 
 - [I/O 2026: Welcome to the agentic Gemini era - Google Blog](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)
 - [The 13 biggest announcements at Google I/O 2026 - The Verge](https://www.theverge.com/tech/933415/google-io-2026-biggest-announcements-ai-gemini)
-- [三个关键词，2026谷歌 I/O大会全说透了 - 腾讯技术工程](https://c.m.163.com/news/a/KTCP2EF60518R7MO.html)
-- [谷歌2026 I/O大会完整回顾：模型依然重要，但智能体正在接管一切 - 凤凰网](https://tech.ifeng.com/c/8tESuwrFZg2)
+- [三个关键词，2026 谷歌 I/O 大会全说透了 - 腾讯技术工程](https://c.m.163.com/news/a/KTCP2EF60518R7MO.html)
+- [谷歌 2026 I/O 大会完整回顾：模型依然重要，但智能体正在接管一切 - 凤凰网](https://tech.ifeng.com/c/8tESuwrFZg2)
 - [The 13 biggest announcements at Google I/O 2026 - Associated Press](https://associattedpress.com/the-13-biggest-announcements-at-google-i-o-2026/)
 - [Google I/O 2026: Every Major Announcement From Gemini 3.5 to Smartglasses - InsiderXP](https://insiderxp.com/google-io-2026-major-announcements/)
-- [一文看懂2026年谷歌I/O大会 - 每日经济新闻](http://m.toutiao.com/group/7641742034121818665/)
+- [一文看懂 2026 年谷歌 I/O 大会 - 每日经济新闻](http://m.toutiao.com/group/7641742034121818665/)
 - [Gemini 3.5 Flash Is Here, Google's Strongest Agentic & Coding Model Yet - Times of AI](https://www.timesofai.com/news/google-officially-launches-gemini-3-5-flash-at-io-2026/)
 - [Gemini 3.5 Flash launches: Flash beats Gemini 3.1 Pro - APIYi Docs](https://docs.apiyi.com/en/live/2026-05/gemini-3-5-flash)
 - [Gemini 3.5 Flash: Benchmarks, Pricing, and Complete Specs - LLM Stats](https://llm-stats.com/blog/research/gemini-3-5-flash-launch)
 - [Google I/O 2026: Google introduces Gemini Omni AI video model - Moneycontrol](http://www.moneycontrol.com/technology/google-i-o-2026-google-introduces-gemini-omni-ai-video-model-with-conversational-editing-tools-article-13924374.html/amp)
 - [Google announces slew of AI advances, including a personal AI assistant - AP News](https://apnews.com/article/google-io-gemini-developers-conference-a984e6756032dc4af260f8fa27e8f4a9)
 - [Google's Gemini Omni Flash turns any input into video — with a 10-second leash - GaGadget](https://gagadget.com/en/711206-googles-gemini-omni-turns-anything-into-video-and-its-free-on-youtube-shorts/)
-- [谷歌推Gemini Omni Flash：对话式AI视频编辑来了 - 什么值得买](https://post.m.smzdm.com/p/aomrn486/)
+- [谷歌推 Gemini Omni Flash：对话式 AI 视频编辑来了 - 什么值得买](https://post.m.smzdm.com/p/aomrn486/)
 - [Google I/O 2026 Recap: Google shows how AI is becoming the core layer - Meristation](https://en.as.com/meristation/news/google-io-2026-recap-google-shows-how-ai-is-becoming-the-core-layer-of-its-products-and-infrastructure-f202605-n/)
 - [Gemini app rolling out 'Neural Expressive' redesign, 3.5 Flash, 24/7 Spark agent - 9to5Google](https://9to5google.com/2026/05/19/gemini-app-google-io-2026/)
 - [Google I/O 2026: Google Enters Its 'Agentic Gemini Era' - Economic Times](https://m.economictimes.com/magazines/panache/google-i/o-2026-google-enters-its-agentic-gemini-era/amp_articleshow/131208621.cms)

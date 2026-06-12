@@ -41,8 +41,8 @@ CTranslate2 使用 CUDA async allocator 管理 GPU 内存。在模型卸载时�
 
 | Issue | 说明 |
 |-------|------|
-| [SYSTRAN/faster-whisper#71](https://github.com/SYSTRAN/faster-whisper/issues/71) | 2023年3月首次报告，至今仍 open |
-| [SYSTRAN/faster-whisper#1293](https://github.com/SYSTRAN/faster-whisper/issues/1293) | 2025年4月，详细版本对比测试 |
+| [SYSTRAN/faster-whisper#71](https://github.com/SYSTRAN/faster-whisper/issues/71) | 2023 年 3 月首次报告，至今仍 open |
+| [SYSTRAN/faster-whisper#1293](https://github.com/SYSTRAN/faster-whisper/issues/1293) | 2025 年 4 月，详细版本对比测试 |
 | [OpenNMT/CTranslate2#1782](https://github.com/OpenNMT/CTranslate2/issues/1782) | CTranslate2 侧的崩溃报告 |
 
 ## 解决方案
@@ -80,7 +80,7 @@ python transcribe.py
 ```
 
 **优点**：最简单，一行代码搞定，不影响转录质量
-**来源**：2026年4月由 [@ia319](https://github.com/SYSTRAN/faster-whisper/issues/71#issuecomment-2826547563) 发现并报告
+**来源**：2026 年 4 月由 [@ia319](https://github.com/SYSTRAN/faster-whisper/issues/71#issuecomment-2826547563) 发现并报告
 
 ### 方案二：子进程隔离
 

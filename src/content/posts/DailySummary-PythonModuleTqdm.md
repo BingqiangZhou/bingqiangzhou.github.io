@@ -6,21 +6,21 @@ lang: zh
 tags: ["学习笔记"]
 ---
 
-今天总结一下tqdm模块~~以及pytorch框架选择GPU运行程序遇到的一个小问题。~~
-tqdm模块，是一个python进度条模块，简单已用。
-[tqdm文档](https://tqdm.github.io) [github](https://github.com/tqdm/tqdm) 推荐看github中的README了解如何使用，这个文档好像有点老旧。
+今天总结一下 tqdm 模块~~以及 pytorch 框架选择 GPU 运行程序遇到的一个小问题。~~
+tqdm 模块，是一个 python 进度条模块，简单已用。
+[tqdm 文档](https://tqdm.github.io) [github](https://github.com/tqdm/tqdm) 推荐看 github 中的 README 了解如何使用，这个文档好像有点老旧。
 
 
 
-## pytorch框架选择GPU运行程序
+## pytorch 框架选择 GPU 运行程序
 
-~~pytorch框架选择GPU运行程序，发现`os.environ["CUDA_VISIBLE_DEVICES"]="0"`放置位置是有讲究的，需要放在倒入torch模块之前，才行。~~ 
+~~pytorch 框架选择 GPU 运行程序，发现`os.environ["CUDA_VISIBLE_DEVICES"]="0"`放置位置是有讲究的，需要放在倒入 torch 模块之前，才行。~~ 
 
-经过测试，发现没有这个问题，之前我们遇到的问题是，程序没有用我自己设定的gpu跑代码，我调整了`config`文件（注：`config`文件中有语句`os.environ["CUDA_VISIBLE_DEVICES"]="0"`）的导入顺序之后，发现解决了问题，因此我错误的认为`os.environ["CUDA_VISIBLE_DEVICES"]="0"`需要在torch模块之前导入才行。
+经过测试，发现没有这个问题，之前我们遇到的问题是，程序没有用我自己设定的 gpu 跑代码，我调整了`config`文件（注：`config`文件中有语句`os.environ["CUDA_VISIBLE_DEVICES"]="0"`）的导入顺序之后，发现解决了问题，因此我错误的认为`os.environ["CUDA_VISIBLE_DEVICES"]="0"`需要在 torch 模块之前导入才行。
 
-## tqdm模块
+## tqdm 模块
 
-### tqdm.tqdm类
+### tqdm.tqdm 类
 
 ```python
 tqdm.__init__(iterable=None,
@@ -53,7 +53,7 @@ tqdm.__init__(iterable=None,
 
 #### `iterable`参数
 
-需要用进度条装饰的可迭代的对象，list等等都可以。
+需要用进度条装饰的可迭代的对象，list 等等都可以。
 
 #### `desc`参数
 
@@ -82,7 +82,7 @@ pbar.close()
 
 #### `leave`参数
 
-布尔类型，默认为`True`，`leave`参数表示在迭代结束之后，是否保留进度条状态，如果设置为`False`或者`None`，则在迭代之后，不会保留最后的状态，而变成0，如下图所示。
+布尔类型，默认为`True`，`leave`参数表示在迭代结束之后，是否保留进度条状态，如果设置为`False`或者`None`，则在迭代之后，不会保留最后的状态，而变成 0，如下图所示。
 
 ![`leave`参数](/assets/images/2020/20200617/leave.png)
 
@@ -100,7 +100,7 @@ pbar.close()
 
 #### `mininterval`参数
 
-进度条更新的最小时间间隔，默认为0.1秒。如下图。
+进度条更新的最小时间间隔，默认为 0.1 秒。如下图。
 
 ![`mininterval`参数](/assets/images/2020/20200617/mininterval.png)
 
@@ -108,11 +108,11 @@ pbar.close()
 
 #### `maxinterval`参数
 
-进度条更新的最大时间间隔，默认为10秒，与`mininterval`类似。
+进度条更新的最大时间间隔，默认为 10 秒，与`mininterval`类似。
 
 #### `miniters`参数
 
-进度条更新的最小迭代次数，当设置为0时，根据CPU性能自适应，指定了最小迭代次数，则经过了多少次迭代之后就会更新进度条。
+进度条更新的最小迭代次数，当设置为 0 时，根据 CPU 性能自适应，指定了最小迭代次数，则经过了多少次迭代之后就会更新进度条。
 
 #### `ascii`参数
 
@@ -120,9 +120,9 @@ pbar.close()
 
 #### `disable`参数
 
-`bool`，默认为`False`，如果指定为`True`则禁用了整个进度条，如果设置为`None`，在不是TTY（Teletypes，可以理解为在终端或者控制台上，不会禁用进度条）的情况下，禁用进度条。
+`bool`，默认为`False`，如果指定为`True`则禁用了整个进度条，如果设置为`None`，在不是 TTY（Teletypes，可以理解为在终端或者控制台上，不会禁用进度条）的情况下，禁用进度条。
 
-经过尝试，在终端中设置为`None`，依然还是会显示进度条，而在jupyter notebook不会显示进度条。
+经过尝试，在终端中设置为`None`，依然还是会显示进度条，而在 jupyter notebook 不会显示进度条。
 
 #### `unit`参数
 
@@ -132,7 +132,7 @@ pbar.close()
 
 #### `unit_scale`参数
 
-如果设定为`1`或者`True`，则会自适应数字单位，如下面的三万多变成了37.5k。
+如果设定为`1`或者`True`，则会自适应数字单位，如下面的三万多变成了 37.5k。
 ![`unit_scale`参数](/assets/images/2020/20200617/unit_scale.png)
 
 #### `dynamic_ncols`参数
@@ -141,7 +141,7 @@ pbar.close()
 
 #### `smoothing`参数
 
-默认为`0.3`，设置范围在0到1之间，表示速度估算的指数移动平均平滑因子，`0`为平均速度，`1`是当前速度/瞬时速度，表示的是在进度条变化的时候，显示的多少次迭代每秒是平均速度还是瞬时速度。（原话：Exponential moving average smoothing factor for speed estimates）
+默认为`0.3`，设置范围在 0 到 1 之间，表示速度估算的指数移动平均平滑因子，`0`为平均速度，`1`是当前速度/瞬时速度，表示的是在进度条变化的时候，显示的多少次迭代每秒是平均速度还是瞬时速度。（原话：Exponential moving average smoothing factor for speed estimates）
 
 #### `bar_format`参数
 
@@ -150,13 +150,13 @@ pbar.close()
 
 #### `initial`参数
 
-默认值为`0`，表示初始的迭代次数，常用于新开始一个进度条。如下图，从3开始，最后变成50003次迭代。
+默认值为`0`，表示初始的迭代次数，常用于新开始一个进度条。如下图，从 3 开始，最后变成 50003 次迭代。
 
 ![`initial`参数](/assets/images/2020/20200617/initial.png)
 
 #### `position`参数
 
-默认为`0`，如果设置为其他数（记为N），它会在进度条前，先输出N个空行。
+默认为`0`，如果设置为其他数（记为 N），它会在进度条前，先输出 N 个空行。
 
 #### `postfix`参数
 
@@ -174,11 +174,11 @@ pbar.close()
 
 #### `lock_args`参数
 
-`tuple`类型，刷新中间输出，通过`tqdm.refresh()`方法，获得中间输出.
+`tuple`类型，刷新中间输出，通过`tqdm.refresh()`方法，获得中间输出。
 
 #### `nrows`参数
 
-与`ncols`参数类似，表示显示进度条的高度.
+与`ncols`参数类似，表示显示进度条的高度。
 
 #### `gui`参数
 
@@ -225,7 +225,7 @@ pbar.close()
 
 ### `tqdm.gui.tqdm()`与`tqdm.gui.trange()`
 
-用于GUI的进度条，使用方法和`tqdm.tqdm()`、`tqdm.trange()`类似。
+用于 GUI 的进度条，使用方法和`tqdm.tqdm()`、`tqdm.trange()`类似。
 
 ### 实验性模块
 
@@ -233,15 +233,15 @@ pbar.close()
 
 #### `tqdm.contrib.tenumerate()`
 
-类似于python内建的`enumerate`方法
+类似于 python 内建的`enumerate`方法
 
 #### `tqdm.contrib.tzip()`
 
-类似于python内建的`zip`方法
+类似于 python 内建的`zip`方法
 
 #### `tqdm.contrib.tmap()`
 
-类似于python内建的`tmap`方法
+类似于 python 内建的`tmap`方法
 
 ### 自适应打印
 

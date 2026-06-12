@@ -8,7 +8,7 @@ tags: ["工具分享", "学习笔记"]
 
 > 2025-2026 年浏览器插件开发全栈技能总结。从框架选型到 AI 辅助开发，涵盖开发全流程的实战技能与工具推荐。
 
-**更新时间：2026年6月**
+**更新时间：2026 年 6 月**
 
 ---
 
@@ -379,7 +379,7 @@ export const test = base.extend({
 
 ## 五、安全审计
 
-### CSP（Content Security Policy）
+### CSP (Content Security Policy)
 
 MV3 扩展页面默认 CSP：`script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`
 

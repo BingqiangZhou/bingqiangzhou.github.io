@@ -14,7 +14,7 @@ tags: [学习笔记, AI图像生成]
 
 ## 1. 什么是 JSON Caption
 
-传统图像生成模型的训练数据是"图像-文本对"（image-text pair），其中文本描述通常是自然语言的一段话，比如：
+传统图像生成模型的训练数据是"图像 - 文本对"（image-text pair），其中文本描述通常是自然语言的一段话，比如：
 
 ```text
 A cat sitting on a wooden table next to a cup of coffee, 
@@ -57,7 +57,7 @@ sunlight streaming through a window in the background.
 
 ### 2.1 问题：训练数据的 Caption 太短了
 
-大规模图像-文本数据集（如 LAION）的 caption 普遍存在质量问题：
+大规模图像 - 文本数据集（如 LAION）的 caption 普遍存在质量问题：
 
 - **描述不完整**：图像中有 5 个物体，caption 只提到 2 个
 - **缺少属性细节**：物体是什么颜色、什么材质、多大尺寸，caption 经常遗漏
@@ -171,7 +171,7 @@ JSON caption 的学习目标：
   图像 → 风格描述是"照片"      （学习目标 1）
   图像 → 光照是"午后阳光"      （学习目标 2）
   图像 → 猫在画面左侧 [100,200,400,600]  （学习目标 3）
-  图像 → 杯子在猫的右侧        （学习目标 4）
+  图像 → 杯子在猫的右侧（学习目标 4）
   图像 → 色调偏暖 ["#8B6914"] （学习目标 5）
   ...每个字段都是独立的学习信号
 ```
@@ -314,7 +314,7 @@ Ideogram 4.0 提供了 [Describe API](https://developer.ideogram.ai/api-referenc
 输入图像 → Describe API → V4JsonPrompt（结构化 JSON）→ 可直接喂回 Generate API
 ```
 
-这形成了一个 **"描述-再生成"（describe-then-regenerate）** 的闭环工作流：
+这形成了一个 **"描述 - 再生成"（describe-then-regenerate）** 的闭环工作流：
 1. 上传一张参考图像
 2. 获取其 JSON 结构化描述
 3. 修改 JSON 中的任意字段
@@ -380,7 +380,7 @@ JSON Caption 可以看作是场景图的一种"可序列化"形式。研究社�
 
 **密集 Caption** 是 JSON Caption 的"前身"——对图像中每个区域生成独立的描述（region description）。从 dense caption 到 JSON caption 的演进，可以看作是从"分散的描述片段"到"统一的结构化描述"。
 
-### 7.3 BACON（CVPR 2025）
+### 7.3 BACON (CVPR 2025)
 
 [BACON](https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_BACON_Improving_Clarity_of_Image_Captions_via_Bag-of-Concept_Graphs_CVPR_2025_paper.pdf)（Bag-of-Concept Graphs）提出了一种从 VLM 中提取**逐元素的结构化 caption** 的方法，使得图像描述更清晰、更完整。这类方法是自动生成高质量 JSON Caption 的关键技术。
 

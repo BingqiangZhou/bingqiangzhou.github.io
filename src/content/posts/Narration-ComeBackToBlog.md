@@ -11,10 +11,10 @@ tags: ["碎碎念"]
 
 
 今天整理了一下博客，大概看了一下[jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme)的源码，
-1. 把TOC(目录)从右边移到了，加大了一下字体。
-2. 在查看效果的时候，惊奇的发现，TOC没有内容的时候，依旧有会占据这块地方，然后又改了一下代码，在没有内容的时候隐藏一下TOC。
-3. 看[jekyll-TeXt-theme文档](https://tianqi.name/jekyll-TeXt-theme/archive.html)的时候，又发现了一些好玩的东西，jekyll 脚注(Footnote)[^Footnote]、还有定义(Definition)[^Definition]，画图[^ChartAndMermaid]等等。
-4. 设置了一下图片居中，将如下css代码加入到`_article-content.scss`文件的`img:not(.emoji)`标签中，同时注释掉`vertical-align`项，[参考链接](https://www.smslit.top/2015/10/15/PostImgCenter-Jekyll/)。
+1. 把 TOC(目录) 从右边移到了，加大了一下字体。
+2. 在查看效果的时候，惊奇的发现，TOC 没有内容的时候，依旧有会占据这块地方，然后又改了一下代码，在没有内容的时候隐藏一下 TOC。
+3. 看[jekyll-TeXt-theme 文档](https://tianqi.name/jekyll-TeXt-theme/archive.html)的时候，又发现了一些好玩的东西，jekyll 脚注 (Footnote)[^Footnote]、还有定义 (Definition)[^Definition]，画图[^ChartAndMermaid]等等。
+4. 设置了一下图片居中，将如下 css 代码加入到`_article-content.scss`文件的`img:not(.emoji)`标签中，同时注释掉`vertical-align`项，[参考链接](https://www.smslit.top/2015/10/15/PostImgCenter-Jekyll/)。
    ```
     clear: both; 
     display: block; 
@@ -28,8 +28,8 @@ tags: ["碎碎念"]
 
 明天算法与数据结构课、文献检索与论文写作结课结课，要考试、要汇报，溜了溜了。
 
-[^Footnote]: 这就是脚注，[文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2016/05/04/footnote.html)
+[^Footnote]: 这就是脚注，[文档链接](ACURLHOLD3ENDHOLD)
 
-[^Definition]: [定义的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2016/05/05/definition.html)，定义是什么呢？也就是一种markdown的展示形式而已。
+[^Definition]: [定义的文档链接](ACURLHOLD4ENDHOLD)，定义是什么呢？也就是一种markdown的展示形式而已。
 
-[^ChartAndMermaid]: [图表Chart的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/05/05/chart.html) 、[流程图、时序图等等Mermaid图的文档链接](https://tianqi.name/jekyll-TeXt-theme/post/2017/06/06/mermaid.html)，这里的[Mermaid](https://mermaid-js.github.io/mermaid/)图，其实是一个JavaScript库的名字，用来画图的库，翻译过来为美人鱼。
+[^ChartAndMermaid]: [图表Chart的文档链接](ACURLHOLD5ENDHOLD) 、[流程图、时序图等等Mermaid图的文档链接](ACURLHOLD6ENDHOLD)，这里的[Mermaid](ACURLHOLD7ENDHOLD)图，其实是一个JavaScript库的名字，用来画图的库，翻译过来为美人鱼。

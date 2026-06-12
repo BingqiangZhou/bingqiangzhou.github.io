@@ -54,4 +54,4 @@ nrm current
 npm config set registry https://registry.npmjs.org
 ```
 
-> **提示**：淘宝旧域名 `registry.npm.taobao.org` 已于 **2024年** 停止服务，请使用新域名 `registry.npmmirror.com`。
+> **提示**：淘宝旧域名 `registry.npm.taobao.org` 已于 **2024 年** 停止服务，请使用新域名 `registry.npmmirror.com`。
