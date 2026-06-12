@@ -271,7 +271,7 @@ hyperframes benchmark  # 渲染性能基准测试
 
 **着色器转场**（最精细的类别）：14 种 WebGL 着色器转场效果——Domain Warp、Ridged Burn、Whip Pan、SDF Iris、Ripple Waves、Gravitational Lens、Cinematic Zoom、Glitch、Swirl Vortex 等。转场分 13 个类别集合（3D、模糊、遮盖、溶解、扭曲、网格、光线、机械等）。
 
-**数据可视化**：`data-chart` — NYT 风格的动画柱状图+折线图，带交错揭示、数值递增动画、来源信息。
+**数据可视化**：`data-chart` — NYT 风格的动画柱状图 + 折线图，带交错揭示、数值递增动画、来源信息。
 
 **组件**（无独立尺寸，嵌入宿主组合）：`grain-overlay`（胶片颗粒纹理，SVG feTurbulence）、`shimmer-sweep`（高光扫过效果）、`grid-pixelate-wipe`（网格像素化擦除）。
 

@@ -276,13 +276,13 @@ import re
 def md_to_wechat_html(md_text: str) -> str:
     """将 Markdown 转换为微信公众号兼容的内联样式 HTML"""
 
-    # 第1步：Markdown → 基础 HTML
+    # 第 1 步：Markdown → 基础 HTML
     html = markdown.markdown(
         md_text,
         extensions=["tables", "fenced_code", "nl2br", "sane_lists"],
     )
 
-    # 第2步：用正则为各标签注入内联样式
+    # 第 2 步：用正则为各标签注入内联样式
     style_map = {
         "h1": "font-size:24px;font-weight:bold;color:#1a1a1a;margin:30px 0 15px 0;text-align:center;",
         "h2": "font-size:20px;font-weight:bold;color:#1a1a1a;margin:25px 0 12px 0;border-bottom:2px solid #eee;padding-bottom:8px;",
@@ -310,7 +310,7 @@ def md_to_wechat_html(md_text: str) -> str:
         replacement = rf'\1 style="{style}"\2>'
         html = re.sub(pattern, replacement, html, flags=re.IGNORECASE)
 
-    # 第3步：处理 pre > code 中的代码块样式（白色文字）
+    # 第 3 步：处理 pre > code 中的代码块样式（白色文字）
     html = re.sub(
         r'(<pre[^>]*>)(\s*<code)',
         r'\1\2 style="color:#f8f8f2;background:none;padding:0;"',

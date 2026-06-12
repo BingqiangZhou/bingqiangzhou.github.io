@@ -6,6 +6,6 @@ lang: zh
 tags: ["碎碎念"]
 ---
 
-第一次使用Hexo+NexT结合GitHub搭建网站，Hello，[bingqiangzhou.github.io](https://bingqiangzhou.github.io).
+第一次使用 Hexo+NexT 结合 GitHub 搭建网站，Hello，[bingqiangzhou.github.io](https://bingqiangzhou.github.io).
 
-现在是用的Jekyll+TeXt主题。
+现在是用的 Jekyll+TeXt 主题。

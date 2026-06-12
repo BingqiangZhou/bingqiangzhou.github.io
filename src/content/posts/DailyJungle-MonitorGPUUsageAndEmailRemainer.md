@@ -6,7 +6,7 @@ lang: zh
 tags: ["实践记录"]
 ---
 
-又有一段时间没有记录总结了，马上要开学了，这次记录一下监控实验室GPU使用情况，有空闲GPU发送邮件提醒的代码。
+又有一段时间没有记录总结了，马上要开学了，这次记录一下监控实验室 GPU 使用情况，有空闲 GPU 发送邮件提醒的代码。
 
 
 
@@ -14,15 +14,15 @@ tags: ["实践记录"]
 
 ## 主要思路
 
-执行命令行`nvidia-smi -q -x`，获取到命令行输出，解析xml，获取到GPU使用情况，判断是否有空闲GPU，发送邮件。
+执行命令行`nvidia-smi -q -x`，获取到命令行输出，解析 xml，获取到 GPU 使用情况，判断是否有空闲 GPU，发送邮件。
 
 ## 主要代码
 
 下面主要给出执行命令行，以及解析返回结果代码，发送邮件仅给出之前的的一篇博客作为参考，[参考:【实践记录】定时获取成绩，新出一门成绩使用邮件提醒](/posts/dailyjungle-smtp-seleniumwithheadlessbroswer/#2发送邮件)。
 
-NVIDIA-SMI相关命令，参考[NVIDIA-SMI系列命令总结](https://www.cnblogs.com/omgasw/p/10218180.html)。
+NVIDIA-SMI 相关命令，参考[NVIDIA-SMI 系列命令总结](https://www.cnblogs.com/omgasw/p/10218180.html)。
 
-解析xml，参考[python 官方文档 xml.etree.ElementTree -- The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html)
+解析 xml，参考[python 官方文档 xml.etree.ElementTree -- The ElementTree XML API](https://docs.python.org/3/library/xml.etree.elementtree.html)
 
 获取进程相关信息的包[psutil (python system and process utilities)](https://psutil.readthedocs.io/en/latest/)。
 
@@ -61,7 +61,7 @@ def get_process_info(pid):
 
 def get_gpu_info():
     command_str = 'nvidia-smi -q -x'
-    # 查询所有GPU的当前详细信息并将查询的信息以xml的形式输出
+    # 查询所有 GPU 的当前详细信息并将查询的信息以 xml 的形式输出
     gpus_info_dict = {}
     text = execute_command(command_str)
     root = ET.fromstring(text)

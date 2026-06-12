@@ -379,7 +379,7 @@ GLM StatusLine 插件**没有使用 Monitor**。状态栏通过 `statusLine.comm
 ]
 ```
 
-quota-watch.sh：
+quota-watch.sh:
 
 ```bash
 #!/bin/bash

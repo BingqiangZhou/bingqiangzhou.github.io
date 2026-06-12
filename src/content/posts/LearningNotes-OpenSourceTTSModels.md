@@ -19,7 +19,7 @@ tags: [学习笔记]
 - [三、Qwen3-TTS — 阿里通义千问语音大模型](#三qwen3-tts--阿里通义千问语音大模型)
 - [四、CosyVoice3 — 均衡型多方言 TTS](#四cosyvoice3--均衡型多方言-tts)
 - [五、VibeVoice — 微软开源语音 AI 框架](#五vibevoice--微软开源语音-ai-框架)
-- [六、IndexTTS2 — B站工业级零样本 TTS](#六indextts2--b站工业级零样本-tts)
+- [六、IndexTTS2 — B 站工业级零样本 TTS](#六indextts2--b站工业级零样本-tts)
 - [七、GPT-SoVITS — 少样本语音克隆利器](#七gpt-sovits--少样本语音克隆利器)
 - [八、Fish Speech (FishAudio) — 企业级语音合成](#八fish-speech-fishaudio--企业级语音合成)
 - [九、F5-TTS — 轻量开源 TTS](#九f5-tts--轻量开源-tts)
@@ -104,7 +104,7 @@ import soundfile as sf
 from voxcpm import VoxCPM
 
 model = VoxCPM.from_pretrained("openbmb/VoxCPM-0.5B")
-wav = model.generate(text="你好，这是VoxCPM语音合成演示", normalize=True, denoise=True)
+wav = model.generate(text="你好，这是 VoxCPM 语音合成演示", normalize=True, denoise=True)
 sf.write("output.wav", wav, 16000)
 ```
 
@@ -186,7 +186,7 @@ MOSS-TTSD-v1.0 在对话语音生成上甚至**战胜了豆包、Gemini2.5-pro �
 - **10 大语言**：中文、英文、日语、韩语、德语、法语、俄语、葡萄牙语、西班牙语、意大利语
 - **方言支持**：北京话、四川话等方言音色
 - **3 秒声纹克隆**：仅需 3 秒参考音频即可快速克隆
-- **音色设计**：自然语言描述即可创造新音色（如"紧张的17岁男生"）
+- **音色设计**：自然语言描述即可创造新音色（如"紧张的 17 岁男生"）
 - **97ms 超低延迟**：端到端合成延迟低至 97ms，支持实时交互
 - **双轨混合流式架构**：单模型同时支持流式和非流式生成
 - **自然语言语音控制**：支持通过指令控制音色、情感、韵律等多维声学属性
@@ -330,7 +330,7 @@ sf.write("output.wav", wavs[0], sr)
 
 ---
 
-## 六、IndexTTS2 — B站工业级零样本 TTS
+## 六、IndexTTS2 — B 站工业级零样本 TTS
 
 ### 6.1 项目概述
 
@@ -489,9 +489,9 @@ sf.write("output.wav", wavs[0], sr)
 
 | 维度 | **VoxCPM2** | **Qwen3-TTS** | **MOSS-TTS-Nano** | **MOSS-TTS (8B)** | **CosyVoice3** | **VibeVoice** | **IndexTTS2** | **GPT-SoVITS** | **Fish Speech** | **F5-TTS** | **Kokoro** |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| **团队** | 面壁智能 | 阿里Qwen | 复旦OpenMOSS | 同左 | 阿里FunAudioLLM | 微软 | B站IndexTeam | 社区 | Fish Audio | SWivid | hexgrad |
+| **团队** | 面壁智能 | 阿里 Qwen | 复旦 OpenMOSS | 同左 | 阿里 FunAudioLLM | 微软 | B 站 IndexTeam | 社区 | Fish Audio | SWivid | hexgrad |
 | **参数量** | 2B | 0.6B/1.7B | 0.1B | 8B/1.7B | 0.5B/1.5B | 1.5B/7B | 1.5B | — | 0.5B/4B | 0.3B | 0.082B |
-| **技术路线** | Tokenizer-Free 扩散自回归 | 离散多码本 LM | 离散Token+LLM | 离散Token+LLM | Flow Matching | 语音基础模型 | GPT+DiT | GPT+SoVITS | 自研架构 | Flow Matching+ConvNeXt | StyleTTS 2 |
+| **技术路线** | Tokenizer-Free 扩散自回归 | 离散多码本 LM | 离散 Token+LLM | 离散 Token+LLM | Flow Matching | 语音基础模型 | GPT+DiT | GPT+SoVITS | 自研架构 | Flow Matching+ConvNeXt | StyleTTS 2 |
 | **采样率** | **48kHz** | 24kHz | **48kHz** | 24kHz | 24kHz | 24kHz | 24kHz | — | — | 24kHz | 24kHz |
 | **协议** | Apache 2.0 | Apache 2.0 | Apache 2.0 | Apache 2.0 | Apache 2.0 | MIT/Apache 2.0 | 待确认 | MIT | 自定义 | CC-BY-NC 4.0 | Apache 2.0 |
 
@@ -499,16 +499,16 @@ sf.write("output.wav", wavs[0], sr)
 
 | 能力 | **VoxCPM2** | **Qwen3-TTS** | **MOSS-TTS-Nano** | **MOSS-TTS (8B)** | **CosyVoice3** | **VibeVoice** | **IndexTTS2** | **GPT-SoVITS** | **Fish Speech** | **F5-TTS** | **Kokoro** |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| **语言数** | **30+9方言** | **10+方言** | ~20 | 多语种 | 9+**18方言** | 37 | 多语种 | 中/英/日 | 多语种 | 多语种 | 主要英语 |
-| **东南亚** | ✅ 8国 | ❌ | ⚠️ 部分 | ✅ | ❌ | — | — | ❌ | — | ❌ | ❌ |
-| **声音克隆** | ✅ 3-10秒 | ✅ **3秒** | ✅ | ✅ 高保真 | ✅ | ✅ | ✅ | ✅ **5秒** | ✅ | ✅ | ❌ |
+| **语言数** | **30+9 方言** | **10+ 方言** | ~20 | 多语种 | 9+**18 方言** | 37 | 多语种 | 中/英/日 | 多语种 | 多语种 | 主要英语 |
+| **东南亚** | ✅ 8 国 | ❌ | ⚠️ 部分 | ✅ | ❌ | — | — | ❌ | — | ❌ | ❌ |
+| **声音克隆** | ✅ 3-10 秒 | ✅ **3 秒** | ✅ | ✅ 高保真 | ✅ | ✅ | ✅ | ✅ **5 秒** | ✅ | ✅ | ❌ |
 | **音色设计** | ✅ | ✅ | ❌ | ✅（独立模型） | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | **指令控制** | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ 标签 | ❌ | ❌ |
 | **情感控制** | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ **独立** | ❌ | ✅ **精细化** | ❌ | ❌ |
 | **流式合成** | ✅ | ✅ **97ms** | ✅ | ✅ | ✅ | ✅ **300ms** | — | — | ✅ | ✅ | ✅ |
-| **对话生成** | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ **90分钟** | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **对话生成** | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ **90 分钟** | ❌ | ❌ | ❌ | ❌ | ❌ |
 | **音效生成** | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **CPU推理** | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| **CPU 推理** | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
 | **浏览器** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 
 ### 11.3 Seed-TTS-eval 性能基准
@@ -542,8 +542,8 @@ sf.write("output.wav", wavs[0], sr)
 | 🏆 **延迟最低** | Qwen3-TTS | 97ms 端到端 |
 | 🏆 **最轻量（CPU）** | MOSS-TTS-Nano | 0.1B，CPU 可跑 |
 | 🏆 **最轻量（浏览器）** | Kokoro | 82M，ONNX/TF.js |
-| 🏆 **功能最全面** | Qwen3-TTS | 克隆+设计+指令控制+流式 |
-| 🏆 **生态最完整** | MOSS-TTS 家族 | TTS+对话+音效+设计+实时 |
+| 🏆 **功能最全面** | Qwen3-TTS | 克隆 + 设计 + 指令控制 + 流式 |
+| 🏆 **生态最完整** | MOSS-TTS 家族 | TTS+ 对话 + 音效 + 设计 + 实时 |
 | 🏆 **长语音最强** | VibeVoice | 最长 90 分钟连续语音 |
 | 🏆 **情感控制最精细** | Fish Speech | 行内标签精细化控制 |
 | 🏆 **少样本克隆最易** | GPT-SoVITS | 5 秒零样本，1 分钟微调 |
@@ -603,7 +603,7 @@ sf.write("output.wav", wavs[0], sr)
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="你的API Key",
+    api_key="你的 API Key",
     base_url="https://api.siliconflow.cn/v1"
 )
 
@@ -626,8 +626,8 @@ data = {
     "stream": True,
     "input": "[S1]Hello, how are you?[S2]I'm doing great, thanks!",
     "references": [
-        {"audio": "ref_speaker1.wav", "text": "参考文本1"},
-        {"audio": "ref_speaker2.wav", "text": "参考文本2"}
+        {"audio": "ref_speaker1.wav", "text": "参考文本 1"},
+        {"audio": "ref_speaker2.wav", "text": "参考文本 2"}
     ],
     "response_format": "mp3"
 }
@@ -643,7 +643,7 @@ res = requests.post(url=url, data=json.dumps(data), headers={'Authorization': 'B
   - **Qwen3-TTS**（qwen3-tts-vc-2026-01-22）— 1.7B 版本，支持克隆/设计/预置音色
   - **CosyVoice3**（cosyvoice-v3-flash / cosyvoice-v3-plus）— 最新版
   - **CosyVoice2**（cosyvoice-v2）— 上一代
-  - **千问3-TTS**（qwen3-tts）— 另一版本
+  - **千问 3-TTS**（qwen3-tts）— 另一版本
 - **免费额度**：新用户有免费试用额度
 - **计费方式**：按字符数计费（汉字按 2 字符计算）
 - **特点**：官方维护、稳定性最好、支持流式
@@ -679,7 +679,7 @@ curl -X POST https://dashscope.aliyuncs.com/api/v1/services/audio/tts/SpeechSynt
 
 - **网址**：https://replicate.com
 - **支持 TTS 模型**：
-  - **Qwen3-TTS**（qwen/qwen3-tts）— ✅ 已确认可用，20 万+ 次运行
+  - **Qwen3-TTS**（qwen/qwen3-tts）— ✅ 已确认可用，20 万 + 次运行
   - 其他模型持续增加中
 - **免费额度**：注册赠送少量免费额度（通常 $0.50-$1.00）
 - **计费方式**：按秒计费（GPU 推理时间）

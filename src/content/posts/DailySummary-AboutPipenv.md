@@ -8,9 +8,9 @@ tags: ["学习笔记"]
 
 [pipenv github](https://github.com/pypa/pipenv)
 
-[Pipenv——最好用的python虚拟环境和包管理工具](https://www.cnblogs.com/zingp/p/8525138.html)
+[Pipenv——最好用的 python 虚拟环境和包管理工具](https://www.cnblogs.com/zingp/p/8525138.html)
 
-粗略的总结一下使用pipenv创建虚拟环境，主要可以看上面那博客。
+粗略的总结一下使用 pipenv 创建虚拟环境，主要可以看上面那博客。
 
 
 
@@ -41,32 +41,32 @@ Otherwise, refer to the [documentation](https://pipenv.kennethreitz.org/en/lates
 
     $ pipenv install
 
-使用特定的python环境
+使用特定的 python 环境
     $ pipenv —python 3.7
 
-进入pipenv环境
+进入 pipenv 环境
 
     $ pipenv shell
 
-pipenv下安装包
+pipenv 下安装包
     
     $ pipenv install module-name
 
-example：pipenv install tensorflow-gpu
+example: pipenv install tensorflow-gpu
 
-pipenv环境下执行python
+pipenv 环境下执行 python
     
     $ pipenv run python source.py
 
-pipenv查看已安装的包和包依赖
+pipenv 查看已安装的包和包依赖
     
     $ pipenv graph
 
-退出pipenv环境
+退出 pipenv 环境
     
     $ exit 或者 ctrl+d
 
-## pipenv相关命令
+## pipenv 相关命令
 
 ☤ Usage
 -------

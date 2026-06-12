@@ -32,7 +32,7 @@ $$
 L_{seed} = \frac{1}{N}\sum_{i}^{N}\mathbf{1}_{\{s_i \in S_k\}}||s_i-\phi_k(e_i)||^2+\mathbf{1}_{\{s_i \in bg \}}||s_i-0||^2
 $$
 
-这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点，函数$1_{\{s_i \in S_k\}}$表示属于前景对象的值为1，属于背景的值为0，反过来，函数$1_{\{s_i \in bg \}}$表示属于背景为1，属于前景对象为0。
+这里的$S_k$是由`ground truth`确定的语义对象，$s_i$是`seed map`中的点，函数$1_{\{s_i \in S_k\}}$表示属于前景对象的值为 1，属于背景的值为 0，反过来，函数$1_{\{s_i \in bg \}}$表示属于背景为 1，属于前景对象为 0。
 $\phi_k(e_i)$为如下公式，计算属于$i$点属于对象$k$的分数。
 
 $$
@@ -57,11 +57,11 @@ $$
 
 ### 基础网络
 
-使用`ERFNet`，一种编码解码器结构来作为基础网络，将如网络结构图所示，将解码器分开用两次，分别训练不同的参数，实现不同的效果，效果中将网络输出结果叠加到一起，形成了一个4的通道的张量，第一二通道是`offset`，第三通道是间隙$\sigma$，第四通道是`seed map`。
+使用`ERFNet`，一种编码解码器结构来作为基础网络，将如网络结构图所示，将解码器分开用两次，分别训练不同的参数，实现不同的效果，效果中将网络输出结果叠加到一起，形成了一个 4 的通道的张量，第一二通道是`offset`，第三通道是间隙$\sigma$，第四通道是`seed map`。
 
 ### `xmap`与`ymap`
 
-`xmap`与`ymap`由如下代码构造而成。其中2048与1024分别为图像（`Cityscas数据集`）的宽与高。
+`xmap`与`ymap`由如下代码构造而成。其中 2048 与 1024 分别为图像（`Cityscas数据集`）的宽与高。
 
 ```python
 xm = torch.linspace(0, 2, 2048).view(1, 1, -1).expand(1, 1024, 2048)
@@ -77,7 +77,7 @@ $$
 J_c(y^*, \bar{y})= \frac{|y^*=c \cap \bar{y}=c|}{|y^*=c \cup \bar{y}=c|}
 $$
 
-转换为求最小loss
+转换为求最小 loss
 
 $$
 \Delta_{J_c(y^*, \bar{y})} = 1 - J_c(y^*, \bar{y})
@@ -95,7 +95,7 @@ $$
 Loss_{Lovasz\ hinge} = \Delta_j^-(loss_{hinge}(F))
 $$
 
-`Lovasz`拓展又是什么呢，`Lovasz`拓展可用于求解次模最小化问题。次模函数的`Lovasz`拓展是一个凸函数，可高效实现最小化，这里的次模函数看了定义，还是懵的，不纠结这个了，还是继续看`Lovasz`拓展吧。给定一个次模函数$f$，`Lovasz`拓展$\hat{f}$如下:
+`Lovasz`拓展又是什么呢，`Lovasz`拓展可用于求解次模最小化问题。次模函数的`Lovasz`拓展是一个凸函数，可高效实现最小化，这里的次模函数看了定义，还是懵的，不纠结这个了，还是继续看`Lovasz`拓展吧。给定一个次模函数$f$，`Lovasz`拓展$\hat{f}$如下：
 
 $$
 \hat{f}(x) = \sum_{i=0}^{n}\lambda_if(X_{S_i})
@@ -131,9 +131,9 @@ $$
 
 [知乎的文章：Lovasz-Softmax loss](https://zhuanlan.zhihu.com/p/41615416)
 
-[CSDN文章：lovasz-softmax loss](https://blog.csdn.net/baidu_27643275/article/details/95487631)
+[CSDN 文章：lovasz-softmax loss](https://blog.csdn.net/baidu_27643275/article/details/95487631)
 
-[LovaszSoftmax源码地址](https://github.com/bermanmaxim/LovaszSoftmax)
+[LovaszSoftmax 源码地址](https://github.com/bermanmaxim/LovaszSoftmax)
 
 ### 损失拓展
 
@@ -155,7 +155,7 @@ $$
 
 ## 训练策略
 
-由于使用`Cityscapes`数据集，图片比较大`h1024xw2048`，作者先将图片剪切成`500x500`，做了100轮预训练，之后在剪切图片`1024x1024`大小下，进行了50轮的微调，这种方式可以借鉴一下，想起之前还有一种方式，将网络最后的分割层改成改成分类层，在`ImageNet`数据集上做预训练，只能改回来再在分割的数据集上做分割任务。
+由于使用`Cityscapes`数据集，图片比较大`h1024xw2048`，作者先将图片剪切成`500x500`，做了 100 轮预训练，之后在剪切图片`1024x1024`大小下，进行了 50 轮的微调，这种方式可以借鉴一下，想起之前还有一种方式，将网络最后的分割层改成改成分类层，在`ImageNet`数据集上做预训练，只能改回来再在分割的数据集上做分割任务。
 
 ## 论文小结
 

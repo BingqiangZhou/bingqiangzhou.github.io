@@ -12,4 +12,4 @@ TO BE, TO UP!
 
 - GitHub：https://github.com/BingqiangZhou
 - Gmail：bingqiangzhou7@gmail.com
-- QQ邮箱：bingqiangzhou@qq.com(常用)
+- QQ 邮箱：bingqiangzhou@qq.com(常用)

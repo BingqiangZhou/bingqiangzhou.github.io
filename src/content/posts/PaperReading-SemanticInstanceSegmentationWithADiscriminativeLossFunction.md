@@ -20,7 +20,7 @@ tags: ["论文阅读笔记"]
 
 ### 定义 ###
 
-$C$是真实值中的簇的总数，$N_c$簇$c$中的元素数量，$x_i$是一个元素对应的嵌入向量，$\mu_c$是$c$簇中嵌入向量的平均值（簇的中心），$\vert\vert\cdot\vert\vert$是L1距离或者L2距离，$[x]_+$是max(0,x)定义的铰链函数，$\delta_v$和$\delta_d$代表方差和距离损失的间隙。
+$C$是真实值中的簇的总数，$N_c$簇$c$中的元素数量，$x_i$是一个元素对应的嵌入向量，$\mu_c$是$c$簇中嵌入向量的平均值（簇的中心），$\vert\vert\cdot\vert\vert$是 L1 距离或者 L2 距离，$[x]_+$是 max(0,x) 定义的铰链函数，$\delta_v$和$\delta_d$代表方差和距离损失的间隙。
 
 ### 方差项 ###
 
@@ -41,15 +41,15 @@ $$L=\alpha\cdot{L_{var}}+\beta\cdot{L_{dist}}+\gamma\cdot{L_{reg}}$$
 
 ## 其他内容 ##
 
-论文还说到了后处理（post-processing），包括增强鲁棒性（increasing robustness）等等， 还有其他实验的设置和数据集，还有优缺点等等，这里最后说一下这个方法的优缺点（pros and cons）。
+论文还说到了后处理（post-processing），包括增强鲁棒性（increasing robustness）等等，还有其他实验的设置和数据集，还有优缺点等等，这里最后说一下这个方法的优缺点（pros and cons）。
 
 ### 优缺点 ###
 论文中方法，在有重叠部分的情况下依然有好的效果，比如在合成的零散的线条中，在数据集图片中有比较相似的实例时，效果也比较好，但是，在随机多种多样的数据集中，效果不太好，在只有一个的实例对象的图片中训练效果不是太好。
 
-### MathJax数学公式 ###
-[MathJax语法](https://www.cnblogs.com/Bone-ACE/p/4558870.html)
+### MathJax 数学公式 ###
+[MathJax 语法](https://www.cnblogs.com/Bone-ACE/p/4558870.html)
 
-[MathJax语法](https://blog.csdn.net/luyaxige/article/details/80193409)
+[MathJax 语法](https://blog.csdn.net/luyaxige/article/details/80193409)
 
-[在线MathJax公式书写](http://cxcgzx.cn:88/test/mathtest.php)
+[在线 MathJax 公式书写](http://cxcgzx.cn:88/test/mathtest.php)
 

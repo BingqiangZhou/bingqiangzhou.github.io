@@ -92,7 +92,7 @@ Claude Code 启动一个子进程，通过 stdin/stdout 通信。
 - **适合**：API 后端、Token 认证
 - **认证方式**：Headers（支持 Bearer Token）
 
-### 2.3 sse（Server-Sent Events）
+### 2.3 sse (Server-Sent Events)
 
 通过 HTTP + SSE 连接远程 server。**已被 HTTP 取代**，新项目建议使用 `http` 类型。
 
@@ -109,7 +109,7 @@ Claude Code 启动一个子进程，通过 stdin/stdout 通信。
 - **适合**：托管云服务、OAuth 认证
 - **认证方式**：OAuth（自动）或自定义 Headers
 
-### 2.4 ws（WebSocket）
+### 2.4 ws (WebSocket)
 
 持久的双向 WebSocket 连接。
 

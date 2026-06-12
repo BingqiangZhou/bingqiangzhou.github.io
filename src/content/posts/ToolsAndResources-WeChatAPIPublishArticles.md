@@ -128,7 +128,7 @@ class WeChatPublisher:
         self._access_token = None
         self._token_expires_at = 0
 
-    # ==================== 第1步：获取 access_token ====================
+    # ==================== 第 1 步：获取 access_token ====================
     def get_access_token(self) -> str:
         """获取接口调用凭证（带缓存）"""
         if self._access_token and time.time() < self._token_expires_at:
@@ -144,14 +144,14 @@ class WeChatPublisher:
         data = resp.json()
 
         if "access_token" not in data:
-            raise Exception(f"获取token失败: {data}")
+            raise Exception(f"获取 token 失败：{data}")
 
         self._access_token = data["access_token"]
-        # 提前5分钟过期，避免边界问题
+        # 提前 5 分钟过期，避免边界问题
         self._token_expires_at = time.time() + data.get("expires_in", 7200) - 300
         return self._access_token
 
-    # ==================== 第2步：上传封面图 ====================
+    # ==================== 第 2 步：上传封面图 ====================
     def upload_image(self, file_path: str) -> str:
         """
         上传图片为永久素材
@@ -168,12 +168,12 @@ class WeChatPublisher:
 
         data = resp.json()
         if "media_id" not in data:
-            raise Exception(f"上传图片失败: {data}")
+            raise Exception(f"上传图片失败：{data}")
 
-        print(f"✅ 封面图上传成功, media_id: {data['media_id']}")
+        print(f"✅ 封面图上传成功，media_id: {data['media_id']}")
         return data["media_id"]
 
-    # ==================== 第3步：新建草稿 ====================
+    # ==================== 第 3 步：新建草稿 ====================
     def add_draft(
         self,
         title: str,
@@ -187,11 +187,11 @@ class WeChatPublisher:
     ) -> str:
         """
         新建图文草稿
-        :param title: 标题（≤32字）
-        :param content: 正文HTML（≤2万字符）
+        :param title: 标题（≤32 字）
+        :param content: 正文 HTML（≤2 万字符）
         :param thumb_media_id: 封面图永久素材 media_id
         :param author: 作者（可选）
-        :param digest: 摘要（可选，不填取正文前54字）
+        :param digest: 摘要（可选，不填取正文前 54 字）
         :param content_source_url: 阅读原文链接（可选）
         :return: 草稿 media_id
         """
@@ -224,12 +224,12 @@ class WeChatPublisher:
 
         data = resp.json()
         if "media_id" not in data:
-            raise Exception(f"新建草稿失败: {data}")
+            raise Exception(f"新建草稿失败：{data}")
 
-        print(f"✅ 草稿创建成功, media_id: {data['media_id']}")
+        print(f"✅ 草稿创建成功，media_id: {data['media_id']}")
         return data["media_id"]
 
-    # ==================== 第4步：提交发布 ====================
+    # ==================== 第 4 步：提交发布 ====================
     def publish(self, draft_media_id: str) -> str:
         """
         将草稿提交发布（异步）
@@ -243,16 +243,16 @@ class WeChatPublisher:
         data = resp.json()
 
         if "publish_id" not in data:
-            raise Exception(f"发布失败: {data}")
+            raise Exception(f"发布失败：{data}")
 
-        print(f"✅ 已提交发布, publish_id: {data['publish_id']}")
+        print(f"✅ 已提交发布，publish_id: {data['publish_id']}")
         return data["publish_id"]
 
     # ==================== 查询发布状态 ====================
     def get_publish_status(self, publish_id: str) -> dict:
         """
         查询发布状态
-        :param publish_id: 发布任务ID
+        :param publish_id: 发布任务 ID
         :return: 状态信息
         """
         token = self.get_access_token()
@@ -263,7 +263,7 @@ class WeChatPublisher:
 
         status_map = {0: "发布中", 1: "发布成功", 2: "发布失败", 3: "已删除"}
         status = data.get("publish_status", -1)
-        print(f"📋 发布状态: {status_map.get(status, '未知')}")
+        print(f"📋 发布状态：{status_map.get(status, '未知')}")
 
         return data
 
@@ -282,7 +282,7 @@ class WeChatPublisher:
         一键发布文章（完整流程）
         :return: publish_id
         """
-        print(f"🚀 开始发布文章: {title}")
+        print(f"🚀 开始发布文章：{title}")
 
         # Step 1: 上传封面图
         thumb_media_id = self.upload_image(cover_image_path)
@@ -323,7 +323,7 @@ if __name__ == "__main__":
     article_content = """
     <p>这是一篇通过 API 发布的测试文章。</p>
     <p>支持 <strong>HTML</strong> 格式内容。</p>
-    <p>图片需要使用微信素材库的URL，外部链接图片会被过滤。</p>
+    <p>图片需要使用微信素材库的 URL，外部链接图片会被过滤。</p>
     """
     cover_image = "/path/to/your/cover.jpg"
 
@@ -342,7 +342,7 @@ if __name__ == "__main__":
 
 | 注意点 | 说明 |
 |--------|------|
-| **正文中的图片** | `content` 里的 `<img>` 图片 URL **必须**来自微信素材库（通过「上传图文消息内的图片获取URL」接口上传后获取），外部图片 URL 会被过滤 |
+| **正文中的图片** | `content` 里的 `<img>` 图片 URL **必须**来自微信素材库（通过「上传图文消息内的图片获取 URL」接口上传后获取），外部图片 URL 会被过滤 |
 | **中文编码** | JSON 请求体必须 `ensure_ascii=False`，否则中文标题和内容会乱码 |
 | **发布是异步的** | 调用 `freepublish/submit` 后需轮询 `freepublish/get` 确认最终状态 |
 | **API 发布的文章** | 不会触发微信系统推荐，也不会显示在公众号主页，适合通过**菜单链接**或**直接分享链接**给用户阅读 |

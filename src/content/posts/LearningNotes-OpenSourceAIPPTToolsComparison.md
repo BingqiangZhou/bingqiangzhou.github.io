@@ -10,7 +10,7 @@ tags: [学习笔记]
 > 
 > 报告日期：2026-06-01
 > 
-> 更新版本：v3.0（新增3个工具 + 7个补充维度）
+> 更新版本：v3.0（新增 3 个工具 + 7 个补充维度）
 
 <!--
 
@@ -36,13 +36,13 @@ tags: [学习笔记]
 
 | 技术路线 | 核心思想 | 代表工具 | 输出格式 | 技术复杂度 |
 |---------|---------|---------|---------|-----------|
-| **A. 结构化模板编辑** | 人类设计模板 + AI填充内容 | GordenPPTSkill | PPTX | ⭐⭐⭐ |
-| **B. SVG/HTML 转 DrawingML** | AI生成设计 + 转换原生格式 | PPT Master, Anthropic PPTX | PPTX | ⭐⭐⭐⭐⭐ |
-| **C. MCP 协议封装** | 封装PPT库为AI可调用服务 | IBM PPTX, Office-MCP | PPTX | ⭐⭐⭐⭐ |
-| **D. LLM 驱动生成** | LLM直接生成内容结构 | odin-slides | PPTX | ⭐⭐⭐ |
-| **E. 简化 API 库** | 封装简化接口便于AI调用 | EasyPPTX | PPTX | ⭐⭐ |
+| **A. 结构化模板编辑** | 人类设计模板 + AI 填充内容 | GordenPPTSkill | PPTX | ⭐⭐⭐ |
+| **B. SVG/HTML 转 DrawingML** | AI 生成设计 + 转换原生格式 | PPT Master, Anthropic PPTX | PPTX | ⭐⭐⭐⭐⭐ |
+| **C. MCP 协议封装** | 封装 PPT 库为 AI 可调用服务 | IBM PPTX, Office-MCP | PPTX | ⭐⭐⭐⭐ |
+| **D. LLM 驱动生成** | LLM 直接生成内容结构 | odin-slides | PPTX | ⭐⭐⭐ |
+| **E. 简化 API 库** | 封装简化接口便于 AI 调用 | EasyPPTX | PPTX | ⭐⭐ |
 | **F. Markdown 转网页** | 纯文本驱动网页演示 | Slidev MCP | HTML | ⭐⭐ |
-| **G. 模板提取复用** | 解析现有模板生成代码 | pptx-masters | JS代码 | ⭐⭐⭐ |
+| **G. 模板提取复用** | 解析现有模板生成代码 | pptx-masters | JS 代码 | ⭐⭐⭐ |
 | **H. 零依赖 HTML 演示** | 纯前端技术栈生成 | frontend-slides, guizang-ppt | HTML | ⭐⭐ |
 
 
@@ -50,7 +50,7 @@ tags: [学习笔记]
 
 #### 路线 A：结构化模板编辑式
 
-**核心理念**：**"人类负责设计，AI负责填充"**
+**核心理念**：**"人类负责设计，AI 负责填充"**
 
 **技术原理**：
 ```
@@ -90,15 +90,15 @@ tags: [学习笔记]
 
 **局限**：
 - ❌ 需要预先准备模板
-- ❌ 无AI内容生成能力
+- ❌ 无 AI 内容生成能力
 - ❌ 学习曲线较陡
 
-**最佳场景**：企业定期报告、品牌宣传材料、批量生成同类PPT
+**最佳场景**：企业定期报告、品牌宣传材料、批量生成同类 PPT
 
 
 #### 路线 B：SVG/HTML 转 DrawingML 式
 
-**核心理念**：**"AI设计一切，输出原生可编辑"**
+**核心理念**：**"AI 设计一切，输出原生可编辑"**
 
 **技术原理**：
 ```
@@ -146,7 +146,7 @@ tags: [学习笔记]
 
 **局限**：
 - ❌ 依赖 AI 模型质量
-- ❌ 生成时间较长（含AI推理）
+- ❌ 生成时间较长（含 AI 推理）
 - ❌ 需要较好的 AI 模型（Claude Opus/GPT-4）
 
 **最佳场景**：高质量演示文稿、学术会议、产品发布、需要精美设计的场景
@@ -154,7 +154,7 @@ tags: [学习笔记]
 
 #### 路线 C：MCP 协议封装式
 
-**核心理念**：**"标准化接口，让AI能调用一切PPT功能"**
+**核心理念**：**"标准化接口，让 AI 能调用一切 PPT 功能"**
 
 **技术原理**：
 ```
@@ -196,9 +196,9 @@ tags: [学习笔记]
 - **工具注册机制**：动态发现和调用 PPT 操作
 
 **代表工具**：
-- IBM PPTX Server（39工具，企业级）
-- powerpoint-mcp-ultimate（50+工具，功能最全）
-- Office-PowerPoint-MCP（32工具）
+- IBM PPTX Server（39 工具，企业级）
+- powerpoint-mcp-ultimate（50+ 工具，功能最全）
+- Office-PowerPoint-MCP（32 工具）
 
 **优势**：
 - ✅ **标准化接口**：任何 MCP 客户端都可使用
@@ -271,14 +271,14 @@ tags: [学习笔记]
 
 **技术原理**：
 ```python
-# 传统 python-pptx API（对AI不友好）
+# 传统 python-pptx API（对 AI 不友好）
 from pptx import Presentation
 prs = Presentation()
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 textbox = slide.shapes.add_textbox(Inches(1), Inches(1), Inches(8), Inches(1))
 textbox.text_frame.text = "Hello"
 
-# EasyPPTX 简化 API（AI友好）
+# EasyPPTX 简化 API（AI 友好）
 from easypptx import Presentation
 pres = Presentation()
 slide = pres.add_slide(title="Hello")
@@ -328,9 +328,9 @@ slide.add_text("Content", x="10%", y="20%", width="80%")
                        ▼
 ┌─────────────────────────────────────────────────────────────┐
 │  Slidev 引擎（Vue.js + Vite）                                │
-│  ├─ Markdown解析：提取幻灯片结构                             │
+│  ├─ Markdown 解析：提取幻灯片结构                             │
 │  ├─ 主题应用：加载 CSS 主题                                  │
-│  ├─ 组件渲染：Vue组件转HTML                                  │
+│  ├─ 组件渲染：Vue 组件转 HTML                                  │
 │  ├─ 动画处理：添加过渡效果                                   │
 │  └─ 开发服务器：实时预览                                     │
 └──────────────────────┬──────────────────────────────────────┘
@@ -496,22 +496,22 @@ slide.add_text("Content", x="10%", y="20%", width="80%")
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │  1. 需要什么输出格式？                                               │
-│     ├── PPTX（传统PowerPoint）                                      │
-│     │   └── 2. 需要AI生成设计吗？                                   │
-│     │       ├── 是 → B. SVG转DrawingML（PPT Master）               │
+│     ├── PPTX（传统 PowerPoint）                                      │
+│     │   └── 2. 需要 AI 生成设计吗？                                   │
+│     │       ├── 是 → B. SVG 转 DrawingML（PPT Master）               │
 │     │       └── 否 → 3. 有现成模板吗？                              │
 │     │           ├── 是 → A. 结构化模板（GordenPPTSkill）           │
-│     │           └── 否 → C. MCP封装（IBM PPTX）或 E. 简化API        │
+│     │           └── 否 → C. MCP 封装（IBM PPTX）或 E. 简化 API        │
 │     │                                                               │
 │     └── HTML（网页演示）                                            │
 │         └── 4. 需要零依赖单文件吗？                                 │
-│             ├── 是 → H. 零依赖HTML（frontend-slides）              │
+│             ├── 是 → H. 零依赖 HTML（frontend-slides）              │
 │             └── 否 → F. Markdown（Slidev）                         │
 │                                                                     │
-│  5. 需要处理Word文档？                                              │
-│     └── D. LLM驱动（odin-slides）或 B. SVG转DrawingML               │
+│  5. 需要处理 Word 文档？                                              │
+│     └── D. LLM 驱动（odin-slides）或 B. SVG 转 DrawingML               │
 │                                                                     │
-│  6. 需要复用现有PPT模板？                                           │
+│  6. 需要复用现有 PPT 模板？                                           │
 │     └── G. 模板提取（pptx-masters）                                 │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
@@ -1129,7 +1129,7 @@ AI 分析层：Claude/GPT/Gemini/Kimi
     ↓
 设计生成层：SVG 幻灯片设计
     ↓
-转换层：SVG → DrawingML（Python脚本）
+转换层：SVG → DrawingML（Python 脚本）
     ↓
 输出层：原生 PPTX（可直接编辑）
 ```
@@ -1559,7 +1559,7 @@ color = "white"
 1. 设计统一模板 → detail.json
 2. 提取各区域数据 → CSV/JSON
 3. 编写批量脚本 → 自动生成 edits.json
-4. 循环调用 build_pptx.py → 50份PPT
+4. 循环调用 build_pptx.py → 50 份 PPT
 ```
 
 **效果**：从人工3天缩短到30分钟
@@ -1573,10 +1573,10 @@ color = "white"
 
 **流程**：
 ```
-1. 上传论文PDF
-2. AI自动分析内容结构
-3. 生成SVG设计稿
-4. 转换为原生PPTX
+1. 上传论文 PDF
+2. AI 自动分析内容结构
+3. 生成 SVG 设计稿
+4. 转换为原生 PPTX
 5. 人工微调
 ```
 
@@ -1592,9 +1592,9 @@ color = "white"
 **流程**：
 ```
 1. 提供分享大纲
-2. AI生成HTML演示（含动画）
+2. AI 生成 HTML 演示（含动画）
 3. 浏览器直接演示
-4. 支持代码高亮、WebGL特效
+4. 支持代码高亮、WebGL 特效
 ```
 
 **效果**：视觉效果远超传统PPT
@@ -1608,10 +1608,10 @@ color = "white"
 
 **流程**：
 ```
-1. 准备Word周报文档
-2. CLI一键转换
-3. LLM自动提取要点
-4. 生成结构化PPT
+1. 准备 Word 周报文档
+2. CLI 一键转换
+3. LLM 自动提取要点
+4. 生成结构化 PPT
 ```
 
 **效果**：5分钟完成转换
@@ -1625,9 +1625,9 @@ color = "white"
 
 **流程**：
 ```
-1. Docker部署Presenton
+1. Docker 部署 Presenton
 2. 配置公司模板
-3. 员工通过Web UI使用
+3. 员工通过 Web UI 使用
 4. 数据不出内网
 ```
 
@@ -1639,10 +1639,10 @@ color = "white"
 | 特征 | 说明 |
 |-----|------|
 | **明确的使用场景** | 每个工具都有最佳适用场景 |
-| **合理的期望值** | AI辅助≠完全替代人工 |
+| **合理的期望值** | AI 辅助≠完全替代人工 |
 | **模板/设计基础** | 预先准备模板效果更好 |
 | **人工审核环节** | 最终输出需要人工审核微调 |
-| **批量场景价值最大** | 批量生成场景ROI最高 |
+| **批量场景价值最大** | 批量生成场景 ROI 最高 |
 
 ---
 
@@ -1665,10 +1665,10 @@ color = "white"
 | 工具 | 插件系统 | 扩展能力 | 第三方集成 |
 |-----|---------|---------|-----------|
 | GordenPPTSkill | ❌ | 模板扩展 | 无 |
-| PPT Master | ✅ Skill插件 | 自定义Skill | Claude/GPT/Gemini |
+| PPT Master | ✅ Skill 插件 | 自定义 Skill | Claude/GPT/Gemini |
 | Anthropic PPTX | ❌ | 有限 | Claude |
-| IBM PPTX Server | ✅ MCP协议 | 工具扩展 | ContextForge |
-| powerpoint-mcp-ultimate | ✅ MCP协议 | 工具扩展 | 任何MCP客户端 |
+| IBM PPTX Server | ✅ MCP 协议 | 工具扩展 | ContextForge |
+| powerpoint-mcp-ultimate | ✅ MCP 协议 | 工具扩展 | 任何 MCP 客户端 |
 | Presenton | ✅ 模板系统 | 自定义模板 | API |
 | frontend-slides | ❌ | 有限 | Claude |
 | guizang-ppt-skill | ❌ | 有限 | Claude |
@@ -1692,7 +1692,7 @@ color = "white"
 
 ### 15.1 Docker 支持情况
 
-| 工具 | Docker支持 | 部署难度 | 一键启动命令 |
+| 工具 | Docker 支持 | 部署难度 | 一键启动命令 |
 |-----|:----------:|:-------:|------------|
 | **Presenton** | ✅ 官方镜像 | ⭐ 极简 | `docker run -it -p 5000:80 ghcr.io/presenton/presenton:latest` |
 | GordenPPTSkill | ⚠️ 需自建 | ⭐⭐ 简单 | `pip install python-pptx` |
@@ -1702,8 +1702,8 @@ color = "white"
 | powerpoint-mcp-ultimate | ⚠️ 需自建 | ⭐⭐ 简单 | `npm install` |
 | odin-slides | ⚠️ 需自建 | ⭐⭐ 简单 | `pip install odin-slides` |
 | EasyPPTX | ⚠️ 需自建 | ⭐ 极简 | `pip install easypptx` |
-| frontend-slides | ✅ 无需部署 | ⭐ 极简 | 纯HTML，直接使用 |
-| guizang-ppt-skill | ✅ 无需部署 | ⭐ 极简 | 纯HTML，直接使用 |
+| frontend-slides | ✅ 无需部署 | ⭐ 极简 | 纯 HTML，直接使用 |
+| guizang-ppt-skill | ✅ 无需部署 | ⭐ 极简 | 纯 HTML，直接使用 |
 
 ### 15.2 云服务部署选项
 
@@ -1736,13 +1736,13 @@ color = "white"
 | 工具 | 数据本地化 | 加密支持 | 数据传输 | 第三方共享 |
 |-----|:---------:|:-------:|:-------:|:---------:|
 | GordenPPTSkill | ✅ 完全本地 | ❌ | 无 | ❌ 无 |
-| PPT Master | ✅ 本地处理 | ❌ | 仅AI模型API | ⚠️ AI模型提供商 |
+| PPT Master | ✅ 本地处理 | ❌ | 仅 AI 模型 API | ⚠️ AI 模型提供商 |
 | Anthropic PPTX | ✅ 完全本地 | ❌ | 无 | ❌ 无 |
 | IBM PPTX Server | ✅ 完全本地 | ✅ | 无 | ❌ 无 |
 | powerpoint-mcp-ultimate | ✅ 完全本地 | ✅ | 无 | ❌ 无 |
-| odin-slides | ❌ 需API | ❌ | OpenAI API | ⚠️ OpenAI |
+| odin-slides | ❌ 需 API | ❌ | OpenAI API | ⚠️ OpenAI |
 | EasyPPTX | ✅ 完全本地 | ❌ | 无 | ❌ 无 |
-| **Presenton** | ✅ **Docker本地** | ⚠️ | 无 | ❌ 无 |
+| **Presenton** | ✅ **Docker 本地** | ⚠️ | 无 | ❌ 无 |
 | frontend-slides | ✅ 完全本地 | ❌ | 无 | ❌ 无 |
 | guizang-ppt-skill | ✅ 完全本地 | ❌ | 无 | ❌ 无 |
 
@@ -1751,9 +1751,9 @@ color = "white"
 | 等级 | 工具 | 说明 |
 |-----|------|------|
 | 🟢🟢🟢 高安全 | GordenPPTSkill, Anthropic PPTX, EasyPPTX, frontend-slides, guizang-ppt-skill | 完全本地，无外部依赖 |
-| 🟢🟢 中高安全 | Presenton, IBM PPTX Server, powerpoint-mcp-ultimate | 本地部署+可选加密 |
-| 🟡 中等安全 | PPT Master | 本地处理但需AI API |
-| 🟠 较低安全 | odin-slides | 依赖OpenAI API，数据出境 |
+| 🟢🟢 中高安全 | Presenton, IBM PPTX Server, powerpoint-mcp-ultimate | 本地部署 + 可选加密 |
+| 🟡 中等安全 | PPT Master | 本地处理但需 AI API |
+| 🟠 较低安全 | odin-slides | 依赖 OpenAI API，数据出境 |
 
 ### 16.3 审计与合规
 
@@ -1789,7 +1789,7 @@ color = "white"
 
 ### 17.2 隐性成本分析
 
-| 工具 | 工具费用 | AI模型费用 | 基础设施 | 总成本估算 |
+| 工具 | 工具费用 | AI 模型费用 | 基础设施 | 总成本估算 |
 |-----|---------|-----------|---------|-----------|
 | GordenPPTSkill | 免费 | 无 | 本地 | **$0** |
 | PPT Master | 免费 | $5-50/月* | 本地 | **$5-50/月** |
@@ -1798,21 +1798,21 @@ color = "white"
 | powerpoint-mcp-ultimate | 免费 | 可选 | 本地/云 | **$0-20/月** |
 | odin-slides | 免费 | $10-100/月** | 本地 | **$10-100/月** |
 | EasyPPTX | 免费 | 无 | 本地 | **$0** |
-| Presenton | 免费 | **$0（自带模型）** | Docker服务器 | **$0-10/月** |
+| Presenton | 免费 | **$0（自带模型）** | Docker 服务器 | **$0-10/月** |
 | frontend-slides | 免费 | $5-50/月* | 本地 | **$5-50/月** |
 | guizang-ppt-skill | 免费 | $5-50/月* | 本地 | **$5-50/月** |
 
-*\* 取决于AI模型使用量（Claude/GPT）*
-*\*\* 取决于OpenAI API使用量*
+*\* 取决于 AI 模型使用量（Claude/GPT）*
+*\*\* 取决于 OpenAI API 使用量*
 
 ### 17.3 商业支持选项
 
-| 工具 | 官方支持 | 社区支持 | 商业服务 | SLA保障 |
+| 工具 | 官方支持 | 社区支持 | 商业服务 | SLA 保障 |
 |-----|:-------:|:-------:|:-------:|:-------:|
 | GordenPPTSkill | ❌ | GitHub Issues | ❌ | ❌ |
 | PPT Master | ⚠️ 文档 | GitHub + 社区 | ❌ | ❌ |
 | Anthropic PPTX | ✅ Anthropic | GitHub | ❌ | ❌ |
-| **IBM PPTX Server** | **✅ IBM** | GitHub | **✅ IBM企业** | **✅** |
+| **IBM PPTX Server** | **✅ IBM** | GitHub | **✅ IBM 企业** | **✅** |
 | powerpoint-mcp-ultimate | ⚠️ 文档 | GitHub | ❌ | ❌ |
 | odin-slides | ❌ | GitHub | ❌ | ❌ |
 | EasyPPTX | ⚠️ 文档 | GitHub | ❌ | ❌ |
@@ -1842,15 +1842,15 @@ color = "white"
 | 排名 | 工具 | 总分 | 最佳场景 | 一句话推荐 |
 |-----|------|:----:|---------|-----------|
 | 🥇 | **frontend-slides** | **87** | 技术演示/网页分享 | 零依赖、动画惊艳、最易部署 |
-| 🥈 | **guizang-ppt-skill** | **85** | 高设计感演示 | 10年设计经验、32版式、中文友好 |
-| 🥉 | **PPT Master** | **84** | AI生成原生PPTX | 最强原生可编辑输出、16k+Stars |
-| 4 | **Presenton** | **83** | 企业内部PPT服务 | Docker一键部署、自带模型、Gamma替代 |
-| 5 | **IBM PPTX Server** | **80** | 企业级自动化 | 39工具、企业支持、安全合规 |
+| 🥈 | **guizang-ppt-skill** | **85** | 高设计感演示 | 10 年设计经验、32 版式、中文友好 |
+| 🥉 | **PPT Master** | **84** | AI 生成原生 PPTX | 最强原生可编辑输出、16k+Stars |
+| 4 | **Presenton** | **83** | 企业内部 PPT 服务 | Docker 一键部署、自带模型、Gamma 替代 |
+| 5 | **IBM PPTX Server** | **80** | 企业级自动化 | 39 工具、企业支持、安全合规 |
 | 6 | GordenPPTSkill | **77** | 排版一致性/批量 | 结构化模板、非破坏性编辑 |
-| 7 | powerpoint-mcp-ultimate | **77** | 完整PPT自动化 | 50+工具、功能最全 |
-| 8 | EasyPPTX | **76** | Python简化开发 | Grid布局、AI友好、完全免费 |
-| 9 | Anthropic PPTX | **73** | Claude Code用户 | 官方支持、HTML转PPTX |
-| 10 | odin-slides | **56** | Word文档转PPT | LLM驱动但已停滞维护 |
+| 7 | powerpoint-mcp-ultimate | **77** | 完整 PPT 自动化 | 50+ 工具、功能最全 |
+| 8 | EasyPPTX | **76** | Python 简化开发 | Grid 布局、AI 友好、完全免费 |
+| 9 | Anthropic PPTX | **73** | Claude Code 用户 | 官方支持、HTML 转 PPTX |
+| 10 | odin-slides | **56** | Word 文档转 PPT | LLM 驱动但已停滞维护 |
 
 
 *报告完成日期：2026-06-02*

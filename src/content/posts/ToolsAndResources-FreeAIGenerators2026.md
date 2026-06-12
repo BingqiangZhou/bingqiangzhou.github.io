@@ -20,7 +20,7 @@ AI 图片生成工具在过去两年经历了爆发式增长。曾经只有 Midj
 
 ### 国内用户首选（无需翻墙）
 
-**通义万相 2.1**（阿里出品，中文理解力最强，免费额度充足，API 新用户 1000 次免费调用）。**豆包**（字节跳动，网页版不限量，速度快）。**文心一格**（百度出品，中国风和文创设计优势明显）。**海艺 AI**（80 万+ 模型资源，限时免费不限量）。
+**通义万相 2.1**（阿里出品，中文理解力最强，免费额度充足，API 新用户 1000 次免费调用）。**豆包**（字节跳动，网页版不限量，速度快）。**文心一格**（百度出品，中国风和文创设计优势明显）。**海艺 AI**（80 万 + 模型资源，限时免费不限量）。
 
 ### 图片中需要文字
 
@@ -53,7 +53,7 @@ AI 图片生成工具在过去两年经历了爆发式增长。曾经只有 Midj
 | **通义万相 2.1** | 通义万相 | 免费额度充足，API 新用户 1000 次 | 无 | 需确认 | 国内首选，中文最佳 |
 | **豆包** | 豆包模型 | 网页版不限量 | 无 | 需确认 | 日常高频快速生图 |
 | **文心一格** | 文心一格 | 免费可用 | 无 | 需确认 | 中国风/文创设计 |
-| **海艺 AI** | SD 系列等 | 限时免费不限量 | 无 | 需确认 | 80 万+ 模型资源 |
+| **海艺 AI** | SD 系列等 | 限时免费不限量 | 无 | 需确认 | 80 万 + 模型资源 |
 
 ### 无需注册工具
 
@@ -96,7 +96,7 @@ curl "https://image.pollinations.ai/prompt/A%20cat%20in%20space?model=gptimage&w
 ```python
 from huggingface_hub import InferenceClient
 
-client = InferenceClient(api_key="hf_你的token")
+client = InferenceClient(api_key="hf_你的 token")
 image = client.text_to_image(
     prompt="A serene lake at sunset",
     model="black-forest-labs/FLUX.1-schnell"
@@ -136,7 +136,7 @@ response = requests.post(url, headers=headers, json=payload)
 result = response.json()
 if "output" in result:
     for item in result["output"]["results"]:
-        print(f"生成图片URL: {item['url']}")
+        print(f"生成图片 URL: {item['url']}")
 ```
 
 #### 硅基流动 (SiliconFlow)
@@ -166,7 +166,7 @@ response = requests.post(url, headers=headers, json=payload)
 result = response.json()
 if "images" in result:
     for img in result["images"]:
-        print(f"生成图片URL: {img['url']}")
+        print(f"生成图片 URL: {img['url']}")
 ```
 
 #### 智谱 AI (GLM 系列 + CogView)
@@ -510,7 +510,7 @@ soft studio lighting, white background, commercial quality
 
 **局限**：免费层生成的所有图片公开可见，无法设为私密；不同模型消耗 tokens 数量不同，高质量模型消耗更快。
 
-### Microsoft Designer（Bing Image Creator）
+### Microsoft Designer (Bing Image Creator)
 
 [Microsoft Designer](https://designer.microsoft.com/) 是访问 DALL-E 模型最便捷的免费途径。拥有微软账号即可使用（Outlook、Xbox、Windows 账号通用），每天约 15 个加速额度用完后仍可无限慢速生成。
 
@@ -550,7 +550,7 @@ soft studio lighting, white background, commercial quality
 
 **局限**：所有输出带有 SynthID 不可见水印；商用条款需仔细阅读。
 
-### ChatGPT（DALL-E 3）
+### ChatGPT (DALL-E 3)
 
 通过 [ChatGPT](https://chat.openai.com/) 免费版可直接使用 DALL-E 3 生图。最大优势是对话式交互——你可以用自然语言反复描述和调整需求。
 
@@ -624,7 +624,7 @@ soft studio lighting, white background, commercial quality
 
 ### 海艺 AI (SeaArt)
 
-[海艺 AI](https://seaart.ai) 拥有 80 万+ 模型资源，生图功能限时免费不限量，无水印导出，国内直连访问。支持 Stable Diffusion 生态模型。
+[海艺 AI](https://seaart.ai) 拥有 80 万 + 模型资源，生图功能限时免费不限量，无水印导出，国内直连访问。支持 Stable Diffusion 生态模型。
 
 **优势**：海量模型资源；限时免费不限量；无水印；国内直连。
 
@@ -648,13 +648,13 @@ FLUX.1 Schnell 是 Black Forest Labs 推出的开源快速模型，通过 [FluxA
 
 ## 参考
 
-- [2026年免费AI图像生成工具TOP 10对比 - BrainDetox](https://braindetox.kr/zh/posts/free_ai_image_generation_tools_2026_comparison.html)
-- [2026年最佳免费AI图片生成器测评与排名 - Tryonr](https://tryonr.com/zh/blog/best-free-ai-image-generators-2026)
-- [2026年最佳AI图片生成器13款深度对比 - Seedance](https://seedance-2ai.org/zh/blog/best-ai-image-generators-2026)
-- [2026年AI生图工具技术选型 - CSDN](https://blog.csdn.net/AI251224/article/details/156693915)
-- [2026年最佳AI图像生成API完整开发者指南 - Atlas Cloud](https://www.atlascloud.ai/zh/blog/guides/best-ai-image-generation-apis-in-2026-complete-developer-guide)
-- [如何在2026年免费生成AI图片终极指南 - CometAPI](https://www.cometapi.com/zh-CN/how-to-generate-ai-images-for-free/)
-- [2026年最全免费大模型API盘点 - 网易新闻](https://c.m.163.com/news/a/KO5TL2AE05314EKW.html)
-- [免费大模型API合集 - 掘金](https://juejin.cn/post/7527884547537010698)
+- [2026 年免费 AI 图像生成工具 TOP 10 对比 - BrainDetox](https://braindetox.kr/zh/posts/free_ai_image_generation_tools_2026_comparison.html)
+- [2026 年最佳免费 AI 图片生成器测评与排名 - Tryonr](https://tryonr.com/zh/blog/best-free-ai-image-generators-2026)
+- [2026 年最佳 AI 图片生成器 13 款深度对比 - Seedance](https://seedance-2ai.org/zh/blog/best-ai-image-generators-2026)
+- [2026 年 AI 生图工具技术选型 - CSDN](https://blog.csdn.net/AI251224/article/details/156693915)
+- [2026 年最佳 AI 图像生成 API 完整开发者指南 - Atlas Cloud](https://www.atlascloud.ai/zh/blog/guides/best-ai-image-generation-apis-in-2026-complete-developer-guide)
+- [如何在 2026 年免费生成 AI 图片终极指南 - CometAPI](https://www.cometapi.com/zh-CN/how-to-generate-ai-images-for-free/)
+- [2026 年最全免费大模型 API 盘点 - 网易新闻](https://c.m.163.com/news/a/KO5TL2AE05314EKW.html)
+- [免费大模型 API 合集 - 掘金](https://juejin.cn/post/7527884547537010698)
 
 > 本文信息基于 2026 年 5 月初的多源评测整理，各工具的免费政策和额度可能随时调整，建议使用前查看官网最新说明。AI 生成图片的版权和商用规则因平台而异，商用前请务必确认最新使用条款。
