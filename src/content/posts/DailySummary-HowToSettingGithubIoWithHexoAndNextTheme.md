@@ -443,7 +443,7 @@ motion:
     post_header: slideDownIn		# 博客文章的头部的加载动画
     post_body: slideDownIn		# 博客文章的内容的加载动画
     coll_header: slideLeftIn		# **我猜**可能是塌陷后的头菜单的加载动画
-    sidebar: slideUpIn			# 侧边栏加载动画，只在 `Pisces`和`Gemini` 风格中有效
+    sidebar: slideUpIn			# 侧边栏加载动画，只在 `Pisces` 和 `Gemini` 风格中有效
 ```
 **所有动画效果的变量如下**
 
@@ -487,10 +487,10 @@ footer:
 
 ```yaml 
 footer:
-  copyright:		#版权信息，如果不设置，则显示在 `hexo/_config.yml`中设置的作者`author` 信息
+  copyright:		#版权信息，如果不设置，则显示在 `hexo/_config.yml` 中设置的作者 `author` 信息
 ```
 
-#### [Hexo 授权信息 `powered`，NexT 主题授权信息`theme`](https://theme-next.org/docs/theme-settings/footer#Site-Platform-Information) ####
+#### [Hexo 授权信息 `powered`，NexT 主题授权信息 `theme`](https://theme-next.org/docs/theme-settings/footer#Site-Platform-Information) ####
 
 ```yaml 
 footer:
@@ -571,7 +571,7 @@ title="https://theme-next.org/docs/theme-settings/seo#ExtURL">
 </span>
 ```
 **这有什么用呢？**
-官方的说法是搜索引擎对`<a>`标签有很高的优先级，虽然我们可以设置[HTML`<a>`标签的 `rel` 属性](https://www.w3school.com.cn/html5/att_a_rel.asp)为`external` / `nofollow` / `noopener` / `noreferrer`等其他值来规定当前文档与被链接文档之间的关系，但是外部链接在我们的站点还是会被建立索引，也就是说还是会被爬虫爬取，但是爬虫爬取不了 JavaScript，所以我们用 JavaScript 打开新的链接，像这种[反向链接（backlinks）](https://wiki.mbalib.com/wiki/%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5)就不会被监控到。
+官方的说法是搜索引擎对`<a>`标签有很高的优先级，虽然我们可以设置[HTML`<a>` 标签的 `rel` 属性](https://www.w3school.com.cn/html5/att_a_rel.asp)为`external` / `nofollow` / `noopener` / `noreferrer`等其他值来规定当前文档与被链接文档之间的关系，但是外部链接在我们的站点还是会被建立索引，也就是说还是会被爬虫爬取，但是爬虫爬取不了 JavaScript，所以我们用 JavaScript 打开新的链接，像这种[反向链接（backlinks）](https://wiki.mbalib.com/wiki/%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5)就不会被监控到。
 总而言之，就是不然搜索引擎搜索监控到这些外部链接，这里很有意思，官方给出了一个提示，说**放钓鱼链接是不被允许的**。
 
 ```yaml
@@ -603,7 +603,7 @@ Google Tag Manager		| 使用您的 Google 跟踪代码管理器帐号
 
 以上是谷歌官方的提示，而我们只需要在将上面`content`后面的内容加到`next/_config.yml`的`google_site_verification`就好了。
 ```yaml
-google_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta`标签的`content` 属性的内容
+google_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta` 标签的 `content` 属性的内容
 ```
 
 到这里谷歌站长工具在 NexT 方面的配置就做好了，我们在谷歌站长工具中还需要做的是添加并提交站点地图，这里就不细说了，给一个链接吧。
@@ -614,13 +614,13 @@ google_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `me
 [必应站长工具的帮助文档](https://www.bing.com/webmaster/help/webmaster-guidelines-30fba23a)
 
 ```yaml
-bing_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta`标签的`content` 属性的内容
+bing_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta` 标签的 `content` 属性的内容
 ```
 
 ##### [Yandex 站长工具](https://webmaster.yandex.ru) #####
 这个俄罗斯站长工具基本是不会用到了，网站都是俄语的，这里就象征性的过一下吧。
 ```yaml
-yandex_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta`标签的`content` 属性的内容
+yandex_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta` 标签的 `content` 属性的内容
 ```
 
 ##### [百度站长工具](https://ziyuan.baidu.com/site) #####
@@ -635,7 +635,7 @@ yandex_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `me
 其他组织 | 适合公共场馆、公益机构、学校、社团、民间组织等机构团体申请 |组织机构代码证、运营者手持身份证照片、运营者身份证
 
 ```yaml
-baidu_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta`标签的`content` 属性的内容
+baidu_site_verification: XXXXXXXXXXXXXXXXXX	#填写验证所有权生成的 `meta` 标签的 `content` 属性的内容
 ```
 ##### 百度推送 #####
 NexT 还支持一个**将博客文章 URL 自动推送给百度**的功能，具体是怎样的就不太清楚了，应该是有利于的搜索引擎优化的。默认配置是`false`，有需要的可以打开，配置方法如下。
@@ -695,7 +695,7 @@ $ hexo new page tags		#创建标签页面
 ---
 title: Tags
 date: 2014-12-22 12:39:04
-type: "tags"		#设置 `type` 为`tags`，注意有英文引号
+type: "tags"		#设置 `type` 为 `tags`，注意有英文引号
 ---
 ```
 
@@ -934,7 +934,7 @@ read_more_btn: true		#是否显示阅读全文的按钮
 分类信息`categories`等等。
 ```yaml
 post_meta:
-  item_text: true		#是否显示文字，即显示 `发表于`、` 更新于`、`分类于`，不显示，则只显示图标
+  item_text: true		#是否显示文字，即显示 `发表于 `、` 更新于 `、` 分类于`，不显示，则只显示图标
   created_at: true		#是否显示发表时间，`发表于`
   updated_at:		
     enable: true		#是否显示更新时间，`更新于`
@@ -1090,21 +1090,21 @@ post_edit:
 `dimmer`设置单击页面的任何空白部分以关闭侧栏（只支持 NexT 7.0 版本以上的`Muse`与`Mist`风格）。
 ```yaml
 sidebar:
-  #在 NexT 7.2 以下的版本中只支持 `Pisces`与`Gemini` 风格
+  #在 NexT 7.2 以下的版本中只支持 `Pisces` 与 `Gemini` 风格
   position: left		#设置侧边栏是显示在左边还是右边
   #position: right
 
-  #width: 300			#设置侧边栏的宽度，默认 `Muse`与`Mist`为 320 像素，`Pisces`与`Gemini` 为 240 像素
+  #width: 300			#设置侧边栏的宽度，默认 `Muse`与 `Mist` 为 320 像素，`Pisces` 与 `Gemini` 为 240 像素
 
   display: post			#设置侧边栏的显示方式，四种显示方式包括 `post`、`always`、`hide`、`remove`
 
-  #只支持 `Pisces`与`Gemini` 风格
+  #只支持 `Pisces` 与 `Gemini` 风格
   offset: 12			#设置侧边栏与菜单栏的隔多少像素
 
-  #只支持 `Muse`与`Mist` 风格
+  #只支持 `Muse` 与 `Mist` 风格
   onmobile: false		#设置在移动设备上是否显示侧边栏
   
-  #只支持 NexT 7.0 版本以上的 `Muse`与`Mist` 风格
+  #只支持 NexT 7.0 版本以上的 `Muse` 与 `Mist` 风格
   dimmer: true			#设置单击页面的任何空白部分以关闭侧栏
 ```
 
@@ -1179,7 +1179,7 @@ links:					#设置自己喜欢的连接
 toc:
   enable: true		
   number: true			#是否显示文章目录的标号
-  wrap: false			#`true`，则如果标题一行显示不下，显示到下一行，为 `false`，则省略为省略号`……`
+  wrap: false			#`true`，则如果标题一行显示不下，显示到下一行，为 `false`，则省略为省略号 `……`
   expand_all: false		#是否展开全部目录
   max_depth: 6			#设置生成文章目录的最大深度，可以理解为标题级别，默认为 6
 ```
@@ -1296,7 +1296,7 @@ search:
 ```yaml
 local_search:
   enable: true
-  trigger: auto		#设置为 `auto`，在输入时便实时搜索，设置为`manual`，则点击搜索图标或者按下回车建再搜索
+  trigger: auto		#设置为 `auto`，在输入时便实时搜索，设置为 `manual`，则点击搜索图标或者按下回车建再搜索
   top_n_per_article: 1	#显示搜索到的文章中到的几个结果，设置为 -1 位显示所有
   unescape: false	#不将 HTML 字符串解析成可读的字符串
   preload: false	#当页面加载时，刷新搜索数据
