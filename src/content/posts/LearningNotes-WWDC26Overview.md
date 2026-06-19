@@ -7,7 +7,7 @@ tags: [学习笔记, Apple, WWDC]
 toc: true
 ---
 
-> WWDC26 于 2026 年 6 月 8–12 日举行。Apple 官方视频目录共 136 项，其中 **117 场技术讲座** + **19 场 Group Lab（小组讨论）**。本篇是面向读者的**导读**：用最少的篇幅说清“WWDC26 到底讲了啥”，并告诉你深度内容去哪看。技术讲座逐场要点见[《WWDC 2026 全部视频讲座总结》](/posts/learningnotes-wwdc26allsessionssummary/)，互动讨论见[《WWDC 2026 开幕直播与全部 Group Lab 要点》](/posts/learningnotes-wwdc26grouplabs/)。
+> WWDC26 于 2026 年 6 月 8–12 日举行。Apple 官方视频目录共 138 项，其中 **119 场视频**（Keynote、Platforms State of the Union、100+ 场技术会话、特别演讲与 Dub Dub Daily）+ **19 场 Group Lab（小组讨论）**。本篇是面向读者的**导读**：用最少的篇幅说清“WWDC26 到底讲了啥”，并告诉你深度内容去哪看。技术讲座逐场要点见[《WWDC 2026 全部视频讲座总结》](/posts/learningnotes-wwdc26allsessionssummary/)，互动讨论见[《WWDC 2026 开幕直播与全部 Group Lab 要点》](/posts/learningnotes-wwdc26grouplabs/)。
 
 ## 一、一句话头条
 
@@ -24,7 +24,7 @@ toc: true
 |---|---|
 | 大会开幕：Keynote（#101）/ Platforms State of the Union（#102） | [Group Lab 篇 · 第一节](/posts/learningnotes-wwdc26grouplabs/) 或 [技术讲座篇 · 第二 / 三节](/posts/learningnotes-wwdc26allsessionssummary/) |
 | 某个主题的技术深度（13 大主题） | [《全部视频讲座总结》](/posts/learningnotes-wwdc26allsessionssummary/) |
-| 117 场会话的编号速查表 | [《全部视频讲座总结》· 速查表](/posts/learningnotes-wwdc26allsessionssummary/) |
+| 119 场视频的编号速查表 | [《全部视频讲座总结》· 速查表](/posts/learningnotes-wwdc26allsessionssummary/) |
 | 19 场 Group Lab / 互动讨论 | [《开幕直播与全部 Group Lab 要点》](/posts/learningnotes-wwdc26grouplabs/) |
 | 每日速览 Dub Dub Daily | [《全部视频讲座总结》· 第十六节](/posts/learningnotes-wwdc26allsessionssummary/) |
 
@@ -50,5 +50,5 @@ toc: true
 
 ## 四、说明
 
-- 本篇为**导读**，只给高层概览与导航；具体技术细节、117 场编号速查、以及日期 / 编号存疑说明，均见上两篇深度笔记各自的开头与“说明”章节。
+- 本篇为**导读**，只给高层概览与导航；具体技术细节、全部 119 场视频编号速查、以及日期 / 编号存疑说明，均见上两篇深度笔记各自的开头与“说明”章节。
 - 数据来源：[Apple Developer — WWDC26 视频目录](https://developer.apple.com/videos/wwdc2026/)。

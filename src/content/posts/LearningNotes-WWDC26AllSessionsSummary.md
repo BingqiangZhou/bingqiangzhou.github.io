@@ -21,7 +21,7 @@ toc: true
 | Dub Dub Daily | [#397](https://developer.apple.com/videos/play/wwdc2026/397/) 等 | 每日速览视频 |
 | **本文不含** | Group Labs #8006–#8018 | 实时小组讨论（见 Day 2 / Day 3） |
 
-官方明确：「Throughout the week, developers and students can watch **more than 100 new video sessions**」（[Apple 新闻室](https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/)）。经直接抓取[官方目录](https://developer.apple.com/videos/wwdc2026/)逐项核实：技术视频共 **117 场**(另有 19 场 Group Lab，本文不含)。本文已覆盖全部 117 场。
+官方明确：「Throughout the week, developers and students can watch **more than 100 new video sessions**」（[Apple 新闻室](https://www.apple.com/newsroom/2026/05/apple-kicks-off-worldwide-developers-conference-on-june-8/)）。经直接抓取[官方目录](https://developer.apple.com/videos/wwdc2026/)逐项核实：视频共 **119 场**（含 Keynote、Platforms State of the Union、特别演讲与 Dub Dub Daily 等；另有 19 场 Group Lab，本文不含）。本文已覆盖全部 119 场。
 
 ---
 
@@ -140,6 +140,7 @@ toc: true
 | [375](https://developer.apple.com/videos/play/wwdc2026/375/) | Create high-quality images using Image Playground | 视觉智能 |
 | [378](https://developer.apple.com/videos/play/wwdc2026/378/) | Unlock in-game content with StoreKit and Background Assets | 游戏 |
 | [379](https://developer.apple.com/videos/play/wwdc2026/379/) | Meet Trust Insights | 安全 |
+| [382](https://developer.apple.com/videos/play/wwdc2026/382/) | Inside Apple Intelligence and Xcode: Special Presentation | AI |
 | [388](https://developer.apple.com/videos/play/wwdc2026/388/) | Find and fix performance issues in your Metal games | 游戏 |
 | [389](https://developer.apple.com/videos/play/wwdc2026/389/) | Discover container machines | 开发工具 |
 | [391](https://developer.apple.com/videos/play/wwdc2026/391/) | Offer subscriptions to groups and organizations | App Store |
@@ -148,6 +149,7 @@ toc: true
 | [397](https://developer.apple.com/videos/play/wwdc2026/397/) | Dub Dub Daily: Day 2 | 特别 |
 | [398](https://developer.apple.com/videos/play/wwdc2026/398/) | Dub Dub Daily: Day 3 | 特别 |
 | [399](https://developer.apple.com/videos/play/wwdc2026/399/) | Dub Dub Daily: Day 4 | 特别 |
+| [400](https://developer.apple.com/videos/play/wwdc2026/400/) | Dub Dub Daily: Day 5 | 特别 |
 
 ---
 
@@ -222,6 +224,10 @@ Tim Cook 作为 CEO 的最后一次 WWDC；John Ternus 于 2026 年 9 月 1 日�
 ---
 
 ## 四、AI / Foundation Models / Core AI
+
+### Inside Apple Intelligence and Xcode：特别演讲（[#382](https://developer.apple.com/videos/play/wwdc2026/382/)，约 88 分钟）
+
+WWDC26 期间在 Steve Jobs Theater 录制的旗舰特别演讲，统揽本周 Apple Intelligence 与 Xcode 的核心进展：以 Xcode 27 的**编码代理（agentic coding）新工作流**加速开发、通过 **App Intents** 让 Siri 理解上下文并在 App 内执行操作、用 **Foundation Models 框架**交付智能功能、以及用 **Core AI** 部署自定义设备端模型。本场是上述各主题的总览入口，相关逐场深度要点见下文 #241、#242、#324、#326 等条目，涉及 Xcode 的部分另见 §七。
 
 ### What's new in the Foundation Models framework（[#241](https://developer.apple.com/videos/play/wwdc2026/241/)）
 
@@ -428,6 +434,7 @@ JAXCL over Thunderbolt 5 RDMA；mesh/ring 拓扑；张量并行（默认）与�
 - **Dub Dub Daily: Day 2（[#397](https://developer.apple.com/videos/play/wwdc2026/397/)）**：这是 WWDC26 第二天（Day 2）的官方每日回顾视频，集中汇总当日最重要的发布内容，方便开发者一站式了解大会进展；视频定位为「将最大的公告汇聚于一处」，帮助观众快速补齐当天 WWDC26 揭晓的全部信息；内容不止于罗列新闻，还会深入探讨塑造今年大会主题的关键方向，帮助开发者把握 WWDC26 的整体脉络；Dub Dub Daily 是贯穿 WWDC26 期间的每日系列节目，本集对应大会第 2 天的内容。
 - **Dub Dub Daily: Day 3（[#398](https://developer.apple.com/videos/play/wwdc2026/398/)）**：本场是 WWDC26 第三天的「Dub Dub Daily」每日总结栏目，聚焦当天 Apple Intelligence 相关的最新 AI 公告；内容围绕 Apple Intelligence 平台的演进展开，讲解最新动态对开发者 App 的实际影响与意义；节目帮助开发者了解当日 AI 公告要点，并探讨这些能力在应用中落地的可能性；「Dub Dub Daily」以每日回顾形式串联大会信息，便于开发者快速跟进 WWDC26 各天的重要发布。
 - **Dub Dub Daily: Day 4（[#399](https://developer.apple.com/videos/play/wwdc2026/399/)）**：本场为 WWDC26 第 4 天的「Dub Dub Daily」每日回顾节目，聚焦 Xcode 与开发者工具链的最新动态；围绕「让开发者构建得更快、更智能」这一主题，介绍本年度开发工具的升级方向；内容定位为当日要闻汇总，帮助开发者快速了解 Day 4 公布的开发工具相关更新；所涉背景常识：Xcode 是 Apple 官方集成开发环境，承担代码编写、调试、构建与上架等完整开发流程。
+- **Dub Dub Daily: Day 5（[#400](https://developer.apple.com/videos/play/wwdc2026/400/)）**：本场为 WWDC26 最后一天（Day 5，6 月 12 日）的「Dub Dub Daily」每日回顾节目，聚焦当天 Swift 语言相关的最新发布；节目围绕「Swift 持续进化」展开，介绍最新的语言更新、这些更新为开发者代码解锁的新能力，以及为何当下是成为 Swift 开发者的激动时刻，并邀请特别嘉宾共同深入探讨；内容定位为当日要闻汇总，帮助开发者一站式补齐大会最后一天的 Swift 相关动态；所涉背景常识：Swift 是 Apple 推出的现代编程语言，贯穿 iOS、iPadOS、macOS 等全平台应用与系统开发。
 
 > 说明：Dub Dub Daily 为每日概览短片，官方未对其逐项内容单独详述，以上要点基于官方页面描述概括。
 
