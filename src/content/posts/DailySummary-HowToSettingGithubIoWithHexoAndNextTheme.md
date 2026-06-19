@@ -1094,7 +1094,7 @@ sidebar:
   position: left		#设置侧边栏是显示在左边还是右边
   #position: right
 
-  #width: 300			#设置侧边栏的宽度，默认 `Muse`与 `Mist` 为 320 像素，`Pisces` 与 `Gemini` 为 240 像素
+  #width: 300			#设置侧边栏的宽度，默认 `Muse` 与 `Mist` 为 320 像素，`Pisces` 与 `Gemini` 为 240 像素
 
   display: post			#设置侧边栏的显示方式，四种显示方式包括 `post`、`always`、`hide`、`remove`
 
