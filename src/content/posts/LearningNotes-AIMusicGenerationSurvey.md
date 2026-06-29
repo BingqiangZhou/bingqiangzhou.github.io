@@ -284,11 +284,17 @@ ACE-Step 1.5 不只是「文生音乐」，而是一套工具链：
 
 ## 七、实操指南：怎么真正「免费 + 可商用」地用起来
 
-聚焦到「既能网页打开、又能脚本调用、版权还干净」这条路，最优解是**用 Hugging Face 免费托管的开源模型**（ACE-Step 为例），分三条路按需选择。
+聚焦到「既能网页打开、又能脚本调用、版权还干净」这条路，最优解是**走 ACE-Step 官方 / 社区免费托管**，分三条路按需选择——网页直用、调 API、本地部署。
 
 ### 7.1 路线 A：网页直接用（最简单，零门槛）
 
-打开 ACE-Step 官方 HF Space（在 Hugging Face 搜索 `ACE-Step`，认准「Running on Zero」的官方 Space），**不用任何账号、不用 key**，浏览器里填参数点生成就行，完全免费。代价是要排队（ZeroGPU 是共享 GPU 池）。
+**首选 acemusic.ai**——这是 **ACE-Step 官方团队自己运营的托管平台**（官方 GitHub 仓库 README 里直接推荐：「100% free, no GPU required」）。完全免费、**不需要本地 GPU**，浏览器打开即可调用 **ACE-Step 1.5 Turbo（最快）与 1.5 XL Turbo（4B、音质更高）**，填风格描述 / 歌词、点生成就出片。对「只想快速出几首、不想折腾本地部署」的人，这是目前最省事的一条路。
+
+> 备选：① **ACE-Step 官方 HF Space**（在 Hugging Face 搜 `ACE-Step`，认准「Running on Zero」的官方 Space，免登录免 key，但跑在共享 ZeroGPU 上要排队）；② 第三方托管站如 **acestep.io**（每日约 2 首免费额度，可在 XL Turbo / SFT / Base 间切换）。
+
+> 说明：ACE-Step 模型本身是 MIT、可商用；但通过托管平台产出的音频能否商用，以平台最新条款为准。
+
+> 来源：[ACE-Step 1.5 官方仓库 README（推荐 acemusic.ai）](https://github.com/ace-step/ACE-Step-1.5) · [acemusic.ai](https://acemusic.ai/)
 
 ### 7.2 路线 B：免费 token 调 API（适合脚本 / 自动化流水线）
 
@@ -342,6 +348,7 @@ ACE-Step 这类模型 Space 跑在 HF 的 **ZeroGPU**（免费共享 GPU 池）�
 
 | 你的用途 | 推荐方案 |
 |---|---|
+| **就想网页快速出几首、别折腾部署** | **acemusic.ai**（官方、免费、免 GPU，可调 1.5 Turbo / XL Turbo）或 **ACE-Step HF Space** |
 | **给内容配纯器乐 BGM** | 本地 **ACE-Step**（MIT、可自动化）或免费 **Google Lyria 3**（Gemini 内直接出，30 秒段够用） |
 | **做带人声的完整歌曲** | **ACE-Step**（免费/本地）出样；要发商用就用国内 **蘑兔 AI / MELO**（付费但版权清晰、中文好），或本地 **YuE** |
 | **集成进自动化流水线** | 本地 **ACE-Step** 或 **火山引擎豆包音乐模型 API**，两者都能脚本批量调用 |
