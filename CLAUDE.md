@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal blog built with **Astro 6.x** using a customized fork of the **astro-theme-retypeset** theme. Deployed to GitHub Pages (`bingqiangzhou.github.io`) via GitHub Actions on push to `master`. Content is primarily in Chinese (default locale `zh`).
+Personal blog built with **Astro 6.x** using a customized fork of the **astro-theme-retypeset** theme. Deployed to GitHub Pages (`bingqiangzhou.github.io`) via GitHub Actions on push to `main`. Content is primarily in Chinese (default locale `zh`).
 
 ## Commands
 
@@ -100,7 +100,7 @@ Optional: `draft` (boolean). URL slug is the file's `id` (filename without exten
 
 ## Deployment
 
-GitHub Actions workflow (`.github/workflows/deploy.yml`): push to `master` triggers `pnpm install → pnpm build → deploy to GitHub Pages`. `Dockerfile.dev` at root is a legacy Jekyll artifact, no longer used.
+GitHub Actions workflow (`.github/workflows/deploy.yml`): push to `main` triggers `pnpm install → pnpm build → deploy to GitHub Pages`. `Dockerfile.dev` at root is a legacy Jekyll artifact, no longer used.
 
 ## Theme Updates
 
