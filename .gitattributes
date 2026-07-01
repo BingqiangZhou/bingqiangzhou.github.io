@@ -1,0 +1,42 @@
+# 统一行尾符为 LF，避免 Git 在 Windows 上自动 CRLF<->LF 转换
+# 导致每次新增/修改文件时，其它文件被标记为“已修改”。
+
+# 默认：所有文本文件统一使用 LF
+* text=auto eol=lf
+
+# 明确指定常见文本类型使用 LF
+*.md       text eol=lf
+*.mdx      text eol=lf
+*.ts       text eol=lf
+*.tsx      text eol=lf
+*.js       text eol=lf
+*.jsx      text eol=lf
+*.mjs      text eol=lf
+*.cjs      text eol=lf
+*.json     text eol=lf
+*.yaml     text eol=lf
+*.yml      text eol=lf
+*.css      text eol=lf
+*.html     text eol=lf
+*.svg      text eol=lf
+*.sh       text eol=lf
+*.astro    text eol=lf
+*.toml     text eol=lf
+*.env      text eol=lf
+*.txt      text eol=lf
+
+# 二进制文件：不做任何转换
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+*.gz   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.eot   binary
