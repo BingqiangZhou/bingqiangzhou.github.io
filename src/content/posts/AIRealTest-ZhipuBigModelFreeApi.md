@@ -86,7 +86,7 @@ curl https://open.bigmodel.cn/api/paas/v4/images/generations \
 
 ```python
 import time, jwt
-api_key = "你的id.你的secret"
+api_key = "你的 id.你的 secret"
 aid, secret = api_key.split(".", 1)
 ms = int(round(time.time() * 1000))
 token = jwt.encode(
@@ -109,7 +109,7 @@ token = jwt.encode(
 文生图的"Hello World"，测主体组合 + 空间关系——宇航员得真的"骑"在马背上。
 
 <table>
-<tr><th>cogview-3-flash（智谱，9.7s）</th><th>agnes-image-2.1-flash（Agnes，30.0s）</th></tr>
+<tr><th>cogview-3-flash（智谱，9.7s）</th><th>agnes-image-2.1-flash (Agnes, 30.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/astronaut_horse.png" width="100%" alt="宇航员骑马 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/astronaut_horse.png" width="100%" alt="宇航员骑马 - Agnes"/></td>
@@ -123,7 +123,7 @@ token = jwt.encode(
 文字渲染是文生图公认难点，绝大多数模型碰到"指定文字"就崩。
 
 <table>
-<tr><th>cogview-3-flash（智谱，8.9s）</th><th>agnes-image-2.1-flash（Agnes，29.2s）</th></tr>
+<tr><th>cogview-3-flash（智谱，8.9s）</th><th>agnes-image-2.1-flash (Agnes, 29.2s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/text_rendering.png" width="100%" alt="霓虹招牌 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/text_rendering.png" width="100%" alt="霓虹招牌 - Agnes"/></td>
@@ -136,10 +136,10 @@ token = jwt.encode(
 
 ### 第三题：两只橘猫下棋（中文 + 多物体组合）
 
-一次测三个能力：中文 prompt 遵循、多主体数量（两只猫）、复杂场景（棋盘+霓虹+雨夜）。
+一次测三个能力：中文 prompt 遵循、多主体数量（两只猫）、复杂场景（棋盘 + 霓虹 + 雨夜）。
 
 <table>
-<tr><th>cogview-3-flash（智谱，8.3s）</th><th>agnes-image-2.1-flash（Agnes，26.7s）</th></tr>
+<tr><th>cogview-3-flash（智谱，8.3s）</th><th>agnes-image-2.1-flash (Agnes, 26.7s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/two_cats_chess.png" width="100%" alt="两猫下棋 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/two_cats_chess.png" width="100%" alt="两猫下棋 - Agnes"/></td>
@@ -155,7 +155,7 @@ token = jwt.encode(
 提示词：`中秋促销海报，深蓝色夜空一轮圆月……主标题大字「花好月圆」四个汉字居中放大，副标题「中秋特惠 全场八折」……`。
 
 <table>
-<tr><th>cogview-3-flash（智谱，8.6s）</th><th>agnes-image-2.1-flash（Agnes，20.0s）</th></tr>
+<tr><th>cogview-3-flash（智谱，8.6s）</th><th>agnes-image-2.1-flash (Agnes, 20.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/midautumn_poster.png" width="100%" alt="中秋海报 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.png" width="100%" alt="中秋海报 - Agnes"/></td>
@@ -171,7 +171,7 @@ token = jwt.encode(
 比海报更狠：1 个中心节点 + 4 个分支节点（4×4=16 字）+ 4 段说明小字，文字分散排布，越分散越易崩。
 
 <table>
-<tr><th>cogview-3-flash（智谱，8.0s）</th><th>agnes-image-2.1-flash（Agnes，14.0s）</th></tr>
+<tr><th>cogview-3-flash（智谱，8.0s）</th><th>agnes-image-2.1-flash (Agnes, 14.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/mindmap.png" width="100%" alt="思维导图 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/mindmap.png" width="100%" alt="思维导图 - Agnes"/></td>
@@ -189,7 +189,7 @@ token = jwt.encode(
 测对"逆光 / 边缘光 / 黄金时刻 / 景深虚化"这些抽象美学描述的遵循度。
 
 <table>
-<tr><th>cogview-3-flash（智谱，8.2s）</th><th>agnes-image-2.1-flash（Agnes，28.6s）</th></tr>
+<tr><th>cogview-3-flash（智谱，8.2s）</th><th>agnes-image-2.1-flash (Agnes, 28.6s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/style_golden_hour.png" width="100%" alt="渔夫逆光 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/style_golden_hour.png" width="100%" alt="渔夫逆光 - Agnes"/></td>
@@ -203,7 +203,7 @@ token = jwt.encode(
 提示词要求 `exactly 6 plates, 6 forks, 6 knives, 6 wine glasses` + 中央火鸡，专压精确数量遵循（DPG-Bench 题型）。
 
 <table>
-<tr><th>cogview-3-flash（智谱，7.6s）</th><th>agnes-image-2.1-flash（Agnes，22.0s）</th></tr>
+<tr><th>cogview-3-flash（智谱，7.6s）</th><th>agnes-image-2.1-flash (Agnes, 22.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/complex_dinner.png" width="100%" alt="俯拍晚宴 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/complex_dinner.png" width="100%" alt="俯拍晚宴 - Agnes"/></td>
@@ -217,7 +217,7 @@ token = jwt.encode(
 手部是 AI 生图公认难点（多指、缺指常翻车）。这题正面硬压，要求"十根手指清晰可见"。
 
 <table>
-<tr><th>cogview-3-flash（智谱，8.0s）</th><th>agnes-image-2.1-flash（Agnes，22.5s）</th></tr>
+<tr><th>cogview-3-flash（智谱，8.0s）</th><th>agnes-image-2.1-flash (Agnes, 22.5s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/anatomy_hands.png" width="100%" alt="双手捧杯 - 智谱"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/anatomy_hands.png" width="100%" alt="双手捧杯 - Agnes"/></td>

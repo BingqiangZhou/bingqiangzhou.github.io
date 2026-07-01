@@ -78,11 +78,11 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 </tr>
 </table>
 
-**视觉模型逐字誊抄**：flux / zimage / gptimage / klein / gptimage-large 都把 **“AGNES AI” 七字母全部画对**；**nova-canvas 画成 “AGNESS AI”**（多一个 S）。**英文文字 5/6 过关**（nova-canvas 不行）。
+**视觉模型逐字誊抄**：flux / zimage / gptimage / klein / gptimage-large 都把 **“AGNES AI”七字母全部画对**；**nova-canvas 画成“AGNESS AI”**（多一个 S）。**英文文字 5/6 过关**（nova-canvas 不行）。
 
 ### 第 3 题：两只橘猫下棋（中文提示词 + 多主体）
 
-一题压三能：中文遵循、多主体（两只猫）、复杂场景（棋盘+霓虹+雨夜）。
+一题压三能：中文遵循、多主体（两只猫）、复杂场景（棋盘 + 霓虹 + 雨夜）。
 
 **提示词**：赛博朋克风格，两只橘猫在霓虹灯下的街道上对弈国际象棋，雨夜，高细节，电影感，两只猫和棋盘居中填满画面主体
 
@@ -101,7 +101,7 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 </tr>
 </table>
 
-**判定**：zimage / gptimage / klein / gptimage-large 都画出 **2 只猫 + 棋盘 + 赛博朋克雨夜**。**flux 翻车**——无视 prompt 画成一幅亭子+草地+远山的风景画，没猫没棋盘；**nova-canvas 画了 2 只猫但没棋盘**（还把左猫画成紫色）。**4 过、flux 翻车、nova-canvas 半对。**
+**判定**：zimage / gptimage / klein / gptimage-large 都画出 **2 只猫 + 棋盘 + 赛博朋克雨夜**。**flux 翻车**——无视 prompt 画成一幅亭子 + 草地 + 远山的风景画，没猫没棋盘；**nova-canvas 画了 2 只猫但没棋盘**（还把左猫画成紫色）。**4 过、flux 翻车、nova-canvas 半对。**
 
 ### 第 4 题：中秋海报（中文文字渲染——海报场景）
 
@@ -124,7 +124,7 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 </tr>
 </table>
 
-**视觉模型中性誊抄**（不带答案的 prompt）：zimage / gptimage / gptimage-large 把主副标题 **12 个汉字全部画对**；**flux 翻车**——画成一幅月亮+船+田野的风景照，完全没有文字、还是横版（prompt 要的是竖版海报）；**klein** 画成「皎空月夜」「更白皎秀 全港8折」——**英文招牌能画、中文海报崩**；**nova-canvas** 是灯笼 + 熔岩纹月亮，「走戈」「至象」「信勿丽」之类乱码。
+**视觉模型中性誊抄**（不带答案的 prompt）：zimage / gptimage / gptimage-large 把主副标题 **12 个汉字全部画对**；**flux 翻车**——画成一幅月亮 + 船+田野的风景照，完全没有文字、还是横版（prompt 要的是竖版海报）；**klein** 画成「皎空月夜」「更白皎秀 全港 8 折」——**英文招牌能画、中文海报崩**；**nova-canvas** 是灯笼 + 熔岩纹月亮，「走戈」「至象」「信勿丽」之类乱码。
 
 
 **中文海报 3/6 过关**（flux、klein、nova-canvas 不行）。
@@ -269,7 +269,7 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 | 免费额度 | unified 按 pollen | 宣称永久免费 |
 
 <table>
-<tr><th>Pollinations <code>zimage</code>（思维导图，中心+分支标题全对、小字乱码）</th><th>Agnes <code>agnes-image-2.1</code>（中秋海报，全对）</th></tr>
+<tr><th>Pollinations <code>zimage</code>（思维导图，中心 + 分支标题全对、小字乱码）</th><th>Agnes <code>agnes-image-2.1</code>（中秋海报，全对）</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__zimage.png" width="100%" alt="Pollinations 思维导图"/></td>
 <td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.png" width="100%" alt="Agnes 中秋海报"/></td>

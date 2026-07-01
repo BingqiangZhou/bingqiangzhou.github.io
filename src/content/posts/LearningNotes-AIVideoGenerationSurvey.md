@@ -236,7 +236,7 @@ Seedance 2.0 是 2026 年上半年最值得关注的模型，**它把榜首优�
 | 模型 | 首尾帧 | 多关键帧（任意时间点） |
 |---|---|---|
 | **LTX-Video / LTX-2** | ✅ | ✅ 原生（可链式，最多 4 张） |
-| **Wan 2.1** | ✅ **官方 FLF2V-14B 权重** | ❌（仅首+尾） |
+| **Wan 2.1** | ✅ **官方 FLF2V-14B 权重** | ❌（仅首 + 尾） |
 | EasyAnimate V5.1 | ✅ | ❌ |
 | HunyuanVideo-I2V | ✅（需社区 LoRA） | ❌ |
 | CogVideoX / Mochi / Open-Sora | ❌ | ❌ |
