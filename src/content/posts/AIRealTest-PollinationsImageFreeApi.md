@@ -124,7 +124,7 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 </tr>
 </table>
 
-**视觉模型中性誊抄**（不带答案的 prompt）：zimage / gptimage / gptimage-large 把主副标题 **12 个汉字全部画对**；**flux 翻车**——画成一幅月亮 + 船+田野的风景照，完全没有文字、还是横版（prompt 要的是竖版海报）；**klein** 画成「皎空月夜」「更白皎秀 全港 8 折」——**英文招牌能画、中文海报崩**；**nova-canvas** 是灯笼 + 熔岩纹月亮，「走戈」「至象」「信勿丽」之类乱码。
+**视觉模型中性誊抄**（不带答案的 prompt）：zimage / gptimage / gptimage-large 把主副标题 **12 个汉字全部画对**；**flux 翻车**——画成一幅月亮 + 船 + 田野的风景照，完全没有文字、还是横版（prompt 要的是竖版海报）；**klein** 画成「皎空月夜」「更白皎秀 全港 8 折」——**英文招牌能画、中文海报崩**；**nova-canvas** 是灯笼 + 熔岩纹月亮，「走戈」「至象」「信勿丽」之类乱码。
 
 
 **中文海报 3/6 过关**（flux、klein、nova-canvas 不行）。
