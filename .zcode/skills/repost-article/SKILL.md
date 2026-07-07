@@ -67,7 +67,7 @@ description: "把一篇外部网页文章完整、忠实、署名地转载（rep
 用本 skill 自带的 `scripts/repost.py fetch` 批量下载。它从 stdin 或文件读 `URL|保存路径` 行，自动加 `Referer` 头、逐张报 HTTP 状态与字节数、结尾给 ok/fail 计数。**纯 Python 标准库、零依赖、Windows/macOS/Linux 通用**。需要联网+写文件，所以调用时**禁用 Bash 沙箱**（`dangerouslyDisableSandbox: true`）：
 
 ```bash
-cd <repo-root>/.claude/skills/repost-article/scripts
+cd <repo-root>/.zcode/skills/repost-article/scripts
 REFERER="https://linux.do/" python3 repost.py fetch - <<'EOF'
 https://cdn3.ldstatic.com/original/4X/0/3/1/03158cf0....png|public/assets/images/2026/20260617/geo-01-zhangwei-top.png
 https://cdn3.ldstatic.com/original/4X/c/f/5/cf5bd435....jpeg|public/assets/images/2026/20260617/aicollab-01.jpeg
@@ -189,7 +189,7 @@ curl -s -o /dev/null -w "%{http_code}\n" "http://localhost:4321/posts/<abbrlink>
 用本 skill 自带的 `scripts/repost.py parse` 解析 webReader 存下的 `.json`：
 
 ```bash
-python3 .claude/skills/repost-article/scripts/repost.py parse <input.json|txt> [out_prefix]
+python3 .zcode/skills/repost-article/scripts/repost.py parse <input.json|txt> [out_prefix]
 # 打印 title / author / created_at / category / post_count / image_count
 # 写出 <prefix>.html（首帖 cooked，用来精确还原正文与图片位置）
 # 写出 <prefix>.imgs（按出现顺序的 <img src> URL，每行一个）
