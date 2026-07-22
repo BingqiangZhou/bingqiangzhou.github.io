@@ -27,3 +27,6 @@ pnpm-debug.log*
 .superpowers/
 docs/superpowers/
 package-lock.json
+
+# agent session artifacts
+.zcode/

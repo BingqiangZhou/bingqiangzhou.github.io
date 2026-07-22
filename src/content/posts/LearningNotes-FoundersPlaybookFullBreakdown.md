@@ -194,7 +194,7 @@ abbrlink: founders-playbook-full-breakdown
 
 **核心理念**：创始人角色从"构建者"重新聚焦为"对外的执行官"。产品仍核心，但你日常越来越多地是关于**公司本身**——分析师简报、IPO 路演等，同时努力保持精益、以 AI 为中心的结构优势。
 
-**目标**：从几千用户到几百万、从一个市场到多个；构建**系统化、由成熟组织运营支撑的增长**（前期靠贴近用户和数据+创始人直觉，现在要建成熟组织运营支撑的系统化增长）。
+**目标**：从几千用户到几百万、从一个市场到多个；构建**系统化、由成熟组织运营支撑的增长**（前期靠贴近用户和数据 + 创始人直觉，现在要建成熟组织运营支撑的系统化增长）。
 
 **对 AI 原生初创，应通过积累的深度建护城河**：你注入产品的专业、产品与用户依赖的其他工具/平台的集成深度、专有系统数据和工作流。**一直朝一个方向、在一致基础设施上构建的创始人，现在拥有真正难以复制的东西。**
 
@@ -258,7 +258,7 @@ Launch 期之后，三个 Claude 形态全面启用、相互支撑：**Claude Co
 - 3 家 YC 初创（HumanLayer、Ambral、Vulcan Technologies）用 Claude Code 快速上市原型并扩展。
 - **Carta Healthcare**：Claude 驱动临床抽象平台，每年处理 22,000 例外科手术，数据抽象时间减少 66%。
 - **Anything**（用 Claude + Agent SDK）：已帮 150 万用户不写代码把想法变成可用软件，含一位非技术创始人已建成并销售完整招聘平台。
-- **Cogent**（企业安全 agent）、**Airtree**（Claude Cowork 作运营基础设施中心）、**Duvo**（ERP/供应链采购 agent，全建于 Claude + Agent SDK）、**Zingage**（居家护理 24/7 自动化）、**Kindora**（非营利高管用 Sonnet 建慈善-资助方智能匹配）、**Wordsmith**（律师转 CTO 的法律科技）。
+- **Cogent**（企业安全 agent）、**Airtree**（Claude Cowork 作运营基础设施中心）、**Duvo**（ERP/供应链采购 agent，全建于 Claude + Agent SDK）、**Zingage**（居家护理 24/7 自动化）、**Kindora**（非营利高管用 Sonnet 建慈善 - 资助方智能匹配）、**Wordsmith**（律师转 CTO 的法律科技）。
 
 **创业支持**：Anthropic Startups Program（免费 API 额度、最高公开速率限制、创始人活动）、Claude 社区、直播学习资源。
 
