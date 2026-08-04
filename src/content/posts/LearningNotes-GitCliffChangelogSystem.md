@@ -308,6 +308,65 @@ release skill 的 Step 3.5 负责更新版本源文件（去 `v` 前缀），与
 
 **一个常见的坑**：版本源文件可能是 JSON / TOML / YAML 等格式，更新时只改 `version` 行，保持其余结构与缩进不变。用 `sed` 精确替换该行，或用对应的解析库更新，避免破坏文件格式。
 
+### 3.6 CHANGELOG 历史版本被覆盖丢失（`-o` vs `--prepend`）
+
+**现象**：第二次发版后，CHANGELOG.md 只剩新版本段，**所有历史版本凭空消失**。
+
+**根因**：`git cliff` 有两种写入模式，行为天差地别：
+- `-o CHANGELOG.md`：**整文件覆盖写入**——用本次生成的内容替换整个文件，历史版本全丢
+- `--prepend CHANGELOG.md`：**头部插入**——只把新版本段插到文件最前面，历史保留
+
+首次发版（文件不存在）用 `-o` 是对的。但后续发版如果误用 `-o`，历史就被覆盖了。
+
+**为什么会误用**：`-o`（`--output`）是 git-cliff 最常见的写入参数，在 CHANGELOG **不存在**时和 `--prepend` 效果相同；一旦文件已存在，两者行为分叉。release skill 的逻辑分支（首次 `-o` / 后续 `--prepend`）本身正确，但**缺乏防护网**时极易手滑——尤其在 agent 执行时，容易把"写入 CHANGELOG"简化成 `-o`。
+
+**防护（两道）**：
+
+1. **显式警告**：在 release skill 的 Step 3 里，对"已存在"分支明确标注禁用 `-o`：
+   ```
+   > ⚠️ 已存在的 CHANGELOG 必须用 --prepend，禁用 -o，否则历史版本会被覆盖！
+   ```
+
+2. **生成后校验**（关键）——生成后比对 CHANGELOG 版本数与 git tag 数，不等则恢复重试：
+   ```bash
+   # 两个数字必须相等
+   echo "CHANGELOG 版本数: $(grep -c '^## v' CHANGELOG.md)"
+   echo "Git tag 数:       $(git tag --list 'v*' | wc -l)"
+   ```
+   不等说明历史被覆盖，立即 `git checkout CHANGELOG.md` 恢复后用 `--prepend` 重试。
+
+> **为什么用版本数校验而非 git diff**：`git diff CHANGELOG.md` 需要人眼判断哪些段消失了；版本数比对是纯数字，agent 和人都能一眼看出不等=出错，零判断成本。
+
+### 3.7 多组件独立版本（monorepo / 多 skill 场景）
+
+**场景**：一个仓库包含多个可独立发布的组件（如 monorepo 的多个包、插件市场的多个 skill），每个组件有自己的版本号，改谁 bump 谁，互不影响。
+
+**问题**：§3.5 的"三同步"模型假设仓库只有**一个版本源**——每次发版，git tag、CHANGELOG、版本源文件三者统一升一个号。对多组件仓库，这个模型会让**没改动的组件也被强行升版本**。
+
+**解决：两层版本模型**：
+
+| 层级 | 载体 | 规则 |
+|------|------|------|
+| **全局版**（代表整个仓库的发版） | git tag + CHANGELOG + 顶层版本源（如 `plugin.json`） | 每次发版必 bump |
+| **组件独立版** | 各组件清单的 `version` 字段 | **只 bump 有改动的组件**，未改不动，与全局版不绑定 |
+
+release skill 的 Step 3.5 需分两步：
+1. **全局版**：照常更新顶层版本源（§3.5）
+2. **组件版**：用 `git diff <PREV_TAG> HEAD -- '<组件目录>/*'` 检测哪些组件有改动，只 bump 这些组件的 `version` 字段，其余跳过
+
+```bash
+# 检测本次改动的组件（对比上一个 tag）
+PREV_TAG=$(git tag --sort=-creatordate | head -1)
+CHANGED=$(git diff --name-only "$PREV_TAG" HEAD -- 'components/*' \
+          | sed 's|components/||;s|/.*||' | sort -u)
+# 对每个有改动的组件 bump 版本号（这里以 PATCH 为例）
+for c in $CHANGED; do
+  sed -i 's/^version:[[:space:]]*.*/version: "<NEW_VERSION>"/' "components/$c/metadata.yaml"
+done
+```
+
+> **何时用这个模型**：单 `package.json` / 单 `Cargo.toml` 的项目用 §3.5 的三同步即可；只有当仓库内有多个**各自有版本号、各自演进**的组件时才需要两层模型。判断标准：发版时是否需要"改谁 bump 谁"。
+
 ---
 
 ## 4. 日常发版流程
@@ -322,8 +381,12 @@ release skill 的 Step 3.5 负责更新版本源文件（去 `v` 前缀），与
 3. **生成 CHANGELOG**：
    - 首次：`git cliff --tag <VERSION> -o CHANGELOG.md`（全量）
    - 后续：`git cliff --tag <VERSION> --prepend CHANGELOG.md`（前置插入，历史不可变）
+   - ⚠️ 后续发版**禁用 `-o`**（会覆盖历史，见 §3.6），生成后**校验版本数**：
+     ```bash
+     [ "$(grep -c '^## v' CHANGELOG.md)" = "$(git tag --list 'v*' | wc -l)" ] && echo OK || echo "版本数不符，历史可能丢失！"
+     ```
 4. **注入 AI 摘要**：把 `<!-- AI_SUMMARY -->` 占位符替换为 2-3 句自然语言摘要 + 分组统计 + diff 链接
-5. **同步版本号**：更新版本源文件（如有）
+5. **同步版本号**：更新版本源文件（如有）。多组件仓库按 §3.7 只 bump 有改动的组件
 6. **commit + tag + push**：`git commit -m "docs: release <VERSION>"` → `git tag -a <VERSION>` → `git push origin HEAD --tags`
 7. **CI 自动建 Release**：GitHub Action 切片 + `softprops/action-gh-release`
 
@@ -411,8 +474,8 @@ git commit -m "chore: 引入 git-cliff changelog 闭环体系"
 ## 6. 设计要点总结
 
 1. **混合生成**：git-cliff 出结构骨架（分组/链接），agent 后处理注入 AI 摘要——纯 CI 方案做不到，纯手写太累
-2. **`--prepend` 策略**：CHANGELOG 永不全量重生成，每次只前置插入新段，历史不可变
-3. **版本号三同步**：git tag ↔ CHANGELOG 标题 ↔ 版本源文件，由 release skill 保证一致
+2. **`--prepend` 策略 + 生成后校验**：CHANGELOG 永不全量重生成，每次只前置插入新段；生成后用版本数校验防覆盖（§3.6）
+3. **版本号同步模型随仓库结构而定**：单组件仓库用三同步（§3.5），多组件仓库用两层模型——全局版每次 bump，组件版改谁 bump 谁（§3.7）
 4. **兜底优先**：`body = ".*"` 兜底 parser + `split(pat="\n") | first` 取首行，保证任何历史提交都不丢且渲染干净
 5. **CI 最小化**：GitHub Action 只做切片 + 建 Release，不生成内容，无状态、可复现
 
@@ -540,7 +603,19 @@ GitHub Release 由 `.github/workflows/release.yml` 自动创建，无需本地 `
 2. 不存在（首次）：`git cliff --tag <VERSION> -o CHANGELOG.md`
 3. 已存在（后续）：`git cliff --tag <VERSION> --prepend CHANGELOG.md`
 
-4. **生成 AI 摘要**，替换 `<!-- AI_SUMMARY -->` 占位符。格式：
+   > ⚠️ **切勿对已存在的 CHANGELOG.md 使用 `-o`（覆盖写入）！**
+   > `-o` 会用新版本内容**整文件覆盖**，丢失所有历史版本。必须用 `--prepend`。
+   > 详见 §3.6。
+
+4. **校验历史版本未丢失**（生成后必须执行）：
+   ```bash
+   echo "CHANGELOG 版本数: $(grep -c '^## v' CHANGELOG.md)"
+   echo "Git tag 数:       $(git tag --list 'v*' | wc -l)"
+   ```
+   两个数字**必须相等**。若 CHANGELOG 版本数 < tag 数，说明历史被覆盖，
+   立即 `git checkout CHANGELOG.md` 恢复后用 `--prepend` 重试。
+
+5. **生成 AI 摘要**，替换 `<!-- AI_SUMMARY -->` 占位符。格式：
    ```markdown
    > <2-3 句自然语言总结，概括本次发布最核心的变化>
    >
@@ -550,7 +625,7 @@ GitHub Release 由 `.github/workflows/release.yml` 自动创建，无需本地 `
    ```
    首次发布无 PREV 时，链接用 `https://github.com/<OWNER>/<REPO>/commits/<VERSION>`
 
-5. 暂存：`git add CHANGELOG.md`
+6. 暂存：`git add CHANGELOG.md`
 
 ### Step 3.5: 同步版本源文件（如有）
 
@@ -564,6 +639,9 @@ sed -i 's/"version":[[:space:]]*"[0-9][^"]*"/"version": "<VERSION_WITHOUT_V>"/' 
 暂存：`git add <VERSION_FILE>`
 
 > 若项目无版本源文件（仅用 tag），跳过本步。
+
+> **多组件仓库**（monorepo / 多 skill）：除顶层版本源外，还需检测并 bump 有改动的组件，
+> 只 bump 变动的、不动未改的。详见 §3.7。
 
 ### Step 3.6: 提交
 
