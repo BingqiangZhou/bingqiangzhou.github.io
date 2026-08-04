@@ -44,6 +44,8 @@ Conventional Commit ──┐
          GitHub Action 自动建 Release
 ```
 
+> **阅读路线**：§1–§2 是选型与全景，快速了解"为什么"和"怎么搭"；§3–§7 是各组件的配置与踩坑详解（每个组件自成一章，配置 + 决策 + 踩坑放在一起）；§8 是从零复现的有序步骤；附录 A 是可直接复制的 skill 模板。
+
 ---
 
 ## 1. 为什么选 git-cliff
@@ -65,29 +67,51 @@ Conventional Commit ──┐
 
 ---
 
-## 2. 体系设计
+## 2. 体系架构
 
-### 2.1 git-cliff 配置（`cliff.toml`）
+三组件各司其职，通过 git tag 串联成一个闭环：
 
-核心设计三点：
-
-**① 分组排序用 HTML 注释前缀**
-```toml
-{ message = "^feat", group = "<!-- 0 -->🚀 Features" },
-{ message = "^fix",  group = "<!-- 1 -->🐛 Bug Fixes" },
 ```
-模板里 `{{ group | striptags | trim }}` 会剥掉 `<!-- N -->`，渲染后不可见但保证排序——比依赖 emoji 字符序更可靠，分组顺序永远稳定。
-
-**② AI 摘要占位符**
-模板 body 里留 `<!-- AI_SUMMARY -->`，git-cliff 不解析它（原样输出），release skill 第二阶段用真实摘要替换。这让「分组骨架」和「自然语言摘要」解耦：git-cliff 负责结构，AI 负责语义。
-
-**③ 跳过噪音提交**
-```toml
-{ message = "^chore\\(release\\)", skip = true },   # 发版提交本身不进 changelog
-{ message = "^Merge", skip = true },                # merge commit 不进 changelog
+┌─────────────────────────────────────────────────────┐
+│  开发阶段                                            │
+│  Conventional Commits (feat/fix/refactor/...)       │
+│  → 每次提交自动归类，无需手写 changelog 条目         │
+└──────────────────────┬──────────────────────────────┘
+                       │ 对 agent 说「发布」
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│  发布阶段 (Agent release skill)                      │
+│                                                      │
+│  1. 读 tag → 定版本号 (PATCH/MINOR/MAJOR)           │
+│  2. git cliff --prepend → 生成骨架                   │
+│  3. 替换 <!-- AI_SUMMARY --> → 注入自然语言摘要       │
+│  4. 同步版本号 (plugin.json / 各组件 version)        │
+│  5. git tag + push                                   │
+└──────────────────────┬──────────────────────────────┘
+                       │ push v* tag
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│  自动化阶段 (GitHub Action)                          │
+│                                                      │
+│  tag push 触发 → awk 切片 CHANGELOG → 建 Release    │
+└─────────────────────────────────────────────────────┘
 ```
 
-完整配置骨架（替换 `<owner>/<repo>` 即可复用）：
+**核心分工**：
+- **结构交给工具**——git-cliff 按 commit 类型自动分组、生成链接
+- **语义交给 AI**——agent 注入 2-3 句自然语言摘要，概括"本次发布干了什么"
+- **决策交给人**——Step 2 预览后必须人工确认才继续
+
+下面按组件逐章详解（配置 + 关键决策 + 踩坑在一起，无需跨节跳读）。
+
+---
+
+## 3. git-cliff：配置与调优
+
+### 3.1 完整配置（`cliff.toml`）
+
+核心设计三点：**HTML 注释前缀排序**、**AI 摘要占位符**、**兜底 parser**。
+
 ```toml
 [changelog]
 header = """
@@ -126,7 +150,7 @@ commit_parsers = [
   { message = "^chore|^ci", group = "<!-- 8 -->⚙️ Miscellaneous" },
   { message = "^revert", group = "<!-- 9 -->◀️ Revert" },
   { message = "^Merge", skip = true },
-  # 兜底（见 §3.1）：捕获非 Conventional 历史提交，避免丢失
+  # 兜底（见 §3.3）：捕获非 Conventional 历史提交，避免丢失
   { body = ".*", group = "<!-- 10 -->📦 Other Changes" },
 ]
 protect_breaking_commits = false
@@ -138,7 +162,77 @@ sort_commits = "oldest"
 initial_tag = "0.0.1"
 ```
 
-### 2.2 release skill（编排器）
+> 替换 `<owner>/<repo>` 为实际仓库地址（`git remote get-url origin` 可读出）。
+
+### 3.2 关键设计：HTML 注释前缀排序
+
+```toml
+{ message = "^feat", group = "<!-- 0 -->🚀 Features" },
+{ message = "^fix",  group = "<!-- 1 -->🐛 Bug Fixes" },
+```
+
+模板里 `{{ group | striptags | trim }}` 会剥掉 `<!-- N -->`，渲染后不可见但保证排序——比依赖 emoji 字符序更可靠，分组顺序永远稳定。
+
+### 3.3 踩坑：非 Conventional 历史提交消失
+
+**现象**：照搬标准 `cliff.toml` 后，`git cliff --tag v1.0.0 --unreleased` 预览**空空如也**——历史 commit 一个都没渲染。
+
+**根因**：很多项目早期提交是非 Conventional 风格（`Add ...` / `Fix ...` / `Refactor ...`，没有 `feat:` / `fix:` 前缀）。配置里：
+- `conventional_commits = true` → git-cliff 按 Conventional Commits 解析
+- `filter_unconventional = false` → 非规范提交**保留**，但**不解析**
+- `commit_parsers` 只匹配 `^feat` / `^fix` / ... → 非规范提交匹配不到任何 parser → 没有归属 group → 模板 `{% for group, commits in commits | group_by(attribute="group") %}` 按 group 聚合时，无 group 的提交**不渲染**
+
+**解决**：在 `commit_parsers` 末尾加兜底规则（见上方配置第 10 条）：
+```toml
+{ body = ".*", group = "<!-- 10 -->📦 Other Changes" },
+```
+git-cliff 按顺序评估 parser，第一条匹配生效，所以放最后的无条件规则兜底所有未匹配提交。
+
+> ⚠️ **坑（实测，文档未明确）**：
+> - `{ group = "..." }`（无条件，仅 group 字段）**不生效**——预览还是空。
+> - `{ regex = ".*", group = "..." }` **也不生效**。
+> - 必须 `{ body = ".*", group = "..." }` 才生效（匹配每个剩余 commit 的 body 字段）。
+>
+> 这是 git-cliff 2.13.1 的实际行为，靠逐个实测才发现。
+
+### 3.4 踩坑：多段 commit message 正文泄漏
+
+**现象**：兜底规则生效后，多段提交的正文也灌进了 CHANGELOG：
+```
+- Add Wechat RSS monitoring scripts and related functionality
+
+  - Implement check_updates.py to fetch and check Wechat2RSS feeds...
+  - Create fetch_articles.py to retrieve full article content...
+```
+本应是干净的单行。Conventional 项目不遇到这问题（只有 subject 行），但兜底组里的历史提交通常是多段的。
+
+**根因**：`commit.message` 字段对多段提交包含完整正文（含换行）。
+
+**失败的尝试**（Rust `regex` crate 限制）：
+```toml
+commit.preprocessors = [
+  { pattern = '(?s)\n.*', replace = "" },   # ❌ 无效
+  { pattern = '\n[\s\S]*', replace = "" },  # ❌ 无效
+  { pattern = '(?m)\n.*$', replace = "" },  # ❌ 无效
+]
+```
+git-cliff 的 preprocessor 用 Rust `regex` crate，默认 `.` 不匹配 `\n`，这些跨行写法都不生效。
+
+**解决**：不用 preprocessor，改在**模板层**取首行——用 Tera 的 `split` + `first`（见上方 body 模板）：
+```toml
+{{ commit.message | split(pat="\n") | first | upper_first | trim }}
+```
+`split(pat="\n")` 把多行 message 按换行切成数组，`first` 取第一行。干净、可靠、无副作用，对所有提交（单行/多段）都正确。
+
+### 3.5 AI 摘要占位符机制
+
+模板 body 里留 `<!-- AI_SUMMARY -->`，git-cliff 不解析它（原样输出），release skill（§4 Step 3）用真实摘要替换。这让「分组骨架」和「自然语言摘要」解耦：git-cliff 负责结构，AI 负责语义。
+
+---
+
+## 4. release skill：发布编排工作流
+
+### 4.1 工作流总览
 
 一个 agent skill，用自然语言触发（「发布」「release」「发版」「打 tag」），workflow 分 5 步，**Step 2 后必须人工确认**：
 
@@ -147,14 +241,135 @@ Step 0  前置检查     git-cliff 已装 + 工作树干净
 Step 1  定版本号     读上一个 tag → 按 PATCH/MINOR/MAJOR 递增
 Step 2  预览         git cliff --unreleased + 变更分析 → 展示摘要
         ─── 等待用户确认 ───
-Step 3  生成         首次 -o / 后续 --prepend → 替换 AI_SUMMARY → commit
-Step 3.5 同步版本号  更新版本源文件（见 §3.5）
+Step 3  生成         首次 -o / 后续 --prepend → 校验历史未丢 → 替换 AI_SUMMARY → commit
+Step 3.5 同步版本号  更新版本源文件（见 §5）
 Step 4  tag + push   git tag -a + git push origin HEAD --tags
 ```
 
-这个编排逻辑与具体 agent 平台无关——可以是 ZCode / Claude Code 的 skill，也可以是任何能执行 shell 命令的 agent，甚至是一个普通 shell 脚本。核心是一组按顺序执行的 git + git-cliff 命令，加上一次人工确认关卡。
+> 这个编排逻辑与具体 agent 平台无关——可以是 ZCode / Claude Code 的 skill，也可以是任何能执行 shell 命令的 agent，甚至是一个普通 shell 脚本。完整可复制的模板见**附录 A**。
 
-### 2.3 GitHub Action（自动化）
+### 4.2 定版本号（Step 1）
+
+采用语义化版本 `v<MAJOR>.<MINOR>.<PATCH>`。读上一个 tag，按变更规模递增：
+
+| 类型 | 规则 | 适用场景 |
+|------|------|----------|
+| **PATCH** | `v1.0.x → v1.0.x+1` | 修 bug、文档、chore、配置同步 |
+| **MINOR** | `v1.x.* → v1.x+1.0` | 新增功能、能力扩展 |
+| **MAJOR** | `vx.*.* → v+1.0.0` | 架构级重构、不兼容变更（罕见） |
+
+```bash
+# 获取上一个版本号
+git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -1
+# 无 tag（首次发布）时，从版本源文件读取
+grep -o '"version"[[:space:]]*:[[:space:]]*"[^"]*"' <VERSION_FILE> | grep -o '"[0-9][^"]*"$' | tr -d '"'
+```
+
+### 4.3 生成 CHANGELOG（Step 3）—— 含两道防护
+
+首次发版和后续发版的写入方式**完全不同**，混淆会丢数据：
+
+```bash
+test -f CHANGELOG.md && echo exists || echo not-exists
+# 不存在（首次）：全量生成
+git cliff --tag <VERSION> -o CHANGELOG.md
+# 已存在（后续）：前置插入
+git cliff --tag <VERSION> --prepend CHANGELOG.md
+```
+
+> ⚠️ **切勿对已存在的 CHANGELOG.md 使用 `-o`（覆盖写入）！**
+> `-o` 会用新版本内容**整文件覆盖**，丢失所有历史版本。必须用 `--prepend`。
+> 这是实测踩过的坑——详见下方"根因与防护"。
+
+**防护 1：生成后校验版本数**（关键）
+
+生成后比对 CHANGELOG 版本数与 git tag 数，不等则恢复重试：
+```bash
+echo "CHANGELOG 版本数: $(grep -c '^## v' CHANGELOG.md)"
+echo "Git tag 数:       $(git tag --list 'v*' | wc -l)"
+```
+两个数字**必须相等**。若 CHANGELOG 版本数 < tag 数，说明历史被覆盖，立即：
+```bash
+git checkout CHANGELOG.md   # 恢复
+# 然后用 --prepend 重试
+```
+
+> **为什么用版本数校验而非 git diff**：`git diff` 需要人眼判断哪些段消失了；版本数比对是纯数字，agent 和人都能一眼看出不等=出错，零判断成本。
+
+**防护 2：AI 摘要注入**
+
+git-cliff 模板中 `<!-- AI_SUMMARY -->` 是占位符，需要用 AI 生成的摘要替换。基于本次 commits 的分组统计 + Skill 变更分析，生成 2-3 句自然语言摘要：
+
+```markdown
+> <自然语言总结，2-3 句，概括本次发布最核心的变化>
+>
+> 共 <N> commits，其中 🚀 Features <N> | 🐛 Fixes <N> | 📝 Docs <N> | ...
+>
+> **[Full diff](https://github.com/<owner>/<repo>/compare/<PREV_TAG>...<VERSION>)**
+```
+首次发布无 PREV_TAG 时，Full diff 链接为 `https://github.com/<owner>/<repo>/commits/<VERSION>`。
+
+---
+
+## 5. 版本号管理
+
+### 5.1 版本号来源
+
+不同项目的版本号来源不同：
+- Node 项目 → `package.json` 的 `"version"`
+- Rust 项目 → `Cargo.toml` 的 `version`
+- Python 项目 → `pyproject.toml` 或 `__version__.py`
+- 插件项目 → 插件清单文件（如 `plugin.json`）
+- 纯文档 / 无清单项目 → 仅靠 git tag
+
+### 5.2 模型一：三同步（单组件仓库，通用默认）
+
+适用于绝大多数项目（单 `package.json` / 单 `Cargo.toml`）。发版时让三处保持一致：
+```
+git tag v1.0.1  ←→  CHANGELOG "## v1.1.0"  ←→  版本源文件 "version": "1.0.1"
+```
+
+release skill 的 Step 3.5 负责更新版本源文件（去 `v` 前缀），与 CHANGELOG 一起 commit。如果项目没有版本源文件（仅靠 tag），这步可跳过。
+
+**一个常见的坑**：版本源文件可能是 JSON / TOML / YAML 等格式，更新时只改 `version` 行，保持其余结构与缩进不变。用 `sed` 精确替换该行：
+```bash
+# JSON 格式（package.json / plugin.json 等）
+sed -i 's/"version":[[:space:]]*"[0-9][^"]*"/"version": "<VERSION_WITHOUT_V>"/' <VERSION_FILE>
+# TOML 格式（Cargo.toml / pyproject.toml 等）——注意只改 [package] 段的 version
+```
+
+### 5.3 模型二：两层版本（多组件仓库）
+
+适用于 monorepo（多包）或插件市场（多 skill）——仓库包含多个可独立演进的组件，每个有自己的版本号，改谁 bump 谁，互不影响。
+
+三同步模型会让**没改动的组件也被强行升版本**。两层版本模型解决这个：
+
+| 层级 | 载体 | 规则 |
+|------|------|------|
+| **全局版**（代表整个仓库的发版） | git tag + CHANGELOG + 顶层版本源（如 `plugin.json`） | 每次发版必 bump |
+| **组件独立版** | 各组件清单的 `version` 字段 | **只 bump 有改动的组件**，未改不动，与全局版不绑定 |
+
+release skill 的 Step 3.5 需分两步：
+
+1. **全局版**：照常更新顶层版本源（§5.2）
+2. **组件版**：用 `git diff` 检测哪些组件有改动，只 bump 这些组件的 `version` 字段：
+   ```bash
+   PREV_TAG=$(git tag --sort=-creatordate | head -1)
+   # 检测本次改动的组件（对比上一个 tag）
+   CHANGED=$(git diff --name-only "$PREV_TAG" HEAD -- 'components/*' \
+             | sed 's|components/||;s|/.*||' | sort -u)
+   # 对每个有改动的组件 bump 版本号
+   for c in $CHANGED; do
+     sed -i 's/^version:[[:space:]]*.*/version: "<NEW_VERSION>"/' "components/$c/metadata.yaml"
+   done
+   ```
+   > 注意：全新组件若仍是 untracked，`git diff` 看不到——以 `git status` 为准。
+
+> **何时用哪个模型**：判断标准是"发版时是否需要改谁 bump 谁"。单 `package.json` 项目用 §5.2 三同步即可；只有当仓库内有多个**各自有版本号、各自演进**的组件时才需要两层模型。
+
+---
+
+## 6. GitHub Action：自动创建 Release
 
 仓库无关、逐字可复用。它**不生成** changelog（已由本地 skill 完成），只做切片 + 建 Release：
 
@@ -184,66 +399,13 @@ jobs:
 
 awk 逻辑：找到 `## v1.0.0` 行开始输出，遇到**下一个** `## ` 行就退出——精准切出当前版本的段。
 
+> **设计原则**：CI 只做切片 + 建 Release，不生成内容，无状态、可复现。所有"生成"逻辑都在本地 release skill 完成，CI 失败可手动重跑，不影响 CHANGELOG 正确性。
+
 ---
 
-## 3. 关键决策与踩坑
+## 7. 仓库卫生实践
 
-这一节是真正有价值的部分——照搬一个现成配置后，几乎一定会遇到的 5 个适配问题。所有结论均来自实测，适用于任何用 git-cliff 的项目。
-
-### 3.1 非 Conventional 历史提交消失问题
-
-**现象**：照搬一份标准 `cliff.toml` 后，`git cliff --tag v1.0.0 --unreleased` 预览**空空如也**——历史 commit 一个都没渲染。
-
-**根因**：很多项目早期提交是非 Conventional 风格（`Add ...` / `Fix ...` / `Refactor ...`，没有 `feat:` / `fix:` 前缀）。配置里：
-- `conventional_commits = true` → git-cliff 按 Conventional Commits 解析
-- `filter_unconventional = false` → 非规范提交**保留**，但**不解析**
-- `commit_parsers` 只匹配 `^feat` / `^fix` / ... → 非规范提交匹配不到任何 parser → 没有归属 group → 模板 `{% for group, commits in commits | group_by(attribute="group") %}` 按 group 聚合时，无 group 的提交**不渲染**
-
-**解决**：在 `commit_parsers` 末尾加兜底规则：
-```toml
-{ body = ".*", group = "<!-- 10 -->📦 Other Changes" },
-```
-git-cliff 按顺序评估 parser，第一条匹配生效，所以放最后的无条件规则兜底所有未匹配提交。
-
-> ⚠️ **坑（实测，文档未明确）**：
-> - `{ group = "..." }`（无条件，仅 group 字段）**不生效**——预览还是空。
-> - `{ regex = ".*", group = "..." }` **也不生效**。
-> - 必须 `{ body = ".*", group = "..." }` 才生效（匹配每个剩余 commit 的 body 字段）。
->
-> 这是 git-cliff 2.13.1 的实际行为，靠逐个实测才发现。
-
-**长期策略**：新提交逐步采用 Conventional Commits（`feat:`/`fix:`/`refactor:`），自动归入正确分组；历史非规范提交留在「Other Changes」兜底组，不丢也不影响。
-
-### 3.2 多段 commit message 正文泄漏
-
-**现象**：兜底规则生效后，多段提交的正文也灌进了 CHANGELOG：
-```
-- Add Wechat RSS monitoring scripts and related functionality
-
-  - Implement check_updates.py to fetch and check Wechat2RSS feeds...
-  - Create fetch_articles.py to retrieve full article content...
-```
-本应是干净的单行。Conventional 项目不遇到这问题（只有 subject 行），但兜底组里的历史提交通常是多段的。
-
-**根因**：`commit.message` 字段对多段提交包含完整正文（含换行）。
-
-**失败的尝试**（Rust `regex` crate 限制）：
-```toml
-commit.preprocessors = [
-  { pattern = '(?s)\n.*', replace = "" },   # ❌ 无效
-  { pattern = '\n[\s\S]*', replace = "" },  # ❌ 无效
-  { pattern = '(?m)\n.*$', replace = "" },  # ❌ 无效
-]
-```
-git-cliff 的 preprocessor 用 Rust `regex` crate，默认 `.` 不匹配 `\n`，这些跨行写法都不生效。
-
-**解决**：不用 preprocessor，改在**模板层**取首行——用 Tera 的 `split` + `first`：
-```toml
-{{ commit.message | split(pat="\n") | first | upper_first | trim }}
-```
-`split(pat="\n")` 把多行 message 按换行切成数组，`first` 取第一行。干净、可靠、无副作用，对所有提交（单行/多段）都正确。
-
-### 3.3 gitignore 逐层穿透（反忽略嵌套目录）
+### 7.1 gitignore 逐层穿透（反忽略嵌套目录）
 
 **场景**：你的 agent 工作目录（如 `.zcode/`、`.claude/`、`.idea/` 等）整体被 `.gitignore` 忽略，但你想把其中的某个子目录（比如 release skill）纳入版本控制。
 
@@ -271,7 +433,7 @@ git add .zcode/                                    # 只会 add release/SKILL.md
 
 这个技巧适用于任何「整体忽略 + 局部追踪」的场景，与具体目录名无关。
 
-### 3.4 数据快照 vs 源配置的取舍
+### 7.2 数据快照 vs 源配置的取舍
 
 **通用原则**：版本库应只含「人写的、不可自动生成的」内容。能由脚本从外部数据源全量重建的文件，属于**派生数据/缓存**，提交会让仓库膨胀且持续产生噪音。
 
@@ -290,125 +452,11 @@ git add .zcode/                                    # 只会 add release/SKILL.md
 
 > **实操要点**：如果一个派生文件已经被 tracked，用 `git rm --cached <file>` 从索引移除（本地保留），再加入 `.gitignore`。不要直接 `git rm`（会删本地文件）。
 
-### 3.5 版本号来源与三同步
-
-不同项目的版本号来源不同：
-- Node 项目 → `package.json` 的 `"version"`
-- Rust 项目 → `Cargo.toml` 的 `version`
-- Python 项目 → `pyproject.toml` 或 `__version__.py`
-- 插件项目 → 插件清单文件（如 `plugin.json`）
-- 纯文档 / 无清单项目 → 仅靠 git tag
-
-**通用原则**：发版时让三处保持一致：
-```
-git tag v1.0.1  ←→  CHANGELOG "## v1.0.1"  ←→  版本源文件 "version": "1.0.1"
-```
-
-release skill 的 Step 3.5 负责更新版本源文件（去 `v` 前缀），与 CHANGELOG 一起 commit。如果项目没有版本源文件（仅靠 tag），这步可跳过。
-
-**一个常见的坑**：版本源文件可能是 JSON / TOML / YAML 等格式，更新时只改 `version` 行，保持其余结构与缩进不变。用 `sed` 精确替换该行，或用对应的解析库更新，避免破坏文件格式。
-
-### 3.6 CHANGELOG 历史版本被覆盖丢失（`-o` vs `--prepend`）
-
-**现象**：第二次发版后，CHANGELOG.md 只剩新版本段，**所有历史版本凭空消失**。
-
-**根因**：`git cliff` 有两种写入模式，行为天差地别：
-- `-o CHANGELOG.md`：**整文件覆盖写入**——用本次生成的内容替换整个文件，历史版本全丢
-- `--prepend CHANGELOG.md`：**头部插入**——只把新版本段插到文件最前面，历史保留
-
-首次发版（文件不存在）用 `-o` 是对的。但后续发版如果误用 `-o`，历史就被覆盖了。
-
-**为什么会误用**：`-o`（`--output`）是 git-cliff 最常见的写入参数，在 CHANGELOG **不存在**时和 `--prepend` 效果相同；一旦文件已存在，两者行为分叉。release skill 的逻辑分支（首次 `-o` / 后续 `--prepend`）本身正确，但**缺乏防护网**时极易手滑——尤其在 agent 执行时，容易把"写入 CHANGELOG"简化成 `-o`。
-
-**防护（两道）**：
-
-1. **显式警告**：在 release skill 的 Step 3 里，对"已存在"分支明确标注禁用 `-o`：
-   ```
-   > ⚠️ 已存在的 CHANGELOG 必须用 --prepend，禁用 -o，否则历史版本会被覆盖！
-   ```
-
-2. **生成后校验**（关键）——生成后比对 CHANGELOG 版本数与 git tag 数，不等则恢复重试：
-   ```bash
-   # 两个数字必须相等
-   echo "CHANGELOG 版本数: $(grep -c '^## v' CHANGELOG.md)"
-   echo "Git tag 数:       $(git tag --list 'v*' | wc -l)"
-   ```
-   不等说明历史被覆盖，立即 `git checkout CHANGELOG.md` 恢复后用 `--prepend` 重试。
-
-> **为什么用版本数校验而非 git diff**：`git diff CHANGELOG.md` 需要人眼判断哪些段消失了；版本数比对是纯数字，agent 和人都能一眼看出不等=出错，零判断成本。
-
-### 3.7 多组件独立版本（monorepo / 多 skill 场景）
-
-**场景**：一个仓库包含多个可独立发布的组件（如 monorepo 的多个包、插件市场的多个 skill），每个组件有自己的版本号，改谁 bump 谁，互不影响。
-
-**问题**：§3.5 的"三同步"模型假设仓库只有**一个版本源**——每次发版，git tag、CHANGELOG、版本源文件三者统一升一个号。对多组件仓库，这个模型会让**没改动的组件也被强行升版本**。
-
-**解决：两层版本模型**：
-
-| 层级 | 载体 | 规则 |
-|------|------|------|
-| **全局版**（代表整个仓库的发版） | git tag + CHANGELOG + 顶层版本源（如 `plugin.json`） | 每次发版必 bump |
-| **组件独立版** | 各组件清单的 `version` 字段 | **只 bump 有改动的组件**，未改不动，与全局版不绑定 |
-
-release skill 的 Step 3.5 需分两步：
-1. **全局版**：照常更新顶层版本源（§3.5）
-2. **组件版**：用 `git diff <PREV_TAG> HEAD -- '<组件目录>/*'` 检测哪些组件有改动，只 bump 这些组件的 `version` 字段，其余跳过
-
-```bash
-# 检测本次改动的组件（对比上一个 tag）
-PREV_TAG=$(git tag --sort=-creatordate | head -1)
-CHANGED=$(git diff --name-only "$PREV_TAG" HEAD -- 'components/*' \
-          | sed 's|components/||;s|/.*||' | sort -u)
-# 对每个有改动的组件 bump 版本号（这里以 PATCH 为例）
-for c in $CHANGED; do
-  sed -i 's/^version:[[:space:]]*.*/version: "<NEW_VERSION>"/' "components/$c/metadata.yaml"
-done
-```
-
-> **何时用这个模型**：单 `package.json` / 单 `Cargo.toml` 的项目用 §3.5 的三同步即可；只有当仓库内有多个**各自有版本号、各自演进**的组件时才需要两层模型。判断标准：发版时是否需要"改谁 bump 谁"。
-
 ---
 
-## 4. 日常发版流程
+## 8. 复现指南：给 agent 照着搭建
 
-工作树干净时，对 agent 说「发布」即可。release skill 自动完成：
-
-1. **定版本**：读上一个 tag，按本次变更类型建议版本递增
-   - **PATCH**（v1.0.x → v1.0.x+1）：修 bug、文档、chore、配置同步
-   - **MINOR**（v1.x.* → v1.x+1.0）：新增功能、能力扩展
-   - **MAJOR**（vx.*.* → v+1.0.0）：架构级重构、不兼容变更（罕见）
-2. **预览**：`git cliff --tag <VERSION> --unreleased` 输出到终端（不写文件）+ 变更分析 → 展示摘要 → **等待确认**
-3. **生成 CHANGELOG**：
-   - 首次：`git cliff --tag <VERSION> -o CHANGELOG.md`（全量）
-   - 后续：`git cliff --tag <VERSION> --prepend CHANGELOG.md`（前置插入，历史不可变）
-   - ⚠️ 后续发版**禁用 `-o`**（会覆盖历史，见 §3.6），生成后**校验版本数**：
-     ```bash
-     [ "$(grep -c '^## v' CHANGELOG.md)" = "$(git tag --list 'v*' | wc -l)" ] && echo OK || echo "版本数不符，历史可能丢失！"
-     ```
-4. **注入 AI 摘要**：把 `<!-- AI_SUMMARY -->` 占位符替换为 2-3 句自然语言摘要 + 分组统计 + diff 链接
-5. **同步版本号**：更新版本源文件（如有）。多组件仓库按 §3.7 只 bump 有改动的组件
-6. **commit + tag + push**：`git commit -m "docs: release <VERSION>"` → `git tag -a <VERSION>` → `git push origin HEAD --tags`
-7. **CI 自动建 Release**：GitHub Action 切片 + `softprops/action-gh-release`
-
-### Commit 规范（决定 CHANGELOG 分组质量）
-
-为了让 CHANGELOG 自动正确分组，提交信息用 Conventional Commits：
-```
-feat(scope): 新功能          → 🚀 Features
-fix(scope): 修 bug           → 🐛 Bug Fixes
-refactor(scope): 重构        → 🔨 Refactor
-perf(scope): 性能优化        → ⚡ Performance
-docs: 文档                   → 📝 Documentation
-chore: 杂务                  → ⚙️ Miscellaneous
-chore(release): xxx          → 跳过（不进 changelog）
-```
-`scope` 会渲染成 `**scope**:` 加粗前缀。不用 Conventional 的提交会落入兜底「📦 Other Changes」组，不会丢，但不会自动分类。
-
----
-
-## 5. 复现指南：给 agent 照着搭建
-
-> 本节是为「agent 自助搭建」设计的有序流程。每步有明确的**动作 + 验证**，验证不过不进下一步。把本节 + §2.1（cliff.toml）+ §2.3（workflow）+ 附录 A（skill 模板）一起给 agent，它就能为新项目完整搭出闭环。
+> 本节是为「agent 自助搭建」设计的有序流程。每步有明确的**动作 + 验证**，验证不过不进下一步。把本节 + §3.1（cliff.toml）+ §6（workflow）+ 附录 A（skill 模板）一起给 agent，它就能为新项目完整搭出闭环。
 
 ### 前置确认（开工前问清 4 件事）
 
@@ -434,13 +482,13 @@ ls */.claude-plugin/plugin.json .claude-plugin/plugin.json 2>/dev/null
 
 ### Step 1：创建 `cliff.toml`
 
-1. 复制 §2.1 的完整配置到仓库根 `cliff.toml`
+1. 复制 §3.1 的完整配置到仓库根 `cliff.toml`
 2. 替换两处占位符 `<owner>/<repo>` 为实际仓库（`git remote get-url origin` 可读出）
 3. **验证**：`git cliff --unreleased` 能跑通、无报错（有提交则能看到分组输出；空仓库则只输出 header，也正常）
 
 ### Step 2：创建 GitHub Action
 
-1. 新建 `.github/workflows/release.yml`，原样复制 §2.3（仓库无关，无需改）
+1. 新建 `.github/workflows/release.yml`，原样复制 §6（仓库无关，无需改）
 2. **验证**：YAML 语法检查
    ```bash
    python -c "import yaml; yaml.safe_load(open('.github/workflows/release.yml'))" && echo OK
@@ -450,7 +498,7 @@ ls */.claude-plugin/plugin.json .claude-plugin/plugin.json 2>/dev/null
 
 1. 复制**附录 A** 的完整 skill 模板，落到 agent skill 目录（如 `.zcode/skills/release/SKILL.md`）
 2. 填入附录 A 顶部标注的 3 个占位符（仓库 URL、版本源文件路径、skill 监控的业务目录）
-3. 如该目录被 `.gitignore` 忽略，按 §3.3 逐层反忽略
+3. 如该目录被 `.gitignore` 忽略，按 §7.1 逐层反忽略
 4. **验证**：对 agent 说「发布」或「release」，确认 skill 被触发并进入 Step 0 前置检查
 
 ### Step 4：提交搭建产物
@@ -471,13 +519,13 @@ git commit -m "chore: 引入 git-cliff changelog 闭环体系"
 
 ---
 
-## 6. 设计要点总结
+## 9. 设计要点总结
 
 1. **混合生成**：git-cliff 出结构骨架（分组/链接），agent 后处理注入 AI 摘要——纯 CI 方案做不到，纯手写太累
-2. **`--prepend` 策略 + 生成后校验**：CHANGELOG 永不全量重生成，每次只前置插入新段；生成后用版本数校验防覆盖（§3.6）
-3. **版本号同步模型随仓库结构而定**：单组件仓库用三同步（§3.5），多组件仓库用两层模型——全局版每次 bump，组件版改谁 bump 谁（§3.7）
-4. **兜底优先**：`body = ".*"` 兜底 parser + `split(pat="\n") | first` 取首行，保证任何历史提交都不丢且渲染干净
-5. **CI 最小化**：GitHub Action 只做切片 + 建 Release，不生成内容，无状态、可复现
+2. **`--prepend` 策略 + 生成后校验**：CHANGELOG 永不全量重生成，每次只前置插入新段；生成后用版本数校验防覆盖（§4.3）
+3. **版本号同步模型随仓库结构而定**：单组件仓库用三同步（§5.2），多组件仓库用两层模型——全局版每次 bump，组件版改谁 bump 谁（§5.3）
+4. **兜底优先**：`body = ".*"` 兜底 parser + `split(pat="\n") | first` 取首行，保证任何历史提交都不丢且渲染干净（§3.3–§3.4）
+5. **CI 最小化**：GitHub Action 只做切片 + 建 Release，不生成内容，无状态、可复现（§6）
 
 > 这套体系的核心哲学：**结构交给工具（git-cliff），语义交给 AI（摘要），决策交给人（确认）**。三者各司其职，发版从「手工拼凑」变成「一句话 + 一次确认」。
 
@@ -485,7 +533,7 @@ git commit -m "chore: 引入 git-cliff changelog 闭环体系"
 
 ## 附录 A：release skill 完整模板（可直接复制）
 
-> 以下是完整的、可复制的 release skill 文件。复制后只需替换顶部 3 个 `<...>` 占位符即可使用。本模板面向 ZCode / Claude Code 的 skill 格式（YAML frontmatter + Markdown body）；其他 agent 平台可按 §2.2 的流程等价实现，或直接用 shell 脚本包装下面的命令。
+> 以下是完整的、可复制的 release skill 文件。复制后只需替换顶部 3 个 `<...>` 占位符即可使用。本模板面向 ZCode / Claude Code 的 skill 格式（YAML frontmatter + Markdown body）；其他 agent 平台可按 §4.1 的流程等价实现，或直接用 shell 脚本包装下面的命令。
 
 **使用前替换这 3 处占位符：**
 
@@ -605,7 +653,7 @@ GitHub Release 由 `.github/workflows/release.yml` 自动创建，无需本地 `
 
    > ⚠️ **切勿对已存在的 CHANGELOG.md 使用 `-o`（覆盖写入）！**
    > `-o` 会用新版本内容**整文件覆盖**，丢失所有历史版本。必须用 `--prepend`。
-   > 详见 §3.6。
+   > 详见 §4.3。
 
 4. **校验历史版本未丢失**（生成后必须执行）：
    ```bash
@@ -641,7 +689,7 @@ sed -i 's/"version":[[:space:]]*"[0-9][^"]*"/"version": "<VERSION_WITHOUT_V>"/' 
 > 若项目无版本源文件（仅用 tag），跳过本步。
 
 > **多组件仓库**（monorepo / 多 skill）：除顶层版本源外，还需检测并 bump 有改动的组件，
-> 只 bump 变动的、不动未改的。详见 §3.7。
+> 只 bump 变动的、不动未改的。详见 §5.3。
 
 ### Step 3.6: 提交
 
