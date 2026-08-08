@@ -1,7 +1,7 @@
 ---
 title: "【读书笔记】孙宇晨·财务自由革命之路（7）：比特币与区块链 — 财产不可剥夺的乌托邦"
 published: 2026-08-08
-description: 拆解第 101~106 集：从"财产完全属于自己"到去中心化账本、挖矿机制，以及孙宇晨如何把比特币包装成通往无政府资本主义的信仰之路。
+description: 拆解第 101-106 集：从"财产完全属于自己"到去中心化账本、挖矿机制，以及孙宇晨如何把比特币包装成通往无政府资本主义的信仰之路。
 lang: zh
 tags: [读书笔记, 财商]
 ---
@@ -12,7 +12,7 @@ tags: [读书笔记, 财商]
 >
 > [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜**（7）比特币与区块链**｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
 
-本篇覆盖第 101~106 集，是整档节目与主讲人利益最直接相关的章节——孙宇晨本人正是加密货币项目波场 TRON 的创始人（后被 SEC 起诉，见 [（0）背景篇](ReadingNotes-SunYuchenFinancialFreedom00Background)）。他在这里用六集把比特币从一种投资标的，包装成一整套"财产不可剥夺""无政府资本主义""自治社会"的政治哲学。一句话概括：**这是全系列最需要带"利益冲突滤镜"来读的一篇——主讲人同时是加密资产的发行方与布道者。**
+本篇覆盖第 101-106 集，是整档节目与主讲人利益最直接相关的章节——孙宇晨本人正是加密货币项目波场 TRON 的创始人（后被 SEC 起诉，见 [（0）背景篇](ReadingNotes-SunYuchenFinancialFreedom00Background)）。他在这里用六集把比特币从一种投资标的，包装成一整套"财产不可剥夺""无政府资本主义""自治社会"的政治哲学。一句话概括：**这是全系列最需要带"利益冲突滤镜"来读的一篇——主讲人同时是加密资产的发行方与布道者。**
 
 ## 一、比特币的核心魅力：财产完全属于自己（101）
 
@@ -103,7 +103,7 @@ tags: [读书笔记, 财商]
 
 ### 高层级摘要
 
-第 101~106 集是《财务自由革命之路》与主讲人利益最直接相关的章节。孙宇晨用六集把比特币从投资标的，包装成一整套政治哲学——从"财产完全属于自己"的魅力出发，讲清去中心化账本与挖矿的技术机制，把它定位为"通向无政府资本主义的金融基础"，再扩展到区块链"领导无需权威、秩序无需暴力"的自治乌托邦。中间穿插了三条投资铁律（钱包自控、注意价格、长期信仰）和一场直播实战（高位不追、只用亏完不心疼的钱）。整套论述在技术科普层面基本准确（账本本质、算力确认、六次确认），但在政治哲学层面高度个人化——把比特币与"摆脱政府"的边缘意识形态绑定，且主讲人本人正是加密资产的发行方与利益相关方。这是全系列最需要带"利益冲突滤镜"来读的一篇：技术原理可信，投资纪律可用，但"无政府资本主义乌托邦"的叙事需要严格区分理想与现实。
+第 101-106 集是《财务自由革命之路》与主讲人利益最直接相关的章节。孙宇晨用六集把比特币从投资标的，包装成一整套政治哲学——从"财产完全属于自己"的魅力出发，讲清去中心化账本与挖矿的技术机制，把它定位为"通向无政府资本主义的金融基础"，再扩展到区块链"领导无需权威、秩序无需暴力"的自治乌托邦。中间穿插了三条投资铁律（钱包自控、注意价格、长期信仰）和一场直播实战（高位不追、只用亏完不心疼的钱）。整套论述在技术科普层面基本准确（账本本质、算力确认、六次确认），但在政治哲学层面高度个人化——把比特币与"摆脱政府"的边缘意识形态绑定，且主讲人本人正是加密资产的发行方与利益相关方。这是全系列最需要带"利益冲突滤镜"来读的一篇：技术原理可信，投资纪律可用，但"无政府资本主义乌托邦"的叙事需要严格区分理想与现实。
 
 ### 关键要点列表
 
