@@ -7,6 +7,8 @@ tags: [读书笔记, 财商]
 ---
 
 > **本系列**：《孙宇晨：财务自由革命之路》156 集音频节目读书笔记（共 13 篇）
+
+> **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
 > [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜**（11）财富流向**｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
 
