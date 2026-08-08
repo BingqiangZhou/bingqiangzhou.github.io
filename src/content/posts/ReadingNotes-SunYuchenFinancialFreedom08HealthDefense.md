@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜**（8）医疗·财富防御 I**｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜**（8）医疗·财富防御 I**｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 107-117 集，是节目从"如何赚钱"转向"如何守住钱"的转折章节。孙宇晨在这里把医疗定位为"财富防御的第一阵地"——他自述这是 100 多期里最有价值的一章。核心逻辑很清晰：**复利定律下，一次大额亏损就能让多年积累归零；而中产阶级致贫的首要原因，正是"因病致贫、因病返贫"。** 一句话概括：学一夜暴富之前，先学会保住棺材本。
 
@@ -106,7 +106,7 @@ tags: [读书笔记, 财商]
 
 > 随意流动，一辈子就像一个流动的圣洁。不在乎是否曾经拥有，只在乎此刻是否享受奢华品质——体验大于拥有。
 
-这集是从"医疗防御"过渡到下一章"家人边界"的桥梁，核心判断与 [（3）三不主义篇](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo) 的"游牧民族心态"一脉相承。
+这集是从"医疗防御"过渡到下一章"家人边界"的桥梁，核心判断与 [（3）三不主义篇](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/) 的"游牧民族心态"一脉相承。
 
 ## 总结
 
@@ -143,4 +143,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin) ｜ **下一篇**：[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)——财富流失的第二大黑洞是家人，孙宇晨如何讲"合伙之前先散伙"。
+> **上一篇**：[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/) ｜ **下一篇**：[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)——财富流失的第二大黑洞是家人，孙宇晨如何讲"合伙之前先散伙"。

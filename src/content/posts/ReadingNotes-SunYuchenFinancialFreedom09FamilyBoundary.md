@@ -10,9 +10,9 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜**（9）家人边界·财富防御 II**｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜**（9）家人边界·财富防御 II**｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
-本篇覆盖第 118-124 集，是"财富防御"的第二阵地（第一阵地是医疗，见 [（8）](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)）。孙宇晨在这里提出一个扎心的判断：**财富自由有两大流失主因——一是疾病，二是家人；绝大多数财务崩溃与家人关系处理不当有关。** 他用周亚辉、王宁、土豆网、真功夫等创始人的离婚案说明，一次婚变就能让百亿市值缩水一半，远比商业竞争对手更致命。一句话概括：合伙之前先想好散伙，家人之间是平等独立的个体而非互相牺牲。
+本篇覆盖第 118-124 集，是"财富防御"的第二阵地（第一阵地是医疗，见 [（8）](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)）。孙宇晨在这里提出一个扎心的判断：**财富自由有两大流失主因——一是疾病，二是家人；绝大多数财务崩溃与家人关系处理不当有关。** 他用周亚辉、王宁、土豆网、真功夫等创始人的离婚案说明，一次婚变就能让百亿市值缩水一半，远比商业竞争对手更致命。一句话概括：合伙之前先想好散伙，家人之间是平等独立的个体而非互相牺牲。
 
 ## 一、合伙之前先散伙：婚姻如并购（118-119）
 
@@ -92,7 +92,7 @@ tags: [读书笔记, 财商]
 > 我们不仅要保护每个人财富自由的权利，也要保护他自愿堕入贫穷的权利。
 
 :::tip[我的思考]
-"用事实说服人，不用道理说服人"这条心法，是对前面所有"家人边界"理论的完美收束。它承认了一个现实——你很难用语言改变一个成年人根深蒂固的三观，唯一有效的办法是用结果制造落差。这既避免了无谓的家庭争辩（伤感情又没用），又把注意力拉回到"先把自己混牛"这个唯一可控的变量上。这与 [（1）世界观篇](ReadingNotes-SunYuchenFinancialFreedom01Worldview) 第 021 集的"和解哲学"完全呼应：先把自己混牛了再开口，几乎是与家人相处的最优解。
+"用事实说服人，不用道理说服人"这条心法，是对前面所有"家人边界"理论的完美收束。它承认了一个现实——你很难用语言改变一个成年人根深蒂固的三观，唯一有效的办法是用结果制造落差。这既避免了无谓的家庭争辩（伤感情又没用），又把注意力拉回到"先把自己混牛"这个唯一可控的变量上。这与 [（1）世界观篇](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/) 第 021 集的"和解哲学"完全呼应：先把自己混牛了再开口，几乎是与家人相处的最优解。
 :::
 
 ## 总结
@@ -128,4 +128,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense) ｜ **下一篇**：[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)——中国人为什么富不起来？孙宇晨从"抢劫文化"到"割韭菜"的历史溯源。
+> **上一篇**：[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/) ｜ **下一篇**：[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)——中国人为什么富不起来？孙宇晨从"抢劫文化"到"割韭菜"的历史溯源。

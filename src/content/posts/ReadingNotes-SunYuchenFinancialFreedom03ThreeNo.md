@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜**（3）90 后三不主义**｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜**（3）90 后三不主义**｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 39-62 集，是整档节目传播度最高、也最具争议的部分——"90 后三不主义"：不结婚、不买房、不买车。孙宇晨在这里把三件中国人最看重的人生大事逐一"去魅"，还原为他眼中的经济本质：婚姻是经济联盟、房子是投资品、车是负债。在"三不"之前，他先用 039 集重新定义"成年"，为整套主张铺好精神前提。一句话概括：**三不是手段，自我增值才是目的。**
 
@@ -144,4 +144,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity) ｜ **下一篇**：[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)——复利定律、一万小时定律、反馈体系，孙宇晨如何讲透"积累"这件事。
+> **上一篇**：[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/) ｜ **下一篇**：[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)——复利定律、一万小时定律、反馈体系，孙宇晨如何讲透"积累"这件事。

@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜**（2）穷人思维与流动性过剩**｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜**（2）穷人思维与流动性过剩**｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 22-38 集，是节目从"价值观"过渡到"金融常识"的桥梁。前半（022-031）继续解剖"穷人思维"，把它从教育延伸到成败归因、家庭边界与代际转型；后半（032-038）正式进入金融认知章节，从布雷顿森林体系讲到全球流动性过剩，推出"节俭是贫穷的前兆、扩大可控负债"的激进主张。一句话概括孙宇晨在这里的核心判断：**这个时代的货币制度本身就在奖励激进、惩罚保守。**
 
@@ -56,7 +56,7 @@ tags: [读书笔记, 财商]
 
 ## 三、家庭边界：不兜底，不超义务（029-031）
 
-这三集是"家人边界"主题的预演（正式章节在第 118-124 集，见 [（9）家人边界篇](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)）。
+这三集是"家人边界"主题的预演（正式章节在第 118-124 集，见 [（9）家人边界篇](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)）。
 
 第 029 集的核心主张相当干脆：**任何关系都不应存在兜底义务**——子女不给父母兜底、父母不给子女兜底，正如国家与公民互不兜底。绝大多数家庭悲剧源于"暗示能兜底却兜不住底"的巨大期望落差（如父母买不了婚房被子女殴打）。子女对父母应尽的是帮其建立安全网（保险、法定赡养），但不得提供超义务帮助；金钱帮助应基于朋友式的无偿付出，而非亲情绑架。
 
@@ -161,4 +161,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview) ｜ **下一篇**：[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)——不结婚、不买房、不买车，孙宇晨如何把"三不"重新定义为一套主动的人生战略。
+> **上一篇**：[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/) ｜ **下一篇**：[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)——不结婚、不买房、不买车，孙宇晨如何把"三不"重新定义为一套主动的人生战略。

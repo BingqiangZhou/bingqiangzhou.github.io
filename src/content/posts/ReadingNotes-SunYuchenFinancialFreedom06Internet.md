@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜**（6）互联网**｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜**（6）互联网**｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 88-100 集，是节目"方法论"部分的高潮。前八集（088-095、096-097）系统论证互联网为何是"中国转型期最后一条上升通道"——它创造增量、远离管制、洗牌快、爆发快；后三集（098-100）借吴晓波《大败局》和史玉柱的大起大落，讲透"失败学"。一句话概括：**进互联网创业公司是上升通道，而研究失败比研究成功更能昭示商业本质。**
 
@@ -39,7 +39,7 @@ tags: [读书笔记, 财商]
 第 092 集把论述升华：互联网人如同五月花号船员，为逃离欧洲教会、行会的处处管制冒死奔赴美洲新大陆。第一批进入互联网的，都是"被放逐的高贵自由者"。但孙宇晨也清醒地警告——**不出 20 年，必有一批组织靠敲诈互联网公司生存，"互联网创业也要趁早"。**
 
 :::warning[编者注]
-这三集对"互联网远离管制"的描述，是本篇最需要结合现实校准的部分。孙宇晨录制时（2016-2017）互联网确实处于监管相对宽松的窗口期，但他自己预判的"管制会加强"在随后几年迅速应验：2021 年起中国对平台经济的反垄断、数据安全、算法监管全面收紧，教培行业"双减"、滴滴审查、蚂蚁整改接连发生。同时，他自述陪 我 APP "从未被动保、女性权益组织上门抗议"——如 [（0）背景篇](ReadingNotes-SunYuchenFinancialFreedom00Background) 所述，该产品同期正被新华社曝光涉黄。把一个正处监管风暴中的产品描述为"远离管制的净土"，与现实有出入。
+这三集对"互联网远离管制"的描述，是本篇最需要结合现实校准的部分。孙宇晨录制时（2016-2017）互联网确实处于监管相对宽松的窗口期，但他自己预判的"管制会加强"在随后几年迅速应验：2021 年起中国对平台经济的反垄断、数据安全、算法监管全面收紧，教培行业"双减"、滴滴审查、蚂蚁整改接连发生。同时，他自述陪 我 APP "从未被动保、女性权益组织上门抗议"——如 [（0）背景篇](/posts/readingnotes-sunyuchenfinancialfreedom00background/) 所述，该产品同期正被新华社曝光涉黄。把一个正处监管风暴中的产品描述为"远离管制的净土"，与现实有出入。
 :::
 
 ## 三、洗牌快、爆发快：现在进入永远来得及（093-095）
@@ -141,4 +141,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty) ｜ **下一篇**：[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)——从"财产不可剥夺"到账本本质，孙宇晨如何为他后来的波场帝国铺设思想地基。
+> **上一篇**：[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/) ｜ **下一篇**：[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)——从"财产不可剥夺"到账本本质，孙宇晨如何为他后来的波场帝国铺设思想地基。

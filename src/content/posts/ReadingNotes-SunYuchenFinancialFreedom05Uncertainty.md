@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜**（5）不确定性**｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜**（5）不确定性**｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 75-87 集，是节目从"积累方法论"过渡到"互联网创业"的桥梁章节。孙宇晨在这里完成了一次认知翻转：**把"不确定性"从应该回避的风险，重新定义为产生财富的土壤。** 他从量子力学讲起，给出 MVP 快速迭代、正收益系统叠加两套实操方法，并用大量篇幅批判公务员和国企的"稳定幻象"。一句话概括：**稳定就是最大的不稳定，拥抱不确定性才是这个时代的生存之道。**
 
@@ -143,4 +143,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation) ｜ **下一篇**：[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)——为什么互联网是"最后一条上升通道"，以及孙宇晨如何借《大败局》讲失败学。
+> **上一篇**：[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/) ｜ **下一篇**：[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)——为什么互联网是"最后一条上升通道"，以及孙宇晨如何借《大败局》讲失败学。

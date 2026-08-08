@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜**（1）开篇世界观**｜[（2）流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜**（1）开篇世界观**｜[（2）流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖节目第 1-21 集，是整档节目的"地基"：5 条名人推荐、1 集创刊词、1 集投资精华，加上正片 010-021。孙宇晨在这里完成了三件事——重新定义"财富自由"、用案例破除常见误读、抛出 52 周课纲与"价值观站队"的战略地图。理解这一篇，等于拿到了后续 130 多集的解码钥匙。
 
@@ -21,7 +21,7 @@ tags: [读书笔记, 财商]
 几条推荐的内容其实高度同构：都把孙宇晨定位成"90 后里靠读书、出国、投资、创业，20 多岁就实现财务自由"的样本。冯仑称他是"非常棒的创业者"，吴晓波强调他"对投资有独特的方法论"，鲁豫则点出他"坚信所有人都可以实现财富自由"的布道气质。
 
 :::note[背景]
-这五条推荐的含金量需要打折看。它们录制于 2016 年节目上线时，彼时孙宇晨的身份是"湖畔大学首期学员、陪我 APP 董事长"，距他后来被 SEC 起诉、被坊间称为"币圈贾跃亭"还有几年。名人站台是商业内容常见的营销手段，本身不构成对内容质量的担保。**[（0）背景篇](ReadingNotes-SunYuchenFinancialFreedom00Background)** 有更详细的时间线。
+这五条推荐的含金量需要打折看。它们录制于 2016 年节目上线时，彼时孙宇晨的身份是"湖畔大学首期学员、陪我 APP 董事长"，距他后来被 SEC 起诉、被坊间称为"币圈贾跃亭"还有几年。名人站台是商业内容常见的营销手段，本身不构成对内容质量的担保。**[（0）背景篇](/posts/readingnotes-sunyuchenfinancialfreedom00background/)** 有更详细的时间线。
 :::
 
 ## 二、创刊词：财富自由首先是精神自由（006-007）
@@ -85,7 +85,7 @@ tags: [读书笔记, 财商]
 **第 014 集《北京土著的移民理想》** 讲 26 岁北京男生"五二郎"，月薪约 1 万、三环小两居、一辆 15-20 万车、月光，却幻想财务自由后移民日本小城、每天只工作 1-4 小时。孙宇晨判断他对财富自由的想象全错：周游世界、健身、画画、听音乐、打游戏都是"短时间就能做完的放松活动"，填不满自由后三四十年的人生。他反复强调"防御型人格"要不得，实现财富自由恰恰需要把安逸人格彻底剔除，换成热爱竞争的"繁荣人格"。
 
 :::note[背景]
-值得注意的是，第 013 集的案例分析里，孙宇晨已经把"家人边界"的论点前置了——这个主题要到第 118-124 集才正式成章（见 [（9）家人边界篇](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)）。他在第 1 篇就埋下伏笔，说明"边界"是他整套世界观的早期支柱之一。
+值得注意的是，第 013 集的案例分析里，孙宇晨已经把"家人边界"的论点前置了——这个主题要到第 118-124 集才正式成章（见 [（9）家人边界篇](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)）。他在第 1 篇就埋下伏笔，说明"边界"是他整套世界观的早期支柱之一。
 :::
 
 ### 第一章总结：因信仰自由而财富自由（015）
@@ -180,4 +180,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background) ｜ **下一篇**：[（2）流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)——拆解布雷顿森林体系的建立与崩塌，以及孙宇晨为何在通胀时代呼吁"扩大可控负债"。
+> **上一篇**：[（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/) ｜ **下一篇**：[（2）流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)——拆解布雷顿森林体系的建立与崩塌，以及孙宇晨为何在通胀时代呼吁"扩大可控负债"。

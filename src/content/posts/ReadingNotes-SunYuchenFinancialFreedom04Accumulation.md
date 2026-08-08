@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜**（4）原始积累**｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜**（4）原始积累**｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 63-74 集，是节目从"该做什么"转向"怎么做"的关键章节。前半（063-071）讲透"原始积累"的三大定律——复利、一万小时、巧用杠杆；后半（073-074）补上被很多人忽略的一环：**道德合法性**——孙宇晨认为，个人奋斗若不能在道德上建立合法性，就谈不上真正执行。中间穿插的番外（066-068、072）则展示了他对 90 后亚文化资本化的洞察。一句话概括本篇核心：**财富自由不是速成，而是把对的事持续做足够久。**
 
@@ -55,7 +55,7 @@ tags: [读书笔记, 财商]
 第 067 集是演讲后的圆桌采访，谈陪我 APP 的产品逻辑（声音社交、实施替代延时），以及一句值得记住的企业家心态——"敬畏周期，相信市场"。第 068 集定义 90 后三大特征（自由、颠覆、个性化），点出"偶像已死，人人都是偶像"。
 
 :::note[背景]
-这组番外里，孙宇晨多次拿自己运营的"陪我 APP"作为"亚文化资本化"的成功案例来宣讲。但如 [（0）背景篇](ReadingNotes-SunYuchenFinancialFreedom00Background) 所述，陪我 APP 同期正被新华社曝光涉黄、被财新调查涉嫌非法集资与洗钱。把一个正处在监管风暴中的产品作为"成功方法论"来讲，是阅读这组番外时必须知道的背景。
+这组番外里，孙宇晨多次拿自己运营的"陪我 APP"作为"亚文化资本化"的成功案例来宣讲。但如 [（0）背景篇](/posts/readingnotes-sunyuchenfinancialfreedom00background/) 所述，陪我 APP 同期正被新华社曝光涉黄、被财新调查涉嫌非法集资与洗钱。把一个正处在监管风暴中的产品作为"成功方法论"来讲，是阅读这组番外时必须知道的背景。
 :::
 
 第 072 集是出书番外，《这世界既残酷也温柔》于 2017 年 3 月出版。他自述从"一万块都不到起家，到完成赚他一个亿的小目标"，强调"战略是核心，战略解决百分之八九十的问题"。
@@ -147,4 +147,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo) ｜ **下一篇**：[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)——为何"稳定就是最大的不稳定"，以及孙宇晨如何用薛定谔的猫讲创业。
+> **上一篇**：[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/) ｜ **下一篇**：[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)——为何"稳定就是最大的不稳定"，以及孙宇晨如何用薛定谔的猫讲创业。

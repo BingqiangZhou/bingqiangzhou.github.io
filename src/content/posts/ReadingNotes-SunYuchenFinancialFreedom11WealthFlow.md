@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions)｜**（11）财富流向**｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/)｜**（11）财富流向**｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 132-143 集，是节目从"财富规律"过渡到"主讲人自家项目"的关键章节。前七集（132-139）给出了几个真正有洞察的财富规律——**金钱流向规则制定领域、非线性指数增长、弯道超车、打破规则者被奖励**；后四集（140-143）则用"碳基→硅基"的宏大叙事，自然过渡到为自家波场 TRON 项目招聘、布道、预告 ICO。一句话概括：**前半的规律是真的，后半的推荐是主讲人作为发行方的自我营销——这两者被刻意缝合在了一起。**
 
@@ -89,7 +89,7 @@ tags: [读书笔记, 财商]
 :::warning[编者注]
 这两集是整档节目利益冲突最赤裸的部分。孙宇晨把前面 11 集建立的"财富规律"权威，直接转化为对自家项目 TRON 的信用背书——听众如果接受了"金钱流向规则制定领域""硅基化是必然趋势""持有 20%-30% 数字资产"这套逻辑，自然就会得出"应该参与波场 ICO"的结论。
 
-但如 [（0）背景篇](ReadingNotes-SunYuchenFinancialFreedom00Background) 所述，波场 TRX 后来正是被美国 SEC 起诉的核心对象——指控包括未注册发行证券、刷量操纵市场（wash trading）、付费请明星代言未披露。把"主讲人推销自家代币"伪装成"客观财富规律推导"，是这两集最需要警惕的修辞。读者应明确区分：**"碳基→硅基""金钱流向规则制定领域"这些规律是真的，但"所以你应该买我的代币"这个结论，是利益驱动的自我营销，而非规律的必然推论。**
+但如 [（0）背景篇](/posts/readingnotes-sunyuchenfinancialfreedom00background/) 所述，波场 TRX 后来正是被美国 SEC 起诉的核心对象——指控包括未注册发行证券、刷量操纵市场（wash trading）、付费请明星代言未披露。把"主讲人推销自家代币"伪装成"客观财富规律推导"，是这两集最需要警惕的修辞。读者应明确区分：**"碳基→硅基""金钱流向规则制定领域"这些规律是真的，但"所以你应该买我的代币"这个结论，是利益驱动的自我营销，而非规律的必然推论。**
 :::
 
 ## 总结
@@ -125,4 +125,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（10）财富天问](ReadingNotes-SunYuchenFinancialFreedom10WealthQuestions) ｜ **下一篇**：[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)——明治维新式的自我革命、听众案例点评，以及节目的终章"我们就是这个时代的既得利益者"。
+> **上一篇**：[（10）财富天问](/posts/readingnotes-sunyuchenfinancialfreedom10wealthquestions/) ｜ **下一篇**：[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)——明治维新式的自我革命、听众案例点评，以及节目的终章"我们就是这个时代的既得利益者"。

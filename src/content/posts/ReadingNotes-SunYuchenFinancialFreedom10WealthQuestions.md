@@ -10,7 +10,7 @@ tags: [读书笔记, 财商]
 
 > **资源**：[喜马拉雅原节目](https://www.ximalaya.com/album/98108036) ｜ [资料存档（夸克网盘）](https://pan.quark.cn/s/436549875f1b)
 >
-> [（0）人物背景与争议](ReadingNotes-SunYuchenFinancialFreedom00Background)｜[（1）开篇世界观](ReadingNotes-SunYuchenFinancialFreedom01Worldview)｜[（2）穷人思维与流动性过剩](ReadingNotes-SunYuchenFinancialFreedom02Liquidity)｜[（3）90 后三不主义](ReadingNotes-SunYuchenFinancialFreedom03ThreeNo)｜[（4）原始积累](ReadingNotes-SunYuchenFinancialFreedom04Accumulation)｜[（5）不确定性](ReadingNotes-SunYuchenFinancialFreedom05Uncertainty)｜[（6）互联网](ReadingNotes-SunYuchenFinancialFreedom06Internet)｜[（7）比特币与区块链](ReadingNotes-SunYuchenFinancialFreedom07Bitcoin)｜[（8）医疗·财富防御 I](ReadingNotes-SunYuchenFinancialFreedom08HealthDefense)｜[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary)｜**（10）财富天问**｜[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)｜[（12）一周年复盘](ReadingNotes-SunYuchenFinancialFreedom12Retrospective)
+> [（0）人物背景与争议](/posts/readingnotes-sunyuchenfinancialfreedom00background/)｜[（1）开篇世界观](/posts/readingnotes-sunyuchenfinancialfreedom01worldview/)｜[（2）穷人思维与流动性过剩](/posts/readingnotes-sunyuchenfinancialfreedom02liquidity/)｜[（3）90 后三不主义](/posts/readingnotes-sunyuchenfinancialfreedom03threeno/)｜[（4）原始积累](/posts/readingnotes-sunyuchenfinancialfreedom04accumulation/)｜[（5）不确定性](/posts/readingnotes-sunyuchenfinancialfreedom05uncertainty/)｜[（6）互联网](/posts/readingnotes-sunyuchenfinancialfreedom06internet/)｜[（7）比特币与区块链](/posts/readingnotes-sunyuchenfinancialfreedom07bitcoin/)｜[（8）医疗·财富防御 I](/posts/readingnotes-sunyuchenfinancialfreedom08healthdefense/)｜[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/)｜**（10）财富天问**｜[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)｜[（12）一周年复盘](/posts/readingnotes-sunyuchenfinancialfreedom12retrospective/)
 
 本篇覆盖第 125-131 集，是整档节目"宏观诊断"最深的一章。孙宇晨从湖畔大学的讨论出发，提出"中国财富两个天问"——**穷人为什么致富总是很难？富人为什么从来富不过三代？** 他的答案锋利且系统：整个社会对财产权的漠视与践踏、"抢劫文化"的国民性、历史课本对暴力抢劫的美化、每半个世纪一次的财富洗牌。一句话概括：**中国人勤劳却难富，根源不在不够努力，而在财产权缺乏神圣感与制度保障。**
 
@@ -92,7 +92,7 @@ tags: [读书笔记, 财商]
 - **创业三要素**？包爱乐：商业模式靠谱、团队凝聚扛压、快速执行出成果（快比什么都重要）。
 
 :::warning[编者注]
-孙宇晨在这集再次把"快速获取财富的手段"答案指向"比特币和区块链"，并自称"2012 年买入、2014 年获第一桶金，愿献身一生"。结合 [（0）背景篇](ReadingNotes-SunYuchenFinancialFreedom00Background)——他后来创立的波场 TRX 正是被 SEC 指控为未注册证券、并伴随刷量操纵——读者需要意识到：主讲人在节目里反复推荐的"快速致富赛道"，恰恰是他自己作为发行方和受益方的赛道。这种利益冲突，是阅读本集时不可省略的背景。
+孙宇晨在这集再次把"快速获取财富的手段"答案指向"比特币和区块链"，并自称"2012 年买入、2014 年获第一桶金，愿献身一生"。结合 [（0）背景篇](/posts/readingnotes-sunyuchenfinancialfreedom00background/)——他后来创立的波场 TRX 正是被 SEC 指控为未注册证券、并伴随刷量操纵——读者需要意识到：主讲人在节目里反复推荐的"快速致富赛道"，恰恰是他自己作为发行方和受益方的赛道。这种利益冲突，是阅读本集时不可省略的背景。
 :::
 
 ## 总结
@@ -129,4 +129,4 @@ tags: [读书笔记, 财商]
 
 ---
 
-> **上一篇**：[（9）家人边界·财富防御 II](ReadingNotes-SunYuchenFinancialFreedom09FamilyBoundary) ｜ **下一篇**：[（11）财富流向](ReadingNotes-SunYuchenFinancialFreedom11WealthFlow)——金钱流向规则制定领域，以及蔡崇信放弃百万年薪加入阿里的非线性通道。
+> **上一篇**：[（9）家人边界·财富防御 II](/posts/readingnotes-sunyuchenfinancialfreedom09familyboundary/) ｜ **下一篇**：[（11）财富流向](/posts/readingnotes-sunyuchenfinancialfreedom11wealthflow/)——金钱流向规则制定领域，以及蔡崇信放弃百万年薪加入阿里的非线性通道。
