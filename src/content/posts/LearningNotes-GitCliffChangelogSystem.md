@@ -657,8 +657,8 @@ GitHub Release 由 `.github/workflows/release.yml` 自动创建，无需本地 `
 
 4. **校验历史版本未丢失**（生成后必须执行）：
    ```bash
-   echo "CHANGELOG 版本数: $(grep -c '^## v' CHANGELOG.md)"
-   echo "Git tag 数:       $(git tag --list 'v*' | wc -l)"
+   echo "CHANGELOG 版本数：$(grep -c '^## v' CHANGELOG.md)"
+   echo "Git tag 数：      $(git tag --list 'v*' | wc -l)"
    ```
    两个数字**必须相等**。若 CHANGELOG 版本数 < tag 数，说明历史被覆盖，
    立即 `git checkout CHANGELOG.md` 恢复后用 `--prepend` 重试。

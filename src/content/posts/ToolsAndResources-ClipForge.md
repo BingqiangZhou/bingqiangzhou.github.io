@@ -10,7 +10,7 @@ abbrlink: clipforge-ai-product-video-tool
 > 整理日期：2026-08-05
 > 项目地址：[xixihhhh/clipforge](https://github.com/xixihhhh/clipforge)（原『带货剪手 / daihuo-jianshou』，仓库、Star、历史全部延续）
 > 官网：<https://xixihhhh.github.io/clipforge/>
-> License：AGPL-3.0 © 2026 xixihhhh
+> License: AGPL-3.0 © 2026 xixihhhh
 > 说明：本笔记基于该项目 README + 源码（`src/lib/script-engine/`、`src/lib/providers/`、`src/lib/video-composer/`、`src/app/api/project/[id]/`，截至 2026-08 main 分支）研读整理。关键信息均附原始出处；AI 模型与平台迭代极快，正式商用前请以各平台最新页面为准。
 
 ## 一、它是什么、解决什么
@@ -226,7 +226,7 @@ export interface VideoOptions {
 }
 ```
 
-各平台调用协议差异极大（同步 vs 异步轮询、字段名、鉴权方式），Provider 层全部抹平。比如首帧字段：Atlas 用 `image`/`last_image`、fal 用 `image_url`、Replicate 同时写 `start_image` 和 `image` 兼容不同模型、火山用 `content` 数组的 `image_url`、阿里用 `input.img_url`、硅基流动用 `image`、OpenAI 无视频。详见 §九-2 资源表。
+各平台调用协议差异极大（同步 vs 异步轮询、字段名、鉴权方式），Provider 层全部抹平。比如首帧字段：Atlas 用 `image`/`last_image`、fal 用 `image_url`、Replicate 同时写 `start_image` 和 `image` 兼容不同模型、火山用 `content` 数组的 `image_url`、阿里用 `input.img_url`、硅基流动用 `image`、OpenAI 无视频。详见 §九 -2 资源表。
 
 ### 4.2 商品保真 + 付费安全（issue #16）
 
@@ -305,7 +305,7 @@ export interface StockCandidate {
 | `pixabay` | ❌ | video, image | ✅ | `?key=` 查询参数 |
 | `coverr` | ❌ | video | ✅ | 精选实拍，2000 次/时，署名必带 |
 | `jamendo` | ❌ | audio | ✅ | 服务端 + 客户端双重过滤，**纯 CC-BY 才活下来**（NC/ND/SA 全排除） |
-| `freesound` | ❌ | audio | ✅ | 50 万+ 音效，`filter=license:("Attribution" OR "Creative Commons 0")`，用 128kbps HQ mp3 预览 |
+| `freesound` | ❌ | audio | ✅ | 50 万 + 音效，`filter=license:("Attribution" OR "Creative Commons 0")`，用 128kbps HQ mp3 预览 |
 | `local` | ✅ | video, image | ✅ | 项目素材池，`fs.copyFile` |
 | `nasa` | ✅ | video, image | ❌ | 公共领域，显式选用 |
 | `archive` | ✅ | video, image | ❌ | Internet Archive，`publicdomain` 强制 |
@@ -369,9 +369,9 @@ const SEGMENT_NORM = "format=yuv420p,setsar=1,fps=30,settb=AVTB";
 
 一个具体 bug 值得记：用 `expansion=none` 是为了让「50% off」里的 `%` 字面渲染——`\\%` 形式在 FFmpeg 8 会触发「Stray %」并把字幕整段置空。竖直位置用安全区比例：有商品卡时锚 `h*0.83`、无卡时 `h*0.78`（避开平台底部 UI 区），按底边锚让多行向上长不溢出。
 
-**Path B —— 卡拉OK逐字高亮（libass / ASS 烧录）**：开启后整句留屏、每字随旁白点亮。**因为 ClipForge 自己生成 TTS、知道文本，所以不需要 ASR**——逐行时长按字/词比例切。ASS 用 `\k` 标签，**数字强调是电商爆款套路**：含数字的字（`50%`、`9.9`、`¥39`）自动放大到 `fontSize*1.35` 并改橙色 `&H000050FF`。
+**Path B —— 卡拉 OK 逐字高亮（libass / ASS 烧录）**：开启后整句留屏、每字随旁白点亮。**因为 ClipForge 自己生成 TTS、知道文本，所以不需要 ASR**——逐行时长按字/词比例切。ASS 用 `\k` 标签，**数字强调是电商爆款套路**：含数字的字（`50%`、`9.9`、`¥39`）自动放大到 `fontSize*1.35` 并改橙色 `&H000050FF`。
 
-四档字幕预设（`caption-presets.ts`）：`standard`（白字+半透黑底）/ `bold`（大号粗描边无底板，重击风）/ `minimal`（小号细描边）/ `karaoke`。全入口（video 页、CLI `--caption`、MCP `captionPreset`）可选，带像素级回归测试。
+四档字幕预设（`caption-presets.ts`）：`standard`（白字 + 半透黑底）/ `bold`（大号粗描边无底板，重击风）/ `minimal`（小号细描边）/ `karaoke`。全入口（video 页、CLI `--caption`、MCP `captionPreset`）可选，带像素级回归测试。
 
 ### 5.4 转场四模式
 
@@ -415,11 +415,11 @@ compose 路由按分镜类型给默认运镜：`hook→zoom_in_slow`、`product_
 **隐式（文件元数据，`compliance-metadata.ts`）**：往 MP4 标准标签里写三元组（因为 MP4 自定义 key 可能被静默丢弃，所以写可靠可读的标准 tag）：
 
 ```ts
-const triple = `AIGC=1; 内容=AI生成合成; 服务提供者=${provider}; 内容制作编号=${id}`;
+const triple = `AIGC=1; 内容=AI 生成合成; 服务提供者=${provider}; 内容制作编号=${id}`;
 return [
   ["comment", triple],
   ["copyright", `AI-generated content by ${provider}`],
-  ["description", `本视频含AI生成合成内容（服务提供者:${provider} 编号:${id}）`],
+  ["description", `本视频含 AI 生成合成内容（服务提供者:${provider} 编号:${id}）`],
 ];
 ```
 
@@ -433,7 +433,7 @@ return [
 |---|---|---|
 | 绝对化用语（《广告法》第 9 条） | high | 最佳、最好、最强、国家级、顶级、极致、100%、百分百、绝对、销量第一、全网最低价、史上最低、第一品牌 |
 | 医疗/虚假功效 | high | 根治、包治、治愈、药到病除、立竿见影、三天见效、抗癌、消炎、杀菌、处方药、药妆、医疗级 |
-| 需认证宣称 | med | 纯天然、零添加、无添加、有机食品、100%天然 |
+| 需认证宣称 | med | 纯天然、零添加、无添加、有机食品、100% 天然 |
 | 虚假紧迫 | med | 最后一天、仅此一天、错过不再有、马上涨价、明天恢复原价、最后几件 |
 
 匹配用子串 `includes`，去重后移除被更长词包含的短词（`100%` 被 `100%天然` 吞掉），按 high 优先排序。同时扫 `voiceover` 和 `textOverlay.text`。
@@ -462,13 +462,13 @@ return [
 | Instagram Reels | 1080×1920 | 9:16 | **5000** | 60 |
 | YouTube Shorts | 1080×1920 | 9:16 | 8000 | 60 |
 
-逻辑：上传码率超线 → 平台强制二次转码变糊；压在线下 → 平台直接用你的像素。比例转换用 **blur-pad**（模糊放大背景 + 居中前景，不裁字幕、不黑边）。**CRF + VBV 双约束**：`-crf 20` 选质量，`vbvArgs(cap)` 硬卡峰值——预留 200kbps 给音频+容器开销，`videoCap = maxVideoKbps - 200`，`-bufsize = 2 × maxrate`（VOD 标准）。抖音 6000 → `-maxrate 5800k -bufsize 11600k`。导出后 `probeEncodeStats` 用 ffprobe 回读真实码率，`buildBitrateReport` 给出「实测 4120kbps ≤ 线 6000kbps（68%），预计免二次压缩」的双语报告。
+逻辑：上传码率超线 → 平台强制二次转码变糊；压在线下 → 平台直接用你的像素。比例转换用 **blur-pad**（模糊放大背景 + 居中前景，不裁字幕、不黑边）。**CRF + VBV 双约束**：`-crf 20` 选质量，`vbvArgs(cap)` 硬卡峰值——预留 200kbps 给音频 + 容器开销，`videoCap = maxVideoKbps - 200`，`-bufsize = 2 × maxrate`（VOD 标准）。抖音 6000 → `-maxrate 5800k -bufsize 11600k`。导出后 `probeEncodeStats` 用 ffprobe 回读真实码率，`buildBitrateReport` 给出「实测 4120kbps ≤ 线 6000kbps（68%），预计免二次压缩」的双语报告。
 
 ### 6.5 电商效率工具
 
 围绕主链路的规模化能力：商品库（商品信息录一次反复用）/ 批量出片（选 10 个商品一键批量全成片，免费路径 0 Key）/ 爆款模板（跑出数据的脚本存为模板）/ 爆款复刻（输入竞品爆款视频链接，ffmpeg 解析镜头切点出节奏骨架，AI 提取脚本逻辑换品重拍）/ 品牌设置（Logo 水印/品牌色/统一片尾）/ 人物管理 / A/B 多版本（同一条片重渲成不同字幕风格 + 配乐的变体，全程免 Key）/ 效果回流（发布后回填播放/点赞/成交，跨项目按品类聚合出哪种风格更卖，反灌下次脚本生成）。
 
-## 六-补、完全不配 API Key，整条出片链路怎么走通
+## 六 - 补、完全不配 API Key，整条出片链路怎么走通
 
 ClipForge 最反直觉的设计是：**一个 Key 都不配，也能从「一句话主题」或「一张商品图 + 商品名」走到一条带配音、字幕、BGM 的成片**。这一节把这条免 Key 闭环的每一环拆开看。
 
@@ -754,7 +754,7 @@ cd clipforge && pnpm install && pnpm dev
 - **视频生成**：Seedance 2.0 ⭐（原生音频、4-15s、最高 1440p）/ Kling 3.0 Pro / Veo 3 / Vidu Q3 Pro（首尾帧过渡神器）/ Hailuo 2.3 / Luma Ray 2 / Seedance 1.5 Pro / 万相 2.6
 - **图片生成**：GPT Image 2 ⭐（任意分辨率、9:16 竖屏直出、商品保真编辑）/ Nano Banana 2 / FLUX.2 Pro / Recraft V4 Pro / Seedream 5.0 Lite（支持 edit 锁定主体重绘）/ 万相
 
-> T2V = 文生视频, I2V = 图生视频。带货场景建议优先用 **edit 类模型**（GPT Image 2 / Seedream edit）对商品原图重绘背景，锁定商品主体不被篡改。
+> T2V = 文生视频，I2V = 图生视频。带货场景建议优先用 **edit 类模型**（GPT Image 2 / Seedream edit）对商品原图重绘背景，锁定商品主体不被篡改。
 
 ### 9.4 LLM 选项（脚本生成，走 OpenAI 兼容协议）
 
@@ -770,7 +770,7 @@ cd clipforge && pnpm install && pnpm dev
 | **Pixabay** | 免费 Key | 视频 / 图片 | `?key=<API_KEY>` 查询参数 |
 | **Pexels** | 免费 Key | 视频 / 图片 | `Authorization: <API_KEY>` 头（无 Bearer） |
 | **Coverr** 🆕 | 免费 Key | 视频 | `Authorization: Bearer <API_KEY>`；2000 次/时 |
-| **Jamendo** 🆕 | 免费 Key | 音乐 BGM | `?client_id=<ID>`；NC/ND/SA 服务端+客户端双重排除 |
+| **Jamendo** 🆕 | 免费 Key | 音乐 BGM | `?client_id=<ID>`；NC/ND/SA 服务端 + 客户端双重排除 |
 | **Freesound** 🆕 | 免费 Key | 音效 | `?token=<API_KEY>`；`filter=license:("Attribution" OR "Creative Commons 0")` |
 | **本地素材** | ✅ | 视频 / 图片 | 无；`fs.copyFile` |
 | **NASA 影像库** | ✅ | 视频 / 图片 | 无；公共领域，显式选用不进聚合 |
