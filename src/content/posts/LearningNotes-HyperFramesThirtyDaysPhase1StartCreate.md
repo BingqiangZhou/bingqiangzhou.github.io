@@ -315,7 +315,7 @@ Using /hyperframes, make a six-second motion graphic that counts from zero to
 Kokoro 声音与内容配对示例：`af_heart`/`af_nova` 适合产品演示，`am_adam`/`bf_emma` 适合教程，`af_sky`/`am_michael` 适合营销。
 
 - ❌ `add a voice`
-- ✅ `warm, unhurried female narration of the quoted script`——**语气与节奏才是真正改变delivery 的东西**
+- ✅ `warm, unhurried female narration of the quoted script`——**语气与节奏才是真正改变 delivery 的东西**
 
 ### 5.2 背景音乐（BGM）
 
@@ -359,7 +359,7 @@ Kokoro 声音与内容配对示例：`af_heart`/`af_nova` 适合产品演示，`
 
 已有资产**一律给显式路径**：❌ `use my logo` ✅ `use assets/logo.svg`。即使搜索本来能找到也该给路径——品牌与实体资产应该指向**你的**文件，不是解析来的像的。第三方 logo 是另一回事：管线从官方 logo 级联拉取官方标记、**永不手绘重画**——「add the LinkedIn logo」可以直接说；「add my company's logo」必须给路径。
 
-### 5.10 「没声音」要说清楚
+### 5.10「没声音」要说清楚
 
 最常见的音频错误是负向表达的意思比你想的少：**`no narration` 只去掉旁白，不禁掉音乐与音效**。要真正的安静说 `no audio at all`。引擎按字面执行，缺口要显式关闭。
 
