@@ -55,7 +55,7 @@ tags: [学习笔记]
 
 ## 技术栈
 
-- [Astro 6](https://astro.build/) — 静态站点生成
+- [Astro 7](https://astro.build/) — 静态站点生成
 - [UnoCSS](https://unocss.dev/) — 原子化 CSS，暗色/亮色主题
 - [Shiki](https://shiki.style/) — 代码语法高亮
 - [KaTeX](https://katex.org/) — 数学公式渲染
@@ -65,7 +65,7 @@ tags: [学习笔记]
 
 ## 部署
 
-推送到 `master` 分支后，GitHub Actions 自动构建并部署到 GitHub Pages。
+推送到 `main` 分支后，GitHub Actions 自动构建并部署到 GitHub Pages。
 
 ## 致谢
 

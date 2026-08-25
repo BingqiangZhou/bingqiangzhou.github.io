@@ -127,16 +127,22 @@ relevant skill rather than the generic steps above.
 overwritten by the next sync. Authoritative content for these lives in the external `DailyDigest`
 repo, not here. Manual content work belongs in `src/content/posts/`.
 
+## Legacy Jekyll URLs
+
+The old Jekyll site served posts at `/YYYY/MM/DD/Title.html` (TeXt `permalink: date`). Those URLs
+are intentionally **not** redirected — the old posts live only at their Astro URLs
+(`/posts/<abbrlink|id>/`). A redirect experiment (static pages, then an Astro
+`/[year]/[month]/[day]/[...slug]` route) was fully removed on 2026-08-25; don't re-add it.
+
 ## Branches & deployment
 
 - The deploy workflow (`.github/workflows/deploy.yml`) triggers on **push to `main`** (also
   `workflow_dispatch`, and after the daily `Sync Daily Digest` run). Pushing to `main` publishes.
-- `origin/HEAD` points at `master` and the README still says "push to master" — that is **stale**.
-  The live publishing branch is **`main`**. When in doubt, check `deploy.yml`.
+- The old Jekyll-era `master` branch and legacy `Dockerfile.dev` were removed (2026-08-25);
+  `origin/HEAD` points at `main`.
 
 ## Notes
 
-- `Dockerfile.dev` at the repo root is a **legacy Jekyll artifact and is unused** — ignore it.
 - `dist/` is build output; don't edit by hand.
 - `.astro/data-store.json` caches rendered markdown per entry and survives config changes.
   If rendered output looks stale/wrong after switching configs or Astro versions,
