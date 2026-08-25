@@ -1,5 +1,5 @@
 ---
-import Search from 'astro-pagefind/components/Search'
+import Search from 'astro-pagefind/components/Search.astro'
 import { allLocales } from '@/config'
 import { getLangRouteParam } from '@/i18n/lang'
 import Layout from '@/layouts/Layout.astro'
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   <div class="uno-decorative-line" />
   <!-- Search Section -->
   <div class="mb-12">
-    <Search id="pagefind-search" className="uno-round-border p-4" />
+    <Search className="uno-round-border p-4" />
   </div>
 </Layout>
 
