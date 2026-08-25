@@ -62,7 +62,7 @@ description: "把一篇外部网页文章完整、忠实、署名地转载（rep
 
 ## Step 3：下载图片到本地
 
-图片统一存到 `public/assets/images/<YYYY>/<YYYYMMDD>/`，日期用**转载当天**（与文章 `published` 一致）。文件名用英文描述 + 序号前缀（如 `geo-01-zhangwei-top.png`、`aicollab-03-selection-toolbar.jpeg`），保留原扩展名。
+图片统一存到 `public/assets/images/<YYYY>/<YYYYMMDD>/`，日期用**转载当天**（与文章 `published` 一致）。文件名用英文描述 + 序号前缀（如 `geo-01-zhangwei-top.webp`、`aicollab-03-selection-toolbar.webp`）。**最终格式统一为 WebP（quality 80）**：下载阶段先按原扩展名保存，下载核对后用下面的转换步骤生成 `.webp` 并删除原文件，正文一律引用 `.webp` 路径。
 
 用本 skill 自带的 `scripts/repost.py fetch` 批量下载。它从 stdin 或文件读 `URL|保存路径` 行，自动加 `Referer` 头、逐张报 HTTP 状态与字节数、结尾给 ok/fail 计数。**纯 Python 标准库、零依赖、Windows/macOS/Linux 通用**。需要联网+写文件，所以调用时**禁用 Bash 沙箱**（`dangerouslyDisableSandbox: true`）：
 
@@ -75,6 +75,14 @@ EOF
 ```
 
 逐行核对输出：只有 `HTTP 200` 且文件 >1KB 才算 OK（脚本已内置该校验，4xx/5xx 会抛 `HTTPError` 并报 FAIL）。下载完 `ls` 一遍核对张数与预期一致。`REFERER` 环境变量按来源站点改（非 linux.do 的文章换成对应域名）。
+
+核对无误后统一转 WebP（在**仓库根目录**执行，仓库已装 sharp；把刚下载的图片路径逐个作为参数传入）：
+
+```bash
+node -e "const s=require('sharp'),fs=require('fs');(async()=>{for(const f of process.argv.slice(1)){await s(f).webp({quality:80}).toFile(f.replace(/\.[^.]+$/,'.webp'));fs.unlinkSync(f);console.log(f,'-> webp')}})()" public/assets/images/2026/20260617/geo-01-zhangwei-top.png public/assets/images/2026/20260617/aicollab-01.jpeg
+```
+
+转换后再 `ls` 确认目录里只剩 `.webp`，正文中的图片引用全部使用 `.webp` 路径。
 
 ---
 

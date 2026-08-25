@@ -90,7 +90,10 @@ Posts live in `src/content/posts/` as `.md` / `.mdx`. Schema is defined in `src/
 - **Body**: No H1 (`# title`) in the body — frontmatter `title` renders as the page `<h1>`. Start
   the body directly with text, blockquotes, or H2+.
 - **URL**: post URLs use `abbrlink` if set, otherwise the file's `id` (filename without extension).
-- **Images**: `public/assets/images/<year>/<yearmonthday>/`.
+- **Images**: `public/assets/images/<year>/<yearmonthday>/`, **WebP format (quality ~80)** —
+  content images are WebP-only since 2026-08-25 (178 legacy PNGs >500KB bulk-converted, 213MB
+  saved). Convert new screenshots/photos to WebP before committing (sharp is installed). PNG only
+  where tooling demands it (`public/icons/favicon.png`, `og-logo.png` for astro-og-canvas).
 
 ### News & podcasts
 
