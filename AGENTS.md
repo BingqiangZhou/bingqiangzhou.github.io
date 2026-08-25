@@ -5,9 +5,19 @@ project-specific facts future ZCode agents would otherwise miss.
 
 ## What this repo is
 
-Personal blog (content mostly in Chinese, default locale `zh`) built on **Astro 6** using a
+Personal blog (content mostly in Chinese, default locale `zh`) built on **Astro 7** using a
 customized fork of the **astro-theme-retypeset** theme. Static site deployed to GitHub Pages.
 Package manager is **pnpm v10.33.0**; CI uses Node 22. Path alias `@/*` → `src/*`.
+
+Upgraded to Astro 7 (2026-08-25). Migration notes: markdown plugins go through
+`processor: unified({...})` from `@astrojs/markdown-remark` (the legacy
+`markdown.remarkPlugins` form is deprecated); `compressHTML: true` is pinned explicitly to
+keep v6 whitespace behavior for CJK typography; `astro.config.ts` scrubs any machine-level
+`BASE_URL` env var (Vite-reserved — an API-endpoint value leaks into pagefind's bundle path
+on local builds). The old `patches/@qwik.dev__partytown@0.11.2.patch` backport was removed
+after `@astrojs/partytown@2.1.7` moved to partytown 0.13.2 natively. katex stays on 0.16.x
+(rehype-katex@7 depends on katex ^0.16) and typescript on 6.0.x (`@astrojs/check` peer is
+^5 || ^6).
 
 ## Commands
 
@@ -128,5 +138,9 @@ repo, not here. Manual content work belongs in `src/content/posts/`.
 
 - `Dockerfile.dev` at the repo root is a **legacy Jekyll artifact and is unused** — ignore it.
 - `dist/` is build output; don't edit by hand.
+- `.astro/data-store.json` caches rendered markdown per entry and survives config changes.
+  If rendered output looks stale/wrong after switching configs or Astro versions,
+  `rm -rf .astro` and rebuild before debugging anything else.
 - `pnpm update-theme` merges from upstream `radishzzz/astro-theme-retypeset` master branch — be
-  cautious of conflicts with local customizations.
+  cautious of conflicts with local customizations (upstream still pins the partytown patch we
+  removed).
