@@ -105,14 +105,16 @@ async function loadExistingLqipMap(): Promise<LqipMap> {
 async function scanAndAnalyzeImages(): Promise<{ fileMappings: FileMapping[], imageStats: ImageStats, existingMap: LqipMap }> {
   await fs.mkdir(assetsDir, { recursive: true })
 
-  const webpFiles = await glob('_astro/**/*.webp', {
-    cwd: distDir,
-    absolute: true,
-  })
+  // Public images are copied verbatim to dist/assets/images and never pass
+  // through Astro's image pipeline (_astro), so scan both locations.
+  const rasterFiles = await glob(
+    ['_astro/**/*.{webp,png,jpg,jpeg,gif,avif}', 'assets/images/**/*.{webp,png,jpg,jpeg,gif,avif}'],
+    { cwd: distDir, absolute: true },
+  )
 
   const existingMap = await loadExistingLqipMap()
 
-  const fileMappings = webpFiles.map(filePath => ({
+  const fileMappings = rasterFiles.map(filePath => ({
     filePath,
     webUrl: `/${path.relative(distDir, filePath).replace(/\\/g, '/')}`,
   }))
