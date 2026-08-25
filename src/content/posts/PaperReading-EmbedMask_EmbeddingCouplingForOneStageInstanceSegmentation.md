@@ -117,8 +117,8 @@ EmbedMask 整个过程大概是：给定一张图片，通过修改后的物体�
 好了，先记录到这了。
 
 
-[^one_stage__two_stage__end_to_end]: one-stage、two-stage、multi-stage可以简单的理解为是否分为了多个分开的任务并需要多个步骤来实现我们的目标，分为几个步骤就是几个-stage，而每个步骤都会影响性能以及效果，而且单个步骤的效果好并不一定整合到一起，效果或者性能就好，所以一般one-stage方法会比two-stage、multi-stage要好，因为影响性能和效果的因素更少。而one-stage强调没有多个步骤影响性能以及效果，end-to-end强调一端（输入）到另一端（输出），模型的输出就是我们需要的结果，与one-stage方法类似的地方就是一步到位。
+[^one_stage__two_stage__end_to_end]: one-stage、two-stage、multi-stage 可以简单的理解为是否分为了多个分开的任务并需要多个步骤来实现我们的目标，分为几个步骤就是几个-stage，而每个步骤都会影响性能以及效果，而且单个步骤的效果好并不一定整合到一起，效果或者性能就好，所以一般 one-stage 方法会比 two-stage、multi-stage 要好，因为影响性能和效果的因素更少。而 one-stage 强调没有多个步骤影响性能以及效果，end-to-end 强调一端（输入）到另一端（输出），模型的输出就是我们需要的结果，与 one-stage 方法类似的地方就是一步到位。
 
-[^fcos]: [论文地址](ACURLHOLD7ENDHOLD)、[源码地址](ACURLHOLD8ENDHOLD)
+[^fcos]: [论文地址](https://arxiv.org/abs/1904.01355)、[源码地址](https://github.com/tianzhi0549/FCOS)
 
-[^lovasz_hinge_loss]: [论文地址](ACURLHOLD9ENDHOLD)
+[^lovasz_hinge_loss]: [论文地址](http://proceedings.mlr.press/v37/yub15.pdf)

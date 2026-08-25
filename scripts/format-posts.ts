@@ -68,15 +68,23 @@ function formatBody(body: string, filePath: string): string {
     return `${pre}${URL_PLACEHOLDER(urls.length - 1)})`
   })
 
-  // 2. Reference-style definitions: `[id]: url` (line-anchored)
-  masked = masked.replace(/^(\[[^\]]+\]:\s*)(\S.*)$/gm, (_m, pre, url) => {
+  // 2. Reference-style definitions: `[id]: url` (line-anchored).
+  //    Footnote definitions (`[^note]: …`) must be excluded: their body often
+  //    contains already-masked inline links, and re-masking the whole line
+  //    nests placeholders that the single restore pass below cannot unroll
+  //    (this exact leak shipped literal `ACURLHOLD<i>ENDHOLD` into posts once).
+  masked = masked.replace(/^(\[(?!\^)[^\]]+\]:\s*)(\S.*)$/gm, (_m, pre, url) => {
     urls.push(url)
     return `${pre}${URL_PLACEHOLDER(urls.length - 1)}`
   })
 
   const formatted = formatFor(masked, filePath)
 
-  return formatted.replace(URL_PLACEHOLDER_RE, (_m, i) => urls[Number(i)] ?? '')
+  const restored = formatted.replace(URL_PLACEHOLDER_RE, (_m, i) => urls[Number(i)] ?? '')
+  if (/ACURLHOLD/.test(restored)) {
+    throw new Error(`URL placeholder leaked through mask/restore in ${filePath}`)
+  }
+  return restored
 }
 
 // Get all Markdown files to process
