@@ -1,9 +1,9 @@
 {
-  "name": "astro-theme-retypeset",
+  "name": "bingqiangzhou.github.io",
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.33.0",
-  "repository": "https://github.com/radishzzz/astro-theme-retypeset",
+  "repository": "https://github.com/BingqiangZhou/bingqiangzhou.github.io",
   "scripts": {
     "dev": "astro check && astro dev",
     "build": "astro check && astro build && pnpm apply-lqip",
@@ -26,7 +26,7 @@
     "astro-compress": "^2.4.3",
     "astro-og-canvas": "^0.13.0",
     "astro-pagefind": "^2.0.1",
-    "canvaskit-wasm": "^0.42.0",
+    "canvaskit-wasm": "0.42.0",
     "feed": "^6.0.0",
     "katex": "^0.16.47",
     "lite-youtube-embed": "^0.3.4",
@@ -60,7 +60,6 @@
     "eslint-plugin-astro": "^3.1.0",
     "fast-glob": "^3.3.3",
     "lint-staged": "^17.3.0",
-    "playwright": "^1.62.1",
     "simple-git-hooks": "^2.13.1",
     "tsx": "^4.23.12",
     "typescript": "~6.0.3",

@@ -95,7 +95,7 @@ abbrlink: podcast-ai-music
 
 > **API 支持音乐搜索吗？不支持。** Pixabay 官方 API 文档的描述原文是 "a RESTful interface for searching and retrieving royalty-free **images and videos**"——只覆盖图片和视频，**音乐 / 音效只能在网站手动下载**，没有对应的 API 端点（来源：[Pixabay API 文档](https://pixabay.com/api/docs/)）。Freesound 倒是有 API，但同样得逐曲核对授权、只取 CC0。也就是说，想批量「搜索 → 下载 → 套进播客」走不通免版权库这条路——这也直接把我推向了 AI 生成。
 
-![三类免费方案的对比](/assets/images/2026/20260707/podcast-ai-music/images/01-concept-comparison.png)
+![三类免费方案的对比](/assets/images/2026/20260707/podcast-ai-music/images/01-concept-comparison.webp)
 
 ### 小结
 
@@ -147,7 +147,7 @@ README 里写**消费级显卡 4GB VRAM 就能本地跑**，还能生成带人�
 
 不过这篇还没完。会生成音乐只是第一步，**把它混进人声、听感还自然，才是更折腾的活**。
 
-![让音乐"长在节目里"](/assets/images/2026/20260707/podcast-ai-music/images/02-metaphor-music-grows-in-show.png)
+![让音乐"长在节目里"](/assets/images/2026/20260707/podcast-ai-music/images/02-metaphor-music-grows-in-show.webp)
 
 ## 五、把音乐混进人声：让 AI 生成的音乐像"长在节目里"
 

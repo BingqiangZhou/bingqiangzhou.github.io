@@ -79,8 +79,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（25.0s）</th><th><code>agnes-image-2.1-flash</code>（32.8s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/astronaut_horse_2.0.png" width="100%" alt="宇航员骑马 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/astronaut_horse.png" width="100%" alt="宇航员骑马 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/astronaut_horse_2.0.webp" width="100%" alt="宇航员骑马 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/astronaut_horse.webp" width="100%" alt="宇航员骑马 - 2.1"/></td>
 </tr>
 </table>
 
@@ -93,8 +93,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（20.8s）</th><th><code>agnes-image-2.1-flash</code>（30.2s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/text_rendering_2.0.png" width="100%" alt="文字渲染 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/text_rendering.png" width="100%" alt="文字渲染 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/text_rendering_2.0.webp" width="100%" alt="文字渲染 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/text_rendering.webp" width="100%" alt="文字渲染 - 2.1"/></td>
 </tr>
 </table>
 
@@ -107,8 +107,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（27.8s）</th><th><code>agnes-image-2.1-flash</code>（29.2s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/two_cats_chess_2.0.png" width="100%" alt="两只橘猫下棋 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/two_cats_chess.png" width="100%" alt="两只橘猫下棋 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/two_cats_chess_2.0.webp" width="100%" alt="两只橘猫下棋 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/two_cats_chess.webp" width="100%" alt="两只橘猫下棋 - 2.1"/></td>
 </tr>
 </table>
 
@@ -125,8 +125,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（21.0s）</th><th><code>agnes-image-2.1-flash</code>（22.6s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster_2.0.png" width="100%" alt="中秋海报 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.png" width="100%" alt="中秋海报 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster_2.0.webp" width="100%" alt="中秋海报 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.webp" width="100%" alt="中秋海报 - 2.1"/></td>
 </tr>
 </table>
 
@@ -147,8 +147,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（29.3s）</th><th><code>agnes-image-2.1-flash</code>（16.9s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/mindmap_2.0.png" width="100%" alt="中文思维导图 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/mindmap.png" width="100%" alt="中文思维导图 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/mindmap_2.0.webp" width="100%" alt="中文思维导图 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/mindmap.webp" width="100%" alt="中文思维导图 - 2.1"/></td>
 </tr>
 </table>
 
@@ -175,8 +175,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（22.6s）</th><th><code>agnes-image-2.1-flash</code>（29.6s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/style_golden_hour_2.0.png" width="100%" alt="渔夫人像 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/style_golden_hour.png" width="100%" alt="渔夫人像 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/style_golden_hour_2.0.webp" width="100%" alt="渔夫人像 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/style_golden_hour.webp" width="100%" alt="渔夫人像 - 2.1"/></td>
 </tr>
 </table>
 
@@ -189,8 +189,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（58.7s）</th><th><code>agnes-image-2.1-flash</code>（75.6s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_background_swap_2.0.png" width="100%" alt="换背景 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_background_swap.png" width="100%" alt="换背景 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_background_swap_2.0.webp" width="100%" alt="换背景 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_background_swap.webp" width="100%" alt="换背景 - 2.1"/></td>
 </tr>
 </table>
 
@@ -212,8 +212,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（31.2s）</th><th><code>agnes-image-2.1-flash</code>（23.0s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/complex_dinner_2.0.png" width="100%" alt="晚宴 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/complex_dinner.png" width="100%" alt="晚宴 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/complex_dinner_2.0.webp" width="100%" alt="晚宴 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/complex_dinner.webp" width="100%" alt="晚宴 - 2.1"/></td>
 </tr>
 </table>
 
@@ -230,8 +230,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（23.0s）</th><th><code>agnes-image-2.1-flash</code>（26.1s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/anatomy_hands_2.0.png" width="100%" alt="手部 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/anatomy_hands.png" width="100%" alt="手部 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/anatomy_hands_2.0.webp" width="100%" alt="手部 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/anatomy_hands.webp" width="100%" alt="手部 - 2.1"/></td>
 </tr>
 </table>
 
@@ -244,8 +244,8 @@ Agnes 现在提供 **两个** flash 级图片模型：`agnes-image-2.0-flash`（
 <table>
 <tr><th><code>agnes-image-2.0-flash</code>（54.9s）</th><th><code>agnes-image-2.1-flash</code>（65.4s）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_style_ghibli_2.0.png" width="100%" alt="风格迁移 - 2.0"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_style_ghibli.png" width="100%" alt="风格迁移 - 2.1"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_style_ghibli_2.0.webp" width="100%" alt="风格迁移 - 2.0"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/edit_style_ghibli.webp" width="100%" alt="风格迁移 - 2.1"/></td>
 </tr>
 </table>
 

@@ -19,7 +19,7 @@ ACE-Step 1.5 一共有**三种用法**，按门槛从低到高：
 
 三种用法背后**是同一个模型**（MIT 开源的 ACE-Step 1.5），区别只在「算力跑在哪」。下面逐一讲。
 
-![三种用法对比：网页端、云端 API、本地部署](/assets/images/2026/20260708/ace-step-usage-guide/images/01-infographic-three-ways.png)
+![三种用法对比：网页端、云端 API、本地部署](/assets/images/2026/20260708/ace-step-usage-guide/images/01-infographic-three-ways.webp)
 
 > 💡 **大多数人只需要看第一部分就够了。** 第二、三部分是给写代码、或要批量生成的进阶读者；并发实测那一章，只在你一次要生成十几首时才用得上。**不确定自己属于哪种？先看第一部分，最省事。**
 
@@ -109,7 +109,7 @@ User-Agent: curl/8.4.0          # 见坑②，Python 默认 UA 会被拦
    按逗号截掉前缀，base64 解码即得 mp3 文件。
 ```
 
-![云端 API 调用流程：脚本 → 云端 → mp3](/assets/images/2026/20260708/ace-step-usage-guide/images/02-flowchart-api-call.png)
+![云端 API 调用流程：脚本 → 云端 → mp3](/assets/images/2026/20260708/ace-step-usage-guide/images/02-flowchart-api-call.webp)
 
 几个实测要点：
 
@@ -225,7 +225,7 @@ GET http://localhost:8001/v1/audio?path=...
 | 8 | **4/8** | 54.1s | 65.8s | 65.8s | 无 |
 | 16 | **0/16** | 65.8s | 65.9s | 65.9s | 无 |
 
-![并发数 vs 成功率：4 路最稳](/assets/images/2026/20260708/ace-step-usage-guide/images/03-infographic-concurrency-test.png)
+![并发数 vs 成功率：4 路最稳](/assets/images/2026/20260708/ace-step-usage-guide/images/03-infographic-concurrency-test.webp)
 
 **四个关键发现**：
 

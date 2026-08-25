@@ -34,7 +34,7 @@ AI 原生创业打破了这个假设。**"10 人独角兽"从弱者逆袭故事�
 
 这句值得停下来想一想。
 
-![创业生命周期被重写](/assets/images/2026/20260712/founders-playbook/01-framework-lifecycle-rewrite.png)
+![创业生命周期被重写](/assets/images/2026/20260712/founders-playbook/01-framework-lifecycle-rewrite.webp)
 
 ---
 
@@ -48,7 +48,7 @@ AI 原生创业打破了这个假设。**"10 人独角兽"从弱者逆袭故事�
 
 最具革命性的结果是：**它解锁了有领域专长、但没工程背景的非技术创始人。** 创业池一旦扩展到工程背景之外，就能诞生解决传统技术创始人管线从未优先关注（甚至没注意到）的真实问题的公司。
 
-![执行者 vs 编排者](/assets/images/2026/20260712/founders-playbook/02-comparison-executor-orchestrator.png)
+![执行者 vs 编排者](/assets/images/2026/20260712/founders-playbook/02-comparison-executor-orchestrator.webp)
 
 ---
 
@@ -62,13 +62,13 @@ AI 原生创业打破了这个假设。**"10 人独角兽"从弱者逆袭故事�
 
 但也有一句清醒的话值得记住：**"This work doesn't happen on autopilot."**（这工作不会在自动驾驶上发生。）编排 AI 工具的创始人，必须知道**如何以及何时**应用它们。
 
-![三大能力杠杆](/assets/images/2026/20260712/founders-playbook/03-framework-three-levers.png)
+![三大能力杠杆](/assets/images/2026/20260712/founders-playbook/03-framework-three-levers.webp)
 
 ---
 
 ## 四、四阶段重写：创意期 → MVP → 发布期 → 扩张期
 
-![四阶段创业旅程](/assets/images/2026/20260712/founders-playbook/04-timeline-four-stages.png)
+![四阶段创业旅程](/assets/images/2026/20260712/founders-playbook/04-timeline-four-stages.webp)
 
 创业旅程被切成四段，每段都有明确的目标、进入下一阶段的标准、和该警惕的陷阱。这是整份内容的主体，清单化拆给你看。
 
@@ -121,7 +121,7 @@ PMF 检验法也给了两个：**肖恩·埃利斯测试（Sean Ellis Test）**�
 
 资源页（Resources）列了一批用 Claude 建公司的案例。**以下数字均为 Anthropic 自述，未独立第三方核实**——盘点时标注清楚。
 
-![全是垂直领域深度应用](/assets/images/2026/20260712/founders-playbook/05-infographic-vertical-cases.png)
+![全是垂直领域深度应用](/assets/images/2026/20260712/founders-playbook/05-infographic-vertical-cases.webp)
 
 - **Carta Healthcare**：Claude 驱动临床抽象平台，**据其介绍每年处理 22,000 例外科手术，数据抽象时间减少 66%**
 - **Anything**（用 Claude + 智能体开发套件 Agent SDK）：**据其介绍已帮 150 万用户**不写代码把想法变成可用软件；其中一位非技术创始人已建成并销售完整招聘平台
@@ -157,7 +157,7 @@ PMF 检验法也给了两个：**肖恩·埃利斯测试（Sean Ellis Test）**�
 
 **读完最深的体会是：把这份内容当方法论读，不要当工具清单读。** 四阶段的验证纪律、把领域知识编码进产品、用持久化上下文（CLAUDE.md 类文件）防止 AI 漂移、用"推 vs 拉"判断产品 - 市场匹配（PMF）——这些是真正可迁移的内核。至于具体用哪个智能体、哪个模型，是你自己的工程选型。
 
-![工具清单 vs 方法论](/assets/images/2026/20260712/founders-playbook/06-comparison-toollist-vs-methodology.png)
+![工具清单 vs 方法论](/assets/images/2026/20260712/founders-playbook/06-comparison-toollist-vs-methodology.webp)
 
 ---
 
@@ -169,7 +169,7 @@ PMF 检验法也给了两个：**肖恩·埃利斯测试（Sean Ellis Test）**�
 
 一句话预判：未来一两年，"一个人 + 一堆 AI 智能体"做出的垂直产品会越来越多出现在各大榜单上。这份白皮书描述的不是未来时，是正在进行时。
 
-![三大趋势](/assets/images/2026/20260712/founders-playbook/07-framework-three-trends.png)
+![三大趋势](/assets/images/2026/20260712/founders-playbook/07-framework-three-trends.webp)
 
 ---
 

@@ -16,7 +16,7 @@ tags: ["论文阅读笔记"]
 
 ## 效果图
 先看效果图吧（图一），图 c 的 embedding 效果图确实挺好的。
-![图一](/assets/images/2020/20200603/result.png)
+![图一](/assets/images/2020/20200603/result.webp)
 
 下面来看论文主体内容吧。
 

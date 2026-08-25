@@ -62,7 +62,7 @@ curl "https://gen.pollinations.ai/video/A%20fluffy%20orange%20cat%20walking%20on
 
 | run1 | run2 | run3 |
 |---|---|---|
-| [![单主体 run1](/assets/images/2026/20260627/pollinations-video/midframes/single_subject_run1__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/single_subject_run1__ltx-2.mp4) | [![单主体 run2](/assets/images/2026/20260627/pollinations-video/midframes/single_subject_run2__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/single_subject_run2__ltx-2.mp4) | [![单主体 run3](/assets/images/2026/20260627/pollinations-video/midframes/single_subject_run3__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/single_subject_run3__ltx-2.mp4) |
+| [![单主体 run1](/assets/images/2026/20260627/pollinations-video/midframes/single_subject_run1__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/single_subject_run1__ltx-2.mp4) | [![单主体 run2](/assets/images/2026/20260627/pollinations-video/midframes/single_subject_run2__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/single_subject_run2__ltx-2.mp4) | [![单主体 run3](/assets/images/2026/20260627/pollinations-video/midframes/single_subject_run3__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/single_subject_run3__ltx-2.mp4) |
 
 日落海滩、海浪、一只四足动物在走，画面清晰无多肢体崩坏。n=3 三次画面完全相同，视觉模型都把这只动物看成**「疑似狗」而非橘猫**——运动和场景没问题，但**主体物种不够稳**。
 
@@ -72,7 +72,7 @@ curl "https://gen.pollinations.ai/video/A%20fluffy%20orange%20cat%20walking%20on
 
 | run1 | run2 | run3 |
 |---|---|---|
-| [![多动态 run1](/assets/images/2026/20260627/pollinations-video/midframes/multi_dynamic_run1__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/multi_dynamic_run1__ltx-2.mp4) | [![多动态 run2](/assets/images/2026/20260627/pollinations-video/midframes/multi_dynamic_run2__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/multi_dynamic_run2__ltx-2.mp4) | [![多动态 run3](/assets/images/2026/20260627/pollinations-video/midframes/multi_dynamic_run3__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/multi_dynamic_run3__ltx-2.mp4) |
+| [![多动态 run1](/assets/images/2026/20260627/pollinations-video/midframes/multi_dynamic_run1__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/multi_dynamic_run1__ltx-2.mp4) | [![多动态 run2](/assets/images/2026/20260627/pollinations-video/midframes/multi_dynamic_run2__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/multi_dynamic_run2__ltx-2.mp4) | [![多动态 run3](/assets/images/2026/20260627/pollinations-video/midframes/multi_dynamic_run3__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/multi_dynamic_run3__ltx-2.mp4) |
 
 航拍夜城、街道车流、霓虹、建筑，多元素同屏协调，清晰无变形。**过关**（n=3 三次相同）。
 
@@ -82,7 +82,7 @@ curl "https://gen.pollinations.ai/video/A%20fluffy%20orange%20cat%20walking%20on
 
 | run1 | run2 | run3 |
 |---|---|---|
-| [![运镜 run1](/assets/images/2026/20260627/pollinations-video/midframes/camera_motion_run1__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/camera_motion_run1__ltx-2.mp4) | [![运镜 run2](/assets/images/2026/20260627/pollinations-video/midframes/camera_motion_run2__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/camera_motion_run2__ltx-2.mp4) | [![运镜 run3](/assets/images/2026/20260627/pollinations-video/midframes/camera_motion_run3__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/camera_motion_run3__ltx-2.mp4) |
+| [![运镜 run1](/assets/images/2026/20260627/pollinations-video/midframes/camera_motion_run1__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/camera_motion_run1__ltx-2.mp4) | [![运镜 run2](/assets/images/2026/20260627/pollinations-video/midframes/camera_motion_run2__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/camera_motion_run2__ltx-2.mp4) | [![运镜 run3](/assets/images/2026/20260627/pollinations-video/midframes/camera_motion_run3__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/camera_motion_run3__ltx-2.mp4) |
 
 对称科幻走廊、蓝色灯带、纵深透视——标准 dolly 推镜头画面（n=3 三次完全相同）。中段帧只能确认场景对，镜头是否真「持续前推」点开 mp4 看。
 
@@ -92,7 +92,7 @@ curl "https://gen.pollinations.ai/video/A%20fluffy%20orange%20cat%20walking%20on
 
 | run1 | run2 | run3 |
 |---|---|---|
-| [![水下 run1](/assets/images/2026/20260627/pollinations-video/midframes/underwater_run1__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/underwater_run1__ltx-2.mp4) | [![水下 run2](/assets/images/2026/20260627/pollinations-video/midframes/underwater_run2__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/underwater_run2__ltx-2.mp4) | [![水下 run3](/assets/images/2026/20260627/pollinations-video/midframes/underwater_run3__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/underwater_run3__ltx-2.mp4) |
+| [![水下 run1](/assets/images/2026/20260627/pollinations-video/midframes/underwater_run1__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/underwater_run1__ltx-2.mp4) | [![水下 run2](/assets/images/2026/20260627/pollinations-video/midframes/underwater_run2__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/underwater_run2__ltx-2.mp4) | [![水下 run3](/assets/images/2026/20260627/pollinations-video/midframes/underwater_run3__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/underwater_run3__ltx-2.mp4) |
 
 海龟、珊瑚、鱼群、阳光光束都在，自然无变形/塑料感/多肢体，水清澈。**过关**——和 agnes 水下题结论一致（n=3 三次相同）。
 
@@ -106,11 +106,11 @@ curl "https://gen.pollinations.ai/video/A%20fluffy%20orange%20cat%20walking%20on
 
 | run1 | run2 | run3 |
 |---|---|---|
-| [![窗台 run1](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run1__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run1__ltx-2.mp4) | [![窗台 run2](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run2__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run2__ltx-2.mp4) | [![窗台 run3](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run3__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run3__ltx-2.mp4) |
+| [![窗台 run1](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run1__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run1__ltx-2.mp4) | [![窗台 run2](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run2__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run2__ltx-2.mp4) | [![窗台 run3](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run3__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run3__ltx-2.mp4) |
 
 | run4 | run5 |
 |---|---|
-| [![窗台 run4](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run4__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run4__ltx-2.mp4) | [![窗台 run5](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run5__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run5__ltx-2.mp4) |
+| [![窗台 run4](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run4__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run4__ltx-2.mp4) | [![窗台 run5](/assets/images/2026/20260627/pollinations-video/midframes/windowsill_run5__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/windowsill_run5__ltx-2.mp4) |
 
 ### 复杂场景 · 夜市摊位（n=5）
 
@@ -118,11 +118,11 @@ curl "https://gen.pollinations.ai/video/A%20fluffy%20orange%20cat%20walking%20on
 
 | run1 | run2 | run3 |
 |---|---|---|
-| [![夜市 run1](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run1__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run1__ltx-2.mp4) | [![夜市 run2](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run2__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run2__ltx-2.mp4) | [![夜市 run3](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run3__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run3__ltx-2.mp4) |
+| [![夜市 run1](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run1__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run1__ltx-2.mp4) | [![夜市 run2](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run2__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run2__ltx-2.mp4) | [![夜市 run3](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run3__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run3__ltx-2.mp4) |
 
 | run4 | run5 |
 |---|---|
-| [![夜市 run4](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run4__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run4__ltx-2.mp4) | [![夜市 run5](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run5__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run5__ltx-2.mp4) |
+| [![夜市 run4](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run4__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run4__ltx-2.mp4) | [![夜市 run5](/assets/images/2026/20260627/pollinations-video/midframes/market_stall_run5__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/market_stall_run5__ltx-2.mp4) |
 
 上面 10 张图看起来像 10 个不同画面？其实不是——**每题 5 次的封面帧 md5 完全相同**（用 ffmpeg 抽 50% 中点帧算哈希）：
 
@@ -160,7 +160,7 @@ Pollinations [官方文档](https://zread.ai/pollinations/pollinations/17-video-
 
 | 2s（封面帧） | 5s（封面帧） | 10s（点开看动态） |
 |---|---|---|
-| ![2s](/assets/images/2026/20260627/pollinations-video/midframes/duration_probe_2s__ltx-2.png) | ![5s](/assets/images/2026/20260627/pollinations-video/midframes/duration_probe_5s__ltx-2.png) | [![10s](/assets/images/2026/20260627/pollinations-video/midframes/duration_probe_10s__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/duration_probe_10s__ltx-2.mp4) |
+| ![2s](/assets/images/2026/20260627/pollinations-video/midframes/duration_probe_2s__ltx-2.webp) | ![5s](/assets/images/2026/20260627/pollinations-video/midframes/duration_probe_5s__ltx-2.webp) | [![10s](/assets/images/2026/20260627/pollinations-video/midframes/duration_probe_10s__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/duration_probe_10s__ltx-2.mp4) |
 
 | 请求 | 实际 duration | 遵循？|
 |---|---|---|
@@ -176,7 +176,7 @@ Pollinations 有些视频模型有过「忽略 duration 只出 2s」的 bug（�
 
 | audio_off（封面帧） | audio_on（点开听音轨） |
 |---|---|
-| ![audio_off](/assets/images/2026/20260627/pollinations-video/midframes/audio_off__ltx-2.png) | [![audio_on](/assets/images/2026/20260627/pollinations-video/midframes/audio_on__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/audio_on__ltx-2.mp4) |
+| ![audio_off](/assets/images/2026/20260627/pollinations-video/midframes/audio_off__ltx-2.webp) | [![audio_on](/assets/images/2026/20260627/pollinations-video/midframes/audio_on__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/audio_on__ltx-2.mp4) |
 
 | 开关 | 请求 audio | 实际 has_audio |
 |---|---|---|
@@ -195,9 +195,9 @@ agnes 视频篇的结论是「文生视频锁不住角色，必须靠图生视�
 
 | 场景 | 关键帧 (flux) | 视频中段帧（点开看动态） |
 |---|---|---|
-| 地铁青年 | ![kf_man](/assets/images/2026/20260627/pollinations-video/keyframes/i2v_man__kf.png) | [![i2v_man](/assets/images/2026/20260627/pollinations-video/midframes/i2v_man__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/i2v_man__ltx-2.mp4) |
-| 窗台橘猫 | ![kf_cat](/assets/images/2026/20260627/pollinations-video/keyframes/i2v_cat__kf.png) | [![i2v_cat](/assets/images/2026/20260627/pollinations-video/midframes/i2v_cat__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/i2v_cat__ltx-2.mp4) |
-| 小笼包 | ![kf_food](/assets/images/2026/20260627/pollinations-video/keyframes/i2v_food__kf.png) | [![i2v_food](/assets/images/2026/20260627/pollinations-video/midframes/i2v_food__ltx-2.png)](/assets/images/2026/20260627/pollinations-video/videos/i2v_food__ltx-2.mp4) |
+| 地铁青年 | ![kf_man](/assets/images/2026/20260627/pollinations-video/keyframes/i2v_man__kf.webp) | [![i2v_man](/assets/images/2026/20260627/pollinations-video/midframes/i2v_man__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/i2v_man__ltx-2.mp4) |
+| 窗台橘猫 | ![kf_cat](/assets/images/2026/20260627/pollinations-video/keyframes/i2v_cat__kf.webp) | [![i2v_cat](/assets/images/2026/20260627/pollinations-video/midframes/i2v_cat__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/i2v_cat__ltx-2.mp4) |
+| 小笼包 | ![kf_food](/assets/images/2026/20260627/pollinations-video/keyframes/i2v_food__kf.webp) | [![i2v_food](/assets/images/2026/20260627/pollinations-video/midframes/i2v_food__ltx-2.webp)](/assets/images/2026/20260627/pollinations-video/videos/i2v_food__ltx-2.mp4) |
 
 **三场景全部忠实遵循关键帧**（同一主体、同一场景、关键元素高度匹配）——这点比 agnes 文生视频锁得住角色。但有个 **API 坑**要注意：
 

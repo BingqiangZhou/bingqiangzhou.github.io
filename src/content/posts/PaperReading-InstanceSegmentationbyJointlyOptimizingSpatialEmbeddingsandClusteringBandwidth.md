@@ -18,7 +18,7 @@ tags: ["论文阅读笔记"]
 
 我们直接来看网络结构图。
 
-![网络结构图](/assets/images/2020/20200628/network-architecture.png)
+![网络结构图](/assets/images/2020/20200628/network-architecture.webp)
 
 网络主要分为两个分支，上面的分支用来预测每个语义类别的种子图`seed map`，这个种子图呢，是一个分数图，靠近实例对象的中心点对应会有一个高的分数，而离中心点比较远的分数则比较低，下面的分支呢，输出`offset map`和间隙$\sigma$，`offset map`与坐标向量（xmap，ymap）相加构造成像素点的`embedding`。随后由`seed map`确定实例对象的中心点位置，取对应位置的$\sigma$作为间隙，通过计算`embedding`的距离（或者说是相似度）来确定实例分割的结果。
 

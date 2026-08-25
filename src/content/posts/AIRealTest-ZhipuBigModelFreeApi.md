@@ -112,7 +112,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，9.7s）</th><th>agnes-image-2.1-flash (Agnes, 30.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/astronaut_horse.png" width="100%" alt="宇航员骑马 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/astronaut_horse.png" width="100%" alt="宇航员骑马 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/astronaut_horse.webp" width="100%" alt="宇航员骑马 - Agnes"/></td>
 </tr>
 </table>
 
@@ -126,7 +126,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，8.9s）</th><th>agnes-image-2.1-flash (Agnes, 29.2s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/text_rendering.png" width="100%" alt="霓虹招牌 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/text_rendering.png" width="100%" alt="霓虹招牌 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/text_rendering.webp" width="100%" alt="霓虹招牌 - Agnes"/></td>
 </tr>
 </table>
 
@@ -142,7 +142,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，8.3s）</th><th>agnes-image-2.1-flash (Agnes, 26.7s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/two_cats_chess.png" width="100%" alt="两猫下棋 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/two_cats_chess.png" width="100%" alt="两猫下棋 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/two_cats_chess.webp" width="100%" alt="两猫下棋 - Agnes"/></td>
 </tr>
 </table>
 
@@ -158,7 +158,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，8.6s）</th><th>agnes-image-2.1-flash (Agnes, 20.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/midautumn_poster.png" width="100%" alt="中秋海报 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.png" width="100%" alt="中秋海报 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.webp" width="100%" alt="中秋海报 - Agnes"/></td>
 </tr>
 </table>
 
@@ -174,7 +174,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，8.0s）</th><th>agnes-image-2.1-flash (Agnes, 14.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/mindmap.png" width="100%" alt="思维导图 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/mindmap.png" width="100%" alt="思维导图 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/mindmap.webp" width="100%" alt="思维导图 - Agnes"/></td>
 </tr>
 </table>
 
@@ -192,7 +192,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，8.2s）</th><th>agnes-image-2.1-flash (Agnes, 28.6s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/style_golden_hour.png" width="100%" alt="渔夫逆光 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/style_golden_hour.png" width="100%" alt="渔夫逆光 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/style_golden_hour.webp" width="100%" alt="渔夫逆光 - Agnes"/></td>
 </tr>
 </table>
 
@@ -206,7 +206,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，7.6s）</th><th>agnes-image-2.1-flash (Agnes, 22.0s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/complex_dinner.png" width="100%" alt="俯拍晚宴 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/complex_dinner.png" width="100%" alt="俯拍晚宴 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/complex_dinner.webp" width="100%" alt="俯拍晚宴 - Agnes"/></td>
 </tr>
 </table>
 
@@ -220,7 +220,7 @@ token = jwt.encode(
 <tr><th>cogview-3-flash（智谱，8.0s）</th><th>agnes-image-2.1-flash (Agnes, 22.5s)</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260626/zhipu-cogview/images/anatomy_hands.png" width="100%" alt="双手捧杯 - 智谱"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/anatomy_hands.png" width="100%" alt="双手捧杯 - Agnes"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/anatomy_hands.webp" width="100%" alt="双手捧杯 - Agnes"/></td>
 </tr>
 </table>
 
@@ -283,8 +283,8 @@ token = jwt.encode(
 <table>
 <tr><th>cogvideox-flash（智谱）</th><th>agnes-video-v2.0（Agnes）</th></tr>
 <tr>
-<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/single_subject/cat_walking_beach.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/single_subject/cat_walking_beach.png" width="100%" alt="橘猫海滩 - 智谱"/></a></td>
-<td><a href="/assets/images/2026/20260626/agnes-video/single_subject/cat_walking_beach_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run1.png" width="100%" alt="橘猫海滩 - Agnes"/></a></td>
+<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/single_subject/cat_walking_beach.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/single_subject/cat_walking_beach.webp" width="100%" alt="橘猫海滩 - 智谱"/></a></td>
+<td><a href="/assets/images/2026/20260626/agnes-video/single_subject/cat_walking_beach_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run1.webp" width="100%" alt="橘猫海滩 - Agnes"/></a></td>
 </tr>
 </table>
 
@@ -297,8 +297,8 @@ token = jwt.encode(
 <table>
 <tr><th>cogvideox-flash（智谱）</th><th>agnes-video-v2.0（Agnes）</th></tr>
 <tr>
-<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/multi_dynamic/city_traffic_aerial.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/multi_dynamic/city_traffic_aerial.png" width="100%" alt="城市航拍 - 智谱"/></a></td>
-<td><a href="/assets/images/2026/20260626/agnes-video/multi_dynamic/city_traffic_aerial_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run1.png" width="100%" alt="城市航拍 - Agnes"/></a></td>
+<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/multi_dynamic/city_traffic_aerial.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/multi_dynamic/city_traffic_aerial.webp" width="100%" alt="城市航拍 - 智谱"/></a></td>
+<td><a href="/assets/images/2026/20260626/agnes-video/multi_dynamic/city_traffic_aerial_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run1.webp" width="100%" alt="城市航拍 - Agnes"/></a></td>
 </tr>
 </table>
 
@@ -311,8 +311,8 @@ token = jwt.encode(
 <table>
 <tr><th>cogvideox-flash（智谱）</th><th>agnes-video-v2.0（Agnes）</th></tr>
 <tr>
-<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/camera_motion/dolly_zoom_corridor.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/camera_motion/dolly_zoom_corridor.png" width="100%" alt="科幻走廊 - 智谱"/></a></td>
-<td><a href="/assets/images/2026/20260626/agnes-video/camera_motion/dolly_zoom_corridor_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run1.png" width="100%" alt="科幻走廊 - Agnes"/></a></td>
+<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/camera_motion/dolly_zoom_corridor.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/camera_motion/dolly_zoom_corridor.webp" width="100%" alt="科幻走廊 - 智谱"/></a></td>
+<td><a href="/assets/images/2026/20260626/agnes-video/camera_motion/dolly_zoom_corridor_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run1.webp" width="100%" alt="科幻走廊 - Agnes"/></a></td>
 </tr>
 </table>
 
@@ -325,8 +325,8 @@ token = jwt.encode(
 <table>
 <tr><th>cogvideox-flash（智谱）</th><th>agnes-video-v2.0（Agnes）</th></tr>
 <tr>
-<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/special_scene/underwater_turtle.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/special_scene/underwater_turtle.png" width="100%" alt="水下海龟 - 智谱"/></a></td>
-<td><a href="/assets/images/2026/20260626/agnes-video/underwater/underwater_turtle_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run1.png" width="100%" alt="水下海龟 - Agnes"/></a></td>
+<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/special_scene/underwater_turtle.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/special_scene/underwater_turtle.webp" width="100%" alt="水下海龟 - 智谱"/></a></td>
+<td><a href="/assets/images/2026/20260626/agnes-video/underwater/underwater_turtle_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run1.webp" width="100%" alt="水下海龟 - Agnes"/></a></td>
 </tr>
 </table>
 
@@ -339,8 +339,8 @@ token = jwt.encode(
 <table>
 <tr><th>cogvideox-flash（智谱）</th><th>agnes-video-v2.0（Agnes）</th></tr>
 <tr>
-<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/long_video/night_market_street.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/long_video/night_market_street.png" width="100%" alt="夜市 - 智谱"/></a></td>
-<td><a href="/assets/images/2026/20260626/agnes-video/long_video/long_night_market_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run1.png" width="100%" alt="夜市 - Agnes"/></a></td>
+<td><a href="/assets/images/2026/20260626/zhipu-cogvideox/videos/long_video/night_market_street.mp4"><img src="/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/long_video/night_market_street.webp" width="100%" alt="夜市 - 智谱"/></a></td>
+<td><a href="/assets/images/2026/20260626/agnes-video/long_video/long_night_market_run1.mp4"><img src="/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run1.webp" width="100%" alt="夜市 - Agnes"/></a></td>
 </tr>
 </table>
 
@@ -356,7 +356,7 @@ token = jwt.encode(
 
 | 关键帧（cogview） | 图生视频（cogvideox） |
 |---|---|
-| ![kf_food](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_food_stall_keyframe.png) | [![i2v_food](/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/i2v/i2v_food_stall.png)](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_food_stall.mp4) |
+| ![kf_food](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_food_stall_keyframe.png) | [![i2v_food](/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/i2v/i2v_food_stall.webp)](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_food_stall.mp4) |
 
 关键帧正确（小笼包在**竹蒸笼**里、白白胖胖带褶子 + 蒸汽 + 暖灯笼光）。但图生视频**从第 1 帧起就完全是另一副样子**——小笼包的形状、摆放都对不上关键帧，还**从竹蒸笼跑到了木托盘上、蒸笼整个不见了**。**cogvideox 没保住输入图、等于无视关键帧按文本另画了一段**，一致度"低"。
 
@@ -364,7 +364,7 @@ token = jwt.encode(
 
 | 关键帧（cogview） | 图生视频（cogvideox） |
 |---|---|
-| ![kf_man](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_man_subway_keyframe.png) | [![i2v_man](/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/i2v/i2v_man_subway.png)](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_man_subway.mp4) |
+| ![kf_man](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_man_subway_keyframe.png) | [![i2v_man](/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/i2v/i2v_man_subway.webp)](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_man_subway.mp4) |
 
 关键帧**正确**（青年 + 浅色衬衫 + 地铁车厢 + 蓝座椅）。但图生视频中间帧变成了**另一个人**（短深色头发、深色衣服）、**另一个场景**（昏暗室内/酒吧，根本不是地铁）——**cogvideox 图生视频没锁住主体，人和场景都漂了**，一致度"低"。
 
@@ -372,7 +372,7 @@ token = jwt.encode(
 
 | 关键帧（cogview） | 图生视频（cogvideox） |
 |---|---|
-| ![kf_cat](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_cat_windowsill_keyframe.png) | [![i2v_cat](/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/i2v/i2v_cat_windowsill.png)](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_cat_windowsill.mp4) |
+| ![kf_cat](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_cat_windowsill_keyframe.png) | [![i2v_cat](/assets/images/2026/20260626/zhipu-cogvideox/videos/_midframes/i2v/i2v_cat_windowsill.webp)](/assets/images/2026/20260626/zhipu-cogvideox/videos/i2v/i2v_cat_windowsill.mp4) |
 
 关键帧 prompt「橘猫坐窗台看雨」，cogview **两次生成都没出猫**：第一次给了一个"阶梯木台 + 人群的礼堂"，重跑一次变成了"花园里的年轻女子"——**cogview-3-flash 对这条中文场景 prompt 的理解完全跑题**（2/2 次无猫）。图生视频中间帧里出现的则是一只**灰猫**。这条链从关键帧阶段就崩了，一致度"低"。
 

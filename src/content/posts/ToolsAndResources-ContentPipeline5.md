@@ -11,7 +11,7 @@ abbrlink: content-generation-pipeline-5
 
 这次改的地方不少，折腾到挺晚才弄完，所以我先不长篇大论了，画了张图，你一眼就能看出大概的不同：
 
-![新旧流水线对比：上旧下新双线流程](/assets/images/2026/20260713/content-pipeline-5/images/01-flowchart-pipeline-compare.png)
+![新旧流水线对比：上旧下新双线流程](/assets/images/2026/20260713/content-pipeline-5/images/01-flowchart-pipeline-compare.webp)
 
 图里两条流程，**上面是 4.0，下面是 5.0**，盯着下面多出来的一截看就行。差异归成四句：
 
@@ -39,7 +39,7 @@ abbrlink: content-generation-pipeline-5
 
 这种把播客和插图对位拼起来的做法，效果谈不上最好，但成本最低。换成 hyperframes 那样从零写代码逐帧生成，画面动画精致一些，可每一期都要重新生成代码、计算量大；换成 AI 直接生成视频，效果好的贵，免费的效果又不行。相比之下，直接把播客和插图拼在一起，是最省成本的。
 
-![加了视频，产出从两件变三件：图文和播客各自复用拼成视频](/assets/images/2026/20260713/content-pipeline-5/images/02-infographic-video-output.png)
+![加了视频，产出从两件变三件：图文和播客各自复用拼成视频](/assets/images/2026/20260713/content-pipeline-5/images/02-infographic-video-output.webp)
 
 ## 改动二：从「一个 agent」拆成「调度员加六个 agent」
 
@@ -63,7 +63,7 @@ abbrlink: content-generation-pipeline-5
 
 可以看出，每个 agent 只管自己那一件，输入输出都固定死。这么分工，好处落在前面说的三条上：每个 agent 上下文聚焦，质量更容易稳；想改某一环、换某一步的模型，只动那一个 agent，不牵连别的；哪一环要复用到别的流水线，直接抽出去就行。而且做视频的和发视频的是两个 agent——做视频的只管把视频生成出来，发视频的只管把它送到平台，我不用在中间当搬运工。
 
-![一个 agent 拆成调度员加六个专员：调度员向下连接文章/封面/插图/播客/视频/发布六个节点](/assets/images/2026/20260713/content-pipeline-5/images/03-framework-six-agents.png)
+![一个 agent 拆成调度员加六个专员：调度员向下连接文章/封面/插图/播客/视频/发布六个节点](/assets/images/2026/20260713/content-pipeline-5/images/03-framework-six-agents.webp)
 
 ## 改动三：插图和播客音频，到底怎么拼成视频
 
@@ -75,7 +75,7 @@ abbrlink: content-generation-pipeline-5
 
 **最后怎么合成。** 每段画面先各自渲染成无声的小片段，再按顺序拼接起来——封面打头，后面跟着各段插图画面；然后整条播客音频作为音轨铺上去当旁白，字幕叠在画面上。整个过程在本地用 FFmpeg 完成，不依赖任何云服务，分五个阶段跑，每个阶段做完都会存档，中途断了接着跑就行。
 
-![插图分镜画面、播客音频旁白、字幕条按分段对位拼成视频](/assets/images/2026/20260713/content-pipeline-5/images/04-infographic-video-composition.png)
+![插图分镜画面、播客音频旁白、字幕条按分段对位拼成视频](/assets/images/2026/20260713/content-pipeline-5/images/04-infographic-video-composition.webp)
 
 这么一套下来，视频的每一帧画面、每一句旁白、每一条字幕，都能追溯到同一篇文章——这是前面三件改动最想拿到的好处：三件产物讲的是同一套话。
 

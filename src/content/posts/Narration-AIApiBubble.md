@@ -39,7 +39,7 @@ Pollinations 当年能在开源圈火起来，靠的就是**一行 GET URL 直�
 
 **看明白了吗？** Pollinations 这几步——**免费拉客 → 引入计费 → 老通道降级 → 连定期发放都取消、改做任务才有 → 把付费甩给生态**——和任何一家"先用免费烧出用户量、再一步步拧紧水龙头"的互联网公司，剧本一模一样。它不是坏，**是免费这件事从第一天起就不可持续，区别只是谁先扛不住、什么时候开始收。**
 
-![Pollinations 收口五步](/assets/images/2026/20260707/ai-api-bubble/images/01-flowchart-pollinations-shoukou.png)
+![Pollinations 收口五步](/assets/images/2026/20260707/ai-api-bubble/images/01-flowchart-pollinations-shoukou.webp)
 
 ## 二、从 Pollinations 看整个 AI：一个算不平的泡沫
 
@@ -49,7 +49,7 @@ Pollinations 当年能在开源圈火起来，靠的就是**一行 GET URL 直�
 
 2026 年 6 月，据《财富》披露，OpenAI 的财务数据：**营收约 \$130 亿，亏损约 \$210 亿。** 营收一年涨了好几倍，亏损却涨得更快。它在企业市场的份额也从 2023 年的约 50% 掉到了 2026 年初的 27–29%（门罗风投数据）。红杉当年抛出的"\$6000 亿营收缺口"（用来证明 AI 基建投入能否回本），**到 2026 年也没填上**。
 
-![连 OpenAI 都在巨亏](/assets/images/2026/20260707/ai-api-bubble/images/02-infographic-openai-jukui.png)
+![连 OpenAI 都在巨亏](/assets/images/2026/20260707/ai-api-bubble/images/02-infographic-openai-jukui.webp)
 
 ### 推理成本，才是真正的大坑
 
@@ -57,7 +57,7 @@ Pollinations 当年能在开源圈火起来，靠的就是**一行 GET URL 直�
 
 更吊诡的是：虽然**单次调用的成本三年里跌了约 1000 倍**（GPT-4 级性能从 ~\$20/百万 token 跌到 ~\$0.40），但**总账单反而在涨**——因为便宜了，大家（和智能体）用得更凶，需求暴涨吃掉了降本红利。这就是经典的杰文斯悖论：**越省越用，越用越烧。**
 
-![杰文斯悖论：越省越烧](/assets/images/2026/20260707/ai-api-bubble/images/03-framework-jiewens-paradox.png)
+![杰文斯悖论：越省越烧](/assets/images/2026/20260707/ai-api-bubble/images/03-framework-jiewens-paradox.webp)
 
 ### 投入是个无底洞，而硬件还在添柴
 
@@ -90,7 +90,7 @@ OpenAI 一家烧钱不算什么，可怕的是**整个行业都在往里砸**。
 
 2026 年 6 月，市场已经用脚投了票：大科技**一个月蒸发 \$2.7 万亿市值**，英伟达、美光、韩国 Kospi 指数连环暴跌。这不是某一家公司的问题，是**整个 AI 商业模式的"投入—回报"等式，到 2026 年依然算不平**。免费 API 的收口，只是这条裂缝最表面的一道。
 
-![算不平的 AI 账](/assets/images/2026/20260707/ai-api-bubble/images/04-framework-suanbuqi-zhang.png)
+![算不平的 AI 账](/assets/images/2026/20260707/ai-api-bubble/images/04-framework-suanbuqi-zhang.webp)
 
 ## 结尾
 

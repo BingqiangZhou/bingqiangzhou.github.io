@@ -40,7 +40,7 @@ abbrlink: agnes-video-realtest
 
 | 第 1 次 | 第 2 次 | 第 3 次 |
 |---|---|---|
-| [![cat1](/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run1.png)](/assets/images/2026/20260626/agnes-video/single_subject/cat_walking_beach_run1.mp4) | ![cat2](/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run2.png) | ![cat3](/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run3.png) |
+| [![cat1](/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run1.webp)](/assets/images/2026/20260626/agnes-video/single_subject/cat_walking_beach_run1.mp4) | ![cat2](/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run2.webp) | ![cat3](/assets/images/2026/20260626/agnes-video/single_subject/_midframes/cat_walking_beach_run3.webp) |
 
 4 条腿、身体比例正常、无变形/融合/塑料感，物理合理 — **过关**。
 
@@ -50,7 +50,7 @@ abbrlink: agnes-video-realtest
 
 | 第 1 次 | 第 2 次 | 第 3 次 |
 |---|---|---|
-| [![city1](/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run1.png)](/assets/images/2026/20260626/agnes-video/multi_dynamic/city_traffic_aerial_run1.mp4) | ![city2](/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run2.png) | ![city3](/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run3.png) |
+| [![city1](/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run1.webp)](/assets/images/2026/20260626/agnes-video/multi_dynamic/city_traffic_aerial_run1.mp4) | ![city2](/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run2.webp) | ![city3](/assets/images/2026/20260626/agnes-video/multi_dynamic/_midframes/city_traffic_aerial_run3.webp) |
 
 俯瞰航拍正确，车灯轨迹/霓虹/湿街反光都在，远处招牌文字虽然乱码——不过免费 AI 要啥自行车，**算勉强过关**。
 
@@ -60,7 +60,7 @@ abbrlink: agnes-video-realtest
 
 | 第 1 次 | 第 2 次 | 第 3 次 |
 |---|---|---|
-| [![dolly1](/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run1.png)](/assets/images/2026/20260626/agnes-video/camera_motion/dolly_zoom_corridor_run1.mp4) | ![dolly2](/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run2.png) | ![dolly3](/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run3.png) |
+| [![dolly1](/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run1.webp)](/assets/images/2026/20260626/agnes-video/camera_motion/dolly_zoom_corridor_run1.mp4) | ![dolly2](/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run2.webp) | ![dolly3](/assets/images/2026/20260626/agnes-video/camera_motion/_midframes/dolly_zoom_corridor_run3.webp) |
 
 发光走廊、强透视纵深、远端汇聚点正确（单帧判不了镜头是否真"持续前推"，看 mp4） — **过关**。
 
@@ -70,7 +70,7 @@ abbrlink: agnes-video-realtest
 
 | 第 1 次 | 第 2 次 | 第 3 次 |
 |---|---|---|
-| [![uw1](/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run1.png)](/assets/images/2026/20260626/agnes-video/underwater/underwater_turtle_run1.mp4) | ![uw2](/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run2.png) | ![uw3](/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run3.png) |
+| [![uw1](/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run1.webp)](/assets/images/2026/20260626/agnes-video/underwater/underwater_turtle_run1.mp4) | ![uw2](/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run2.webp) | ![uw3](/assets/images/2026/20260626/agnes-video/underwater/_midframes/underwater_turtle_run3.webp) |
 
 海龟/珊瑚/鱼群/阳光光束都在，水清澈自然、无塑料感 — **过关**。
 
@@ -80,7 +80,7 @@ abbrlink: agnes-video-realtest
 
 | 第 1 次 | 第 2 次 | 第 3 次 |
 |---|---|---|
-| [![long1](/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run1.png)](/assets/images/2026/20260626/agnes-video/long_video/long_night_market_run1.mp4) | ![long2](/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run2.png) | ![long3](/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run3.png) |
+| [![long1](/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run1.webp)](/assets/images/2026/20260626/agnes-video/long_video/long_night_market_run1.mp4) | ![long2](/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run2.webp) | ![long3](/assets/images/2026/20260626/agnes-video/long_video/_midframes/long_night_market_run3.webp) |
 
 食物摊位、蒸汽、灯笼、行人都在，无明显变形或闪烁 — **长视频质量稳住，没崩**。
 
@@ -98,11 +98,11 @@ abbrlink: agnes-video-realtest
 
 | 第 1 次 | 第 2 次 | 第 3 次 |
 |---|---|---|
-| [![cat1](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run1.png)](/assets/images/2026/20260626/agnes-video/consistency/consistency_cat_run1.mp4) | ![cat2](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run2.png) | ![cat3](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run3.png) |
+| [![cat1](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run1.webp)](/assets/images/2026/20260626/agnes-video/consistency/consistency_cat_run1.mp4) | ![cat2](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run2.webp) | ![cat3](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run3.webp) |
 
 | 第 4 次 | 第 5 次 |
 |---|---|
-| ![cat4](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run4.png) | ![cat5](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run5.png) |
+| ![cat4](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run4.webp) | ![cat5](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_cat_run5.webp) |
 
 - **遵循度**（每次对照提示词"橘猫坐窗台看雨"）：5 次都符合——都是橘猫、都坐在窗台、窗外都是雨天。
 - **一致性**（彼此之间）：差——每次的具体画面都不一样：姿态（第 3 次从坐姿变趴姿）、窗台材质、窗外景物（花园 / 铁丝网 / 建筑）各不相同。
@@ -117,11 +117,11 @@ abbrlink: agnes-video-realtest
 
 | 第 1 次 | 第 2 次 | 第 3 次 |
 |---|---|---|
-| [![m1](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run1.png)](/assets/images/2026/20260626/agnes-video/consistency/consistency_market_run1.mp4) | ![m2](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run2.png) | ![m3](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run3.png) |
+| [![m1](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run1.webp)](/assets/images/2026/20260626/agnes-video/consistency/consistency_market_run1.mp4) | ![m2](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run2.webp) | ![m3](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run3.webp) |
 
 | 第 4 次 | 第 5 次 |
 |---|---|
-| ![m4](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run4.png) | ![m5](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run5.png) |
+| ![m4](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run4.webp) | ![m5](/assets/images/2026/20260626/agnes-video/consistency/_midframes/consistency_market_run5.webp) |
 
 - **遵循度**（对照"夜市摊位、蒸汽、灯笼、顾客"）：5 次都符合——核心元素都在。
 - **一致性**（彼此之间）：核心元素稳定（摊位 / 蒸汽 / 灯笼都在），但构图取景、人群密度、食物种类每次有出入。
@@ -146,7 +146,7 @@ abbrlink: agnes-video-realtest
 
 | 关键帧（文生图） | 图生视频 |
 |---|---|
-| ![kf_cat](/assets/images/2026/20260626/agnes-video/i2v/keyframes/i2v_cat_windowsill_kf.png) | [![i2v_cat](/assets/images/2026/20260626/agnes-video/i2v/_midframes/i2v_cat_windowsill.png)](/assets/images/2026/20260626/agnes-video/i2v/i2v_cat_windowsill.mp4) |
+| ![kf_cat](/assets/images/2026/20260626/agnes-video/i2v/keyframes/i2v_cat_windowsill_kf.webp) | [![i2v_cat](/assets/images/2026/20260626/agnes-video/i2v/_midframes/i2v_cat_windowsill.webp)](/assets/images/2026/20260626/agnes-video/i2v/i2v_cat_windowsill.mp4) |
 
 主体/姿态/场景一致度：**高**（橘猫毛色、坐姿、窗台雨景完整保留）。
 
@@ -158,7 +158,7 @@ abbrlink: agnes-video-realtest
 
 | 关键帧（文生图） | 图生视频 |
 |---|---|
-| ![kf_man](/assets/images/2026/20260626/agnes-video/i2v/keyframes/i2v_man_subway_kf.png) | [![i2v_man](/assets/images/2026/20260626/agnes-video/i2v/_midframes/i2v_man_subway.png)](/assets/images/2026/20260626/agnes-video/i2v/i2v_man_subway.mp4) |
+| ![kf_man](/assets/images/2026/20260626/agnes-video/i2v/keyframes/i2v_man_subway_kf.webp) | [![i2v_man](/assets/images/2026/20260626/agnes-video/i2v/_midframes/i2v_man_subway.webp)](/assets/images/2026/20260626/agnes-video/i2v/i2v_man_subway.mp4) |
 
 主体/姿态/场景一致度：**高**（青年穿着、低头姿态、地铁车厢完整保留）。
 
@@ -170,7 +170,7 @@ abbrlink: agnes-video-realtest
 
 | 关键帧（文生图） | 图生视频 |
 |---|---|
-| ![kf_food](/assets/images/2026/20260626/agnes-video/i2v/keyframes/i2v_food_stall_kf.png) | [![i2v_food](/assets/images/2026/20260626/agnes-video/i2v/_midframes/i2v_food_stall.png)](/assets/images/2026/20260626/agnes-video/i2v/i2v_food_stall.mp4) |
+| ![kf_food](/assets/images/2026/20260626/agnes-video/i2v/keyframes/i2v_food_stall_kf.webp) | [![i2v_food](/assets/images/2026/20260626/agnes-video/i2v/_midframes/i2v_food_stall.webp)](/assets/images/2026/20260626/agnes-video/i2v/i2v_food_stall.mp4) |
 
 主体/场景/色调一致度：**高**（蒸笼小笼包、夜市摊位、暖灯笼光完整保留）。
 

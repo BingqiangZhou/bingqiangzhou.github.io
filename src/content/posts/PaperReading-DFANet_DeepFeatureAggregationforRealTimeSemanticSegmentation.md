@@ -18,7 +18,7 @@ tags: ["论文阅读笔记"]
 实时语义分割：希望同时做到分割速度快、分割质量高。有许多方法已经在一些 benchmarks（例如：pascal voc、cityscapes、coco 等等数据集）上取得好的效果。（[拓展知识：浅谈 baseline & benchmark & backbone 中的理解](https://zhuanlan.zhihu.com/p/129872257)）
 ### 提出问题
 - 有些方法使用 U-shape 结构[^u_shape]（U 型结构，例如下图结构），这种结构在处理高分辨率特征图时候，会消耗大量时间。（论文中这么说，我个人觉得还是跟网络深度有关系，这里没有明白为什么作者要特意的挑出 U 型结构。）
-![U 型结构](/assets/images/2020/20200605/u-shape-architecture.png)
+![U 型结构](/assets/images/2020/20200605/u-shape-architecture.webp)
 
   - 有些工作通过限制固定的图像大小。
   - 有些工作会去掉特征图的一些“冗余”信息（比如使用 Spatial Dropout，在 DeepLabV3+ 论文中提到说不是所有的的特征都对解码模块有重要的作用）。
@@ -29,7 +29,7 @@ tags: ["论文阅读笔记"]
 
 ### 解决问题
 为了解决以上问题，最大程度的利用特征，并尽可能的减少计算量，很多相应的结构产生了，如下图所示。
-![结构比较](/assets/images/2020/20200605/structure-comparison.png)
+![结构比较](/assets/images/2020/20200605/structure-comparison.webp)
 
 - 多分支（Multi-branch）结构，图中（a），使用这种多分支结构结合了空间细节和上下文信息，然而加入了额外的分支，会使得速度受到限制，并且相互独立的两个分支会限制模型的学习能力。
 - 空间金字塔池化（spatial pyramid pooling）结构，图中（b），使用空间金字塔池化结构呢，加强了带有高层次上下文的特征（features with high-level context），但是这样也会显著的加大计算量，而且加强的特征是来自于单路径输出的特征图，缺乏低层次特征，而低层次特征同样保留空间细节和分割信息。
@@ -66,7 +66,7 @@ path）来减少计算量。
 
 ### 模型
 论文提出的模型主要分三部分轻量级权重的 backbone（the lightweight backbones）, 子网络级的聚合（sub-network aggregation）模块和子阶段级的聚合（sub-stage aggregation）模块，而其中子网络级的聚合模块和子阶段级的聚合模块是相融在一起的，如下图。
-![模型图](/assets/images/2020/20200605/model.png)
+![模型图](/assets/images/2020/20200605/model.webp)
 
 模型图中，“C”表示串联到一起（concatenation），“xN”代表上采样 N 倍。“+”表示对应元素相加，‘x’表示对应元素相乘，fc attention 模块是 Xception 中的全连接层，加上一个 1x1 卷积[^1x1_conv]在于之前的特征逐元素相乘（[B, 1000, 1, 1] 通过 1x1 卷积得到[B, 192, 1, 1]），其他各个模块的细节如下图，
 ，conv1 是普通的卷积操作，enc2、enc3、enc4 中的卷积都是深度分离卷积操作，Xception A 与 Xception B 是两种不同的 Bakcbone。[^Xception]

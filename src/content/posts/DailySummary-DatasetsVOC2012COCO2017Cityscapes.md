@@ -419,7 +419,7 @@ def get_object_nums_mask_remove_overlap_object(coco_object, target):
 
 Cityscapes 数据集呢，主要是车行驶在各个城市的图像，图像比较大（1024*2048），主要用于分割，检测等任务，这里就不多说了，看下面的数据集信息吧。
 
-![cityscapes dataset](/assets/images/2020/20200701/cityscape-dataset.png)
+![cityscapes dataset](/assets/images/2020/20200701/cityscape-dataset.webp)
 
 文件名|packageID|md5 值
 ---|---|---
@@ -513,7 +513,7 @@ Cityscapes 中，小于 1000 的数字是语义分割的标号，而大于 1000 
 
 ![cityscapes-target](/assets/images/2020/20200701/cityscapes-target.png)
 
-![cityscapes labels](/assets/images/2020/20200701/cityscape-labels.png)
+![cityscapes labels](/assets/images/2020/20200701/cityscape-labels.webp)
 
 ## 拓展：颜色转换
 

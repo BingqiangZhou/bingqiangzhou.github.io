@@ -32,7 +32,7 @@ abbrlink: coding-agent-migration
 
 这些事凑到一起，我对它的信任已经磨没了。这不是给它定罪——我没说它"板上钉钉有后门"；但经过这些，我作为一个中国用户，已经没法再像以前那样放心把生产链交给它。
 
-![同一个请求，缓存却失效了——Token 暴涨的真相](/assets/images/2026/20260707/coding-agent-migration/images/01-framework-anthropic-pattern.png)
+![同一个请求，缓存却失效了——Token 暴涨的真相](/assets/images/2026/20260707/coding-agent-migration/images/01-framework-anthropic-pattern.webp)
 
 **信任淡了，走得就没负担了。** 但"走得没负担"是一回事，**"有没有好的去处"是另一回事**——这就是 ZCode 3.0 + GLM-5.2 这次更新给我的答案。
 
@@ -61,7 +61,7 @@ abbrlink: coding-agent-migration
 
 也就是说，**中国用户因为买不到官方订阅、大多走第三方 API，而一走第三方 API，Remote Control 这条路就被官方直接掐死了。** 它还不支持 `--model` 参数。Claude Code 是"功能摆在那，但你这种用户配不上"；ZCode 是"功能可能没那么花哨，但你拿过来就能用"。对我这种天天在外面跑、要随时把活派出去的自媒体人，**这一条就值回票价了。**
 
-![手机远程派活：在外面也能让 AI 干活](/assets/images/2026/20260707/coding-agent-migration/images/02-framework-cc-vs-zcode.png)
+![手机远程派活：在外面也能让 AI 干活](/assets/images/2026/20260707/coding-agent-migration/images/02-framework-cc-vs-zcode.webp)
 
 **2. 国产直连，省心。** 不用挂代理、不用担心哪天账号被封、不用下载翻两道墙。光是"能稳定打开、稳定用"这一条，对现在的我来说就是刚需。
 
@@ -92,7 +92,7 @@ abbrlink: coding-agent-migration
 
 ## 结尾
 
-![从套壳到自研：ZCode 3.0 的进化](/assets/images/2026/20260707/coding-agent-migration/images/03-scene-moving-home.png)
+![从套壳到自研：ZCode 3.0 的进化](/assets/images/2026/20260707/coding-agent-migration/images/03-scene-moving-home.webp)
 
 阿里禁了 Claude Code，在我看来更像是一个注脚——**它印证了很多中国开发者心里早就在想的事**。但对我个人来说，真正改变我工作流的，不是那条新闻，是 **ZCode 3.0 + GLM-5.2 这次更新**。
 

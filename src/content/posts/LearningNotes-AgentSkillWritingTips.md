@@ -21,7 +21,7 @@ abbrlink: agent-skill-writing-tips
 
 很多人写 skill 是反过来的：自己一个个翻别人代码、自己琢磨结构、自己动手写。我试过，太累了，效率低得让人想放弃。你这哪是在用 AI，分明是在给 AI 打下手。正确的方式是把自己从"执行者"换成"指挥官"——眼睛盯着方向，脏活累活全交出去。AI 负责干活，你负责掌舵。因为"这个设计适不适合我""这个功能要不要保留"——这些只有你清楚，AI 不知道你的工作流。下面这几条心得，全都建立在这个前提上。
 
-![让 AI 代劳，自己只做判断：人是指挥官负责判断，AI 机器人负责干活](/assets/images/2026/20260709/agent-skill-writing-tips/images/01-infographic-ai-delegate.png)
+![让 AI 代劳，自己只做判断：人是指挥官负责判断，AI 机器人负责干活](/assets/images/2026/20260709/agent-skill-writing-tips/images/01-infographic-ai-delegate.webp)
 
 ## 二、多看：把别人的好 skill 当免费教材
 
@@ -37,7 +37,7 @@ abbrlink: agent-skill-writing-tips
 
 看完之后呢？直接照抄不可取，这就是下一条要讲的。
 
-![多看：把别人的好 skill 当免费教材，从官方仓库、社区合集、本机插件三个来源学习](/assets/images/2026/20260709/agent-skill-writing-tips/images/02-infographic-learn-from-others.png)
+![多看：把别人的好 skill 当免费教材，从官方仓库、社区合集、本机插件三个来源学习](/assets/images/2026/20260709/agent-skill-writing-tips/images/02-infographic-learn-from-others.webp)
 
 ## 三、先研究再复刻：别急着抄
 
@@ -53,7 +53,7 @@ abbrlink: agent-skill-writing-tips
 
 这里有个关键区分：**复刻不是复制粘贴**。复制粘贴是把别人的代码原样搬过来，你不知道哪行该改哪行该留；复刻是把别人的设计精髓——那个"为什么这么设计"——融进你自己的体系。这样进来的东西才是你的，你才改得动、养得起，环境变了你也知道怎么调。
 
-![研究后复刻 vs 直接抄：左边硬搬水土不服，右边拆解理解后严丝合缝](/assets/images/2026/20260709/agent-skill-writing-tips/images/03-comparison-replicate-vs-copy.png)
+![研究后复刻 vs 直接抄：左边硬搬水土不服，右边拆解理解后严丝合缝](/assets/images/2026/20260709/agent-skill-writing-tips/images/03-comparison-replicate-vs-copy.webp)
 
 ## 四、经常用经常改：skill 是磨出来的
 
@@ -67,7 +67,7 @@ skill 不是写完就定型的，是磨出来的。
 
 一个 skill 用上十来次，才算初步成型；用上几十次，它才会真的顺手。别指望一劳永逸地写出完美 skill，也别怕改——skill 这东西，越改越值钱。你现在看我这 22 个 skill 觉得有点门道，其实每个背后都是几十轮"用了就改"磨出来的。
 
-![skill 是磨出来的：用→发现问题→改→再用，循环打磨，从粗糙石块到光滑宝石](/assets/images/2026/20260709/agent-skill-writing-tips/images/04-infographic-iterate-polish.png)
+![skill 是磨出来的：用→发现问题→改→再用，循环打磨，从粗糙石块到光滑宝石](/assets/images/2026/20260709/agent-skill-writing-tips/images/04-infographic-iterate-polish.webp)
 
 ## 五、重复三次，就把它做成 skill
 
@@ -77,7 +77,7 @@ skill 不是写完就定型的，是磨出来的。
 
 我那 22 个 skill，一大半就是这么来的。不是说某天坐下来规划"我要建一个工具集"，而是用着用着发现：这个排版流程我每周都手动走一遍、那个发布步骤我每篇都要重复操作、这段处理我上个月刚写过几乎一样的——重复到第三次，我就知道该把它固化下来了。把重复劳动变成一次性的搭建，往后全是省。
 
-![重复三次就做成 skill：第三次拉警报，把重复操作固化沉淀](/assets/images/2026/20260709/agent-skill-writing-tips/images/05-infographic-three-times-rule.png)
+![重复三次就做成 skill：第三次拉警报，把重复操作固化沉淀](/assets/images/2026/20260709/agent-skill-writing-tips/images/05-infographic-three-times-rule.webp)
 
 反过来说，只做一次两次的事，别急着做 skill，过度工程化也是一种累。**三次，是个刚刚好的阈值：既不会太早（避免给一次性需求过度投资），也不会太晚（避免在重复劳动里耗太久）。**
 
@@ -111,6 +111,6 @@ skill 不是写完就定型的，是磨出来的。
 - 派子 agent 的话，goal 写死路径且有验证？
 - 拿 3 种不同说法测过 description 触发？
 
-![写 skill 的核对清单：逐项检查描述、命名、结构、配置、状态](/assets/images/2026/20260709/agent-skill-writing-tips/images/06-framework-checklist.png)
+![写 skill 的核对清单：逐项检查描述、命名、结构、配置、状态](/assets/images/2026/20260709/agent-skill-writing-tips/images/06-framework-checklist.webp)
 
 有用就点个在看，收藏备用，转发给也在折腾 AI agent 的朋友。这些心得是我从 22 个 skill 里磨出来的，写下来既是复盘，也希望能帮你少走点弯路。

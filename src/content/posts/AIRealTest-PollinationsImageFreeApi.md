@@ -43,15 +43,15 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux</th><th>zimage</th><th>gptimage</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__flux.png" width="100%" alt="宇航员-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__zimage.png" width="100%" alt="宇航员-zimage"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__gptimage.png" width="100%" alt="宇航员-gptimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__flux.webp" width="100%" alt="宇航员-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__zimage.webp" width="100%" alt="宇航员-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__gptimage.webp" width="100%" alt="宇航员-gptimage"/></td>
 </tr>
 <tr><th>klein</th><th>nova-canvas</th><th>gptimage-large</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__klein.png" width="100%" alt="宇航员-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__nova-canvas.png" width="100%" alt="宇航员-nova-canvas"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__gptimage-large.png" width="100%" alt="宇航员-gptimage-large"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__klein.webp" width="100%" alt="宇航员-klein"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__nova-canvas.webp" width="100%" alt="宇航员-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/astronaut_horse__gptimage-large.webp" width="100%" alt="宇航员-gptimage-large"/></td>
 </tr>
 </table>
 
@@ -66,15 +66,15 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux ✅</th><th>zimage ✅</th><th>gptimage ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__flux.png" width="100%" alt="文字-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__zimage.png" width="100%" alt="文字-zimage"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__gptimage.png" width="100%" alt="文字-gptimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__flux.webp" width="100%" alt="文字-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__zimage.webp" width="100%" alt="文字-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__gptimage.webp" width="100%" alt="文字-gptimage"/></td>
 </tr>
 <tr><th>klein ✅</th><th>nova-canvas ❌</th><th>gptimage-large ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__klein.png" width="100%" alt="文字-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__nova-canvas.png" width="100%" alt="文字-nova-canvas"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__gptimage-large.png" width="100%" alt="文字-gptimage-large"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__klein.webp" width="100%" alt="文字-klein"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__nova-canvas.webp" width="100%" alt="文字-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/text_rendering__gptimage-large.webp" width="100%" alt="文字-gptimage-large"/></td>
 </tr>
 </table>
 
@@ -89,15 +89,15 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux ❌</th><th>zimage ✅</th><th>gptimage ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__flux.png" width="100%" alt="猫-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__zimage.png" width="100%" alt="猫-zimage"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__gptimage.png" width="100%" alt="猫-gptimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__flux.webp" width="100%" alt="猫-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__zimage.webp" width="100%" alt="猫-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__gptimage.webp" width="100%" alt="猫-gptimage"/></td>
 </tr>
 <tr><th>klein ✅</th><th>nova-canvas ⚠️</th><th>gptimage-large ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__klein.png" width="100%" alt="猫-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__nova-canvas.png" width="100%" alt="猫-nova-canvas"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__gptimage-large.png" width="100%" alt="猫-gptimage-large"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__klein.webp" width="100%" alt="猫-klein"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__nova-canvas.webp" width="100%" alt="猫-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/two_cats_chess__gptimage-large.webp" width="100%" alt="猫-gptimage-large"/></td>
 </tr>
 </table>
 
@@ -112,15 +112,15 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux ❌</th><th>zimage ✅</th><th>gptimage ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__flux.png" width="100%" alt="海报-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__zimage.png" width="100%" alt="海报-zimage"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__gptimage.png" width="100%" alt="海报-gptimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__flux.webp" width="100%" alt="海报-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__zimage.webp" width="100%" alt="海报-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__gptimage.webp" width="100%" alt="海报-gptimage"/></td>
 </tr>
 <tr><th>klein ❌</th><th>nova-canvas ❌</th><th>gptimage-large ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__klein.png" width="100%" alt="海报-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__nova-canvas.png" width="100%" alt="海报-nova-canvas"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__gptimage-large.png" width="100%" alt="海报-gptimage-large"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__klein.webp" width="100%" alt="海报-klein"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__nova-canvas.webp" width="100%" alt="海报-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/midautumn_poster__gptimage-large.webp" width="100%" alt="海报-gptimage-large"/></td>
 </tr>
 </table>
 
@@ -138,14 +138,14 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux ❌</th><th>zimage ✅</th><th>gptimage ⚠️</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__flux.png" width="100%" alt="导图-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__zimage.png" width="100%" alt="导图-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__flux.webp" width="100%" alt="导图-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__zimage.webp" width="100%" alt="导图-zimage"/></td>
 <td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__gptimage.png" width="100%" alt="导图-gptimage"/></td>
 </tr>
 <tr><th>klein ❌</th><th>nova-canvas ❌</th><th>gptimage-large ❌</th></tr>
 <tr>
 <td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__klein.png" width="100%" alt="导图-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__nova-canvas.png" width="100%" alt="导图-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__nova-canvas.webp" width="100%" alt="导图-nova-canvas"/></td>
 <td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__gptimage-large.png" width="100%" alt="导图-gptimage-large"/></td>
 </tr>
 </table>
@@ -170,15 +170,15 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux</th><th>zimage</th><th>gptimage</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__flux.png" width="100%" alt="渔夫-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__zimage.png" width="100%" alt="渔夫-zimage"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__gptimage.png" width="100%" alt="渔夫-gptimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__flux.webp" width="100%" alt="渔夫-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__zimage.webp" width="100%" alt="渔夫-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__gptimage.webp" width="100%" alt="渔夫-gptimage"/></td>
 </tr>
 <tr><th>klein</th><th>nova-canvas</th><th>gptimage-large</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__klein.png" width="100%" alt="渔夫-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__nova-canvas.png" width="100%" alt="渔夫-nova-canvas"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__gptimage-large.png" width="100%" alt="渔夫-gptimage-large"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__klein.webp" width="100%" alt="渔夫-klein"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__nova-canvas.webp" width="100%" alt="渔夫-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/style_golden_hour__gptimage-large.webp" width="100%" alt="渔夫-gptimage-large"/></td>
 </tr>
 </table>
 
@@ -193,15 +193,15 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux</th><th>zimage</th><th>gptimage</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__flux.png" width="100%" alt="晚宴-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__zimage.png" width="100%" alt="晚宴-zimage"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__gptimage.png" width="100%" alt="晚宴-gptimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__flux.webp" width="100%" alt="晚宴-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__zimage.webp" width="100%" alt="晚宴-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__gptimage.webp" width="100%" alt="晚宴-gptimage"/></td>
 </tr>
 <tr><th>klein</th><th>nova-canvas</th><th>gptimage-large</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__klein.png" width="100%" alt="晚宴-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__nova-canvas.png" width="100%" alt="晚宴-nova-canvas"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__gptimage-large.png" width="100%" alt="晚宴-gptimage-large"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__klein.webp" width="100%" alt="晚宴-klein"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__nova-canvas.webp" width="100%" alt="晚宴-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/complex_dinner__gptimage-large.webp" width="100%" alt="晚宴-gptimage-large"/></td>
 </tr>
 </table>
 
@@ -216,15 +216,15 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>flux ⚠️</th><th>zimage ✅</th><th>gptimage ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__flux.png" width="100%" alt="手-flux"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__zimage.png" width="100%" alt="手-zimage"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__gptimage.png" width="100%" alt="手-gptimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__flux.webp" width="100%" alt="手-flux"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__zimage.webp" width="100%" alt="手-zimage"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__gptimage.webp" width="100%" alt="手-gptimage"/></td>
 </tr>
 <tr><th>klein ⚠️</th><th>nova-canvas ✅</th><th>gptimage-large ✅</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__klein.png" width="100%" alt="手-klein"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__nova-canvas.png" width="100%" alt="手-nova-canvas"/></td>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__gptimage-large.png" width="100%" alt="手-gptimage-large"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__klein.webp" width="100%" alt="手-klein"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__nova-canvas.webp" width="100%" alt="手-nova-canvas"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/anatomy_hands__gptimage-large.webp" width="100%" alt="手-gptimage-large"/></td>
 </tr>
 </table>
 
@@ -271,8 +271,8 @@ https://gen.pollinations.ai/image/a%20cat%20on%20the%20moon?model=flux&width=102
 <table>
 <tr><th>Pollinations <code>zimage</code>（思维导图，中心 + 分支标题全对、小字乱码）</th><th>Agnes <code>agnes-image-2.1</code>（中秋海报，全对）</th></tr>
 <tr>
-<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__zimage.png" width="100%" alt="Pollinations 思维导图"/></td>
-<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.png" width="100%" alt="Agnes 中秋海报"/></td>
+<td><img src="/assets/images/2026/20260627/pollinations-image/images/mindmap__zimage.webp" width="100%" alt="Pollinations 思维导图"/></td>
+<td><img src="/assets/images/2026/20260626/agnes-image/images/midautumn_poster.webp" width="100%" alt="Agnes 中秋海报"/></td>
 </tr>
 </table>
 

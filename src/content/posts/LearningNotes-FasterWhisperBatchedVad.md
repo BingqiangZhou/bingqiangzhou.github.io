@@ -70,7 +70,7 @@ segments, info = model.transcribe(
 
 但这也意味着放弃了 `BatchedInferencePipeline` 的批量推理速度优势。为了确认 VAD 漏句与 batch size 的关系，测试了同一段视频在不同配置下的转录结果：
 
-![不同 batch size 转录结果对比](/assets/images/2026/20260517/batch-size-comparison.png)
+![不同 batch size 转录结果对比](/assets/images/2026/20260517/batch-size-comparison.webp)
 
 从对比可以看出：`model.transcribe`（batch_size=1）+ `vad_filter=False` 转录完整但最慢，而 `BatchedInferencePipeline`（batch_size > 1）虽然更快，但都存在漏句。看起来结论是——要完整性就得牺牲速度。
 
@@ -86,7 +86,7 @@ VAD 在切段时有一个关键参数 `min_silence_duration_ms`（最小静音�
 
 在项目代码中，我们原本设置了更大的 `min_silence_duration_ms`（如 2000ms），希望通过增大静音间隔阈值来避免把短暂的停顿当成段落分隔。但问题出在参数传递上——这个参数在封装的 skills 调用链中**没有被正确传递到 `BatchedInferencePipeline`**，导致实际使用的是默认值 500ms。
 
-![VAD 漏句根因分析：min_silence_duration_ms 参数未正确传入](/assets/images/2026/20260517/vad-root-cause.png)
+![VAD 漏句根因分析：min_silence_duration_ms 参数未正确传入](/assets/images/2026/20260517/vad-root-cause.webp)
 
 500ms 的静音间隔阈值对于正常语速的对话来说太小了——说话人稍微停顿一下（比如思考、换气），VAD 就会把停顿前后的内容切成两段，甚至把停顿后的内容直接丢弃。这才是漏句的真正原因。
 
@@ -142,7 +142,7 @@ segments, info = pipeline.transcribe(
 
 在"进一步探索"过程中，仔细检查对比测试脚本时发现了一个关键问题：**benchmark 脚本测的是错误的东西，导致误判了 `BatchedInferencePipeline` 的丢段情况**。
 
-![发现 benchmark 脚本的两个关键错误](/assets/images/2026/20260517/script-bug-found.png)
+![发现 benchmark 脚本的两个关键错误](/assets/images/2026/20260517/script-bug-found.webp)
 
 具体来说，脚本有两个错误：
 

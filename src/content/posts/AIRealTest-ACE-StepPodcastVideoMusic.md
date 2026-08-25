@@ -32,7 +32,7 @@ abbrlink: ace-step-podcast-video-music-realtest
 
 按**播客和短视频的真实创作动线**生成 12 段样本（编号 01-12），每段给四样东西：**场景 → 提示词 → 写法要点（教你怎么写）→ 🎧 音频 + Gemini 3.1 Pro 老师听评 + 客观打分**。
 
-![播客音乐创作动线：片头→垫底 BGM→转场→片尾](/assets/images/2026/20260708/ace-step/images/01-creative-pipeline.png)
+![播客音乐创作动线：片头→垫底 BGM→转场→片尾](/assets/images/2026/20260708/ace-step/images/01-creative-pipeline.webp)
 
 **评分怎么来的**：听感分（提示词遵循度、音质、情绪、场景可用性，1-5 分制）由 Gemini 老师听完音频盲评；时长精度由作者实测。满分 5 分，4 分及以上算可用。
 
@@ -334,7 +334,7 @@ Catch the moment, hold it tight</lyrics>
 
 对照上面的样本看：片头是"温暖钢琴 + 钟声 + 明亮欢迎 + 纯器乐 + 短开场 logo"，BGM 是"平静氛围 + 柔和钢琴 + 纯器乐 + 不要鼓点/主旋律"。**经验**：4-7 个描述词是甜区，太少不精确、太多模型会混乱；风格和情绪词放最前面（模型对开头词权重最高）。
 
-![提示词万能公式：风格 + 乐器 + 情绪 + 人声/器乐 + 结构](/assets/images/2026/20260708/ace-step/images/02-prompt-formula.png)
+![提示词万能公式：风格 + 乐器 + 情绪 + 人声/器乐 + 结构](/assets/images/2026/20260708/ace-step/images/02-prompt-formula.webp)
 
 ### 2.2 三条关键技巧
 

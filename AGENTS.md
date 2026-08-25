@@ -84,7 +84,9 @@ Posts live in `src/content/posts/` as `.md` / `.mdx`. Schema is defined in `src/
 - **Required frontmatter**: `title`, `published` (YYYY-MM-DD), `description`, `lang`, `tags`.
 - **Optional**: `updated`, `draft`, `pin` (0-99), `toc`, `abbrlink` (URL slug: lowercase
   alphanumeric + hyphens). Dates use `YYYY-MM-DD`.
-- **Existing tags**: 碎碎念, 学习笔记, 工具分享, 折腾记录, 论文阅读笔记, 读书笔记.
+- **Existing tags** (18, as of 2026-08): 学习笔记, 工具分享, 实践记录, 读书笔记, Claude Code,
+  AI前沿, 财商, 论文阅读笔记, AI实测, 碎碎念, WWDC, Apple, 优质转载, Agent Skill, Skill,
+  Agent, 折腾记录, AI图像生成. Prefer reusing an existing tag over minting a new one.
 - **Body**: No H1 (`# title`) in the body — frontmatter `title` renders as the page `<h1>`. Start
   the body directly with text, blockquotes, or H2+.
 - **URL**: post URLs use `abbrlink` if set, otherwise the file's `id` (filename without extension).
