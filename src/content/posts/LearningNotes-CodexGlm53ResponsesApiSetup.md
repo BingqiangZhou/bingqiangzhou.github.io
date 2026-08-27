@@ -76,6 +76,10 @@ Codex 会话内用 `/model` 切换模型时，下拉列表来自它的"模型目
                 {
                     "effort": "max",
                     "description": "Deep reasoning"
+                },
+                {
+                    "effort": "ultra",
+                    "description": "Alias of max, desktop-compatible"
                 }
             ],
             "shell_type": "shell_command",
@@ -117,6 +121,10 @@ Codex 会话内用 `/model` 切换模型时，下拉列表来自它的"模型目
                 {
                     "effort": "max",
                     "description": "Deep reasoning"
+                },
+                {
+                    "effort": "ultra",
+                    "description": "Alias of max, desktop-compatible"
                 }
             ],
             "shell_type": "shell_command",
@@ -146,14 +154,14 @@ Codex 会话内用 `/model` 切换模型时，下拉列表来自它的"模型目
 }
 ```
 
-一个说明：官方 Codex 文档的示例目录里，第二个模型是 `glm-5-turbo`（约 200K 上下文、不暴露推理档位）。本篇按 GLM-5.3-Flash 模型页的规格把它替换成了 `glm-5.3-flash`——上下文同为 1M，推理档位同为 low/high/max，输入模态多了 image。若想与官方示例完全一致，把这个条目换回 `glm-5-turbo` 即可。
+一个说明：官方 Codex 文档的示例目录里，第二个模型是 `glm-5-turbo`（约 200K 上下文、不暴露推理档位）。本篇按 GLM-5.3-Flash 模型页的规格把它替换成了 `glm-5.3-flash`——上下文同为 1M，推理档位同为 low/high/max，输入模态多了 image。若想与官方示例完全一致，把这个条目换回 `glm-5-turbo` 即可。另外，两个模型都额外补了一个 `ultra` 档：它在线上会被 Codex 映射为 `max`，但能通过桌面 app 的档位白名单，是绕开坑六的关键补丁。
 
 值得留意的几个字段：
 
 | 字段 | glm-5.3 | glm-5.3-flash | 含义 |
 | --- | --- | --- | --- |
 | `context_window` | 1048576（1M tokens） | 1048576（1M tokens） | 上下文窗口，决定单会话能装多少代码 |
-| `supported_reasoning_levels` | low / high / max | low / high / max | 推理力度档位，Codex 会映射到请求参数 |
+| `supported_reasoning_levels` | low / high / max / ultra | low / high / max / ultra | 推理力度档位；ultra 线上等同 max（见第 7 节坑六） |
 | `input_modalities` | 仅 text | text + image | 模型能接收的输入类型，flash 的多模态入口 |
 | `priority` | 0 | 1 | 模型列表排序，数字越小越靠前 |
 
@@ -250,20 +258,21 @@ npx @z_ai/coding-helper
 | `openai.config.toml` | profile：恢复改造前的 OpenAI 默认 |
 | `openai-models.json` | OpenAI 模型专用目录（来历见第 7 节坑三） |
 
-主配置顶部键区最终长这样（provider 段即 3.2 节的 `env_key` 版本；环境变量里已经有 `ZHIPU_API_KEY`，无需再新设）：
+主配置顶部键区最终长这样（provider 段即 3.2 节的 `env_key` 版本；环境变量里已经有 `ZHIPU_API_KEY`，无需再新设。档位用 `ultra` 而非 `max`，原因见第 7 节坑六——简言之：线上等效 max，又能通过桌面 app 的档位白名单）：
 
 ```toml
 model_provider = "ZAI"
 model = "glm-5.3"
-model_reasoning_effort = "max"
+model_reasoning_effort = "ultra"
 model_catalog_json = "~/.codex/models.json"
 ```
 
 两个 profile 文件小到可以整行背下来：
 
 ```toml
-# glm.config.toml —— 一行即可，provider、Key、目录全部继承主配置
+# glm.config.toml —— provider、Key、目录全部继承主配置
 model = "glm-5.3-flash"
+model_reasoning_effort = "ultra"
 ```
 
 ```toml
@@ -292,13 +301,13 @@ codex exec --profile glm "只回复两个字：flash"
 codex --profile openai debug prompt-input       # 能跑通即分层配置解析正常
 ```
 
-`codex exec` 的输出头部会打出 `model` / `provider` / `reasoning effort` 三行，肉眼核对无误即算通过。实测三步全绿：glm-5.3 与 glm-5.3-flash 均以 `provider: ZAI`、`reasoning effort: max` 正常应答。
+`codex exec` 的输出头部会打出 `model` / `provider` / `reasoning effort` 三行，肉眼核对无误即算通过。实测三步全绿：glm-5.3 与 glm-5.3-flash 均以 `provider: ZAI` 正常应答，档位显示 `ultra`（线上实际发送 `max`，验证方法见第 7 节坑六）。
 
 ---
 
 ## 7. 实测踩坑记录
 
-官方 FAQ 覆盖不到的五个坑，全部在本机复现过，按严重程度排序：
+官方 FAQ 覆盖不到的六个坑，全部在本机复现过，按严重程度排序：
 
 **坑一：`max` 档位与 Codex 版本强绑定（会让 Codex 直接启动失败）。** 照官方文档写 `model_reasoning_effort = "max"`，或在 `models.json` 里声明 `"max"` 档位，旧版 CLI 会直接报错退出：
 
@@ -315,6 +324,14 @@ Error: unknown variant `max`, expected one of `none`, `minimal`, `low`, `medium`
 **坑四：`codex debug models` 不支持 `--profile`。** 会报 "–-profile only applies to runtime commands"。想验证某个 profile 的分层配置（含目录解析），改用 `codex --profile <name> debug prompt-input`，不消耗 API 额度。
 
 **坑五（无害但吓人）：ZAI 会话下的 rmcp 回连报错。** `codex exec` 输出里偶现 `ERROR rmcp ... chatgpt.com/backend-api/wham/apps`——那是 OpenAI 捆绑插件在非 OpenAI provider 下尝试回连 OpenAI 后端，失败但不影响 GLM 响应，忽略即可。
+
+**坑六：`max` 档位被桌面 app 白名单过滤，`xhigh` 又被 GLM 拒收——解法是 `ultra`。** 这是排查最曲折的一个坑，分三层：
+
+- **桌面层**：Codex 桌面 app 的 UI 有一份"可用档位白名单"（low / medium / high / xhigh / ultra），**唯独漏了 `max`**——即使 `config.toml` 设了 `max`，重启 app、新建会话也会被静默回落（上游 [issue #33233](https://github.com/openai/codex/issues/33233)）。所以"配置里明明是 max，桌面 Effort 却显示 High"不是你配置错了。
+- **服务端层**：直接调 GLM 的 Responses 接口探测，glm-5.3 只接受 `low / high / max` 三档——`xhigh`、`ultra` 原样发送都会 400：`该模型始终思考，不支持关闭思考；请使用 low、high 或 max`。所以**不能用 xhigh 冒充 max**。
+- **客户端层**：用本地 HTTP 接收器抓 Codex 实际发出的请求体（`codex exec -c 'model_providers.ZAI.base_url="http://127.0.0.1:8899/api/v1"'` 临时把端点指到本地），发现 Codex 对档位做了**线上映射**：`high`→`high`、`max`→`max`、`xhigh`→`xhigh`（原样透传，所以会 400），而 **`ultra`→`max`**。
+
+三层拼起来就是完整解法：**把档位设为 `ultra`**——桌面白名单认它（UI 显示为可选档），Codex 发到线上的是 `max`，GLM 照单全收，CLI 与桌面双端等效拿到最深推理档。用 `usage.output_tokens_details.reasoning_tokens` 做对照（同一道推理题）：low 平均约 700、high 约 900、max 约 2500——深度差异肉眼可见，这也是验证"某档位是否真的在跑 max"的通用方法。注意 `ultra`→`max` 是 0.150.x 的实测行为，Codex 升级后建议用同样的抓包法复验一遍。
 
 一个顺带的正面确认：`model_catalog_json` 写 `~/.codex/models.json` 的波浪号在 Windows 上能正常展开，不必写绝对路径。
 
