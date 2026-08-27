@@ -327,11 +327,13 @@ Error: unknown variant `max`, expected one of `none`, `minimal`, `low`, `medium`
 
 **坑六：`max` 档位被桌面 app 白名单过滤，`xhigh` 又被 GLM 拒收——解法是 `ultra`。** 这是排查最曲折的一个坑，分三层：
 
-- **桌面层**：Codex 桌面 app 的 UI 有一份"可用档位白名单"（low / medium / high / xhigh / ultra），**唯独漏了 `max`**——即使 `config.toml` 设了 `max`，重启 app、新建会话也会被静默回落（上游 [issue #33233](https://github.com/openai/codex/issues/33233)）。所以"配置里明明是 max，桌面 Effort 却显示 High"不是你配置错了。
+- **桌面层**：Codex 桌面 app 的 UI 有一份"可用档位白名单"（low / medium / high / xhigh / ultra），**唯独漏了 `max`**（上游 [issue #33233](https://github.com/openai/codex/issues/33233)）。后果是显示"漂移"：`config.toml` 设成 `max` 时，桌面 Effort 一栏并不显示 Max，而是回落成白名单内的档位展示（实测显示成了 Medium）——但这只是**显示层 bug**：抓包证明线上依然原样发送 `max`，GLM 也确实跑在最深档。真正的问题是显示与行为不一致，很容易让人误判成"档位被降了"。
 - **服务端层**：直接调 GLM 的 Responses 接口探测，glm-5.3 只接受 `low / high / max` 三档——`xhigh`、`ultra` 原样发送都会 400：`该模型始终思考，不支持关闭思考；请使用 low、high 或 max`。所以**不能用 xhigh 冒充 max**。
 - **客户端层**：用本地 HTTP 接收器抓 Codex 实际发出的请求体（`codex exec -c 'model_providers.ZAI.base_url="http://127.0.0.1:8899/api/v1"'` 临时把端点指到本地），发现 Codex 对档位做了**线上映射**：`high`→`high`、`max`→`max`、`xhigh`→`xhigh`（原样透传，所以会 400），而 **`ultra`→`max`**。
 
-三层拼起来就是完整解法：**把档位设为 `ultra`**——桌面白名单认它（UI 显示为可选档），Codex 发到线上的是 `max`，GLM 照单全收，CLI 与桌面双端等效拿到最深推理档。用 `usage.output_tokens_details.reasoning_tokens` 做对照（同一道推理题）：low 平均约 700、high 约 900、max 约 2500——深度差异肉眼可见，这也是验证"某档位是否真的在跑 max"的通用方法。注意 `ultra`→`max` 是 0.150.x 的实测行为，Codex 升级后建议用同样的抓包法复验一遍。
+三层拼起来就是完整解法：**把档位设为 `ultra`**——桌面白名单认它，Effort 菜单能正确显示并选中 Ultra（见下图），Codex 发到线上的是 `max`，GLM 照单全收。显示与行为终于一致，CLI 与桌面双端等效拿到最深推理档。用 `usage.output_tokens_details.reasoning_tokens` 做对照（同一道推理题）：low 平均约 700、high 约 900、max 约 2500——深度差异肉眼可见，这也是验证"某档位是否真的在跑 max"的通用方法。注意 `ultra`→`max` 是 0.150.x 的实测行为，Codex 升级后建议用同样的抓包法复验一遍。
+
+![Codex 桌面 app 的 Effort 菜单：档位配置为 ultra 后，Ultra 正确显示并被选中](/assets/images/2026/20260827/codex-desktop-effort-ultra.webp)
 
 一个顺带的正面确认：`model_catalog_json` 写 `~/.codex/models.json` 的波浪号在 Windows 上能正常展开，不必写绝对路径。
 
