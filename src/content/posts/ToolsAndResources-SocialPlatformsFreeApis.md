@@ -8,7 +8,7 @@ tags:
   - 实践记录
 ---
 
-[上一篇笔记](/posts/toolsresources-tweetembedapis/)研究「免费拿推文数据」时，我翻了 fxtwitter（FxEmbed）的源码，发现它的 provider 目录里躺着六个平台：twitter、bluesky、instagram、mastodon、threads、tiktok。索性把 YouTube 和 Discord 也加上，一次把主流平台盘完。
+[上一篇笔记](/posts/toolsandresources-tweetembedapis/)研究「免费拿推文数据」时，我翻了 fxtwitter（FxEmbed）的源码，发现它的 provider 目录里躺着六个平台：twitter、bluesky、instagram、mastodon、threads、tiktok。索性把 YouTube 和 Discord 也加上，一次把主流平台盘完。
 
 统一视角看五件事：**官方 API 免费到什么程度、官方 oEmbed 免不免 token、原生 RSS 还在不在、社区通道有哪些、国内能不能直连**。文中所有「实测」均在 2026-08-30 完成：本机为国内家庭宽带，服务端验证借助网页抓取服务（下文不再重复标注）。每个平台配一张 API 清单表，免费通道加粗。
 
@@ -29,7 +29,7 @@ tags:
 
 ## X：上一篇的主角
 
-结论都在[上一篇](/posts/toolsresources-tweetembedapis/)，一句话版：官方 oEmbed 免费不限流但「喂浏览器」，官方 API 按量付费，结构化数据用社区方案。
+结论都在[上一篇](/posts/toolsandresources-tweetembedapis/)，一句话版：官方 oEmbed 免费不限流但「喂浏览器」，官方 API 按量付费，结构化数据用社区方案。
 
 | API / 通道 | 端点 | 鉴权 | 费用 | 限制与备注 |
 | --- | --- | --- | --- | --- |
