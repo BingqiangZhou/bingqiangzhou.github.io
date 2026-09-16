@@ -303,6 +303,41 @@ codex --profile openai debug prompt-input       # 能跑通即分层配置解析
 
 `codex exec` 的输出头部会打出 `model` / `provider` / `reasoning effort` 三行，肉眼核对无误即算通过。实测三步全绿：glm-5.3 与 glm-5.3-flash 均以 `provider: ZAI` 正常应答，档位显示 `ultra`（线上实际发送 `max`，验证方法见第 7 节坑六）。
 
+### 6.3 反向切换：回到 Codex 原生（OpenAI 默认）
+
+GLM 用了一阵后，我把主力又切回了 OpenAI——不需要拆掉任何东西，**结构镜像翻转**即可，两个方向随时互切：
+
+1. **base 恢复原生**：`config.toml` 顶部键区改回两行（`model = "gpt-5.6-luna"` + `model_reasoning_effort = "high"`），删掉 `model_provider` 与 `model_catalog_json` 两行；**末尾的 `[model_providers.ZAI]` 块保留**——它不影响 OpenAI 会话，GLM profile 还要靠它继承 provider 定义。注意别用最初的备份整体覆盖：这期间桌面 app 已经把 notify 等内容更新过好几轮，备份早已过期。
+2. **GLM 退到 profile**：两个 profile 文件各自写全四行（不再依赖 base，provider 自己声明）：
+
+   ```toml
+   # glm.config.toml
+   model_provider = "ZAI"
+   model = "glm-5.3"
+   model_reasoning_effort = "ultra"
+   model_catalog_json = "~/.codex/models.json"
+   ```
+
+   ```toml
+   # glm-flash.config.toml —— 只有 model 一行不同
+   model_provider = "ZAI"
+   model = "glm-5.3-flash"
+   model_reasoning_effort = "ultra"
+   model_catalog_json = "~/.codex/models.json"
+   ```
+
+3. **清理**：为旧布局准备的 `openai.config.toml` 与 `openai-models.json` 可以删了——base 即原生，自动走原生在线目录。
+4. **验证四步**：`codex debug models`（gpt 系模型回归）、`codex exec` 冒烟（实测头部 `gpt-5.6-luna` / `openai` / `high`）、两个 GLM profile 各冒烟一次（实测 `ZAI` / `glm-5.3` 或 `glm-5.3-flash` / `ultra`）。
+5. **副作用**：桌面 app 随 base 回到原生，GLM 从桌面选择器消失——想在桌面用 GLM 得把 base 切回来，CLI profile 不受影响。
+
+**有没有"一键切换"的命令？** 没有。Codex 0.150.x 没有切换 provider 的子命令（无 `codex switch` / `codex provider` 之类），官方 slash 命令全表里也只有 `/model`——它只切模型，而且选择会持久化写回 `config.toml`（坑一、坑六的来源），并不适合当 provider 开关。可用的最短路径有三条：
+
+| 方式 | 写法 | 特点 |
+| --- | --- | --- |
+| profile 启动 | `codex -p glm`（`--profile` 的缩写） | 最短的官方写法，配置落盘在文件里 |
+| `-c` 临时覆盖 | `codex -c model_provider=ZAI -c model=glm-5.3 -c model_catalog_json="~/.codex/models.json"` | 一次性会话，不依赖任何 profile 文件 |
+| shell 别名 | PowerShell 的 `$PROFILE` 或 `~/.bashrc` 里加 `alias glm='codex --profile glm'` | 真正的"一键"：敲 `glm` 回车即达 |
+
 ---
 
 ## 7. 实测踩坑记录
