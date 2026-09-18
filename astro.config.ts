@@ -21,6 +21,7 @@ import { rehypeImageProcessor } from './src/plugins/rehype-image-processor.mjs'
 import { remarkContainerDirectives } from './src/plugins/remark-container-directives.mjs'
 import { remarkLeafDirectives } from './src/plugins/remark-leaf-directives.mjs'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
+import { remarkTextDirectives } from './src/plugins/remark-text-directives.mjs'
 
 const { url: site } = themeConfig.site
 const { imageHostURL } = themeConfig.preload ?? {}
@@ -77,6 +78,7 @@ export default defineConfig({
     processor: unified({
       remarkPlugins: [
         remarkDirective,
+        remarkTextDirectives,
         remarkMath,
         remarkContainerDirectives,
         remarkLeafDirectives,
