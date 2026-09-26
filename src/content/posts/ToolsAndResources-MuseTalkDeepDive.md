@@ -132,6 +132,7 @@ v1.5 相对 v1.0 的升级：感知损失 + GAN 损失 + sync 损失联合训练
 
 ## 十、参考链接
 
+- [数字人方案深度调研](/posts/digital-human-research/)——本文选型结论所属的 8 个方向、90+ 方案全景调研（价格、许可证均经独立核实）
 - [TMElyralab/MuseTalk](https://github.com/TMElyralab/MuseTalk)——官方仓库（本文原理、许可、性能数据均出自 README 原文）
 - [MuseTalk 技术报告](https://arxiv.org/abs/2410.10122)《Real-Time High-Fidelity Video Dubbing via Spatio-Temporal Sampling》
 - [TMElyralab/MuseV](https://github.com/TMElyralab/MuseV)——兄弟项目，虚拟人视频生成
