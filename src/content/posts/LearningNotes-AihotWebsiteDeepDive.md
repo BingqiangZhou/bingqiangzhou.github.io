@@ -10,6 +10,7 @@ abbrlink: aihot-website-deep-dive
 > 调研日期：2026-09-04（全部一手实测当日核验）
 > 方法：公开 API／页面／RSS／MCP／Agent Skill 逐项实测 + robots.txt／sitemap／响应头考古 + Wayback 时间线 + 创作者自述两篇全文转录 + 媒体报道比对。实测脚本与原始输出存于 `_research/aihot-调研材料/`。
 > 关联背景：AIHOT 是SelfMediaTools 项目 ai-news-digest 的上游信源。此前「AIHOT=[卡兹克](/posts/digital-life-khazix-analysis/)内部流水线外溢」为三证吻合的强推断，本次经 /about 页自述与创作者知乎发布文升级为**实证**（§1.3）。
+> 后续（2026-09-29）：AIHOT 已于 9 月 28 日整体开源（[KKKKhazix/AIHOT](https://github.com/KKKKhazix/AIHOT)），源码级核对与本文黑盒推断的逐项对照见[白盒续篇](/posts/aihot-framework-deep-dive/)——重写后的技术栈为 React Router + Fastify + pg-boss，评分改为双盲双评，本文的运营数据实测仍然成立。
 
 ## 0. 一页结论
 
