@@ -26,3 +26,4 @@ package-lock.json
 # agent session artifacts
 .zcode/*
 !.zcode/skills/
+.zcodeignore
