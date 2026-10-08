@@ -62,13 +62,13 @@ Partytown, Sitemap, astro-compress.
 
 ## Where things live (source map)
 
-- `src/pages/[...lang]/` — all pages (home, post list, news, podcasts, tags, about, search, feeds)
+- `src/pages/[...lang]/` — all pages (home, post list, tags, about, search, feeds)
 - `src/components/` — Astro components (Comment integrations: Giscus/Twikoo/Waline; Widgets: TOC,
-  CodeCopy, ImageZoom, NewsList, PodcastList)
+  CodeCopy, ImageZoom)
 - `src/plugins/` — custom remark/rehype plugins (containers, leaf directives, reading time,
   KaTeX/Mermaid, slug, heading anchors, image processing, external links, code-copy)
 - `src/layouts/` — Head.astro (SEO/meta/OG), Layout.astro (main wrapper)
-- `src/utils/content.ts` — content querying (posts, news, podcasts with date-grouping utilities)
+- `src/utils/content.ts` — content querying (posts with date-grouping utilities)
 - `scripts/` — `new-post.ts`, `format-posts.ts`, `apply-lqip.ts`, `update-theme.ts`
 
 ## Content conventions
@@ -95,15 +95,6 @@ Posts live in `src/content/posts/` as `.md` / `.mdx`. Schema is defined in `src/
   saved). Convert new screenshots/photos to WebP before committing (sharp is installed). PNG only
   where tooling demands it (`public/icons/favicon.png`, `og-logo.png` for astro-og-canvas).
 
-### News & podcasts
-
-Separate content collections (simpler schema than posts) with list pages grouped by year/month.
-
-- **Directories**: `src/content/news/` and `src/content/podcasts/`.
-- **Minimal frontmatter**: `title`, `published` (YYYY-MM-DD), `lang`. Optional `draft`. URL slug is
-  the file's `id`. List components `NewsList.astro` / `PodcastList.astro`; pages under
-  `src/pages/[...lang]/news/` and `/podcasts/`; query functions in `src/utils/content.ts`.
-
 ## Adding content — use the skills
 
 Two canonical skills under `.zcode/skills/` define the real workflows; prefer them over
@@ -119,19 +110,6 @@ improvising:
 Both skills' descriptions are in Chinese. When the user asks to add/repost content, follow the
 relevant skill rather than the generic steps above.
 
-## Auto-generated content — do not hand-edit
-
-`.github/workflows/sync-digest.yml` runs daily (cron) and on manual dispatch:
-
-1. Clones `github.com/BingqiangZhou/DailyDigest` (shallow).
-2. Runs `node .github/scripts/sync-digest.mjs` to regenerate `src/content/news/` and
-   `src/content/podcasts/`.
-3. Commits and pushes the result, which in turn triggers a deploy.
-
-**Treat `src/content/news/` and `src/content/podcasts/` as generated output.** Edits there will be
-overwritten by the next sync. Authoritative content for these lives in the external `DailyDigest`
-repo, not here. Manual content work belongs in `src/content/posts/`.
-
 ## Legacy Jekyll URLs
 
 The old Jekyll site served posts at `/YYYY/MM/DD/Title.html` (TeXt `permalink: date`). Those URLs
@@ -142,13 +120,17 @@ are intentionally **not** redirected — the old posts live only at their Astro 
 ## Branches & deployment
 
 - The deploy workflow (`.github/workflows/deploy.yml`) triggers on **push to `main`** (also
-  `workflow_dispatch`, and after the daily `Sync Daily Digest` run). Pushing to `main` publishes.
+  `workflow_dispatch`). Pushing to `main` publishes.
 - The old Jekyll-era `master` branch and legacy `Dockerfile.dev` were removed (2026-08-25);
   `origin/HEAD` points at `main`.
 
 ## Notes
 
 - `dist/` is build output; don't edit by hand.
+- The DailyDigest-synced news/podcast collections were **fully removed** on 2026-10-08
+  (`sync-digest` workflow + script, `src/content/{news,podcasts}/`, their pages/components and all
+  code references). The external `BingqiangZhou/DailyDigest` repo may still generate digests; they
+  are just no longer synced into this site. Don't re-introduce the sync pipeline.
 - `.astro/data-store.json` caches rendered markdown per entry and survives config changes.
   If rendered output looks stale/wrong after switching configs or Astro versions,
   `rm -rf .astro` and rebuild before debugging anything else.

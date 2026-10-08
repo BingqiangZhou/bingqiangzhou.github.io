@@ -35,28 +35,4 @@ const about = defineCollection({
   }),
 })
 
-const news = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/news' }),
-  schema: z.object({
-    title: z.string(),
-    published: z.date(),
-    tags: z.array(z.string()).optional(),
-    draft: z.boolean().optional().default(false),
-    toc: z.boolean().optional().default(themeConfig.global.toc),
-    lang: z.enum(['', ...allLocales]).optional().default(''),
-  }),
-})
-
-const podcasts = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/podcasts' }),
-  schema: z.object({
-    title: z.string(),
-    published: z.date(),
-    tags: z.array(z.string()).optional(),
-    draft: z.boolean().optional().default(false),
-    toc: z.boolean().optional().default(themeConfig.global.toc),
-    lang: z.enum(['', ...allLocales]).optional().default(''),
-  }),
-})
-
-export const collections = { posts, about, news, podcasts }
+export const collections = { posts, about }
