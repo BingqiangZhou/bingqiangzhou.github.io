@@ -35,6 +35,17 @@ pnpm update-theme   # merge from upstream radishzzz/astro-theme-retypeset — mi
 Both `pnpm dev` and `pnpm build` run `astro check`, so type errors fail builds. A pre-commit hook
 runs `eslint --fix` (via `lint-staged`) on `*.{js,mjs,ts,astro}`.
 
+**Registry**: `registry.npmjs.org` is unreachable from the local machine (TCP connect timeout —
+a bare `pnpm install` hangs for minutes and must be killed). Always pass the npmmirror registry
+explicitly on local installs:
+
+```bash
+pnpm install --registry=https://registry.npmmirror.com
+```
+
+The flag leaves `pnpm-lock.yaml` clean (registry deps store only integrity hashes). CI
+(`deploy.yml`) runs on GitHub runners where npmjs is reachable, so the workflow stays as-is.
+
 ## Architecture
 
 ### Core config chain
