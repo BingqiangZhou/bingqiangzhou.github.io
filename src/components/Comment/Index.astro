@@ -1,15 +1,10 @@
 ---
-// import Disqus from '@/components/Comment/Disqus.astro'
 import Giscus from '@/components/Comment/Giscus.astro'
 import Twikoo from '@/components/Comment/Twikoo.astro'
 import Waline from '@/components/Comment/Waline.astro'
 import { themeConfig } from '@/config'
 
 const { enabled: enableComment } = themeConfig.comment
-
-// Disqus
-// const disqusShortname = themeConfig.comment.disqus?.shortname ?? ''
-// const showDisqus = enableComment && Boolean(disqusShortname.trim())
 
 // Giscus
 const giscusRepo = themeConfig.comment.giscus?.repo ?? ''
@@ -24,7 +19,6 @@ const walineURL = themeConfig.comment.waline?.serverURL ?? ''
 const showWaline = enableComment && Boolean(walineURL.trim())
 ---
 
-<!-- {showDisqus && <Disqus />} -->
 {showGiscus && <Giscus />}
 {showTwikoo && <Twikoo />}
 {showWaline && <Waline />}
