@@ -48,6 +48,8 @@ const currentUI = ui[getLangFromLocale(Astro.currentLocale)]
     <div id="search-status" class="mt-7.5 hidden text-3.5 c-secondary/60 font-time" />
     {/* Search Results */}
     <ul id="search-results" class="mt-4" />
+    {/* Auto-load Sentinel */}
+    <div id="search-sentinel" class="h-1" aria-hidden="true" />
     {/* Result item template, cloned by the script below */}
     <template id="search-result-template">
       <li class="mb-5.5">
@@ -81,7 +83,7 @@ interface PagefindModule {
   options?: (options: Record<string, unknown>) => Promise<void>
 }
 
-const RESULT_LIMIT = 10
+const PAGE_SIZE = 10
 const DEBOUNCE_MS = 200
 
 // Served from the built output, so it is unavailable in dev before the first build
@@ -114,21 +116,52 @@ function initSearch() {
   const statusEl = document.getElementById('search-status')
   const listEl = document.getElementById('search-results')
   const template = document.getElementById('search-result-template') as HTMLTemplateElement | null
-  if (!root || !input || !statusEl || !listEl || !template) {
+  const sentinel = document.getElementById('search-sentinel')
+  if (!root || !input || !statusEl || !listEl || !template || !sentinel) {
     return
   }
 
   const { lang, msgSearching, msgNoResults, msgResultCount, msgIndexMissing } = root.dataset
 
-  // Arrow consts are created after the null guard above, so TS keeps the non-null narrowing
+  let currentResults: PagefindSearchResult[] = []
+  let shownCount = 0
+  let loadingMore = false
+
+  // Auto-load the next batch when the sentinel scrolls into view
+  const moreObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          // The callback only fires after init, so the forward reference is safe
+          // eslint-disable-next-line ts/no-use-before-define
+          void loadMore()
+        }
+      }, { rootMargin: '0px 0px 33% 0px' })
+    : undefined
+
+  // disconnect + observe forces a fresh intersection check; without it the
+  // observer never re-fires while the sentinel stays in view after appends
+  const syncObserver = () => {
+    moreObserver?.disconnect()
+    if (currentResults.length - shownCount > 0) {
+      moreObserver?.observe(sentinel)
+    }
+  }
+
   const setStatus = (text: string) => {
     statusEl.textContent = text
     statusEl.classList.remove('hidden')
   }
 
+  const resetOutput = () => {
+    currentResults = []
+    shownCount = 0
+    listEl.replaceChildren()
+    syncObserver()
+  }
+
   const clearOutput = () => {
     statusEl.classList.add('hidden')
-    listEl.replaceChildren()
+    resetOutput()
   }
 
   const renderResult = (data: PagefindSearchData) => {
@@ -169,6 +202,7 @@ function initSearch() {
     }
 
     if (!pagefind) {
+      resetOutput()
       setStatus(msgIndexMissing ?? '')
       return
     }
@@ -181,21 +215,26 @@ function initSearch() {
     }
 
     if (search.results.length === 0) {
+      resetOutput()
       setStatus(msgNoResults ?? '')
-      listEl.replaceChildren()
       return
     }
 
     setStatus((msgResultCount ?? '').replace('{n}', String(search.results.length)))
 
-    const results = await Promise.all(
-      search.results.slice(0, RESULT_LIMIT).map(result => result.data()),
+    currentResults = search.results
+    shownCount = 0
+
+    const firstPage = await Promise.all(
+      currentResults.slice(0, PAGE_SIZE).map(result => result.data()),
     )
     if (token !== searchToken) {
       return
     }
 
-    listEl.replaceChildren(...results.map(renderResult))
+    shownCount = firstPage.length
+    listEl.replaceChildren(...firstPage.map(renderResult))
+    syncObserver()
   }
 
   input.addEventListener('input', () => {
@@ -204,6 +243,27 @@ function initSearch() {
       void runSearch(input.value)
     }, DEBOUNCE_MS)
   })
+
+  const loadMore = async () => {
+    if (loadingMore || shownCount >= currentResults.length) {
+      return
+    }
+    loadingMore = true
+    const token = searchToken
+    try {
+      const batch = await Promise.all(
+        currentResults.slice(shownCount, shownCount + PAGE_SIZE).map(result => result.data()),
+      )
+      if (token === searchToken) {
+        shownCount += batch.length
+        listEl.append(...batch.map(renderResult))
+        syncObserver()
+      }
+    }
+    finally {
+      loadingMore = false
+    }
+  }
 }
 
 document.addEventListener('astro:page-load', initSearch)
