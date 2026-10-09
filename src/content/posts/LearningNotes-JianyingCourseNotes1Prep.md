@@ -2,7 +2,6 @@
 title: 【学习笔记】影视飓风「剪映剪辑全能必修课」笔记（一）：导学与准备篇
 published: 2026-06-19
 description: 影视飓风剪辑全能必修课系列笔记第一篇。导学课：剪映安装登录、素材包获取管理、四大界面区域、Final Cut Pro 快捷键预设、素材断连/格式/性能等常见问题排查、剪映云多设备同步。
-lang: zh
 tags: [学习笔记]
 abbrlink: jianying-course-notes-1-prep
 toc: true

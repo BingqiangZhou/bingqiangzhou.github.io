@@ -2,7 +2,6 @@
 title: 【优质转载】聊聊黑GEO，也就是怎么给大模型搜索"下毒"
 published: 2026-06-17
 description: 转载自 LINUX DO：黑 GEO（生成式引擎优化）揭秘——如何通过伪造内容给大模型搜索结果"投毒"，仅凭两三篇 AI 生成的软文就让虚构人物跻身"专家"榜首。
-lang: zh
 tags: [优质转载]
 abbrlink: black-geo-llm-search-poisoning
 toc: true

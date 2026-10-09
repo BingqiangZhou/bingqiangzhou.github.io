@@ -1,6 +1,5 @@
 ---
-import { base, defaultLocale, themeConfig } from '@/config'
-import { giscusLocaleMap } from '@/i18n/config'
+import { themeConfig } from '@/config'
 
 const {
   repo = '',
@@ -14,16 +13,6 @@ const {
   inputPosition = 'bottom',
 } = themeConfig.comment.giscus ?? {}
 
-
-const currentPath = Astro.url.pathname
-
-// Determine language
-const pathWithoutBase = base && currentPath.startsWith(base)
-  ? currentPath.slice(base.length)
-  : currentPath
-const matchedLang = Object.keys(giscusLocaleMap).find(code => pathWithoutBase.startsWith(`/${code}/`))
-const lang = (matchedLang ?? defaultLocale) as keyof typeof giscusLocaleMap
-
 const giscusConfig = {
   repo,
   repoId,
@@ -34,7 +23,7 @@ const giscusConfig = {
   reactionsEnabled,
   emitMetadata,
   inputPosition,
-  lang: giscusLocaleMap[lang],
+  lang: 'zh-CN',
 }
 ---
 

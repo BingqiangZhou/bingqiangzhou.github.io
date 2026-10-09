@@ -2,7 +2,6 @@
 title: 【工具分享】Pollinations.AI：一个 API 搞定文本、图像、音频、视频生成
 published: 2026-05-02
 description: 深入介绍开源 AI 平台 Pollinations.AI，涵盖图像生成、文本对话、语音合成、视频生成等功能的 API 使用方法、SDK 集成与 MCP 对接实践
-lang: zh
 tags: [工具分享]
 ---
 

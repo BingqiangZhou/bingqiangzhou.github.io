@@ -2,7 +2,6 @@
 title: 【学习笔记】HyperFrames 30 天拆解（三）Direct and refine：指挥代理的提示词方法论
 published: 2026-08-25
 description: HyperFrames「30 天」系列第三篇，全内容拆解 Days 10-19「Direct and refine」阶段：六段式提示词骨架逐段规则与组装示例（route/spec/beats/copy/technique/negatives）、节拍内容五槽公式（element/motion/layout/style/timing）、六组常见改写（冻结保持改环境闲置、时长无尾巴、同时性碰撞、模糊负例、散文冒充文案、格式盲数字）、框架自有词汇表；规格旋钮三档与两个方向钉；词汇表全部十节映射（缓动、镜头、景深、节奏、字幕语气、转场能量、音频响应、手绘标注、TTS 声音、渲染质量）；参考复刻四步法（转写动作 75%、绝对目标迭代、提炼常量 80-90%、纯文本天花板 90%）；字幕目录（语气到组件映射、逐词强调、五种失败模式）； Studio 工作区与安全编辑、关键帧编辑全操作（K/H/U/R 快捷键、自动关键帧、缓动与路径、手势录制、生成动画的 Unroll）；媒体使用角色论与机会扫描；storyboard 评审协议四形状与方向块；MCP 聊天创作全流程；本地抠像命令与双层板技法。读完本篇无需再翻官方文档。
-lang: zh
 tags: [学习笔记]
 abbrlink: hyperframes-thirty-days-phase-2
 ---

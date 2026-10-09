@@ -2,7 +2,6 @@
 title: "【学习笔记】搭建github.io博客的总结（三）"
 published: 2019-08-18
 description: "> 不读则愚，不思则浅，不练则生，不用则钝！"
-lang: zh
 tags: ["学习笔记"]
 ---
 

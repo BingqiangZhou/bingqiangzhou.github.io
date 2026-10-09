@@ -2,7 +2,6 @@
 title: "【学习笔记】微信公众号 API 发布文章"
 published: 2026-04-26
 description: "使用微信公众号 API 发布文章的完整流程、Python 代码实现及注意事项。"
-lang: zh
 tags: ["学习笔记", "工具分享"]
 ---
 

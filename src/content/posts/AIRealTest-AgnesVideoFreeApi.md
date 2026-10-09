@@ -2,7 +2,6 @@
 title: 【AI实测】免费生成视频到底行不行？实测 Agnes AI 视频模型
 published: 2026-06-26
 description: '28 条 1080p 视频实测 Agnes 免费视频模型：画面勉强能用但文生锁不住角色，图生视频能锁定主体，1 分钟成片约等 1 小时，8 路并发 6.5× 加速。'
-lang: zh
 tags: [AI实测]
 abbrlink: agnes-video-realtest
 ---

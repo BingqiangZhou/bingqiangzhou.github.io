@@ -2,7 +2,6 @@
 title: 【学习笔记】去 AI 味十大 Skill 榜：原理拆解、横向对比与选型指南
 published: 2026-06-21
 description: 整理 LINUX DO「去AI味十大skill」榜单，按六大方法论派别拆解 humanizer、Humanizer-zh、nuwa-skill 等 10 个写作去味 Skill，提炼可复用的去 AI 味检查清单与改写对照表，并附场景选型与社区实测局限。
-lang: zh
 tags: [学习笔记, 工具分享]
 toc: true
 abbrlink: de-ai-flavor-top10-skills

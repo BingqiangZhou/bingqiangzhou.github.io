@@ -2,7 +2,6 @@
 title: 【学习笔记】在 Windows 与 Mac 上配置 chrome-devtools-mcp 实战
 published: 2026-06-17
 description: 记录 chrome-devtools-mcp（Chrome 官方 MCP 服务器）的安装与配置，重点对比 Windows 与 Mac 的差异、三种浏览器连接模式，以及在 Claude Code / Cursor / VS Code 等客户端的接入方式与排错。
-lang: zh
 tags: [学习笔记, 工具分享]
 ---
 

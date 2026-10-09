@@ -1,0 +1,14 @@
+---
+import TagList from '@/components/TagList.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getAllTags } from '@/utils/content'
+
+const allTags = await getAllTags()
+---
+
+<Layout>
+  <!-- Decorative Line -->
+  <div class="uno-decorative-line" />
+  <!-- Tag List -->
+  <TagList tags={allTags} />
+</Layout>

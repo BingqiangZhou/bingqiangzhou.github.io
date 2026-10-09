@@ -2,7 +2,6 @@
 title: 【学习笔记】用 CC Switch 把新版 Codex 接入国产模型（GLM-5.2 / DeepSeek / 小米 MiMo）
 published: 2026-06-18
 description: 新版 Codex 砍掉了 wire_api = "chat"，直连 GLM/DeepSeek/MiMo 已不可行。用 CC Switch 起本地代理做 Responses↔Chat 协议翻译，三步把 Codex 接入国产模型。
-lang: zh
 tags: [学习笔记]
 ---
 

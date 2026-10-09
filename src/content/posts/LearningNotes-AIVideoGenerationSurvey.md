@@ -2,7 +2,6 @@
 title: 【学习笔记】AI 视频生成全景：有哪些方式、技术范式、开源与商业 SOTA（2026）
 published: 2026-06-30
 description: 系统梳理 2026 年 AI 视频生成——12 种生成模态（文生/图生/首尾帧/视频生视频/运镜/参考图/数字人/世界模型）、U-Net→DiT→Flow Matching 等技术范式、Sora 停服后中国厂商包揽榜首的排行榜（Seedance/Kling/Veo/Hailuo/Vidu）、Wan/HunyuanVideo/LTX-2/CogVideoX 开源选型与显存分级，以及 HF Space/硅基流动/本地 ComfyUI 与即梦·可灵·海螺等国内工具的免费实操路线
-lang: zh
 tags: [学习笔记]
 abbrlink: ai-video-generation-survey
 ---

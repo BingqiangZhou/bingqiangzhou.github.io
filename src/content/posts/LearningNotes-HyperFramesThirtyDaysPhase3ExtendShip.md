@@ -2,7 +2,6 @@
 title: 【学习笔记】HyperFrames 30 天拆解（四）Extend and ship：模板、目录与云渲染的交付工程
 published: 2026-08-25
 description: HyperFrames「30 天」系列第四篇，全内容拆解 Days 20-30「Extend and ship」阶段：Claude Design 设计交接四步与合格标准；云渲染完整细节（OAuth/API key 鉴权、zip 上传渲染下载流程、fps 1-240、draft/standard/high 画质、mp4/webm/mov 透明格式、4k 计费、变量渲染、asset_id 上传一次多次重渲、--no-wait 加 webhook 回调与幂等键、cloud list/get/delete、200MB 限额与 .hyperframesignore）；组件目录双层结构与接线（block 五属性挂载 vs component 三段融合、按意图英文检索两档排名、dropped/unindexed 偏斜、search-miss 需求闭环）；变量系统全貌（七种类型、data-var-text/data-var-src 直接绑定、CSS 自定义属性、嵌套组合 per-instance 传值、CLI --variables 与 rows.json 批渲、batch-concurrency、不能变量化清单、strict-variables）；调色全操作（先校正后风格化、十三预设、九组控件、四个示波器、grade-compare、data-color-grading 三段存储、LUT 的 Rec.709/LOG 边界）；媒体特效四族十八效果与 overlay 语气映射；三官方托管模板与四条渲染路线；贡献目录从建目录到 PR 的全流程与五条评审问题；Prompt Guide 七层地图。读完本篇无需再翻官方文档。
-lang: zh
 tags: [学习笔记]
 abbrlink: hyperframes-thirty-days-phase-3
 ---

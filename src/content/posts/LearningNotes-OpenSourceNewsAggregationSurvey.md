@@ -2,7 +2,6 @@
 title: 【学习笔记】开源资讯获取与整理方案调研：从热榜聚合、RSS 到 AI 日报
 published: 2026-08-17
 description: 调研 RSSHub、newsnow、DailyHotApi、Miniflux、FreshRSS、Folo、Wallabag、Linkwarden、linkding、Karakeep、TrendRadar、Horizon 等十余个开源仓库，拆解它们在采集、提取、去重、AI 整理、呈现与存档各阶段的流水线步骤和技术方案，并对照自建 DailyDigest 流水线总结可复用的设计模式。
-lang: zh
 tags: [学习笔记]
 ---
 

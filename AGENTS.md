@@ -5,7 +5,7 @@ project-specific facts future ZCode agents would otherwise miss.
 
 ## What this repo is
 
-Personal blog (content mostly in Chinese, default locale `zh`) built on **Astro 7** using a
+Personal blog (Chinese-only content, single-language `zh-CN` site) built on **Astro 7** using a
 customized fork of the **astro-theme-retypeset** theme. Static site deployed to GitHub Pages.
 Package manager is **pnpm v10.33.0**; CI uses Node 22. Path alias `@/*` → `src/*`.
 
@@ -50,7 +50,7 @@ The flag leaves `pnpm-lock.yaml` clean (registry deps store only integrity hashe
 
 ### Core config chain
 
-- `src/config.ts` — master config: site metadata, theme colors, locale, comments, SEO, footer.
+- `src/config.ts` — master config: site metadata, theme colors, comments, SEO, footer.
 - `src/content.config.ts` — Zod schemas for content collections.
 - `astro.config.ts` — wires integrations + remark/rehype plugins.
 
@@ -65,15 +65,18 @@ Partytown, Sitemap, astro-compress.
 - **rehype**: KaTeX, Mermaid, slug, heading anchors, image processing, external links, code-copy.
 - Syntax highlighting via Shiki (github-light/github-dark).
 
-### i18n
+### Single-language design
 
-11 locales with `[...lang]` dynamic routing. Locale utilities in `src/i18n/` (`config.ts`,
-`lang.ts`, `path.ts`, `ui.ts`). `trailingSlash: 'always'` in `astro.config.ts` is deliberate
-("Not recommended to change").
+The theme's i18n system was **fully removed** on 2026-10-09 (`src/i18n/` deleted, `[...lang]`
+routing flattened to plain `src/pages/` routes, `lang` frontmatter field dropped from all content
+and schemas, UI strings inlined in `src/ui.ts`, `<html lang="zh-CN">` hardcoded in Layout.astro).
+URLs are unchanged — zh was always the unprefixed default locale, so no redirects are needed.
+`trailingSlash: 'always'` in `astro.config.ts` is deliberate ("Not recommended to change"). Don't
+re-introduce locale plumbing.
 
 ## Where things live (source map)
 
-- `src/pages/[...lang]/` — all pages (home, post list, tags, about, search, feeds)
+- `src/pages/` — all pages (home, post list, tags, about, search, feeds)
 - `src/components/` — Astro components (Comment integrations: Giscus/Twikoo/Waline; Widgets: TOC,
   CodeCopy, ImageZoom)
 - `src/plugins/` — custom remark/rehype plugins (containers, leaf directives, reading time,
@@ -92,7 +95,7 @@ Posts live in `src/content/posts/` as `.md` / `.mdx`. Schema is defined in `src/
   prefixes: `DailyJungle-`, `DailySummary-`, `PaperReading-`, `ReadingNotes-`, `Narration-`,
   `ToolsAndResources-`.
 - **`title`**: `【标签】中文描述` (e.g., `【学习笔记】搭建github.io博客的总结（一）`).
-- **Required frontmatter**: `title`, `published` (YYYY-MM-DD), `description`, `lang`, `tags`.
+- **Required frontmatter**: `title`, `published` (YYYY-MM-DD), `description`, `tags`.
 - **Optional**: `updated`, `draft`, `pin` (0-99), `toc`, `abbrlink` (URL slug: lowercase
   alphanumeric + hyphens). Dates use `YYYY-MM-DD`.
 - **Existing tags** (18, as of 2026-08): 学习笔记, 工具分享, 实践记录, 读书笔记, Claude Code,
@@ -147,4 +150,6 @@ are intentionally **not** redirected — the old posts live only at their Astro 
   `rm -rf .astro` and rebuild before debugging anything else.
 - `pnpm update-theme` merges from upstream `radishzzz/astro-theme-retypeset` master branch — be
   cautious of conflicts with local customizations (upstream still pins the partytown patch we
-  removed).
+  removed, and since the i18n removal its locale-based routing/`src/i18n/` will conflict heavily
+  with our flattened `src/pages/` — treat upstream i18n code as dead on arrival, don't merge it
+  back).

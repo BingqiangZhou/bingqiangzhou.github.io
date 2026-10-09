@@ -2,7 +2,6 @@
 title: 【实践记录】Homebrew 镜像报 no bottle available：原因与解决办法
 published: 2026-10-03
 description: "macOS 27 上 brew install 报 \"no bottle available\" 的完整诊断：根因是镜像同步脚本对 manifest 文件\"存在即跳过\"，慢更新包的新平台条目长期陈旧。解法很简单：出问题时临时注释掉 HOMEBREW_BOTTLE_DOMAIN 直连官方源，装完再放开。"
-lang: zh
 tags: [实践记录]
 abbrlink: homebrew-mirror-manifest-sync-bug
 ---

@@ -2,7 +2,6 @@
 title: 【AI实测】Pollinations 六个免费文生图模型实测：zimage 不输 Agnes、还更快
 published: 2026-06-27
 description: '8 道经典 benchmark 横评 Pollinations 六个免费文生图模型（flux/zimage/gptimage/klein/nova-canvas/gptimage-large）：zimage 全篇最强、中文思维导图大字唯一画对、秒级 GET 出图，质量不输 Agnes 还更快；gptimage-large 海报/英文最高保真。'
-lang: zh
 tags: [AI实测]
 abbrlink: pollinations-image-realtest
 ---

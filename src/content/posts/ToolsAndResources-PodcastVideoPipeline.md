@@ -2,7 +2,6 @@
 title: 【实践记录】用 AI 把播客精彩片段转成短视频，我换了五次渲染引擎
 published: 2026-06-20
 description: 一段播客精彩片段从链接到能发的短视频，要走下载、转文字、挑片段、重写、合成语音、配字幕、渲染成视频。其中「把内容渲染成视频」这一步，我换了五种技术方案——Python 文本卡片、Remotion、Manim、HTML slides、Hyperframes，每种都有过不去的坎。本文逐环节记录这条流水线的工具更替史，以及最后对着几百播放量发呆后的反思。
-lang: zh
 tags: [实践记录, 工具分享]
 abbrlink: podcast-video-pipeline-behind-scenes
 ---

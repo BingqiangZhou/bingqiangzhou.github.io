@@ -2,7 +2,6 @@
 title: 【学习笔记】《创始人手册：打造 AI 原生初创》完整总结
 published: 2026-07-12
 description: Anthropic《The Founder's Playbook》白皮书 v3 全 36 页逐阶段深度拆解——从创意期到扩张期的目标、退出标准、陷阱与解药，以及 Claude 在每个阶段的具体用法、CLAUDE.md 持久记忆、三大工具协同复利等可复用方法论精华。
-lang: zh
 tags: [学习笔记, AI前沿]
 abbrlink: founders-playbook-full-breakdown
 ---

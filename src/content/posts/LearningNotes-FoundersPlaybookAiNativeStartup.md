@@ -2,7 +2,6 @@
 title: 【学习笔记】Anthropic 36 页《创始人手册》：AI 把创业压缩成四个阶段
 published: 2026-07-12
 description: 精读 Anthropic《The Founder's Playbook》白皮书——从创意期到扩张期，AI 如何把"10 人独角兽"从逆袭故事变成可刻意设计的商业计划，以及为什么 42% 的初创死于建了没人要的东西。
-lang: zh
 tags: [学习笔记, AI前沿]
 abbrlink: founders-playbook-ai-native-startup
 ---

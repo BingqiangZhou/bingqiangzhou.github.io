@@ -2,7 +2,6 @@
 title: 【学习笔记】HyperFrames 30 天拆解（六）Prompt Guide 深读：七层课程、运动八规则与反例附录
 published: 2026-08-25
 description: HyperFrames「30 天」系列第六篇（专题二），全内容深读官方 Prompt Guide：文本即接口的三层能力与开口前三件事；冷/热启动两种提示词形态与意图访谈 BRIEF.md 契约；七层阶梯总表；Level 3 运动八规则全文——每个运动都在陈述（呼吸说数据活着、过冲说有质量）、运动的四个正当职业、八条规则逐条 A/B 对照与量化结果（冻结尾帧 211KB vs 活帧 2.5MB 的编码器判据、镜头与位移是同一变换、错峰的偏移比机制、复合属性只讲一个故事、过冲只作用于变换、遮挡比模糊更能证明景深、showreel 1.5-4 秒节奏、手工感用播种 PRNG 加两帧保持）；避免幻灯片的两个属性与世界镜头法、六种替代方法表；附录规则与反例全文——七条必知规则、冷 seek 可见性三条、seek 顺序安全四条（相对值第二写者、repeatRefresh、函数值、回调内量 DOM）、--workers 1 位级确定性、SVG draw-on 陷阱；Capstone 与术语表与 Remotion 迁移；三条使用建议。读完本篇无需再翻官方文档。
-lang: zh
 tags: [学习笔记]
 abbrlink: hyperframes-thirty-days-prompt-guide
 ---

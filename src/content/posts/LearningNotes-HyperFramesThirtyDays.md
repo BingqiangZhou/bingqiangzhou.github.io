@@ -2,7 +2,6 @@
 title: 【学习笔记】HyperFrames「30 天」系列课程全梳理：当视频变成可版本化的 HTML
 published: 2026-08-25
 description: 系统梳理 HeyGen HyperFrames 官方「30 Days of HyperFrames」课程：三阶段路线图（Days 1-9 输入与九大工作流、Days 10-19 提示词结构与精修手段、Days 20-30 组件/变量/云渲染的工程化交付），逐日拆解 30 课要点并各附一条可直接上手的事实与官方文档直链（一段话全自动安装、FRAME.md 品牌事实源、PR 三种受众、音轨七要素结构、解说四种落点、字幕三路分工、动效六种对象、TTS 引擎顺序、Figma 六种导入、六段式提示词骨架与节拍五槽、参考复刻 75/90 百分比、Studio 安全编辑与关键帧快捷键、媒体角色论、storyboard 双色纪律、MCP 连接、人物专用抠像、云渲染 asset_id 复用、变量七类型与批渲、调色十三预设与四示波器、媒体特效四族、四条渲染路线等），最后总结「视频即文本资产」的产品哲学、skills/Catalog/CLI 的生态飞轮，以及对照自己公众号封面 HTML 模板实践的后续动手清单。深拆见系列（二）至（七）篇。
-lang: zh
 tags: [学习笔记]
 abbrlink: hyperframes-thirty-days-notes
 ---

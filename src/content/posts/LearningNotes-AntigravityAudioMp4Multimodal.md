@@ -2,7 +2,6 @@
 title: "【学习笔记】Antigravity 评音频的骚操作：把 MP3 包成黑屏 MP4，骗多模态模型\"听\"歌打分"
 published: 2026-07-07
 description: "让 Gemini 3.1 Pro（Antigravity）给 12 段 AI 生成音乐打分，它的 view_file 工具不支持音频，于是自己摸索出一条绕路：用 ffmpeg 给音频贴一张纯黑画面、伪装成 MP4，再借多模态\"看视频听声音\"的能力完成评测。本文复盘整个过程，并追问一个关键问题——它真的\"听到\"了吗？"
-lang: zh
 tags: ["学习笔记", "折腾记录"]
 abbrlink: antigravity-audio-mp4-multimodal
 ---

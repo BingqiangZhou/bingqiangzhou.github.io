@@ -2,7 +2,6 @@
 title: 【工具分享】免费拿推文数据的三条路：X oEmbed、fxtwitter 与 syndication API 实测
 published: 2026-08-30
 description: 想拿一条推文的正文、展开后的链接、长推全文和媒体直链，不一定得给 X API 交钱：官方 oEmbed 免费但只给「喂浏览器」的 HTML，社区项目 fxtwitter 直接吐结构化 JSON，react-tweet 则逆向了 X 内部的 syndication 接口。本文实测对比三条路，顺带盘点 vxtwitter 等同类服务、国内网络可达性与风险边界。
-lang: zh
 tags:
   - 工具分享
   - 实践记录

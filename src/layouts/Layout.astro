@@ -1,5 +1,4 @@
 ---
-import type { Language } from '@/i18n/config'
 import Button from '@/components/Button.astro'
 import Footer from '@/components/Footer.astro'
 import Header from '@/components/Header.astro'
@@ -24,10 +23,9 @@ interface Props {
   postTitle?: string
   postDescription?: string
   postSlug?: string
-  supportedLangs?: Language[]
 }
 
-const { postTitle, postDescription, postSlug, supportedLangs = [] } = Astro.props
+const { postTitle, postDescription, postSlug } = Astro.props
 const { isPost } = getPageInfo(Astro.url.pathname)
 const isDetailPage = isPost
 const fontStyle = themeConfig.global.fontStyle === 'serif' ? 'font-serif' : 'font-sans'
@@ -37,7 +35,7 @@ const MarginBottom = isDetailPage && themeConfig.comment.enabled
 ---
 
 <html
-  lang={Astro.currentLocale}
+  lang="zh-CN"
   class:list={[
     fontStyle,
     isDetailPage ? 'scroll-smooth' : '',
@@ -57,7 +55,7 @@ const MarginBottom = isDetailPage && themeConfig.comment.enabled
       </main>
       <Footer />
     </div>
-    <Button supportedLangs={supportedLangs} />
+    <Button />
     <SoundEffect />
     <CodeCopyButton />
     <GithubCard />

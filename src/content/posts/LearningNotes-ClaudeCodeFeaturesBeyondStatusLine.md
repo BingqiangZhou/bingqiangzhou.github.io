@@ -2,7 +2,6 @@
 title: 【学习笔记】Claude Code 还有什么好玩的？—— 功能特性与可编程扩展全梳理
 published: 2026-06-04
 description: 从内置功能和可编程扩展两个维度，全面梳理 Claude Code 除了 StatusLine 之外的有趣特性，涵盖移动编程、自动化调度、插件系统、MCP 集成等。
-lang: zh
 tags: [学习笔记, Claude Code]
 ---
 

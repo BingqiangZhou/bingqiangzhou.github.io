@@ -2,7 +2,6 @@
 title: 【学习笔记】Chrome DevTools MCP v1.6.0 更新笔记
 published: 2026-07-15
 description: 梳理 chrome-devtools-mcp v1.6.0 的主要变更（10 项新功能、11 项修复、性能优化与内部重构），并重点解读修复安全漏洞后引入的三种文件路径验证模式，以及 MCP 客户端如何声明 roots 能力来约束服务端的写入边界。
-lang: zh
 tags: [学习笔记, 工具分享]
 ---
 

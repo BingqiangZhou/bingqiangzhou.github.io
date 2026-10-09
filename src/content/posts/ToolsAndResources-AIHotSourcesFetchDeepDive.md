@@ -2,7 +2,6 @@
 title: 【学习笔记】AIHOT 拆解（二）信源与抓取层：每分钟调度、六种读取器、判重时间线与出站防护的源码级拆解
 published: 2026-09-29
 description: AIHOT 系列第二篇，专拆抓取层：worker 每分钟调度到期信源（单例锁、批量 40、+10 分钟防重入）与单次抓取的公共管线（白名单过滤→首导入回灌限流→详情页按预算补齐→身份键判重→入队分析）；深读判重与时间线引擎 materials.ts 的五条规则（身份键三级回退、内容哈希、跨源不改写、历史版本回归不算新、U+FFFD 传输丢字符等价比较）与 48 小时陈旧/1 小时未来时间线裁决；逐行拆六种读取器——RSS 的 ETag 条件请求与诱饵摘要识别、网页列表的三种解析模式加为 MiMo 官网写的 JS chunk 逆向适配器、JSON 接口对 Next.js __NEXT_DATA__/flight payload 的嵌入式解析、X 账号与微信公众号的两种增量范式对比（X 是「查询即增量、响应即全文」：since_id 水位线服务端过滤、24 人分片搜索、snowflake 水位线、backlog 断点续读；公众号是「列表+本地判重+逐篇取正文」：付费窗口去重与正文重试）、脚本推送的安全设计；正文提取层 Readability+linkedom 与 Jina 兜底与「unconfirmed」状态；出站 HTTP 的 SSRF 防护、单超时预算、egress 路由与字符集嗅探；附频率自适应公式、18 个示范信源全名单与线上 865 信源规模。全部结论以源码为准（commit 589f79e）。
-lang: zh
 tags: [学习笔记, 工具分享, AI前沿]
 abbrlink: aihot-sources-fetch-deep-dive
 ---

@@ -2,7 +2,6 @@
 title: 【工具分享】YouTube 转录 API 全景实测：官方死路、自爬苦路与 kome.ai / NoteGPT 免登录接口
 published: 2026-09-10
 description: 想拿一条 YouTube 视频的字幕喂给 AI，官方 Data API 只对视频主人开半扇门，自爬 timedtext 又撞上 PO token 与 IP 封禁。本文实测第三方工具的免登录内部接口——kome.ai 裸奔可用、NoteGPT 靠一次性匿名 UUID、tactiq 已上 Firebase App Check——并盘点 youtube-transcript-api、yt-dlp、Invidious / Piped 与商业 API 的定价和国内可达性。
-lang: zh
 tags:
   - 工具分享
   - 实践记录

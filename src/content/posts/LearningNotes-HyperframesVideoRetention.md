@@ -2,7 +2,6 @@
 title: "【学习笔记】降低 Hyperframes 视频的 2 秒跳出率与提升完播率"
 published: 2026-07-07
 description: "把 Hyperframes 自带的留存工艺与 2026 年短视频行业基准双向对照：2 秒跳出靠 Hook 工程，完播靠节奏、结尾与合规的无缝循环。"
-lang: zh
 tags: ["学习笔记", "工具分享"]
 abbrlink: hyperframes-video-retention
 ---

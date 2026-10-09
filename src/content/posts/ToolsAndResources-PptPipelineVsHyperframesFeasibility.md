@@ -2,7 +2,6 @@
 title: 【实践记录】PPT 管线能否替代 HyperFrames 日报视频线：逐能力对表与可行性判定
 published: 2026-09-05
 description: 「PPT 管线能否替代 hyperframes 承担 AI 日报视频线」的可行性判定：技术上可以替代，但不建议切换主产线，建议立项为「备份产线」、月度手动演练保鲜。本文逐能力对表（词级字幕不是缺口——words[] 词级时间戳在手，ASS \k 卡拉OK 逐词高亮后混可补齐；动效降级为 fade/wipe；出片前 QA 预览是最大盲区），量化提速（帧渲染只占全流程约 15-20%，切线总时长收益 <15%），梳理约束下的三条出片路线（WPS 放映+ffmpeg 录屏后混、装 Microsoft Office、frontend-slides+Playwright 无头组合线）与死路清单，末尾给备份产线蓝图（触发条件、已验证资产、待补组件）与明确不替代的范围。
-lang: zh
 tags: [实践记录]
 abbrlink: ppt-pipeline-vs-hyperframes-feasibility
 ---

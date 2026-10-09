@@ -2,7 +2,6 @@
 title: "【工具分享】微信公众号排版工具对比与选型"
 published: 2026-04-26
 description: "主流 Markdown 转微信公众号排版工具对比，涵盖 inkpress、doocs/md、md2wechat 等方案的选型建议。"
-lang: zh
 tags: ["工具分享", "学习笔记"]
 ---
 

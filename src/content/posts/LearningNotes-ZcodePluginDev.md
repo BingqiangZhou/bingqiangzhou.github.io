@@ -2,7 +2,6 @@
 title: 【学习笔记】ZCode 插件开发调研与实战：与 Claude Code 插件的对比，以及一个实时 Token 速度计
 published: 2026-09-11
 description: ZCode（Z.ai 的智能体开发环境、GLM 官方 harness）的插件怎么写、和 Claude Code 插件是否共通？本文前半是调研：基于官方文档与本机插件缓存实地考察，插件就是一个带 .zcode-plugin/plugin.json 清单的文件夹，可选捆绑技能、斜杠命令、子代理、钩子、MCP 服务器五类组件，本地用一份 marketplace.json 加 GUI「添加插件市场」即可装机调试，分发走 GitHub 市场仓库或收录制；与 Claude Code 的关系是单向高度兼容、双向不完全共通——清单回退探测、hook 执行器、stdin 双命名、模板变量四层主动兼容（Claude 官方市场 294 个插件可直接装），但清单必需性、组件种类、hook 事件集（仅 7 个，是 Claude 的子集）、管理方式（纯 GUI vs 全套 CLI）均不同，附双栖插件写法清单。后半是学以致用的实战：给 ZCode 外挂实时 Token 速度计——原生无 token/s 显示，锁定 ~/.zcode/cli/rollout/ 下未脱敏的 model-io 落盘记录为唯一数据源，方案 A 是 50 行 Python 终端速度计（实测 19.9~65.1 tok/s），方案 B 是 Stop 事件 hook，装机端到端实测每轮真实触发（消息挂 Hooks 标记、158ms 执行），但 systemMessage 文本当前桌面版不渲染，速度数字读脚本自写的触发日志。
-lang: zh
 tags: [学习笔记, 实践记录, Claude Code]
 abbrlink: zcode-plugin-dev
 ---

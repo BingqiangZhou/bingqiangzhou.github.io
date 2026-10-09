@@ -2,7 +2,6 @@
 title: 【学习笔记】ZCode 动态工作流（Dynamic Workflows）使用指南：触发、脚本解剖与生命周期
 published: 2026-09-22
 description: 整理 ZCode 动态工作流（CreateWorkflow）的使用方法与适用场景——两个触发入口与"点名即约束"的路由规则；脚本解剖（agent()/ask、带 JSDoc 的类型化结果、phase 阶段、world.run 确定性门、report/artifact）；编译、确认、后台运行、修订、恢复、保存复用的完整生命周期；六种常用编排模式与常见误用清单。材料来自 dynamic-workflows skill 文档（SKILL.md/patterns.md/examples.md）调研摘录，材料未覆盖的空白在文中明确标注。
-lang: zh
 tags: [学习笔记, Agent]
 abbrlink: zcode-dynamic-workflow
 ---

@@ -2,7 +2,6 @@
 title: 【学习笔记】AI 前沿 2026：AI 时代的生存法则与认知重构
 published: 2026-06-06
 description: 基于 Sequoia AI Ascent 2026 多位嘉宾分享，梳理 AI 时代五大生存法则、被颠覆的人才经济学、OpenAI 商业哲学、软件 3.0 范式转移，以及人类在智能时代的定位思考。
-lang: zh
 tags: [学习笔记, AI前沿]
 ---
 

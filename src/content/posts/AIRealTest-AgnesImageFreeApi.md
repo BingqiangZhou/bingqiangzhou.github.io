@@ -2,7 +2,6 @@
 title: 【AI实测】免费出图到底行不行？实测 Agnes AI 图片模型
 published: 2026-06-26
 description: '10 道经典 benchmark + 并发实测 Agnes AI 两个免费图片模型：中英文文字渲染、中文海报、图生图编辑都过关，密集小字与精确数量是短板。'
-lang: zh
 tags: [AI实测]
 abbrlink: agnes-image-realtest
 ---

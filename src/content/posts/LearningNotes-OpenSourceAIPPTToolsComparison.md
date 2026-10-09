@@ -2,7 +2,6 @@
 title: 【学习笔记】开源 AI PPT 工具全面对比分析
 published: 2026-06-02
 description: 对比分析 GordenPPTSkill、PPT Master、frontend-slides 等主流开源 AI PPT 工具的技术路线、架构设计、功能特性和适用场景，涵盖 8 大技术路线和 15 款工具的综合评测。
-lang: zh
 tags: [学习笔记]
 ---
 

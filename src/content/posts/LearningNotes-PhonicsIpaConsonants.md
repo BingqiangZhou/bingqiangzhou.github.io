@@ -2,7 +2,6 @@
 title: 【学习笔记】自然拼读系列（三）：音标篇·下——辅音、清浊对立与九大发音误区
 published: 2026-10-08
 description: 音标手账 Lesson 16–30 与「发音误区盘点」专章的完整笔记——清浊对立的真相（汉语拼音的 b/d/g 其实是不送气清音而非浊音）、s 后不送气、爆破音词尾失去爆破、美音三板斧 flap T / dark L / 日化元音的完整机制、/v w/ 咬唇之辨、/θ ð/ 不必真咬舌、/s z/ 的同化弹性、词尾 /dʒ/ 的清化弱化，以及中国学生九大发音误区的逐条纠错（含 ship/sheep、night/light 的自测方法与捏鼻测试）
-lang: zh
 tags: [学习笔记]
 abbrlink: phonics-ipa-consonants
 ---

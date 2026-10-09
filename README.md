@@ -46,7 +46,6 @@ pnpm lint
 title: 【学习笔记】搭建github.io博客的总结（一）
 published: 2019-08-12
 description: 文章摘要
-lang: zh
 tags: [学习笔记]
 ---
 ```

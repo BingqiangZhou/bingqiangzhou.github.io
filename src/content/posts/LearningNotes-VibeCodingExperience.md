@@ -2,7 +2,6 @@
 title: 【学习笔记】Vibe Coding 实战经验整理：从"屎山代码"到工程化工作流
 published: 2026-06-17
 description: 整理自 LINUX DO 讨论：vibecoding 的成败在于用软件工程方式管理 Agent——上下文切小、模块边界划清、用文档/Skill 沉淀项目记忆、先对齐再动手、每步可验收。
-lang: zh
 tags: [学习笔记]
 abbrlink: vibe-coding-experience-summary
 toc: true

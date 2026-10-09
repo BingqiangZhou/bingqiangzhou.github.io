@@ -2,7 +2,6 @@
 title: 【学习笔记】WWDC 2026 总览:一文看懂 WWDC26
 published: 2026-06-12
 description: WWDC26（2026 年 6 月 8–12 日）的读者导读——一句话头条、去哪看导航与 13 大主题速览，深度内容链接到《全部视频讲座总结》与《全部 Group Lab 要点》两篇。
-lang: zh
 tags: [学习笔记, Apple, WWDC]
 toc: true
 ---

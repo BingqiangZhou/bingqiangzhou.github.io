@@ -2,7 +2,6 @@
 title: 【学习笔记】深度调研 TypeSafe Jev：一个「不说话」的 System One 决策模型，凭什么自称快 193 倍、便宜 444 倍
 published: 2026-09-23
 description: 深度调研 TypeSafe 的 Jev：前 OpenAI 研究员 Diogo Almeida 于 2026-09-15 发布的「System One」决策模型——不生成文本，state 进、类型化概率分布出，三种原语 Choice/Score/Noul 加派生 confidence，输入 $0.042/MTok、输出免费。官方自称快 193.6 倍、便宜 444.6 倍，但自家 evals 上准确率全输最强基线（对 sonnet 5 成本约 1/293、耗时约 1/195）；第三方对账后成本/延迟优势约 3-9 倍一带，端点口径各异。笔记另拆训练黑箱（RLCD）与「凭什么快」的四条机制、与 LLM 的范式差异、「不会幻觉」话术、开源复现三条路线（Kev/Von/Laya）、九项已知缺陷与中文场景实测——判断给模型、算术留代码，与 LLM 分层组合而非替代。
-lang: zh
 tags: [学习笔记, AI前沿, Agent]
 abbrlink: typesafe-jev-decision-model
 ---

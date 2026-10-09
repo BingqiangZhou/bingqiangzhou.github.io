@@ -2,7 +2,6 @@
 title: 【学习笔记】图像生成模型的 JSON Caption：为什么用结构化描述训练图像
 published: 2026-06-05
 description: 探索图像生成模型（Ideogram 4.0、FIBO、FLUX.2、DALL-E 3）为何转向使用结构化 JSON 格式的 caption 作为训练数据，以及这一趋势带来的收益。
-lang: zh
 tags: [学习笔记, AI图像生成]
 ---
 

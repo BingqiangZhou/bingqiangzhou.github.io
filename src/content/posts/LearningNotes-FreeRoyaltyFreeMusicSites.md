@@ -2,7 +2,6 @@
 title: 【学习笔记】免费下载现成免版权音乐的平台盘点 + 使用与 API 指南（2026）
 published: 2026-06-29
 description: 盘点可免费下载、多数可商用的免版权音乐平台（Pixabay Music、YouTube 音频库、Mixkit、Freesound、Jamendo、FMA 等，含国内淘声网/耳聆网），讲清 CC0/CC-BY/NC 与 Content ID 概念，给出从搜索下载到署名的使用流程，以及通过 API key 调用 Freesound、Jamendo 批量获取的代码示例
-lang: zh
 tags: [学习笔记]
 abbrlink: royalty-free-music-sites
 ---

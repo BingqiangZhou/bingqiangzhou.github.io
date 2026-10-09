@@ -1,7 +1,6 @@
 ---
 import { themeConfig } from '@/config'
-import { getLangFromPath } from '@/i18n/lang'
-import { getLocalizedPath } from '@/i18n/path'
+import { withBase } from '@/utils/page'
 
 const { author } = themeConfig.site
 const { links, startYear } = themeConfig.footer
@@ -11,16 +10,14 @@ const year = Number(startYear) === currentYear
   ? startYear
   : `${startYear}-${currentYear}`
 
-const currentLang = getLangFromPath(Astro.url.pathname)
 const socialLinks = links.map(({ name, url }) => {
   const isRSS = url === '/atom.xml' || url === '/rss.xml'
   const isEmail = /^[\w.-]+@[\w.-]+\.[a-z]{2,}$/i.test(url)
 
   if (isRSS) {
-    const localizedPath = getLocalizedPath(url, currentLang)
     const href = import.meta.env.DEV
-      ? localizedPath
-      : localizedPath.slice(0, -1)
+      ? `${withBase(url)}/`
+      : withBase(url)
 
     return {
       name,

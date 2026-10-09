@@ -2,7 +2,6 @@
 title: 【工具分享】八大平台的免费 API 全景：官方、oEmbed、RSS 与社区通道实测
 published: 2026-08-30
 description: 承接上一篇 X 的研究：把 FxEmbed 源码里出现的六个平台（X、Bluesky、Mastodon、Threads、Instagram、TikTok）加上 YouTube 和 Discord 一次盘完。每个平台一张 API 清单表，按官方 API、官方 oEmbed、原生 RSS、社区通道、国内直连五个维度整理，重点标注免费通道——结论是它们正好分成了完全开放、半开放、封闭三个梯队，Discord 则是「免费但私有」的特例。
-lang: zh
 tags:
   - 工具分享
   - 实践记录

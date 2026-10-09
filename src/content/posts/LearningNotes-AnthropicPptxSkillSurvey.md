@@ -2,7 +2,6 @@
 title: 【学习笔记】拆解 Anthropic 官方 PPTX skill：三路由指令集、强制三段 QA 与 Z.AI 改编版对照
 published: 2026-09-04
 description: Anthropic 的 PPTX skill 是其 Agent Skills 体系四个文档技能之一：一份单文件 SKILL.md 三路由指令集（pptxgenjs 创建 / OOXML 原生编辑 / markitdown 读取）、5 个捆绑 Python 脚本、约 20 条 pptxgenjs 坑清单、10 个命名色板与强制三段 QA。本文梳理其 2025-09 至 2026-07 的时间线、许可证边界（source-available、禁再分发）、获取渠道（claude.ai / API 容器 / 插件市场），并与本机 ZCode 插件市场的 Z.AI 改编版 0.1.4 逐项对照——零脚本、QA 降为 recommended、新增 CJK 字体与模板继承章节，末尾附对自家 skill 工程的七条启示。
-lang: zh
 tags: [学习笔记, Agent Skill]
 abbrlink: anthropic-pptx-skill-survey
 ---

@@ -2,7 +2,6 @@
 title: 【学习笔记】同一个问题的两种解法：rss-to-daily-report 与 Infinitum 深度对比
 published: 2026-09-26
 description: 对比并深度拆解两条同赛道的自托管「RSS → AI 日报」流水线：2,900 行 Python、把聚合外包给 Miniflux 的 rss-to-daily-report（运行链路、容错网关、幂等设计、12 段提示词逐条点评、生产级深坑），与 6.9 万行 TypeScript、全自研的 Infinitum（双进程共享 SQLite、四层去重、三段式归组漏斗、九环节日报流水线、约 88 条提示词资产与契约化治理、评测回归门文化）。三个真正的分歧、四个互相独立收敛的工程共识，以及一份按项目阶段分层的「抄作业」清单。所有结论来自对两个仓库源码的多智能体深度分析，行号级证据均经独立复核。
-lang: zh
 tags: [学习笔记]
 abbrlink: rss-daily-report-vs-infinitum
 ---

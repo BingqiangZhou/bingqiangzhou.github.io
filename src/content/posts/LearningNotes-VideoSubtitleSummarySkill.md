@@ -2,7 +2,6 @@
 title: 【学习笔记】video-to-subtitle-summary-skill 全拆解：短视频转字幕与 AI 总结的 Agent Skill 实现细节
 published: 2026-09-14
 description: video-to-subtitle-summary-skill 是 GitHub 上 196 star 的 Claude Code / Codex 通用 Agent Skill（作者 imlewc，MIT 协议，2026-02 至 2026-07 共 18 次提交），输入抖音/小红书/B站/YouTube 链接或本地音视频文件，输出 SRT 字幕、纯文本和 AI 总结。它的架构是「一份 SKILL.md 运行手册 + 五个纯标准库 Python 脚本」：模糊的路由决策、平台识别、回退判断写进手册交给 Agent 执行，确定性的下载、VTT 转 SRT、 Whisper 转写、镜像测速安装沉到脚本里。本文逐个功能拆实现：候选直链逐个试错的下载器、yt-dlp 字幕直抓加手写 VTT 解析器、faster-whisper 的 device/compute_type 解析链、五镜像测速安装器、火山引擎 VC 的轮询转写，以及藏在 docs/plans 里的一份开发计划自曝的商业闭环——默认解析代理 top9.cc（AI Douyin）就是作者自家的积分制收费服务。
-lang: zh
 tags: [学习笔记, Claude Code, Agent Skill, Agent]
 abbrlink: video-subtitle-summary-skill
 ---

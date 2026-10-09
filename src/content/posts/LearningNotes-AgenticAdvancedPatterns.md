@@ -2,7 +2,6 @@
 title: 【学习笔记】Agentic 设计模式（三）：Memory / Learning / MCP / Goal Setting 高级模式
 published: 2026-07-01
 description: 深入讲解 Antonio Gulli《Agentic Design Patterns》第 8–11 章的高级模式——Memory Management（短期上下文记忆 vs 长期向量库记忆，及 Google ADK 的 Session/State/Memory 三概念）、Learning and Adaptation（RL/监督/在线学习 + PPO 与 DPO 对齐算法 + SICA 自改代码 Agent 案例）、Model Context Protocol（MCP 客户端-服务器架构、Resources/Prompts/Tools 三元素、与 function calling 的关键区别、Agent 接口契约陷阱）、Goal Setting and Monitoring（Planning 的另一半，把 Agent 从被动执行者变成有目标、能自评的目的性系统），给出机制、适用场景、陷阱与组合关系
-lang: zh
 tags: [学习笔记]
 abbrlink: agentic-advanced-patterns
 ---

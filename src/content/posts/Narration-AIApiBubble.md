@@ -2,7 +2,6 @@
 title: 【AI前沿】免费 AI API 还能白嫖多久？我看到一个算不平的泡沫
 published: 2026-07-07
 description: '实测三家免费 AI API（Agnes、智谱、Pollinations）后，从 Pollinations 一步步收口切入，结合 OpenAI 年亏 210 亿美元、四大云厂年投 7250 亿、AI 裁员一季度超十万等数据，论证撑起这轮 AI 热潮的投入回报账根本算不平——免费 API 只是泡沫最表面的一道裂缝。'
-lang: zh
 tags: [AI前沿]
 abbrlink: ai-api-bubble
 ---

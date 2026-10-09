@@ -2,7 +2,6 @@
 title: 【学习笔记】WWDC 2026 开幕直播与全部 19 场 Group Lab 要点
 published: 2026-06-12
 description: WWDC26 开幕直播（Keynote、PSOTU）与全部 19 场 Group Lab（小组讨论）的要点合集，按天分组整理；补全官方目录中遗漏的场次，附编号与日期的存疑说明。
-lang: zh
 tags: [学习笔记, Apple, WWDC]
 toc: true
 ---

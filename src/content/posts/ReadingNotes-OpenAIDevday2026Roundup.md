@@ -2,7 +2,6 @@
 title: 【AI前沿】OpenAI DevDay 2026 发布汇总：Dots 常驻智能体、GPT-6.1 Sol 与 Codex 的「28 天连更」
 published: 2026-10-08
 description: 2026 年 9 月 29 日旧金山 DevDay：OpenAI 一口气发布 20+ 项更新——GPT-6 Astra 驱动的常驻智能体 Dots、智能接近 Astra 但价格仅 1/5 的 GPT-6.1 Sol、最高 300 token/s 的 Ultrafast、面向企业的 Private Intelligence、Codex 全家桶（云端 Codex、新版 CLI、Code Review、Security Cloud）、Decisions API 与 Agents API、ChatGPT Space/Pages/协作幻灯片、Sign in with ChatGPT、每月 500 美元的 Pro 500 与 32 家伙伴的 Marketplace。一周之后，Codex 负责人 Tibo（Thibault Sottiaux）又立下「28 天连更」的军令状：每天交付一个对多数 Codex/Work 用户明确有用的改进，做不到就全员发放免费 Reset。本文基于官方 Recap 与多家媒体的报道完整梳理两部分内容，截至发文（10 月 8 日）连更刚进行到第 4 天。
-lang: zh
 tags: [AI前沿]
 abbrlink: openai-devday-2026-roundup
 ---

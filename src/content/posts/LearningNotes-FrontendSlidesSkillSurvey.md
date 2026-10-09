@@ -2,7 +2,6 @@
 title: 【学习笔记】拆解 frontend-slides：让编码代理直接生成可放映的零依赖 HTML 幻灯片
 published: 2026-09-05
 description: 拆解 GitHub 28.7k star 的 frontend-slides skill：面向编码代理（Claude Code / Codex / Kimi Code 等）的单 skill，从零或从 PPTX 生成零依赖、动画丰富的单文件 HTML 演示文稿。本文覆盖 SKILL.md 六阶段工作流（低/高密度二分、三风格预览的 show don't tell、浏览器截图验收溢出）、NON-NEGOTIABLE 的固定 1920×1080 舞台模型（禁 display:none、CSS 函数取负静默失效坑）、12 安全预设 + 34 bold 模板的三层渐进披露资产组织（禁 bulk 读）、反 AI 味成文纪律、34/34 模板的 CJK 字体配对与排版修正清单，以及与两轮 PPT 调研的路线对照（PPTX 二进制 / HTML 交互演示 / HTML 时间轴视频）和五条可借鉴的 skill 工程模式。
-lang: zh
 tags: [学习笔记, Agent Skill]
 abbrlink: frontend-slides-skill-survey
 ---

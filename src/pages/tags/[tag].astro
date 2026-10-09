@@ -1,0 +1,35 @@
+---
+import PostList from '@/components/PostList.astro'
+import TagList from '@/components/TagList.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getAllTags, getPostsByTag } from '@/utils/content'
+
+export async function getStaticPaths() {
+  const tags = await getAllTags()
+  return tags.map(tag => ({
+    params: { tag },
+    props: { tag },
+  }))
+}
+
+interface Props {
+  tag: string
+}
+
+const { tag } = Astro.props
+const posts = await getPostsByTag(tag)
+const allTags = await getAllTags()
+---
+
+<Layout>
+  <!-- Decorative Line -->
+  <div class="uno-decorative-line" />
+  <!-- Tag List -->
+  <TagList
+    tags={allTags}
+    currentTag={tag}
+  />
+
+  <!-- Posts List -->
+  <PostList posts={posts} />
+</Layout>

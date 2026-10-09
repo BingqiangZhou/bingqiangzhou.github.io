@@ -2,7 +2,6 @@
 title: 【学习笔记】HyperFrames 子 skill 运行流程手册：十个工作流怎么一步步跑
 published: 2026-07-23
 description: 上一篇拆了 HyperFrames 的架构，这篇落到运行流程——faceless-explainer、product-launch-video、pr-to-video、music-to-video、motion-graphics、website-to-video、slideshow、talking-head-recut、embedded-captions、remotion-to-hyperframes 这十个工作流子 skill，各自从输入到产物的每一步是什么、哪里卡 gate、哪里派子代理。附三种工作流范式对比与选型建议。
-lang: zh
 tags: [学习笔记, Agent Skill]
 abbrlink: hyperframes-workflow-runbook
 ---

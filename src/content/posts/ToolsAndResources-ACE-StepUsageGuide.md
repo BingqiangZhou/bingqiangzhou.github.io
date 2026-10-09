@@ -2,7 +2,6 @@
 title: 【工具分享】免费 AI 音乐怎么用？ACE-Step 网页端、云端 API、本地部署三种方式
 published: 2026-07-08
 description: ACE-Step 1.5 的完整用法手册。三种用法——网页端 acemusic.ai 注册即用、云端 API（OpenAI 兼容）写脚本调用、本地部署数据不出门，按门槛从低到高全覆盖。附并发限制实测：递增并发 1→2→4→8→16，拐点在 4-8 之间，错误码是 504 而非 429，单 key 并发上限设 4 最稳。
-lang: zh
 tags: [工具分享]
 abbrlink: ace-step-usage-guide
 ---

@@ -2,7 +2,6 @@
 title: 【实践记录】faster-whisper VAD 漏句排查记：三次反转与一个错误的 benchmark
 published: 2026-05-17
 description: 使用 faster-whisper BatchedInferencePipeline 生成字幕时遇到丢段，经历了怀疑 VAD、改用 model.transcribe、发现参数未传入、以为修好又丢段、最终发现 benchmark 指标量错了的完整排查过程
-lang: zh
 tags: [实践记录]
 ---
 

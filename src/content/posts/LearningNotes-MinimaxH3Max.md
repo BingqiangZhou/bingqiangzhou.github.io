@@ -2,7 +2,6 @@
 title: 【学习笔记】MiniMax H3 Max：fal 把开源 H3 后训练成"生成快过播放"的视频模型（信息汇总）
 published: 2026-09-01
 description: 听说"MiniMax 出了个 H3 Max，速度极快"，查了一圈信息汇总成笔记。先澄清最容易误解的一点：H3 Max 不是语言模型，而是 fal 与 MiniMax 合作、基于开源视频模型 MiniMax H3 后训练出的高速版本——5 秒 768p 视频约 3 秒生成，比播放还快，官方口径约为 MiniMax 自家 H3 端点的 35 倍吞吐。本文分层记录一手与二手数字：速度（fal 官方 35× 吞吐、Reddit"近 50 倍"、第三方 Artificial Analysis 榜单图生视频第一/文生视频第三）、质量争议（FastVideo"FastH3"激进加速掉质量、MiniMax"速度全靠糊质量"的回应、LMSYS 8×H200 实测 1.85-6.24 倍）、价格（MiniMax 平台 480P 0.05 美元/秒、768P 0.08 美元/秒与基础版同价，fal 上 0.08 美元/秒）、底座 H3 的 33B 架构与 Community License 限制，以及"24 小时 AI 频道要花 6912 美元"这类落地测算。
-lang: zh
 tags: [学习笔记, AI前沿]
 abbrlink: minimax-h3-max
 ---

@@ -2,7 +2,6 @@
 title: "【学习笔记】归一化(Normalization)、标准化(Standardization)与正则化(Regularization)"
 published: 2020-08-26
 description: "回到学校一个星期了，算是差不多找回状态了。"
-lang: zh
 tags: ["学习笔记"]
 ---
 

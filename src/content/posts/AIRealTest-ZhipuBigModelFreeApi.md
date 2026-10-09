@@ -2,7 +2,6 @@
 title: 【AI实测】智谱免费的图片和视频 API 到底行不行？一篇实测讲透
 published: 2026-06-26
 description: '同一套 benchmark 横评智谱 cogview-3-flash / cogvideox-flash vs Agnes：基线过关但文字渲染中英都崩、图生视频 0/3 锁不住人，只有"快"占优。'
-lang: zh
 tags: [AI实测]
 abbrlink: zhipu-bigmodel-realtest
 ---

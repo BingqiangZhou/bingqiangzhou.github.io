@@ -2,7 +2,6 @@
 title: 【实践记录】PPT 转视频路线实测与选型：WPS COM 死路、静态拼片管线与 HyperFrames 对比
 published: 2026-09-04
 description: 「先用 pptx skill 做 PPT、再把 PPT 做成视频」在本机怎么走：五条方案全景与实测——真 PowerPoint 原生导出（本机无 Office）、WPS COM 自动化死路（CreateVideo 静默空操作、SaveAs 视频枚举被降级存 pptx，附官方文档查证）、开源渲染拼片（soffice→PDF→ffmpeg 逐页对时，缺 LibreOffice）、HyperFrames 混合管线（全动效但双层维护）、在线 SaaS 一笔带过；外加保留 PPT 动效的三条正路（装 Office、录屏、WPS GUI）、竖版 9:16 画幅实测（精确对齐 1080×1920）、与 HyperFrames 的逐维度对比，以及 2026-09-04 实操增补：WPS COM 转 PDF 端到端可用、首个 11 页 deck 交付与 QA 战报；动效追记：63 动效 timing XML 全量注入通过结构校验，但 WPS 放映引擎实测不执行自动序列动画（advTm 自动换片与页内旁白 mp3 正常），WPS COM 再添 SlideShowSettings 与 TextRange 两项缺口。
-lang: zh
 tags: [实践记录]
 abbrlink: ppt-to-video-vs-hyperframes
 ---

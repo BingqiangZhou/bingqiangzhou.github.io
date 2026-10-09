@@ -2,7 +2,6 @@
 title: 【学习笔记】订阅公众号文章与 X 推文的开源方案调研：曲线救国、账号池与接口封锁
 published: 2026-08-17
 description: 调研 WeWe RSS、WeRSS、Wechat2RSS、wechat-article-exporter、Nitter、RSSHub Twitter 路由、twscrape 等开源方案如何订阅微信公众号文章与 X 推文，拆解微信读书借道、公众平台编辑器接口、真实账号会话池等实现原理，梳理 2026 年接口封锁后的最新格局，并总结六条可复用的规律。
-lang: zh
 tags: [学习笔记]
 ---
 

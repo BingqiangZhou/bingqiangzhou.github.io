@@ -2,7 +2,6 @@
 title: "【实践记录】解决 faster-whisper Windows+CUDA 转录完成后进程崩溃（0xC0000409）"
 published: 2026-05-19
 description: "faster-whisper 在 Windows+CUDA 环境下转录完成后进程以 0xC0000409 (STATUS_STACK_BUFFER_OVERRUN) 退出。根因是 CTranslate2 的 CUDA async allocator 在模型清理时导致 C++ 层内存损坏。记录问题定位过程和三种解决方案。"
-lang: zh
 tags: ["实践记录", "工具分享"]
 ---
 

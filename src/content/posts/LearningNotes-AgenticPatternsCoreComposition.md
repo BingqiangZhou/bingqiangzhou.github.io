@@ -2,7 +2,6 @@
 title: 【学习笔记】Agentic 设计模式（一）：Prompt Chaining / Routing / Parallelization 三大工作流原语
 published: 2026-07-01
 description: 深入讲解 Antonio Gulli《Agentic Design Patterns》前三章的三大确定性工作流原语——Prompt Chaining（把任务拆成串行 LLM 步骤、用结构化输出和「门控」串接）、Routing（分类后路由到专门子流程，含 LLM/嵌入/规则/ML 四种路由器实现）、Parallelization（并发跑互不依赖的步骤再汇总，含 Sectioning 与 Voting 两变体），逐一给出定义、机制、适用场景、典型陷阱与组合关系，并对照 Anthropic「Building Effective Agents」的同名工作流
-lang: zh
 tags: [学习笔记]
 abbrlink: agentic-patterns-core-composition
 ---

@@ -2,7 +2,6 @@
 title: 【工具分享】ClipForge——开源 AI 带货短视频工具学习与资源梳理
 published: 2026-08-05
 description: 研读 xixihhhh/clipforge 的学习笔记——一张商品图自动产出抖音/快手/小红书/TikTok Shop 卖货短视频的开源工具。以「一张图 → 一条成片」的制作流程为主线，源码级拆解脚本生成 Prompt 装配、黄金 3 秒三拍结构、素人主播反 AI 假脸约束、19 款运镜预设注入、Provider 抽象与付费安全、10 源免费素材引擎、FFmpeg filter_complex 合成管线、字幕/转场/侧链闪避、多平台 CRF+VBV 码率卡线、AIGC 双层标识与发布门禁；并专章拆解「完全不配 API Key 的免 Key 出片闭环」——Ollama 本地 LLM、Openverse/Wikimedia 免费素材、自研 Edge TTS keyless 客户端（伪造 Sec-MS-GEC token）的每一环实现，系统汇总文中点名的所有 AI 平台、模型、免费素材库与工具链资源
-lang: zh
 tags: ["工具分享", "学习笔记"]
 abbrlink: clipforge-ai-product-video-tool
 ---

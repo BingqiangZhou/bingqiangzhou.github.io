@@ -2,7 +2,6 @@
 title: 【学习笔记】影视飓风「剪映剪辑全能必修课」笔记（二）：第一单元·基础剪辑全流程
 published: 2026-06-19
 description: 影视飓风剪辑课第一单元笔记。第1课初试成片全流程、第2课口播精剪与A/B-roll协同、第3课混剪与蒙太奇逻辑、第4课音乐音效设计、第5课导出管理。含时间线/轨道/智能剪口播/景别递进/匹配剪辑/库里肖夫效应/J-L Cut/分辨率帧率码率等要点。
-lang: zh
 tags: [学习笔记]
 abbrlink: jianying-course-notes-2-basic-workflow
 toc: true

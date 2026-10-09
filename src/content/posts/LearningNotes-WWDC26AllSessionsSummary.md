@@ -2,7 +2,6 @@
 title: 【学习笔记】WWDC 2026 全部视频讲座总结：Keynote + PSOTU + 100+ 技术会话（不含 Labs）
 published: 2026-06-12
 description: WWDC26 所有视频讲座的统一总结——涵盖 Keynote(#101)、Platforms State of the Union(#102)及 100+ 场技术会话，按 13 大主题分类，附全部会话编号速查表；不含 Group Lab 互动环节。
-lang: zh
 tags: [学习笔记, Apple, WWDC]
 toc: true
 ---

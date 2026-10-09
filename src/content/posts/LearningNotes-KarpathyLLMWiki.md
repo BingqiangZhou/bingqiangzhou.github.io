@@ -2,7 +2,6 @@
 title: 【学习笔记】Karpathy 的 LLM Wiki：让 LLM 帮你构建会"复利"的个人知识库
 published: 2026-07-01
 description: 整理 Andrej Karpathy 2026 年 4 月发布的 LLM Wiki 模式——一套用 LLM 增量构建和维护个人知识库的方法论。核心是抛弃 RAG"每次从零检索"的范式，转而让 LLM 把知识只编译一次、持续整合进一个持久、会复利增长的 markdown wiki。覆盖三层架构（raw / wiki / schema）、三大操作（Ingest / Query / Lint）、index.md 与 log.md 的设计技巧、以及社区把它做成 Claude Code / Codex / Cursor skill 的实现
-lang: zh
 tags: [学习笔记]
 abbrlink: karpathy-llm-wiki
 ---

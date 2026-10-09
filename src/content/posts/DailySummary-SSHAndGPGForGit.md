@@ -2,7 +2,6 @@
 title: "【学习笔记】windows下git配置ssh和gpg"
 published: 2019-08-20
 description: "今天总结一下git配置ssh和gpg。"
-lang: zh
 tags: ["学习笔记"]
 ---
 

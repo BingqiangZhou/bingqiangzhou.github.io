@@ -2,7 +2,6 @@
 title: "【工具分享】XMind与Sublime Text等等其他工具"
 published: 2019-08-23
 description: "记录一下XMind与Sublime Text 3破解激活的步骤以及一些Sublime Text好用的插件！"
-lang: zh
 tags: ["工具分享"]
 ---
 

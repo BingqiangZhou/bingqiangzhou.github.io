@@ -2,7 +2,6 @@
 title: 【AI实测】Pollinations ltx-2 免费视频模型实测：比 Agnes 快一个量级，但有 audio/seed 两个坑
 published: 2026-06-27
 description: '30 条视频实测 Pollinations 网关上的 ltx-2：同步 GET 直接吐 MP4，5s 成片约 30-99s（比 Agnes 快一个量级），duration 听话、图生视频锁得住角色；两个坑——audio 假开关（false 仍带音轨）、seed 无效（同 prompt 永远同画面）；16:9 须显式传 width/height 才出（1344×768），额度按小时刷新、断点续跑。'
-lang: zh
 tags: [AI实测]
 abbrlink: pollinations-video-realtest
 ---

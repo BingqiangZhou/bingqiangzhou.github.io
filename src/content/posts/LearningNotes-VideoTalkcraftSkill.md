@@ -2,7 +2,6 @@
 title: 【学习笔记】七层拆解 video-talkcraft：把每个动效都钉在人声字级时间戳上的口播视频 skill
 published: 2026-09-01
 description: 按七层框架重拆开源 AI agent skill「video-talkcraft」——video-shotcraft 同作者的口播视频篇。认知层看全貌（口播稿+成品配音进，本机 CPU 对齐字级时间戳，Remotion 渲解说成片）；原理层看机制（CJK 锚点对齐与四配置横评、SHOTBOOK 层矩阵与排版预算、78 张配方卡 tsx 正主、五条机器闸与独立评审）；边界层看 TTS/数字人写死在外与中文文档门槛；权衡层看精度体积、保真复制与许可收紧的取舍；生态层看 Remotion/FireRedASR/前作/HyperFrames 的位置；动态层看十天六 commit 与剪映式工作台路线；价值层提炼「把判断题变成测量题」。
-lang: zh
 tags: [学习笔记, Agent Skill]
 abbrlink: video-talkcraft-skill-deep-dive
 ---

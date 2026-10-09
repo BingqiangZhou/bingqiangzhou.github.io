@@ -2,7 +2,6 @@
 title: "【实践记录】解析SSR订阅信息，将SSR信息保存到二维码中并保存到PDF中"
 published: 2020-07-19
 description: "今天放弃了收费的shadowsocks小火箭，转向了免费的potatso lite，这个过程是挺有意思的。"
-lang: zh
 tags: ["实践记录"]
 ---
 

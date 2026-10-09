@@ -2,7 +2,6 @@
 title: 【学习笔记】GPT-6 Astra 时代的 Skills 与提示词重写指南：OpenAI 官方最佳实践全文解读
 published: 2026-09-13
 description: GPT-6 Astra（2026-09-03 发布、1M 上下文、OpenAI 称「最对齐」的模型）上线 Codex 之后，OpenAI 开发者博客随即发文《Rethinking skills and prompts for GPT-6 Astra》，给出的核心建议是反直觉的做减法：skill 描述要尽可能短、根文档只做最小路由器、别给新模型写行程单式配方；AGENTS.md 从「每次全读文档堆」改成按需索引、从「鼓励跑测试」变成「预授权跑测试」；过去为约束旧模型加的强边界语言现在会过度压制 Astra；而 Astra 停止点更保守，要在开工前显式定义「完成」。本文全文拆解这六条建议的原文与译注，并结合 AGENTS.md/SKILL.md 生态的实践给出解读：模型能力越强，指令的边际收益越低、约束错配的边际成本越高，提示词正在从「教模型做事」转向「告诉模型什么被允许、在哪停」。
-lang: zh
 tags: [学习笔记, Agent Skill, AI前沿]
 abbrlink: gpt6-astra-skills-prompts
 ---

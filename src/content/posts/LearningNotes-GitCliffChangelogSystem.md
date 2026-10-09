@@ -2,7 +2,6 @@
 title: 【学习笔记】搭建 git-cliff + Agent + GitHub Action 的自动化 Changelog 闭环
 published: 2026-08-04
 description: 用 git-cliff（生成 CHANGELOG 骨架）+ Agent skill（编排发版与注入 AI 摘要）+ GitHub Action（自动创建 Release）三件套，为任意 git 项目搭建从提交到发布的全自动 changelog 闭环。
-lang: zh
 tags:
   - 学习笔记
   - Skill

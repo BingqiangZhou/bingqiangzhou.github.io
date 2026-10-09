@@ -97,7 +97,6 @@ node -e "const s=require('sharp'),fs=require('fs');(async()=>{for(const f of pro
 title: 【优质转载】<原标题或精简版原标题>
 published: <今天 YYYY-MM-DD>
 description: 转载自 <来源>：<一句话概括原文主旨>
-lang: zh
 tags: [优质转载]
 abbrlink: <kebab-case-slug>      # 必须唯一，先 grep 确认未被占用
 toc: true

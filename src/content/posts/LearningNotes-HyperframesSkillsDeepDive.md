@@ -2,7 +2,6 @@
 title: 【学习笔记】拆解 HyperFrames：一个把视频渲染从 HTML 里"长"出来的 skill 体系
 published: 2026-07-23
 description: 深度拆解 HeyGen 的 HyperFrames——用 HTML 声明时序、可 seek 的动画运行时、框架托管媒体播放，把视频渲染变成确定性的"逐帧采样"。本文从入口路由、核心契约、动画运行时、CLI 开发闭环到工作流派发，拆解这套 skill 体系的架构设计，以及它对写 agent skill 的启示。
-lang: zh
 tags: [学习笔记, Agent Skill]
 abbrlink: hyperframes-skills-deep-dive
 ---

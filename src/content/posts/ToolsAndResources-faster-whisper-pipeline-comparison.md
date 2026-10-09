@@ -2,7 +2,6 @@
 title: "【实践记录】faster-whisper WhisperModel vs BatchedInferencePipeline 性能对比"
 published: 2026-05-19
 description: "在 Windows+CUDA 环境下对比 faster-whisper 两种 Pipeline 的转录速度、完整性、词级时间戳质量，给出不同场景的选型建议。"
-lang: zh
 tags: ["实践记录", "工具分享"]
 ---
 

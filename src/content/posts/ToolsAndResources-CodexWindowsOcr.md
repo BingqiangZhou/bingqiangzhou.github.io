@@ -2,7 +2,6 @@
 title: 【AI实测】没有多模态的 Codex，居然自己掏出了 Windows 自带 OCR
 published: 2026-08-28
 description: 让 Codex（GLM-5.3，纯文本模型）做一项需要读图的调研，它没有摆烂说"我看不了图片"，而是自己发现并调用了 Windows 系统自带的中文 OCR（Windows.Media.Ocr）来识别图片——顺便科普这个藏得很深的系统能力。
-lang: zh
 tags:
   - AI实测
   - 工具分享

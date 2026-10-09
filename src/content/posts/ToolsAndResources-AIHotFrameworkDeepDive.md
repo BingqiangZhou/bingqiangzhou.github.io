@@ -2,7 +2,6 @@
 title: 【学习笔记】AIHOT 深度拆解（一）总览：一个「自己找热点、自己写日报」的开源流水线——架构、双盲评分、事件聚簇、48 小时热度公式与 Kemeny 模型榜的源码核对
 published: 2026-09-29
 description: 拆解 2026-09-28 开源、一天 700+ star 的 AIHOT（aihot.news，作者数字生命卡兹克）：基于完整源码克隆逐文件精读，核对三进程架构（Fastify + React Router SSR + pg-boss worker）与「一条公开读取层、页面不调模型、付费必有回执、预算熔断」四条铁律；还原六步流水线（判重→预筛→双盲双评→写作→结构化→归组成刊），全文核对 9.8KB 评分提示词的五轴×七类内容权重体系、T1/T1.5/T2 分级门槛与 SelectBench 校准闭环；抓取层全解（每分钟调度与失败退避、六种读取器实现细节、频率自适应公式、18 个示范信源全名单与线上 865 信源的真实规模）；深读事件聚簇（article→fact→story、14 天向量召回、三路关系判定、低于 0.85 余弦触发跨模型复核、人工改写在行锁下永远优先）与按事件算热度的 SQL（48 小时窗口独立参与者去重、24 小时半衰期、6 小时趋势对比带「落后信源」补偿）；五个付费接口的具体 API 契约（SocialData 按对象计费、极致了公众号接口按次计费且响应自带余额、Jina Reader 按 token、OpenAI 兼容 chat/completions 七个预置档与聚簇专用 embeddings）；拆解给 Agent 用的开源姿势（industry/ 单文件夹行业包、AGENTS.md 把决策权写回给人、MCP 五工具 + llms.txt + OpenAPI）；附 Kemeny/HiGHS 模型榜与 Codex 重置监控两个彩蛋模块、八条批判性审视与可迁移的工程启发；所有结论以源码为准，本机 Node 24 跑通 npm run typecheck，线上站当日内容与 GitHub API 数据均已独立核实。
-lang: zh
 tags: [学习笔记, 工具分享, AI前沿]
 abbrlink: aihot-framework-deep-dive
 ---

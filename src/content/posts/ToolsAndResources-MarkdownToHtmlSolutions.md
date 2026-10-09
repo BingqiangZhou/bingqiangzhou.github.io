@@ -2,7 +2,6 @@
 title: "【学习笔记】Markdown 转 HTML 方案"
 published: 2026-04-26
 description: "Python 中将 Markdown 转换为 HTML 的主流方案对比、代码实现及微信公众号内联样式适配实战。"
-lang: zh
 tags: ["学习笔记", "工具分享"]
 ---
 

@@ -2,7 +2,6 @@
 title: 【学习笔记】Claude Code 动态工作流（Dynamic Workflows）详解，并与 /goal 命令对比
 published: 2026-06-12
 description: 深入讲解 Claude Code 动态工作流的脚本编排模型、运行机制与使用方式，并与 /goal 命令做全面对比。
-lang: zh
 tags: [学习笔记, Claude Code]
 ---
 

@@ -2,7 +2,6 @@
 title: 【学习笔记】拆解 AIHOT：卡兹克信息流水线长成的 AI 资讯聚合站（API/MCP/Skill 全实测）
 published: 2026-09-05
 description: 对 AIHOT（aihot.virxact.com）的全量实测拆解：数百信源分钟级抓取 → 便宜模型预筛 → 强模型单次调用并行产出五维分数+中文标题+摘要 → 代码公式合成 0-100 分并按分类×信源分层阈值判精选 → embedding 事件聚类 → 每日 08:00 零 LLM 拼装日报。实测规模（24h 落库 458 条、精选率 4.8%、发布→发现中位时延 17 分钟）、公开 API v1 八端点契约（OpenAPI 3.1、RFC 7807 错误、keyset 游标、snapshot+changes 全量同步协议）、MCP+Agent Skill+llms.txt 的 Agent 生态位（含防提示注入纪律）、robots.txt 注释考古出的治理演进、创作者 11 版评分迭代史与「能用脚本就别用 Agent」的定型教训、月成本约 150-300 元的估算、六层复刻参考架构与十二条关键工程决策；并经 /about 页自述把「AIHOT=卡兹克内部流水线外溢」从强推断升级为实证。
-lang: zh
 tags: [学习笔记, AI前沿]
 abbrlink: aihot-website-deep-dive
 ---

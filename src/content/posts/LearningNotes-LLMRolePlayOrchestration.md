@@ -2,7 +2,6 @@
 title: 【学习笔记】将来最好用的 LLM 是最懂"角色扮演"的——主 Agent 编排执行 Agent 的多模型协作
 published: 2026-06-17
 description: 整理自 LINUX DO 讨论：未来最好用的 LLM 是最懂"角色扮演"（共情 + 上下文建模）的——用 Claude Code 当主 Agent 翻译意图、指挥 Codex 执行，是一种"人定方向 / 主 Agent 翻译编排 / 执行 Agent 落地"的三层协作架构。
-lang: zh
 tags: [学习笔记]
 abbrlink: llm-role-play-orchestration
 toc: true

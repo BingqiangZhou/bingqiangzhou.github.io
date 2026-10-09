@@ -2,7 +2,6 @@
 title: 【学习笔记】文章生成播客(AI Podcast Generation)调研报告
 published: 2026-06-15
 description: 系统梳理「文章转播客」技术全貌：4 阶段标准工作流、NotebookLM 逆向系统提示词、NotebookLlama/Podcastfy/Mozilla 等开源项目、商业工具横向对比与智谱/通义/MiniMax/讯飞中文生态方案
-lang: zh
 tags: [学习笔记]
 ---
 

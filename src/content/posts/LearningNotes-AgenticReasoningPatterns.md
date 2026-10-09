@@ -2,7 +2,6 @@
 title: 【学习笔记】Agentic 设计模式（二）：Reflection / Tool Use / Planning / Multi-Agent 四大智能体模式
 published: 2026-07-01
 description: 深入讲解 Antonio Gulli《Agentic Design Patterns》第 4–7 章——即 Andrew Ng 经典的四大智能体设计模式：Reflection（Producer–Reviewer 自我反思循环）、Tool Use / Function Calling（六步工具调用循环与「工具即委派」泛化）、Planning（目标导向、可动态重规划，附「解法已知 vs 未知」的关键判据）、Multi-Agent Collaboration（任务分解 + 六种通信模型 + 多种协作拓扑），逐一给出机制、适用场景、陷阱、与 Andrew Ng/Anthropic 的对照，以及 Andrew Ng 的成熟度排序（Reflection/Tool Use 可靠，Planning/Multi-Agent 难预测）
-lang: zh
 tags: [学习笔记]
 abbrlink: agentic-reasoning-patterns
 ---

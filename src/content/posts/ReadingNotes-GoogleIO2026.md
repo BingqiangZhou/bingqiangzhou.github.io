@@ -2,7 +2,6 @@
 title: 【学习笔记】谷歌 I/O 2026 大会总结
 published: 2026-05-20
 description: 谷歌 I/O 2026 开发者大会全部值得关注的发布内容梳理
-lang: zh
 tags: [学习笔记]
 ---
 

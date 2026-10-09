@@ -2,7 +2,6 @@
 title: 【工具分享】拆解 video-to-subtitle-summary-skill：一份 583 行的 SKILL.md 如何指挥 Agent 完成视频转写与总结
 published: 2026-09-26
 description: 深度拆解开源项目 imlewc/video-to-subtitle-summary-skill（MIT）：一个面向 Codex / Claude Code 的本地 Agent Skill，把短视频（抖音/小红书/B站/YouTube）或本地音视频变成「字幕 + AI 总结」。本文还原它的「指挥层 + 脚本层」双层架构——SKILL.md 用自然语言实现的状态机（输入分型、条件跳转、按上下文裁剪的环境预检、显式降级链）指挥 Agent，5 个纯标准库脚本用依赖注入缝承接复杂逻辑，两层靠 subtitle.srt + text.txt 这对固定产物契约咬合；逐段解析它的提示词工程（噪声前置声明、长度双重量化、反机械照抄、标题冲突裁决、密钥红线、触发词式 description），并给出 21 条按借鉴价值排序的学习清单；最后如实记录它的反面教材——输出规格重复、占位符无数据来源、共享临时文件并发冲突，以及一次 Windows 上的实测翻车（17 个测试 16 过 1 败）。姊妹篇：[拆解 VideoTranscriptAPI](/posts/videotranscriptapi-deep-dive/)。
-lang: zh
 tags: [工具分享, Agent Skill, Agent]
 abbrlink: video-to-subtitle-summary-skill-deep-dive
 ---

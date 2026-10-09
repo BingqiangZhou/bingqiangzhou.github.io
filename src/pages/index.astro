@@ -1,0 +1,26 @@
+---
+import PostList from '@/components/PostList.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getPinnedPosts, getPostsByYear } from '@/utils/content'
+
+const pinnedPosts = await getPinnedPosts()
+const postsByYear = await getPostsByYear()
+---
+
+<Layout>
+  <!-- Pinned Posts -->
+  {pinnedPosts.length > 0 && (
+    <section class="mb-7.5">
+      <div class="uno-decorative-line" />
+      <PostList posts={pinnedPosts} pinned={true} />
+    </section>
+  )}
+
+  <!-- Regular Posts -->
+  {Array.from(postsByYear.entries(), ([_year, posts]) => (
+    <section class="mb-7.5">
+      <div class="uno-decorative-line" />
+      <PostList posts={posts} />
+    </section>
+  ))}
+</Layout>

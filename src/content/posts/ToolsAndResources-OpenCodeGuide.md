@@ -2,7 +2,6 @@
 title: "【工具分享】OpenCode 完全指南"
 published: 2026-04-28
 description: 从安装配置到高级使用技巧，全面介绍开源 AI 编码智能体 OpenCode 的使用方法，包括 Skills 技能系统。
-lang: zh
 tags: ["工具分享", "学习笔记"]
 ---
 

@@ -2,7 +2,6 @@
 title: 【实践记录】Windows C 盘空间不足的清理与优化指南
 published: 2026-05-15
 description: 当 Windows 系统 C 盘空间不足时的系统性解决方案，从快速清理到深度优化的完整指南。
-lang: zh
 tags: [实践记录]
 ---
 

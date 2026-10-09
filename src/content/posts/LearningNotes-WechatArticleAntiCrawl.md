@@ -2,7 +2,6 @@
 title: 【学习笔记】突破微信公众号文章反爬：拿到文章链接后的六条获取路线（附实测）
 published: 2026-09-01
 description: 手里有 mp.weixin.qq.com 文章链接，想把正文稳定拿下来，为什么不是 requests 一发的事？本文先拆解微信反爬的三板斧（UA 白名单、滑块验证、IP 频控）并用四个 UA 做对照实测（工具 UA 直接 302 到 wappoc_appmsgcaptcha 验证页，浏览器与微信 UA 低频均放行），再系统梳理六条获取路线：伪装请求头的一行 curl、真实浏览器自动化、借用公众平台后台接口的 wechat-article-exporter、微信读书中转的 wewe-rss 与继任者 we-mp-rss、真机抓包与 PC Hook、以及 wechat2rss 等付费 RSS 服务，最后给出按场景的选型决策表与合规边界。
-lang: zh
 tags: [学习笔记, 实践记录]
 abbrlink: wechat-mp-article-anti-crawl
 ---

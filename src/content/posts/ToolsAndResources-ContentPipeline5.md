@@ -2,7 +2,6 @@
 title: 【实践记录】AI 内容生成流水线 5.0：一条录音变出图文、播客、视频
 published: 2026-07-13
 description: AI 内容生成流水线从 4.0 升到 5.0，三件改动：产出多了视频（两件变三件）、架构从一个 agent 内联拆成调度员加六个独立 agent（接口定死、各管一件产物）、把插图和播客音频按分段对位拼成视频。上次做减法定型，这次做加法，反而更顺了。
-lang: zh
 tags: [实践记录, 工具分享]
 abbrlink: content-generation-pipeline-5
 ---

@@ -2,7 +2,6 @@
 title: "【学习笔记】搭建github.io博客的总结（二）"
 published: 2019-08-13
 description: "> 只有当你认真的去做一件事情的时候，才会发现自己的灵魂，和灵魂的深处。"
-lang: zh
 tags: ["学习笔记"]
 ---
 

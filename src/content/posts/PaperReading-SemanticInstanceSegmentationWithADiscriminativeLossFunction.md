@@ -2,7 +2,6 @@
 title: "【论文阅读笔记】Semantic Instance Segmentation with a Discriminative Loss Function"
 published: 2019-09-16
 description: "论文提出一种将特征空间的点分簇的损失函数，损失函数主要分为三项构成，分别为方差项（variance term），距离项（distance term），正则项（regulariztion trem），其中方差项计算的是簇内的距离，距离项计算的是簇与簇的距离，分别控制同簇点与簇中心之间的距离在δv之内，不同簇与簇的中..."
-lang: zh
 tags: ["论文阅读笔记"]
 ---
 

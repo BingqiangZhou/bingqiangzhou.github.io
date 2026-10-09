@@ -2,7 +2,6 @@
 title: "【论文阅读笔记】FEELVOS: Fast End-to-End Embedding Learning for Video Object Segmentation"
 published: 2019-09-20
 description: "视频对象分割快速端对端嵌入学习方法（FEELVOS: Fast End-to-End Embedding Learning for Video Object Segmentation）"
-lang: zh
 tags: ["论文阅读笔记"]
 ---
 

@@ -2,7 +2,6 @@
 title: 【学习笔记】Table-VideoSOP 深度拆解：一个人带一群 Agent 做视频的「生产协议栈」——总控分段、机器可读 DESIGN 与「未验证」文化
 published: 2026-09-28
 description: 对 UP 主「一只桌子」开源的 duoduoler-ops/Table-VideoSOP 做全仓库精读：它不是代码也不是引擎，而是把 AI 视频制作变成「人机协议」的一套资料包——AGENTS.md 任务路由 + 九步流程 + 12 个控制模板 + 9 组提示词，用「总控对话管中央状态、分段对话只写专属目录」的多会话架构支撑并行制作；三本账（输入／采用／检查）分离，QA 只认 通过／未通过／未验证／不适用 四值，1× 审看审听不可被抽帧波形代替；工艺上最有含金量的是「同类型对标、新类型才做样片」的质量回归思路、「先查时长再调曲线」的节奏诊断法和带 x-video 扩展的机器可读 DESIGN.md（上游 google-labs-code/design.md，已核实）；README 罕见地自曝整套流程只验证过一段 18 秒测试片；许可证三层拆分——正文 CC BY 4.0、脚本 MIT、截图保留所有权利。
-lang: zh
 tags: [学习笔记, 工具分享, Agent]
 abbrlink: table-video-sop-deep-dive
 ---

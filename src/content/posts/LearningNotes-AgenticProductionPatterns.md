@@ -2,7 +2,6 @@
 title: 【学习笔记】Agentic 设计模式（四）：异常恢复 / 人在回路 / RAG 生产可靠性三件套
 published: 2026-07-01
 description: 深入讲解 Antonio Gulli《Agentic Design Patterns》第 12–14 章的生产可靠性模式——Exception Handling and Recovery（错误检测-处理-恢复三阶段，并与 Reflection 组合的「失败即反思重试」）、Human-in-the-Loop（人工监督/干预/反馈/决策增强/协作/升级六方面，以及 scalability 是首要短板 + Human-on-the-loop 变体）、Knowledge Retrieval RAG（embedding/分块/混合检索/向量库管线 + GraphRAG 知识图谱变体 + Agentic RAG 主动推理变体），给出机制、适用场景、陷阱与「上生产前」的工程要点
-lang: zh
 tags: [学习笔记]
 abbrlink: agentic-production-patterns
 ---

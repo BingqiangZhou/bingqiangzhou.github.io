@@ -2,7 +2,6 @@
 title: 【优质转载】作为一名在读博士生，我在日常是如何与 AI 协作的？——ai-collab-playbook
 published: 2026-06-17
 description: 转载自 LINUX DO：一位 AI 方向在读博士生系统分享与 AI 协作的实战经验——"当同事不当工具"，涵盖日常使用、科研文献/绘图/写作、Code Agent、定期复盘与 AI 时代生存指南。
-lang: zh
 tags: [优质转载]
 abbrlink: phd-ai-collab-playbook
 toc: true

@@ -2,7 +2,6 @@
 title: 【读书笔记】Dan Koe《Human 3.0》：抵达前 1% 的个人发展总地图（含批判性拆解）
 published: 2026-09-27
 description: 丹·科（Dan Koe）长文《Human 3.0 – A Map To Reach The Top 1%》（「人类 3.0——抵达前 1% 的地图」）深度读书笔记：拆解四象限×三层级×三阶段的完整模型，溯源每个部件的思想出处（威尔伯 AQAL 整合理论、螺旋动力学、卢文格自我发展阶段论、心流、尼采），梳理六个真洞察与七个批判，并从 AI 时代内容创作角度做元分析。
-lang: zh
 tags: [读书笔记]
 abbrlink: readingnotes-dan-koe-human-3-0
 ---

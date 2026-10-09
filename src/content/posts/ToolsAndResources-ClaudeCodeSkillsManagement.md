@@ -2,7 +2,6 @@
 title: "【工具分享】Claude Code Skills 管理：上下文影响与禁用方法"
 published: 2026-05-10
 description: 介绍 Claude Code Skills 对上下文窗口的影响，以及五种禁用和优化 Skills 配置的方法。
-lang: zh
 tags: [工具分享]
 ---
 

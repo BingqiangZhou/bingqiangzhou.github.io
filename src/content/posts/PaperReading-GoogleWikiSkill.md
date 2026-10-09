@@ -2,7 +2,6 @@
 title: 【论文阅读笔记】谷歌 WikiSkill：给 Agent 修一座「越用越聪明」的知识库
 published: 2026-08-31
 description: Google Research 联合 Virginia Tech 于 2026-08-27 发布论文 WikiSkill（arXiv:2608.27454）：给 Agent 配一套「原始轨迹层 + 持久 Wiki 层 + 可执行技能层」的三层知识架构，让经验先沉淀进 Wiki、技能再从知识里进化。五个基准、五个模型上平均提升约 12 分，Qwen-9B 加持 WikiSkill 后反超裸奔的 27B，技能还能跨模型迁移。这篇笔记完整拆解它的动机、架构、工作流、实验与消融，并聊聊它对我们这些天天写 SKILL.md 的人意味着什么。
-lang: zh
 tags:
   - 论文阅读笔记
   - AI前沿

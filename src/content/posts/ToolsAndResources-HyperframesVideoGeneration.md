@@ -2,7 +2,6 @@
 title: "【工具分享】HyperFrames——用 HTML 写视频的开源渲染框架"
 published: 2026-05-07
 description: "深度分析 HeyGen 开源项目 HyperFrames：从 HTML 到视频的完整渲染管线、帧适配器架构、AI Agent 技能系统、Studio 编辑器与 Player 组件的技术解析。"
-lang: zh
 tags: ["工具分享", "学习笔记"]
 ---
 

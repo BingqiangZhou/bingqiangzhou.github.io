@@ -2,7 +2,6 @@
 title: "【读书笔记】《ai-collab-playbook》——把 AI 当同事而不是工具"
 published: 2026-05-06
 description: "阅读 linux.do 上睡小觉分享的 AI 协作手册公开版，梳理其核心方法论与实践建议，以及评论区有价值讨论的笔记。"
-lang: zh
 tags: ["读书笔记", "学习笔记"]
 ---
 

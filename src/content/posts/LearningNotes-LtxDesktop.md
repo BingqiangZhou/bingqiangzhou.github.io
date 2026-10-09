@@ -2,7 +2,6 @@
 title: 【学习笔记】Lightricks LTX-Desktop 全拆解：把 22B 视频模型装进桌面的功能地图与实现细节
 published: 2026-09-14
 description: LTX-Desktop 是 LTX 视频模型官方 Lightricks 开源的本地 AI 视频生成桌面应用（Apache-2.0，2026-03 开源，Electron + Python FastAPI 双进程）。它把 22B 参数的 LTX-2 蒸馏模型塞进了消费级显卡：CUDA 下用 fp8 量化把常驻显存压到约 23GB，15GB 显存就够「权重流式」模式，苹果统一内存则走 mmap 流式；文本编码这个 25GB 的大组件可以整个外包给官方免费云端 API（响应竟是 torch 张量的 pickle，配了一个白名单反序列化器）。本文逐个功能拆实现：本地/云端模式的三档硬件决策、文/图/音生视频与两阶段音频注入、Retake 的时间区域掩码、多关键帧的 guiding latent、LoRA/IC-LoRA 生态（含 ComfyUI 键名重映射与 MiDaS/DWPose 控制信号）、catalog 感知的提示词增强、自研 NLE 视频编辑器的 gap fill 与 take 系统、ffmpeg 三步导出，以及 12 个写着退场条件的上游 monkey-patch——每一个都是实打实踩出来的显存/内存坑。
-lang: zh
 tags: [学习笔记, AI前沿]
 abbrlink: ltx-desktop-deep-dive
 ---

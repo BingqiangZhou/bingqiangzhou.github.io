@@ -2,7 +2,6 @@
 title: 【学习笔记】Claude Code vs Codex：Harness 设计的加法与减法
 published: 2026-06-29
 description: 精读 Claude Code v2.1.88 与 OpenAI Codex CLI 两份源码，用一张表提炼两者在 8 个维度的 harness 设计对比、一张选型清单、5 条可迁移准则，以及一句话核心结论。
-lang: zh
 tags: [学习笔记, Claude Code]
 abbrlink: claude-code-vs-codex-harness
 ---

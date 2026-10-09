@@ -2,7 +2,6 @@
 title: 【学习笔记】WPS 听记全拆解：四层功能、计费考古，与「录音转写 + AI 纪要」的开源替代全景
 published: 2026-09-14
 description: 「开会录音、自动转写、按人区分、一键纪要」是打工人最刚性的 AI 需求之一，WPS 听记（原语音速记）就是这个赛道的国民级入口。本文用官方社区一手帖拆解它的四层功能（实时转写、说话人分离、AI 纪要、音字联动编辑）与计费体系（超会员每 31 天赠 180 分钟、充值 18 元起、单文件 1GB/5 小时、2024-03 会员体系拆分出 AI 会员与大会员、灵犀专业版 2026-08 开始收费），顺带揭开 wps.cn 域下成批第三方 SEO 稿把价格信息搅浑的现象；再用 GitHub API 逐个核验 star 数与许可证，梳理开源替代全景——Meetily（30.7k stars）、WhisperX、FunASR（SenseVoice 中文 CER 约为 Whisper 一半）、WhisperLiveKit、Vibe、Buzz、noScribe、sherpa-onnx 等 13 个项目分层对照。结论：开源能平替每一层，但没有单品达到 WPS 听记级的开箱体验；中文场景的最优解不是 Whisper 而是 FunASR 家族；隐私与时长无限是本地方案的真护城河。
-lang: zh
 tags: [学习笔记, 工具分享]
 abbrlink: wps-tingji-open-source
 ---

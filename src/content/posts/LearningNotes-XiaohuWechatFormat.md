@@ -2,7 +2,6 @@
 title: 【学习笔记】深度拆解 xiaohu-wechat-format：Claude Code 公众号排版技能的工程实现
 published: 2026-07-08
 description: 逐文件研读 xiaohuailabs/xiaohu-wechat-format（一个把"排版→封面→发布"串成一条龙的 Claude Code 技能），拆解它的 Markdown 排版引擎、微信兼容黑科技、主题系统、画廊预览、AI 增强与一键发布到草稿箱的完整链路。
-lang: zh
 tags: [学习笔记, 工具分享]
 ---
 

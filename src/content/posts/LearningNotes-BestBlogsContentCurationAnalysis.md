@@ -2,7 +2,6 @@
 title: 【学习笔记】BestBlogs.dev 内容获取与筛选流程拆解：从 RSS 订阅源到个性化推荐
 published: 2026-08-22
 description: 拆解 BestBlogs.dev 的内容策展流水线：以 RSS 为纲的订阅源工程（开源 400 个 OPML 订阅源，靠 RSSHub、wechat2rss、XGo.ing 等工具啃下公众号和推文）、基于 Dify Workflow 的四大子流程（初评过滤、GPT-4o 深度分析、检查反思与优化改进、术语先行的意译翻译）、专家精审与多渠道分发，以及评分体系从单一提示词到六维评分再到主题维度的演进，最后对照自建 DailyDigest 流水线总结可借鉴的设计。
-lang: zh
 tags: [学习笔记]
 abbrlink: bestblogs-content-curation-analysis
 ---

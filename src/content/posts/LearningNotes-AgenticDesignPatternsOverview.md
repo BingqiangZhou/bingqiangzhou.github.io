@@ -2,7 +2,6 @@
 title: 【学习笔记】Agentic Design Patterns 系列总览：Agent 设计模式的 21 种模式全景图
 published: 2026-07-01
 description: 系统梳理 Antonio Gulli《Agentic Design Patterns》一书的 21 种核心设计模式——从 Prompt Chaining、Routing、Parallelization 三大确定性工作流原语，到 Andrew Ng 经典的 Reflection/Tool Use/Planning/Multi-Agent 四大智能体模式，再到 Memory、MCP、RAG、A2A、Guardrails、Evaluation 等高级/生产/企业级模式；并交叉对照 Andrew Ng 四模式与 Anthropic「Building Effective Agents」五大工作流，给出一份「模式 × 解决什么问题 × 何时用 × 典型陷阱」的全景索引
-lang: zh
 tags: [学习笔记]
 abbrlink: agentic-design-patterns-overview
 ---

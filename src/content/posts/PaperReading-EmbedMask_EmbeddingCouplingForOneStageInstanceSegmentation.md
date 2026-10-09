@@ -2,7 +2,6 @@
 title: "【论文阅读笔记】EmbedMask: Embedding Coupling for One-stage Instance Segmentation"
 published: 2020-06-03
 description: "这两天在上课之余，看了这篇论文，同学极力推荐，说embedding的效果的非常好（看图一中c图的效果确实很好），而且他跑过了代码，效果确实是不错的，嘿嘿，我来了，总结一下吧，看学到了些什么吧。"
-lang: zh
 tags: ["论文阅读笔记"]
 ---
 

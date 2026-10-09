@@ -2,7 +2,6 @@
 title: 【学习笔记】自研 Agent 选型：十个开源框架与 Harness 深度对比（2026-10）
 published: 2026-10-08
 description: 系统梳理 2026 年 10 月十个开源 Agent/Harness 方案——Pydantic AI、LangGraph、CrewAI、OpenAI Agents SDK、Vercel AI SDK、Mastra、Microsoft Agent Framework、Claude Agent SDK、OpenCode、goose 的多维对比与分场景选型：Python 主线首推 Pydantic AI，需要持久化与审批时上 LangGraph，TS 阵营用 Vercel AI SDK，编码 harness 直接用成品；以及单 agent 内存态场景什么时候该抛开框架手写裸循环
-lang: zh
 tags: [学习笔记, Agent]
 abbrlink: open-source-agent-frameworks-survey
 ---

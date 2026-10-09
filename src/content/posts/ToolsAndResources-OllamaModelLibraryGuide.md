@@ -2,7 +2,6 @@
 title: 【工具分享】Ollama 开源模型分类汇总与选型指南
 published: 2026-05-20
 description: Ollama 支持的各类开源大模型分类汇总与使用推荐
-lang: zh
 tags: [工具分享]
 ---
 

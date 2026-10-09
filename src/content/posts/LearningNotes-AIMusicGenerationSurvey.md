@@ -2,7 +2,6 @@
 title: 【学习笔记】AI 音乐生成全景：免费、版权与开源 SOTA（2026）
 published: 2026-06-29
 description: 系统梳理 2026 年 AI 音乐生成——「免费」的三种含义、Suno/Udio 诉讼后的版权红线、自回归/扩散/混合三条技术路线原理、ACE-Step 与 DiffRhythm/YuE/HeartMuLa 的开源选型，以及 HF Space 网页直用、免费 token 调 API 与本地部署的实操指南
-lang: zh
 tags: [学习笔记]
 abbrlink: ai-music-generation-survey
 ---

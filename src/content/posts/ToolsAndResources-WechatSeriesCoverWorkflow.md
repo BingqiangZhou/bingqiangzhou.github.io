@@ -2,7 +2,6 @@
 title: 【实践记录】公众号系列封面生成：HTML 模板 + 无头 Chrome 截图
 published: 2026-08-20
 description: 用纯静态 HTML 模板加无头 Chrome 截图，20 分钟批量生成一整套风格统一的公众号系列封面（2.35:1）：先定比例再做设计、固定骨架加四个文案槽位的设计公式、sed/python 批量派生、ffmpeg 拼合后视觉模型复核，附五个真实踩坑记录。
-lang: zh
 tags: [实践记录, 工具分享]
 abbrlink: wechat-series-cover-workflow
 ---

@@ -2,7 +2,6 @@
 title: 【学习笔记】Claude Code 插件系统（六）：LSP 详解
 published: 2026-06-04
 description: 讲解 LSP 集成配置、Claude 通过 LSP 获得的代码智能能力、已有 LSP 插件列表及创建自定义 LSP 插件的方法。
-lang: zh
 tags: [学习笔记, Claude Code]
 ---
 

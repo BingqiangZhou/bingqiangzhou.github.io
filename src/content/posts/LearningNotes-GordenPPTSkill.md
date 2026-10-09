@@ -2,7 +2,6 @@
 title: 【学习笔记】GordenPPTSkill 项目深度解析：Claude Code 的 PPT 自动化 Skill
 published: 2026-06-01
 description: 深入解析 GordenPPTSkill 项目的设计理念、技术架构、模板系统与编辑规则，探索基于 Claude Code Skill 的 PPT 非破坏性编辑自动化方案。
-lang: zh
 tags: ["学习笔记", "工具分享"]
 ---
 

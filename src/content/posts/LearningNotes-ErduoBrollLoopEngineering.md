@@ -2,7 +2,6 @@
 title: 【学习笔记】拆解 erduo-broll-loop-engineering：SRT 驱动、剧组制多 agent 的 B-roll 精工产线
 published: 2026-09-05
 description: 拆解 GitHub 开源 skill erduo-broll-loop-engineering（前电影导演出品，165 star）：SRT 驱动、Director/Assets/Lead/Chapter Builders 剧组制多 agent 的 B-roll 精工生产管线，核心是 canary 金丝雀先行镜→章节返修→预览审批的多层创作循环，失败只回责任环节定点返修。本文覆盖带「证据边界」列的支持矩阵写法、truth/creativeProposal 两层契约（事实不可改、创意可整体替换）、用户未选前禁止跑全片的 canary 硬门八条件、152 张 shotcraft 镜头卡的零查询纪律、六格语义时刻抽帧取证、上下文字节代理回归（父级 prompt 载入量减 95.89%）、v1.0.0 公开基准（约 3 分钟片端到端 4 小时量级）与未达标项公开的诚实证据文化，末尾附四条不采用理由与六条零依赖可借鉴思想。
-lang: zh
 tags: [学习笔记, Agent Skill]
 abbrlink: erduo-broll-loop-engineering
 ---

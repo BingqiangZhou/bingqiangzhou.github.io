@@ -2,7 +2,6 @@
 title: "【学习笔记】Claude Code 长任务功能笔记：/loop 与 Ralph Loop 详解"
 published: 2026-04-26
 description: "Claude Code 长任务功能概览，涵盖 /loop、Ralph Loop、Routines 等机制的原理解析、使用案例与选型建议。"
-lang: zh
 tags: ["学习笔记", "工具分享"]
 ---
 

@@ -2,7 +2,6 @@
 title: 【实践记录】Gradle/Docker/PyPI 国内镜像源配置与避坑笔记
 published: 2026-08-17
 description: 记录 Windows 11 + Docker Desktop + Flutter/Gradle 环境下，为 Gradle 插件、Docker 镜像拉取、容器内 apt/PyPI、本地 uv 等下载环节配置国内镜像源（阿里云、daocloud）的完整方案、配置文件位置、验证方法与踩坑记录。
-lang: zh
 tags: [实践记录, 工具分享]
 abbrlink: china-mirrors-setup-guide
 ---

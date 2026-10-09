@@ -2,7 +2,6 @@
 title: 【工具分享】土耳其 Apple ID 注册与礼品卡购买订阅 ChatGPT Plus 指南
 published: 2026-05-05
 description: 详细介绍如何注册土耳其区 Apple ID、购买礼品卡充值并订阅 ChatGPT Plus，相比美区节省约 45% 费用
-lang: zh
 tags: [实践记录]
 ---
 

@@ -2,7 +2,6 @@
 title: 【学习笔记】HyperFrames 30 天拆解（二）Start and create：九种输入路径跑通成片
 published: 2026-08-25
 description: HyperFrames「30 天」系列第二篇，全内容拆解 Days 1-9「Start and create」阶段：skills 安装全命令（交互式/CI/Antigravity/Copilot、路由九行表、排障四步）与快速上手三步（含一段话全自动捷径、第一版之后的三条路径）；FRAME.md 设计系统七条原则（品牌只对色与字体是真理、站点当事实源、tokens 先于 components、别对抗工作流预设等）；Days 3-7 五条工作流的请求模板原文、关键选择、结构原则与评审清单全录（PR 三种受众与两份检查单、音乐六要素结构、解说四种落点与教学评审、字幕三路分工、动效六种对象与透明导出）；Day 8 媒体音频管线（TTS 引擎顺序、BGM 响度目标、VO 节奏规则、HEVC 自动代理、供给资产规则、鉴权提供方表与离线回退）；Day 9 设计工具（图片留图片/动的重建 HTML 总规则、Figma 六种导入能力与命令细节、Claude Design 交接四步）；另附 faceless-explainer 七步执行链解剖。读完本篇无需再翻官方文档。
-lang: zh
 tags: [学习笔记]
 abbrlink: hyperframes-thirty-days-phase-1
 ---

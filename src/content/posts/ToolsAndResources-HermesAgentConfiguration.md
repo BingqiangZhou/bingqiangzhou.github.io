@@ -2,7 +2,6 @@
 title: "【工具分享】Hermes Agent 配置笔记"
 published: 2026-04-24
 description: "Hermes Agent 官方文档及社区实践笔记，涵盖安装、模型配置、终端后端、网关接入、技能、记忆、工具等核心内容。"
-lang: zh
 tags: ["工具分享", "学习笔记"]
 ---
 

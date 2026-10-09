@@ -2,7 +2,6 @@
 title: 【工具分享】给播客加音乐：找到一个免费能商用的 AI 音乐 API
 published: 2026-07-07
 description: '为播客补齐"音乐"这最后一公里：先按"免费能不能商用"为第一筛子横评本地开源模型、托管 API、免版权库三类方案，最终选定 ACE-Step 1.5 的云端版 acemusic.ai（MIT 授权、免 GPU、免 key 费）；附 4 分钟中文人声长曲子试听，以及把音乐混进人声的 7 条混音原则与踩坑速查表。'
-lang: zh
 tags: [工具分享]
 abbrlink: podcast-ai-music
 ---

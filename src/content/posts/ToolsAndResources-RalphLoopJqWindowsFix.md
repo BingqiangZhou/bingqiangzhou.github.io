@@ -2,7 +2,6 @@
 title: "【实践记录】Windows 上 Ralph Loop 报错 jq: command not found 解决方案"
 published: 2026-04-27
 description: "Windows 上使用 Claude Code Ralph Loop 时遇到 jq 未安装报错的排查与解决方案。"
-lang: zh
 tags: ["实践记录", "工具分享"]
 ---
 

@@ -2,7 +2,6 @@
 title: "【论文阅读笔记】Semantic Instance Segmentation via Deep Metric Learning（二）"
 published: 2019-09-18
 description: "接过上一次的话题，这一次，结合自己的理解，记录一下论文中提出的方法，包括嵌入模型（embedding model）、创建遮罩（creating masks）、分类和种子度模型（classification and seediness model）。"
-lang: zh
 tags: ["论文阅读笔记"]
 ---
 

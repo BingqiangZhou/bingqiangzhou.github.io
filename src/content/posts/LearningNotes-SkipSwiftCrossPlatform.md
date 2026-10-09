@@ -2,7 +2,6 @@
 title: 【学习笔记】Skip：一份 Swift 代码产出双平台原生应用——skip.dev 深度调研与同类框架横评
 published: 2026-09-12
 description: 围绕官方文档、架构文档、发布日志与 Hacker News 社区讨论，对 Skip（skip.dev / skiptools）做的一次全面调研。Skip 的定位是「一份 Swift 代码，两个原生平台」：iOS 侧跑真正的 SwiftUI 且可以做到零 Skip 痕迹（SkipZero，最小包体约 50 KB），Android 侧通过两条路线产出真正的 Jetpack Compose——Lite 模式把 Swift 源码转译成可读、可覆盖的 Kotlin（「Kotlish」方言，基于 SwiftSyntax 的七阶段转译管线），Fuse 模式则借助 Swift 6.3 首个官方 Android SDK 把 Swift 原生编译成 .so 再经 JNI 与 Kotlin 互通（代价是包体增加约 60 MB、调试受限）。本文覆盖：两位创始人（Stanza、Twitter、NYT Cooking 背景的 Abe White 与 Marc Prud'hommeaux）与从 2023 技术预览到 2026 年 1 月完全开源的商业化路线；skip-ui 1.59、skip-fuse-ui 1.18 等版本现状；与 Flutter、React Native、Kotlin Multiplatform、.NET MAUI、Capacitor、Tauri 2 的横评（含官方对比页的论点与反方证据）；以及 HN 社区最大的质疑——生产案例稀缺。结论：Skip 站上了「Swift 官方支持 Android」这股东风，是跨平台赛道里最「原生」的方案，但两人团队、案例缺乏与生态规模仍是硬风险。
-lang: zh
 tags: [学习笔记, 工具分享, Apple]
 abbrlink: skip-swift-cross-platform
 ---

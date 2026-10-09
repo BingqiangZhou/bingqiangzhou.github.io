@@ -2,7 +2,6 @@
 title: "【学习笔记】Agent Engineering 走向生产：组织适应与个人价值重构"
 published: 2026-05-16
 description: "BestBlogs Newsletter #95 学习笔记，梳理 Agent Engineering 从实验走向生产过程中的组织适应与个人价值重构。"
-lang: zh
 tags: ["学习笔记"]
 ---
 

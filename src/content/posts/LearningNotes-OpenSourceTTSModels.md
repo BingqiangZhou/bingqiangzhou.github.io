@@ -2,7 +2,6 @@
 title: 【学习笔记】开源 TTS 语音合成模型全面盘点与选型指南
 published: 2026-05-02
 description: 全面梳理 10 个主流开源 TTS 语音合成模型，涵盖 VoxCPM2、Qwen3-TTS、CosyVoice3、GPT-SoVITS 等，对比参数规模、音质、克隆能力、部署难度与免费 API 渠道
-lang: zh
 tags: [学习笔记]
 ---
 

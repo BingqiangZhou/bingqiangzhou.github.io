@@ -2,7 +2,6 @@
 title: 【学习笔记】ZCode 官方 video-agent-kit 插件全拆解：视频剪辑 Agent 的功能地图与实现细节
 published: 2026-09-14
 description: video-agent-kit 是 ZCode 插件市场官方出品的自动化视频剪辑工具包（v0.4.3，Z.ai 出品，MIT 协议），约 2.8 万行 Python。它用「5 个 skill 做流程编排 + 37 个 MCP 工具做确定性媒体操作 + 3 个 hooks 做门禁」的三层结构，把视频剪辑 Agent 最难的几件事各给了一个明确答案：模型看不了视频——就抽帧拼带时间戳的 contact sheet 让主 Agent 自己读图；剪辑决策不可审计——就用 out/ 文件契约加 SHA-256 哈希追溯链，Stop hook 拦着不让没闭环就收工；旁白 TTS 不忠实——就逐句合成加 ASR 回听双指标验证。本文逐个功能拆它的实现：抽帧采样索引、官方语音通道的分片上传、句级压缩的静音吸附、字幕的 jieba 分词加动态规划断行、电影解说的磁带 DP 句画绑定、LoL 解说的「稿子先行画面按稿摘」范式，以及环境体检里「装了不等于能用」的探测哲学。
-lang: zh
 tags: [学习笔记, Agent]
 abbrlink: zcode-video-agent-kit
 ---

@@ -2,7 +2,6 @@
 title: 【学习笔记】影视飓风「剪映剪辑全能必修课」笔记（四）：第三单元·复刻实战篇
 published: 2026-06-19
 description: 影视飓风剪辑课第三单元笔记。第10课综艺包装与文本跟踪、第11课平面跟踪运镜、第12课多机位采访剪辑、第13课剪辑思维与时钟理论（熬夜48小时拉片、动态计时器包装）、第14课Vlog样片日记（RGB曲线/色彩克隆）。
-lang: zh
 tags: [学习笔记]
 abbrlink: jianying-course-notes-4-replicate-works
 toc: true

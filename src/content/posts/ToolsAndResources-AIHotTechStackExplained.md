@@ -2,7 +2,6 @@
 title: 【学习笔记】AIHOT 拆解（六）技术栈：React 与 Next.js 的分野，与 React Router SSR / Fastify / pg-boss / PostgreSQL 17 / Compose 五容器 / EdgeOne CDN 逐件讲
 published: 2026-09-29
 description: AIHOT 系列第六篇（技术栈番外）：先厘清 React 与 Next.js 的层次关系——React 是 UI 库（组件/Hooks/渲染），Next.js 是建在其上的全栈框架（路由/SSR/数据/构建/部署约定），二者不是同层竞争关系；再逐件讲清开源快照的完整技术选型——React Router v8 SSR（薄全栈层：routes.ts 路由表、loader 数据加载、SSR 直出+注水、server.ts 单进程伺服构建产物与 SSR、页面缓存 300 秒上限）、Fastify（基于 JSON Schema 的校验与序列化快速路径、插件封装、Hook 生命周期，承担全部 HTTP 出口）、pg-boss（用 PostgreSQL 的 SKIP LOCKED 实现的队列+cron，省掉 Redis、任务与业务数据同库同事务）、PostgreSQL 17（60 表、JSONB 重度使用、热度计算下沉 SQL、咨询锁防预算超支、real[] 存向量）、Docker Compose 五容器拓扑（db/setup/api/worker/web 的职责隔离把安全边界做成物理隔离）、EdgeOne CDN（黑盒时代线上架构的边缘层，开源快照刻意移除但保留 CDN 友好钩子）；总结这套选型的共性「组件少、每层可控、适合单机自部署」。全部事实以源码与部署文档为准（commit 589f79e）。
-lang: zh
 tags: [学习笔记, 工具分享, AI前沿]
 abbrlink: aihot-tech-stack-explained
 ---

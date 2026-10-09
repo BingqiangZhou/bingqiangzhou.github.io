@@ -2,7 +2,6 @@
 title: "【实践记录】给 git 配代理，解决 Claude Code / ZCode 插件下载更新失败，顺手治好 GitHub 推送"
 published: 2026-07-07
 description: "Claude Code 和 ZCode 的插件市场、更新检查常因网络拉不动而失败或卡死。开 TUN（全局代理）模式能解决，但并不总是稳定。实践下来最省心的是直接给 git 配上本地代理端口——两条命令永久生效，顺带把推送到 GitHub 的网络问题一起解决。"
-lang: zh
 tags: ["实践记录", "工具分享"]
 abbrlink: git-proxy-for-coding-agents
 ---

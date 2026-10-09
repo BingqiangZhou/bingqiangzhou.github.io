@@ -2,7 +2,6 @@
 title: 【学习笔记】Hypit 深度拆解：让 Claude Code 克隆爆款视频的 SVML 编译器——渲染内核、许可证暗坑与真实成本
 published: 2026-09-27
 description: 对两个月拿下 16.5k star 的 hypit-ai/hypit 做源码级拆解：它给 Claude Code/Codex 一套自创的 SVML（Semantic Video Markup Language）+ 编译器 + 运行时，把参考视频拆成「以词为锚、可编辑可重跑」的工程，一条命令出 100 个变体；渲染层并非自研，而是锁定 HeyGen 开源的 @hyperframes/engine 0.7.101 + Chrome Headless Shell 截帧 + ffmpeg 封装（README 的「64 个 Chromium 进程」是营销话术，代码里按内存自适应、约每 1.5GB 一个浏览器）；许可证是改装版 Apache-2.0——自用和给客户做片子可商用，但多租户托管、转售、去 LOGO 都要书面授权，官方还保留单方改约权；官方示例模型成本 $1.07-1.15/条，但第三方实测真正烧钱的是 coding agent 本身（7 个任务耗掉 $100 套餐近半额度）；「整合剪映」经全仓库代码搜索证实是媒体讹传，实为社区把 Hypit 与剪映草稿生成 skill 拼装使用。
-lang: zh
 tags: [学习笔记, 工具分享, Claude Code]
 abbrlink: hypit-deep-dive
 ---

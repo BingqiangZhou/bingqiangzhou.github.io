@@ -1,8 +1,7 @@
 ---
 import walineJS from '@waline/client/full?url'
 import walineCSS from '@waline/client/style?url'
-import { allLocales, base, defaultLocale, themeConfig } from '@/config'
-import { walineLocaleMap } from '@/i18n/config'
+import { themeConfig } from '@/config'
 
 const {
   serverURL = '',
@@ -11,22 +10,10 @@ const {
   imageUploader = false,
 } = themeConfig.comment.waline ?? {}
 
-// Remove locale prefix from path
-const currentPath = Astro.url.pathname
-const localePattern = new RegExp(`\\/(${allLocales.join('|')})\\/`)
-const walinePath = currentPath.replace(localePattern, '/')
-
-// Determine language
-const pathWithoutBase = base && currentPath.startsWith(base)
-  ? currentPath.slice(base.length)
-  : currentPath
-const matchedLang = Object.keys(walineLocaleMap).find(code => pathWithoutBase.startsWith(`/${code}/`))
-const lang = (matchedLang ?? defaultLocale) as keyof typeof walineLocaleMap
-
 const walineConfig = {
   serverURL,
-  path: walinePath,
-  lang: walineLocaleMap[lang],
+  path: Astro.url.pathname,
+  lang: 'zh-CN',
   emoji,
   search,
   imageUploader,

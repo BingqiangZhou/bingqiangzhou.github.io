@@ -2,7 +2,6 @@
 title: 【学习笔记】Agentic 设计模式（六）：附录 A–G 速览——提示工程 / GUI 真实环境 / 框架 / AgentSpace / CLI / 推理引擎 / Coding Agent
 published: 2026-07-01
 description: 速览 Antonio Gulli《Agentic Design Patterns》附录 A–G——A 高级提示技术（基础/结构化/推理/行动/高级/任务特定全谱系，含 context engineering 取代 prompt engineering 的趋势）、B 从 GUI 到真实环境（Agent-Computer Interface 含 Operator/Mariner/Computer Use/Browser Use + 多模态环境 + vibe coding）、C 框架概览（LangChain/LangGraph/ADK/CrewAI/AutoGen/LlamaIndex 等 12 框架对比）、D AgentSpace 无代码平台、E CLI Agent（Claude Code/Gemini CLI/Aider/Copilot CLI + Terminal-Bench）、F 推理引擎内幕（让六大模型自述推理步骤的收敛框架 + 模拟非符号逻辑的警示）、G Coding Agent（人主导的专家 Agent 团队框架，从 vibe coding 进化到结构化协作）
-lang: zh
 tags: [学习笔记]
 abbrlink: agentic-patterns-appendices
 ---

@@ -2,7 +2,6 @@
 title: 【AI实测】同一个火柴人故事，三个白板手绘动画 skill 的横向实测：geeklee、nikola 与 HandDraw
 published: 2026-09-26
 description: 把《减肥第一天》这个 42 秒火柴人小剧场，用同一份字幕、同一条配音轨、同一套代码绘制的线稿，分别交给 geeklee/srt-whiteboard-animation、nikola 手绘讲解 skill 和 HandDraw-Skill 三条技术路线实测出片。本文记录三版的制作过程、同帧对比图、体积与工时数据，以及一个有趣的实锤：nikola 的逐笔路线就是 vendor 了 geeklee 的引擎。文末给出这三类方案的选择建议。
-lang: zh
 tags: [AI实测, Agent Skill]
 abbrlink: whiteboard-animation-skill-compare
 ---

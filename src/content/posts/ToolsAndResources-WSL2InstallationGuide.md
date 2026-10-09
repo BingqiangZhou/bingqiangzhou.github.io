@@ -2,7 +2,6 @@
 title: "【实践记录】Windows 安装 WSL2 完整指南"
 published: 2026-04-24
 description: "Windows 10/11 安装 WSL2 的完整指南，包含一键安装、手动安装、离线安装及常用配置。"
-lang: zh
 tags: ["实践记录", "学习笔记"]
 ---
 

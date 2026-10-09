@@ -2,7 +2,6 @@
 title: 【读书笔记】《高性价比人生指南》深度拆解：608 条循证建议、20 天近 2 万 star，和一本用 Claude Code 维护的书
 published: 2026-09-27
 description: 深度拆解 2026 年 9 月爆红的开源书《高性价比人生指南》（eternity4719/HowToLiveBetter）：四种资源框架与受益人四档的方法论、A/B/C 证据分级与性价比档算法、10 处数据点独立抽查全过、八条批判与局限，以及最有价值的元层面——一本用 Claude Code 维护的书如何把「防 AI 幻觉」做成工程（判例法式 CLAUDE.md、引用锚点防错位、核实记录审计日志）。
-lang: zh
 tags: [读书笔记, Claude Code]
 abbrlink: readingnotes-how-to-live-better
 ---

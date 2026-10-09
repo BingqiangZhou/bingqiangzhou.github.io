@@ -1,9 +1,8 @@
 ---
-import { ui } from '@/i18n/ui'
-import { getPageInfo } from '@/utils/page'
+import { ui } from '@/ui'
+import { getPageInfo, withBase } from '@/utils/page'
 
-const { currentLang, isHome, isPost, isTag, isAbout, isSearch, getLocalizedPath } = getPageInfo(Astro.url.pathname)
-const currentUI = ui[currentLang as keyof typeof ui] ?? {}
+const { isHome, isPost, isTag, isAbout, isSearch } = getPageInfo(Astro.url.pathname)
 
 const isPostActive = isHome || isPost
 const isSearchActive = isSearch
@@ -19,22 +18,22 @@ function getNavItemClass(isActive: boolean) {
 const navItems = [
   {
     href: '/',
-    label: currentUI.posts,
+    label: ui.posts,
     className: getNavItemClass(isPostActive),
   },
   {
     href: '/tags/',
-    label: currentUI.tags,
+    label: ui.tags,
     className: getNavItemClass(isTagActive),
   },
   {
     href: '/search/',
-    label: currentUI.search,
+    label: ui.search,
     className: getNavItemClass(isSearchActive),
   },
   {
     href: '/about/',
-    label: currentUI.about,
+    label: ui.about,
     className: getNavItemClass(isAboutActive),
   },
 ]
@@ -52,7 +51,7 @@ const navItems = [
     {navItems.map(item => (
       <li>
         <a
-          href={getLocalizedPath(item.href)}
+          href={withBase(item.href)}
           class={item.className}
         >
           {item.label}

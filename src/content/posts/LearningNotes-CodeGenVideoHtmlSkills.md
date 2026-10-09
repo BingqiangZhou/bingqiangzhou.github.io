@@ -2,7 +2,6 @@
 title: 【学习笔记】用代码生成视频与炫酷 HTML 的 Agent Skills 全景调研
 published: 2026-09-19
 description: 调研 2026-09 时点「用代码生成视频或炫酷 HTML」的 Agent Skill 生态：视频侧覆盖 Remotion 官方 12 子 skill（React 组件逐帧渲染）、manim-skill 四角色流水线（storyboard.yaml 契约 → 逐场景 Manim 渲染）、iart-ai 15 包 51 skill（TikTok 竖屏/聊天记录故事片/Vox 风格地图等形态）、HyperFrames（HTML 时间轴即视频 + 370+ 动效原语目录）、skill-canvas-video（纯 Canvas 2D + Puppeteer 截帧）、Motion Canvas 与生态配件；3D 侧覆盖 blender-mcp（Blender 内嵌 socket server + 资产超市）与两大 Three.js skill 集合；网页侧覆盖 Slidev 官方 skill + 内置 MCP、VHS 终端转 GIF、awwwards-designer 五件套、D3 系与 Anthropic 官方四件（web-artifacts-builder/algorithmic-art/canvas-design/slack-gif-creator）。每条均按「实现方式 + 能做出的效果」双维度记录，并总结十条共性规律与按效果选型地图：底层公式都是「时序写成代码 → 确定性逐帧渲染（CPU 绘帧/浏览器截帧/3D 引擎）→ FFmpeg 合成」，差别只在画布。
-lang: zh
 tags: [学习笔记, Agent Skill, Claude Code, Agent]
 abbrlink: code-gen-video-html-skills
 ---

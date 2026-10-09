@@ -2,7 +2,6 @@
 title: "【学习笔记】分割任务常用数据集：VOC、COCO、Cityscapes"
 published: 2020-07-01
 description: "今天加了一个“支线任务”页面，之前的图标没有支持在MacOS 11中Safari浏览器的标签页的显示，然后换成了现在这个图标，主要参考：添加新的页面、更换图标，图标来源于flaticon。"
-lang: zh
 tags: ["学习笔记"]
 ---
 

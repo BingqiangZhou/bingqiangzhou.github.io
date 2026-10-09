@@ -2,7 +2,6 @@
 title: 【学习笔记】拆解 video-shotcraft：把 Claude Code 变成动效工作室的 152 张镜头配方卡
 published: 2026-09-01
 description: 深度拆解开源 AI agent skill「video-shotcraft」——把前端项目/网页交给 Claude Code 或 Codex，它用 Remotion 产出电影感产品宣传片。本文覆盖：三种创作模式与入口分诊、152 张镜头配方卡的三层事实源设计、八阶段制作流水线、判例式审美准则、149 个音效的声音设计体系、librosa 节奏卡点方法论、确定性渲染与测试工程，以及它对写 agent skill 的启示。
-lang: zh
 tags: [学习笔记, Agent Skill]
 abbrlink: video-shotcraft-skill-deep-dive
 ---

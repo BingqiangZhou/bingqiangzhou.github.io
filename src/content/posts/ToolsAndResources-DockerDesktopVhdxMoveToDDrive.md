@@ -2,7 +2,6 @@
 title: 【实践记录】Windows 解决 DockerDesktop.vhdx 迁移出错并成功移动到 D 盘
 published: 2026-06-02
 description: 解决 Docker Desktop 迁移 DockerDesktop.vhdx 到 D 盘时出现 "Source and destination directory owners mismatch" 错误的方法，通过启用 WSL2 后端引擎成功完成迁移。
-lang: zh
 tags: [实践记录]
 ---
 

@@ -2,7 +2,6 @@
 title: 【实践记录】Qwen3-TTS 本地部署完全指南
 published: 2026-05-20
 description: 在 Windows (RTX 4050) 和 MacBook Pro M5 上本地部署 Qwen3-TTS 语音合成模型
-lang: zh
 tags: [实践记录]
 ---
 

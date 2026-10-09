@@ -1,6 +1,4 @@
-import { base, moreLocales } from '@/config'
-import { getLangFromPath } from '@/i18n/lang'
-import { getLocalizedPath } from '@/i18n/path'
+import { base } from '@/config'
 
 // Determine if the path matches a specific page type
 function matchPageType(path: string, prefix: string = '') {
@@ -12,18 +10,16 @@ function matchPageType(path: string, prefix: string = '') {
   // Remove leading and trailing slashes from the path
   const normalizedPath = pathWithoutBase.replace(/^\/|\/$/g, '')
 
-  // Homepage check: matches root path ('') or language code ('en', 'zh-tw')
+  // Homepage check: matches root path ('')
   if (prefix === '') {
-    return normalizedPath === '' || (moreLocales as readonly string[]).includes(normalizedPath)
+    return normalizedPath === ''
   }
 
   // Ensure strict segment boundary matching to prevent partial matches
   const startsWithSegment = (target: string, segment: string) =>
     target === segment || target.startsWith(`${segment}/`)
 
-  // Match both default language paths and localized paths
   return startsWithSegment(normalizedPath, prefix)
-    || moreLocales.some(lang => startsWithSegment(normalizedPath, `${lang}/${prefix}`))
 }
 
 export function isHomePage(path: string) {
@@ -46,23 +42,18 @@ export function isSearchPage(path: string) {
   return matchPageType(path, 'search')
 }
 
-// Returns page context with language, page types and localization helper
-export function getPageInfo(path: string) {
-  const currentLang = getLangFromPath(path)
-  const isHome = isHomePage(path)
-  const isPost = isPostPage(path)
-  const isTag = isTagPage(path)
-  const isAbout = isAboutPage(path)
-  const isSearch = isSearchPage(path)
+// Prefix a site-root path (e.g. '/rss.xml') with the configured base
+export function withBase(path: string): string {
+  return base ? `${base}${path}` : path
+}
 
+// Returns page context with page types
+export function getPageInfo(path: string) {
   return {
-    currentLang,
-    isHome,
-    isPost,
-    isTag,
-    isAbout,
-    isSearch,
-    getLocalizedPath: (targetPath: string) =>
-      getLocalizedPath(targetPath, currentLang),
+    isHome: isHomePage(path),
+    isPost: isPostPage(path),
+    isTag: isTagPage(path),
+    isAbout: isAboutPage(path),
+    isSearch: isSearchPage(path),
   }
 }

@@ -2,7 +2,6 @@
 title: 【学习笔记】GLM-5.3 原生 Responses 协议：配置 Codex 直连 GLM 编程套餐
 published: 2026-08-27
 description: GLM-5.3 的开放平台端点原生支持 OpenAI Responses 协议，Codex 不再需要协议转换代理即可直连 GLM 编程套餐。本篇整理官方文档并在 Windows 本机完整落地：models.json 与 config.toml 配置、profile 一键切换、三步验证，以及五个实测踩坑（max 档位的版本兼容、模型目录的替换语义等）。
-lang: zh
 tags: [学习笔记, 工具分享]
 abbrlink: codex-glm-responses-api
 ---

@@ -2,7 +2,6 @@
 title: 【AI实测】ACE-Step 1.5 实测：给播客和视频配乐，这免费的 AI 音乐行不行？
 published: 2026-07-08
 description: 用 ACE-Step 1.5（免费、能商用的 AI 音乐模型）按播客/短视频真实创作动线生成 12 段样本，请 Gemini 3.1 Pro 逐段盲听打分——片头/BGM/转场/片尾功能性配乐几乎全 5/5，中文人声"字正腔圆"，连"让音乐模型做转场音效"都没翻车。本文逐段给出场景、提示词、写法要点和听评，并总结提示词万能公式与该模型的能力边界。
-lang: zh
 tags: [AI实测]
 abbrlink: ace-step-podcast-video-music-realtest
 ---

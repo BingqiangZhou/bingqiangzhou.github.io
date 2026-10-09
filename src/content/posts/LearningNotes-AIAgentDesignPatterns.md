@@ -2,7 +2,6 @@
 title: 【学习笔记】AI Agent 设计模式入门教程
 published: 2026-06-07
 description: 基于《Agentic Design Patterns》系统介绍 AI Agent 的 21 个核心设计模式，从基础到高级的完整知识体系
-lang: zh
 tags: [学习笔记]
 ---
 

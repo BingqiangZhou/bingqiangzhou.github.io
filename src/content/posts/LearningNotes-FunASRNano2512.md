@@ -2,7 +2,6 @@
 title: 【学习笔记】Fun-ASR-Nano-2512 深度调研：0.8B 参数逼近大模型的端侧 ASR
 published: 2026-07-23
 description: 系统调研阿里通义 FunAudioLLM 开源的轻量级语音识别模型 Fun-ASR-Nano-2512——0.8B 参数直逼 12B 大模型效果，覆盖模型定位、技术架构（Qwen3 监督微调 + 文本模态对齐 + FSMN-VAD）、31 语种能力、FunASR/vLLM/llama.cpp 三条部署路径、benchmark 对比与场景选型
-lang: zh
 tags: [学习笔记]
 abbrlink: fun-asr-nano-2512-notes
 ---

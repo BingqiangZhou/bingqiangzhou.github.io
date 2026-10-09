@@ -2,7 +2,6 @@
 title: "【实践记录】frp实现内网穿透以及配置Jupyter Notebook远程连接"
 published: 2020-06-18
 description: "最近我们用到了另一款基于ngrok内网穿透应用natapp，将校内实验室主机映射到外网来使用，我出于好奇搜了一下natapp，也是第一次知道内网穿透这个词，再去搜ngrok，又发现了几款内网穿透的工具。比如frp，pagekite，localtunnel。"
-lang: zh
 tags: ["实践记录"]
 ---
 

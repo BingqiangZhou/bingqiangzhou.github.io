@@ -2,7 +2,6 @@
 title: 【工具分享】阿里禁了 Claude Code，我也早不在用了——迁移到 ZCode 3.0 的真实记录
 published: 2026-07-07
 description: '阿里内部全面禁用 Claude Code 之际，记录我从 Claude Code 切到智谱 ZCode 3.0 + GLM-5.2 的真实迁移：为什么走得没负担（Anthropic 隐写检测中国用户、第三方模型缓存"神秘失效"被扒源码），以及切过来之后的真实体感——好的点（远程派活、国产直连、从套壳走向自研、迁移成本低）和不好的点（桌面应用还有小 bug、缺 /btw/Agent Team/Workflow）。不是声讨，是一次"找到更趁手工具"的搬家。'
-lang: zh
 tags: [工具分享, Claude Code]
 abbrlink: coding-agent-migration
 ---

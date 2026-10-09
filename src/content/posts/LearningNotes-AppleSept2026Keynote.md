@@ -2,7 +2,6 @@
 title: 【学习笔记】2026 苹果秋季发布会总结：折叠屏 iPhone Duo 来了
 published: 2026-09-10
 description: 2026 年 9 月 9 日苹果 “Surprise and Shine” 发布会全记录——新 CEO John Ternus 首秀，iPhone 18 Pro（A20 Pro、2nm、可变光圈相机）、AirPods 5、Apple Watch S12 与 Ultra 4，以及压轴登场的苹果首款折叠屏 iPhone Duo。基于官方视频完整英文字幕（10,718 词）整理。
-lang: zh
 tags: [学习笔记, Apple]
 toc: true
 ---

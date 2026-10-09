@@ -2,7 +2,6 @@
 title: 【工具分享】拆解 VideoTranscriptAPI：从多平台下载矩阵到 38 组提示词工程，一个「AI 长出来的」转录服务全解剖
 published: 2026-09-26
 description: 深度拆解开源项目 zlxlabs/VideoTranscriptAPI：输入 YouTube/B站/抖音/小红书/微信视频号/X/小宇宙/Apple Podcast 链接，自动完成下载 → 双引擎 ASR → LLM 校对/说话人推断/章节/总结/精读笔记 → Web 页面与企微/飞书通知。本文还原它的端到端八步流程、下载器工厂的「顺序即优先级 + 恒真兜底」路由、七个平台各自的下载武器（youtube-transcript-api/yt-dlp/BBDown/TikHub/og:audio 爬取/iTunes lookup/MediaResolverAPI）、外部服务的四档依赖阶梯，以及 38 组提示词里最值得学的工程手法（ID 锚点合并、诚实状态缓存、深度阅读 Prompt 外置用户侧）；再看它如何用一套 1121 行的 Agent Skill（SKILL.md 行为契约、零依赖纯标准库 CLI、含负面用例的 evals）把自己交付给 AI 助手调用；最后聊聊它作为「AI 委托式开发」活标本的元价值——需求提示词、30 条委托台账、AI 主审 CI 门禁一应俱全。
-lang: zh
 tags: [工具分享, Agent]
 abbrlink: videotranscriptapi-deep-dive
 ---

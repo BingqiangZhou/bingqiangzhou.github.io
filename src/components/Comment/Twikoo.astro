@@ -1,27 +1,14 @@
 ---
 import twikooCSS from 'twikoo/dist/twikoo.css?url'
 import twikooJS from 'twikoo/dist/twikoo.nocss.js?url' // Using twikoo.min.js causes CSS loading failure after page switching
-import { allLocales, base, defaultLocale, themeConfig } from '@/config'
-import { twikooLocaleMap } from '@/i18n/config'
+import { themeConfig } from '@/config'
 
 const { envId = '' } = themeConfig.comment.twikoo ?? {}
 
-// Remove locale prefix from path
-const currentPath = Astro.url.pathname
-const localePattern = new RegExp(`\\/(${allLocales.join('|')})\\/`)
-const twikooPath = currentPath.replace(localePattern, '/')
-
-// Determine language
-const pathWithoutBase = base && currentPath.startsWith(base)
-  ? currentPath.slice(base.length)
-  : currentPath
-const matchedLang = Object.keys(twikooLocaleMap).find(code => pathWithoutBase.startsWith(`/${code}/`))
-const lang = (matchedLang ?? defaultLocale) as keyof typeof twikooLocaleMap
-
 const twikooConfig = {
   envId,
-  path: twikooPath,
-  lang: twikooLocaleMap[lang],
+  path: Astro.url.pathname,
+  lang: 'zh-cn',
   twikooCSS,
 }
 ---

@@ -2,7 +2,6 @@
 title: 【学习笔记】用 AI agent 写了 22 个 skill，总结出这几条心得
 published: 2026-07-09
 description: 写了 22 个 Agent Skill 后总结的五条核心心法：让 AI 代劳自己只做判断、把别人的好 skill 当免费教材、先研究再复刻别急着抄、skill 是磨出来的要用经常改、重复三次就做成 skill。末尾附写 skill 的技术注意点与核对清单作为补充。
-lang: zh
 tags: [学习笔记, Claude Code]
 abbrlink: agent-skill-writing-tips
 ---

@@ -2,7 +2,6 @@
 title: 【学习笔记】MuseTalk 深度拆解：6GB 显存笔记本上能跑的「可商用」实时口型数字人
 published: 2026-09-26
 description: 从一次「每月 100 分钟口播视频怎么选」的数字人方案深度调研讲起：实时交互、大基座生成、口型驱动三条技术路线的成本与许可证暗坑（Wav2Lip 禁商用、Duix 宣传与 LICENSE 差 100 倍、LiveTalking 水印条款），为什么最后落在 MuseTalk；再深度拆解它本身——VAE 潜空间单步修复（不是扩散模型）所以能实时、whisper-tiny 提音频特征 + SD v1.4 UNet 跨注意力融合所以天然多语言、v1.5 的感知/GAN/sync 三损失训练与官方自认的三个局限；逐条核对「代码 MIT + 模型可商用」的许可条款；最后给出 RTX 4050 6GB 笔记本上的落地路径——官方最低在 4GB 的 3050 Ti 上实测过、Windows 原生部署、fp16 必开、固定数字人走 realtime preparation 缓存量产。
-lang: zh
 tags: [学习笔记, 工具分享]
 abbrlink: musetalk-deep-dive
 ---

@@ -2,7 +2,6 @@
 title: "【学习笔记】human-writing——让 AI 写出活人感的中文 Skill"
 published: 2026-08-05
 description: "分析 KKKKhazix/human-writing 这个开源中文创作 Skill 的设计哲学、模块化参考文件结构与硬规则检查脚本，理解它如何用材料门槛、推进规则和中文韵律约束让 AI 输出摆脱模型腔。"
-lang: zh
 tags: ["学习笔记", "工具分享"]
 abbrlink: readingnotes-human-writing-skill
 ---

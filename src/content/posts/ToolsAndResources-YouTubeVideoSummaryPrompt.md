@@ -2,7 +2,6 @@
 title: 【工具分享】一个实用的 YouTube 视频总结 Prompt
 published: 2026-05-13
 description: 记录一个来自 Reddit 的 YouTube 视频总结提示词，支持时间戳、层级大纲、术语解释、关键引用和摘要，适合配合 Gemini 等 LLM 使用
-lang: zh
 tags: [工具分享]
 ---
 

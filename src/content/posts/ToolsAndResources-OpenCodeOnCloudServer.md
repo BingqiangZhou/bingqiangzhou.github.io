@@ -2,7 +2,6 @@
 title: 【工具分享】在云服务器上用 OpenCode 做 App：一份从零到上线的实操指南（兼 Coding Agent 横评）
 published: 2026-07-07
 description: '把 OpenCode 部署到云服务器 + tmux，做成一个 7×24 小时不下班的 AI 工位：从底座（服务器/SSH/tmux）、装 OpenCode 配模型，到用一个 URL 短链服务走完从零到上线的完整流程，再附手机/异地监控玩法，以及终端 CLI/IDE/托管/国产四类主流 Coding Agent 横评与按场景的选型建议。'
-lang: zh
 tags: [工具分享]
 abbrlink: opencode-on-cloud-server
 ---
