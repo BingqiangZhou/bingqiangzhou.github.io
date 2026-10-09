@@ -85,10 +85,14 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
   postSlug={post.id}
   supportedLangs={supportedLangs}
 >
-  <article class="heti">
+  <article
+    class="heti"
+    data-pagefind-body
+    data-pagefind-filter={`lang:${currentLang}`}
+  >
     <div class="relative">
       <!-- Title -->
-      <h1 id="post-title-top" class="post-title">
+      <h1 id="post-title-top" class="post-title" data-pagefind-meta="title">
         <span
           transition:name={`post-${slug}${currentLang ? `-${currentLang}` : ''}`}
           data-disable-theme-toggle-transition
@@ -104,6 +108,8 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
       class="mb-17.2 block c-primary font-time"
       transition:name={`time-${slug}${currentLang ? `-${currentLang}` : ''}`}
       data-disable-theme-toggle-transition
+      data-pagefind-ignore
+      data-pagefind-meta={`date:${post.data.published.toISOString().split('T')[0]}`}
     >
       <PostDate
         date={post.data.published}

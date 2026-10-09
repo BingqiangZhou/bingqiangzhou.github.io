@@ -1,7 +1,8 @@
 ---
-import Search from 'astro-pagefind/components/Search.astro'
+import SearchIcon from '@/assets/icons/search-icon.svg'
 import { allLocales } from '@/config'
-import { getLangRouteParam } from '@/i18n/lang'
+import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import { ui } from '@/i18n/ui'
 import Layout from '@/layouts/Layout.astro'
 
 export async function getStaticPaths() {
@@ -9,89 +10,210 @@ export async function getStaticPaths() {
     params: { lang: getLangRouteParam(lang) },
   }))
 }
+
+const currentUI = ui[getLangFromLocale(Astro.currentLocale)]
 ---
 
 <Layout>
   <!-- Decorative Line -->
   <div class="uno-decorative-line" />
   <!-- Search Section -->
-  <div class="mb-12">
-    <Search className="uno-round-border p-4" />
+  <div
+    id="search-root"
+    class="mb-12"
+    data-lang={getLangFromLocale(Astro.currentLocale)}
+    data-msg-searching={currentUI.searchSearching}
+    data-msg-no-results={currentUI.searchNoResults}
+    data-msg-result-count={currentUI.searchResultCount}
+    data-msg-index-missing={currentUI.searchIndexMissing}
+  >
+    {/* Search Input */}
+    <div class="relative">
+      <SearchIcon
+        aria-hidden="true"
+        class="pointer-events-none absolute left-3.4 top-1/2 aspect-square w-4.2 translate-y--50% c-secondary/60"
+        fill="currentColor"
+      />
+      <input
+        id="search-input"
+        type="search"
+        placeholder={currentUI.searchPlaceholder}
+        autocomplete="off"
+        autocapitalize="off"
+        enterkeyhint="search"
+        class="w-full uno-round-border bg-secondary/5 py-2.5 pl-10 pr-4 text-4 outline-none transition-colors duration-300 ease-out focus:border-secondary/40 placeholder:c-secondary/50"
+      />
+    </div>
+    {/* Search Status */}
+    <div id="search-status" class="mt-7.5 hidden text-3.5 c-secondary/60 font-time" />
+    {/* Search Results */}
+    <ul id="search-results" class="mt-4" />
+    {/* Result item template, cloned by the script below */}
+    <template id="search-result-template">
+      <li class="mb-5.5">
+        <h3 class="inline transition-colors hover:c-primary">
+          <a class="cjk:tracking-wide" />
+        </h3>
+        <div class="py-0.8 text-3.5 c-secondary/60 font-time" data-result-date />
+        <div class="mt-1.5 text-3.5 c-secondary/60" data-result-excerpt />
+      </li>
+    </template>
   </div>
 </Layout>
 
+<script>
+interface PagefindSearchData {
+  url: string
+  excerpt: string
+  meta: { title?: string, date?: string }
+}
+
+interface PagefindSearchResult {
+  data: () => Promise<PagefindSearchData>
+}
+
+interface PagefindSearchResponse {
+  results: PagefindSearchResult[]
+}
+
+interface PagefindModule {
+  search: (query: string, options?: { filters?: Record<string, string> }) => Promise<PagefindSearchResponse>
+  options?: (options: Record<string, unknown>) => Promise<void>
+}
+
+const RESULT_LIMIT = 10
+const DEBOUNCE_MS = 200
+
+// Served from the built output, so it is unavailable in dev before the first build
+const pagefindUrl = '/pagefind/pagefind.js'
+
+let pagefindPromise: Promise<PagefindModule | null> | null = null
+let searchToken = 0
+let debounceTimer: ReturnType<typeof setTimeout> | undefined
+
+function loadPagefind() {
+  if (!pagefindPromise) {
+    pagefindPromise = import(pagefindUrl)
+      .then(async (pagefind: PagefindModule) => {
+        try {
+          await pagefind.options?.({ excerptLength: 24 })
+        }
+        catch {
+          // excerptLength tuning is optional and may be unsupported
+        }
+        return pagefind
+      })
+      .catch(() => null)
+  }
+  return pagefindPromise
+}
+
+function initSearch() {
+  const root = document.getElementById('search-root')
+  const input = document.getElementById('search-input') as HTMLInputElement | null
+  const statusEl = document.getElementById('search-status')
+  const listEl = document.getElementById('search-results')
+  const template = document.getElementById('search-result-template') as HTMLTemplateElement | null
+  if (!root || !input || !statusEl || !listEl || !template) {
+    return
+  }
+
+  const { lang, msgSearching, msgNoResults, msgResultCount, msgIndexMissing } = root.dataset
+
+  // Arrow consts are created after the null guard above, so TS keeps the non-null narrowing
+  const setStatus = (text: string) => {
+    statusEl.textContent = text
+    statusEl.classList.remove('hidden')
+  }
+
+  const clearOutput = () => {
+    statusEl.classList.add('hidden')
+    listEl.replaceChildren()
+  }
+
+  const renderResult = (data: PagefindSearchData) => {
+    const item = template.content.firstElementChild?.cloneNode(true) as HTMLLIElement
+    const link = item.querySelector('a')
+    if (link) {
+      link.href = data.url
+      link.textContent = data.meta.title || data.url
+    }
+    const dateEl = item.querySelector<HTMLElement>('[data-result-date]')
+    if (dateEl) {
+      if (data.meta.date) {
+        dateEl.textContent = data.meta.date
+      }
+      else {
+        dateEl.classList.add('hidden')
+      }
+    }
+    const excerptEl = item.querySelector('[data-result-excerpt]')
+    if (excerptEl) {
+      // Pagefind excerpts are sanitized and only contain <mark> tags
+      excerptEl.innerHTML = data.excerpt
+    }
+    return item
+  }
+
+  const runSearch = async (query: string) => {
+    const token = ++searchToken
+
+    if (!query.trim()) {
+      clearOutput()
+      return
+    }
+
+    const pagefind = await loadPagefind()
+    if (token !== searchToken) {
+      return
+    }
+
+    if (!pagefind) {
+      setStatus(msgIndexMissing ?? '')
+      return
+    }
+
+    setStatus(msgSearching ?? '')
+
+    const search = await pagefind.search(query, lang ? { filters: { lang } } : {})
+    if (token !== searchToken) {
+      return
+    }
+
+    if (search.results.length === 0) {
+      setStatus(msgNoResults ?? '')
+      listEl.replaceChildren()
+      return
+    }
+
+    setStatus((msgResultCount ?? '').replace('{n}', String(search.results.length)))
+
+    const results = await Promise.all(
+      search.results.slice(0, RESULT_LIMIT).map(result => result.data()),
+    )
+    if (token !== searchToken) {
+      return
+    }
+
+    listEl.replaceChildren(...results.map(renderResult))
+  }
+
+  input.addEventListener('input', () => {
+    clearTimeout(debounceTimer)
+    debounceTimer = setTimeout(() => {
+      void runSearch(input.value)
+    }, DEBOUNCE_MS)
+  })
+}
+
+document.addEventListener('astro:page-load', initSearch)
+</script>
+
 <style is:global>
-/* ===== Pagefind Theme Variables ===== */
-[data-pagefind-ui] {
-  --pagefind-ui-scale: 1 !important;
-  --pagefind-ui-primary: oklch(var(--un-preset-theme-colors-primary)) !important;
-  --pagefind-ui-text: oklch(var(--un-preset-theme-colors-secondary)) !important;
-  --pagefind-ui-background: oklch(var(--un-preset-theme-colors-background)) !important;
-  --pagefind-ui-border: oklch(var(--un-preset-theme-colors-secondary) / 0.15) !important;
-  --pagefind-ui-tag: oklch(var(--un-preset-theme-colors-secondary) / 0.1) !important;
-  --pagefind-ui-border-width: 1px !important;
-  --pagefind-ui-border-radius: 6px !important;
-  --pagefind-ui-font: inherit !important;
-}
-
-/* ===== Search Input ===== */
-[data-pagefind-ui] .pagefind-ui__search-input {
-  height: auto !important;
-  padding: 0.6em 1em 0.6em 2.4em !important;
-  font-size: 1rem !important;
-  font-weight: 400 !important;
-}
-[data-pagefind-ui] .pagefind-ui__search-input::placeholder {
-  color: oklch(var(--un-preset-theme-colors-secondary) / 0.5) !important;
-  opacity: 1 !important;
-}
-
-/* ===== Search Icon ===== */
-[data-pagefind-ui] .pagefind-ui__form::before {
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  width: 16px !important;
-  height: 16px !important;
-  left: 14px !important;
-}
-
-/* ===== Clear Button ===== */
-[data-pagefind-ui] .pagefind-ui__search-clear {
-  display: none !important;
-}
-
-/* ===== Results ===== */
-[data-pagefind-ui] .pagefind-ui__result-excerpt {
-  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
-}
-[data-pagefind-ui] .pagefind-ui__result-excerpt mark {
-  background: oklch(var(--un-preset-theme-colors-primary) / 0.12) !important;
-  color: inherit !important;
-  padding: 0.1em 0.2em !important;
-  border-radius: 2px !important;
-}
-[data-pagefind-ui] .pagefind-ui__message {
-  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
-}
-[data-pagefind-ui] .pagefind-ui__loading {
-  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
-  background-color: oklch(var(--un-preset-theme-colors-secondary)) !important;
-}
-
-/* ===== Buttons ===== */
-[data-pagefind-ui] .pagefind-ui__button {
-  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
-}
-[data-pagefind-ui] .pagefind-ui__button:hover {
-  border-color: oklch(var(--un-preset-theme-colors-primary)) !important;
-  color: oklch(var(--un-preset-theme-colors-primary)) !important;
-}
-
-/* ===== Filters ===== */
-[data-pagefind-ui] .pagefind-ui__filter-name {
-  color: oklch(var(--un-preset-theme-colors-primary)) !important;
-}
-[data-pagefind-ui] .pagefind-ui__filter-label {
-  color: oklch(var(--un-preset-theme-colors-secondary)) !important;
-}
+  /* Match the site-wide marker style (see `mark` in markdown.css) */
+  #search-results mark {
+    background: oklch(var(--un-preset-theme-colors-highlight));
+    color: inherit;
+    padding-block: 0.1625rem;
+  }
 </style>

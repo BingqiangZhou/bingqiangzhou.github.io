@@ -9,6 +9,11 @@ interface Translation {
   about: string
   toc: string
   search: string
+  searchPlaceholder: string
+  searchSearching: string
+  searchNoResults: string
+  searchResultCount: string
+  searchIndexMissing: string
 }
 
 export const ui: Record<Language, Translation> = {
@@ -21,6 +26,11 @@ export const ui: Record<Language, Translation> = {
     about: 'Über',
     toc: 'Inhaltsverzeichnis',
     search: 'Suchen',
+    searchPlaceholder: 'Beiträge durchsuchen…',
+    searchSearching: 'Suchen…',
+    searchNoResults: 'Keine Ergebnisse gefunden',
+    searchResultCount: '{n} Ergebnisse',
+    searchIndexMissing: 'Suchindex nicht verfügbar. Bitte zuerst die Seite bauen.',
   },
   'en': {
     title: 'Retypeset',
@@ -31,6 +41,11 @@ export const ui: Record<Language, Translation> = {
     about: 'About',
     toc: 'Table of Contents',
     search: 'Search',
+    searchPlaceholder: 'Search posts…',
+    searchSearching: 'Searching…',
+    searchNoResults: 'No results found',
+    searchResultCount: '{n} results',
+    searchIndexMissing: 'Search index unavailable. Please build the site first.',
   },
   'es': {
     title: 'Retipografía',
@@ -41,6 +56,11 @@ export const ui: Record<Language, Translation> = {
     about: 'Sobre',
     toc: 'Índice',
     search: 'Buscar',
+    searchPlaceholder: 'Buscar artículos…',
+    searchSearching: 'Buscando…',
+    searchNoResults: 'No se encontraron resultados',
+    searchResultCount: '{n} resultados',
+    searchIndexMissing: 'Índice de búsqueda no disponible. Compila el sitio primero.',
   },
   'fr': {
     title: 'Retypographie',
@@ -51,6 +71,11 @@ export const ui: Record<Language, Translation> = {
     about: 'À propos',
     toc: 'Table des matières',
     search: 'Rechercher',
+    searchPlaceholder: 'Rechercher des articles…',
+    searchSearching: 'Recherche…',
+    searchNoResults: 'Aucun résultat trouvé',
+    searchResultCount: '{n} résultats',
+    searchIndexMissing: 'Index de recherche indisponible. Veuillez d\'abord générer le site.',
   },
   'ja': {
     title: '再組版',
@@ -61,6 +86,11 @@ export const ui: Record<Language, Translation> = {
     about: '概要',
     toc: '目次',
     search: '検索',
+    searchPlaceholder: '記事を検索…',
+    searchSearching: '検索中…',
+    searchNoResults: '結果が見つかりませんでした',
+    searchResultCount: '{n} 件の結果',
+    searchIndexMissing: '検索インデックスが利用できません。先にサイトをビルドしてください。',
   },
   'ko': {
     title: '재조판',
@@ -71,6 +101,11 @@ export const ui: Record<Language, Translation> = {
     about: '소개',
     toc: '목차',
     search: '검색',
+    searchPlaceholder: '게시물 검색…',
+    searchSearching: '검색 중…',
+    searchNoResults: '결과를 찾을 수 없습니다',
+    searchResultCount: '{n}개의 결과',
+    searchIndexMissing: '검색 인덱스를 사용할 수 없습니다. 먼저 사이트를 빌드해 주세요.',
   },
   'pl': {
     title: 'Przeskład',
@@ -81,6 +116,11 @@ export const ui: Record<Language, Translation> = {
     about: 'O stronie',
     toc: 'Spis treści',
     search: 'Szukaj',
+    searchPlaceholder: 'Szukaj wpisów…',
+    searchSearching: 'Szukanie…',
+    searchNoResults: 'Nie znaleziono wyników',
+    searchResultCount: 'Znaleziono: {n}',
+    searchIndexMissing: 'Indeks wyszukiwania niedostępny. Najpierw zbuduj witrynę.',
   },
   'pt': {
     title: 'Retipografia',
@@ -91,6 +131,11 @@ export const ui: Record<Language, Translation> = {
     about: 'Sobre',
     toc: 'Sumário',
     search: 'Buscar',
+    searchPlaceholder: 'Buscar artigos…',
+    searchSearching: 'Buscando…',
+    searchNoResults: 'Nenhum resultado encontrado',
+    searchResultCount: '{n} resultados',
+    searchIndexMissing: 'Índice de busca indisponível. Construa o site primeiro.',
   },
   'ru': {
     title: 'Переверстка',
@@ -101,6 +146,11 @@ export const ui: Record<Language, Translation> = {
     about: 'О себе',
     toc: 'Оглавление',
     search: 'Поиск',
+    searchPlaceholder: 'Поиск по статьям…',
+    searchSearching: 'Поиск…',
+    searchNoResults: 'Ничего не найдено',
+    searchResultCount: 'Найдено: {n}',
+    searchIndexMissing: 'Поисковый индекс недоступен. Сначала выполните сборку сайта.',
   },
   'zh': {
     title: '惟愿此心无怨尤',
@@ -111,6 +161,11 @@ export const ui: Record<Language, Translation> = {
     about: '关于',
     toc: '目录',
     search: '搜索',
+    searchPlaceholder: '搜索文章…',
+    searchSearching: '搜索中…',
+    searchNoResults: '没有找到相关内容',
+    searchResultCount: '共 {n} 条结果',
+    searchIndexMissing: '搜索索引不可用，请先构建站点',
   },
   'zh-tw': {
     title: '重新編排',
@@ -121,5 +176,10 @@ export const ui: Record<Language, Translation> = {
     about: '關於',
     toc: '目錄',
     search: '搜尋',
+    searchPlaceholder: '搜尋文章…',
+    searchSearching: '搜尋中…',
+    searchNoResults: '沒有找到相關內容',
+    searchResultCount: '共 {n} 筆結果',
+    searchIndexMissing: '搜尋索引不可用，請先建置網站',
   },
 }
