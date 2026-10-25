@@ -48,7 +48,7 @@ abbrlink: minimax-h3-max
 | Reddit 标题 / levelsio 推文 | "近 **50 倍**于基座模型"、"50x faster but still maintains quality" | 二手（[r/singularity](https://www.reddit.com/r/singularity/comments/1vzbpuh/minimax_h3_max_posttrained_by_fal_on_minimax_h3/)、[levelsio](https://x.com/levelsio/status/2093628563693944889)） |
 | 单次演示 | 15 秒视频 9 秒生成 | 二手单例（[KuCoin 快讯](https://www.kucoin.com/news/flash/ai-video-model-h3-max-generates-content-35x-faster-than-predecessor)） |
 
-两个降温的事实，来自 [AI邮报的冷静分析](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)（二手但做了交叉核对）：
+两个降温的事实，来自 [AI 邮报的冷静分析](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)（二手但做了交叉核对）：
 
 1. **只有短片"快过播放"**。按官方口径，15 秒视频约需 15 秒生成——"快过播放"只在 5 秒左右的短片段成立，社群里"15 秒只要 9 秒"属于单次成功示范，不是可重现规格；
 2. **"快过播放"并非首例**。LTX-Video（Lightricks，2024）早在 H100 上就记录过 5 秒视频约 2 秒生成。H3 Max 的意义不在绝对速度纪录，而在**把这个速度和第一梯队的质量、原生音频同时拿到**。
@@ -88,7 +88,7 @@ MiniMax 官方平台定价（[定价页](https://platform.minimax.io/docs/guides
 
 值得注意的渠道差价：fal 上 H3 Max 为 **\$0.08/秒**（发布首周 5 折，[fal 定价页](https://fal.ai/minimax-h3-max)），而 fal 上的基础版 H3 同分辨率只要 **\$0.06/秒**（[AA 转述](https://x.com/ArtificialAnlys/status/2092717615739494424)）——同一个 Max，在 MiniMax 平台不加价、在 fal 平台反而比基础版贵，选渠道前值得算一下账。国内平台（platform.minimax.cn）检索到的 H3 Max 价格为 480P ¥0.33/秒、768P ¥0.50/秒（搜索结果转述，未直接核对页面）。
 
-免费尝鲜额度（[AI邮报整理](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)）：fal 公开页每日 5 次、每次 5 秒；登录 sandbox 另有 5 次、最长 15 秒——想直观感受"3 秒出片"零成本。
+免费尝鲜额度（[AI 邮报整理](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)）：fal 公开页每日 5 次、每次 5 秒；登录 sandbox 另有 5 次、最长 15 秒——想直观感受"3 秒出片"零成本。
 
 ## 五、底座：MiniMax H3 是个什么模型
 
@@ -97,13 +97,13 @@ MiniMax 官方平台定价（[定价页](https://platform.minimax.io/docs/guides
 - **定位**：MiniMax 的开源**全模态生成**系统——理解文本/图像/视频/音频输入，生成最高 **2K 分辨率、15 秒、原生立体声**的视频。注意它**不是语言模型**：MiniMax 的语言模型是另一条 M 系列（M3，主打 Agent/编程，1M 上下文），H 系列专做生成，官方口径是两条产品线并行。
 - **架构**（[HF 模型卡](https://huggingface.co/MiniMaxAI/MiniMax-H3)，一手）：33B 参数的稠密单流 Omni-Transformer，其中约 13B 参数位于 AdaLN 相关分支——这部分推理时可预计算缓存、不常驻显存。权重以 diffusers pipeline 形式发布于 [Hugging Face](https://huggingface.co/MiniMaxAI/MiniMax-H3) 和 [GitHub](https://github.com/MiniMax-AI/MiniMax-H3)，ComfyUI 官方 Day-0 支持，还有 Intel Day-0 硬件适配。
 - **成绩**：视频编辑能力登顶（Artificial Analysis 有声视频编辑榜第一，Elo 1,130，[InfoQ 报道的 Reddit 答疑](https://www.infoq.cn/article/9C3eK9tJqDXbabbBy3aj)）；基础版 API 定价 0.8 元/秒（[新京报](https://www.bjnews.com.cn/detail/1785474644129260.html)），约为同类旗舰的三分之一。
-- **许可证边界**（[MiniMax H3 Community License](https://platform.minimaxi.com/docs/guides/local-deploy-h3)，务必注意）：非商业使用免费；**年营收低于 2,000 万美元**的组织可免费商用但需显著署名，超过需邮件申请；**地域排除美国、英国、欧盟、韩国**。HF 上标注 `license: other`，不是 OSI 认证的开源协议。另外据 [AI邮报 FAQ](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)，完整 2K 管线的部分功能仍需连接 MiniMax 官方服务。
+- **许可证边界**（[MiniMax H3 Community License](https://platform.minimaxi.com/docs/guides/local-deploy-h3)，务必注意）：非商业使用免费；**年营收低于 2,000 万美元**的组织可免费商用但需显著署名，超过需邮件申请；**地域排除美国、英国、欧盟、韩国**。HF 上标注 `license: other`，不是 OSI 认证的开源协议。另外据 [AI 邮报 FAQ](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)，完整 2K 管线的部分功能仍需连接 MiniMax 官方服务。
 
 H3 Max 的故事本质上是一场**开源权重的第二春**：MiniMax 把权重放出来，fal 用自己的后训练和服务工程把官方端点"卷"出了 35 倍差距，最后官方干脆联合上架。这是开源生态最理想的正循环剧本——前提是你接受它的许可证限制。
 
 ## 六、能干什么、边界在哪
 
-[AI邮报的分析](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)（自述立场"中性偏多"）把落地边界讲得比较透，我直接沿用它的框架：
+[AI 邮报的分析](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)（自述立场"中性偏多"）把落地边界讲得比较透，我直接沿用它的框架：
 
 **三道坎**：
 
@@ -137,7 +137,7 @@ H3 Max 的故事本质上是一场**开源权重的第二春**：MiniMax 把权�
 
 二手来源：
 
-- [AI邮报：H3 Max 速度、价格与直播限制分析](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)
+- [AI 邮报：H3 Max 速度、价格与直播限制分析](https://www.aiposthub.com/minimax-h3-max-ai-video-realtime/)
 - [r/singularity：H3 Max 设定新 Pareto 前沿（"近 50 倍"说法出处）](https://www.reddit.com/r/singularity/comments/1vzbpuh/minimax_h3_max_posttrained_by_fal_on_minimax_h3/)
 - [r/StableDiffusion：fal 将放出 H3 Max 权重（含本地复现质疑）](https://www.reddit.com/r/StableDiffusion/comments/1w0noif/fal_will_release_the_weights_of_h3_max/)
 - [B 站：MiniMax 官方回应 fal 点名批评（"FastH3 速度全靠糊质量"，细节未核实）](https://www.bilibili.com/video/BV1Xh4U68EXg/)

@@ -30,7 +30,7 @@ Jev 由前 OpenAI 研究员、TypeSafe 创始人 Diogo Almeida 于 2026-09-15 �
 
 模型规格（docs/models）：当前唯一版本化 ID jev-1.13.0（jev-latest 为 SDK 默认别名，jev-preview 暂同指向）；64k tokens/请求总预算（state+全部问题合计），另设子上限：state+单个最长问题 ≤32k；纯文本输入；速率限制 250k tokens/s、1200 req/min（官方 Rate limits 一节的口径，动态调整、可无预警变化）；不用客户数据训练、不支持微调。
 
-热度信号几条：HN 主帖（id 49717558）当日提交，约 1969 分/511 评论（分数是动态值），CEO 以账号 CompleteSkeptic 回帖 24 条；Vercel 官方博客（2026-09-18）称 Jev 是 AI Gateway 历史上采用最快的模型——原文口径是「By hour 24, nearly 13% of paid teams were using it」（13% 指付费团队，非「用户」亦非「流量」）。Vercel 工程师 Pranit Sharma「安全命令分类器换 Jev（替换的是 ChatGPT Luna 5.6）后提速 5-18 倍且准确率更高」出自 TechCrunch 报道而非 Vercel 博客。中文圈刷屏只核实到标题层面（知乎《2400万人围观…》、36氪《一个「不说话」的AI刷屏…》，全文未定位·第三档）。
+热度信号几条：HN 主帖（id 49717558）当日提交，约 1969 分/511 评论（分数是动态值），CEO 以账号 CompleteSkeptic 回帖 24 条；Vercel 官方博客（2026-09-18）称 Jev 是 AI Gateway 历史上采用最快的模型——原文口径是「By hour 24, nearly 13% of paid teams were using it」（13% 指付费团队，非「用户」亦非「流量」）。Vercel 工程师 Pranit Sharma「安全命令分类器换 Jev（替换的是 ChatGPT Luna 5.6）后提速 5-18 倍且准确率更高」出自 TechCrunch 报道而非 Vercel 博客。中文圈刷屏只核实到标题层面（知乎《2400 万人围观…》、36 氪《一个「不说话」的 AI 刷屏…》，全文未定位·第三档）。
 
 ## 二、怎么训练、凭什么快：黑箱边界与结构红利
 
@@ -50,7 +50,7 @@ Jev 由前 OpenAI 研究员、TypeSafe 创始人 Diogo Almeida 于 2026-09-15 �
 
 边界仍是那句 CEO 自认：「Type safety is not factual correctness」——类型化保证接口形状、不保证判断正确；自家 evals 准确率全输最强基线（第三节）。
 
-**凭什么快：四条机制、一条归因边界。**① 砍掉自回归解码循环——LLM 延迟≈输出 token 数×每 token 一次前向，一次判定 LLM 常要生成几百 token，Jev 一次前向直接算出整个答案分布（api.md 示例 output_tokens 仅 20，见第四节），70ms-500ms vs 3-329 秒的量级差主要源于此；② 并行采样器（三件套之二）加问题级并行——一个请求 N 个问题并行、隔离评估，加问题几乎不增响应时间；③ 零思考成本——不做 chain-of-thought、不生成任何中间文本；④ 归因边界——快是「放弃生成」换来的结构红利，不是同类模型更快，也不能归因于「模型小」（参数未披露；开源复现用 0.4B-9B 模型同样做到毫秒-百毫秒级，说明该任务的输出空间天然不需要自回归那套），反例是高基数 Choice 偶发变慢（第四节 2-stage 句）。
+**凭什么快：四条机制、一条归因边界。**① 砍掉自回归解码循环——LLM 延迟≈输出 token 数×每 token 一次前向，一次判定 LLM 常要生成几百 token，Jev 一次前向直接算出整个答案分布（api.md 示例 output_tokens 仅 20，见第四节），70ms-500ms vs 3-329 秒的量级差主要源于此；② 并行采样器（三件套之二）加问题级并行——一个请求 N 个问题并行、隔离评估，加问题几乎不增响应时间；③ 零思考成本——不做 chain-of-thought、不生成任何中间文本；④ 归因边界——快是「放弃生成」换来的结构红利，不是同类模型更快，也不能归因于「模型小」（参数未披露；开源复现用 0.4B-9B 模型同样做到毫秒 - 百毫秒级，说明该任务的输出空间天然不需要自回归那套），反例是高基数 Choice 偶发变慢（第四节 2-stage 句）。
 
 ## 三、为什么值得关心：三本账，以及藏在每个 coding agent 里的分类器
 
@@ -75,7 +75,7 @@ Jev 由前 OpenAI 研究员、TypeSafe 创始人 Diogo Almeida 于 2026-09-15 �
 
 > The honest version of the headline is not 510x. It is about 3x cheaper than the next model.
 
-**中文实测两路**（均须标档位）：虎嗅/硅星人《实测Jev：没那么强》测 50 道中文客服判断题，准确率约 64%-65.2%（便宜小模型组第二、比 DeepSeek V4 Flash 少 1.2 分；50 题合计约 $0.002）——原文未能打开，数字经搜索摘要交叉印证（第三档）；zicode「字与码」两篇为调研者一手抓取（第二档）：其转述的官方提速为 20-400 倍（与官方博客的 40x-200x、HN 标题的 20-200x 都对不上，以官方博客为准），实测 5-25 倍；海外延迟实测 1.6-3.7 秒；732 个相同判断跑三遍仅 24% 完全一致（中位漂移 0.010）——与 Diogo 本人「确定性非北极星、鲁棒性（相似输入相似输出）才是」的表态相互印证，直接影响单测写法。该文还转述了正反案例：翻车如自动交易 bot 亏 $31,680、小马智行伦理测试，正面如 Browser Use 用 Jev 7.1 秒订票、NearHere 审核准确率 96%——均为转述、未核实原始出处（第三档）。
+**中文实测两路**（均须标档位）：虎嗅/硅星人《实测 Jev：没那么强》测 50 道中文客服判断题，准确率约 64%-65.2%（便宜小模型组第二、比 DeepSeek V4 Flash 少 1.2 分；50 题合计约 $0.002）——原文未能打开，数字经搜索摘要交叉印证（第三档）；zicode「字与码」两篇为调研者一手抓取（第二档）：其转述的官方提速为 20-400 倍（与官方博客的 40x-200x、HN 标题的 20-200x 都对不上，以官方博客为准），实测 5-25 倍；海外延迟实测 1.6-3.7 秒；732 个相同判断跑三遍仅 24% 完全一致（中位漂移 0.010）——与 Diogo 本人「确定性非北极星、鲁棒性（相似输入相似输出）才是」的表态相互印证，直接影响单测写法。该文还转述了正反案例：翻车如自动交易 bot 亏 $31,680、小马智行伦理测试，正面如 Browser Use 用 Jev 7.1 秒订票、NearHere 审核准确率 96%——均为转述、未核实原始出处（第三档）。
 
 小结（口径拆开、不合并区间）：三本账对完——官方上限数字、自家 evals（准确率输、成本延迟碾压）、第三方约 3-9 倍一带，其中 8.6x 是 8 槽主实验对 DeepSeek V4.1 Flash 的成本比、3.3x 是未预注册的 32 槽敏感性测试对 GPT-5.6 Luna 的成本比、5.43x 是 LiteLLM 对 Haiku 4.5 的中位延迟比——不同基线、并发、指标，逐条交代。LangChain 博客点出了真正的答案：「Up until now, this classifier step has been locked away in the closed source parts of the harness」（第二档）——每个 coding agent 里都藏着这层分类器，Jev 把它变成开放可编程的 API。
 
@@ -105,7 +105,7 @@ API 就一个端点：`POST https://api.typesafe.ai/v1/systemone`，请求体 `{
 }
 ```
 
-逐参数读一遍（api.md 与 docs/models 口径）：请求体三字段——`state` 是被判断的非结构化材料（字符串、JSON 对象或文本数组皆可），全部问题共享同一份、只计一次 input token（64k 总预算，其中 state+单个最长问题 ≤32k）；`model` 填别名或版本化 ID，示例用 SDK 默认别名 `jev-latest`；`questions` 是问题集，key 是自定的问题 id（响应按键回带，相当于代码里的变量名），value 两个字段——`type` 定题型（noul/choice/score，choice 题另附选项列表 ≤255、score 题另附 2-10 个等级），`instructions` 是问题的自然语言表述。响应三字段——`model` 回带别名解析后的实际版本（示例里 latest→jev-1.13.0）；`answers` 与 questions 的 id 一一对应，每个答案先带 `type` 回显、再接原语各自的字段，noul 答案只有一个 0-1 的 `noul` 值——「是」的概率，二值分布一个数已完整、故无 confidence；`usage` 仅 input/output 两个 token 数，output 报数但计价免费。「输出免费」的机制落点就在这：判断环节不再生成几百 token 的判定文本，输出成本≈0。
+逐参数读一遍（api.md 与 docs/models 口径）：请求体三字段——`state` 是被判断的非结构化材料（字符串、JSON 对象或文本数组皆可），全部问题共享同一份、只计一次 input token（64k 总预算，其中 state+ 单个最长问题 ≤32k）；`model` 填别名或版本化 ID，示例用 SDK 默认别名 `jev-latest`；`questions` 是问题集，key 是自定的问题 id（响应按键回带，相当于代码里的变量名），value 两个字段——`type` 定题型（noul/choice/score，choice 题另附选项列表 ≤255、score 题另附 2-10 个等级），`instructions` 是问题的自然语言表述。响应三字段——`model` 回带别名解析后的实际版本（示例里 latest→jev-1.13.0）；`answers` 与 questions 的 id 一一对应，每个答案先带 `type` 回显、再接原语各自的字段，noul 答案只有一个 0-1 的 `noul` 值——「是」的概率，二值分布一个数已完整、故无 confidence；`usage` 仅 input/output 两个 token 数，output 报数但计价免费。「输出免费」的机制落点就在这：判断环节不再生成几百 token 的判定文本，输出成本≈0。
 
 值得注意：请求体没有 temperature/top_p——api.md 已逐字核对，Request body 一节只定义 state/questions/model，全文无任何采样参数。决策 API 不是生成 API，这是接口哲学不是遗漏。问题按 id 并行、隔离评估，官方原话「Adding questions barely changes the response time…does not create context-rot」——state 只付一次钱，可以问大量问题。
 
@@ -121,19 +121,19 @@ API 就一个端点：`POST https://api.typesafe.ai/v1/systemone`，请求体 `{
 
 confidence 语义（docs/confidence）：不是模型额外「说」的话，而是「从答案已有概率分布计算出的统计量」；文档交互组件演示公式 (N×p_max−1)/(N−1)（夹在 [0,1]）——官方未声称后端实现即此公式，完整 probabilities 总是返回、可自己算。校准来自 RLCD 训练且只在组层面成立，原句（官方文档核对）：「Calibration is measured across groups of predictions; it does not guarantee that an individual answer is correct」。官方建议三段式路由：高置信自动执行、中等请人确认后系统继续执行、低置信整件事移交人工（后两档的区别在「确认后继续」还是「完全交给人」），阈值随风险缩放（转账审批要 >0.9）。
 
-方法论核心句在官方 jaggedness 页：「Extraction is a judgment, so give it to the model. Arithmetic is not, so keep it in code.」配套实践是原子问题+代码组合——与其问「给创业打几分」，不如拆市场规模/可行性/差异化三个 Score 自行组合，优先级变了改系数而不是重写 prompt。多跳拆单跳由代码编排：Latent Space 播客里 Diogo 说单跳「State of the art. You should never use anything other than Jev for single hop」、多跳随跳数单调劣化（播客原文，第二档）。他的原语映射好记：choice→enum 上的 switch、noul→if、score→排序/阈值（「a score is not an int」，批评 Instructor/Pydantic 把 int 映射成 score 会「get a little bit cooked」）。
+方法论核心句在官方 jaggedness 页：「Extraction is a judgment, so give it to the model. Arithmetic is not, so keep it in code.」配套实践是原子问题 + 代码组合——与其问「给创业打几分」，不如拆市场规模/可行性/差异化三个 Score 自行组合，优先级变了改系数而不是重写 prompt。多跳拆单跳由代码编排：Latent Space 播客里 Diogo 说单跳「State of the art. You should never use anything other than Jev for single hop」、多跳随跳数单调劣化（播客原文，第二档）。他的原语映射好记：choice→enum 上的 switch、noul→if、score→排序/阈值（「a score is not an int」，批评 Instructor/Pydantic 把 int 映射成 score 会「get a little bit cooked」）。
 
-接入工程（npm registry 一手核实，第二档）：TS 侧包名是 @typesafe-ai/sdk（非 scoped 的 typesafe-ai 在 registry 是 404；Node 20+），调用形如 `client.systemOne({ state, questions })`（示意）；官方 SDK 源码 src/types.ts 的 ResultFor<T> 条件类型让非法答案在编译期不可表示——对照「LLM+JSON Schema+运行时 zod 校验+失败重试循环」：约束发生在类型系统而非运行时。默认重试 408/429/5xx、指数退避 500ms→5s。Python 侧 pip typesafe-sdk（≥0.7.0 起响应为 Pydantic 模型）。生态三条路（flaviocopes，第二档）：Vercel AI SDK（≥7.0.105）把 TypeSafe 接成原生评估 provider（npm 包 @ai-sdk/typesafe-ai，经 experimental_evaluate 接口调用）——环境变量是 TYPESAFE_AI_API_KEY（与官方 SDK 的 TYPESAFE_API_KEY 不同）；LangChain 集成只有 Python 侧（TypeSafeClassifier、按 question 路由的 ModelRouterMiddleware、工具执行前拦截高风险调用的 AutoModeMiddleware）；Zed 插件 typesafe。另有官方 system-one-adapter-python：用 LLM 后端模拟同一 API，定位即对比 TypeSafe 与 LLM 的成本/速度/智能，是复现对账的现成工具。
+接入工程（npm registry 一手核实，第二档）：TS 侧包名是 @typesafe-ai/sdk（非 scoped 的 typesafe-ai 在 registry 是 404；Node 20+），调用形如 `client.systemOne({ state, questions })`（示意）；官方 SDK 源码 src/types.ts 的 ResultFor<T> 条件类型让非法答案在编译期不可表示——对照「LLM+JSON Schema+ 运行时 zod 校验 + 失败重试循环」：约束发生在类型系统而非运行时。默认重试 408/429/5xx、指数退避 500ms→5s。Python 侧 pip typesafe-sdk（≥0.7.0 起响应为 Pydantic 模型）。生态三条路（flaviocopes，第二档）：Vercel AI SDK（≥7.0.105）把 TypeSafe 接成原生评估 provider（npm 包 @ai-sdk/typesafe-ai，经 experimental_evaluate 接口调用）——环境变量是 TYPESAFE_AI_API_KEY（与官方 SDK 的 TYPESAFE_API_KEY 不同）；LangChain 集成只有 Python 侧（TypeSafeClassifier、按 question 路由的 ModelRouterMiddleware、工具执行前拦截高风险调用的 AutoModeMiddleware）；Zed 插件 typesafe。另有官方 system-one-adapter-python：用 LLM 后端模拟同一 API，定位即对比 TypeSafe 与 LLM 的成本/速度/智能，是复现对账的现成工具。
 
 边界清单（官方 jaggedness 页 9 项，2026-09-17 审查）：❌ 字面阅读（「answers the question you wrote, not the one you meant」）；❌ 不是计算器、计数不可靠（「Jev is not a calculator」）；❌ 日期当文本比较；❌ 双重否定/多跳降低准确率；❌ context rot（无关材料损准确）；❌ 不默认视 state 为敌意（prompt 注入可影响答案）；❌ 指令与 criteria 矛盾时变差；❌ 结构不变量不保证（正反两 Noul 之和可为 0.72+0.47=1.19，Noul 阈值不可搬到 Choice）；❌ 未训练文本生成。官方承诺「Many of these will be fixed in later versions」。
 
-中文用户特别提醒（官方文档 models.md 原文核对）：「Jev accepts natural-language text. English is the primary training language…Other languages, including CJK scripts, are handled but not equally well; test on your own content before relying on Jev for a non-English workload, and pay close attention to Confidence when routing」——连「路由时盯紧 Confidence」那半句一起引。这与虎嗅 64%-65.2%（第三档）、zicode/Laya 中文实测（choice 退化为 one-hot、威胁检测英文 0.871 vs 中文 0.035、打分失序；第二档）互证。Laya 的正面数据（英文任务置信度≥0.85 时 100% 准确、批处理每题 5.2ms、显存 1.2-1.6GB、2.3GB 权重——zicode 自报，第二档）可作为「开源复现+本地部署」路线参考。
+中文用户特别提醒（官方文档 models.md 原文核对）：「Jev accepts natural-language text. English is the primary training language…Other languages, including CJK scripts, are handled but not equally well; test on your own content before relying on Jev for a non-English workload, and pay close attention to Confidence when routing」——连「路由时盯紧 Confidence」那半句一起引。这与虎嗅 64%-65.2%（第三档）、zicode/Laya 中文实测（choice 退化为 one-hot、威胁检测英文 0.871 vs 中文 0.035、打分失序；第二档）互证。Laya 的正面数据（英文任务置信度≥0.85 时 100% 准确、批处理每题 5.2ms、显存 1.2-1.6GB、2.3GB 权重——zicode 自报，第二档）可作为「开源复现 + 本地部署」路线参考。
 
 ## 五、争议在哪：话术、旧账与口径
 
 **第一场：「不会幻觉」是不是话术。**官方牌面是结构性论证（类型错误「mathematically impossible」、数字「not empirical」）；HN 讨论帖 49767192（Algolia 核实，第二档）的反方指出：把幻觉定义为「生成超出预定类型的结果」是重新定义——高赞比喻「卖船的说不用换轮胎」；把 LLM 解码约束到同样三选项后「Both can be wrong, but neither can hallucinate」；布尔模式下模型被迫二选一、无法弃权，等于「forced to hallucinate」；选错类别照样错（billing 查询照样可能错转 dev 部门）。收束一句来自 CEO 本人在 HN 主帖的承认：「Type safety is not factual correctness」（that is likely true of all ML；第二档）；再加 zicode 的金句：类型化输出保证的是接口，不是真相。
 
-**第二场：「不就是 BERT+决策头」vs「前沿智能」。**反方说 BERT 早能做到、用 logprob 解多项选择题是 2020 年 MMLU 的老技术；正方（HN theptip）：卖点是零样本的前沿通用性——「The promise of Jev is that it's FRONTIER INTELLIGENCE, not the intelligence of a pre-chatGPT era model」。开源复现构成双向证据，一周内成批出现（Latent Space AINews 数过「两天 6 个克隆」，第三档），按做法分三条路线：
+**第二场：「不就是 BERT+ 决策头」vs「前沿智能」。**反方说 BERT 早能做到、用 logprob 解多项选择题是 2020 年 MMLU 的老技术；正方（HN theptip）：卖点是零样本的前沿通用性——「The promise of Jev is that it's FRONTIER INTELLIGENCE, not the intelligence of a pre-chatGPT era model」。开源复现构成双向证据，一周内成批出现（Latent Space AINews 数过「两天 6 个克隆」，第三档），按做法分三条路线：
 
 | 路线 | 项目 | 怎么做 | 自报口径 |
 | --- | --- | --- | --- |
@@ -155,7 +155,7 @@ confidence 语义（docs/confidence）：不是模型额外「说」的话，而
 
 **该用（✅）**：单跳判断、高吞吐、成本敏感、能容忍概率语义的场景——guardrails/内容审核、工单与安全告警分诊、agent 工具调用风险拦截（LangChain AutoModeMiddleware 模式）、LLM-as-judge 的廉价替代、长对话逐条消息打标（给每条消息打 ID，state 付一次钱、问大量问题）。其中 LangChain Jev-as-a-Judge 数字（5 个天气 agent run×100 次、与人类 oracle 500/500 一致、方差低 92-913 倍、$0.34 vs Claude $28.17）经 TechCrunch 转述、未独立核实（第三档），引用须连同警示句：「a judge can still be consistently wrong」「low cost can amplify mistakes」。
 
-**不该用（❌）**：多跳复合推理（随跳数单调劣化）；算术/计数/日期比较（「Jev is not a calculator」——留在代码里）；需要同输入同输出的确定性断言（官方北极星是鲁棒性不是确定性，单测写法要跟着改）；中文/多语任务（官方自认+三方实测）；把概率直连不可逆执行（转账、交易）——已有媒体以亏损为主题撰文（《拿Jev做金融交易，亏钱才正常》，仅核实到标题存在、全文未定位）。
+**不该用（❌）**：多跳复合推理（随跳数单调劣化）；算术/计数/日期比较（「Jev is not a calculator」——留在代码里）；需要同输入同输出的确定性断言（官方北极星是鲁棒性不是确定性，单测写法要跟着改）；中文/多语任务（官方自认 + 三方实测）；把概率直连不可逆执行（转账、交易）——已有媒体以亏损为主题撰文（《拿 Jev 做金融交易，亏钱才正常》，仅核实到标题存在、全文未定位）。
 
 **数字观（记账口径）**：把 193.6x/444.6x 当营销上限（分母是最慢/最贵基线的推算）；第三方对账后落在约 3-9 倍一带，且三个端点各对应不同基线/并发/指标（第三节已拆开）；「省两个数量级」最成立的场景是排队（容量不足时单次成本决定吞吐）与海量低价值判断（反垃圾/钓鱼那类 HN 所说的「a billion reasons a day」）。
 
@@ -181,8 +181,8 @@ confidence 语义（docs/confidence）：不是模型额外「说」的话，而
 
 **第三方基准与分析**：[LiteLLM 基准](https://docs.litellm.ai/blog/jev-auto-router-benchmark)、[suraj 工单分流实验](https://suraj-website-eta.vercel.app/blog/what-a-correct-decision-costs)、[flaviocopes](https://flaviocopes.com/jev/)、[zicode《Jev 决策模型》](https://zicode.com/blog/jev-decision-model/)、[zicode《Laya 本地部署实测》](https://zicode.com/blog/laya-local-deploy-test/)、[Vercel 博客](https://vercel.com/blog/ai-gateway-jev-model-launch)、[TechCrunch 报道](https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/)、[LangChain 博客](https://www.langchain.com/blog/building-a-harness-with-jev)（langchain.com/blog/what-is-jev 为 404，勿引）。开源复现：[Kev](https://github.com/jaredpalmer/kev)（README 已一手核对）、[Von](https://github.com/wfzyx/von)、[Jev-Leftpad](https://github.com/f/jev-leftpad)；Laya 仓库 URL 未核实（只有 zicode 部署实测文可依）；Latent Space AINews《Here are 6 Clones of Jev in 2 days》、Hugging Face「Jev Reproductions Tracker」、Open-Jev（Zefan Cai）——仅检索到条目、原文未开，只列名不列 URL。竞争分析：arcturus-labs《OpenAI is well positioned to fast-follow Jev》（[HN 帖](https://news.ycombinator.com/item?id=49802161)，原文站点 URL 未核实）。
 
-**中文**：虎嗅/硅星人《实测Jev：没那么强》（[新浪财经转载](https://finance.sina.cn/stock/jdts/2026-09-20/detail-inismzva9297397.d.html)；原文未能打开）；知乎《2400万人围观…》、36氪《一个「不说话」的AI刷屏…》——全文未定位，只列标题不列 URL。
+**中文**：虎嗅/硅星人《实测 Jev：没那么强》（[新浪财经转载](https://finance.sina.cn/stock/jdts/2026-09-20/detail-inismzva9297397.d.html)；原文未能打开）；知乎《2400 万人围观…》、36 氪《一个「不说话」的 AI 刷屏…》——全文未定位，只列标题不列 URL。
 
-**可信度三档**。第一档·官方原文逐字核实＝12 条核实条目＋调研阶段 curl 补核对五处＋写作时复核两处。12 条一行一条：① 发布事实与命名；② 定位句与「can't hallucinate」；③ 原语结构与 255 上限；④ 技术栈与 RLCD；⑤ 模型规格；⑥ 定价；⑦ 性能两层；⑧ evals 数据与偏置；⑨ 九项缺陷；⑩ HN 主帖与 CEO 回帖；⑪ Vercel 口径与 Pranit Sharma；⑫ LiteLLM 与 suraj 数字。五处补核对：博客 2-stage 句（原文拼写 occassional）、models.md 语言提醒、api.md 无采样参数、concepts/system-one.md 校准句、首页小字数字存在性。写作时复核两处：api.md 示例 JSON、LiteLLM 免责句。第二档·调研者一手抓取但未入核实条目：HN 分数快照与标题修改史（讨论帖 49767192、Kev 帖 453 分/199 评论、arcturus 帖 266 分/196 评论、Jev-Leftpad 帖 232 分）、Reddit 帖、Kev/Von/Laya README 自报数字（Kev 训练与基准细节为更新时一手复核）、zicode 两篇实测、flaviocopes 工程细节、LangChain 博客与 Latent Space 播客引文。第三档·二手或未能打开原文：虎嗅 64%-65.2%、X 声量、「约 50 个克隆」「两天 6 个克隆」、HF Reproductions Tracker、Open-Jev、arXiv:2503.23303、TechCrunch 转述的 LangChain judge 数字、zicode 内转述的翻车案例与用例、知乎/36氪标题条目——正文关键处已就地标注。
+**可信度三档**。第一档·官方原文逐字核实＝12 条核实条目＋调研阶段 curl 补核对五处＋写作时复核两处。12 条一行一条：① 发布事实与命名；② 定位句与「can't hallucinate」；③ 原语结构与 255 上限；④ 技术栈与 RLCD；⑤ 模型规格；⑥ 定价；⑦ 性能两层；⑧ evals 数据与偏置；⑨ 九项缺陷；⑩ HN 主帖与 CEO 回帖；⑪ Vercel 口径与 Pranit Sharma；⑫ LiteLLM 与 suraj 数字。五处补核对：博客 2-stage 句（原文拼写 occassional）、models.md 语言提醒、api.md 无采样参数、concepts/system-one.md 校准句、首页小字数字存在性。写作时复核两处：api.md 示例 JSON、LiteLLM 免责句。第二档·调研者一手抓取但未入核实条目：HN 分数快照与标题修改史（讨论帖 49767192、Kev 帖 453 分/199 评论、arcturus 帖 266 分/196 评论、Jev-Leftpad 帖 232 分）、Reddit 帖、Kev/Von/Laya README 自报数字（Kev 训练与基准细节为更新时一手复核）、zicode 两篇实测、flaviocopes 工程细节、LangChain 博客与 Latent Space 播客引文。第三档·二手或未能打开原文：虎嗅 64%-65.2%、X 声量、「约 50 个克隆」「两天 6 个克隆」、HF Reproductions Tracker、Open-Jev、arXiv:2503.23303、TechCrunch 转述的 LangChain judge 数字、zicode 内转述的翻车案例与用例、知乎/36 氪标题条目——正文关键处已就地标注。
 
 **方法学教训**：调研中 webReader 摘要曾出现与原文不符的细节（凭空的「$42 per million」、错误包名 typesafe-ai、虚假的「output $0.90/MTok」），均已被原始 HTML/npm registry 核对纠正；本文初稿也犯过同类错——把未经核实的「2 stage-system」句当成逐字引文、把自行计算的 75x/171x 当成事实，补核对后前者证实存在、后者数字存在但除法仍是推算。由此两条规矩：凡引逐字英文，要么出自核实条目或写作时核对，要么标明档位；凡倍数是算出来的，标「推算」并给出被除数与除数。

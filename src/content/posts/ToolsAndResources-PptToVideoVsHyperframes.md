@@ -71,7 +71,7 @@ Gamma、Plus AI 类「PPT 一键转视频/出片」SaaS。与 SelfMediaTools 项
 
 先澄清一点：方案 D（hyperframes 混合）并不「保留」PPT 动效——页是静态整图，动效是 hyperframes 重新做的，属于替代重建。真正保留 PPT 动效，需要有引擎把 pptx「播放」一遍并录下来或渲出来。按简单度排序：
 
-1. **装 PowerPoint 桌面版 → 导出视频（最简单的正解）**。「文件→导出→创建视频」是 PowerPoint 原生功能，动画、转场、旁白、自动计时全部保留；COM 侧 `Presentation.CreateVideo` 在真 Office 上是成熟实现（异步生成、轮询状态），可进自动化管线。Microsoft 365 还有 Record（录制旁白+出片一体）。代价只有一个：Office 授权。
+1. **装 PowerPoint 桌面版 → 导出视频（最简单的正解）**。「文件→导出→创建视频」是 PowerPoint 原生功能，动画、转场、旁白、自动计时全部保留；COM 侧 `Presentation.CreateVideo` 在真 Office 上是成熟实现（异步生成、轮询状态），可进自动化管线。Microsoft 365 还有 Record（录制旁白 + 出片一体）。代价只有一个：Office 授权。
 2. **录屏（本机零新安装、保真 100%）**。WPS 放映模式本身支持动画播放，用 ffmpeg `gdigrab`（或 OBS、Xbox Game Bar）录全屏放映——放映成什么样视频就是什么样。要点：动画与换片需设为自动时序（`advTm` 自动换片、动画 `afterPrev`/固定延迟——python-pptx 已装，XML 手术即可批量改）；旁白两种做法：放映时同步播放 TTS 音频并录进声卡，或后配（TTS 时长对齐换片时序）。弱点：实时录制，视频时长=放映时长；窗口焦点与分辨率敏感；属半自动。
 3. **WPS GUI「输出为视频」**。人工点击，若本机版本携带此入口则可用（部分版本限会员）；COM 通道已实测死路（见方案 B）。
 
@@ -125,33 +125,33 @@ PPT 画布支持任意自定义比例（宽高各上限 56 英寸），竖版不
 
 - LibreOffice 未装——但已非硬前置：WPS COM 转 PDF 实测可用（见实操增补 §七），方案 C/D 的 pptx→PDF 环节与 QA 出图均可用它等价替代；装 LibreOffice 仍是静态管线的最干净路径（无 COM 依赖、可无头批量），按需决定。
 - 竖版 PPT 画布的字号体系无人调过（若选竖版路线）。
-- 已结清：WPS COM 视频导出（实测+官方文档双重定案，见方案 B）；WPS COM 转 PDF（2026-09-04 实测可用）；python-pptx（已补装 1.0.2）。
+- 已结清：WPS COM 视频导出（实测 + 官方文档双重定案，见方案 B）；WPS COM 转 PDF（2026-09-04 实测可用）；python-pptx（已补装 1.0.2）。
 
 ## 七、2026-09-04 实操增补
 
-**pptx skill 的「配置安装」是伪问题**：ZCode 内置自带 document-skills 0.1.4（pptx/docx/pdf/xlsx），不在 `installed_plugins.json`（该文件只记用户额外安装的插件，判定装没装看缓存目录+会话 skill 列表）。真正要做的是补运行依赖，已全部备齐：pptxgenjs（npm 全局）、python-pptx 1.0.2 与 markitdown[pptx]（conda 补装）、defusedxml/PIL/PyMuPDF/pywin32/ffmpeg 原有。WPS GUI 导视频路线下 LibreOffice/Poppler/playwright 均不需要。
+**pptx skill 的「配置安装」是伪问题**：ZCode 内置自带 document-skills 0.1.4（pptx/docx/pdf/xlsx），不在 `installed_plugins.json`（该文件只记用户额外安装的插件，判定装没装看缓存目录 + 会话 skill 列表）。真正要做的是补运行依赖，已全部备齐：pptxgenjs（npm 全局）、python-pptx 1.0.2 与 markitdown[pptx]（conda 补装）、defusedxml/PIL/PyMuPDF/pywin32/ffmpeg 原有。WPS GUI 导视频路线下 LibreOffice/Poppler/playwright 均不需要。
 
 **WPS COM 转 PDF 端到端可用（结清一个待验证假设）**：`Presentations.Open(path, ReadOnly, Untitled, WithWindow=False)` + `pres.SaveAs(pdf_path, 32)`（ppSaveAsPDF）——11 页真实 deck 秒级出有效 PDF，再 PyMuPDF 出 PNG，全程无弹窗。这意味着 pptx→PDF 渲染可免装 LibreOffice（方案 C 的静态化环节、pptx skill QA 出图均可走此链）。
 
-**首个 deck 产物已交付**：`_research/PPT转视频方案分享/`——11 页《PPT转视频方案与HyperFrames对比.pptx》（每页带演讲者备注约 1500 字，将来 WPS 导视频时可直接作 TTS 旁白稿）+ build_deck.js（pptxgenjs 构建，改文案重跑即新版）+ deck.pdf + qa/ 验收图。QA 战报：Code QA（python-pptx 溢出/越界/重叠估算）初版抓 8 处修复后全绿；视觉 QA 11 页全过（3 页修复复审：徽章对齐/卡内溢出/行距）——judge 子代理图像通道故障按其契约兜底降级主 agent 看图，视觉链路踩 CDN 内容去重坑（换文件名无效，须改字节重编码拿新缓存对象）与并行限流坑（429 后串行小批量）。
+**首个 deck 产物已交付**：`_research/PPT转视频方案分享/`——11 页《PPT 转视频方案与 HyperFrames 对比.pptx》（每页带演讲者备注约 1500 字，将来 WPS 导视频时可直接作 TTS 旁白稿）+ build_deck.js（pptxgenjs 构建，改文案重跑即新版）+ deck.pdf + qa/ 验收图。QA 战报：Code QA（python-pptx 溢出/越界/重叠估算）初版抓 8 处修复后全绿；视觉 QA 11 页全过（3 页修复复审：徽章对齐/卡内溢出/行距）——judge 子代理图像通道故障按其契约兜底降级主 agent 看图，视觉链路踩 CDN 内容去重坑（换文件名无效，须改字节重编码拿新缓存对象）与并行限流坑（429 后串行小批量）。
 
 **产物可编辑性定案（用户疑「元素不可编辑」后实证）**：pptxgenjs 产物是原生可编辑 OOXML——全 deck 0 图片、163 个原生形状/文本对象 + 1 个原生表格，WPS/PowerPoint 双击即改（python-pptx 改 run 实测通）；枚举显示 AUTO_SHAPE 而非 TEXT_BOX 只是 pptxgenjs 给 addText 写了矩形 prstGeom 的归类差异，勿误判。qa/*.png 是验收快照、deck.pdf 是衍生物，均非 pptx 内容物。skill 合规：创建线/依赖/设计纪律/Code QA 全对应 document-skills:pptx 条文，唯一偏离=Visual QA 出图工具替换（无 Poppler/LibreOffice→WPS COM+PyMuPDF；judge 故障后按契约兜底）。
 
 **装 Poppler/LibreOffice ≠ 保动效（追问定案，勿再答错）**：这两个组件在管线里只做静态化（soffice→PDF→位图），而 PDF 是固定版式格式没有动画层——动画在 pptx→PDF 首跳即丢；LibreOffice Impress 放映模式能播动画（兼容有限）但无任何导出视频能力（无 `--convert-to mp4` 之类），放映捕获=录屏属另一方案。装它们的全部价值=补方案 C 静态全自动出片+QA 标准工具链；动效保留仍然只有专题节三路。
 
-**动效进 PPT 的工程方案（2026-09-04 二追记，含日报风复刻实践）**：已完成日报视频风格的静态复刻（`_research/PPT转视频方案分享/AI日报视频风复刻_2026-09-03.pptx`，7 页 9:16，色板/版式元素从 hf-faceless 帧源逐 hex 换算）。动效层三条路：①**python-pptx timing XML 注入（全自动核心路，已验证可注入、WPS 可打开）**——PPT 动画=`<p:timing>` 树节点（presetClass entr/emph/exit+delay/dur），与视频动效映射：VO 逐词 reveal→进入-淡入（delay=词时间戳）、数据条生长→擦除 Wipe、落地脉冲→强调-缩放、帧转场→`<p:transition>`+`advTm`；**时序数据源现成**：`_video/hf-faceless/audio_meta.json` 的 `voices[frame].words[]`（词级秒）就是 GSAP 时间轴的时序源，advTm=帧 duration_s。②WPS 动画窗格手工加（一次性场景）。③动效后置回方案 D（对照项）。**旁白闭环**：每帧 TTS 音频现成（`assets/voice/NN.mp3`），插入每页+自动播放，WPS「输出为视频」导出即带旁白+动画、时序天然对齐。能力边界（诚实）：PPT 无 count-up 原生动画、无弹性 easing、无无限呼吸（advTm 到点即翻页）、逐词字幕动画节点量不可行（字幕后混走 ASS——见替代分析）；复杂 timing 序列在 WPS 放映的兼容性需先小样本人工验证再批量注入（已注入全量 63 动效版：`AI日报视频风复刻_动效版.pptx`）。**「PPT 管线替代日报视频线」的完整可行性分析另立报告**：[《PPT 管线替代 hyperframes 可行性分析》](/posts/ppt-pipeline-vs-hyperframes-feasibility/)（结论：可替代但不切换，立项为备份产线；词级字幕可 ASS 后混补齐、出片走 WPS 放映+ffmpeg 录屏后混，不走 WPS 导出）。
+**动效进 PPT 的工程方案（2026-09-04 二追记，含日报风复刻实践）**：已完成日报视频风格的静态复刻（`_research/PPT转视频方案分享/AI日报视频风复刻_2026-09-03.pptx`，7 页 9:16，色板/版式元素从 hf-faceless 帧源逐 hex 换算）。动效层三条路：①**python-pptx timing XML 注入（全自动核心路，已验证可注入、WPS 可打开）**——PPT 动画=`<p:timing>` 树节点（presetClass entr/emph/exit+delay/dur），与视频动效映射：VO 逐词 reveal→进入 - 淡入（delay=词时间戳）、数据条生长→擦除 Wipe、落地脉冲→强调 - 缩放、帧转场→`<p:transition>`+`advTm`；**时序数据源现成**：`_video/hf-faceless/audio_meta.json` 的 `voices[frame].words[]`（词级秒）就是 GSAP 时间轴的时序源，advTm=帧 duration_s。②WPS 动画窗格手工加（一次性场景）。③动效后置回方案 D（对照项）。**旁白闭环**：每帧 TTS 音频现成（`assets/voice/NN.mp3`），插入每页 + 自动播放，WPS「输出为视频」导出即带旁白 + 动画、时序天然对齐。能力边界（诚实）：PPT 无 count-up 原生动画、无弹性 easing、无无限呼吸（advTm 到点即翻页）、逐词字幕动画节点量不可行（字幕后混走 ASS——见替代分析）；复杂 timing 序列在 WPS 放映的兼容性需先小样本人工验证再批量注入（已注入全量 63 动效版：`AI日报视频风复刻_动效版.pptx`）。**「PPT 管线替代日报视频线」的完整可行性分析另立报告**：[《PPT 管线替代 hyperframes 可行性分析》](/posts/ppt-pipeline-vs-hyperframes-feasibility/)（结论：可替代但不切换，立项为备份产线；词级字幕可 ASS 后混补齐、出片走 WPS 放映+ffmpeg 录屏后混，不走 WPS 导出）。
 
 **放映实测定案与全量注入要点（2026-09-04 三追记，推翻二追记「元素动画待人工验收」表述——放映实测已见分晓）**：
 
-1. **「withEffect+外层组 delay=0」自动序列在 WPS 放映不执行（实锤）**：放映+定时截屏+橙像素统计三连实测（T4=15.5s 与 T2=9.7s 画面恒定、statA「2.4」与数据条从头到尾常显）证明 WPS 放映引擎忽略该结构的元素动画——**但注意安全侧：忽略 timing 时元素保持常显（静态完整页），不会出现「元素被隐藏后不出现」的丢内容事故**。同场实测确认 **advTm 自动换片正常**（P1→P2 按时切换，橙像素 17233→9250）、**页内旁白 mp3 自动播放正常**（p:audio delay=0 节点生效）。结论：WPS 对 timing 的取舍 = 转场/换片/媒体节点认、mainSeq 内自动动画序列不认。修复方向（未试）：标准 clickEffect 结构改自动触发（afterEffect 链）、或动画节点移出 mainSeq 挂 tmRoot 独立 par——待下次实验。
+1. **「withEffect+ 外层组 delay=0」自动序列在 WPS 放映不执行（实锤）**：放映 + 定时截屏 + 橙像素统计三连实测（T4=15.5s 与 T2=9.7s 画面恒定、statA「2.4」与数据条从头到尾常显）证明 WPS 放映引擎忽略该结构的元素动画——**但注意安全侧：忽略 timing 时元素保持常显（静态完整页），不会出现「元素被隐藏后不出现」的丢内容事故**。同场实测确认 **advTm 自动换片正常**（P1→P2 按时切换，橙像素 17233→9250）、**页内旁白 mp3 自动播放正常**（p:audio delay=0 节点生效）。结论：WPS 对 timing 的取舍 = 转场/换片/媒体节点认、mainSeq 内自动动画序列不认。修复方向（未试）：标准 clickEffect 结构改自动触发（afterEffect 链）、或动画节点移出 mainSeq 挂 tmRoot 独立 par——待下次实验。
 2. **WPS COM 缺口清单再添两项**（与 CreateVideo/视频 SaveAs 并列，勿再踩）：`SlideShowSettings`（放映启动对象模型）不存在、`shape.TextFrame.TextRange`（文本读取）不存在——WPS COM 可用面基本只剩 Presentations/Open/Close/SaveAs(32=PDF)/Slides.Count。
 3. **放映启动与录屏实测方法（可复现）**：COM 放映死路后的替代=Open(WithWindow=True)+`WScript.Shell` AppActivate+SendKeys `{F5}` 启动放映（已跑通）；ffmpeg gdigrab `-i desktop` 抓的是**整个虚拟桌面**（本机 6400×2160 双屏拼接，放映区在右半屏）；画面变化检测用「特征色像素统计」（火橙 #FF6A2B 容差采样计数，跨时刻对比）比视觉模型便宜可靠。
-4. **全量注入的实现要点**（inject_full_timing.py，63 动效结构校验全过）：shape 定位三法——精确/包含文本匹配、填充色+尺寸特征（橙 OVAL=进度亮点、扁长橙矩形=数据条）、按 top 排序做同组 stagger（180ms）；词点解析=候选词顺序匹配 words[] 取 start，miss 则按帧时长比例 fallback；**坑：章号=条目号（P2 章号是 01）≠页码**，按页码拼「0%d」定位必 miss。
+4. **全量注入的实现要点**（inject_full_timing.py，63 动效结构校验全过）：shape 定位三法——精确/包含文本匹配、填充色 + 尺寸特征（橙 OVAL=进度亮点、扁长橙矩形=数据条）、按 top 排序做同组 stagger（180ms）；词点解析=候选词顺序匹配 words[] 取 start，miss 则按帧时长比例 fallback；**坑：章号=条目号（P2 章号是 01）≠页码**，按页码拼「0%d」定位必 miss。
 
 ## 八、信息源
 
-- 本机实测（2026-09-03）：ffmpeg/PyMuPDF/pywin32/python-pptx/soffice/pdftoppm/Office 存在性探测；`PowerPoint.Application` COM 进程归属（tasklist 实证 wpp.exe）；WPS COM 端到端验证——两页测试稿（自动动画+自动换片，`make_test_pptx.py`）→ `CreateVideo` 无产物实测（`wps_createvideo_test.py`）→ `SaveAs` 枚举 35-42 扫描与产物 magic 判读（`wps_sweep_test.py`，42 卡模态框后 taskkill 收尾）；测试件在 `%TEMP%\pptx_video_test\`。
-- 本机实测（2026-09-04）：WPS COM `SaveAs(32)` 转 PDF（11 页 deck，render_pdf.py）；MS 官方 PpSaveAsFileType 枚举对照与 WPS 官方 V13 二次开发文档查证（CreateVideo 全站零命中）；任意画幅造稿验证——9:16（7.5×13.333 英寸，144dpi 恰 1080×1920）与 10:21（7.5×15.75 英寸）均 pptxgenjs `defineLayout` 可造、python-pptx 读回精确命中（aspect_test.js）；deck 产物与 QA 过程见 §七；放映实测三连（F5+gdigrab+橙像素统计）与全量 timing 注入（inject_full_timing.py）见 §七三追记。
+- 本机实测（2026-09-03）：ffmpeg/PyMuPDF/pywin32/python-pptx/soffice/pdftoppm/Office 存在性探测；`PowerPoint.Application` COM 进程归属（tasklist 实证 wpp.exe）；WPS COM 端到端验证——两页测试稿（自动动画 + 自动换片，`make_test_pptx.py`）→ `CreateVideo` 无产物实测（`wps_createvideo_test.py`）→ `SaveAs` 枚举 35-42 扫描与产物 magic 判读（`wps_sweep_test.py`，42 卡模态框后 taskkill 收尾）；测试件在 `%TEMP%\pptx_video_test\`。
+- 本机实测（2026-09-04）：WPS COM `SaveAs(32)` 转 PDF（11 页 deck，render_pdf.py）；MS 官方 PpSaveAsFileType 枚举对照与 WPS 官方 V13 二次开发文档查证（CreateVideo 全站零命中）；任意画幅造稿验证——9:16（7.5×13.333 英寸，144dpi 恰 1080×1920）与 10:21（7.5×15.75 英寸）均 pptxgenjs `defineLayout` 可造、python-pptx 读回精确命中（aspect_test.js）；deck 产物与 QA 过程见 §七；放映实测三连（F5+gdigrab+ 橙像素统计）与全量 timing 注入（inject_full_timing.py）见 §七三追记。
 - 记忆层沉淀：视觉 QA 链路坑（CDN 内容去重/限流/judge 兜底）在 auto-memory `vision-qa-local-images-cdn-trick`；本机环境基线在 `local-office-render-baseline`。
 - Aspose.Slides 视频能力：官方文档与论坛（Python 版仅 GIF、.NET/C++ 逐帧+FFMpegCore）。
 - hyperframes slideshow SKILL.md（插件缓存 0.8.6）：输出形态与 render 禁令、TTS 保留字段、media 纪律。

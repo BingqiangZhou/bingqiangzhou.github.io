@@ -77,7 +77,7 @@ overview 顶部有个 notices 区，我抓到的三条原文（英文原文照�
 | dynsam | 83 | ctx_prompt/response_length | 81 + 81 |
 | train_infer_diff | 11 | env / perf / timing_s / training | 15 + 1 + 3 + 2 |
 
-这是什么概念？ DeepSeek 的技术报告里，你能看到的关键训练指标大概十几个；一个典型的 wandb 面板对外截图也就露几十个 tag。这里是一次性把**内部监控的整棵树**放出来——光 penalty（惩罚项）就有 535 个 tag，等于把他们防 reward hacking 的监控粒度直接摊开了。
+这是什么概念？DeepSeek 的技术报告里，你能看到的关键训练指标大概十几个；一个典型的 wandb 面板对外截图也就露几十个 tag。这里是一次性把**内部监控的整棵树**放出来——光 penalty（惩罚项）就有 535 个 tag，等于把他们防 reward hacking 的监控粒度直接摊开了。
 
 ![metrics 页签：左侧 2067 个训练指标 tag 的可搜索目录，支持按 step/时间、线性/对数轴与平滑度切换](/assets/images/2026/20260917/mimo-rl-metrics-tags.webp)
 
@@ -117,7 +117,7 @@ overview 里默认展示的十几个图表也够"内脏"了：`actor/pg_loss`、
 
 9 月 16 日，小米大模型团队负责人罗福莉（\@_LuoFuli，简介"Xiaomi MiMo, formerly DeepSeek"）发了官宣推文（单条，非线程，当天破百万浏览）：过去半年团队基本只研究了一件事——**RL 能扩展到多远（how far RL can scale）**，MiMo-V2.6 正在途中，细节会在未来几周开源。结合量子位对推文的长文解读，答案是一个三维度 Scaling 框架，而这三个维度恰好就是直播页三个区块的注脚：
 
-1. **训练计算量 Scaling**。每 step 约 20 亿 token，1,568 个 prompt × 每个 16 条 rollout（一轮 2.5 万+ 条轨迹），执行上采用 **Fully Async 完全异步**——生成、执行、评分、训练四个环节不排队，这正是 metrics 里 `partial/avg_staleness`（异步的代价：部分轨迹用的是落后一两步的权重）和 `timing_s/outer_gen`、`timing_s/trainer_ops`（耗时分解）存在的原因。
+1. **训练计算量 Scaling**。每 step 约 20 亿 token，1,568 个 prompt × 每个 16 条 rollout（一轮 2.5 万 + 条轨迹），执行上采用 **Fully Async 完全异步**——生成、执行、评分、训练四个环节不排队，这正是 metrics 里 `partial/avg_staleness`（异步的代价：部分轨迹用的是落后一两步的权重）和 `timing_s/outer_gen`、`timing_s/trainer_ops`（耗时分解）存在的原因。
 2. **环境 / Harness Scaling（Multi-task Agentic RL）**。代码、通用任务、视觉、Chat 混在同一次 RL run 里，不同任务接不同 harness——就是 batch composition 表格里 code/general/cyber/visual/chat 五类 25 个源的实时配比。直播页等于把这个维度做成了可视化展品。
 3. **评分计算量 Scaling（Grader Compute）**。给每条轨迹更细的学习信号——同一 prompt 的 16 条 rollout 在组内做 **Agentic In-group Credit Assignment**（组内信用分配），奖励信号结合测试用例与评分规则（test-case and rubric-based rewards）。算法细节推文说会随开源放出。
 

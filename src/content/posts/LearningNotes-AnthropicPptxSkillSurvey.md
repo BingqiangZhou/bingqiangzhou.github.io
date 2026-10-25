@@ -100,19 +100,19 @@ LICENSE.txt 为专有条款：使用由 Anthropic 消费者/商业服务条款�
 
 总体判断：Z.AI 版把原版「脚本承载的机械操作」换成了「指令承载的代码模板」（更适合无预装脚本的插件环境），删掉了现成色板与字体表，换上了中文创作场景必需的 CJK 与模板继承章节，并把视觉 QA 从「自己看」改为 judge 子代理单通道验收。两版的设计纪律（三明治结构、Avoid 清单、禁 accent 条、字号体系）高度同源，措辞与数值大量重合。
 
-## 五、对SelfMediaTools 项目的启示（启示记录，非裁定）
+## 五、对 SelfMediaTools 项目的启示（启示记录，非裁定）
 
-1. **渐进式披露同构**：原版三层加载（frontmatter 常驻 → SKILL.md 按需 → references 按需）与SelfMediaTools 项目 SKILL.md + references/ 分层已是同一架构，佐证现有做法。
-2. **确定性代码优先**：原版把易错操作全部脚本化（validate.py 抓真 PowerPoint 才报的图表损坏），与SelfMediaTools 项目 validate_pipeline_artifacts.py + 防复活断言同构；「能用脚本断言的不靠模型自觉」在两侧一致。
+1. **渐进式披露同构**：原版三层加载（frontmatter 常驻 → SKILL.md 按需 → references 按需）与 SelfMediaTools 项目 SKILL.md + references/ 分层已是同一架构，佐证现有做法。
+2. **确定性代码优先**：原版把易错操作全部脚本化（validate.py 抓真 PowerPoint 才报的图表损坏），与 SelfMediaTools 项目 validate_pipeline_artifacts.py + 防复活断言同构；「能用脚本断言的不靠模型自觉」在两侧一致。
 3. **QA 分层可借鉴**：内容层（markitdown 提取 + grep 占位符）/ 文件层（schema 校验）/ 视觉层（渲染出图）三段分离，且修复后全链重跑——比单一视觉检查便宜且可回归。
-4. **字数预算规则**：`budget = orig_len × 1.1` 作为可程序化验证的溢出防线，明确写着「别用每行字数公式过度工程，orig_len 上限已覆盖」——对SelfMediaTools 项目视频旁白/封面文字的字数带设计是同类思路。
+4. **字数预算规则**：`budget = orig_len × 1.1` 作为可程序化验证的溢出防线，明确写着「别用每行字数公式过度工程，orig_len 上限已覆盖」——对 SelfMediaTools 项目视频旁白/封面文字的字数带设计是同类思路。
 5. **渲染管线确定性**：soffice → PDF → pdftoppm 固定管线 + judge 式子代理逐页 JSON verdict（分类 + 证据、禁凭空像素值），与 ai-news-digest 视频线 QA agent 的形态一致，可对照其裁决格式。
 6. **生产 prompt 当资产发布**：Anthropic 把生产环境真实使用的 skill 以 source-available 形式公开作「复杂 skill 参考」，本身是 skill 工程的标杆样本（结构、坑清单粒度、QA 协议都值得按需取法）。
-7. **沙箱自足原则**：API 容器无网络、无运行时安装，技能必须自带一切——若SelfMediaTools 项目 skill 未来考虑跨环境分发，需按此约束设计。
+7. **沙箱自足原则**：API 容器无网络、无运行时安装，技能必须自带一切——若 SelfMediaTools 项目 skill 未来考虑跨环境分发，需按此约束设计。
 
 ## 六、信息源
 
-- 仓库：https://github.com/anthropics/skills （README、skills/pptx 目录、commits、LICENSE.txt、raw SKILL.md，2026-09-03 抓取）
+- 仓库：https://github.com/anthropics/skills（README、skills/pptx 目录、commits、LICENSE.txt、raw SKILL.md，2026-09-03 抓取）
 - 官方文档：https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
 - 官方新闻：https://www.anthropic.com/news/claude-sonnet-4-5
 - 工程博客：https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills

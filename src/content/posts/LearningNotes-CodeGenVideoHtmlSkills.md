@@ -35,7 +35,7 @@ abbrlink: code-gen-video-html-skills
 | awwwards-designer | 5-skill 流水线 + 动画预算分级 + 8 道质量门 | Awwwards 获奖级网站动效 |
 | Anthropic 官方四件 | PIL 逐帧 / p5.js 单文件 / Parcel 打包内联 | Slack GIF、生成艺术互动页、单文件 React 应用 |
 
-按你想要的**效果**倒推选型：要**数学/论文讲解片**选 Manim 系；要**批量数据个性化视频**选 Remotion 系；要**短视频流量形态**（聊天记录、卡拉OK字幕、Vox 地图）选 iart 对应包；要**网页质感的排版动效**选 HyperFrames / skill-canvas-video；要**照片级 3D** 只有 Blender 管线；要**获奖级网站**选 awwwards-designer；要**演示片**选 Slidev；要**终端演示**选 VHS。
+按你想要的**效果**倒推选型：要**数学/论文讲解片**选 Manim 系；要**批量数据个性化视频**选 Remotion 系；要**短视频流量形态**（聊天记录、卡拉 OK 字幕、Vox 地图）选 iart 对应包；要**网页质感的排版动效**选 HyperFrames / skill-canvas-video；要**照片级 3D** 只有 Blender 管线；要**获奖级网站**选 awwwards-designer；要**演示片**选 Slidev；要**终端演示**选 VHS。
 
 下面逐个展开，每条都记录两个维度：**怎么实现的**，以及**能做出什么样的东西**。
 
@@ -65,7 +65,7 @@ abbrlink: code-gen-video-html-skills
 
 **能做出的效果**（按包）：
 
-- **TikTok 包**（4 个）：竖屏 9:16 短视频——hook→留存→循环的短视频语法、前 3 秒钩子、pattern interrupts、片尾无缝循环；Hormozi 风格逐词卡拉OK字幕（当前词高亮放大）；零漂移的数字翻滚倒计时；模板化批量品牌名字条（lower-thirds）
+- **TikTok 包**（4 个）：竖屏 9:16 短视频——hook→留存→循环的短视频语法、前 3 秒钩子、pattern interrupts、片尾无缝循环；Hormozi 风格逐词卡拉 OK 字幕（当前词高亮放大）；零漂移的数字翻滚倒计时；模板化批量品牌名字条（lower-thirds）
 - **聊天记录包**：聊天剧本/CSV → 以假乱真的 iMessage/WhatsApp/SMS 对话视频——气泡逐条弹出、「打字中」三点脉动、发送音效、线程自动滚动、已读回执；一个模板配 CSV 无限量产
 - **地图包**：Vox 编辑部风格地图动画——从地球 zoom 到目标城市、路线逐段画线、图钉落下、区域高亮标注，连 Vox 标志性的「12fps 降帧抖动」做旧质感都能还原；要电影感走 Google Earth Studio→After Effects，要全自动走坐标数组驱动的 GeoJSON/SVG 矢量地图代码渲染成 MP4
 - **动效设计包**（9 个）：remotion-video（数据驱动批渲染，一行 CSV 一条 MP4）、logo 动画、动态背景（mesh 渐变、shader 极光、粒子星座）、节拍剪辑（cut to the beat）
@@ -104,7 +104,7 @@ abbrlink: code-gen-video-html-skills
 
 **实现方式**：双组件架构——Blender 插件（addon.py）在 Blender **内部**起一个 socket server（localhost:9876，JSON-over-TCP），MCP server（`uvx blender-mcp`）把 LLM 客户端的请求桥接进去。核心工具 `execute_blender_code` 可以在 Blender 里执行任意 Python（safe mode 下先校验脚本），还能获取场景信息、截取视口画面。内置「资产超市」：Poly Haven 的 HDRI/模型、Sketchfab、Poly Pizza 的 10,600+ 低模（下载时把 CC-BY 署名自动写进 .blend 自定义属性）、Hyper3D Rodin 和腾讯混元 3D 的文生 3D 模型；`export_scene` 可导出 GLB/FBX。
 
-**能做的效果**：真 3D 渲染动画——搭场景、打光、关键帧动画、Blender 引擎出片，可以现场生成 3D 模型塞进场景；导出的 GLB 接着喂 Three.js 网页，形成「3D 资产→视频+网页」双出口管线。
+**能做的效果**：真 3D 渲染动画——搭场景、打光、关键帧动画、Blender 引擎出片，可以现场生成 3D 模型塞进场景；导出的 GLB 接着喂 Three.js 网页，形成「3D 资产→视频 + 网页」双出口管线。
 
 ### 8. freshtechbro/claudedesignskills：最大的 3D/动效 skill 集合
 

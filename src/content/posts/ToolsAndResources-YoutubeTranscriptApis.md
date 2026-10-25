@@ -49,7 +49,7 @@ yt-dlp --write-auto-subs --skip-download --convert-subs srt \
 ```
 
 ```python
-# youtube-transcript-api：返回 [(文本, 开始秒, 持续秒), ...]
+# youtube-transcript-api：返回 [(文本，开始秒，持续秒), ...]
 from youtube_transcript_api import YouTubeTranscriptApi
 
 chunks = YouTubeTranscriptApi().fetch("dQw4w9WgXcQ", languages=["en"])

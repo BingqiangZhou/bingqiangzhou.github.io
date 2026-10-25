@@ -41,7 +41,7 @@ abbrlink: video-talkcraft-skill-deep-dive
 | `scripts/` | 时间戳、节拍 lint、卡片保真、画面健康、音效两查、QA 抽帧、人脸安全区等 | 11 个 |
 | `demos/_lib/sfx*` | 逐卡音效 cue 表 + WebAudio 合成引擎 + 内嵌真采样 | 78 张表 / 188 记 cue |
 
-78 张卡的类别分布：字幕花字 15、素材呈现 14、转场结构 12、强调标注 11、数据信息图 11、人物互动 7、运镜 8。来源分五批，taxonomy 里记得清清楚楚：23 张平台调研（B 站/YouTube/抖音/模板生态交叉去重）+ 8 张实战沉淀★ + 9 张真实视频挖掘◆（小Lin说 + TheAIScaler 的 13 段分析 208 条观察）+ 18 张 remocn 适配◇ + 20 张参考图复刻◈。
+78 张卡的类别分布：字幕花字 15、素材呈现 14、转场结构 12、强调标注 11、数据信息图 11、人物互动 7、运镜 8。来源分五批，taxonomy 里记得清清楚楚：23 张平台调研（B 站/YouTube/抖音/模板生态交叉去重）+ 8 张实战沉淀★ + 9 张真实视频挖掘◆（小 Lin 说 + TheAIScaler 的 13 段分析 208 条观察）+ 18 张 remocn 适配◇ + 20 张参考图复刻◈。
 
 **能做什么**，官方的输入输出分工表说得最清楚。你提供：口播稿、成品配音（任何 TTS 或真人录音都行）、可选人物素材（普通实拍即可，绿幕抠得最干净）、可选 B-roll 与截图。skill 负责：字级时间戳对齐逐句质检、SHOTBOOK 分镜（语义拍/层矩阵/排版预算）、Remotion 实现（四套全局系统/转场/音效落位）、渲染加三重验收循环直到全过、响度归一交付。适用题材它自己划了范围：知识科普、产品评测、新闻解读、观点锐评等口播解说类横屏视频，中文口播优先设计，中英混排完全支持。
 
@@ -130,7 +130,7 @@ abbrlink: video-talkcraft-skill-deep-dive
 - **人物素材有规格门槛**：绿幕 mp4 或 alpha WebM，帧率必须等于成片 fps，不满足要么换素材要么改成片 fps；
 - **方法论文档与卡片全中文**：英文 README 明说 toolkit 是 Chinese-narration-first（中英混排口播支持，agents read them natively），但对纯英文工作流的读者有阅读成本；
 - **默认后端要手动下 767MB 模型**（FireRedASR2-CTC），免下载的 whisper 备选尾部风险更高；
-- **单一维护者项目**：bus factor 1，[AI星球](https://www.aixq.cc/66055.html)的提醒（检索于 2026-09-01）；
+- **单一维护者项目**：bus factor 1，[AI 星球](https://www.aixq.cc/66055.html)的提醒（检索于 2026-09-01）；
 - **mock 禁令只约束有真实对应物的场景**：无真实页面的示意 UI 允许 mock，但要在 SHOTBOOK 标注「为何无真图」。
 
 ## 四、权衡层｜代价与取舍
@@ -152,7 +152,7 @@ abbrlink: video-talkcraft-skill-deep-dive
 - **系列内部**：与前作 video-shotcraft 共享判例式方法论、三层事实源、验收哲学，边界是题材（BPM 网格 vs 人声字锚）；两作许可已分化（Apache-2.0 vs PolyForm NC）；
 - **同类工具的位置**：HyperFrames 自研运行时、护城河在运行时与契约；talkcraft 站在 Remotion 上、护城河在方法论（这是我两篇拆下来的个人判断，不是公认结论）。与文生视频模型是不同赛道——确定性代码渲染 vs 生成式采样，前者可验收可复现，后者不可逐帧对齐人声；
 - **安装与分发生态**：Agent Skills 开放标准（Anthropic 2025-10 官方化、12 月推跨 agent 标准），vercel-labs 的 skills CLI 已是事实安装入口；
-- **社区反响**（检索于 2026-09-01）：中文圈 [AI星球 08-30 专题](https://www.aixq.cc/66055.html)主讲前作、对本作只有一段时点观察；[腾讯云 08-23 综述](https://cloud.tencent.com/developer/article/2658833)成文时本作刚创建一天未收录。英文圈 Hacker News 与 Reddit 检索不到本作专题（HN 检索中出现过一条易混淆的 Show HN「Agent skill for creating product launch videos with Remotion」，实为另一项目 memex-lab，勿混淆）。本作的传播还在中文圈起步阶段。
+- **社区反响**（检索于 2026-09-01）：中文圈 [AI 星球 08-30 专题](https://www.aixq.cc/66055.html)主讲前作、对本作只有一段时点观察；[腾讯云 08-23 综述](https://cloud.tencent.com/developer/article/2658833)成文时本作刚创建一天未收录。英文圈 Hacker News 与 Reddit 检索不到本作专题（HN 检索中出现过一条易混淆的 Show HN「Agent skill for creating product launch videos with Remotion」，实为另一项目 memex-lab，勿混淆）。本作的传播还在中文圈起步阶段。
 
 ## 六、动态层｜演进与趋势
 
@@ -167,7 +167,7 @@ abbrlink: video-talkcraft-skill-deep-dive
 
 值得注意的几条动态：
 
-- **热度还压在前作上**：AI星球 08-28 时点观察本作只有 2 star，到我 09-01 克隆时是三百多；前作现值 6900+。系列化是好事，流量分配还没跟上——这是单一来源的时点观察，不做增长叙事；
+- **热度还压在前作上**：AI 星球 08-28 时点观察本作只有 2 star，到我 09-01 克隆时是三百多；前作现值 6900+。系列化是好事，流量分配还没跟上——这是单一来源的时点观察，不做增长叙事；
 - **下一步方向已经挂出来**：那个唯一的 open issue 是作者本人 09-01 开的「剪映式动效工作台 v1（时间轨 + 属性面板 + 变速）」路线图——从「agent 读卡片」向「可视化工作台」延伸的信号；
 - **开发历史几乎不在 git 里，在规则里**：6 个 commit 沉淀着从 08-22 到 09-01 的几十条「定版」，每条带日期、带用户原话、常常带一次具体翻车的帧号级描述（「第四条评论只活 0.2 秒」）。README 自述全库由 AI 编码 agent 构建、迭代与验收，最新 commit 的 Co-Authored-By 也印证了这一点；
 - **与前作的节奏对比**：前作用六周走完「发布→卡片扩容→判例沉淀」，本作十天走完「发布→画廊→全量 tsx→QA 硬化」——方法论被系列复用后，收敛速度本身在加快。

@@ -20,7 +20,7 @@ abbrlink: hypit-deep-dive
 2. **渲染层不是自研**——源码证实它锁定 HeyGen 开源的 `@hyperframes/engine@0.7.101` + `@hyperframes/producer@0.7.101`，跑在 Chrome Headless Shell 152 里截帧、ffmpeg 封装；README 里的「64 个 headless Chromium 进程」是营销话术，代码实际按 CPU/内存自适应（约每 1.5GB 内存一个浏览器进程）；
 3. **许可是「改装版 Apache-2.0」**——自己用、给客户做片子可以商用；但多租户托管、商业转售、去 LOGO 都须书面授权，且官方保留随时收紧或放宽条款的单方权利（贡献代码前想清楚）；
 4. **真实成本结构是「模型便宜、Agent 贵」**——官方示例单条 20-30 秒视频模型费 $1.07-1.15；但第三方实测成本大头在 coding agent 本身：7 个任务把 $100 的 ChatGPT 套餐额度从 50% 用到 3%，一条 37 秒 1080p 视频耗费 1 小时 8 分钟 Agent 时间；
-5. **「Hypit 整合剪映」是讹传**——全仓库代码搜索 `jianying`/`capcut`/`剪映`/`draft_content` 零命中（唯一沾边的是示例视频里一张 CapCut 品牌 icon）；实际是社区把 Hypit（拆解+素材）与剪映草稿生成 skill（`jianying-headless`、`pyJianYingDraft` 等）拼装使用。
+5. **「Hypit 整合剪映」是讹传**——全仓库代码搜索 `jianying`/`capcut`/`剪映`/`draft_content` 零命中（唯一沾边的是示例视频里一张 CapCut 品牌 icon）；实际是社区把 Hypit（拆解 + 素材）与剪映草稿生成 skill（`jianying-headless`、`pyJianYingDraft` 等）拼装使用。
 
 ## 二、它是什么，以及怎么突然爆了
 

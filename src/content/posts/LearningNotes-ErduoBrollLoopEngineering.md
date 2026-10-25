@@ -6,7 +6,7 @@ tags: [学习笔记, Agent Skill]
 abbrlink: erduo-broll-loop-engineering
 ---
 
-调研对象：https://github.com/erduo1998-cell/erduo-broll-loop-engineering （2026-09-04 经 GitHub API 拉全量文件树 + 20 份关键源文件原样下载审读：主 SKILL.md、prompt-first-workflow.md、runtime-contract.md、broll-director 阶段契约、role-charters.json、SUPPORT-MATRIX.md、CHANGELOG 全 16 版、V1.0.0 设计与公开基准文档等，非仅 README；知乎导读文 zhuanlan.zhihu.com/p/2072239625503090280 辅助定位）。
+调研对象：https://github.com/erduo1998-cell/erduo-broll-loop-engineering（2026-09-04 经 GitHub API 拉全量文件树 + 20 份关键源文件原样下载审读：主 SKILL.md、prompt-first-workflow.md、runtime-contract.md、broll-director 阶段契约、role-charters.json、SUPPORT-MATRIX.md、CHANGELOG 全 16 版、V1.0.0 设计与公开基准文档等，非仅 README；知乎导读文 zhuanlan.zhihu.com/p/2072239625503090280 辅助定位）。
 
 ## 1 一句话定位
 
@@ -30,7 +30,7 @@ SRT 驱动、多 agent「剧组制」的 B-roll 精工生产 skill：给一份�
 | macOS + Codex | supported core | 唯一有 v1 端到端公开基准的环境 |
 | macOS + Claude Code | experimental | 契约受测试覆盖，缺同输入端到端对照（pending） |
 | **Windows** | **unverified** | 保留路径兼容设计，无真实运行证据；一键安装器本身是 macOS 脚本 |
-| HyperFrames 运行时 | v1.0.1 生产默认 | CLI 钉死 0.7.104、8 个官方核心 Skill 钉死 commit `c96b30c`；同输入 5 镜 canary 技术闭环+用户认可 |
+| HyperFrames 运行时 | v1.0.1 生产默认 | CLI 钉死 0.7.104、8 个官方核心 Skill 钉死 commit `c96b30c`；同输入 5 镜 canary 技术闭环 + 用户认可 |
 | Remotion 运行时 | 仅显式 opt-in / canary | 曾在同输入 run 技术全过但**视觉失败**，降级保留 |
 | 剪映/CapCut 桌面导入 | unverified | 交付按常见 MP4 设计，未实机认证 |
 
@@ -53,9 +53,9 @@ SRT 驱动、多 agent「剧组制」的 B-roll 精工生产 skill：给一份�
 ## 5 双后端路由与冻结媒体
 
 - **路由顺序是确定性的**：显式/既有项目强制 > 能力矩阵 native-only 分类 > 能力偏好 > 已选 patternRef 的后端参考证据 > portable 默认；语义关键词、目录名、agent 口味一律不参与。逐镜判定 `portable / native-hyperframes / native-remotion / interop / unsupported`。
-- **Hybrid 只走冻结媒体**：两后端间只交换经 SHA-256+FFprobe+完整解码验证的冻结媒体块，禁止运行时实时嵌套、源码互译或失败后静默换后端。
-- **三层编码策略**：逐镜冻结默认 H.264 `medium/CRF 12/yuv420p/固定 GOP 60`（4K FFV1 需显式理由升级）；preview 统一 1080p `veryfast/CRF 22` 低成本版；Master 从未变更的冻结镜头**重新编码** `medium/CRF 16`，禁止直接复制 preview 充当成片。preview 身份绑定 plan+叙事信封+视觉系统+全部镜头合同+媒体哈希，任一漂移即需重新审批。
-- **Remotion 授权边界处理得很谨慎**：安装器不全局安装 Remotion、不构成授权；每个项目在生产目录内显式 scaffold、精确锁版、生成 npm lock，同一生产目录内相同依赖身份共享一份工具链+固定双通道队列（v0.8.2 修掉过「多 unit 重复安装把磁盘/内存/CPU 放大」的缺陷）。
+- **Hybrid 只走冻结媒体**：两后端间只交换经 SHA-256+FFprobe+ 完整解码验证的冻结媒体块，禁止运行时实时嵌套、源码互译或失败后静默换后端。
+- **三层编码策略**：逐镜冻结默认 H.264 `medium/CRF 12/yuv420p/固定 GOP 60`（4K FFV1 需显式理由升级）；preview 统一 1080p `veryfast/CRF 22` 低成本版；Master 从未变更的冻结镜头**重新编码** `medium/CRF 16`，禁止直接复制 preview 充当成片。preview 身份绑定 plan+ 叙事信封 + 视觉系统 + 全部镜头合同 + 媒体哈希，任一漂移即需重新审批。
+- **Remotion 授权边界处理得很谨慎**：安装器不全局安装 Remotion、不构成授权；每个项目在生产目录内显式 scaffold、精确锁版、生成 npm lock，同一生产目录内相同依赖身份共享一份工具链 + 固定双通道队列（v0.8.2 修掉过「多 unit 重复安装把磁盘/内存/CPU 放大」的缺陷）。
 
 ## 6 Shotcraft：152 张镜头卡的渐进披露
 
@@ -66,7 +66,7 @@ SRT 驱动、多 agent「剧组制」的 B-roll 精工生产 skill：给一份�
 ## 7 工程纪律亮点（本项目最值得学的部分）
 
 1. **六格语义检查图**：每镜在 opening/preparation/action-a/action-b/result/settle 六个语义时刻各抽一帧成检查表；Chapter Builder 必须**真实打开**六格图和章节预览、修完低级错误才能交 `accepted|revised`——明确「lint/inspection/diagnostics 通过不能代替看片」。同时 v1.0.1 反向瘦身：生产源码里禁止再出现 inspection.tsx、DOM trace、自建取证工具，机械证据全部收归 Parent。
-2. **canary 硬门**：全片生产前强制先做 5 镜金丝雀，8 项硬条件（5/5 直出+完整解码、Builder 观看回执、0 类缺陷、≥3 构图族、≥2 镜真实/生成素材、≥2 种 signature motion、用户 ≥3/5 选择、首版 ≤45 分钟）。用户未选择前**禁止跑完整长片**——防沉没成本写进了合同。
+2. **canary 硬门**：全片生产前强制先做 5 镜金丝雀，8 项硬条件（5/5 直出 + 完整解码、Builder 观看回执、0 类缺陷、≥3 构图族、≥2 镜真实/生成素材、≥2 种 signature motion、用户 ≥3/5 选择、首版 ≤45 分钟）。用户未选择前**禁止跑完整长片**——防沉没成本写进了合同。
 3. **上下文预算工程化**：v0.8.0 把父级默认预载的 11 份 reference 改按需加载，用确定性字节代理做回归（`measure-context.mjs`），父默认 prompt 载入量减 95.89%、三条后端路线均减约 80%；配套 docs 里冻结测量基线。
 4. **诚实证据文化**：公开基准主动列「未达标项」（首 preview 242 分钟 vs 120 分钟目标、Lead 62.9 分钟 vs 45 分钟目标）；用户没看片就把 visual lock 如实记 `skipped`，不写成 approved；「技术验证不得宣称审美通过」是贯穿全文档的红线。
 5. **数据对比的口径自觉**：基准报告里磁盘占用与逻辑文件大小分列、新旧对比声明「不能拿逻辑大小对 du 值算百分比」；Token 不可得时记 unknown 不估算。
@@ -84,24 +84,24 @@ v1.0.0 公开基准（Codex，179.866 秒 / 124 条 cue 的 SRT，4K/30fps 静�
 | 3 名 production Builders | 88.14 分钟 | — |
 | 产物 | 213 文件 / 磁盘 160MB | ≤2000 文件、≤1GB 过 |
 
-对照旧 v0.9.2 redo（磁盘 25GB、33088 文件、5191 张 PNG）：磁盘与文件数均减约 99.36%。v1.0.1 用同一 SRT 完成 HyperFrames 5 镜 canary（4K 直出+完整解码+用户盲测认可），用户认可后要求停止剩余 14 镜直接发布——因未做逐镜 3/5 结构化选择，full-production gate 如实保持关闭。旧 Remotion 同输入 run 耗时 203/54/63 分钟且视觉失败，成为 v1.0.1 创作闭环重置的依据。
+对照旧 v0.9.2 redo（磁盘 25GB、33088 文件、5191 张 PNG）：磁盘与文件数均减约 99.36%。v1.0.1 用同一 SRT 完成 HyperFrames 5 镜 canary（4K 直出 + 完整解码 + 用户盲测认可），用户认可后要求停止剩余 14 镜直接发布——因未做逐镜 3/5 结构化选择，full-production gate 如实保持关闭。旧 Remotion 同输入 run 耗时 203/54/63 分钟且视觉失败，成为 v1.0.1 创作闭环重置的依据。
 
 结论口径：**约 3 分钟的片子，端到端以小时计（首版 4 小时量级）**。这是「单部精工 B-roll」的定位，不是批量流水线。
 
-## 9 与SelfMediaTools 项目的对照（只观察，不建议引入）
+## 9 与 SelfMediaTools 项目的对照（只观察，不建议引入）
 
-**相关性**：输入端「SRT 锚定」与SelfMediaTools 项目 whisper-transcribe 的词级 captions JSON 天然同构（转 SRT 即可喂）；它也是 hyperframes 生态目前见到最重的工程化用法（CLI+官方 skill 双钉死、staging 隔离安装、事务切换），与 a2v 线的 faceless-explainer 直调插件版是同目标（防官方源漂移）的两种实现。
+**相关性**：输入端「SRT 锚定」与 SelfMediaTools 项目 whisper-transcribe 的词级 captions JSON 天然同构（转 SRT 即可喂）；它也是 hyperframes 生态目前见到最重的工程化用法（CLI+ 官方 skill 双钉死、staging 隔离安装、事务切换），与 a2v 线的 faceless-explainer 直调插件版是同目标（防官方源漂移）的两种实现。
 
-**不建议在本机采用的四条硬理由**：① Windows 明确 unverified，安装器是 macOS 脚本；② Claude Code 仅 experimental（同输入对照 pending）；③ 耗时数量级与SelfMediaTools 项目日更线完全不匹配（ai-news FES 线端到端 7.5 分钟 vs 它 3 分钟片 4 小时，差约 30 倍，定位不同）；④ 其 stages/*/agents/openai.yaml 形态与SelfMediaTools 项目「agents/ 是子 agent 契约、勿写 openai.yaml」的铁律相反。
+**不建议在本机采用的四条硬理由**：① Windows 明确 unverified，安装器是 macOS 脚本；② Claude Code 仅 experimental（同输入对照 pending）；③ 耗时数量级与 SelfMediaTools 项目日更线完全不匹配（ai-news FES 线端到端 7.5 分钟 vs 它 3 分钟片 4 小时，差约 30 倍，定位不同）；④ 其 stages/*/agents/openai.yaml 形态与 SelfMediaTools 项目「agents/ 是子 agent 契约、勿写 openai.yaml」的铁律相反。
 
-**零依赖可借鉴的思想清单**（按对SelfMediaTools 项目价值排序）：
+**零依赖可借鉴的思想清单**（按对 SelfMediaTools 项目价值排序）：
 
-1. **六格语义时刻抽帧取证**：比「整页截图」更贴近成片语义验收的粒度——每镜在 opening/转折/结果/收束时刻各抽一帧。SelfMediaTools 项目 qa_deck.js 目前是 DOM 断言+逐页全量截图，若未来要加「画面语义层」机器门，这是现成的帧采样设计（与 FES 词锚 cue 的时刻定义天然可对齐）。
-2. **canary 硬门的「用户未选前禁止跑全片」**：与SelfMediaTools 项目「设计候选必须用户裁定」记忆同构，但它把沉没成本防线写成了 8 条可判定的硬条件——后续若做重型媒体改造（如封面/视频大改版）可套用这个门形态。
-3. **truth / creativeProposal 两层分离**：与SelfMediaTools 项目「deck-spec=帧规划+内容数据二合一」同思路的镜头级版本；其价值在「Builder 可整体替换创意方案而不碰事实层」，若 a2v 线未来出现「分镜创意返修不动字幕/时长」的需求，这是参考契约。
-4. **三层编码与身份绑定**：preview（低成本）与成片（从冻结镜头重编码、不复制 preview）分离+哈希身份绑定。SelfMediaTools 项目 assemble_fes_video 是单层 concat+转码，日更线没必要分层，但「预览审批的产物身份」思想在批量线做「重跑不吞已验收段」时可参考（与 ADR-034 统一音频的 clip 复用协议目标一致）。
-5. **上下文字节代理回归**：与SelfMediaTools 项目「ZCode 上下文膨胀诊断」的关切相同，它是可复现的工程化做法（确定性脚本+冻结基线+CI 回归）。
-6. **支持矩阵与基准的诚实证据写法**：每行带证据边界、未达标项公开、用户未看片不记 approved——与SelfMediaTools 项目 TR/ADR 纪律同构，其 SUPPORT-MATRIX 的表格形态可直接抄用于未来对外发布的多环境工具说明。
+1. **六格语义时刻抽帧取证**：比「整页截图」更贴近成片语义验收的粒度——每镜在 opening/转折/结果/收束时刻各抽一帧。SelfMediaTools 项目 qa_deck.js 目前是 DOM 断言 + 逐页全量截图，若未来要加「画面语义层」机器门，这是现成的帧采样设计（与 FES 词锚 cue 的时刻定义天然可对齐）。
+2. **canary 硬门的「用户未选前禁止跑全片」**：与 SelfMediaTools 项目「设计候选必须用户裁定」记忆同构，但它把沉没成本防线写成了 8 条可判定的硬条件——后续若做重型媒体改造（如封面/视频大改版）可套用这个门形态。
+3. **truth / creativeProposal 两层分离**：与 SelfMediaTools 项目「deck-spec=帧规划 + 内容数据二合一」同思路的镜头级版本；其价值在「Builder 可整体替换创意方案而不碰事实层」，若 a2v 线未来出现「分镜创意返修不动字幕/时长」的需求，这是参考契约。
+4. **三层编码与身份绑定**：preview（低成本）与成片（从冻结镜头重编码、不复制 preview）分离 + 哈希身份绑定。SelfMediaTools 项目 assemble_fes_video 是单层 concat+ 转码，日更线没必要分层，但「预览审批的产物身份」思想在批量线做「重跑不吞已验收段」时可参考（与 ADR-034 统一音频的 clip 复用协议目标一致）。
+5. **上下文字节代理回归**：与 SelfMediaTools 项目「ZCode 上下文膨胀诊断」的关切相同，它是可复现的工程化做法（确定性脚本 + 冻结基线+CI 回归）。
+6. **支持矩阵与基准的诚实证据写法**：每行带证据边界、未达标项公开、用户未看片不记 approved——与 SelfMediaTools 项目 TR/ADR 纪律同构，其 SUPPORT-MATRIX 的表格形态可直接抄用于未来对外发布的多环境工具说明。
 
 ## 10 信源
 

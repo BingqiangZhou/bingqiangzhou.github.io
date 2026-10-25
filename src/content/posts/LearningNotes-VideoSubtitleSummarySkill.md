@@ -6,7 +6,7 @@ tags: [学习笔记, Claude Code, Agent Skill, Agent]
 abbrlink: video-subtitle-summary-skill
 ---
 
-之前拆过 ZCode 官方的 [video-agent-kit](/posts/zcode-video-agent-kit/)（用 Agent **做视频**），这次换个方向，拆一个用 Agent**看懂视频**的 skill：[video-to-subtitle-summary-skill](https://github.com/imlewc/video-to-subtitle-summary-skill)。它做的事情一句话就能说清——丢给它一个抖音/小红书/B站/YouTube 链接或者本地音视频文件，它把视频变成 `subtitle.srt` + `text.txt`，再给你一份 AI 总结（标题、摘要、要点）。
+之前拆过 ZCode 官方的 [video-agent-kit](/posts/zcode-video-agent-kit/)（用 Agent **做视频**），这次换个方向，拆一个用 Agent**看懂视频**的 skill：[video-to-subtitle-summary-skill](https://github.com/imlewc/video-to-subtitle-summary-skill)。它做的事情一句话就能说清——丢给它一个抖音/小红书/B 站/YouTube 链接或者本地音视频文件，它把视频变成 `subtitle.srt` + `text.txt`，再给你一份 AI 总结（标题、摘要、要点）。
 
 仓库不大：MIT 协议，作者 imlewc，2026-09-14 查看时 196 star / 19 fork，2026-02-19 第一次提交到 2026-07-19 最后一次提交共 18 个 commit。但完成度相当高——README、英文 README、四份配置教程、五个脚本、五个一一对应的测试文件，还有一个意外收获：`docs/plans/` 目录里留了一份完整的商业化改造计划，把作者自己的生意讲得明明白白（后面细说）。
 
@@ -44,7 +44,7 @@ SKILL.md 的 frontmatter 也很讲究：`description` 字段把触发条件写�
 
 步骤 0 做模式判定，逻辑是纯域名/扩展名匹配：
 
-- **在线视频模式**：`douyin.com`/`tiktok.com` → 抖音系；`xiaohongshu.com`/`xhslink.com` → 小红书；`bilibili.com`/`b23.tv` → B站；`youtube.com`/`youtu.be` → YouTube
+- **在线视频模式**：`douyin.com`/`tiktok.com` → 抖音系；`xiaohongshu.com`/`xhslink.com` → 小红书；`bilibili.com`/`b23.tv` → B 站；`youtube.com`/`youtu.be` → YouTube
 - **本地文件模式**：视频扩展名（`.mp4/.mov/.mkv` 等）从步骤 3（提音频）开始；音频扩展名（`.mp3/.wav/.m4a` 等）直接跳到步骤 4（转写），连 ffmpeg 都不需要
 
 步骤 0.5 和 0.6 是整份手册里最有「工程味」的部分。配置读取实现得很务实——优先读 skill 目录下的 `.env` 文件（`grep + cut + tr` 三件套），没有 `.env` 再回落到进程环境变量，两种方式用户任选：
@@ -66,7 +66,7 @@ read_env() {
 
 ## 功能二：视频解析——AI Douyin 默认、TikHub 可选
 
-抖音/小红书/B站的视频没有公开直链，需要第三方解析服务把分享链接换成可下载的 mp4 地址。skill 用 `VIDEO_INFO_PROVIDER` 环境变量在两个供应商之间切换。
+抖音/小红书/B 站的视频没有公开直链，需要第三方解析服务把分享链接换成可下载的 mp4 地址。skill 用 `VIDEO_INFO_PROVIDER` 环境变量在两个供应商之间切换。
 
 **默认方案 AI Douyin**（`https://top9.cc`）：一个 POST 搞定——
 
@@ -79,7 +79,7 @@ curl -sS -X POST "https://top9.cc/api/v1/video/download-url" \
 
 返回体里有四个关键字段：`download_url`（首选直链）、`download_urls`（候选列表）、`extracted_url`（标准化后的原始链接）、`cost`（本次扣的积分）。计费语义明确：**成功解析出直链扣 1 积分，失败不扣**；余额不足返回 HTTP 402（`insufficient balance`），Key 无效返回 401。SKILL.md 对这两个状态码各有专门的错误提示文案。代码还兼容用户把 `AI_DOUYIN_API_BASE` 配成带或不带 `/api/v1` 后缀的两种写法。
 
-**可选方案 TikHub**：用用户自己的 Token 直连 TikHub 的三个平台接口（抖音 `hybrid/video_data`、小红书 `get_note_info_v7`、B站 `fetch_one_video_v3`），用 jq 从响应里提字段，抖音优先取无水印地址（`nwm_video_url`）。B站如果解析不到直链，还有一层兜底：直接用 yt-dlp 下载。
+**可选方案 TikHub**：用用户自己的 Token 直连 TikHub 的三个平台接口（抖音 `hybrid/video_data`、小红书 `get_note_info_v7`、B 站 `fetch_one_video_v3`），用 jq 从响应里提字段，抖音优先取无水印地址（`nwm_video_url`）。B 站如果解析不到直链，还有一层兜底：直接用 yt-dlp 下载。
 
 注意架构上的不对称：**YouTube 完全不走解析代理**，直接进字幕直抓流程，零 API 费用。这是整条链路里最省钱的一条分支。
 
@@ -92,7 +92,7 @@ curl -sS -X POST "https://top9.cc/api/v1/video/download-url" \
 3. 某个候选失败就删掉 `.part` 换下一个，每个失败原因都记下来；
 4. 全军覆没时抛出聚合错误（`all download URL candidates failed: 1: timeout; 2: HTTP 403...`），成功时输出 JSON，标注选中了第几个候选、来自哪个域名。
 
-错误信息的组织方式是为 Agent 设计的：Agent 拿到聚合错误可以直接转述给用户，拿到 JSON 可以继续走下一步。日志里打印的是 `Trying candidate 1: aweme.snssdk.com.mp4` 这种「域名+扩展名」缩写而不是完整带签名参数的 URL，避免了长直链刷屏和 token 泄露到上下文。
+错误信息的组织方式是为 Agent 设计的：Agent 拿到聚合错误可以直接转述给用户，拿到 JSON 可以继续走下一步。日志里打印的是 `Trying candidate 1: aweme.snssdk.com.mp4` 这种「域名 + 扩展名」缩写而不是完整带签名参数的 URL，避免了长直链刷屏和 token 泄露到上下文。
 
 ## 功能四：YouTube 字幕直抓
 
@@ -135,7 +135,7 @@ yt-dlp --ignore-config --skip-download \
 
 ## 功能七：云端转写火山引擎 VC
 
-`ASR_BACKEND=volcengine` 是可选的云端后端，用字节跳动的音视频字幕生成（VC）服务。这个功能没有独立脚本，直接以 curl + 轮询的形式写在 SKILL.md 里，是个典型的「提交-查询」异步任务模式：
+`ASR_BACKEND=volcengine` 是可选的云端后端，用字节跳动的音视频字幕生成（VC）服务。这个功能没有独立脚本，直接以 curl + 轮询的形式写在 SKILL.md 里，是个典型的「提交 - 查询」异步任务模式：
 
 1. **提交**：`POST /api/v1/vc/submit`，音频文件整个作为 `audio/mpeg` 请求体 binary 上传，URL 参数里带 `language=zh-CN`、`words_per_line=20`、`max_lines=2`（按行断句参数，输出的字幕每行不超过 20 字、最多 2 行）；
 2. **轮询**：拿返回的 task id 反复 `GET /api/v1/vc/query`；
@@ -153,7 +153,7 @@ yt-dlp --ignore-config --skip-download \
 
 整条流水线的最后一步没有调用任何第三方总结 API——**总结就是主 Agent 的工作本身**。SKILL.md 给出了一段推荐的提示词模板，三个设计点值得注意：
 
-1. **喂足上下文**：原视频标题（各平台字段优先级不同——抖音取 `desc`、小红书和B站取 `title`）、来源平台、作者，和转写正文一起给；
+1. **喂足上下文**：原视频标题（各平台字段优先级不同——抖音取 `desc`、小红书和 B 站取 `title`）、来源平台、作者，和转写正文一起给；
 2. **明确误差来源**：模板里直说「正文可能来自平台字幕、自动字幕或语音识别，可能存在同音字、断句、专有名词错误」，授权模型在不改变原意的前提下结合标题做适度修正——这是对 ASR 后文本做总结的正确姿势；
 3. **格式契约**：AI 标题不超过 30 字（「不要机械照抄原标题」）、摘要 200-300 字、要点 3-5 条结构化列表，外加一个固定的 Markdown 输出模板（视频信息表格 + 三个小节 + 生成文件清单）。
 
@@ -188,7 +188,7 @@ yt-dlp --ignore-config --skip-download \
 **使用前要想清楚的**：
 
 - SKILL.md 的执行链是 bash 中心的（`grep/cut/tr` 读配置、`/tmp/video_analysis` 工作目录），Windows 原生环境基本得靠 Git Bash 或 WSL，五个 Python 脚本本身反而兼容 win32。
-- B站明明有官方 CC 字幕接口可以直抓，这里却走「解析直链 → 下载视频 → ffmpeg 提音频 → Whisper」的重路径（还要扣 1 积分），是全链路里性价比最低的一条分支。
+- B 站明明有官方 CC 字幕接口可以直抓，这里却走「解析直链 → 下载视频 → ffmpeg 提音频 → Whisper」的重路径（还要扣 1 积分），是全链路里性价比最低的一条分支。
 - 默认 provider 指向作者自营服务这一点，见上一节；介意的话配 TikHub 或者只用 YouTube/本地文件分支。
 - SKILL.md 明说不适用于实时语音识别和直播字幕——它是纯离线批处理流水线。
 - `/tmp/video_analysis/` 下的视频、音频、字幕没有清理策略，用多了会默默吃磁盘。

@@ -217,7 +217,7 @@ rollout 记录长这样（节选，去掉了响应正文和 headers）：
 #!/usr/bin/env python3
 """zcode_tps.py — ZCode 实时 token 速度计（旁路读取 rollout 落盘记录，不侵入 ZCode）
 
-用法：python zcode_tps.py [--dir <rollout目录>]
+用法：python zcode_tps.py [--dir <rollout 目录>]
 默认 rollout 目录：~/.zcode/cli/rollout
 """
 import argparse
@@ -260,7 +260,7 @@ def main():
     args = ap.parse_args()
 
     if not os.path.isdir(args.dir):
-        print(f"rollout 目录不存在: {args.dir}", file=sys.stderr)
+        print(f"rollout 目录不存在：{args.dir}", file=sys.stderr)
         sys.exit(1)
     print(f"watching {args.dir}  (Ctrl+C 退出，只显示启动之后的新请求)", flush=True)
 
@@ -322,7 +322,7 @@ watching ~/.zcode/cli/rollout  (Ctrl+C 退出，只显示启动之后的新请�
 
 1. hook 配置写入 `~/.zcode/cli/config.json`（先备份原文件）；
 2. `Ctrl+N` 新开会话——hooks 配置在会话启动时快照，老会话不生效，新会话正好是干净的测试环境；
-3. 问「1+1等于几？只回答数字」→ 回答「2」（界面显示 Worked for 3s）；再问「3+3等于几」→「6」（Worked for 2s）。
+3. 问「1+1 等于几？只回答数字」→ 回答「2」（界面显示 Worked for 3s）；再问「3+3 等于几」→「6」（Worked for 2s）。
 
 证据分三层看：
 

@@ -12,7 +12,7 @@ abbrlink: videotranscriptapi-deep-dive
 
 ## 一、太长不看
 
-**VideoTranscriptAPI** 是一个基于 Python 3.11 + FastAPI 的异步音视频转录服务：输入 YouTube / B站 / 抖音 / 小红书 / 微信视频号 / X(Twitter) / 小宇宙 / Apple Podcast 的链接，自动完成「下载 → 双引擎 ASR → LLM 校对/说话人推断/章节/总结/精读笔记 → Web 页面、文件导出与企微/飞书通知」。
+**VideoTranscriptAPI** 是一个基于 Python 3.11 + FastAPI 的异步音视频转录服务：输入 YouTube / B 站 / 抖音 / 小红书 / 微信视频号 / X(Twitter) / 小宇宙 / Apple Podcast 的链接，自动完成「下载 → 双引擎 ASR → LLM 校对/说话人推断/章节/总结/精读笔记 → Web 页面、文件导出与企微/飞书通知」。
 
 整个系统最值得带走的四件事：
 
@@ -84,7 +84,7 @@ flowchart TD
 **6. LLM 流水线**。按序执行五层，每层产物和状态（generated / skipped_short / failed / disabled）分开落盘：
 
 - **校对**：文本按行编号喂给 LLM，LLM 只许回传 `{id, text}` 修正项，本地按 id 合并——条数、说话人、时间戳永远不会被模型改坏；专有名词从术语库注入提示词；
-- **说话人推断**：从上下文把「说话人1」推断成真实称呼；
+- **说话人推断**：从上下文把「说话人 1」推断成真实称呼；
 - **总结 + 关键信息抽取**；**章节划分**（带时间轴）；**精读笔记**。
 
 全程三道护栏：token 用量 fail-open 记账（记账失败绝不拖垮主任务）、敏感词风控自动切换降级模型、提示词模板统一收在 `llm/prompts/`。
@@ -105,7 +105,7 @@ flowchart TD
 
 | 模式 | 候选队列 |
 |---|---|
-| off（旧路径） | 抖音 → B站 → 小红书 → YouTube → 小宇宙 → Apple Podcast |
+| off（旧路径） | 抖音 → B 站 → 小红书 → YouTube → 小宇宙 → Apple Podcast |
 | on（迁移路径） | MediaResolver 排最前（接管抖音/小红书/视频号/X），旧抖音/小红书下载器**干脆不实例化** |
 
 **第三步**，线性扫描，第一个认领该 URL 的下载器胜出；全军覆没就返回 `GenericDownloader()` 兜底——它的 `can_handle` 恒为 `True`。
@@ -135,7 +135,7 @@ flowchart TD
 2. 配置了自建 `youtube_api_server` 时走任务式 API（`POST /api/v1/tasks` 创建 → 轮询 → 返回视频信息 + 字幕 SRT 或音频直链），且**启用后不降级**——注释说明配了它就说明本机跑不通 yt-dlp，是给服务器部署用的；
 3. 都不行才用 **yt-dlp**。
 
-### B站：官方 API 为主，BBDown 二进制兜底
+### B 站：官方 API 为主，BBDown 二进制兜底
 
 主路径直接调 B 站官方 web API（不登录），但先造一个随机 `buvid3` 指纹 cookie。注释写得很直白（`bilibili.py:37-43`）：「B 站对完全无 cookie 的服务器 IP 风控最严，附带一个随机指纹即可显著降低被 -412/-799 拦截的概率，且无需真实账号、零维护」。官方 API 失败则调外部 **BBDown** 可执行文件（按系统选 exe/Mac/Linux 版本），带 `-p 页码 --skip-subtitle --skip-cover --skip-ai` 参数，300 秒超时预算、空闲 60 秒判死。
 
@@ -168,7 +168,7 @@ flowchart TD
 | 档位 | 服务 | 用于 |
 |---|---|---|
 | 官方公开 API | iTunes lookup | Apple Podcast |
-| 开源库/本地工具 | youtube-transcript-api、yt-dlp、BBDown | YouTube 首选/兜底、B站兜底 |
+| 开源库/本地工具 | youtube-transcript-api、yt-dlp、BBDown | YouTube 首选/兜底、B 站兜底 |
 | 付费 SaaS | TikHub（主备 key） | 抖音、小红书（旧路径） |
 | 自建解析服务 | MediaResolverAPI（内部再套 TikHub + Cobalt 兜底）、YouTube API Server | 视频号/X、抖音/小红书新路径、YouTube 服务器部署 |
 
@@ -237,7 +237,7 @@ skill/
 
 ### evals：连「别多手」都测
 
-`evals/evals.json` 里 6 个用例，每个是「模拟用户 prompt + 期望的 agent 行为」：B站单人视频（不加 `--speaker`、先发链接、不暴露 task_id）、小宇宙多人对谈（主动加 `--speaker`）、历史关键词查询（**不误触 submit**）、本地 mp3（**拒绝**并解释要先放到公网 URL）、B站转录（URL 原样复制**不许重写**）、YouTube 总结（主动轮询，「不要让用户主动来问进度」）。
+`evals/evals.json` 里 6 个用例，每个是「模拟用户 prompt + 期望的 agent 行为」：B 站单人视频（不加 `--speaker`、先发链接、不暴露 task_id）、小宇宙多人对谈（主动加 `--speaker`）、历史关键词查询（**不误触 submit**）、本地 mp3（**拒绝**并解释要先放到公网 URL）、B 站转录（URL 原样复制**不许重写**）、YouTube 总结（主动轮询，「不要让用户主动来问进度」）。
 
 注意后三个全是负面/纪律类用例——测「别多手」「守边界」「不重写」。改完 prompt 跑一遍 evals 就知道有没有回归，这是把 prompt 当代码管的做法。
 

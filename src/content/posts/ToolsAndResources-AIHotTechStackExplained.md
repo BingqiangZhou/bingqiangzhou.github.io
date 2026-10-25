@@ -80,7 +80,7 @@ AIHOT 的用法见[总览篇第三节](/posts/aihot-framework-deep-dive/)的定�
                                                         │ pg-boss  │
                                                         │ 队列+cron │
                                                         └──────────┘
-   setup（一次性容器：跑数据库迁移+种子数据后退出）
+   setup（一次性容器：跑数据库迁移 + 种子数据后退出）
 ```
 
 - **db**：Postgres 17，数据在它的卷里；

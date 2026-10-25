@@ -6,7 +6,7 @@ tags: [学习笔记, Agent Skill]
 abbrlink: frontend-slides-skill-survey
 ---
 
-调研对象：https://github.com/zarazhangrui/frontend-slides （2026-09-04 全量浅克隆审读，非仅 README）
+调研对象：https://github.com/zarazhangrui/frontend-slides（2026-09-04 全量浅克隆审读，非仅 README）
 
 ## 1 一句话定位
 
@@ -96,7 +96,7 @@ abbrlink: frontend-slides-skill-survey
 - **作者 2026-06-23 后静默**约 2.5 个月（截至本报告克隆时点），30 commits 的仓库，单作者维护。
 - **依赖模型品位**：12 预设 + 34 模板是对 LLM 审美收敛的对冲，但 wildcard 自由设计路径的本质仍是模型自我表达，质量方差存在——它的解法是用预览让用户当裁判，而不是相信单次生成。
 
-## 9 与SelfMediaTools 项目调研线的对照
+## 9 与 SelfMediaTools 项目调研线的对照
 
 SelfMediaTools 项目已完成两轮 PPT 调研（[Anthropic PPTX skill](/posts/anthropic-pptx-skill-survey/)、[PPT→视频方案与 HyperFrames 对比](/posts/ppt-to-video-vs-hyperframes/)），frontend-slides 补上了幻灯片技术版图的第三条路线：
 
@@ -106,18 +106,18 @@ SelfMediaTools 项目已完成两轮 PPT 调研（[Anthropic PPTX skill](/posts/
 | HTML 交互演示 | **frontend-slides** | 单 .html | 浏览器翻页放映，人在场驱动 |
 | HTML 时间轴视频 | HyperFrames | .mp4 | 无人值守确定性渲染 |
 
-frontend-slides 与 HyperFrames 同为 HTML 技术栈但目的正交：前者解决「人面对观众翻页」，后者解决「渲染成视频分发」。frontend-slides 的固定舞台是 1920×1080 横版整体缩放，与 HyperFrames 竖版 1080×1920 序列恰成镜像；两者对「确定性 / 不重排」的执念同源。对SelfMediaTools 项目「PPT→视频」线的含义：若未来做横版讲演型 deck 且需要人在场放映，frontend-slides 是现成答案；若终点仍是视频，此前结论（直接 HyperFrames，勿经 PPT 中转）不变——frontend-slides 没有渲染 MP4 的通道。
+frontend-slides 与 HyperFrames 同为 HTML 技术栈但目的正交：前者解决「人面对观众翻页」，后者解决「渲染成视频分发」。frontend-slides 的固定舞台是 1920×1080 横版整体缩放，与 HyperFrames 竖版 1080×1920 序列恰成镜像；两者对「确定性 / 不重排」的执念同源。对 SelfMediaTools 项目「PPT→视频」线的含义：若未来做横版讲演型 deck 且需要人在场放映，frontend-slides 是现成答案；若终点仍是视频，此前结论（直接 HyperFrames，勿经 PPT 中转）不变——frontend-slides 没有渲染 MP4 的通道。
 
 以下 5 点是可借鉴的 skill 工程模式（列事实供裁定，未裁定采纳）：
 
-1. **show, don't tell 三预览流**——审美问题用 3 个成品候选让用户挑，与SelfMediaTools 项目「设计候选必须用户裁定（3-5 成品等选）」的既定工作方式同构，且它把「何时该克制 / 何时该冒险」的配比规则写成了文。
+1. **show, don't tell 三预览流**——审美问题用 3 个成品候选让用户挑，与 SelfMediaTools 项目「设计候选必须用户裁定（3-5 成品等选）」的既定工作方式同构，且它把「何时该克制 / 何时该冒险」的配比规则写成了文。
 2. **三级渐进披露资产组织**（索引 JSON → 风格卡 → 完整设计文档 + 禁 bulk 读的明令）——对 common-content 的图像 prompt 模板 / 写作方法论的分层加载有直接参照价值，也与「文档协议单一真源」纪律互补。
 3. **预览真实性规则**（NON-NEGOTIABLE 级）：禁止把 preview / template / Option A/B/C / 模板名 / 用户需求备注等内部工作流文本渲染到成品画面上——这是对 LLM 常见污染模式的针对性防御，SelfMediaTools 项目封面线 / 视频帧线的 QA 清单可考虑同类条目。
 4. **踩坑成文而非踩坑发现**：display:none 被 flex 覆盖、CSS 函数取负静默失效、`~` 兄弟选择器 hover 断链（改 JS 400ms 延迟）、scrollHeight 查不出面板叠压——每条都是作者实测坑并写进对应文件的对应位置。
-5. **CJK 排版适配清单**（行高 / 字距 / 盘古之白 / 标点 / 单字族策略 / 已知缺口诚实标注）——中文创作者场景下，这份清单本身就可作为SelfMediaTools 项目文字类产物（封面 / 视频帧 / 文章排版）的参照系。
+5. **CJK 排版适配清单**（行高 / 字距 / 盘古之白 / 标点 / 单字族策略 / 已知缺口诚实标注）——中文创作者场景下，这份清单本身就可作为 SelfMediaTools 项目文字类产物（封面 / 视频帧 / 文章排版）的参照系。
 
 ## 10 本机落地可行性
 
-- 手动安装路径：仓库根目录即 skill 本体，复制 `SKILL.md` + 5 个支持文件 + `scripts/` + `bold-template-pack/` 到 `~/.claude/skills/frontend-slides/`（或参照SelfMediaTools 项目 `.zcode/skills/` 结构放工作区内），无需插件机制，ZCode 读 `SKILL.md` 即可驱动——README 明言任意文件系统代理可用。
+- 手动安装路径：仓库根目录即 skill 本体，复制 `SKILL.md` + 5 个支持文件 + `scripts/` + `bold-template-pack/` 到 `~/.claude/skills/frontend-slides/`（或参照 SelfMediaTools 项目 `.zcode/skills/` 结构放工作区内），无需插件机制，ZCode 读 `SKILL.md` 即可驱动——README 明言任意文件系统代理可用。
 - 依赖面：纯生成阶段零依赖；PPT 转换需 python-pptx（本机 conda 环境可装）；PDF 导出需 Node + Playwright（本机 Node 18+ 已备，Chromium 首跑约 150MB）；Vercel 部署需账号（国内场景可跳过）。
 - 字体注意：思源系走 Google Fonts CDN，本机网络环境需代理或改引本地字体文件。
