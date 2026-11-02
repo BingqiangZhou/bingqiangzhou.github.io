@@ -1,15 +1,15 @@
 ---
 title: 【AI前沿】OpenAI DevDay 2026 发布汇总：Dots 常驻智能体、GPT-6.1 Sol 与 Codex 的「28 天连更」
 published: 2026-10-08
-updated: 2026-10-25
-description: 2026 年 9 月 29 日旧金山 DevDay：OpenAI 一口气发布 20+ 项更新——GPT-6 Astra 驱动的常驻智能体 Dots、智能接近 Astra 但价格仅 1/5 的 GPT-6.1 Sol、最高 300 token/s 的 Ultrafast、面向企业的 Private Intelligence、Codex 全家桶（云端 Codex、新版 CLI、Code Review、Security Cloud）、Decisions API 与 Agents API、ChatGPT Space/Pages/协作幻灯片、Sign in with ChatGPT、每月 500 美元的 Pro 500 与 32 家伙伴的 Marketplace。一周之后，Codex 负责人 Tibo（Thibault Sottiaux）又立下「28 天连更」的军令状：每天交付一个对多数 Codex/Work 用户明确有用的改进，做不到就全员发放免费 Reset。本文基于官方 Recap 与多家媒体的报道完整梳理两部分内容；10-25 更新：连更已推进到第 20 天，重头戏包括 Sol Ultrafast、上下文扩容至 500k/1M、12 小时 prompt caching 与 Decisions API GA，但也有约四成天数直接以发放 reset 收场。
+updated: 2026-11-02
+description: 2026 年 9 月 29 日旧金山 DevDay：OpenAI 一口气发布 20+ 项更新——GPT-6 Astra 驱动的常驻智能体 Dots、智能接近 Astra 但价格仅 1/5 的 GPT-6.1 Sol、最高 300 token/s 的 Ultrafast、面向企业的 Private Intelligence、Codex 全家桶（云端 Codex、新版 CLI、Code Review、Security Cloud）、Decisions API 与 Agents API、ChatGPT Space/Pages/协作幻灯片、Sign in with ChatGPT、每月 500 美元的 Pro 500 与 32 家伙伴的 Marketplace。一周之后，Codex 负责人 Tibo（Thibault Sottiaux）又立下「28 天连更」的军令状：每天交付一个对多数 Codex/Work 用户明确有用的改进，做不到就全员发放免费 Reset。本文基于官方 Recap 与多家媒体的报道完整梳理两部分内容；11-02 更新：28 天连更收官，全程重头戏包括 Sol Ultrafast、上下文扩容至 500k/1M、12 小时 prompt caching、Decisions API GA、GPT-6.1 Terra 回归与 Pro / Business Premium 额度翻倍，但约四成天数直接以发放 reset 收场，最后两天按预告以 banked reset 收官。
 tags: [AI前沿]
 abbrlink: openai-devday-2026-roundup
 ---
 
 2026 年 9 月 29 日，OpenAI 在旧金山举办了年度开发者大会 [DevDay 2026](https://openai.com/index/devday-2026-recap/)。Sam Altman 的开场 keynote 背后是这样一个基本盘：ChatGPT 周活跃用户达到 **12 亿**（今年 7 月刚突破 10 亿），OpenAI 称这是「有史以来最大的一届 DevDay」，一次性发布了 **20 多项**更新。如果用一句话概括全场：去年 DevDay 的主角是 AgentKit 和「把 app 带进 ChatGPT」，今年则彻底升级为「智能体本身成为产品」——最典型的就是全场掌声最响的 **Dots**。
 
-而这场大会的余波比大会本身更有戏剧性：一周后的 10 月 4 日晚，Codex 负责人 Thibault Sottiaux（大家习惯叫他 Tibo，[@thsottiaux](https://x.com/thsottiaux)）在 X 上宣布了一项颇为罕见的承诺——**连续 28 天，每天要么交付一个明确的改进，要么给所有人发放免费 Reset**。本文首发于 10 月 8 日，当时连更刚走到第 4 天；10 月 25 日更新本文时已推进到第 20 天，下文逐日表格已同步补全。
+而这场大会的余波比大会本身更有戏剧性：一周后的 10 月 4 日晚，Codex 负责人 Thibault Sottiaux（大家习惯叫他 Tibo，[@thsottiaux](https://x.com/thsottiaux)）在 X 上宣布了一项颇为罕见的承诺——**连续 28 天，每天要么交付一个明确的改进，要么给所有人发放免费 Reset**。本文首发于 10 月 8 日，当时连更刚走到第 4 天；11 月 2 日更新本文时 28 天窗口已经走完（Day 28 对应 11 月 1 日），下文逐日表格已补完全程。
 
 下面分两部分整理：先盘 DevDay 当天的 20+ 项发布，再盘「28 天连更」目前的进展。
 
@@ -43,7 +43,7 @@ Altman 在台上说，Dots 的灵感来自「我们小时候在电影里看过�
 
 ## GPT-6.1 Sol 与 Ultrafast：智能和速度两条轴
 
-**GPT-6.1 Sol** 是本届发布的新模型：在智能体编码（agentic coding）、计算机使用和专业工作上强化，官方口径是「智能接近 GPT-6 Astra，输入 / 输出 token 价格约为 Astra 的 1/5」，第三方报道称定价为 $2 / $10（每百万 token 输入 / 输出）。已面向全部 API、Plus、Pro、Business、Enterprise、Edu 用户开放。顺带一提，OpenAI 现在的模型命名是「Astra / Sol / Luna」三件套：Astra 是旗舰，Sol 是性价比款，Luna 是轻量快速款（Decisions API 的默认引擎）。
+**GPT-6.1 Sol** 是本届发布的新模型：在智能体编码（agentic coding）、计算机使用和专业工作上强化，官方口径是「智能接近 GPT-6 Astra，输入 / 输出 token 价格约为 Astra 的 1/5」，第三方报道称定价为 $2 / $10（每百万 token 输入 / 输出）。已面向全部 API、Plus、Pro、Business、Enterprise、Edu 用户开放。顺带一提，OpenAI 当时的模型命名是「Astra / Sol / Luna」三件套：Astra 是旗舰，Sol 是性价比款，Luna 是轻量快速款（Decisions API 的默认引擎）——而「28 天连更」第 22 天又带回了第四个成员 **Terra**（见下文表格）。
 
 值得注意的是，据 [The Verge](https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements) 等媒体报道，更强一档的 **GPT-6.1 Astra 因安全考量暂缓发布**——结合 DevDay 现场场外的抗议（ICE 合同、数据中心能耗），安全议题是这届大会绕不开的背景音。
 
@@ -89,7 +89,7 @@ DevDay 落幕不到一周，10 月 4 日晚，Tibo 在 X 上宣布（[社区论�
 
 规则有几个要点：改进方向聚焦**简化、效率（更多用量）、新功能、新模型**；「reset」指使用额度重置；每日更新在论坛的[追踪帖](https://community.openai.com/t/28-days-of-shipping-at-openai/1403897)里同步。这个「做不到就赔」的姿势，背景是 OpenAI 近期的一连串信任危机（智能体越权攻击外部公司的争议、ICE 合同抗议等）——把发布节奏变成一个可核对的公开承诺。
 
-截至更新本文（10 月 25 日，第 21 天尚未公布），前 20 天的逐日交付如下：
+截至更新本文（11 月 2 日），28 天的逐日交付如下：
 
 | 天 | 日期 | 交付内容 |
 | --- | --- | --- |
@@ -97,7 +97,7 @@ DevDay 落幕不到一周，10 月 4 日晚，Tibo 在 X 上宣布（[社区论�
 | Day 2 | 10-06 | 四项：① **Auto Review 免费**——用 ChatGPT 账号登录即不消耗套餐用量，用第二个智能体复核高风险操作；② **API 限流分层从 5 档简化为 3 档**（Build / Launch / Grow），顶档累计付费门槛 $1000 → $500；③ **Meetings 插件 beta** 上线 macOS 桌面端；④ **Decisions API 面向所有开发者公测**，走 Responses API，最快比 GPT-6 Luna 快 10 倍 |
 | Day 3 | 10-07 | **GPT-6 在 Chat 全量上线**（配套发布 [GPT-6 and Intelligent UI for everyone](https://openai.com/index/gpt-6-and-intelligent-ui-for-everyone/)）；Codex / ChatGPT Work 活跃用户达到 **4000 万**；同时给所有付费账号发放一次 banked reset（可入账留存的额度重置）——按规则，第 2 天的四连发被内部判定分量不足，第 3 天补上重置 |
 | Day 4 | 10-08 | **Instant steering** 上线（任务执行中途实时纠偏、改方向）；**GPT-6.1 Sol Ultrafast** 在 API、Codex 和 ChatGPT Work 推出——智能接近 Astra，速度最高为 Sol Standard 的 8 倍 |
-| Day 5 | 10-09 | 两项：① Codex 桌面端 **Composer predictions beta**（Pro 可用，预测你的下一条指令，不消耗额度）；② 移动端（iOS / Android）ChatGPT 应用内可直接创建 dot 并给它发消息 |
+| Day 5 | 10-09 | 两项：① Codex 桌面端 **Composer predictions beta**（Pro 可用，预测你的下一条指令，不消耗额度）；② 移动端（iOS / Android）ChatGPT 应用内可直接创建 dot、给它发消息并把任务委派给 Codex |
 | Day 6 | 10-10 | 无新功能，发放一次**全员 reset** |
 | Day 7 | 10-11 | **Sol 默认上下文长度从 272k 扩到 500k**（Codex 与 Work），可配置到 1M；订阅用量内的长上下文不额外收费 |
 | Day 8 | 10-12 | **全员 reset**（当日 PST 结束前到账） |
@@ -113,16 +113,24 @@ DevDay 落幕不到一周，10 月 4 日晚，Tibo 在 X 上宣布（[社区论�
 | Day 18 | 10-22 | 小型连发 + reset：**Decisions API 正式 GA**、**OpenResponses 加入 Linux Foundation**、一批性能改进、**Uber 宣布全面采用 Codex / Work**，另发一次全员 reset |
 | Day 19 | 10-23 | 三项：**dots 语音通话连接显著变快**；对话中途修改 reasoning 设置**不再使缓存失效**；Codex CLI 发布更新 |
 | Day 20 | 10-24 | "Rest and reset"——**全员 reset**，午夜 PST 前完成 |
+| Day 21 | 10-25 | "It's a Reset"——**全员 reset** |
+| Day 22 | 10-26 | **GPT-6.1 Terra 回归**：写作、个性与细腻理解改进，computer use 能力强、价格更低，用量相当于 GPT-6.1 Sol 的 2 倍——模型家族迎来第四个成员 |
+| Day 23 | 10-27 | **全员 reset**——官方调侃 iCloud 邮件 / 日历插件「不算数」，所以照规则发 reset |
+| Day 24 | 10-28 | **dots 消息能力扩展**：可通过 iMessage / RCS 给 dot 发消息，分享 / 转发内容、留语音笔记，也能通过 Siri 发起请求 |
+| Day 25 | 10-29 | **Pro 100 / 200 / 500 与 Business Premium 用量额度翻倍**；原定的 Pro 200 降额计划取消；dots 的扩展额度继续保留——Tibo 自嘲「从 The Reset Company 毕业成了 The Token Company」 |
+| Day 26 | 10-30 | **多账号切换**：移动端可同时登录两个账号并一键切换（桌面端随后跟进）；同日预告「接下来两天都是 banked reset」 |
+| Day 27 | 10-31 | **Banked reset 1/2**——万圣节无新功能，按预告发放第一次 banked reset |
+| Day 28 | 11-01 | **Banked reset 2/2**——收官日照预告发放第二次 banked reset（Tibo 推文标题 "Day 28/ Banked 2/2"），28 天连更就此落幕 |
 
-20 天下来，节奏已经很清晰：**「重功能日 + reset 缓冲日」交替推进**。真材实料的大件集中在模型与性能轴上——Sol Ultrafast（Day 4）、默认上下文 272k → 500k/1M（Day 7）、12 小时 prompt caching（Day 16）、Decisions API GA（Day 18）；但也有 8 天（Day 6/8/10/13/15/17/20 全天 + Day 18 打底）直接以发放 reset 交差，再加上 Day 3 的 banked reset，对赌规则的「下限选项」被频繁用来兜底。论坛里的反应也随之分化：有人晒出到账的 reset 叫好，也有 Pro 用户抱怨某次承诺的 reset 没有落地，质疑这是不是「PR 套路」。
+28 天下来，节奏已经很清晰：**「重功能日 + reset 缓冲日」交替推进**。真材实料的大件集中在模型与性能轴上——Sol Ultrafast（Day 4）、默认上下文 272k → 500k/1M（Day 7）、12 小时 prompt caching（Day 16）、Decisions API GA（Day 18）、Terra 回归（Day 22）、Pro 额度翻倍（Day 25）与多账号切换（Day 26）；但也有整整 11 天（Day 6/8/10/13/15/17/20/21/23/27/28）全天以发放 reset 交差，再加上 Day 18 的 reset 打底与 Day 3 的 banked reset——28 天里 reset 出现了约四成的天数，对赌规则的「下限选项」被频繁用来兜底。论坛里的反应也随之分化：有人晒出到账的 reset 叫好，也有 Pro 用户抱怨某次承诺的 reset 没有落地，质疑这是不是「PR 套路」；不过 Day 23 连「iCloud 插件不算改进」都要明确说明，这个标准的执行反而比外界预期更较真。
 
-截至 10 月 25 日更新本文，连更还剩 8 天（Day 28 对应 11 月 1 日），后续进展可以盯[论坛追踪帖](https://community.openai.com/t/28-days-of-shipping-at-openai/1403897)。另外，与 DevDay 同期流出但未成真的硬件消息：OpenAI 与 Jony Ive 合作的智能体设备据申报文件最早要到 2027 年 2 月才会出货。
+28 天窗口已经走完（Day 28 对应 11 月 1 日），全程无一断更；收官两天以连续两次 banked reset 落幕。第三方追踪站 [tibosay](https://tibosay.com/tibo-28) 的收官统计是：约 16 天有实际交付（累计 41 项 ships & drops）、14 天与 reset 相关，社区好评率约 57%（11 万 + 开发者反应）——好评刚过半，也侧面印证了「reset 发多了、刺激感钝化」的观感。完整逐日记录可查阅[论坛追踪帖](https://community.openai.com/t/28-days-of-shipping-at-openai/1403897)。另外，与 DevDay 同期流出但未成真的硬件消息：OpenAI 与 Jony Ive 合作的智能体设备据申报文件最早要到 2027 年 2 月才会出货。
 
 ## 一点个人观察
 
 **第一，DevDay 的重心已经从「开发者大会」滑向「智能体操作系统发布会」。** Dots + Space + Pages + 插件生态 + Marketplace 拼起来，是面向消费者和企业的完整 agent 平台；开发者 API（Decisions、Agents）反而是支撑角色。对标 Meta 免费 Muse 的打法也很直白——OpenAI 选择用付费档位守住高端用户体验。
 
-**第二，「28 天连更」是发布节奏的金融化。** 把「ship or 赔 reset」写成公开规则，等于给用户一个可逐日核验的对赌协议。它既是信任修复，也是营销——如果 28 天全部兑现，Codex 的产品完成度和舆论位置都会上一个台阶；中途崩盘则会被 Reddit 和 X 逐日钉在耻辱柱上。从目前 20 天看，交付密度的「绝对值」是实打实的（模型提速、Ultrafast、上下文扩容、12 小时缓存、Decisions API GA），标准执行得也比外界预期更严——第 2 天的四连发就被内部判定「分量不足」、第 3 天补发 reset；但另一面是，约四成的天数最终以 reset 收场，「每天一个大改进」的原始预期正在被「重功能日 + reset 缓冲日」的现实节奏悄悄替换——reset 发多了，对赌的刺激感也在钝化。
+**第二，「28 天连更」是发布节奏的金融化。** 把「ship or 赔 reset」写成公开规则，等于给用户一个可逐日核验的对赌协议。它既是信任修复，也是营销——如果 28 天全部兑现，Codex 的产品完成度和舆论位置都会上一个台阶；中途崩盘则会被 Reddit 和 X 逐日钉在耻辱柱上。从全程 28 天看，交付密度的「绝对值」是实打实的（模型提速、Ultrafast、上下文扩容、12 小时缓存、Decisions API GA、Terra 回归、Pro 额度翻倍、多账号切换），标准执行得也比外界预期更严——第 2 天的四连发就被内部判定「分量不足」、第 3 天补发 reset，第 23 天连 iCloud 插件都被点名「不算数」；但另一面是，约四成的天数最终以 reset 收场，连收官的两天都按预告直接安排成 banked reset，「每天一个大改进」的原始预期最终被「重功能日 + reset 缓冲日」的现实节奏接管——reset 发多了，对赌的刺激感也在钝化。
 
 **第三，对普通订阅用户的实际变化：** Sol 的价格下探意味着智能体编码类任务的成本大幅下降；Sign in with ChatGPT 让 Plus / Pro 订阅的「购买力」第一次延伸到了第三方工具；而 Pro 500 的 $500 定价说明，OpenAI 已经认真开始收割重度用户层级了。
 
@@ -135,4 +143,5 @@ DevDay 落幕不到一周，10 月 4 日晚，Tibo 在 X 上宣布（[社区论�
 - [OpenAI 社区论坛：Day 1 — 28 days of Quality of Life improvements or a full Reset（Tibo 每日公告帖，标题随天数更新）](https://community.openai.com/t/another-reset-day-18-of-28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525)
 - [OpenAI 社区论坛：28 days of Shipping at OpenAI（逐日追踪帖）](https://community.openai.com/t/28-days-of-shipping-at-openai/1403897)
 - [ExplainX：Day-by-Day Log of the 28-day updates](https://explainx.ai/blog/openai-codex-28-days-daily-improvement-or-reset-tibo-2026)
+- [TiboSay：Tibo's 28-Day Challenge 追踪与收官统计（第三方）](https://tibosay.com/tibo-28)
 - [OpenAI 官方：GPT-6 and Intelligent UI for everyone（10-07）](https://openai.com/index/gpt-6-and-intelligent-ui-for-everyone/)
