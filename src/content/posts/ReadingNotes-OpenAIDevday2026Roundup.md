@@ -118,11 +118,11 @@ DevDay 落幕不到一周，10 月 4 日晚，Tibo 在 X 上宣布（[社区论�
 | Day 23 | 10-27 | **全员 reset**——官方调侃 iCloud 邮件 / 日历插件「不算数」，所以照规则发 reset |
 | Day 24 | 10-28 | **dots 消息能力扩展**：可通过 iMessage / RCS 给 dot 发消息，分享 / 转发内容、留语音笔记，也能通过 Siri 发起请求 |
 | Day 25 | 10-29 | **Pro 100 / 200 / 500 与 Business Premium 用量额度翻倍**；原定的 Pro 200 降额计划取消；dots 的扩展额度继续保留——Tibo 自嘲「从 The Reset Company 毕业成了 The Token Company」 |
-| Day 26 | 10-30 | **多账号切换**：移动端可同时登录两个账号并一键切换（桌面端随后跟进）；同日预告「接下来两天都是 banked reset」 |
+| Day 26 | 10-30 | **双账号切换**：移动端最多可同时保持登录两个账号、免登出一键切换（同一时刻仅一个活跃，桌面端随后跟进）；同日预告「接下来两天都是 banked reset」 |
 | Day 27 | 10-31 | **Banked reset 1/2**——万圣节无新功能，按预告发放第一次 banked reset |
 | Day 28 | 11-01 | **Banked reset 2/2**——收官日照预告发放第二次 banked reset（Tibo 推文标题 "Day 28/ Banked 2/2"），28 天连更就此落幕 |
 
-28 天下来，节奏已经很清晰：**「重功能日 + reset 缓冲日」交替推进**。真材实料的大件集中在模型与性能轴上——Sol Ultrafast（Day 4）、默认上下文 272k → 500k/1M（Day 7）、12 小时 prompt caching（Day 16）、Decisions API GA（Day 18）、Terra 回归（Day 22）、Pro 额度翻倍（Day 25）与多账号切换（Day 26）；但也有整整 11 天（Day 6/8/10/13/15/17/20/21/23/27/28）全天以发放 reset 交差，再加上 Day 18 的 reset 打底与 Day 3 的 banked reset——28 天里 reset 出现了约四成的天数，对赌规则的「下限选项」被频繁用来兜底。论坛里的反应也随之分化：有人晒出到账的 reset 叫好，也有 Pro 用户抱怨某次承诺的 reset 没有落地，质疑这是不是「PR 套路」；不过 Day 23 连「iCloud 插件不算改进」都要明确说明，这个标准的执行反而比外界预期更较真。
+28 天下来，节奏已经很清晰：**「重功能日 + reset 缓冲日」交替推进**。真材实料的大件集中在模型与性能轴上——Sol Ultrafast（Day 4）、默认上下文 272k → 500k/1M（Day 7）、12 小时 prompt caching（Day 16）、Decisions API GA（Day 18）、Terra 回归（Day 22）、Pro 额度翻倍（Day 25）与双账号切换（Day 26）；但也有整整 11 天（Day 6/8/10/13/15/17/20/21/23/27/28）全天以发放 reset 交差，再加上 Day 18 的 reset 打底与 Day 3 的 banked reset——28 天里 reset 出现了约四成的天数，对赌规则的「下限选项」被频繁用来兜底。论坛里的反应也随之分化：有人晒出到账的 reset 叫好，也有 Pro 用户抱怨某次承诺的 reset 没有落地，质疑这是不是「PR 套路」；不过 Day 23 连「iCloud 插件不算改进」都要明确说明，这个标准的执行反而比外界预期更较真。
 
 28 天窗口已经走完（Day 28 对应 11 月 1 日），全程无一断更；收官两天以连续两次 banked reset 落幕。第三方追踪站 [tibosay](https://tibosay.com/tibo-28) 的收官统计是：约 16 天有实际交付（累计 41 项 ships & drops）、14 天与 reset 相关，社区好评率约 57%（11 万 + 开发者反应）——好评刚过半，也侧面印证了「reset 发多了、刺激感钝化」的观感。完整逐日记录可查阅[论坛追踪帖](https://community.openai.com/t/28-days-of-shipping-at-openai/1403897)。另外，与 DevDay 同期流出但未成真的硬件消息：OpenAI 与 Jony Ive 合作的智能体设备据申报文件最早要到 2027 年 2 月才会出货。
 
