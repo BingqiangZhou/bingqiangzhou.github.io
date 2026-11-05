@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Guidance for AI agents working in this repo. This is the **sole** instruction file —
-project-specific facts future ZCode agents would otherwise miss.
+project-specific facts future Claude Code agents would otherwise miss.
 
 ## What this repo is
 
@@ -111,7 +111,7 @@ Posts live in `src/content/posts/` as `.md` / `.mdx`. Schema is defined in `src/
 
 ## Adding content — use the skills
 
-Two canonical skills under `.zcode/skills/` define the real workflows; prefer them over
+Two canonical skills under `.claude/skills/` define the real workflows; prefer them over
 improvising:
 
 - **`add-blog-post`** — import an external Markdown note as a new blog post. Establishes the

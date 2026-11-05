@@ -23,7 +23,5 @@ pnpm-debug.log*
 .idea
 package-lock.json
 
-# agent session artifacts
-.zcode/*
-!.zcode/skills/
-.zcodeignore
+# agent session artifacts (Claude Code local settings; skills/ stays tracked)
+.claude/settings.local.json
