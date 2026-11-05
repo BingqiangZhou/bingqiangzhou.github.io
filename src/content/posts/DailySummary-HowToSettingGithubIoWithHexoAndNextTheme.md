@@ -1517,7 +1517,7 @@ deploy:
 
 ## 后续更新 github.io ##
 
-后续更新的话，主要是更改了配置或者是添加了文章要发布，重点还是在发布，有问题可以看一下前一部分，[发布到 github.io 仓库](#%E5%8F%91%E5%B8%83%E9%A1%B5%E9%9D%A2%E5%88%B0github-io%E4%BB%93%E5%BA%93)，这里注意 Markdown 的书写，[教程在此](http://xianbai.me/learn-md/index.html)，最后在啰嗦一下 Hexo 创建文章，首先我们可以用`hexo new draft 文章名`创建一个草稿`draft`，在写的过程种查看效果，我们可以执行`hexo server --drafts`（注意不要简写），写好了之后，可以执行`hexo publish 文件名`（可以简写成`hexo p 文件名`），然后再生成，发布。
+后续更新的话，主要是更改了配置或者是添加了文章要发布，重点还是在发布，有问题可以看一下前一部分，[发布到 github.io 仓库](#发布到-githubio-仓库)，这里注意 Markdown 的书写，[教程在此](http://xianbai.me/learn-md/index.html)，最后在啰嗦一下 Hexo 创建文章，首先我们可以用`hexo new draft 文章名`创建一个草稿`draft`，在写的过程种查看效果，我们可以执行`hexo server --drafts`（注意不要简写），写好了之后，可以执行`hexo publish 文件名`（可以简写成`hexo p 文件名`），然后再生成，发布。
 
 ## 总结
 写了好几天，写着写着，把之前一些没有接触的功能也玩了一遍，写着写着，写成了一个中文口语版的说明文档，脱离了之前学习的那个意味了，有点问题，要好好反思，大概可能算是锻炼了一下如何写说明文档，但是说学到多少技术那并没有，在回到说明文档，[Hexo 官方的指南](https://hexo-guide.readthedocs.io/zh_CN/latest/index.html)是特别好的，写了这么多，花了这么久的时间，总之还是偏离了初衷。

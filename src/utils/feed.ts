@@ -65,7 +65,7 @@ export async function generateFeed() {
           markdownParser.render(
             post.body
               .replace(/<!--[\s\S]*?-->/g, '')
-              .replace(/^ {0,3}:{3,}(?:note|tip|important|warning|caution|fold|details)?(\[[^\]]*\])?\s*$/gm, ''),
+              .replace(/^ {0,3}:{3,}(?:note|tip|important|warning|caution|fold|gallery)?(\[[^\]]*\])?\s*$/gm, ''),
           ).replace(/(src|href)="(\/[^/"][^"]*)"/g, `$1="${url}$2"`),
           {
             // Allow <img> tags in feed content

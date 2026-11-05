@@ -18,7 +18,7 @@ tags: [学习笔记]
 - [三、Qwen3-TTS — 阿里通义千问语音大模型](#三qwen3-tts--阿里通义千问语音大模型)
 - [四、CosyVoice3 — 均衡型多方言 TTS](#四cosyvoice3--均衡型多方言-tts)
 - [五、VibeVoice — 微软开源语音 AI 框架](#五vibevoice--微软开源语音-ai-框架)
-- [六、IndexTTS2 — B 站工业级零样本 TTS](#六indextts2--b站工业级零样本-tts)
+- [六、IndexTTS2 — B 站工业级零样本 TTS](#六indextts2--b-站工业级零样本-tts)
 - [七、GPT-SoVITS — 少样本语音克隆利器](#七gpt-sovits--少样本语音克隆利器)
 - [八、Fish Speech (FishAudio) — 企业级语音合成](#八fish-speech-fishaudio--企业级语音合成)
 - [九、F5-TTS — 轻量开源 TTS](#九f5-tts--轻量开源-tts)

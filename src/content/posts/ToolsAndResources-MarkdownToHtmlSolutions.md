@@ -13,7 +13,7 @@ tags: ["学习笔记", "工具分享"]
 
 - [一、方案对比](#一方案对比)
 - [二、各方案代码实现](#二各方案代码实现)
-  - [方案 1：markdown（python-markdown）— 功能最全](#方案-1markdownpython-markdown--功能最全)
+  - [方案 1：markdown（python-markdown）— 功能最全](#方案-1markdownpython-markdown-功能最全)
   - [方案 2：mistune — 性能最佳](#方案-2mistune--性能最佳)
   - [方案 3：markdown2 — 简洁灵活](#方案-3markdown2--简洁灵活)
   - [方案 4：markdown-it-py — 高兼容性](#方案-4markdown-it-py--高兼容性)
@@ -39,7 +39,7 @@ tags: ["学习笔记", "工具分享"]
 
 ### 方案 1：`markdown`（python-markdown）— 功能最全
 
-```python
+````python
 # pip install markdown
 import markdown
 
@@ -85,11 +85,11 @@ html = markdown.markdown(
         "sane_lists",      # 更智能的列表
     ],
 )
-```
+````
 
 ### 方案 2：`mistune` — 性能最佳
 
-```python
+````python
 # pip install mistune
 import mistune
 
@@ -162,7 +162,7 @@ class WeChatRenderer(HTMLRenderer):
 renderer = WeChatRenderer(escape=False)
 markdown = mistune.create_markdown(renderer=renderer)
 html = markdown(md_text)
-```
+````
 
 ### 方案 3：`markdown2` — 简洁灵活
 
@@ -266,7 +266,7 @@ for name, desc in list_themes().items():
 
 微信公众号**不支持 `<style>` 标签和 class**，所有样式必须写成 **内联 style**。以下是一个完整的适配方案：
 
-```python
+````python
 # pip install markdown
 import markdown
 import re
@@ -366,7 +366,7 @@ def hello():
 <body>{result}</body>
 </html>""")
     print("✅ 已保存到 wechat_article.html，可在浏览器中预览效果")
-```
+````
 
 ## 四、方案选型建议
 
