@@ -9,7 +9,7 @@ abbrlink: aihot-framework-deep-dive
 > 整理日期：2026-09-29
 > **本系列（六篇）**：**一·总览（本篇）** · [二·信源与抓取层](/posts/aihot-sources-fetch-deep-dive/) · [三·精选与评分](/posts/aihot-selection-scoring-deep-dive/) · [四·聚簇与热度](/posts/aihot-clustering-hotrank-deep-dive/) · [五·模型榜 Kemeny 共识](/posts/aihot-leaderboard-kemeny-deep-dive/) · [六·技术栈](/posts/aihot-tech-stack-explained/)。本篇是全系列的地图：给出完整架构和每个子系统的骨架与关键结论，各子系统的实现细节在后续各篇展开。
 > 调研方式：完整克隆 [KKKKhazix/AIHOT](https://github.com/KKKKhazix/AIHOT) 逐文件精读——README、全部六篇 docs、`industry/` 全部提示词原文、`packages/backend/` 的 editorial/events/providers/leaderboard 核心源码、`apps/` 三进程与 CI 配置；星数/创建时间以 GitHub API 当日实测为准；线上站 [aihot.news](https://aihot.news) 打开核对过当日内容与热点榜；并在本机（Node v24.20.0）跑通 `npm ci` + `npm run typecheck`（全 workspace 通过）。仓库只有两个 commit，是线上运行代码的快照，本文引用的行号和常数以 commit `589f79e` 为准。
-> 写作动机：这个博客之前拆过[卡兹克这个博主本身](/posts/digital-life-khazix-analysis/)（选题工业化样本），也做过[开源资讯聚合方案调研](/posts/open-source-news-aggregation-survey/)，更在 9 月初站点还未开源时对 AIHOT 做过一次[全黑盒拆解](/posts/aihot-website-deep-dive/)（公开 API/MCP/Skill 逐项实测 + 响应头考古）。9 月 28 日作者把整套源码和提示词开源了——黑盒时代只能推断的东西，现在可以逐行核对。这篇就是那次拆解的白盒续篇：重点放在「源码证实了什么、推翻了什么」。
+> 写作动机：这个博客之前拆过[卡兹克这个博主本身](/posts/digital-life-khazix-analysis/)（选题工业化样本），也做过[开源资讯聚合方案调研](/posts/learningnotes-opensourcenewsaggregationsurvey/)，更在 9 月初站点还未开源时对 AIHOT 做过一次[全黑盒拆解](/posts/aihot-website-deep-dive/)（公开 API/MCP/Skill 逐项实测 + 响应头考古）。9 月 28 日作者把整套源码和提示词开源了——黑盒时代只能推断的东西，现在可以逐行核对。这篇就是那次拆解的白盒续篇：重点放在「源码证实了什么、推翻了什么」。
 
 ## 一、太长不看
 
