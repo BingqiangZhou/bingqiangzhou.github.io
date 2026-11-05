@@ -680,7 +680,7 @@ curl -X POST https://dashscope.aliyuncs.com/api/v1/services/audio/tts/SpeechSynt
 - **支持 TTS 模型**：
   - **Qwen3-TTS**（qwen/qwen3-tts）— ✅ 已确认可用，20 万 + 次运行
   - 其他模型持续增加中
-- **免费额度**：注册赠送少量免费额度（通常 $0.50-$1.00）
+- **免费额度**：注册赠送少量免费额度（通常 \$0.50-\$1.00）
 - **计费方式**：按秒计费（GPU 推理时间）
 - **API 格式**：RESTful API，支持多种 SDK
 - **特点**：国际平台，模型更新快，适合海外用户

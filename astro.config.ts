@@ -17,6 +17,7 @@ import { rehypeCodeCopyButton } from './src/plugins/rehype-code-copy-button.mjs'
 import { rehypeExternalLinks } from './src/plugins/rehype-external-links.mjs'
 import { rehypeHeadingAnchor } from './src/plugins/rehype-heading-anchor.mjs'
 import { rehypeImageProcessor } from './src/plugins/rehype-image-processor.mjs'
+import { rehypeKatexCjkWarning } from './src/plugins/rehype-katex-cjk-warning.mjs'
 import { remarkContainerDirectives } from './src/plugins/remark-container-directives.mjs'
 import { remarkLeafDirectives } from './src/plugins/remark-leaf-directives.mjs'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
@@ -78,6 +79,7 @@ export default defineConfig({
       ],
       rehypePlugins: [
         rehypeKatex,
+        rehypeKatexCjkWarning,
         [rehypeMermaid, { strategy: 'pre-mermaid' }],
         rehypeSlug,
         rehypeHeadingAnchor,
