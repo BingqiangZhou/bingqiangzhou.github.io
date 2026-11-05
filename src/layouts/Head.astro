@@ -29,11 +29,15 @@ const siteDescription = description
 // Page Metadata
 const pageTitle = postTitle ? `${postTitle} | ${siteTitle}` : `${siteTitle} - ${siteSubtitle}`
 const pageDescription = postDescription || siteDescription
+// OGP requires og:image to be an absolute URL — social crawlers do not resolve relative paths
 const pageImage = postSlug
   ? new URL(`${base}/og/${postSlug}.png`, Astro.url.origin)
   : apiflashKey
     ? `https://api.apiflash.com/v1/urltoimage?access_key=${apiflashKey}&url=${Astro.url}&format=png&width=1500&height=788&ttl=259200&wait_until=network_idle&no_tracking=true`
-    : `${base}/icons/og-default.png`
+    : new URL(`${base}/icons/og-default.png`, Astro.url.origin)
+
+// The 404 page is served for every unknown URL — it must not declare itself canonical
+const is404 = Astro.url.pathname.startsWith('/404')
 ---
 
 <head>
@@ -58,14 +62,14 @@ const pageImage = postSlug
 {katexEnabled && <link rel="stylesheet" href={katexCSS} media="print" onload={`this.media='all'`} />}
 
 <!-- Site Links -->
-<link rel="canonical" href={Astro.url} />
+{!is404 && <link rel="canonical" href={Astro.url} />}
 <link rel="sitemap" href={`${base}/sitemap-index.xml`} />
 <link rel="alternate" href={`${base}/rss.xml`} type="application/rss+xml" title="RSS Feed" />
 <link rel="alternate" href={`${base}/atom.xml`} type="application/atom+xml" title="Atom Feed" />
 
 <!-- Open Graph -->
 <meta property="og:type" content={postTitle ? 'article' : 'website'} />
-<meta property="og:url" content={Astro.url} />
+{!is404 && <meta property="og:url" content={Astro.url} />}
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={pageDescription} />
 <meta property="og:image" content={pageImage} />
