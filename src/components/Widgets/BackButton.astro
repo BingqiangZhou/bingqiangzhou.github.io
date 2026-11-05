@@ -1,5 +1,6 @@
 ---
 import GoBackIcon from '@/assets/icons/go-back.svg'
+import { withBase } from '@/utils/page'
 
 interface Props {
   slug?: string
@@ -10,7 +11,7 @@ const { slug = '' } = Astro.props
 
 <a
   id="back-button"
-  href={slug ? `/#post-${slug}` : '/'}
+  href={slug ? withBase(`/#post-${slug}`) : withBase('/')}
   class="flex items-center gap-1.5 text-3.5 c-secondary/60 transition-colors ease-out hover:c-primary active:scale-95!"
   aria-label="Go back"
 >

@@ -39,9 +39,12 @@ let giscusContainer: HTMLElement | null = null
 
 function getThemeUrl() {
   const isDark = document.documentElement.classList.contains('dark')
+  // The upstream theme CSS URLs (jsdelivr @master) are dead — they 404, which
+  // would leave the comment iframe unthemed. Use Giscus built-in theme names,
+  // accepted by both data-theme and the setConfig postMessage.
   return isDark
-    ? `https://cdn.jsdelivr.net/gh/radishzzz/astro-theme-retypeset@master/public/giscus/theme-dark.css`
-    : `https://cdn.jsdelivr.net/gh/radishzzz/astro-theme-retypeset@master/public/giscus/theme-light.css`
+    ? 'dark'
+    : 'light'
 }
 
 function updateGiscusTheme() {

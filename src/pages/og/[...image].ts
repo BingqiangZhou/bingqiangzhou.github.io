@@ -3,8 +3,9 @@ import { OGImageRoute } from 'astro-og-canvas'
 import { getCollection } from 'astro:content'
 import { getPostDescription } from '@/utils/description'
 
+// Match the post page's draft handling: never publish OG images for drafts
 // eslint-disable-next-line antfu/no-top-level-await
-const posts = await getCollection('posts')
+const posts = await getCollection('posts', ({ data }) => import.meta.env.DEV || !data.draft)
 
 // Create slug-to-metadata lookup object for blog posts
 const pages = Object.fromEntries(
