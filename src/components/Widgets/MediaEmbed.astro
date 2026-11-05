@@ -59,11 +59,13 @@ async function setupTweetEmbeds() {
     tweet.setAttribute('data-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light')
   })
 
-  // Inject Twitter script
-  const script = document.createElement('script')
-  script.src = 'https://platform.twitter.com/widgets.js'
-  script.async = true
-  document.head.appendChild(script)
+  // Inject Twitter script (once — client-side navigation re-runs this handler)
+  if (!document.querySelector('script[src*="platform.twitter.com/widgets.js"]')) {
+    const script = document.createElement('script')
+    script.src = 'https://platform.twitter.com/widgets.js'
+    script.async = true
+    document.head.appendChild(script)
+  }
 }
 
 // Initialize all media embeds
@@ -90,10 +92,13 @@ function updateMermaidTheme() {
       theme: isDark ? 'dark' : 'default',
     })
 
-    // Reset content and re-run Mermaid
+    // Reset content and re-run Mermaid.
+    // textContent, not innerHTML: the stored source contains literal HTML-ish
+    // tokens (<br/>, <b>) that innerHTML would parse into real elements,
+    // silently mangling the diagram label on every theme switch.
     mermaids.forEach((element) => {
       const mermaid = element as HTMLElement
-      mermaid.innerHTML = mermaid.dataset.mermaidCode ?? ''
+      mermaid.textContent = mermaid.dataset.mermaidCode ?? ''
       mermaid.removeAttribute('data-processed')
     })
 
