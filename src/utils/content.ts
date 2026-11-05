@@ -110,7 +110,9 @@ async function _getPostsByYear(): Promise<Map<number, Post[]>> {
   const yearMap = new Map<number, Post[]>()
 
   posts.forEach((post: Post) => {
-    const year = post.data.published.getFullYear()
+    // YAML date-only values parse as UTC midnight; display uses UTC ISO
+    // strings, so group with UTC getters to stay consistent off-UTC
+    const year = post.data.published.getUTCFullYear()
     let yearPosts = yearMap.get(year)
     if (!yearPosts) {
       yearPosts = []
@@ -124,7 +126,7 @@ async function _getPostsByYear(): Promise<Map<number, Post[]>> {
     yearPosts.sort((a, b) => {
       const aDate = a.data.published
       const bDate = b.data.published
-      return bDate.getMonth() - aDate.getMonth() || bDate.getDate() - aDate.getDate()
+      return bDate.getUTCMonth() - aDate.getUTCMonth() || bDate.getUTCDate() - aDate.getUTCDate()
     })
   })
 

@@ -7,12 +7,12 @@ tags: ["学习笔记"]
 
 > 只有当你认真的去做一件事情的时候，才会发现自己的灵魂，和灵魂的深处。
 
-# 前言 #
+## 前言
 从 8 月 13 号写起，本来想简单的总结一下自己搭建 github.io 个人博客的过程，其实一天基本就写得差不多了，可惜的是突然写上瘾了，反复看自己写得东西，想着这里要加一点那里要加一点，有点恐怖，如今这已经不仅仅是一个搭建 github.io 的过程的回顾了，中间 NexT 主题那部分，有点中文口语版的官方文档的感觉了。
 
 
 
-# 过程 #
+## 过程
 搭建 github.io 的过程总结起来大概为五步吧。
 
 **搭建 Hexo 环境→配置 NexT 主题→创建 github.io 仓库→发布 github.io→更新 github.io**
@@ -128,7 +128,7 @@ language: en
 越南语			|		vi
 
 #### [设置菜单显示内容](https://theme-next.org/docs/getting-started/#Configuring-Menu-Items) ####
-设置菜单中显示标签页、分类页、关于页等等页面。设置形式是`Key: /link/ || icon`，这里的`Key`是显示在菜单的名称，这里原有的是英文的，但是显示时变成对应的语言，比如说简体中文，`home`就会显示为`首页`，而在自定义页面设置是使用自己语言就好了，比如下面的`朋友`，（[自定义页面请查看](/posts/dailysummary-howtosettinggithubiowithhexoandnexttheme/#NexT%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%EF%BC%89)），随后是`link`（链接）可以放 URL 链接不限`http`、`https`，如下面的`网页: https://bingqiangzhou.cn || heartbeat`，还有就是可以设置在`hexo/source/`目录下的文件夹，最后一个参数`icon`，是图标的名称，这个名称可以在[Font Awesome 图标字体库和 CSS 框架的网站](http://fontawesome.dashgame.com/)去找，有特别多的图标，都可以任意设置。
+设置菜单中显示标签页、分类页、关于页等等页面。设置形式是`Key: /link/ || icon`，这里的`Key`是显示在菜单的名称，这里原有的是英文的，但是显示时变成对应的语言，比如说简体中文，`home`就会显示为`首页`，而在自定义页面设置是使用自己语言就好了，比如下面的`朋友`，（[自定义页面请查看](/posts/dailysummary-howtosettinggithubiowithhexoandnexttheme/#next-主题设置自定义页面)），随后是`link`（链接）可以放 URL 链接不限`http`、`https`，如下面的`网页: https://bingqiangzhou.cn || heartbeat`，还有就是可以设置在`hexo/source/`目录下的文件夹，最后一个参数`icon`，是图标的名称，这个名称可以在[Font Awesome 图标字体库和 CSS 框架的网站](http://fontawesome.dashgame.com/)去找，有特别多的图标，都可以任意设置。
 ```yaml
 menu:
   home: / || home
@@ -1517,9 +1517,9 @@ deploy:
 
 ## 后续更新 github.io ##
 
-后续更新的话，主要是更改了配置或者是添加了文章要发布，重点还是在发布，有问题可以看一下前一部分，[发布到 github.io 仓库](#%E5%8F%91%E5%B8%83%E9%A1%B5%E9%9D%A2%E5%88%B0github-io%E4%BB%93%E5%BA%93)，这里注意 Markdown 的书写，[教程在此](http://xianbai.me/learn-md/index.html)，最后在啰嗦一下 Hexo 创建文章，首先我们可以用`hexo new draft 文章名`创建一个草稿`draft`，在写的过程种查看效果，我们可以执行`hexo server --drafts`（注意不要简写），写好了之后，可以执行`hexo publish 文件名`（可以简写成`hexo p 文件名`），然后再生成，发布。
+后续更新的话，主要是更改了配置或者是添加了文章要发布，重点还是在发布，有问题可以看一下前一部分，[发布到 github.io 仓库](#发布到-githubio-仓库)，这里注意 Markdown 的书写，[教程在此](http://xianbai.me/learn-md/index.html)，最后在啰嗦一下 Hexo 创建文章，首先我们可以用`hexo new draft 文章名`创建一个草稿`draft`，在写的过程种查看效果，我们可以执行`hexo server --drafts`（注意不要简写），写好了之后，可以执行`hexo publish 文件名`（可以简写成`hexo p 文件名`），然后再生成，发布。
 
-# 总结 #
+## 总结
 写了好几天，写着写着，把之前一些没有接触的功能也玩了一遍，写着写着，写成了一个中文口语版的说明文档，脱离了之前学习的那个意味了，有点问题，要好好反思，大概可能算是锻炼了一下如何写说明文档，但是说学到多少技术那并没有，在回到说明文档，[Hexo 官方的指南](https://hexo-guide.readthedocs.io/zh_CN/latest/index.html)是特别好的，写了这么多，花了这么久的时间，总之还是偏离了初衷。
 
 明白了，**好钢要用在刀刃上**，也算是有成长吧！

@@ -56,7 +56,7 @@ Jev 由前 OpenAI 研究员、TypeSafe 创始人 Diogo Almeida 于 2026-09-15 �
 
 博客的驱动问题是「Models have been superhuman at chat for years, so where is all the automation?」——Jev 值得关心不是因为它「更聪明」，而是它压低了 agent 工作流里最贵的一类调用（判断）的价格和延迟——第三方对账口径约 3-9 倍，排队与海量低价值判断场景可达一两个数量级（第六节展开）——并把这层能力开放成了 API。
 
-**定价账**：输入 $0.042/MTok（$42/十亿）、输出免费——官方原话「FREE (too cheap to meter)」；对比官方口径的 LLM 输入 $0.20-$10/MTok、输出约 5 倍于输入；官网另称比 Claude Fable 5.1 输入价低 238 倍。
+**定价账**：输入 \$0.042/MTok（\$42/十亿）、输出免费——官方原话「FREE (too cheap to meter)」；对比官方口径的 LLM 输入 \$0.20-\$10/MTok、输出约 5 倍于输入；官网另称比 Claude Fable 5.1 输入价低 238 倍。
 
 **官方性能数字分两层**：
 
@@ -69,13 +69,13 @@ Jev 由前 OpenAI 研究员、TypeSafe 创始人 Diogo Almeida 于 2026-09-15 �
 
 **自家 evals 站对账**（evals.typesafe.ai，四个工作流等权平均）：Jev 聚合 67.8% 准确率、$0.0004/例、0.4s；逐工作流准确率全输该工作流的最强 LLM 基线——安全告警分诊 61.7 vs 66.2（opus 5）、Agent 轨迹审查 71.6 vs 76.6（sol）、发票处理 61.8 vs 79.1（sol）、客服决策 76.0 vs 78.3（sol），聚合约 67.8 vs 74.1（sol）。短名对照：opus 5/sonnet 5/haiku 为 Claude 系（haiku 即 Claude Haiku 4.5）、sol/luna 为 GPT-5.6 系（suraj 实验写作 GPT-5.6 Sol/Luna），evals 站只标短名。但与 sonnet 5 准确率打平（同 67.8%）时，成本约 1/293、耗时约 1/195。方法论偏置要写明：参考标签由 GPT-6 Astra 与 Claude Fable 5.1（均高思考档）生成、其余模型用默认推理设置——不对称比较。
 
-**第三方对账一（LiteLLM，2026-09-18）**：80 个自撰分层用例×3 共 240 次调用，JEV 中位延迟 126.81ms vs Haiku 4.5 的 688.40ms（5.43x；95% 置信区间下的估计，且为分类器延迟而非端到端补全速度）、成本 $0.0077 vs $0.1985（低 96.12%）、与预期分层吻合率 95.00% vs 73.75%。原文免责句（写作时逐字核对）：「This comparison does not establish general classification accuracy or the quality of the final answers」。
+**第三方对账一（LiteLLM，2026-09-18）**：80 个自撰分层用例×3 共 240 次调用，JEV 中位延迟 126.81ms vs Haiku 4.5 的 688.40ms（5.43x；95% 置信区间下的估计，且为分类器延迟而非端到端补全速度）、成本 \$0.0077 vs \$0.1985（低 96.12%）、与预期分层吻合率 95.00% vs 73.75%。原文免责句（写作时逐字核对）：「This comparison does not establish general classification accuracy or the quality of the final answers」。
 
-**第三方对账二（suraj 的工单分流实验）**：语料是 CLINC150 意图分类数据集（Larson et al.，人工标注的研究语料；有些转述称之为「1000 张真实工单」，与原文不符）。设定是队列模拟：工单按五种「到达率」（每秒到达张数）流入，每种 3 次试验、每次 300 张到达，其中 249 张 in-scope（在数据集意图范围内）且复用同一批；主实验各模型 8 并发槽（$0.048 对应 40 张/秒）、预注册，32 槽敏感性测试未预注册。结果：Jev 每千次「正确且准时」决策 $0.048，是第二名 DeepSeek V4.1 Flash（$0.414）的 1/8.6；所有模型给足 32 并发槽后，成本优势缩至对 GPT-5.6 Luna 约 3.3 倍；准确率 92.2% vs Luna/Haiku 的 93.6%（in-scope）。作者金句（含比较对象）：
+**第三方对账二（suraj 的工单分流实验）**：语料是 CLINC150 意图分类数据集（Larson et al.，人工标注的研究语料；有些转述称之为「1000 张真实工单」，与原文不符）。设定是队列模拟：工单按五种「到达率」（每秒到达张数）流入，每种 3 次试验、每次 300 张到达，其中 249 张 in-scope（在数据集意图范围内）且复用同一批；主实验各模型 8 并发槽（\$0.048 对应 40 张/秒）、预注册，32 槽敏感性测试未预注册。结果：Jev 每千次「正确且准时」决策 \$0.048，是第二名 DeepSeek V4.1 Flash（\$0.414）的 1/8.6；所有模型给足 32 并发槽后，成本优势缩至对 GPT-5.6 Luna 约 3.3 倍；准确率 92.2% vs Luna/Haiku 的 93.6%（in-scope）。作者金句（含比较对象）：
 
 > The honest version of the headline is not 510x. It is about 3x cheaper than the next model.
 
-**中文实测两路**（均须标档位）：虎嗅/硅星人《实测 Jev：没那么强》测 50 道中文客服判断题，准确率约 64%-65.2%（便宜小模型组第二、比 DeepSeek V4 Flash 少 1.2 分；50 题合计约 $0.002）——原文未能打开，数字经搜索摘要交叉印证（第三档）；zicode「字与码」两篇为调研者一手抓取（第二档）：其转述的官方提速为 20-400 倍（与官方博客的 40x-200x、HN 标题的 20-200x 都对不上，以官方博客为准），实测 5-25 倍；海外延迟实测 1.6-3.7 秒；732 个相同判断跑三遍仅 24% 完全一致（中位漂移 0.010）——与 Diogo 本人「确定性非北极星、鲁棒性（相似输入相似输出）才是」的表态相互印证，直接影响单测写法。该文还转述了正反案例：翻车如自动交易 bot 亏 $31,680、小马智行伦理测试，正面如 Browser Use 用 Jev 7.1 秒订票、NearHere 审核准确率 96%——均为转述、未核实原始出处（第三档）。
+**中文实测两路**（均须标档位）：虎嗅/硅星人《实测 Jev：没那么强》测 50 道中文客服判断题，准确率约 64%-65.2%（便宜小模型组第二、比 DeepSeek V4 Flash 少 1.2 分；50 题合计约 \$0.002）——原文未能打开，数字经搜索摘要交叉印证（第三档）；zicode「字与码」两篇为调研者一手抓取（第二档）：其转述的官方提速为 20-400 倍（与官方博客的 40x-200x、HN 标题的 20-200x 都对不上，以官方博客为准），实测 5-25 倍；海外延迟实测 1.6-3.7 秒；732 个相同判断跑三遍仅 24% 完全一致（中位漂移 0.010）——与 Diogo 本人「确定性非北极星、鲁棒性（相似输入相似输出）才是」的表态相互印证，直接影响单测写法。该文还转述了正反案例：翻车如自动交易 bot 亏 \$31,680、小马智行伦理测试，正面如 Browser Use 用 Jev 7.1 秒订票、NearHere 审核准确率 96%——均为转述、未核实原始出处（第三档）。
 
 小结（口径拆开、不合并区间）：三本账对完——官方上限数字、自家 evals（准确率输、成本延迟碾压）、第三方约 3-9 倍一带，其中 8.6x 是 8 槽主实验对 DeepSeek V4.1 Flash 的成本比、3.3x 是未预注册的 32 槽敏感性测试对 GPT-5.6 Luna 的成本比、5.43x 是 LiteLLM 对 Haiku 4.5 的中位延迟比——不同基线、并发、指标，逐条交代。LangChain 博客点出了真正的答案：「Up until now, this classifier step has been locked away in the closed source parts of the harness」（第二档）——每个 coding agent 里都藏着这层分类器，Jev 把它变成开放可编程的 API。
 
@@ -143,7 +143,7 @@ confidence 语义（docs/confidence）：不是模型额外「说」的话，而
 
 另有讽刺项目 Jev-Leftpad（用 Choice 决定 left-pad 空格数，「Does it need a model call? No.」）。三条路线的共性：复刻的都是「typed questions→概率分布」这层接口与输出空间，差异在基座（生成式 LLM vs 判别式编码器）与校准手段（RLCD 黑箱 vs temperature scaling 白箱）。最有意思的对照是 Kev 对 Von：LLM＋LoRA 路线（0.822）明显比纯编码器路线（0.720）更接近 Jev，但无一在自报基准上追平——与「a data lab」的说法互证，护城河更可能在任务与数据构造、不在接口形状。Kev README 还测了个彩蛋：「不可知」题上置信度≥0.9 时的答错率 Kev-9B 为 0%、Jev 为 9%——托管版也会在无解处硬给高置信，呼应上文「forced to hallucinate」的批评。新复现可追 Hugging Face 的 Jev Reproductions Tracker（第三档）。表中 Kev 一行为更新时 README 一手核对（并入第二档），Von/Laya/Leftpad 亦第二档自报，均非受控对比。
 
-**第三场：营销数字与口径。**HN 提交标题一小时内从「40-400x cheaper and 20-200x faster」被指误导后修改（Algolia/原始 HTML 核实，第二档）；193.6x/444.6x 的精确换算口径官方未公开——按 evals 原始数据推算「恰好对应拿最慢/最贵基线当分母」，此为推算非官方口径；首页头条旁小字数字（$0.000081/0.114s vs $0.01388/8.566s）经首页原始 HTML 核对确实存在，自行相除得约 75x 快（8.566÷0.114）、171x 便宜（0.01388÷0.000081）——同为推算，与头条数字对不上，三套口径的换算关系官方未给。HN 用户 bigglebear 称其「最误导的营销」（第二档）与官方自认「higher end of real world gains」并存——两头都引，读者自己称重。
+**第三场：营销数字与口径。**HN 提交标题一小时内从「40-400x cheaper and 20-200x faster」被指误导后修改（Algolia/原始 HTML 核实，第二档）；193.6x/444.6x 的精确换算口径官方未公开——按 evals 原始数据推算「恰好对应拿最慢/最贵基线当分母」，此为推算非官方口径；首页头条旁小字数字（\$0.000081/0.114s vs \$0.01388/8.566s）经首页原始 HTML 核对确实存在，自行相除得约 75x 快（8.566÷0.114）、171x 便宜（0.01388÷0.000081）——同为推算，与头条数字对不上，三套口径的换算关系官方未给。HN 用户 bigglebear 称其「最误导的营销」（第二档）与官方自认「higher end of real world gains」并存——两头都引，读者自己称重。
 
 **架构与资历的不透明。**TechCrunch 称 Almeida 对架构「tight-lipped」、外界怀疑基于开源权重 LLM（closed MoE 之类说法均为猜测）；资历口径冲突——TechCrunch 称其为 RLHF/InstructGPT 研究的共同作者，HN 有评论直称「RLHF one is a pure lie」，两者均未经独立核实，只引博客自述并标注冲突：博客写「At OpenAI, I helped build the methods…ended up as the research behind ChatGPT」。
 
@@ -153,7 +153,7 @@ confidence 语义（docs/confidence）：不是模型额外「说」的话，而
 
 我的定性：Jev 不是「更聪明的模型」（自家 evals 上准确率全输最强基线），是一次接口层创新——把「判断」从生成模型里拆出来，做成软件可直接依赖的类型化原语。「软件能依赖的接口」这个方向真实且重要；与 LLM 分层组合是中外共识：LangChain 定位句「Jev isn't a drop-in replacement for an LLM. It doesn't generate text」（第二档；langchain.com/blog/building-a-harness-with-jev 经核实有效，langchain.com/blog/what-is-jev 为 404 勿引）；Reddit 的说法「very complimentary to LLMs rather than a stand alone alternative」（按语境应为 complementary「互补」之误；第二档）；分层 agent 架构——前沿模型做规划、Jev 做执行层判断。
 
-**该用（✅）**：单跳判断、高吞吐、成本敏感、能容忍概率语义的场景——guardrails/内容审核、工单与安全告警分诊、agent 工具调用风险拦截（LangChain AutoModeMiddleware 模式）、LLM-as-judge 的廉价替代、长对话逐条消息打标（给每条消息打 ID，state 付一次钱、问大量问题）。其中 LangChain Jev-as-a-Judge 数字（5 个天气 agent run×100 次、与人类 oracle 500/500 一致、方差低 92-913 倍、$0.34 vs Claude $28.17）经 TechCrunch 转述、未独立核实（第三档），引用须连同警示句：「a judge can still be consistently wrong」「low cost can amplify mistakes」。
+**该用（✅）**：单跳判断、高吞吐、成本敏感、能容忍概率语义的场景——guardrails/内容审核、工单与安全告警分诊、agent 工具调用风险拦截（LangChain AutoModeMiddleware 模式）、LLM-as-judge 的廉价替代、长对话逐条消息打标（给每条消息打 ID，state 付一次钱、问大量问题）。其中 LangChain Jev-as-a-Judge 数字（5 个天气 agent run×100 次、与人类 oracle 500/500 一致、方差低 92-913 倍、\$0.34 vs Claude \$28.17）经 TechCrunch 转述、未独立核实（第三档），引用须连同警示句：「a judge can still be consistently wrong」「low cost can amplify mistakes」。
 
 **不该用（❌）**：多跳复合推理（随跳数单调劣化）；算术/计数/日期比较（「Jev is not a calculator」——留在代码里）；需要同输入同输出的确定性断言（官方北极星是鲁棒性不是确定性，单测写法要跟着改）；中文/多语任务（官方自认 + 三方实测）；把概率直连不可逆执行（转账、交易）——已有媒体以亏损为主题撰文（《拿 Jev 做金融交易，亏钱才正常》，仅核实到标题存在、全文未定位）。
 
@@ -185,4 +185,4 @@ confidence 语义（docs/confidence）：不是模型额外「说」的话，而
 
 **可信度三档**。第一档·官方原文逐字核实＝12 条核实条目＋调研阶段 curl 补核对五处＋写作时复核两处。12 条一行一条：① 发布事实与命名；② 定位句与「can't hallucinate」；③ 原语结构与 255 上限；④ 技术栈与 RLCD；⑤ 模型规格；⑥ 定价；⑦ 性能两层；⑧ evals 数据与偏置；⑨ 九项缺陷；⑩ HN 主帖与 CEO 回帖；⑪ Vercel 口径与 Pranit Sharma；⑫ LiteLLM 与 suraj 数字。五处补核对：博客 2-stage 句（原文拼写 occassional）、models.md 语言提醒、api.md 无采样参数、concepts/system-one.md 校准句、首页小字数字存在性。写作时复核两处：api.md 示例 JSON、LiteLLM 免责句。第二档·调研者一手抓取但未入核实条目：HN 分数快照与标题修改史（讨论帖 49767192、Kev 帖 453 分/199 评论、arcturus 帖 266 分/196 评论、Jev-Leftpad 帖 232 分）、Reddit 帖、Kev/Von/Laya README 自报数字（Kev 训练与基准细节为更新时一手复核）、zicode 两篇实测、flaviocopes 工程细节、LangChain 博客与 Latent Space 播客引文。第三档·二手或未能打开原文：虎嗅 64%-65.2%、X 声量、「约 50 个克隆」「两天 6 个克隆」、HF Reproductions Tracker、Open-Jev、arXiv:2503.23303、TechCrunch 转述的 LangChain judge 数字、zicode 内转述的翻车案例与用例、知乎/36 氪标题条目——正文关键处已就地标注。
 
-**方法学教训**：调研中 webReader 摘要曾出现与原文不符的细节（凭空的「$42 per million」、错误包名 typesafe-ai、虚假的「output $0.90/MTok」），均已被原始 HTML/npm registry 核对纠正；本文初稿也犯过同类错——把未经核实的「2 stage-system」句当成逐字引文、把自行计算的 75x/171x 当成事实，补核对后前者证实存在、后者数字存在但除法仍是推算。由此两条规矩：凡引逐字英文，要么出自核实条目或写作时核对，要么标明档位；凡倍数是算出来的，标「推算」并给出被除数与除数。
+**方法学教训**：调研中 webReader 摘要曾出现与原文不符的细节（凭空的「\$42 per million」、错误包名 typesafe-ai、虚假的「output \$0.90/MTok」），均已被原始 HTML/npm registry 核对纠正；本文初稿也犯过同类错——把未经核实的「2 stage-system」句当成逐字引文、把自行计算的 75x/171x 当成事实，补核对后前者证实存在、后者数字存在但除法仍是推算。由此两条规矩：凡引逐字英文，要么出自核实条目或写作时核对，要么标明档位；凡倍数是算出来的，标「推算」并给出被除数与除数。

@@ -53,6 +53,8 @@ import { ui } from '@/ui'
 </Layout>
 
 <script>
+import { withBase } from '@/utils/page'
+
 interface PagefindSearchData {
   url: string
   excerpt: string
@@ -76,7 +78,7 @@ const PAGE_SIZE = 10
 const DEBOUNCE_MS = 200
 
 // Served from the built output, so it is unavailable in dev before the first build
-const pagefindUrl = '/pagefind/pagefind.js'
+const pagefindUrl = withBase('/pagefind/pagefind.js')
 
 let pagefindPromise: Promise<PagefindModule | null> | null = null
 let searchToken = 0

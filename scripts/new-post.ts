@@ -26,9 +26,15 @@ if (existsSync(fullPath)) {
 mkdirSync(dirname(fullPath), { recursive: true })
 
 // Prepare file content
+// - title quoted: unquoted titles break YAML when they contain ': ', '#', '{', …
+// - published as local YYYY-MM-DD: display paths format via UTC ISO strings,
+//   so an ISO datetime scaffolded before 08:00 Beijing time would render as
+//   the previous day
+const now = new Date()
+const localDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
 const content = `---
-title: ${baseName}
-published: ${new Date().toISOString()}
+title: ${JSON.stringify(baseName)}
+published: ${localDate}
 description: ''
 updated: ''
 tags:

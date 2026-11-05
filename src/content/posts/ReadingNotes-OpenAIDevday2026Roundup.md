@@ -43,7 +43,7 @@ Altman 在台上说，Dots 的灵感来自「我们小时候在电影里看过�
 
 ## GPT-6.1 Sol 与 Ultrafast：智能和速度两条轴
 
-**GPT-6.1 Sol** 是本届发布的新模型：在智能体编码（agentic coding）、计算机使用和专业工作上强化，官方口径是「智能接近 GPT-6 Astra，输入 / 输出 token 价格约为 Astra 的 1/5」，第三方报道称定价为 $2 / $10（每百万 token 输入 / 输出）。已面向全部 API、Plus、Pro、Business、Enterprise、Edu 用户开放。顺带一提，OpenAI 当时的模型命名是「Astra / Sol / Luna」三件套：Astra 是旗舰，Sol 是性价比款，Luna 是轻量快速款（Decisions API 的默认引擎）——而「28 天连更」第 22 天又带回了第四个成员 **Terra**（见下文表格）。
+**GPT-6.1 Sol** 是本届发布的新模型：在智能体编码（agentic coding）、计算机使用和专业工作上强化，官方口径是「智能接近 GPT-6 Astra，输入 / 输出 token 价格约为 Astra 的 1/5」，第三方报道称定价为 \$2 / \$10（每百万 token 输入 / 输出）。已面向全部 API、Plus、Pro、Business、Enterprise、Edu 用户开放。顺带一提，OpenAI 当时的模型命名是「Astra / Sol / Luna」三件套：Astra 是旗舰，Sol 是性价比款，Luna 是轻量快速款（Decisions API 的默认引擎）——而「28 天连更」第 22 天又带回了第四个成员 **Terra**（见下文表格）。
 
 值得注意的是，据 [The Verge](https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements) 等媒体报道，更强一档的 **GPT-6.1 Astra 因安全考量暂缓发布**——结合 DevDay 现场场外的抗议（ICE 合同、数据中心能耗），安全议题是这届大会绕不开的背景音。
 
@@ -78,7 +78,7 @@ Altman 在台上说，Dots 的灵感来自「我们小时候在电影里看过�
 ## 订阅与生态：Sign in with ChatGPT、Pro 500、Marketplace
 
 - **Sign in with ChatGPT**：用 ChatGPT 账号登录合作应用，把你的订阅额度带过去。首发 **16 家伙伴**，包括 Cognition 的 Devin、Notion、Vercel、T3、OpenClaw、Dactyl 等；Plus / Pro 用户可在这些工具里消耗套餐用量，每个工具的用量可单独控制；
-- **Pro 500**：新的顶配订阅，**$500 / 月**，额度为 Plus 的 **25 倍**，附带 Ultrafast；与此同时 $200 的经典 Pro 档重新开放并调整了限额；
+- **Pro 500**：新的顶配订阅，**\$500 / 月**，额度为 Plus 的 **25 倍**，附带 Ultrafast；与此同时 \$200 的经典 Pro 档重新开放并调整了限额；
 - **OpenAI Marketplace**：企业客户可以把已有的 OpenAI 采购承诺用于购买合作方软件，首批 **32 家伙伴**，包括 Figma、Adobe、Sierra、Decagon、HubSpot、Salesforce、ServiceNow、Harvey、Legora、Palo Alto Networks、CrowdStrike、Baseten 等。
 
 ## 一周之后：Codex 的「28 天连更」
@@ -94,7 +94,7 @@ DevDay 落幕不到一周，10 月 4 日晚，Tibo 在 X 上宣布（[社区论�
 | 天 | 日期 | 交付内容 |
 | --- | --- | --- |
 | Day 1 | 10-05 | GPT-6 Astra / GPT-6.1 Sol **默认推理提速约 50%**（约 30 → 50 token/s），覆盖所有订阅产品和 Sign in with ChatGPT 伙伴（OpenCode、Pi、Amp、Devin），约两小时全量生效，用户无需任何操作 |
-| Day 2 | 10-06 | 四项：① **Auto Review 免费**——用 ChatGPT 账号登录即不消耗套餐用量，用第二个智能体复核高风险操作；② **API 限流分层从 5 档简化为 3 档**（Build / Launch / Grow），顶档累计付费门槛 $1000 → $500；③ **Meetings 插件 beta** 上线 macOS 桌面端；④ **Decisions API 面向所有开发者公测**，走 Responses API，最快比 GPT-6 Luna 快 10 倍 |
+| Day 2 | 10-06 | 四项：① **Auto Review 免费**——用 ChatGPT 账号登录即不消耗套餐用量，用第二个智能体复核高风险操作；② **API 限流分层从 5 档简化为 3 档**（Build / Launch / Grow），顶档累计付费门槛 \$1000 → \$500；③ **Meetings 插件 beta** 上线 macOS 桌面端；④ **Decisions API 面向所有开发者公测**，走 Responses API，最快比 GPT-6 Luna 快 10 倍 |
 | Day 3 | 10-07 | **GPT-6 在 Chat 全量上线**（配套发布 [GPT-6 and Intelligent UI for everyone](https://openai.com/index/gpt-6-and-intelligent-ui-for-everyone/)）；Codex / ChatGPT Work 活跃用户达到 **4000 万**；同时给所有付费账号发放一次 banked reset（可入账留存的额度重置）——按规则，第 2 天的四连发被内部判定分量不足，第 3 天补上重置 |
 | Day 4 | 10-08 | **Instant steering** 上线（任务执行中途实时纠偏、改方向）；**GPT-6.1 Sol Ultrafast** 在 API、Codex 和 ChatGPT Work 推出——智能接近 Astra，速度最高为 Sol Standard 的 8 倍 |
 | Day 5 | 10-09 | 两项：① Codex 桌面端 **Composer predictions beta**（Pro 可用，预测你的下一条指令，不消耗额度）；② 移动端（iOS / Android）ChatGPT 应用内可直接创建 dot、给它发消息并把任务委派给 Codex |

@@ -29,7 +29,7 @@ abbrlink: video-shotcraft-skill-deep-dive
 | `assets/scripts/` | 页面素材采集脚本 + demo 冒烟渲染脚本 | Playwright 生态 |
 | `jianying-export/` | 剪映工程导出（Python + pyJianYingDraft） | Mac 剪映 11.2 实测 |
 
-几个容易过时的数字先钉死版本（[WikiSkill 那篇](/posts/PaperReading-GoogleWikiSkill/)的老规矩：一手数字和二手数字分层记录）：网上不少文章写「104 张配方卡 / 161 个动效预设」，那是 2026-08 扩充前的旧数。截至 2026-08-30 主干，一手数字是 **152 卡 / 209 样式 / 209 条动态样片 / 149 个 SFX**。152 张卡的类别分布：ui-entrance 27、typography 25、transition 19、effects 17、interaction 15、data 11、rhythm 11、camera 10、opening 10、outro 7——排版和入场占了大头，符合「产品宣传片主要是文字和 UI 在动」的实际。
+几个容易过时的数字先钉死版本（[WikiSkill 那篇](/posts/paperreading-googlewikiskill/)的老规矩：一手数字和二手数字分层记录）：网上不少文章写「104 张配方卡 / 161 个动效预设」，那是 2026-08 扩充前的旧数。截至 2026-08-30 主干，一手数字是 **152 卡 / 209 样式 / 209 条动态样片 / 149 个 SFX**。152 张卡的类别分布：ui-entrance 27、typography 25、transition 19、effects 17、interaction 15、data 11、rhythm 11、camera 10、opening 10、outro 7——排版和入场占了大头，符合「产品宣传片主要是文字和 UI 在动」的实际。
 
 作者同月还发了系列第二作 **video-talkcraft**（口播视频版，78 张卡，动效节拍钉在人声字级时间戳上），本文不展开。
 
@@ -156,7 +156,7 @@ SKILL.md 把这条链总结成一句狠话：「**配方卡给的是语义和参
 3. **验收是流程设计，不是终点站**。每镜头预写验收帧号、静帧肉眼自检、每轮修改整片重渲、独立 subagent 干净上下文终检——「制作者对自己的产出有确认偏差，首检永远不能交给用户」。
 4. **便宜阶段解决方向性问题**。styleframe 用 HTML 静帧而不是渲染视频；产品检查只读不写；确认物（简报、决策表）都是文字表单。「先想清楚再动手」不是态度要求，是成本结构设计。
 5. **入口即分诊**。三种模式 + 两条例外 + 默认禁止项，把「agent 该问什么、该停在哪、什么时候不许自由发挥」全部显式化。skill 的触发词写得再准，也挡不住入口处的错误默认。
-6. **允许偏离，但要求留痕**。能量骨架「是默认项不是令」、审美准则「可以有意识违反但必须写进项目文档」——好的 skill 不是把 agent 框死，而是让每次偏离都留下可审计的理由。这和 [WikiSkill](/posts/PaperReading-GoogleWikiSkill/) 论文里「经验先沉淀、再进化」的思路遥相呼应：判例文档本身就是这个 skill 的 wiki 层。
+6. **允许偏离，但要求留痕**。能量骨架「是默认项不是令」、审美准则「可以有意识违反但必须写进项目文档」——好的 skill 不是把 agent 框死，而是让每次偏离都留下可审计的理由。这和 [WikiSkill](/posts/paperreading-googlewikiskill/) 论文里「经验先沉淀、再进化」的思路遥相呼应：判例文档本身就是这个 skill 的 wiki 层。
 
 ## 九、上手建议
 

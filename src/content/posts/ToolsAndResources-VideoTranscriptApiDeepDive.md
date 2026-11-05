@@ -8,7 +8,7 @@ abbrlink: videotranscriptapi-deep-dive
 
 > 整理日期：2026-09-26
 > 调研方式：把 [zlxlabs/VideoTranscriptAPI](https://github.com/zlxlabs/VideoTranscriptAPI)（commit `ec939ec`，2026-09-22）浅克隆到本地，用一组 AI 分析员并行深读全部功能模块，38 组 LLM 提示词逐一保真摘录分析，提示词清单另经独立审计员全仓检索复核（方法见[《ZCode 动态工作流》](/posts/zcode-dynamic-workflow/)）。文中结论均附 文件：行号，可回源码核对。
-> 写作动机：我之前写过[《YouTube 转录 API 调研》](/posts/ToolsAndResources-YoutubeTranscriptApis/)，对「视频 → 文字」这条链路一直有兴趣。这个仓库有意思的地方在于：它不只是又一个转录工具——它本身就是一个「用 AI 长出来的项目」的活标本，连需求文档都是当初写给 AI 的提示词。
+> 写作动机：我之前写过[《YouTube 转录 API 调研》](/posts/toolsandresources-youtubetranscriptapis/)，对「视频 → 文字」这条链路一直有兴趣。这个仓库有意思的地方在于：它不只是又一个转录工具——它本身就是一个「用 AI 长出来的项目」的活标本，连需求文档都是当初写给 AI 的提示词。
 
 ## 一、太长不看
 

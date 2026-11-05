@@ -54,10 +54,19 @@ export async function generateFeed() {
     const link = new URL(`posts/${slug}/`, siteURL).toString()
 
     // Optimize content processing
+    // 1) Drop HTML comments and custom container directive markers (:::note[标题] /
+    //    closing :::) — markdown-it knows nothing about them and would leak the
+    //    markers into feed content as literal text.
+    // 2) Absolutize site-root-relative URLs (src/href="/…") against the site
+    //    origin — feed readers resolve relative URLs against their own domain,
+    //    which breaks inline images and internal links.
     const postContent = post.body
       ? sanitizeHtml(
-          // Remove HTML comments before rendering markdown
-          markdownParser.render(post.body.replace(/<!--[\s\S]*?-->/g, '')),
+          markdownParser.render(
+            post.body
+              .replace(/<!--[\s\S]*?-->/g, '')
+              .replace(/^ {0,3}:{3,}(?:note|tip|important|warning|caution|fold|gallery)?(\[[^\]]*\])?\s*$/gm, ''),
+          ).replace(/(src|href)="(\/[^/"][^"]*)"/g, `$1="${url}$2"`),
           {
             // Allow <img> tags in feed content
             allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),

@@ -74,9 +74,9 @@ abbrlink: podcast-ai-music
 | 平台 | 免费？ | 商用？ | 真相 |
 |---|---|---|---|
 | **acemusic.ai** | ✅ 真·免费 | ✅ 可以 | ACE-Step 官方云端版，同一个 MIT 模型 |
-| **Suno**（官网） | ✅ 有免费额度 | ❌ 免费层不可商用 | Pro 计划（~$10/月）才含商用授权 |
-| **ElevenLabs Music** | ✅ 有免费层（~20 分钟） | ❌ 免费层不可商用 | Starter 计划（$5/月）起才开放商用，API 另收 $0.15/分钟 |
-| **Google Lyria 3** | ❌ 无免费层 | ✅ 可以（付费） | ~$0.08/首，通过 Gemini API 调用 |
+| **Suno**（官网） | ✅ 有免费额度 | ❌ 免费层不可商用 | Pro 计划（~\$10/月）才含商用授权 |
+| **ElevenLabs Music** | ✅ 有免费层（~20 分钟） | ❌ 免费层不可商用 | Starter 计划（\$5/月）起才开放商用，API 另收 \$0.15/分钟 |
+| **Google Lyria 3** | ❌ 无免费层 | ✅ 可以（付费） | ~\$0.08/首，通过 Gemini API 调用 |
 | **HuggingFace Serverless API** | ✅ 有免费额度 | ⚠️ **看具体模型** | 平台免费，但调哪个模型就受那个模型的授权协议（LICENSE）约束——MusicGen 免调用也不可商用，ACE-Step/MIT 模型才可商用 |
 
 **真实代价**：唯一**真正免费 + 能商用**的只有 acemusic.ai 一个。其他平台要么免费层不可商用（Suno、ElevenLabs），要么干脆没免费层（Lyria 3）。**别看到"free"就上**——要查清楚是"免费体验"还是"免费用"。

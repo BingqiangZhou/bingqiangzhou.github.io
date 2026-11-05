@@ -72,16 +72,16 @@ nohup ./natapp -config=config.ini -log=stdout -loglevel=INFO  >log.out 2>&1  &
 
 ### 1、创建 Web 隧道
 
-与[创建 SSH 隧道](#1创建ssh隧道)类似，将【隧道协议】改成【web】,其他步骤一致。
+与[创建 SSH 隧道](#1创建-ssh-隧道)类似，将【隧道协议】改成【web】,其他步骤一致。
 
 ### 2、配置隧道
 
-之前已经下载了 natapp，这里只需要创建一个新的配置文件，例如`webconfig.ini`（这可以直接复制成一个新的文件`cp config.ini webconfig.ini`），再进行之前与 SSH 通道类似的的[配置 config.ini 文件](#3配置configini文件)就行，将对应的 authtoken 换上去。
+之前已经下载了 natapp，这里只需要创建一个新的配置文件，例如`webconfig.ini`（这可以直接复制成一个新的文件`cp config.ini webconfig.ini`），再进行之前与 SSH 通道类似的的[配置 config.ini 文件](#3配置-configini-文件)就行，将对应的 authtoken 换上去。
 
 
 ### 3、启动并测试
 
-- 与之前 SSH[启动 natapp](#4启动natapp)类似，指定一下配置文件就好了，如下，
+- 与之前 SSH[启动 natapp](#4启动-natapp)类似，指定一下配置文件就好了，如下，
 
     ```shell
     nohup ./natapp -config=webconfig.ini -log=stdout -loglevel=INFO >weblog.out 2>&1  &

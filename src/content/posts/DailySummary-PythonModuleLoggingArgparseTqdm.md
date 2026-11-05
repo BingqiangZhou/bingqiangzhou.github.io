@@ -84,7 +84,7 @@ Logger 类不能被直接实例化，需要用`logging.getLogger(name)`来获取
 #### 常用方法
 
 1. 设置处理器处理信息最低等级`setLevel(level)`
-2. 设置输出日志信息格式`setFormatter(fmt)`，fmt 为[Formatter 对象](#Formatter对象-`logging.Formatter`)
+2. 设置输出日志信息格式`setFormatter(fmt)`，fmt 为[Formatter 对象](#formatter-对象-loggingformatter)
 
 ### Formatter 对象-`logging.Formatter`
 

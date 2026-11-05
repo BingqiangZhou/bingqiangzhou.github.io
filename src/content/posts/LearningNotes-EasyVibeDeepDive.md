@@ -7,7 +7,7 @@ abbrlink: easy-vibe-deep-dive
 ---
 
 > 调研日期：2026-10-25。方法：通读[发布公众号文章](https://mp.weixin.qq.com/s/fByNpTjrRdKAdkbgQuomiw)与 [GitHub 仓库](https://github.com/datawhalechina/easy-vibe) README，随后直接拉取仓库 `docs/zh-cn/` 下 Stage 1 学习地图、Stage 2 总览、Stage 3 全部子目录清单与 Spec Coding、跨平台双教程、平台选型等核心页面原文逐篇精读；Star/仓库元数据取自 GitHub API 当日快照。所有引用均给出原文位置或在线链接。
-> 关联阅读：本站此前整理过[Agent 教程资源全景](/posts/ToolsAndResources-AgentTutorialsRoundup/)（内含 Datawhale 自家的 hello-agents），也写过[用第一性原理拆解 Agentic Coding](/posts/first-principles-agentic-coding/)——Easy-Vibe 与它们定位不同：不教 Agent 构建，教「普通人怎么用 AI 做出真产品」。
+> 关联阅读：本站此前整理过[Agent 教程资源全景](/posts/toolsandresources-agenttutorialsroundup/)（内含 Datawhale 自家的 hello-agents），也写过[用第一性原理拆解 Agentic Coding](/posts/first-principles-agentic-coding/)——Easy-Vibe 与它们定位不同：不教 Agent 构建，教「普通人怎么用 AI 做出真产品」。
 
 ## 0. 一页结论
 

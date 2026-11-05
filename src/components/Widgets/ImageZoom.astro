@@ -124,6 +124,12 @@ function handleClick(event: MouseEvent) {
     return
   }
 
+  // Let images wrapped in a link pass through — the link's destination
+  // (e.g. a video file behind a thumbnail) is the intended click target
+  if (target.closest('a')) {
+    return
+  }
+
   event.preventDefault()
   zoomIn(target)
 }

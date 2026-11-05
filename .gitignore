@@ -25,3 +25,6 @@ package-lock.json
 
 # agent session artifacts (Claude Code local settings; skills/ stays tracked)
 .claude/settings.local.json
+
+# local research notes, never deployable content
+/out/
