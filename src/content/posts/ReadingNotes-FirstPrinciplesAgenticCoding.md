@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】用第一性原理拆解 Agentic Coding：从 LLM 原理到最佳实践的完整整理
 published: 2026-10-25
-description: TRAE 技术专家小夏《用第一性原理拆解 Agentic Coding：从理论到实操》上下两篇的合并学习笔记。上篇从自回归生成、Attention、上下文约束、强化学习四个第一性原理出发，推导出 Coding Agent 的实现原理（messages / tool calling / Agent Loop / Prompt Caching）与七大常见「掉链子」怪象的成因；下篇给出十条最佳实践——短对话、以对话为单位组织工作、AGENTS.md 写法、复利工程、为 AI 重新设计信息架构、用工程约束驯服 Agent、Expert Generalist 等。文末附笔者整理的「原理 → 实践」对应表与个人注记。
+description: 'TRAE 技术专家小夏《用第一性原理拆解 Agentic Coding》上下两篇的合并学习笔记：上篇从自回归生成、Attention、上下文约束、强化学习四个原理推出 Coding Agent 的实现机制与七大「掉链子」怪象的成因；下篇给出十条最佳实践——短对话、以对话为单位组织工作、AGENTS.md 写法、复利工程、用工程约束驯服 Agent 等，每条都能在原理里找到依据。文末附「原理到实践」对应表与个人注记。'
 tags: [学习笔记, Agent]
 abbrlink: first-principles-agentic-coding
 ---

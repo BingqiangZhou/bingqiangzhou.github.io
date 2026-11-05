@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】HyperFrames 30 天拆解（五）Choose a creation workflow：按手头素材选工作流，附四种创作场所
 published: 2026-08-25
-description: HyperFrames「30 天」系列第五篇（专题一），对应官方课程页 Related topics 的「Choose a creation workflow」。浏览器核对后发现该入口实际链向 /workflows 的「Choose a workflow」页——「Start from the material you already have」：九条工作流按输入素材归类（产品网站、想法讲解、既有素材、PR、动效图形、音乐、演示文稿、自定义、Remotion 移植），外加「多源并重走 general-video、裸 /hyperframes 请求由代理自选」的消歧规则；本篇同时拆解容易混淆的姊妹页 /guides/choose-creation-path「Choose how to create」——四种创作场所（本地代理 + CLI、AI 聊天 MCP、设计工具、HeyGen Video Agent）各自适合谁、能力边界、产物归属（They all give you a video. The difference is what you keep afterwards），以及「先选工作流再选场所」的完整决策顺序。
+description: 'HyperFrames 30 天系列第五篇（创作路径专题）：官方把「做什么视频」与「在哪做视频」拆成两页——工作流页按手头素材对号入座，九条工作流覆盖产品网站、想法讲解、既有素材、音乐、演示文稿到 Remotion 移植；创作场所页给四个入口：本地代理加 CLI、AI 聊天、设计工具、HeyGen Video Agent，判据是「都能给你一条视频，区别是你最后留下什么」。本文逐页核对原文，理清两页分工与 Studio 的关系，给出先选工作流、再选场所的完整决策链。'
 tags: [学习笔记]
 abbrlink: hyperframes-thirty-days-creation-paths
 ---

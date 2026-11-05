@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】Agentic 设计模式（五）：企业级七模式——A2A / 资源优化 / 推理 / 护栏 / 评测 / 优先级 / 探索
 published: 2026-07-01
-description: 系统讲解 Antonio Gulli《Agentic Design Patterns》第 15–21 章的企业级模式——Inter-Agent Communication A2A（Google 协议，Agent 间发现与委派，与 MCP 的 agent-to-tool vs agent-to-agent 关键区分）、Resource-Aware Optimization（路由 Agent 按复杂度选模型 + OpenRouter 自动选/回退）、Reasoning Techniques（CoT/ToT/ReAct/PALMs/RLVR/Chain-of-Debates/Deep Research + 推理扩展定律）、Guardrails Safety（输入/输出/行为/工具多层防御 + NeMo Guardrails，2025 研究证实护栏可被绕过故需纵深防御）、Evaluation and Monitoring（指标+反馈环+LLM-as-Judge+轨迹评估+「高级承包商」模型）、Prioritization（四要素+多级+动态重排）、Exploration and Discovery（Google AI Co-Scientist 与 Agent Laboratory 两个真实系统 + 探索-利用困境），并指出贯穿 Part Four 的「推理质量 vs 成本延迟」张力
+description: 'Agentic 设计模式系列第五篇，覆盖 Antonio Gulli 著作第 15-21 章的企业级七模式，讲 Agent 系统规模化后的协作、成本、安全与运维。最重要的区分是 A2A 与 MCP 互补不竞争——前者管 agent 对 agent，后者管 agent 对工具；最有洞见的是护栏（研究证实单层护栏可被绕过，必须纵深防御）与评测（评轨迹而非只看最终输出）。贯穿全篇的张力是推理质量与成本延迟的取舍。'
 tags: [学习笔记]
 abbrlink: agentic-enterprise-patterns
 ---

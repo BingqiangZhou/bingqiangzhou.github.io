@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】拆解 huashu-art-motion：把"审美"做成门禁的动画 skill 体系
 published: 2026-10-13
-description: 通读花叔开源的动画 skill huashu-art-motion 全部源码（SKILL.md、12 篇方法文档、36 张风格配方卡、9 张语法卡、278 行确定性 Canvas 引擎和拆解/验收/门禁/交付四件套 Python 工具），完整拆解它的三层架构：SKILL.md 按模型能力分档路由、references 参数化到 hex 色值的知识库、scripts 里"错误即失败"的渲染管线。最独特的部分是质量工程——规则沿"文字 → lint → 引擎默认值 → 交付门禁"的阶梯不断硬化，反 PPT 门禁的阈值全部用作者真实评判过的 13/88 支片子标定，交付说明的事实段带 sha256 指纹防篡改。CHANGELOG 里还藏着一部规则被 A/B 对照实验推翻重写的自我纠错史。
+description: '通读花叔开源动画 skill huashu-art-motion 全部源码，拆解其三层架构：SKILL.md 按模型能力分档路由、参数化到 hex 色值的知识库、确定性 Canvas 渲染管线。最独特的是质量工程——规则沿「文字、lint、引擎默认值、交付门禁」阶梯不断硬化，反 PPT 门禁阈值用作者真实评判过的 13/88 支片子标定，交付说明带 sha256 指纹防篡改。动画只是题材，质量治理才是资产。'
 tags: [学习笔记, Agent Skill]
 toc: true
 abbrlink: huashu-art-motion-deep-dive

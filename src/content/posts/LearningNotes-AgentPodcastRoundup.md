@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】三期 Agent 播客连听：Skills 实战、像董事长一样管理 100 个 AI，与「互联网已死，Agent 永生」
 published: 2026-11-03
-description: '整理三期 Agent 主题播客的核心观点：AI 炼金术《橘子：互联网已死，Agent 永生》——人类 DAU 已饱和、Agent 增量无限（世界变大 100 倍旧世界成 1%）、五分钟文本粘贴完胜三天 GUI 精装的割裂感、80% 软件=Skills+GUI 而 GUI 是 Agent 时代的累赘、OpenClaw 用验证码+过期机制零界面搞定权限系统、产品经理价值从写 PRD 变成对齐真实世界、Nano Banana Pro 全球第一个接（Agent 写码完全 follow 官方文档、全球唯一 4K PNG、一天烧上万美金逼出周六加班上付费）、DAU 是负债与「十天融不到一笔钱」、Token ROI 超 100 时 Token 就是钱、算力正在变特权（双指数）、大部分人卡点不是价格是找不到活干、For Agents + By Agents 的 Agent Native 组织、爆款文章与 Opus 4.6 聊五小时改七八遍；AI 炼金术《余一：如何高效 PUA 100 个 Agents 为你卖命》——把个人当 100 人公司当董事长、异步沟通文档（目的/材料/验收标准）+ 不可劫持机制 + 每步重读、红黄绿灯决策分级、审美偏向文件夹存 HTML 样例而非提示词、拒绝用人类经验污染 AI 直接市场验证（免手套标题复盘：好奇 vs 困惑）、发邮件失败自主绕道网盘的长程任务定义、复利工程三标准（压缩到通用层/基于成功经验叠加/必须指向行动改变）、Token 试错 50 块 vs 盯盘时薪的经济账、「你的 AI 跟别人的 AI 差别就是你」的异构壁垒、人类终极价值是定 vision 与战略取舍并承担后果、每天 2 小时每月 200 美金留在牌桌上；硬地骇客 EP127《从 Skills 到自动化工作流》——Skills 筛选两标准（解决重复性工作/补足不擅长领域）、GrillMe 需求澄清生成 context.md、真实验证类 Skill（Playwright/Computer Use）与「不写提示词写 loops」、Codex 讨论需求→plan→执行→自 review→自动发版的工作流、从零 build 产品先画架构地图只看 git diff 落点、Landing Page 用 ChatGPT 出图分层切素材再交 Codex 实现、女娲/POA 等网红 Skill 装了又删、失控感心理适应与替 Agent 背责任的代价、DRY 三次以上就写 Skill，末尾附三期合并的 Agent 时代行动清单。'
+description: '整理三期 Agent 主题播客的核心观点：橘子讲「互联网已死，Agent 永生」——人类 DAU 已饱和而 Agent 增量无限、五分钟文本粘贴胜过三天 GUI 精装、DAU 是负债的 Token 经济学；余一示范像董事长一样管理 100 个 Agent——异步文档沟通、决策分级与「你的 AI 跟别人的 AI 差别就是你」；硬地骇客 EP127 从 Skills 实战讲到「不写提示词写 loops」的工作流，末尾附 Agent 时代行动清单。'
 tags: [学习笔记, Agent, Claude Code]
 abbrlink: agent-podcast-roundup
 ---

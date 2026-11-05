@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】拆解 Datawhale Easy-Vibe：20k Star 的 Vibe Coding 课程在教什么、赌什么、缺什么
 published: 2026-10-25
-description: 对 Datawhale 开源教程 Easy-Vibe（GitHub 20k+ Star）的全量结构化拆解：从发布数据与「三分靠工具、七分靠提需求」的课程赌注讲起，逐层展开三阶段路线（新手村→产品工程师入门→全栈→高阶）与九大类附录知识库的设计逻辑；深读三篇代表性内容——Spec Coding 五段式工作流（Spec→Plan→Tasks→Implement→Verify）、React Native + Expo 门店巡检与 Flutter 门店费用簿双跨平台案例、用 2026 年真实招聘 JD 论证「产品工程师/FDE/OPC」岗位谱系的学习地图；最后给出五条批判性观察（期待管理、技术栈地域偏向、附录广度大于深度、高速迭代的跟学成本、协议限制）与它对 AI 编程教育的启示：从「教工具」升级到「教角色」的课程为什么抗周期。
+description: '全量拆解 Datawhale 开源教程 Easy-Vibe：核心赌注是「三分靠工具、七分靠提需求」，主线是完整产品闭环而非工具链，三阶段推进，再用九大类附录补计算机地基。深读三篇样本——Spec Coding 五段式工作流、React Native 与 Flutter 双跨平台实战、用真实招聘 JD 论证产品工程师岗位的学习地图；末尾附五条批判性观察与「从教工具到教角色」的转向解读。'
 tags: [学习笔记, AI前沿]
 abbrlink: easy-vibe-deep-dive
 ---

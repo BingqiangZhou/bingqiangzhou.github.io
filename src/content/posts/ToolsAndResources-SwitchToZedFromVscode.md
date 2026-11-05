@@ -1,7 +1,7 @@
 ---
 title: 【工具分享】VSCode 太重了，今天我把主力编辑器换成了 Zed
 published: 2026-10-29
-description: '用了多年 VSCode 之后，今天把主力编辑器换成了 Zed：起因是 VSCode 实在太重——十几个进程、GB 级内存、冷启动等不起，换过来之后"快得不像话"。文中深度对比两者的架构（Electron vs Rust + GPUI）、扩展模型（Node 扩展宿主 vs WASM 沙箱）、AI 策略（Copilot 深度绑定 vs ACP 开放协议）与生态成熟度，并完整讲一遍 Atom → Electron → VSCode → Zed 这段跨十五年的编辑器恩怨——Atom 团队为了 Atom 造了 Electron，Electron 成就了 VSCode，微软收购 GitHub 后 Atom 被退役，原作者们用 Rust 从头再造了 Zed。'
+description: '用了多年 VSCode 后把主力编辑器换成 Zed 的记录与对比：起因是 VSCode 太重——十几个进程、GB 级内存、冷启动数秒，换过去后快得不像话。文中对比两者的架构（Electron vs Rust 加 GPUI 渲染）、扩展模型与 AI 策略，并完整讲一遍 Atom 团队十五年的编辑器恩怨——为 Atom 造的 Electron 成就了 VSCode，微软收购 GitHub 后 Atom 被退役，原班人马用 Rust 从头再造 Zed，这是同一群人对两次作品的对赌。'
 tags: [工具分享, 折腾记录]
 abbrlink: switch-to-zed-from-vscode
 ---

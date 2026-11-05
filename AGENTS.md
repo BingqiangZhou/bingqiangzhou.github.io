@@ -95,7 +95,9 @@ Posts live in `src/content/posts/` as `.md` / `.mdx`. Schema is defined in `src/
   prefixes: `DailyJungle-`, `DailySummary-`, `PaperReading-`, `ReadingNotes-`, `Narration-`,
   `ToolsAndResources-`.
 - **`title`**: `【标签】中文描述` (e.g., `【学习笔记】搭建github.io博客的总结（一）`).
-- **Required frontmatter**: `title`, `published` (YYYY-MM-DD), `description`, `tags`.
+- **Required frontmatter**: `title`, `published` (YYYY-MM-DD), `description`, `tags`. `description`
+  is a one-line summary — target under 200 chars, hard cap 300 (chars, CJK or ASCII each count 1);
+  plain text only, no Markdown links, no full chapter/episode listings.
 - **Optional**: `updated`, `draft`, `pin` (0-99), `toc`, `abbrlink` (URL slug: lowercase
   alphanumeric + hyphens). Dates use `YYYY-MM-DD`.
 - **Existing tags** (18, as of 2026-08): 学习笔记, 工具分享, 实践记录, 读书笔记, Claude Code,

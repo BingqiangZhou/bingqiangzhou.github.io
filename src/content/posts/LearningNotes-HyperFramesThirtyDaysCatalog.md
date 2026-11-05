@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】HyperFrames 30 天拆解（七）Catalog 全景：三百多个可复用积木的地图与生态
 published: 2026-08-25
-description: HyperFrames「30 天」系列第七篇（完结篇），对应官方课程页 Related topics 的「Browse reusable Catalog elements」，深读组件目录：block 与 component 的双层结构及各自接线方式（data-composition-src 五属性 vs HTML/CSS/JS 三段融合）；按类别绘制的目录地图（字幕、文本标题、lower-third 与新闻条、代码块与十五种终端配色、shader 转场、图表与地图、产品 UI 区块、VFX 与液态玻璃、手绘标注、氛围杂项）；按意图检索的两档排名模型（词汇匹配与本地语义模型、英文查询规则、dropped 与 unindexed 的偏斜含义）；hyperframes feedback --search-miss 构成的需求信号闭环；贡献回注册表的 PR 流程；以及「检索即接口、缺口即路线图」的生态飞轮分析。
+description: 'HyperFrames 30 天拆解系列第七篇（完结篇），深读官方 Catalog 组件目录：block 与 component 的双层结构及接线差异，370 余个条目归并为十类目录地图（字幕、转场、图表、VFX 等），按意图检索的两档排名模型与英文查询规则，以及 search-miss 反馈闭环。核心结论：「检索即接口、缺口即路线图」——点名类别让代理检索安装，远快于手写动效。'
 tags: [学习笔记]
 abbrlink: hyperframes-thirty-days-catalog
 ---

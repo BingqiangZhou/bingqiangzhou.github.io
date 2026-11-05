@@ -1,7 +1,7 @@
 ---
 title: 【工具分享】Supabase 深度调研：AI 时代的默认后端，和必须先知道的几个坑
 published: 2026-11-01
-description: '用 AI 工作流对 Supabase 做了一次七侧面深度调研（36 条关键事实逐条独立核实）：它是以 PostgreSQL 为核心的开源后端全家桶（数据库/Auth/Storage/Realtime/Edge Functions/pgvector），8 个月估值从 20 亿涨到 105 亿美元，70% 的新数据库由 AI 工具创建，Claude Code 是 2026 年平台上最大的建库来源。文中梳理产品成熟度、安全模型（RLS 与 16,326 个公开可读的数据库）、定价（免费档与 25 美元之间的"悬崖"）、竞品选型，并实操讲解如何用 MCP 让 Claude Code/Cursor 直接对话式开发后端，以及 2026 年 10 月新出的"应用级 MCP"——让你的用户在 ChatGPT 里操作你的应用数据。'
+description: '对 Supabase 的七侧面深度调研（36 条关键事实逐条核实）：以 PostgreSQL 为核心的开源后端全家桶，8 个月估值涨到 105 亿美元，70% 的新数据库由 AI 工具创建。梳理产品成熟度、RLS 安全模型与 16,326 个公开可读库的教训、定价悬崖与竞品选型，并实操 MCP 让 Claude Code 对话式开发后端、让用户在 ChatGPT 里操作应用数据的应用级 MCP。'
 tags: [工具分享, AI前沿, Claude Code, Agent]
 abbrlink: supabase-deep-research
 ---

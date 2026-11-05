@@ -1,7 +1,7 @@
 ---
 title: 【实践记录】PPT 管线 × frontend-slides 双线复刻：AI 日报视频替代管线实测对比
 published: 2026-09-05
-description: 分别用 PPT 管线与 frontend-slides 复刻同一期 AI 日报视频的实战对比报告。PPT 线走了三条路：原生 timing 动画+WPS 放映录屏被 8 轮实验否决（WPS 放映引擎不执行自动序列动画、命令行启动连 advTm 都失效、桌面独占），终态定为 WPS COM 无头转 PDF+PyMuPDF 出帧+ffmpeg 后期缓推动效+ASS 逐词卡拉OK 字幕+旁白后混，全链约 2 分钟一次跑通；FES 线按 frontend-slides 固定舞台纪律产出竖版 deck，playwright 无头 recordVideo 82.4 秒一次跑通，词级字幕 HTML 内嵌、元素级词点动效最接近原片。附三方对比表（清晰度/动效/字幕/时序确定性/体积）与回填可行性分析的四条结论。
+description: '用 PPT 管线与 frontend-slides 双线复刻同一期 AI 日报视频。PPT 线的放映录屏被 8 轮实验否决（WPS 连自动动画都不执行），终态为无头转 PDF 加 ffmpeg 后期动效与 ASS 逐词字幕；FES 线产出竖版 deck，Playwright 无头录制一次成功，词级字幕内嵌、元素级动效最接近原片。结论：FES 线底座最健康，PPT 线的最优形态是渲染而非放映。'
 tags: [实践记录]
 abbrlink: ppt-feslides-dual-video-practice
 ---

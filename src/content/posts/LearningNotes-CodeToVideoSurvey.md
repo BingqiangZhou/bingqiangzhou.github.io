@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】不靠模型「生成」的视频：代码渲染/程序化视频（Video-as-Code）全景（2026）
 published: 2026-06-30
-description: 系统梳理 2026 年「非生成式」的视频生产工具——以 HyperFrames 为代表的「代码渲染成视频」(Video-as-Code) 赛道：HTML/React/Canvas/几何 四种渲染范式、HyperFrames/Remotion/Motion Canvas/Manim/Revideo 五大框架横评（许可证/agent 友好度/定价）、HyperFrames 的 19 个 agent skills 与「让 AI 写代码而非生成像素」的新路线、Creatomate/Shotstack/JSON2Video 等模板/数据驱动 API，并与姊妹篇《AI 视频生成全景》形成「确定性渲染 vs 生成式幻觉」的对照
+description: '系统梳理 2026 年「不靠模型生成」的视频生产工具——Video-as-Code 赛道全景：先厘清确定性渲染与生成式幻觉的分野，再横评 HyperFrames、Remotion、Motion Canvas、Manim 等五大框架的渲染范式、许可证与定价，并覆盖 Agent 驱动与模板数据驱动两条新路线。与姊妹篇《AI 视频生成全景》互为对照：要品牌一致、可复现、可进 CI 的系列成片，靠的不是更大的生成模型，而是代码渲染。'
 tags: [学习笔记]
 abbrlink: code-to-video-survey
 ---

@@ -1,7 +1,7 @@
 ---
 title: 【学习笔记】Perplexity 创始人访谈深读：当 AI 掌握在用户手中，广告利润率为什么必然下降
 published: 2026-10-25
-description: 深度整理 Z Potentials 编译的 Silicon Valley Girl 播客对 Perplexity 创始人 Aravind Srinivas 的访谈（2025 年 9 月录制）：先快速梳理全场脉络——从 5 亿到 200 亿美元估值的指数级增长哲学、Comet 智能代理浏览器的产品逻辑、跳过广告与跨平台口碑验证、职业替代与创业建议；再重点深读他关于广告商业模式的一套完整论述——需求端智能、用户与助手的握手协议、广告在 agent 层竞价并向用户分成，推演「未来广告利润率必然下降」的权力转移逻辑；最后对照访谈后一年多的现实（Comet Plus 订阅分成、4250 万美元出版商资金池、赞助后续问题的收缩、ACP/UCP/x402 等 agent 商务协议竞赛）做现实检验，并给出五个批判性问号与四类从业者的启示。
+description: '深读 Silicon Valley Girl 播客对 Perplexity 创始人 Aravind Srinivas 的访谈：先速览全场（增长、Comet、职业与创业），再深读其广告商业模式论述：过去十年最强的 AI 一直握在广告巨头手里，用户侧 agent 第一次抹平这种不对称，广告将从对人投放降格为向助手竞价并分成，未来广告利润率必然下降；最后对照其后一年多的行业现实做检验与追问。'
 tags: [学习笔记, AI前沿]
 abbrlink: perplexity-comet-ads-deepdive
 ---

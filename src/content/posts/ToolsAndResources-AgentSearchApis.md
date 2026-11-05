@@ -1,7 +1,7 @@
 ---
 title: 【工具分享】Tavily 深度调研与 Agent 搜索 API 全景实测：Exa、Brave、Serper、Perplexity、Firecrawl 谁更能打
 published: 2026-09-12
-description: 给 Agent 接一个联网搜索，是 2026 年做 AI 应用最常见的刚需。本文深度拆解这个赛道的头号选手 Tavily——五个端点、credit 计费、限流策略与 37 项集成生态——并横向对比 Exa、Brave、Serper、SerpAPI、Perplexity、Jina、Linkup、Firecrawl、Google CSE 和已退场的 Bing API；附国内家宽直连实测矩阵：Tavily、Exa、Serper、SerpAPI、Linkup、Firecrawl 全部可达，Brave、Perplexity、Jina、Google 全部超时，而 Firecrawl 的搜索端点甚至无需 API key 就能返回真实搜索结果。
+description: '给 Agent 接联网搜索的选型与实测：先按官方文档拆解头号选手 Tavily 的五个端点、credit 计费与 37 项集成生态，再横向对比 Exa、Brave、Serper、Perplexity、Firecrawl 等同类 API 的定价与特长。附国内家宽直连实测矩阵——Tavily、Exa、Serper 等六家全部可达，Brave、Perplexity、Jina、Google 全部超时，而 Firecrawl 的搜索端点甚至无需 API key 就能返回真实结果。'
 tags:
   - 工具分享
   - 实践记录

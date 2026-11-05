@@ -30,6 +30,8 @@ mkdirSync(dirname(fullPath), { recursive: true })
 // - published as local YYYY-MM-DD: display paths format via UTC ISO strings,
 //   so an ISO datetime scaffolded before 08:00 Beijing time would render as
 //   the previous day
+// - description empty on purpose: author fills a one-line summary,
+//   hard cap 300 chars per repo convention (see .claude/skills/add-blog-post)
 const now = new Date()
 const localDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
 const content = `---
