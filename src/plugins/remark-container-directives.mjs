@@ -8,12 +8,18 @@ const admonitionTypes = {
   caution: 'CAUTION',
 }
 
-// Extract text from directive label
+// Extract text from directive label, recursing into styled children
+// (strong/em/code/link) so `:::note[**重点**说明]` keeps its full title
+function collectText(node) {
+  if (!node)
+    return ''
+  if (node.type === 'text')
+    return node.value
+  return (node.children ?? []).map(collectText).join('')
+}
+
 function getLabelText(node) {
-  return node?.children
-    ?.map(child => child.type === 'text' ? child.value : '')
-    .join('')
-    .trim() || ''
+  return collectText(node).trim()
 }
 
 // Admonition Blocks

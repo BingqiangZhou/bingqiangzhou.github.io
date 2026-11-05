@@ -17,8 +17,10 @@ export function rehypeHeadingAnchor() {
           properties: {
             href: `#${node.properties.id}`,
             className: ['heading-anchor-link'],
+            // Raw heading text — the HTML serializer escapes attribute values,
+            // pre-escaping entities here would double them (&quot; in the DOM)
             ariaLabel: headingText
-              ? `Link to ${headingText.replace(/["']/g, char => char === '"' ? '&quot;' : '&#39;')}`
+              ? `Link to ${headingText}`
               : undefined,
           },
           children: [{

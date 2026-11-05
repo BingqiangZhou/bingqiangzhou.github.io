@@ -84,7 +84,7 @@ export default defineConfig({
         rehypeSlug,
         rehypeHeadingAnchor,
         rehypeImageProcessor,
-        rehypeExternalLinks,
+        [rehypeExternalLinks, { site }],
         rehypeCodeCopyButton,
       ],
     }),
