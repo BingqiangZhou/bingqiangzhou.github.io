@@ -97,7 +97,7 @@ html[data-theme-changing] [data-disable-theme-toggle-transition] {
   }
 }
 
-@media (min-width: 1535px) {
+@media (min-width: 1536px) {
   #toc-desktop-icon {
     opacity: 0;
     animation: fadeInUpMini 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;

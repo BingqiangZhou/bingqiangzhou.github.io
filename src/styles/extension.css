@@ -200,7 +200,7 @@ a:target-current {
   --at-apply: 'overflow-y-auto 2xl:overflow-hidden';
 }
 #toc-accordion-content {
-  --at-apply: 'max-h-59 overflow-hidden pl-4 pr-6 2xl:(max-h-[calc(100vh-27.5rem)] overflow-y-auto scrollbar-hidden)';
+  --at-apply: 'max-h-59 overflow-hidden pl-4 pr-6 2xl:(max-h-[calc(100dvh-21rem)] overflow-y-auto scrollbar-hidden)';
   scrollbar-width: thin;
   scrollbar-color: oklch(var(--un-preset-theme-colors-secondary) / 0.15) transparent;
 }
