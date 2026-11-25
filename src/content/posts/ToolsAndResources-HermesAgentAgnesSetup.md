@@ -1,7 +1,7 @@
 ---
 title: 【工具分享】Hermes Agent 接入 Agnes AI：API Key、上下文压缩与免费限额
 published: 2026-11-25
-description: 把 Agnes AI 配成 Hermes Agent 的模型后端：API Key 与 Base URL 的三种写法、512K 上下文长度和压缩触发阈值的调优，以及免费档的 RPM 限额与 429 应对。
+description: 把 Agnes AI 配成 Hermes Agent 的模型后端：国内站与国际站地址对照、API Key 与 Base URL 的三种写法、512K 上下文长度和压缩阈值调优，以及免费档 RPM 限额与 429 应对。
 tags: [工具分享, Agent, AI实测]
 toc: true
 abbrlink: hermes-agent-agnes-setup
@@ -30,9 +30,20 @@ Hermes Agent 是 Nous Research 开源的自主智能体框架，能跨会话记�
 
 前置条件只有一个：Hermes Agent 已经装好（官方文档有 Linux / macOS / WSL2 / Windows 原生的安装指南，不重复），所有配置文件都在 `~/.hermes/` 下。
 
+> **先选对站**：Agnes 国内站与国际站是两套独立服务，官网、控制台、API 网关、账号与 Key 都不通用。国内直连走 `.cn`，别照抄旧教程里的 `.com` 地址。
+
+| 项目 | 国际站 | 国内站 |
+| --- | --- | --- |
+| 官网 | `agnes-ai.com` | `agnes-ai.cn` |
+| 控制台（注册 / 建 Key） | `platform.agnes-ai.com` | `platform.agnes-ai.cn` |
+| API Base URL | `https://apihub.agnes-ai.com/v1` | `https://api.agnes-ai.cn/v1` |
+| 文档站 | `wiki.agnes-ai.com` | `wiki.agnes-ai.cn` |
+
+判断只看控制台：中文界面、人民币计价走 `.cn`，英文界面、美元计价走 `.com`。**Key 要在注册的那个站创建，Base URL 也必须用同站的**，混用会直接 401。后面两种写法都给，按自己注册的站挑一套即可。
+
 注册流程：
 
-1. 打开 `platform.agnes-ai.com` 注册，邮箱验证即可，不需要绑定支付方式；
+1. 按上表选站注册：国内用户打开 `platform.agnes-ai.cn`，国际站用户用 `platform.agnes-ai.com`；邮箱验证即可，不需要绑定支付方式，国内站走国内网络直连，延迟和稳定性都更好；
 2. 进入 **Settings → API Keys**，新建一个 Key 并立刻复制——完整 Key 通常只展示一次；
 3. 如果创建时选择了「限定范围」，记得把要用的模型勾上，否则会报模型无权限。
 
@@ -50,7 +61,7 @@ Hermes Agent 是 Nous Research 开源的自主智能体框架，能跨会话记�
 
 ## 三、把 Agnes 配成 Hermes 的模型后端
 
-Agnes 完全兼容 OpenAI API 格式，网关地址是 `https://apihub.agnes-ai.com/v1`。Hermes 有三种写法，效果等价；我自己用的是 3.1 的官方四条命令。
+Agnes 完全兼容 OpenAI API 格式。网关地址按站点选：国内站 `https://api.agnes-ai.cn/v1`，国际站 `https://apihub.agnes-ai.com/v1`。Hermes 有三种写法，效果等价；我自己用的是 3.1 的官方四条命令，下面以国际站为例，国内站只需替换 Base URL 和 Key。
 
 ### 3.1 官方推荐：四条命令
 
@@ -59,6 +70,12 @@ hermes config set model.provider custom
 hermes config set model.base_url https://apihub.agnes-ai.com/v1
 hermes config set model.api_key 你的API_KEY
 hermes config set model.default agnes-3.0-flash
+```
+
+国内站只改第二行（Key 换成国内站控制台生成的）：
+
+```bash
+hermes config set model.base_url https://api.agnes-ai.cn/v1
 ```
 
 几个细节：
@@ -81,7 +98,7 @@ model:
   context_length: 524288
 ```
 
-`${VAR}` 写法会在加载时展开，变量仍然放在 `.env` 里。
+`${VAR}` 写法会在加载时展开，变量仍然放在 `.env` 里。国内站把 `base_url` 换成 `https://api.agnes-ai.cn/v1`。
 
 ### 3.3 长期方案：providers 字典（推荐）
 
@@ -109,6 +126,8 @@ providers:
 AGNES_API_KEY=你的API_KEY
 ```
 
+国内站把 `api:` 换成 `https://api.agnes-ai.cn/v1`，`key_env` 里放国内站生成的 Key。
+
 `transport` 不用写，OpenAI 兼容端点会自动识别成 `chat_completions`。
 
 ### 3.4 验证
@@ -122,7 +141,7 @@ curl https://apihub.agnes-ai.com/v1/chat/completions \
   -d '{"model":"agnes-3.0-flash","messages":[{"role":"user","content":"你好"}]}'
 ```
 
-返回 200 和一段 JSON 就通了。再进 Hermes 里检查：
+国内站把域名换成 `api.agnes-ai.cn`，其他不变。返回 200 和一段 JSON 就通了。再进 Hermes 里检查：
 
 ```bash
 hermes config get model
@@ -136,6 +155,7 @@ hermes config get compression
 | 现象 | 原因 | 处理 |
 | --- | --- | --- |
 | `401 Unauthorized` | Key 错误、过期或没勾模型权限 | 重新生成 Key，检查「限定范围」 |
+| `401` 且 Key 没问题 | Key 与 Base URL 不在同一站 | 国内站 Key 配 `api.agnes-ai.cn/v1`，国际站 Key 配 `apihub.agnes-ai.com/v1` |
 | `404 model not found` | 模型 ID 大小写写错，或用了已退役的 2.5 Flash | 复制控制台里的完整模型 ID |
 | `404` 且路径里带 `/chat/completions` | Base URL 写成了完整端点 | 只保留到 `/v1` |
 | `context length exceeded` | 窗口设大了，或压缩触发太晚 | 见第四、五节 |
@@ -226,14 +246,18 @@ Agnes 的文本模型对免费用户是无限期开放的——不绑卡、没�
 5. **`target_ratio` 只在 `legacy` 模式有用**，默认 `lean` 模式改它没效果；
 6. **`model.context_length` 切换 provider 会被清掉**，长期配置用 `providers.<id>.models.<model>.context_length`；
 7. **多建 Key 不会增加 RPM**，同类型 Key 共享一个池；
-8. **免费档偶尔撞 429 不用慌**，等 1 分钟再 `/retry` 就能恢复；但 RPM 会动态下调，别把速率假设写死进脚本。
+8. **免费档偶尔撞 429 不用慌**，等 1 分钟再 `/retry` 就能恢复；但 RPM 会动态下调，别把速率假设写死进脚本；
+9. **国内站和国际站别混用**：`.cn` 的 Key 配 `api.agnes-ai.cn/v1`，`.com` 的 Key 配 `apihub.agnes-ai.com/v1`。网上还常见 `apihub.agnes-ai.cn` 这个写法，国内站当前官方文档给的是 `api.agnes-ai.cn/v1`，以后以控制台和文档为准。
 
 ## 参考链接
 
 - Hermes Agent 配置文档：<https://hermes-agent.nousresearch.com/docs/user-guide/configuration>
 - Hermes 模型配置：<https://hermes-agent.nousresearch.com/docs/user-guide/configuring-models>
 - Hermes 上下文压缩与缓存：<https://hermes-agent.nousresearch.com/docs/developer-guide/context-compression-and-caching>
-- Agnes 官方 Hermes 集成指南：<https://wiki.agnes-ai.com/en/docs/cid2>
+- Agnes 国内站控制台：<https://platform.agnes-ai.cn>
+- Agnes 国内站文档（含 Base URL）：<https://wiki.agnes-ai.cn/zh-Hans/docs/overview>
+- Agnes 国内站 Hermes 集成指南：<https://wiki.agnes-ai.cn/zh-Hans/docs/cid2>
+- Agnes 国际站官方 Hermes 集成指南：<https://wiki.agnes-ai.com/en/docs/cid2>
 - Agnes 订阅计划：<https://wiki.agnes-ai.com/en/docs/tokenplan>
 - Agnes 3.0 Flash 模型页：<https://wiki.agnes-ai.com/en/docs/agnes-30-flash>
 - Agnes 模型定价：<https://wiki.agnes-ai.com/en/docs/pricing>
