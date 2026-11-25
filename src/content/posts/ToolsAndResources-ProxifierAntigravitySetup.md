@@ -40,6 +40,18 @@ KLZ5G-X37YY-65ZYN-EUSV7-WPPBS
 L6Z8A-XY2J4-BTZ3P-ZZ7DF-A2Q9C（Portable Edition）
 5EZ8G-C3WL5-B56YG-SCXM9-6QZAP（Standard Edition）
 P427L-9Y552-5433E-8DSR3-58Z68（MAC）
+
+Name : Hugh Jackman （好像随意填就可以）
+Edition : Proxifier Setup (Windows) 
+License Key : 8CULR-VY9JJ-NEL3K-HPIYT-GAALD
+
+Name : Hugh Jackman （好像随意填就可以）
+Edition : Proxifier Portable 
+License Key : PALNS-9WDZG-KB322-2N5QH-68E7W
+
+Name : Hugh Jackman （好像随意填就可以）
+Edition : Proxifier macOS 
+License Key : 3PWWS-SYUPU-3DM3G-MEQ36-J4HDD
 ```
 
 ### 2、添加代理服务器
@@ -55,13 +67,10 @@ P427L-9Y552-5433E-8DSR3-58Z68（MAC）
 Proxification Rules 决定哪些进程走代理、哪些直连。Applications 填入需要走代理的进程，Target hosts / Target ports 保持 `Any`，Action 选上一步建好的代理服务器。
 
 - **Windows**：
-
   ```
   antigravity.exe; openconsole.exe; fd.exe; winpty-agent.exe; inno_updater.exe; language_server_windows_x64.exe
   ```
-
 - **macOS**：先把 **Default** 规则设为 **Direct**，并保留内置的 **Localhost** 直连规则（本地代理本身在 `127.0.0.1`，不能让它再走代理），Applications 填入：
-
   ```
   "Antigravity.app"; "Antigravity"; com.google.antigravity; "Gemini.app"; "Gemini"; com.google.GeminiMacOS; "Antigravity IDE.app"; "Antigravity IDE"; com.google.antigravity-ide; language_server_macos_arm; language_server_macos_x64; language_server
   ```
