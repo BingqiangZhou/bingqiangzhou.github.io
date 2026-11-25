@@ -170,10 +170,12 @@ curl -s -o /dev/null -w "%{http_code}\n" "http://localhost:4321/posts/<abbrlink>
 
 向用户汇报：文件名、标题、标签、URL、配图张数；并说明任何"忠实度"相关决定（如"保留了原文笔误 X""保留了脱敏 `*包`""下载图片 13 张"）。
 
-提交时遵守用户既定偏好：
+然后**先问用户是否提交**，得到确认后再操作：
+
+- **不要为新文章另开分支**：直接在当前分支（通常是 `main`）commit。不做「开分支 → 提交 → 合并回 main → 删分支」这套流程。
 - **commit message 用英文**（仓库历史虽是中文，但用户要英文）。
-- 在默认分支 `main` 上时**先开分支**再提交，提交后问用户是合并回 main 还是走 PR。
 - 例：`post: repost "How a PhD student collaborates with AI — ai-collab-playbook"`
+- 只有用户明确要求时才 `git push`（推送会触发 GitHub Pages 发布）。
 
 ---
 
@@ -185,6 +187,8 @@ curl -s -o /dev/null -w "%{http_code}\n" "http://localhost:4321/posts/<abbrlink>
 | `published` 日期 | 转载当天 |
 | 图片目录日期 | 与 `published` 一致（当天 `YYYYMMDD`） |
 | commit message | 英文 |
+| 分支策略 | 不开新分支，直接在当前分支提交；提交前先问用户 |
+| 推送 | 仅当用户明确要求时才 push |
 | 正文笔误/脱敏 | 原样保留，不修正 |
 | 论坛楼层回复 | 不收录，只转首帖正文 |
 
